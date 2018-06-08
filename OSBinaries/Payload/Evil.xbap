@@ -1,0 +1,8 @@
+private void Button_click(object sender, RoutedEventArgs e)
+{
+	if (RadioButton1.IsChecked == true)
+	{
+		Process.Start("C:\\poc\\evil.exe");
+		MessageBox.Show("BHello.");
+	}
+}

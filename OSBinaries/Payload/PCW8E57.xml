@@ -1,0 +1,13 @@
+
+<?xml version="1.0" encoding="utf-16"?>
+<Answers Version="1.0">
+	<Interaction ID="IT_LaunchMethod">
+		<Value>ContextMenu</Value>
+	</Interaction>
+	<Interaction ID="IT_SelectProgram">
+		<Value>NotListed</Value>
+	</Interaction>
+	<Interaction ID="IT_BrowseForFile">
+		<Value>C:\Windows\assembly\Exec-Execute.msi</Value>
+	</Interaction>
+</Answers>

