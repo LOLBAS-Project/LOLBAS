@@ -3,14 +3,15 @@
 <img src="https://github.com/api0cradle/LOLBAS/raw/master/Logo/LOLBAS.png" height="250">
 
 
-There are currently three different lists.
+There are currently four different lists.
 
 * [LOLBins](LOLBins.md)    
 * [LOLLibs](LOLLibs.md)    
-* [LOLScripts](LOLScripts.md)    
+* [LOLScripts](LOLScripts.md)  
+* [LOLTools](LOLTools.md)    
 
 
-The goal of these lists are to document every binary, script and library that can be used for Living Off The Land techniques. 
+The goal of these lists are to document every binary, script, library and tools that can be used for Living Off The Land techniques. 
 
 Definition of LOLBAS candidates (Binaries,scripts and libraries):
 * LOLBAS candidates must be present on the system by default or introduced by application/software "installation" from a "reputable" vendor or open-source entity. Otherwise, LOLBAS determination is subject to scrutiny by the (security) community and agreed upon standards.
@@ -56,6 +57,7 @@ Common hashtags for these files are:
 #LOLScripts   
 #LOLLib   
 #LOLLibs   
+#LOLTools
 
 A "highly scientific poll" was also conducted to agree (69% yes) on the name LOLBins.
 https://twitter.com/Oddvarmoe/status/985432848961343488 
