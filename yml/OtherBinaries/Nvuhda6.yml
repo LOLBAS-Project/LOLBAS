@@ -16,9 +16,9 @@ Commands:
   - Command: nvuhda6.exe KillApp calc.exe
     Description: Kill a process.
   - Command: nvuhda6.exe Run foo
-    Description: ?
+    Description: Run process
 Full Path:
-  - ?
+  - Missing
 Code Sample: []
 Detection: []
 Resources:

@@ -16,7 +16,7 @@ Commands:
   - Command: Nvudisp.exe KillApp calculator.exe
     Description: Kill a process.
   - Command: Nvudisp.exe Run foo
-    Description: ?
+    Description: Run process
 Full Path:
   - C:\windows\system32\nvuDisp.exe
 Code Sample: []

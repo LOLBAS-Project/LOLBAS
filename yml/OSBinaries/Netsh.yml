@@ -15,9 +15,7 @@ Commands:
     Description: Forward traffic from the listening address and proxy to a remote system.
 Full Path:
   - C:\Windows\System32
-etsh.exe
   - C:\Windows\SysWOW64
-etsh.exe
 Code Sample: []
 Detection: []
 Resources:

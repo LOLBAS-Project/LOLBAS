@@ -27,11 +27,12 @@ Definition of LOLBAS candidates (Binaries,scripts and libraries):
   * pass-through persistence utilizing existing LOLBin
   * persistence (Hide data in ADS, execute at logon etc)
 
-Right now it is me that decides if the files are a valid contribution or not. 
-I try my best to conclude with help from others in the InfoSec community and I do not wish to exclude anything. 
-Also, please be patient if it takes some time for your contribution to be added to the list. I am just one guy.   
-
 Every binary, script and library has it's own .md file in the subfolders. That way I should be easier to maintain and reuse. 
+
+A yml version of every file is located under the yml folder. 
+This is the master for all things LOLBAS. 
+We generate the MD files from this and later it will also be the base for an upcoming webportal.
+
 I have borrowed examples from the community (And a lot from Red Canary - Atomic Red Team - Thanks @subtee)
 Would really love if the community could contribute as much as possible. That would make it better for everyone.
 If you think it is hard to make a pull request using github, don't hesitate to send me a tweet and I will add the contribution for you.
@@ -68,14 +69,30 @@ Love this logo:
 <img src="https://github.com/api0cradle/LOLBAS/raw/master/Logo/LOL1.png" height="250">
 
 ## Future work / Todo list
-- [ ] Better classification system
-	- [ ] Load DLL
-	- [ ] Arbitrary unsigned code execution
-	- [ ] Launch other process
-- [ ] Better contribution template
-- [ ] Provide the project in DB format (sqlite)
-- [ ] Re-factor project (version 2.0) and move it to a dedicated project site (https://github.com/LOLBAS-Project)
-- [ ] Map it to the Mitre Att&ck <3
-- [ ] LOLGuiBins
-- [ ] More list based on classifications
-- [ ] LOLBAS lists for Linux? OSX?
+
+### 2.0
+
+[x] Determine field mappings between existing Markdown and future structured format
+[x] Define any additional fields required during launch (Date, Categories)
+[x] Migrate
+[x] Sanity checking & populate blank fields (e.g. Categories, Code Sample, Detection).
+[ ] Define CONTRIBUTING.md to guide contributions. Suggested ambiguous files: regedit.exe, notepad.exe, powershell.exe, cmd.exe.
+    [ ] https://stackoverflow.com/questions/19109912/do-i-need-quotes-for-strings-in-yaml
+    [ ] https://stackoverflow.com/questions/3790454/in-yaml-how-do-i-break-a-string-over-multiple-lines
+    [ ] https://til.hashrocket.com/posts/d7c96e2ee7-multiline-strings-in-yaml
+[x] Re-factor project (version 2.0) and move it to a dedicated project site (https://github.com/LOLBAS-Project)
+     
+     
+### 2.1
+
+[ ] ATT&CK links
+[ ] LOLBIN GUID?
+[ ] Jekyll front end a la GTFOBINS?
+[ ] Sub-Categories
+[ ] Tests for PRs to ensure fields are valid
+[ ] Create management scripts (find blank fields, ensure all fields are present, update fields)
+[ ] Privileges required
+[ ] Signed executing signed? Signed executing unsigned? @mattifestation's tweet has some good stuff.
+[ ] Specific tags/labeling for specific capability caveats, for example a App Whitelist bypass that works on AppLocker & Solidcore could cary tags for each product
+[ ] split commands into command, argument structure, and example. i.e. Command: cmstp.exe; ArgStructure: /ini /s <inf_file>; Example: cmstp.exe /ini /s c:\cmstp\CorpVPN.inf
+[ ] Provide the project in DB format (sqlite)
