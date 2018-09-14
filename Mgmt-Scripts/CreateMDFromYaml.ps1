@@ -90,27 +90,27 @@ function Add-MainIndex
         #[Atbroker.exe](OSBinaries/Atbroker.md)    
 
         if($Type -eq "OSBinaries") {
-            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)" | Add-Content $Outfile
+            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)    " | Add-Content $Outfile
         }
 
         if($Type -eq "OSLibraries") {
-            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)" | Add-Content $Outfile
+            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)    " | Add-Content $Outfile
         }
 
         if($Type -eq "OSScripts") {
-            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)" | Add-Content $Outfile
+            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)    " | Add-Content $Outfile
         }
 
         if($Type -eq "OtherBinaries") {
-            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)" | Add-Content $Outfile
+            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)    " | Add-Content $Outfile
         }
 
         if($Type -eq "OtherMSBinaries") {
-            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)" | Add-Content $Outfile
+            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)    " | Add-Content $Outfile
         }
 
         if($Type -eq "OtherScripts") {
-            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)" | Add-Content $Outfile
+            "`[$($YamlObject.Name)`]`($Type/$($YamlObject.Name).md`)    " | Add-Content $Outfile
         }
         #"" | Add-Content $Outfile
     }
