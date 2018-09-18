@@ -1,3 +1,4 @@
+---
 Name: Binary.exe
 Description: Something general about the binary
 Author: The person that created this file
@@ -36,3 +37,4 @@ Resources:
     Handle: @johndoe
   - Person: Ola Norman
     Handle: @olaNor
+---
