@@ -1,0 +1,38 @@
+Name: Binary.exe
+Description: Something general about the binary
+Author: The person that created this file
+Created: Date the person created this file
+Commands:
+  - Command: The command
+    Description: Description of the command
+    Usecase: A description of the usecase
+    Category: Execution
+    Privileges: Required privs
+    MitreID: T1055
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1055
+    OperatingSystem: Windows 10 1803, Windows 10 1703
+  - Command: The second command
+    Description: Description of the second command
+    Usecase: A description of the usecase
+    Category: AWL-Bypass
+    Privileges: Required privs
+    MitreID: T1033
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1033
+    OperatingSystem: Windows 10 All
+Full Path:
+- Path: c:\windows\system32\bin.exe
+- Path: c:\windows\syswow64\bin.exe
+Code Sample: 
+- Code: http://url.com/git.txt
+Detection: 
+- IOC: Event ID 10
+- IOC: binary.exe spawned
+Resources:
+ - Link: http://blogpost.com
+ - Link: http://twitter.com/something
+ - Link: Threatintelreport...
+ Acknowledgement:
+  - Person: John Doe
+    Handle: @johndoe
+  - Person: Ola Norman
+    Handle: @olaNor

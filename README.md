@@ -10,32 +10,41 @@ There are currently three different lists.
 * [LOLScripts](LOLScripts.md)    
 
 
-The goal of these lists are to document every binary, script and library that can be used for Living Off The Land techniques. 
+## Goal
+The goal of the LOLBAS project are to document every binary, script and library that can be used for Living Off The Land techniques.   
+Primarily files that offer "extra" functionality. 
 
-Definition of LOLBAS candidates (Binaries,scripts and libraries):
-* LOLBAS candidates must be present on the system by default or introduced by application/software "installation" from a "reputable" vendor or open-source entity. Otherwise, LOLBAS determination is subject to scrutiny by the (security) community and agreed upon standards.
-* Can be used as an attacker tool directly or can perform other actions than what it was intended to do (Ex: regsvr32 - execute code from SCT online)
-  * executing code
-  * downloading/upload files
-  * bypass UAC
-  * compile code
-  * getting creds/dumping process
-  * surveillance (keylogger, network trace)
-  * evade logging/remove log entry
-  * side-loading/hijacking of DLL
-  * pass-through execution of other programs, script (via a LOLBin)
-  * pass-through persistence utilizing existing LOLBin
-  * persistence (Hide data in ADS, execute at logon etc)
 
-Every binary, script and library has it's own .md file in the subfolders. That way I should be easier to maintain and reuse. 
+## Definition
 
+* Must be a Microsoft signed file. (OS or downloaded from Microsoft site)
+* Only extra "unexpected" functionality is interesting (Not interesting to document what it was intended for)
+  * Exceptions are Application Whitelisting bypasses
+
+* Functionality can include:
+   * Executing code
+      * Arbitrary code execution
+      * Pass-through execution of other programs (unsigned), script (via a LOLBin)
+   * Compile code
+   * File operations
+      * downloading
+      * upload
+      * copy
+    * Persistence
+      * pass-through persistence utilizing existing LOLBin
+      * persistence (Hide data in ADS, execute at logon etc)
+    * UAC bypass
+    * Credentials
+    * Dumping process
+    * Surveillance (keylogger, network trace)
+    * Evade logging/remove log entry
+    * DLL Side-Loading/Hijacking (Binary must maintain path integrity - e.g. Without copying a binary to another folder that the user controls)
+
+
+## YML
 A yml version of every file is located under the yml folder. 
 This is the master for all things LOLBAS. 
 We generate the MD files from this and later it will also be the base for an upcoming webportal.
-
-I have borrowed examples from the community (And a lot from Red Canary - Atomic Red Team - Thanks @subtee)
-Would really love if the community could contribute as much as possible. That would make it better for everyone.
-If you think it is hard to make a pull request using github, don't hesitate to send me a tweet and I will add the contribution for you.
 
 
 ## STORY
@@ -67,32 +76,39 @@ The awesome logos in the logo folder was provided by Adam Nadrowski (@_sup_mane)
 
 Love this logo:   
 <img src="https://github.com/api0cradle/LOLBAS/raw/master/Logo/LOL1.png" height="250">
+   
+    
+## Versions - Roadmap
+All features are added to the issues in this repo. 
 
-## Future work / Todo list
-
-### 2.0
-
-[x] Determine field mappings between existing Markdown and future structured format
-[x] Define any additional fields required during launch (Date, Categories)
-[x] Migrate
-[x] Sanity checking & populate blank fields (e.g. Categories, Code Sample, Detection).
-[ ] Define CONTRIBUTING.md to guide contributions. Suggested ambiguous files: regedit.exe, notepad.exe, powershell.exe, cmd.exe.
-    [ ] https://stackoverflow.com/questions/19109912/do-i-need-quotes-for-strings-in-yaml
-    [ ] https://stackoverflow.com/questions/3790454/in-yaml-how-do-i-break-a-string-over-multiple-lines
-    [ ] https://til.hashrocket.com/posts/d7c96e2ee7-multiline-strings-in-yaml
-[x] Re-factor project (version 2.0) and move it to a dedicated project site (https://github.com/LOLBAS-Project)
-     
-     
+### 1.0
+* Hosted https://github.com/api0cradle/LOLBAS/
+* Only MD files
+    
+       
+### 2.0 -- Current
+* Hosted here on this repo
+* Everything converted to YML files   
+* MD files generated from YML files
+* Clearer definition     
+* Management scripts
+    
+    	
 ### 2.1
+* More categories
+* Jekyll frontend
+* Privileges required
+   
+   
+### 2.2
+* ATT&CK Mitre mapping
+* LOLBIN GUID - Unique ID for each bin
+* Sub-Categories
+  * Signed executing unsigned
+  * Signed executing signed 
+* Split commands into command, argument structure, and example. i.e. Command: cmstp.exe; ArgStructure: /ini /s <inf_file>; Example: cmstp.exe /ini /s c:\cmstp\CorpVPN.inf
 
-[ ] ATT&CK links
-[ ] LOLBIN GUID?
-[ ] Jekyll front end a la GTFOBINS?
-[ ] Sub-Categories
-[ ] Tests for PRs to ensure fields are valid
-[ ] Create management scripts (find blank fields, ensure all fields are present, update fields)
-[ ] Privileges required
-[ ] Signed executing signed? Signed executing unsigned? @mattifestation's tweet has some good stuff.
-[ ] Specific tags/labeling for specific capability caveats, for example a App Whitelist bypass that works on AppLocker & Solidcore could cary tags for each product
-[ ] split commands into command, argument structure, and example. i.e. Command: cmstp.exe; ArgStructure: /ini /s <inf_file>; Example: cmstp.exe /ini /s c:\cmstp\CorpVPN.inf
-[ ] Provide the project in DB format (sqlite)
+  
+### 2.3
+* Tests for PRs to ensure fields are valid
+* Provide the project in DB format (sqlite)
