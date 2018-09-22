@@ -1,16 +1,23 @@
 ---
 Name: vsjitdebugger.exe
-Description: Execute
-Author: ''
+Description: Just-In-Time (JIT) debugger included with Visual Studio..
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: Vsjitdebugger.exe calc.exe
     Description: Executes calc.exe as a subprocess of Vsjitdebugger.exe.
+    Usecase: Execution of local PE file as a subprocess of Vsjitdebugger.exe.
+    Category: Execution
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows
 Full Path:
   - c:\windows\system32\vsjitdebugger.exe
 Code Sample: []
 Detection: []
 Resources:
   - https://twitter.com/pabraeken/status/990758590020452353
-Notes: Thanks to Pierre-Alexandre Braeken - @pabraeken
+Acknowledgement:
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'

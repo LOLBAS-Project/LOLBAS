@@ -1,15 +1,22 @@
 ---
 Name: rcsi.exe
-Description: Execute
-Author: ''
+Description: Non-Interactive command line inerface included with Visual Studio.
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: rcsi.exe bypass.csx
     Description: Use embedded C# within the csx script to execute the code.
+    Usecase: Local execution of arbitrary C# code stored in local CSX file.
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows
 Full Path: ''
 Code Sample: []
 Detection: []
 Resources:
   - https://enigma0x3.net/2016/11/21/bypassing-application-whitelisting-by-using-rcsi-exe/
-Notes: Thanks to Matt Nelson - @enigma0x3
+Acknowledgement:
+  - Person: Matt Nelson
+    Handle: '@enigma0x3'

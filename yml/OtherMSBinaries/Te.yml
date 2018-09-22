@@ -1,15 +1,22 @@
 ---
 Name: te.exe
-Description: Execute
-Author: ''
+Description: Testing tool included with Microsoft Test Authoring and Execution Framework (TAEF).
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: te.exe bypass.wsc
     Description: Run COM Scriptlets (e.g. VBScript) by calling a Windows Script Component (WSC) file.
+    Usecase: Execute Visual Basic script stored in local Windows Script Component file.
+    Category: Execution
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows
 Full Path: ''
 Code Sample: []
 Detection: []
 Resources:
   - https://twitter.com/gn3mes1s/status/927680266390384640?lang=bg
-Notes: Thanks to Giuseppe N3mes1s - @gN3mes1s
+Acknowlegement:
+  - Person: Giuseppe N3mes1s
+    Handle: '@gN3mes1s'

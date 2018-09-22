@@ -1,16 +1,23 @@
 ---
 Name: SQLToolsPS.exe
-Description: Execute, evade logging
-Author: ''
+Description: Tool included with Microsoft SQL that loads SQL Server cmdlts. A replacement for sqlps.exe.
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: SQLToolsPS.exe -noprofile -command Start-Process calc.exe
     Description: Run PowerShell scripts and commands.
+    Usecase: Execute PowerShell command.
+    Category: Execution
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows
 Full Path:
   - C:\Program files (x86)\Microsoft SQL Server\130\Tools\Binn\sqlps.exe
 Code Sample: []
 Detection: []
 Resources:
   - https://twitter.com/pabraeken/status/993298228840992768
-Notes: Thanks to Pierre-Alexandre Braeken - @pabraeken
+Acknowledgement:
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'

