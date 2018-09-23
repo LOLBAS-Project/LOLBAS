@@ -1,20 +1,29 @@
 ---
 Name: Atbroker.exe
-Description: Execute
-Author: ''
+Description: Helper binary for Assistive Technology (AT)
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: ATBroker.exe /start malware
     Description: Start a registered Assistive Technology (AT).
+    Usecase: Executes code defined in registry for a new AT. Modifications must be made to the system registry to either register or modify an existing Assistibe Technology (AT) service entry.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - C:\Windows\System32\Atbroker.exe
-  - C:\Windows\SysWOW64\Atbroker.exe
-Code Sample: []
-Detection: []
+  - path: C:\Windows\System32\Atbroker.exe
+  - path: C:\Windows\SysWOW64\Atbroker.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC: Changes to HKCU\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\Configuration
+ - IOC: Changes to HKCU\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs
+ - IOC: Unknown AT starting C:\Windows\System32\ATBroker.exe /start malware
 Resources:
-  - http://www.hexacorn.com/blog/2016/07/22/beyond-good-ol-run-key-part-42/
-Notes: >
-  Thanks to Adam - @hexacorn
-  Modifications must be made to the system registry to either register or modify an existing Assistibe Technology (AT) service entry.
-
+  - Link: http://www.hexacorn.com/blog/2016/07/22/beyond-good-ol-run-key-part-42/
+Acknowledgement:
+  - Person: Adam
+    Handle: '@hexacorn'
+---

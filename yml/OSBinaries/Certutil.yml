@@ -1,25 +1,56 @@
 ---
 Name: Certutil.exe
-Description: Download, Add ADS, Decode, Encode
-Author: ''
+Description: Windows binary used for handeling certificates
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: certutil.exe -urlcache -split -f http://7-zip.org/a/7z1604-x64.exe 7zip.exe
     Description: Download and save 7zip to disk in the current folder.
-  - Command: certutil.exe -urlcache -split -f https://raw.githubusercontent.com/Moriarty2016/git/master/test.ps1 c:\temp:ttt
+    Usecase: Download file from Internet
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    - Command: certutil.exe -urlcache -split -f https://raw.githubusercontent.com/Moriarty2016/git/master/test.ps1 c:\temp:ttt
     Description: Download and save a PS1 file to an Alternate Data Stream (ADS).
-  - Command: |
-          certutil -encode inputFileName encodedOutputFileName
-          certutil -decode encodedInputFileName decodedOutputFileName
-    Description: Commands to encode and decode a file using Base64.
+    Usecase: Download file from Internet and save it in an NTFS Alternate Data Stream
+    Category: Alternate data streams
+    Privileges: User
+    MitreID: T1105
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    - Command: certutil -encode inputFileName encodedOutputFileName
+    Description: Command to encode a file using Base64
+    Usecase: Encode files to evade defensive measures
+    Category: Encode
+    Privileges: User
+    MitreID: T1027
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1027
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    - Command: certutil -decode encodedInputFileName decodedOutputFileName
+    Description: Command to decode a Base64 encoded file.
+    Usecase: Decode files to evade defensive measures
+    Category: Decode
+    Privileges: User
+    MitreID: T1140
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1140
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - c:\windows\system32\certutil.exe
-  - c:\windows\sysWOW64\certutil.exe
-Code Sample: []
-Detection: []
+  - path: C:\Windows\System32\certutil.exe
+  - path: C:\Windows\SysWOW64\certutil.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC: Certutil.exe creating new files on disk
+ - IOC: Useragent Microsoft-CryptoAPI/10.0
+ - IOC: Useragent CertUtil URL Agent
 Resources:
-  - https://twitter.com/Moriarty_Meng/status/984380793383370752
-  - https://twitter.com/mattifestation/status/620107926288515072
-Notes: Thanks to Matt Graeber - @mattifestation, Moriarty - @Moriarty2016
-
+  - Link: https://twitter.com/Moriarty_Meng/status/984380793383370752
+  - Link: https://twitter.com/mattifestation/status/620107926288515072
+Acknowledgement:
+  - Person: Matt Graeber
+    Handle: '@mattifestation'
+  - Person: Moriarty
+    Handle: '@moriarty2016'
+---
