@@ -6,7 +6,7 @@ Created: '2018-05-25'
 Commands:
   - Command: rundll32.exe advpack.dll,LaunchINFSection c:\test.inf,DefaultInstall_SingleUser,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
-    Usecase: Run local or remote script(let) code through INF file specification.
+    UseCase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1085
@@ -14,7 +14,7 @@ Commands:
     OperatingSystem: Windows
   - Command: rundll32.exe advpack.dll,LaunchINFSection c:\test.inf,,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied).
-    Usecase: Run local or remote script(let) code through INF file specification.
+    UseCase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1085
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows
   - Command: rundll32.exe advpack.dll,RegisterOCX test.dll
     Description: Launch a DLL payload by calling the RegisterOCX function.
-    Usecase: Load a DLL payload.
+    UseCase: Load a DLL payload.
     Category: Execution
     Privileges: User
     MitreID: T1085
@@ -30,25 +30,26 @@ Commands:
     OperatingSystem: Windows
   - Command: rundll32.exe advpack.dll,RegisterOCX calc.exe
     Description: Launch an executable by calling the RegisterOCX function.
-    Usecase: Run an executable payload.
+    UseCase: Run an executable payload.
     Category: Execution
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
   - Command: rundll32 advpack.dll, RegisterOCX "cmd.exe /c calc.exe"
     Description: Launch command line by calling the RegisterOCX function.
-    Usecase: Run an executable payload.
+    UseCase: Run an executable payload.
     Category: Execution
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
 Full Path:
-  - path: c:\windows\system32\advpack.dll
-  - path: c:\windows\syswow64\advpack.dll
+  - Path: c:\windows\system32\advpack.dll
+  - Path: c:\windows\syswow64\advpack.dll
 Code Sample:
   - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack.inf
   - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack_calc.sct
-Detection: []
+Detection:
+  - IOC: ''
 Resources:
   - Link: https://bohops.com/2018/02/26/leveraging-inf-sct-fetch-execute-techniques-for-bypass-evasion-persistence/
   - Link: https://twitter.com/ItsReallyNick/status/967859147977850880
