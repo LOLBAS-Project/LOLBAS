@@ -1,25 +1,44 @@
 ---
 Name: Setupapi.dll
-Description: Execute
+Description: Windows Setup Application Programming Interface
 Author: ''
 Created: '2018-05-25'
-Categories: []
 Commands:
-  - Command: rundll32 setupapi,InstallHinfSection DefaultInstall 132 c:\temp\calc.inf
+  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\shady.inf
+    Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
+    Usecase: Run local or remote script(let) code through INF file specification.
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1085
+    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    OperatingSystem: Windows
+  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\\Tools\\calc_exe.inf
     Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
-  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\\Tools\\shady.inf
-    Description: Remote fetch and execute a COM Scriptlet by calling an information file directive.
+    Usecase: Load an executable payload.
+    Category: Execution
+    Privileges: User
+    MitreID: T1085
+    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    OperatingSystem: Windows
 Full Path:
-  - c:\windows\system32\Setupapi.dll
-  - c:\windows\sysWOW64\Setupapi.dll
+  - path: c:\windows\system32\setupapi.dll
+  - path: c:\windows\syswow64\setupapi.dll
 Code Sample:
   - https://raw.githubusercontent.com/huntresslabs/evading-autoruns/master/shady.inf
   - https://gist.github.com/enigma0x3/469d82d1b7ecaf84f4fb9e6c392d25ba#file-backdoor-minimalist-sct
+  - https://gist.githubusercontent.com/enigma0x3/469d82d1b7ecaf84f4fb9e6c392d25ba/raw/6cb52b88bcc929f5555cd302d9ed848b7e407052/Backdoor-Minimalist.sct
   - https://gist.githubusercontent.com/bohops/0cc6586f205f3691e04a1ebf1806aabd/raw/baf7b29891bb91e76198e30889fbf7d6642e8974/calc_exe.inf
 Detection: []
 Resources:
-  - https://twitter.com/pabraeken/status/994742106852941825
-  - https://twitter.com/subTee/status/951115319040356352
-  - https://twitter.com/KyleHanslovan/status/911997635455852544
-  - https://github.com/huntresslabs/evading-autoruns
-Notes: Thanks to Pierre-Alexandre Braeken - @pabraeken (Executable), Kyle Hanslovan - @KyleHanslovan (COM Scriptlet), Huntress Labs - @HuntressLabs (COM Scriptlet), Casey Smith - @subTee (COM Scriptlet)
+  - resource: https://github.com/huntresslabs/evading-autoruns
+  - resource: https://twitter.com/pabraeken/status/994742106852941825
+  - resource: https://windows10dll.nirsoft.net/setupapi_dll.html
+Acknowledgment:
+  - Person: Kyle Hanslovan (COM Scriptlet)
+    Handle: '@KyleHanslovan'
+  - Person:  Huntress Labs (COM Scriptlet)
+    Handle: '@HuntressLabs'
+  - Person: Casey Smith (COM Scriptlet)
+    Handle: '@subTee'
+  - Person: Nick Carr (Threat Intel)
+    Handle: @ItsReallyNick
