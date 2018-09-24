@@ -46,14 +46,14 @@ Full Path:
   - path: c:\windows\system32\advpack.dll
   - path: c:\windows\syswow64\advpack.dll
 Code Sample:
-  - https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack.inf
-  - https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack_calc.sct
+  - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack.inf
+  - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack_calc.sct
 Detection: []
 Resources:
-  - resource: https://bohops.com/2018/02/26/leveraging-inf-sct-fetch-execute-techniques-for-bypass-evasion-persistence/
-  - resource: https://twitter.com/ItsReallyNick/status/967859147977850880
-  - resource: https://twitter.com/bohops/status/974497123101179904
-  - resource: https://twitter.com/moriarty_meng/status/977848311603380224
+  - Link: https://bohops.com/2018/02/26/leveraging-inf-sct-fetch-execute-techniques-for-bypass-evasion-persistence/
+  - Link: https://twitter.com/ItsReallyNick/status/967859147977850880
+  - Link: https://twitter.com/bohops/status/974497123101179904
+  - Link: https://twitter.com/moriarty_meng/status/977848311603380224
 Acknowledgment:
   - Person: Jimmy (LaunchINFSection)
     Handle: '@bohops'
