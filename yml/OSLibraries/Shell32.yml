@@ -6,7 +6,7 @@ Created: '2018-05-25'
 Commands:
   - Command: rundll32.exe shell32.dll,Control_RunDLL payload.dll
     Description: Launch a DLL payload by calling the Control_RunDLL function.
-    Usecase: Load a DLL payload.
+    UseCase: Load a DLL payload.
     Category: Execution
     Privileges: User
     MitreID: T1085
@@ -14,29 +14,31 @@ Commands:
     OperatingSystem: Windows
   - Command: rundll32.exe shell32.dll,ShellExec_RunDLL beacon.exe
     Description: Launch an executable by calling the ShellExec_RunDLL function.
-    Usecase: Run an executable payload.
+    UseCase: Run an executable payload.
     Category: Execution
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
   - Command: rundll32 SHELL32.DLL,ShellExec_RunDLL "cmd.exe" "/c echo hi"
     Description: Launch command line by calling the ShellExec_RunDLL function.
-    Usecase: Run an executable payload.
+    UseCase: Run an executable payload.
     Category: Execution
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
 Full Path:
-  - path: c:\windows\system32\shell32.dll
-  - path: c:\windows\syswow64\shell32.dll
-Code Sample: []
-Detection: []
+  - Path: c:\windows\system32\shell32.dll
+  - Path: c:\windows\syswow64\shell32.dll
+Code Sample:
+  - Code: ''
+Detection:
+  - IOC: ''
 Resources:
-  - resource: https://twitter.com/Hexacorn/status/885258886428725250
-  - resource: https://twitter.com/pabraeken/status/991768766898941953
-  - resource: https://twitter.com/mattifestation/status/776574940128485376
-  - resource: https://twitter.com/KyleHanslovan/status/905189665120149506
-  - resource: https://windows10dll.nirsoft.net/shell32_dll.html
+  - Link: https://twitter.com/Hexacorn/status/885258886428725250
+  - Link: https://twitter.com/pabraeken/status/991768766898941953
+  - Link: https://twitter.com/mattifestation/status/776574940128485376
+  - Link: https://twitter.com/KyleHanslovan/status/905189665120149506
+  - Link: https://windows10dll.nirsoft.net/shell32_dll.html
 Acknowledgment:
   - Person: Adam (Control_RunDLL)
     Handle: '@hexacorn'
