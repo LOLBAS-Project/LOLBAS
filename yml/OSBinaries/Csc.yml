@@ -1,21 +1,35 @@
 ---
 Name: Csc.exe
-Description: Compile
-Author: ''
+Description: Binary file used by .NET to compile C# code 
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
-  - Command: csc -out:My.exe File.cs
+  - Command: csc.exe -out:My.exe File.cs
     Description: Use CSC.EXE to compile C# code stored in File.cs and output the compiled version to My.exe.
+    Usecase: Compile attacker code on system. Bypass defensive counter measures.
+    Category: Compile
+    Privileges: User
+    MitreID: T1127
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: csc -target:library File.cs
-    Description: ''
+    Description: Use CSC.EXE to compile C# code stored in File.cs and output the compiled version to a dll file.
+    Usecase: Compile attacker code on system. Bypass defensive counter measures.
+    Category: Compile
+    Privileges: User
+    MitreID: T1127
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - C:\Windows\Microsoft.NET\Framework\v4.0.30319\Csc.exe
-  - C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Csc.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Csc.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Csc.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC: Csc.exe should normally not run a system unless it is used for development. 
 Resources:
-  - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe
-  - ''
-Notes: Thanks to ?
-
+  - Link: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe
+Acknowledgement:
+  - Person: 
+    Handle:
+---

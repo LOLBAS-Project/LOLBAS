@@ -1,17 +1,26 @@
 ---
 Name: Pcwrun.exe
-Description: Execute
-Author: ''
+Description: Program Compatibility Wizard
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: Pcwrun.exe c:\temp\beacon.exe
     Description: Open the target .EXE file with the Program Compatibility Wizard.
+    Usecase: Proxy execution of binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - c:\windows\system32\pcwrun.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Windows\System32\pcwrun.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC:
 Resources:
-  - https://twitter.com/pabraeken/status/991335019833708544
-Notes: Thanks to Pierre-Alexandre Braeken - @pabraeken
-
+  - Link: https://twitter.com/pabraeken/status/991335019833708544
+Acknowledgement:
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'
+---

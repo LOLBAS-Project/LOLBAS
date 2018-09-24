@@ -1,19 +1,27 @@
 ---
 Name: Msconfig.exe
-Description: Execute
-Author: ''
+Description: MSConfig is a troubleshooting tool which is used to temporarily disable or re-enable software, device drivers or Windows services that run during startup process to help the user determine the cause of a problem with Windows
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: Msconfig.exe -5
     Description: Executes command embeded in crafted c:\windows\system32\mscfgtlc.xml.
+    Usecase: Code execution using Msconfig.exe
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - c:\windows\system32\msconfig.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Windows\System32\msconfig.exe
+Code Sample: 
+- Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/mscfgtlc.xml
+Detection:
+ - IOC: mscfgtlc.xml changes in system32 folder
+ - IOC: msconfig.exe executing
 Resources:
-  - https://twitter.com/pabraeken/status/991314564896690177
-Notes: |
-    Thanks to Pierre-Alexandre Braeken - @pabraeken
-    See the Payloads folder for an example mscfgtlc.xml file.
-
+  - Link: https://twitter.com/pabraeken/status/991314564896690177
+Acknowledgement:
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'
+---

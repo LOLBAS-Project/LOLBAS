@@ -30,11 +30,15 @@ function Convert-YamlToMD
         "description: $($YamlObject.Description)"| Add-Content $Outfile
         "function:"| Add-Content $Outfile
         # Need a category linked to the different things... Execute, Download, AWL-bypass. 
-        "  execute:"| Add-Content $Outfile
+        
         foreach($cmd in $YamlObject.Commands)
         {
-            "    - description: $($cmd.description)"| Add-Content $Outfile
-            "      code: $($cmd.command)"| Add-Content $Outfile
+        "  $($cmd.Category):"| Add-Content $Outfile
+            "    - description: $($cmd.Description)"| Add-Content $Outfile
+            "      code: $($cmd.Command)"| Add-Content $Outfile
+            "      code: $($cmd.Command)"| Add-Content $Outfile
+            "      mitreid: $($cmd.MitreID)"| Add-Content $Outfile
+            "      mitrelink: $($cmd.MitreLink)"| Add-Content $Outfile
         }
         "resources:"| Add-Content $Outfile
         foreach($link in $YamlObject.Resources)
@@ -108,13 +112,11 @@ function Invoke-GenerateMD
 
 #Generate the stuff!
 #Bins
-Invoke-GenerateMD -YmlPath "$mainpath\yml\OSBinaries" -Outpath "c:\tamp\Binaries" -Verbose
+#Invoke-GenerateMD -YmlPath "$mainpath\yml\OSBinaries" -Outpath "c:\tamp\Binaries" -Verbose
 Invoke-GenerateMD -YmlPath "$mainpath\yml\OtherMSBinaries" -Outpath "c:\tamp\OtherMSBinaries" -Verbose
-Invoke-GenerateMD -YmlPath "$mainpath\yml\OtherBinaries" -Outpath "c:\tamp\OtherBinaries" -Verbose
-#
+
 ##Scripts
-Invoke-GenerateMD -YmlPath "$mainpath\yml\OSScripts" -Outpath "c:\tamp\SCripts" -Verbose
-Invoke-GenerateMD -YmlPath "$mainpath\yml\OtherScripts" -Outpath "c:\tamp\OtherScripts" -Verbose
-#
+#Invoke-GenerateMD -YmlPath "$mainpath\yml\OSScripts" -Outpath "c:\tamp\SCripts" -Verbose
+
 ##Libs
-Invoke-GenerateMD -YmlPath "$mainpath\yml\OSLibraries" -Outpath "c:\tamp\Libraries" -Verbose
+#Invoke-GenerateMD -YmlPath "$mainpath\yml\OSLibraries" -Outpath "c:\tamp\Libraries" -Verbose

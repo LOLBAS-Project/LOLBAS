@@ -1,18 +1,27 @@
 ---
 Name: Extexport.exe
-Description: Execute
-Author: ''
+Description: 
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: Extexport.exe c:\test foo bar
-    Description: 'Load a DLL located in the c:\\test folder with one of the following names: mozcrt19.dll, mozsqlite3.dll, or sqlite.dll'
+    Description: Load a DLL located in the c:\test folder with one of the following names mozcrt19.dll, mozsqlite3.dll, or sqlite.dll
+    Usecase: Execute dll file
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - 'C:\Program Files\Internet Explorer\Extexport.exe    '
-  - C:\Program Files\Internet Explorer(x86)\Extexport.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Program Files\Internet Explorer\Extexport.exe
+  - Path: C:\Program Files\Internet Explorer(x86)\Extexport.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC: Extexport.exe loads dll and is execute from other folder the original path
 Resources:
-  - http://www.hexacorn.com/blog/2018/04/24/extexport-yet-another-lolbin/
-Notes: Thanks to Adam - @hexacorn
-
+  - Link: http://www.hexacorn.com/blog/2018/04/24/extexport-yet-another-lolbin/
+Acknowledgement:
+  - Person: Adam
+    Handle: '@hexacorn'
+---

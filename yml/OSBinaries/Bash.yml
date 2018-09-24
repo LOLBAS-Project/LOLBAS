@@ -21,8 +21,8 @@ Commands:
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10
 Full Path:
-  - path: C:\Windows\System32\bash.exe
-  - path: C:\Windows\SysWOW64\bash.exe
+  - Path: C:\Windows\System32\bash.exe
+  - Path: C:\Windows\SysWOW64\bash.exe
 Code Sample: 
 - Code:
 Detection:

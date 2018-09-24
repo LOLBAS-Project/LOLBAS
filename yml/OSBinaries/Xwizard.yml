@@ -1,21 +1,29 @@
 ---
 Name: Xwizard.exe
-Description: DLL hijack, Execute
-Author: ''
+Description: 
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
-  - Command: xwizard.exe
-    Description: Xwizard.exe will load a .DLL file located in the same directory (DLL Hijack) named xwizards.dll.
   - Command: xwizard RunWizard {00000001-0000-0000-0000-0000FEEDACDC}
     Description: Xwizard.exe running a custom class that has been added to the registry.
+    Usecase: Run a com object created in registry to evade defensive counter measures
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - c:\windows\system32\xwizard.exe
-  - c:\windows\sysWOW32\xwizard.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Windows\System32\xwizard.exe
+  - Path: C:\Windows\SysWOW64\xwizard.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC: 
 Resources:
-  - http://www.hexacorn.com/blog/2017/07/31/the-wizard-of-x-oppa-plugx-style/
-  - https://www.youtube.com/watch?v=LwDHX7DVHWU
-  - https://gist.github.com/NickTyrer/0598b60112eaafe6d07789f7964290d5
-Notes: Thanks to Adam - @Hexacorn, Nick Tyrer - @nicktyrer
+  - Link: http://www.hexacorn.com/blog/2017/07/31/the-wizard-of-x-oppa-plugx-style/
+  - Link: https://www.youtube.com/watch?v=LwDHX7DVHWU
+  - Link: https://gist.github.com/NickTyrer/0598b60112eaafe6d07789f7964290d5
+Acknowledgement:
+  - Person: Adam
+    Handle: '@Hexacorn'
+---

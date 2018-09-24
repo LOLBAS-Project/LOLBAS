@@ -1,17 +1,27 @@
 ---
 Name: Wscript.exe
-Description: Execute, Read ADS
-Author: ''
+Description: Used by Windows to execute scripts
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: wscript c:\ads\file.txt:script.vbs
-    Description: Executes the .VBS script stored as an Alternate Data Stream (ADS).
+    Description: Execute script stored in an alternate data stream
+    Usecase: Execute hidden code to evade defensive counter measures
+    Category: Alternate data streams
+    Privileges: User
+    MitreID: T1096
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full Path:
-  - c:\windows\system32\wscript.exe
-  - c:\windows\sysWOW64\wscript.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Windows\System32\wscript.exe
+  - Path: C:\Windows\SysWOW64\wscript.exe
+Code Sample: 
+- Code:
+Detection:
+ - IOC: Wscript.exe executing code from alternate data streams
 Resources:
-  - '?'
-Notes: Thanks to ?
+  - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
+Acknowledgement:
+  - Person: Oddvar Moe
+    Handle: '@oddvarmoe'
+---
