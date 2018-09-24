@@ -55,7 +55,7 @@ Commands:
 Full Path:
   - Path: c:\windows\system32\url.dll
   - Path: c:\windows\syswow64\url.dll
-Code Sample
+Code Sample:
   - Code: ''
 Detection:
   - IOC: ''
