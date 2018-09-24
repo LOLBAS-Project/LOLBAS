@@ -31,14 +31,14 @@ Commands:
 Full Path:
   - Path: C:\Windows\System32\pcalua.exe
 Code Sample: 
-- Code:
+  - Code:
 Detection:
- - IOC:
+  - IOC:
 Resources:
   - Link: https://twitter.com/KyleHanslovan/status/912659279806640128
 Acknowledgement:
   - Person: Kyle Hanslovan
     Handle: '@kylehanslovan'
   - Person: Fab
-    Handle: @0rbz_
+    Handle: '@0rbz_'
 ---

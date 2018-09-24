@@ -10,7 +10,7 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
   - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\\Tools\\calc_exe.inf
     Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
@@ -18,7 +18,7 @@ Commands:
     Category: Execution
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
 Full Path:
   - Path: c:\windows\system32\setupapi.dll
@@ -29,7 +29,7 @@ Code Sample:
   - Code: https://gist.githubusercontent.com/enigma0x3/469d82d1b7ecaf84f4fb9e6c392d25ba/raw/6cb52b88bcc929f5555cd302d9ed848b7e407052/Backdoor-Minimalist.sct
   - Code: https://gist.githubusercontent.com/bohops/0cc6586f205f3691e04a1ebf1806aabd/raw/baf7b29891bb91e76198e30889fbf7d6642e8974/calc_exe.inf
 Detection:
-  - IOC: ''
+  - IOC:
 Resources:
   - Link: https://github.com/huntresslabs/evading-autoruns
   - Link: https://twitter.com/pabraeken/status/994742106852941825
@@ -42,5 +42,5 @@ Acknowledgment:
   - Person: Casey Smith (COM Scriptlet)
     Handle: '@subTee'
   - Person: Nick Carr (Threat Intel)
-    Handle: @ItsReallyNick
+    Handle: '@ItsReallyNick'
 ---

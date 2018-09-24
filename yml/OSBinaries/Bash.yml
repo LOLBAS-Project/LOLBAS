@@ -12,7 +12,7 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10
-    - Command: bash.exe -c calc.exe
+  - Command: bash.exe -c calc.exe
     Description: Executes calc.exe from bash.exe
     Usecase: Performs execution of specified file, can be used to bypass Application Whitelisting.
     Category: AWL Bypass
@@ -24,9 +24,9 @@ Full Path:
   - Path: C:\Windows\System32\bash.exe
   - Path: C:\Windows\SysWOW64\bash.exe
 Code Sample: 
-- Code:
+  - Code:
 Detection:
- - IOC: Child process from bash.exe
+  - IOC: Child process from bash.exe
 Resources:
   - Link: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
 Acknowledgement:

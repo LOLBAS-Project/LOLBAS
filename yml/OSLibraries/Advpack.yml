@@ -49,7 +49,7 @@ Code Sample:
   - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack.inf
   - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack_calc.sct
 Detection:
-  - IOC: ''
+  - IOC:
 Resources:
   - Link: https://bohops.com/2018/02/26/leveraging-inf-sct-fetch-execute-techniques-for-bypass-evasion-persistence/
   - Link: https://twitter.com/ItsReallyNick/status/967859147977850880
@@ -63,5 +63,5 @@ Acknowledgment:
   - Person: Moriarty (RegisterOCX - CMD)
     Handle: '@moriarty_meng'
   - Person: Nick Carr (Threat Intel)
-    Handle: @ItsReallyNick
+    Handle: '@ItsReallyNick'
 ---

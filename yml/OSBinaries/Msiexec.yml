@@ -40,9 +40,9 @@ Full Path:
   - Path: C:\Windows\System32\msiexec.exe
   - Path: C:\Windows\SysWOW64\msiexec.exe
 Code Sample: 
-- Code:
+  - Code:
 Detection:
- - IOC: msiexec.exe getting files from Internet
+  - IOC: msiexec.exe getting files from Internet
 Resources:
   - Link: https://pentestlab.blog/2017/06/16/applocker-bypass-msiexec/
   - Link: https://twitter.com/PhilipTsukerman/status/992021361106268161
@@ -50,5 +50,5 @@ Acknowledgement:
   - Person: netbiosX
     Handle: '@netbiosX'
   - Person: Philip Tsukerman
-    Handle: @PhilipTsukerman
+    Handle: '@PhilipTsukerman'
 ---

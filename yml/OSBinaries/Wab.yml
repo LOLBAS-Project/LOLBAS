@@ -1,4 +1,4 @@
- ---
+---
 Name: Wab.exe
 Description: Windows address book manager
 Author: 'Oddvar Moe'
@@ -16,9 +16,9 @@ Full Path:
   - Path: C:\Program Files\Windows Mail\wab.exe
   - Path: C:\Program Files (x86)\Windows Mail\wab.exe
 Code Sample: 
-- Code:
+  - Code:
 Detection:
- - IOC: WAB.exe should normally never be used
+  - IOC: WAB.exe should normally never be used
 Resources:
   - Link: https://twitter.com/Hexacorn/status/991447379864932352
   - Link: http://www.hexacorn.com/blog/2018/05/01/wab-exe-as-a-lolbin/
