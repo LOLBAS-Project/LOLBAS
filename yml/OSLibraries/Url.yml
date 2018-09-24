@@ -6,7 +6,7 @@ Created: '2018-05-25'
 Commands:
   - Command: rundll32.exe url.dll,OpenURL "C:\test\calc.hta"
     Description: Launch a HTML application payload by calling OpenURL.
-    Usecase: Invoke an HTML Application via mshta.exe (Default Handler).
+    UseCase: Invoke an HTML Application via mshta.exe (Default Handler).
     Category: Execution
     Privileges: User
     MitreID: T1085
@@ -14,7 +14,7 @@ Commands:
     OperatingSystem: Windows
   - Command: rundll32.exe url.dll,OpenURL "C:\test\calc.url"
     Description: Launch an executable payload via proxy through a(n) URL (information) file by calling OpenURL.
-    Usecase: Load an executable payload by calling a .url file with or without quotes.
+    UseCase: Load an executable payload by calling a .url file with or without quotes.
     Category: Execution
     Privileges: User
     MitreID: T1085
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows
   - Command: rundll32.exe url.dll,OpenURL file://^C^:^/^W^i^n^d^o^w^s^/^s^y^s^t^e^m^3^2^/^c^a^l^c^.^e^x^e
     Description: Launch an executable by calling OpenURL.
-    Usecase: Load an executable payload by specifying the file protocol handler (obfuscated).
+    UseCase: Load an executable payload by specifying the file protocol handler (obfuscated).
     Category: Execution
     Privileges: User
     MitreID: T1085
@@ -30,7 +30,7 @@ Commands:
     OperatingSystem: Windows
   - Command: rundll32.exe url.dll,FileProtocolHandler calc.exe
     Description: Launch an executable by calling FileProtocolHandler.
-    Usecase: Launch an executable.
+    UseCase: Launch an executable.
     Category: Execution
     Privileges: User
     MitreID: T1085
@@ -38,7 +38,7 @@ Commands:
     OperatingSystem: Windows
   - Command: rundll32.exe url.dll,FileProtocolHandler file://^C^:^/^W^i^n^d^o^w^s^/^s^y^s^t^e^m^3^2^/^c^a^l^c^.^e^x^e
     Description: Launch an executable by calling FileProtocolHandler.
-    Usecase: Load an executable payload by specifying the file protocol handler (obfuscated).
+    UseCase: Load an executable payload by specifying the file protocol handler (obfuscated).
     Category: Execution
     Privileges: User
     MitreID: T1085
@@ -46,24 +46,26 @@ Commands:
     OperatingSystem: Windows
   - Command: rundll32.exe url.dll,FileProtocolHandler file:///C:/test/test.hta
     Description: Launch a HTML application payload by calling FileProtocolHandler.
-    Usecase: Invoke an HTML Application via mshta.exe (Default Handler).
+    UseCase: Invoke an HTML Application via mshta.exe (Default Handler).
     Category: Execution
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
 Full Path:
-  - path: c:\windows\system32\url.dll
-  - path: c:\windows\syswow64\url.dll
-Code Sample: []
-Detection: []
+  - Path: c:\windows\system32\url.dll
+  - Path: c:\windows\syswow64\url.dll
+Code Sample
+  - Code: ''
+Detection:
+  - IOC: ''
 Resources:
-  - resource: https://bohops.com/2018/03/17/abusing-exported-functions-and-exposed-dcom-interfaces-for-pass-thru-command-execution-and-lateral-movement/
-  - resource: https://twitter.com/DissectMalware/status/995348436353470465
-  - resource: https://twitter.com/bohops/status/974043815655956481
-  - resource: https://twitter.com/yeyint_mth/status/997355558070927360
-  - resource: https://twitter.com/Hexacorn/status/974063407321223168
-  - resource: https://windows10dll.nirsoft.net/url_dll.html
+  - Link: https://bohops.com/2018/03/17/abusing-exported-functions-and-exposed-dcom-interfaces-for-pass-thru-command-execution-and-lateral-movement/
+  - Link: https://twitter.com/DissectMalware/status/995348436353470465
+  - Link: https://twitter.com/bohops/status/974043815655956481
+  - Link: https://twitter.com/yeyint_mth/status/997355558070927360
+  - Link: https://twitter.com/Hexacorn/status/974063407321223168
+  - Link: https://windows10dll.nirsoft.net/url_dll.html
 Acknowledgment:
   - Person: Adam (OpenURL)
     Handle: '@hexacorn'
@@ -73,3 +75,4 @@ Acknowledgment:
     Handle: '@DissectMalware'
   - Person: r0lan (Obfuscation)
     Handle: '@r0lan'
+---
