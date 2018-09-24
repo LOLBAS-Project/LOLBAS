@@ -6,21 +6,22 @@ Created: '2018-05-25'
 Commands:
   - Command: rundll32.exe pcwutl.dll,LaunchApplication calc.exe
     Description: Launch executable by calling the LaunchApplication function.
-    Usecase: Launch an executable.
+    UseCase: Launch an executable.
     Category: Execution
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
 Full Path:
-  - path: c:\windows\system32\pcwutl.dll
-  - path: c:\windows\syswow64\pcwutl.dll
+  - Path: c:\windows\system32\pcwutl.dll
+  - Path: c:\windows\syswow64\pcwutl.dll
 Code Sample:
-  - ''
-Detection: []
+  - Code: ''
+Detection:
+  - IOC:
 Resources:
-  - resource: https://twitter.com/harr0ey/status/989617817849876488
-  - resource: https://windows10dll.nirsoft.net/pcwutl_dll.html
+  - Link: https://twitter.com/harr0ey/status/989617817849876488
+  - Link: https://windows10dll.nirsoft.net/pcwutl_dll.html
 Acknowledgment:
   - Person: Matt harr0ey
     Handle: '@harr0ey'
