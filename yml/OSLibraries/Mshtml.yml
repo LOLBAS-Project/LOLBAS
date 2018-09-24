@@ -6,21 +6,23 @@ Created: '2018-05-25'
 Commands:
   - Command: rundll32.exe Mshtml.dll,PrintHTML "C:\temp\calc.hta"
     Description: Invoke an HTML Application via mshta.exe (Note - Pops a security warning and a print dialogue box).
-    Usecase: Launch an HTA application.
+    UseCase: Launch an HTA application.
     Category: Execution
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
 Full Path:
-  - path: c:\windows\system32\mshtml.dll
-  - path: c:\windows\syswow64\mshtml.dll
+  - Path: c:\windows\system32\mshtml.dll
+  - Path: c:\windows\syswow64\mshtml.dll
 Code Sample:
-  - ''
-Detection: []
+  - Code: ''
+Detection:
+  - IOC: ''
 Resources:
-  - resource: https://twitter.com/pabraeken/status/998567549670477824
-  - resource: https://windows10dll.nirsoft.net/mshtml_dll.html
+  - Link: https://twitter.com/pabraeken/status/998567549670477824
+  - Link: https://windows10dll.nirsoft.net/mshtml_dll.html
 Acknowledgment:
   - Person: Pierre-Alexandre Braeken
     Handle: '@pabraeken'
+---
