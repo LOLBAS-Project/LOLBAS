@@ -28,7 +28,7 @@ function Convert-YamlToMD
         "---" | Add-Content $Outfile
         "name: $($YamlObject.Name)"| Add-Content $Outfile
         "description: $($YamlObject.Description)"| Add-Content $Outfile
-        "function:"| Add-Content $Outfile
+        "functions:"| Add-Content $Outfile
                 
         foreach($cmd in $YamlObject.Commands)
         {
@@ -39,22 +39,28 @@ function Convert-YamlToMD
             "      mitrelink: $($cmd.MitreLink)"| Add-Content $Outfile
             "      operatingsystem: $($cmd.Operatingsystem)"| Add-Content $Outfile
             "      privileges: $($cmd.Privileges)"| Add-Content $Outfile
+            "      usecase: $($cmd.UseCase)"| Add-Content $Outfile
         }
         "resources:"| Add-Content $Outfile
         foreach($link in $YamlObject.Resources)
         {
-            "    - resource: $($link)"| Add-Content $Outfile
+            "    - resource: $($link.link)"| Add-Content $Outfile
         }
         "fullpath:"| Add-Content $Outfile
         foreach($path in $YamlObject.'Full path')
         {
-           "    - Path: $($path)"| Add-Content $Outfile
+           "    - path: $($path.path)"| Add-Content $Outfile
+        }
+        "detection:"| Add-Content $Outfile 
+        foreach($IOC in $YamlObject.Detection)
+        {
+            "  - IOC: $($IOC.IOC)"| Add-Content $Outfile 
         }
         "acknowledgement:"| Add-Content $Outfile 
         foreach($pers in $YamlObject.Acknowledgement)
         {
-        "  - Person: $($pers.Person)"| Add-Content $Outfile
-        "    Handle: `'$($pers.Handle)`'"| Add-Content $Outfile
+            "  - Person: $($pers.Person)"| Add-Content $Outfile
+            "    Handle: `'$($pers.Handle)`'"| Add-Content $Outfile
         }
         "---" | Add-Content $Outfile
     }
@@ -117,11 +123,11 @@ function Invoke-GenerateMD
 
 #Generate the stuff!
 #Bins
-##Invoke-GenerateMD -YmlPath "$mainpath\yml\OSBinaries" -Outpath "c:\tamp\Binaries" -Verbose
-Invoke-GenerateMD -YmlPath "$mainpath\yml\OtherMSBinaries" -Outpath "c:\tamp\OtherMSBinaries" -Verbose
+Invoke-GenerateMD -YmlPath "$mainpath\yml\OSBinaries" -Outpath "c:\tamp\Binaries" -Verbose
+#Invoke-GenerateMD -YmlPath "$mainpath\yml\OtherMSBinaries" -Outpath "c:\tamp\OtherMSBinaries" -Verbose
 
 ##Scripts
-##Invoke-GenerateMD -YmlPath "$mainpath\yml\OSScripts" -Outpath "c:\tamp\Scripts" -Verbose
+#Invoke-GenerateMD -YmlPath "$mainpath\yml\OSScripts" -Outpath "c:\tamp\Scripts" -Verbose
 
 ##Libs
-##Invoke-GenerateMD -YmlPath "$mainpath\yml\OSLibraries" -Outpath "c:\tamp\Libraries" -Verbose
+#Invoke-GenerateMD -YmlPath "$mainpath\yml\OSLibraries" -Outpath "c:\tamp\Libraries" -Verbose
