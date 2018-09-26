@@ -31,7 +31,7 @@ Commands:
   - Command: mshta.exe "C:\ads\file.txt:file.hta"
     Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
     Usecase: Execute code hidden in alternate data stream
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1170
     MitreLink: https://attack.mitre.org/wiki/Technique/T1170

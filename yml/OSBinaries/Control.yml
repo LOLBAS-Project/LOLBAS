@@ -7,7 +7,7 @@ Commands:
   - Command: control.exe c:\windows\tasks\file.txt:evil.dll
     Description: Execute evil.dll which is stored in an Alternate Data Stream (ADS).
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1196
     MitreLink: https://attack.mitre.org/wiki/Technique/T1196

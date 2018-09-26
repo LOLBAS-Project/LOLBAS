@@ -7,7 +7,7 @@ Commands:
   - Command: sc create evilservice binPath="\"c:\\ADS\\file.txt:cmd.exe\" /c echo works > \"c:\ADS\works.txt\"" DisplayName= "evilservice" start= auto\ & sc start evilservice
     Description: Creates a new service and executes the file stored in the ADS.
     Usecase: Execute binary file hidden inside an alternate data stream
-    Category: Alternate data streams 
+    Category: ADS 
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096

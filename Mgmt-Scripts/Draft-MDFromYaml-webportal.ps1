@@ -3,7 +3,10 @@
 #Author: Oddvar Moe
 #If you can use it, be my guest!
 
-$mainpath = "C:\data\gitprojects\LOLBAS"
+# Install-Module powershell-yaml
+# import-module powershell-yaml
+
+$mainpath = "C:\LOLBAS"
 
 
 function Convert-YamlToMD

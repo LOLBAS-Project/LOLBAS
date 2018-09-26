@@ -23,7 +23,7 @@ Commands:
   - Command: expand \\webdav\folder\file.bat c:\ADS\file.txt:file.bat
     Description: Copies source file to destination Alternate Data Stream (ADS)
     Usecase: Copies files from A to B
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096

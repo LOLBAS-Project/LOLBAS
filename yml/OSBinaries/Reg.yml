@@ -7,7 +7,7 @@ Commands:
   - Command: reg export HKLM\SOFTWARE\Microsoft\Evilreg c:\ads\file.txt:evilreg.reg
     Description: Export the target Registry key and save it to the specified .REG file within an Alternate data stream.
     Usecase: Hide/plant registry information in Alternate data stream for later use
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096

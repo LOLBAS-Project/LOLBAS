@@ -7,7 +7,7 @@ Commands:
   - Command: makecab c:\ADS\autoruns.exe c:\ADS\cabtest.txt:autoruns.cab
     Description: Compresses the target file into a CAB file stored in the Alternate Data Stream (ADS) of the target file.
     Usecase: Hide data compressed into an alternate data stream
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096

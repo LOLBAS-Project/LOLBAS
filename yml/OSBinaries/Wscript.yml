@@ -7,7 +7,7 @@ Commands:
   - Command: wscript c:\ads\file.txt:script.vbs
     Description: Execute script stored in an alternate data stream
     Usecase: Execute hidden code to evade defensive counter measures
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096

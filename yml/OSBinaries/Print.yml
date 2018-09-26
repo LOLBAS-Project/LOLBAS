@@ -7,7 +7,7 @@ Commands:
   - Command: print /D:C:\ADS\File.txt:file.exe C:\ADS\File.exe
     Description: Copy file.exe into the Alternate Data Stream (ADS) of file.txt.
     Usecase: Hide binary file in alternate data stream to potentially bypass defensive counter measures
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096

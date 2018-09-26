@@ -7,7 +7,7 @@ Commands:
   - Command: regedit /E c:\ads\file.txt:regfile.reg HKEY_CURRENT_USER\MyCustomRegKey
     Description: Export the target Registry key to the specified .REG file.
     Usecase: Hide registry data in alternate data stream
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
@@ -15,7 +15,7 @@ Commands:
   - Command: regedit C:\ads\file.txt:regfile.reg"
     Description: Import the target .REG file into the Registry.
     Usecase: Import hidden registry data from alternate data stream
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
