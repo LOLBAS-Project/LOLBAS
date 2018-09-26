@@ -52,7 +52,7 @@ function Convert-YamlToMD
             if($grp.Category -eq "Upload"){$Uplo += $grp}
             if($grp.Category -eq "Encode"){$Enco += $grp}
             if($grp.Category -eq "Decode"){$Deco += $grp}
-            if($grp.Category -eq "Alternate data streams"){$ADS += $grp}
+            if($grp.Category -eq "ADS"){$ADS += $grp}
             if($grp.Category -eq "Copy"){$Copy += $grp}
             if($grp.Category -eq "Credentials"){$Cred += $grp}
             if($grp.Category -eq "Compile"){$Comp += $grp}
@@ -333,6 +333,8 @@ function Invoke-GenerateMD
 }
 
 #Generate the stuff!
+# Remember to delete existing files first or else it will only append...
+
 #Bins
 Invoke-GenerateMD -YmlPath "$mainpath\yml\OSBinaries" -Outpath "c:\tamp\Binaries" -Verbose
 Invoke-GenerateMD -YmlPath "$mainpath\yml\OtherMSBinaries" -Outpath "c:\tamp\OtherMSBinaries" -Verbose

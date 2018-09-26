@@ -21,14 +21,17 @@ Commands:
     MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows
 Full Path:
-  - C:\Program Files\Microsoft SQL Server\90\Shared\SQLDumper.exe
-  - C:\Program Files (x86)\Microsoft Office\root\vfs\ProgramFilesX86\Microsoft Analysis\AS OLEDB\140\SQLDumper.exe
-Code Sample: []
-Detection: []
+  - Path: C:\Program Files\Microsoft SQL Server\90\Shared\SQLDumper.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\root\vfs\ProgramFilesX86\Microsoft Analysis\AS OLEDB\140\SQLDumper.exe
+Code Sample:
+  - Code:
+Detection:
+  - IOC:
 Resources:
-  - https://twitter.com/countuponsec/status/910969424215232518
-  - https://twitter.com/countuponsec/status/910977826853068800
-  - https://support.microsoft.com/en-us/help/917825/how-to-use-the-sqldumper-exe-utility-to-generate-a-dump-file-in-sql-se
+  - Link: https://twitter.com/countuponsec/status/910969424215232518
+  - Link: https://twitter.com/countuponsec/status/910977826853068800
+  - Link: https://support.microsoft.com/en-us/help/917825/how-to-use-the-sqldumper-exe-utility-to-generate-a-dump-file-in-sql-se
 Acknowledgement:
   - Person: Luis Rocha
     Handle: '@countuponsec'
+---

@@ -7,7 +7,7 @@ Commands:
   - Command: Mftrace.exe cmd.exe
     Description: Launch cmd.exe as a subprocess of Mftrace.exe.
     Usecase: Local execution of cmd.exe as a subprocess of Mftrace.exe.
-    Category: Execution
+    Category: Execute
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
@@ -15,20 +15,23 @@ Commands:
   - Command: Mftrace.exe powershell.exe
     Description: Launch cmd.exe as a subprocess of Mftrace.exe.
     Usecase: Local execution of powershell.exe as a subprocess of Mftrace.exe.
-    Category: Execution
+    Category: Execute
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full Path:
-  - C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x86
-  - C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x64
-  - C:\Program Files (x86)\Windows Kits\10\bin\x86
-  - C:\Program Files (x86)\Windows Kits\10\bin\x64
-Code Sample: []
-Detection: []
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x86
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x64
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x86
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x64
+Code Sample:
+  - Code:
+Detection:
+  - IOC:
 Resources:
-  - https://twitter.com/0rbz_/status/988911181422186496 (Currently not accessible)
+  - Link: https://twitter.com/0rbz_/status/988911181422186496
 Acknowledgement:
   - Person: fabrizio
     Handle: '@0rbz_'
+---

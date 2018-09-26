@@ -12,12 +12,16 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
-Full Path: ''
-Code Sample: []
-Detection: []
+Full Path:
+  - Path:
+Code Sample:
+  - Code:
+Detection:
+  - IOC:
 Resources:
-  - https://twitter.com/subTee/status/793151392185589760
-  - https://attack.mitre.org/wiki/Execution
+  - Link: https://twitter.com/subTee/status/793151392185589760
+  - Link: https://attack.mitre.org/wiki/Execution
 Acknowledgment:
   - Person: Casey Smith
     Handle: '@subTee'
+---

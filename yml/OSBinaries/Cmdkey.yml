@@ -18,7 +18,7 @@ Full Path:
 Code Sample: 
 - Code:
 Detection:
- - IOC: Usage of this command could be and IOC
+ - IOC: Usage of this command could be an IOC
 Resources:
   - Link: https://www.peew.pw/blog/2017/11/26/exploring-cmdkey-an-edge-case-for-privilege-escalation
   - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey

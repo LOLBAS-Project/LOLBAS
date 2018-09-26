@@ -1,7 +1,7 @@
 ---
 Name: Ieadvpack.dll
 Description: INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.
-Author: ''
+Author:
 Created: '2018-05-25'
 Commands:
   - Command: rundll32.exe ieadvpack.dll,LaunchINFSection c:\test.inf,DefaultInstall_SingleUser,1,
@@ -49,7 +49,7 @@ Code Sample:
   - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Ieadvpack.inf
   - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Ieadvpack_calc.sct
 Detection:
-  - IOC: ''
+  - IOC:
 Resources:
   - Link: https://bohops.com/2018/03/10/leveraging-inf-sct-fetch-execute-techniques-for-bypass-evasion-persistence-part-2/
   - Link: https://twitter.com/pabraeken/status/991695411902599168

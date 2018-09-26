@@ -1,7 +1,7 @@
 ---
 Name: Setupapi.dll
 Description: Windows Setup Application Programming Interface
-Author: ''
+Author:
 Created: '2018-05-25'
 Commands:
   - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\shady.inf

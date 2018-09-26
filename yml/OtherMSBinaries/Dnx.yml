@@ -7,18 +7,20 @@ Commands:
   - Command: dnx.exe consoleapp
     Description: Execute C# code located in the consoleapp folder via 'Program.cs' and 'Project.json' (Note - Requires dependencies)
     Usecase: Local execution of C# project stored in consoleapp folder.
-    Category: Execution
+    Category: Execute
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full Path:
-  - N/A
-Code Sample: []
-Detection: []
+  - Path: N/A
+Code Sample:
+  - Code:
+Detection:
+  - IOC:
 Resources:
-  - https://enigma0x3.net/2016/11/17/bypassing-application-whitelisting-by-using-dnx-exe/
+  - Link: https://enigma0x3.net/2016/11/17/bypassing-application-whitelisting-by-using-dnx-exe/
 Acknowledgement:
   - Person: Matt Nelson
     Handle: '@enigma0x3'
-
+---

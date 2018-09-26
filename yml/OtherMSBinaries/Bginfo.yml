@@ -29,13 +29,14 @@ Commands:
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full Path:
-  - No fixed path
+  - Path: No fixed path
 Code Sample:
   - Code:
 Detection:
   - IOC:
 Resources:
-  - https://oddvar.moe/2017/05/18/bypassing-application-whitelisting-with-bginfo/
+  - Link: https://oddvar.moe/2017/05/18/bypassing-application-whitelisting-with-bginfo/
 Acknowledgement:
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
+---

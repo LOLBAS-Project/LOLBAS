@@ -12,11 +12,15 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
-Full Path: ''
-Code Sample: []
-Detection: []
+Full Path:
+  - Path:
+Code Sample:
+  - Code:
+Detection:
+  - IOC:
 Resources:
-  - https://enigma0x3.net/2016/11/21/bypassing-application-whitelisting-by-using-rcsi-exe/
+  - Link: https://enigma0x3.net/2016/11/21/bypassing-application-whitelisting-by-using-rcsi-exe/
 Acknowledgement:
   - Person: Matt Nelson
     Handle: '@enigma0x3'
+---

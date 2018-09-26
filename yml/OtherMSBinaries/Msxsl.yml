@@ -21,10 +21,15 @@ Commands:
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full Path:
-  - ''
-Code Sample: []
-Detection: []
+  - Path:
+Code Sample:
+  - Code:
+Detection:
+  - IOC:
 Resources:
-  - https://twitter.com/subTee/status/877616321747271680
-  - https://github.com/3gstudent/Use-msxsl-to-bypass-AppLocker
-Notes: Thanks to Casey Smith - @subTee (Finding), 3gstudent - @3gstudent (Remote)
+  - Link: https://twitter.com/subTee/status/877616321747271680
+  - Link: https://github.com/3gstudent/Use-msxsl-to-bypass-AppLocker
+Acknowledgement:
+  - Person: Casey Smith
+    Handle: '@subtee'
+---
