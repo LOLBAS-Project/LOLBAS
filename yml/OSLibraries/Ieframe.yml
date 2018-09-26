@@ -24,9 +24,10 @@ Resources:
   - Link: https://bohops.com/2018/03/17/abusing-exported-functions-and-exposed-dcom-interfaces-for-pass-thru-command-execution-and-lateral-movement/
   - Link: https://twitter.com/bohops/status/997690405092290561
   - Link: https://windows10dll.nirsoft.net/ieframe_dll.html
-Acknowledgment:
+Acknowledgement:
   - Person: Jimmy
     Handle: '@bohops'
   - Person: Adam
     Handle: '@hexacorn'
 ---
+

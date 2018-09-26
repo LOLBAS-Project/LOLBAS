@@ -15,7 +15,7 @@ Commands:
   - Command: rundll32 syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 c:\temp\something.inf
     Description: Launch an executable file via the SetupInfObjectInstallAction function and .inf file section directive.
     UseCase: Load an executable payload.
-    Category: Execution
+    Category: Execute
     Privileges: User
     MitreID: T1085
     MitreLink: https://attack.mitre.org/wiki/Technique/T1085
@@ -34,7 +34,7 @@ Resources:
   - Link: https://twitter.com/harr0ey/status/975350238184697857
   - Link: https://twitter.com/bohops/status/975549525938135040
   - Link: https://windows10dll.nirsoft.net/syssetup_dll.html
-Acknowledgment:
+Acknowledgement:
   - Person: Pierre-Alexandre Braeken (Execute)
     Handle: '@pabraeken'
   - Person: Matt harr0ey (Execute)

@@ -15,7 +15,7 @@ Commands:
   - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\\Tools\\calc_exe.inf
     Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
     UseCase: Load an executable payload.
-    Category: Execution
+    Category: Execute
     Privileges: User
     MitreID: T1085
     MitreLink: https://attack.mitre.org/wiki/Technique/T1085
@@ -34,7 +34,7 @@ Resources:
   - Link: https://github.com/huntresslabs/evading-autoruns
   - Link: https://twitter.com/pabraeken/status/994742106852941825
   - Link: https://windows10dll.nirsoft.net/setupapi_dll.html
-Acknowledgment:
+Acknowledgement:
   - Person: Kyle Hanslovan (COM Scriptlet)
     Handle: '@KyleHanslovan'
   - Person:  Huntress Labs (COM Scriptlet)

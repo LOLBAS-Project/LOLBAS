@@ -23,7 +23,7 @@ Commands:
   - Command: rundll32.exe ieadvpack.dll,RegisterOCX test.dll
     Description: Launch a DLL payload by calling the RegisterOCX function.
     UseCase: Load a DLL payload.
-    Category: Execution
+    Category: Execute
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
@@ -31,14 +31,14 @@ Commands:
   - Command: rundll32.exe ieadvpack.dll,RegisterOCX calc.exe
     Description: Launch an executable by calling the RegisterOCX function.
     UseCase: Run an executable payload.
-    Category: Execution
+    Category: Execute
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
   - Command: rundll32 ieadvpack.dll, RegisterOCX "cmd.exe /c calc.exe"
     Description: Launch command line by calling the RegisterOCX function.
     UseCase: Run an executable payload.
-    Category: Execution
+    Category: Execute
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
@@ -54,7 +54,7 @@ Resources:
   - Link: https://bohops.com/2018/03/10/leveraging-inf-sct-fetch-execute-techniques-for-bypass-evasion-persistence-part-2/
   - Link: https://twitter.com/pabraeken/status/991695411902599168
   - Link: https://twitter.com/0rbz_/status/974472392012689408
-Acknowledgment:
+Acknowledgement:
   - Person: Jimmy (LaunchINFSection)
     Handle: '@bohops'
   - Person: Fabrizio (RegisterOCX - DLL)
