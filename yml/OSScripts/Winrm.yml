@@ -53,6 +53,8 @@ Resources:
   - Link: https://posts.specterops.io/application-whitelisting-bypass-and-arbitrary-unsigned-code-execution-technique-in-winrm-vbs-c8c24fb40404
   - Link: https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf
 Acknowledgement:
+  - Person: Matt Graeber
+    Handle: '@mattifestation'
   - Person: Matt Nelson
     Handle: '@enigma0x3'
   - Person: Casey Smith
