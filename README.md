@@ -8,7 +8,7 @@ There are currently three different lists:
 * [LOLLibs](LOLLibs.md)
 * [LOLScripts](LOLScripts.md)
 
-The above files can be found behind a fancy frontend here: https://lolbas-project.github.io (thanks @xenosCR for this bit of eyecandy).
+The above files can be found behind a fancy frontend here: https://lolbas-project.github.io (thanks @ConsciousHacker for this bit of eyecandy and the team over at https://gtfobins.github.io/).
 
 ## Goal
 
