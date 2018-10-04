@@ -2,118 +2,70 @@
 
 <img src="https://github.com/api0cradle/LOLBAS/raw/master/Logo/LOLBAS.png" height="250">
 
+There are currently three different lists:
 
-There are currently three different lists.
+* [LOLBins](LOLBins.md)
+* [LOLLibs](LOLLibs.md)
+* [LOLScripts](LOLScripts.md)
 
-* [LOLBins](LOLBins.md)    
-* [LOLLibs](LOLLibs.md)    
-* [LOLScripts](LOLScripts.md)    
-
+The above files can be found behind a fancy frontend here: https://lolbas-project.github.io (thanks @xenosCR for this bit of eyecandy).
 
 ## Goal
-The goal of the LOLBAS project are to document every binary, script and library that can be used for Living Off The Land techniques.   
-Primarily files that offer "extra" functionality. 
 
+The goal of the LOLBAS project is to document every binary, script, and library that can be used for Living Off The Land techniques.
 
-## Definition
+## Criteria
 
-* Must be a Microsoft signed file. (Native to the OS or downloaded from Microsoft site)
-* Only extra "unexpected" functionality is interesting (Not interesting to document what it was intended for)
-  * Exceptions are Application Whitelisting bypasses
-* Primary focus is stuff that can be leveraged by APT or in Red Teaming
+A LOLBin/Lib/Script must:
 
-* Functionality can include:
-   * Executing code
-      * Arbitrary code execution
-      * Pass-through execution of other programs (unsigned), script (via a LOLBin)
-   * Compile code
-   * File operations
-      * downloading
-      * upload
-      * copy
-    * Persistence
-      * pass-through persistence utilizing existing LOLBin
-      * persistence (Hide data in ADS, execute at logon etc)
-    * UAC bypass
-    * Credentials
-    * Dumping process
-    * Surveillance (keylogger, network trace)
-    * Evade logging/remove log entry
-    * DLL Side-Loading/Hijacking (Binary must maintain path integrity - e.g. Without copying a binary to another folder that the user controls)
+* Be a Microsoft-signed file, either native to the OS or downloaded from Microsoft.
+* Have extra "unexpected" functionality. It is not interesting to document intended use cases.
+  * Exceptions are application whitelisting bypasses
+* Have functionality that would be useful to an APT or red team
 
+Interesting functionality can include:
+
+* Executing code
+  * Arbitrary code execution
+  * Pass-through execution of other programs (unsigned) or scripts (via a LOLBin)
+* Compiling code
+* File operations
+  * Downloading
+  * Upload
+  * Copy
+* Persistence
+  * Pass-through persistence utilizing existing LOLBin
+  * Persistence (e.g. hide data in ADS, execute at logon)
+* UAC bypass
+* Credential theft
+* Dumping process memory
+* Surveillance (e.g. keylogger, network trace)
+* Log evasion/modification
+* DLL side-loading/hijacking without being relocated elsewhere in the filesystem.
 
 ## YML
-A yml version of every file is located under the yml folder. 
-This is the master for all things LOLBAS. 
-We generate the MD files from this and later it will also be the base for an upcoming webportal.
 
+All things LOLBAS are stored under the `yml` folder. These files are then converted to markdown for your viewing pleasure. If you're submitting a PR, make your changes to the `yml` version of the file and we'll do the necessary conversions.
 
-## STORY
-"Living off the land" was coined by Christopher Campbell (@obscuresec) & Matt Graeber (@mattifestation)    
-One of the first "Living Off The Land" talks is this one:
-https://www.youtube.com/watch?v=j-r6UonEkUw   
+## The History of the LOLBin
 
-The term LOLBins came from a twitter discussion on what to call these binaries that can be used by an attacker to perform other actions than what the binary was designed to do. 
-LOLBins was first proposed by Philip Goh (@MathCasualty) here:
-https://twitter.com/MathCasualty/status/969174982579273728
+The phrase "Living off the land" was coined by Christopher Campbell (@obscuresec) & Matt Graeber (@mattifestation) at [DerbyCon 3](https://www.youtube.com/watch?v=j-r6UonEkUw).
 
-The term LOLScripts came from Jimmy (@bohops): 
-https://twitter.com/bohops/status/984828803120881665
+The term LOLBins came from a Twitter discussion on what to call binaries that can be used by an attacker to perform actions beyond their original purpose. Philip Goh (@MathCasualty) [proposed LOLBins](https://twitter.com/MathCasualty/status/969174982579273728). A highly scientific internet poll ensued, and after a general consensus (69%) was reached, the name was [made official](https://twitter.com/Oddvarmoe/status/985432848961343488). Jimmy (@bohops) [followed up with LOLScripts](https://twitter.com/bohops/status/984828803120881665). No poll was taken.
 
 Common hashtags for these files are:
 
-#LOLBin   
-#LOLBins   
-#LOLScript   
-#LOLScripts   
-#LOLLib   
-#LOLLibs   
+* #LOLBin
+* #LOLBins
+* #LOLScript
+* #LOLScripts
+* #LOLLib
+* #LOLLibs
 
-A "highly scientific poll" was also conducted to agree (69% yes) on the name LOLBins.
-https://twitter.com/Oddvarmoe/status/985432848961343488 
+## Thanks
 
-The domain http://lolbins.com has been registered by an unknown individual and redirected it to this project. (Thank you)
-The domain http://lolbas-project.com has been registered by Jimmy (@bohops). (Thanks!)
-The awesome logos in the logo folder was provided by Adam Nadrowski (@_sup_mane) - Thank you so much man! 
+As with many open-source projects, this one is the product of a community and we would like to thank ours:
 
-Love this logo:   
-<img src="https://github.com/api0cradle/LOLBAS/raw/master/Logo/LOL1.png" height="250">
-   
-    
-## Versions - Roadmap
-All features are added to the issues in this repo. 
-
-### 1.0
-- [x] Hosted https://github.com/api0cradle/LOLBAS/
-- [x] Only MD files
-    
-       
-### 2.0 -- Current
-- [x] Moved from api0cradle and hosted here on this repo (https://github.com/LOLBAS-Project/LOLBAS)
-- [x] Everything converted to YML files   
-- [x] MD files generated from YML files
-- [x] Clearer definition of a LOLBin    
-- [ ] Management scripts
-- [x] New template
-   
-    	
-### 2.1
-- [ ] Migration to new template
-- [ ] More categories - Part of the new template
-- [ ] ATT&CK Mitre mapping
-- [ ] Privileges required by binary
-- [ ] Jekyll frontend
-
-   
-   
-### 2.2
-- [ ] LOLBIN GUID - Unique ID for each bin
-- [ ]Sub-Categories
-  - [ ] Signed executing unsigned
-  - [ ] Signed executing signed 
-  - [ ] Split commands into command, argument structure, and example. i.e. Command: cmstp.exe; ArgStructure: /ini /s <inf_file>; Example: cmstp.exe /ini /s c:\cmstp\CorpVPN.inf
-
-  
-### 2.3
-- [ ] Tests for PRs to ensure fields are valid
-- [ ]Provide the project in DB format (sqlite)
+* The domain http://lolbins.com has been registered by an unknown individual and redirected it to this project.
+* The domain http://lolbas-project.com has been registered by Jimmy (@bohops).
+* The logos for the project were created by Adam Nadrowski (@_sup_mane). We #@&!!@#! love them.
