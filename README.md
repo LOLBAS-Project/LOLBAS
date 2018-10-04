@@ -43,10 +43,6 @@ Interesting functionality can include:
 * Log evasion/modification
 * DLL side-loading/hijacking without being relocated elsewhere in the filesystem.
 
-## YML
-
-All things LOLBAS are stored under the `yml` folder. These files are then converted to markdown for your viewing pleasure. If you're submitting a PR, make your changes to the `yml` version of the file and we'll do the necessary conversions.
-
 ## The History of the LOLBin
 
 The phrase "Living off the land" was coined by Christopher Campbell (@obscuresec) & Matt Graeber (@mattifestation) at [DerbyCon 3](https://www.youtube.com/watch?v=j-r6UonEkUw).
