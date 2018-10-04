@@ -28,6 +28,14 @@ Commands:
     MitreID: T1216
     MitreLink: https://attack.mitre.org/wiki/Technique/T1216
     OperatingSystem: Windows 10
+ - Command: '%SystemDrive%\BypassDir\cscript //nologo %windir%\System32\winrm.vbs get wmicimv2/Win32_Process?Handle=4 -format:pretty'
+    Description: Bypass AWL solutions by copying and executing cscript.exe and malicious XSL documents from attacker controlled location
+    Usecase: Execute aribtrary, unsigned code via XSL script
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1216
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1216
+    OperatingSystem: Windows 10
 Full Path:
   - Path: C:\Windows\System32\winrm.vbs
   - Path: C:\Windows\SysWOW64\winrm.vbs
@@ -42,6 +50,8 @@ Resources:
   - Link: https://github.com/enigma0x3/windows-operating-system-archaeology
   - Link: https://redcanary.com/blog/lateral-movement-winrm-wmi/
   - Link: https://twitter.com/bohops/status/994405551751815170
+  - Link: https://posts.specterops.io/application-whitelisting-bypass-and-arbitrary-unsigned-code-execution-technique-in-winrm-vbs-c8c24fb40404
+  - Link: https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-windows-management-instrumentation.pdf
 Acknowledgement:
   - Person: Matt Nelson
     Handle: '@enigma0x3'
