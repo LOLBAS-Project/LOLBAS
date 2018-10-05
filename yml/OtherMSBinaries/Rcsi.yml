@@ -7,6 +7,14 @@ Commands:
   - Command: rcsi.exe bypass.csx
     Description: Use embedded C# within the csx script to execute the code.
     Usecase: Local execution of arbitrary C# code stored in local CSX file.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows
+  - Command: rcsi.exe bypass.csx
+    Description: Use embedded C# within the csx script to execute the code.
+    Usecase: Local execution of arbitrary C# code stored in local CSX file.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
