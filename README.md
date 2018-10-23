@@ -43,6 +43,12 @@ Interesting functionality can include:
 * Log evasion/modification
 * DLL side-loading/hijacking without being relocated elsewhere in the filesystem.
 
+## Contributing
+
+If you have found a new LOLBin or LOLScript that you would like to contribute, please review the contributing guidelines located here: https://github.com/LOLBAS-Project/LOLBAS/blob/master/CONTRIBUTING.md
+
+A template for the required format has been provided here: https://github.com/LOLBAS-Project/LOLBAS/blob/master/YML-Template.yml
+
 ## The History of the LOLBin
 
 The phrase "Living off the land" was coined by Christopher Campbell (@obscuresec) & Matt Graeber (@mattifestation) at [DerbyCon 3](https://www.youtube.com/watch?v=j-r6UonEkUw).
