@@ -28,7 +28,7 @@ Commands:
     MitreID: T1216
     MitreLink: https://attack.mitre.org/wiki/Technique/T1216
     OperatingSystem: Windows 10
- - Command: '%SystemDrive%\BypassDir\cscript //nologo %windir%\System32\winrm.vbs get wmicimv2/Win32_Process?Handle=4 -format:pretty'
+  - Command: '%SystemDrive%\BypassDir\cscript //nologo %windir%\System32\winrm.vbs get wmicimv2/Win32_Process?Handle=4 -format:pretty'
     Description: Bypass AWL solutions by copying and executing cscript.exe and malicious XSL documents from attacker controlled location
     Usecase: Execute aribtrary, unsigned code via XSL script
     Category: AWL Bypass
