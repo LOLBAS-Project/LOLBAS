@@ -7,7 +7,7 @@ Commands:
   - Command: schtasks /create /sc minute /mo 1 /tn "Reverse shell" /tr c:\some\directory\revshell.exe
     Description: Create a recurring task to execute every minute.
     Usecase: Create a recurring task, to eg. to keep reverse shell session(s) alive
-    Category: Persistence 
+    Category: Execute 
     Privileges: User
     MitreID: T1053
     MitreLink: https://attack.mitre.org/wiki/Technique/T1053
