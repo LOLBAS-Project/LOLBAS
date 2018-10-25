@@ -6,7 +6,7 @@
 # Install-Module powershell-yaml
 # import-module powershell-yaml
 
-$mainpath = "C:\LOLBAS"
+$mainpath = "C:\gits\LOLBAS"
 
 
 function Convert-YamlToMD

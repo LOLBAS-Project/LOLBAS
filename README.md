@@ -2,13 +2,8 @@
 
 <img src="https://github.com/api0cradle/LOLBAS/raw/master/Logo/LOLBAS.png" height="250">
 
-There are currently three different lists:
-
-* [LOLBins](LOLBins.md)
-* [LOLLibs](LOLLibs.md)
-* [LOLScripts](LOLScripts.md)
-
-The above files can be found behind a fancy frontend here: https://lolbas-project.github.io (thanks @ConsciousHacker for this bit of eyecandy and the team over at https://gtfobins.github.io/).
+All the different files can be found behind a fancy frontend here: https://lolbas-project.github.io (thanks @ConsciousHacker for this bit of eyecandy and the team over at https://gtfobins.github.io/).
+This repo serves as a place where we maintain the YML files that are used by the fancy frontend.
 
 ## Goal
 
@@ -68,6 +63,6 @@ Common hashtags for these files are:
 
 As with many open-source projects, this one is the product of a community and we would like to thank ours:
 
-* The domain http://lolbins.com has been registered by an unknown individual and redirected it to this project.
+* The domain http://lolbins.com has been registered by an unknown individual and redirected it to the old version of this project.
 * The domain http://lolbas-project.com has been registered by Jimmy (@bohops).
 * The logos for the project were created by Adam Nadrowski (@_sup_mane). We #@&!!@#! love them.
