@@ -52,6 +52,14 @@ Commands:
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: rundll32.exe -sta {CLSID}
+    Description: Use Rundll32.exe to load a registered or hijacked COM Server payload.  Also works with ProgID.
+    Usecase: Execute a DLL/EXE COM server payload or ScriptletURL code.
+    Category: Execute
+    Privileges: User
+    MitreID: 
+    MitreLink: 
+    OperatingSystem: Windows 10 (and likely previous versions)
 Full Path:
   - Path: C:\Windows\System32\rundll32.exe
   - Path: C:\Windows\SysWOW64\rundll32.exe
@@ -64,7 +72,12 @@ Resources:
   - Link: https://evi1cg.me/archives/AppLocker_Bypass_Techniques.html#menu_index_7
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/
   - Link: https://oddvar.moe/2018/01/14/putting-data-in-alternate-data-streams-and-how-to-execute-it/
+  - Link: https://bohops.com/2018/06/28/abusing-com-registry-structure-clsid-localserver32-inprocserver32/
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
+  - Person: Oddvar Moe
+    Handle: '@oddvarmoe'
+  - Person: Jimmy
+    Handle: '@bohops'
 ---
