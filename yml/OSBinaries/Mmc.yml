@@ -1,12 +1,12 @@
 ---
 Name: Mmc.exe
-Description: 
+Description: Load snap-ins to locally and remotely manage Windows systems
 Author: '@bohops'
 Created: '2018-12-04'
 Commands:
   - Command: mmc.exe -Embedding c:\path\to\test.msc
-    Description: Load snap-ins to locally and remotely manage Windows systems 
-    Usecase: Configure a snap-in to load a COM custom class (CLSID) that has been added to the registry.
+    Description: Launch a 'backgrounded' MMC process and invoke a COM payload
+    Usecase: Configure a snap-in to load a COM custom class (CLSID) that has been added to the registry
     Category: Execute
     Privileges: User
     MitreID: T1218
