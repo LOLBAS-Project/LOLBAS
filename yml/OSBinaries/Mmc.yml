@@ -12,7 +12,6 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 (and possibly earlier versions)
-
 Full Path:
   - Path: C:\Windows\System32\mmc.exe
   - Path: C:\Windows\SysWOW64\mmc.exe
