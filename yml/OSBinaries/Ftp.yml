@@ -1,0 +1,33 @@
+---
+Name: Ftp.exe
+Description: A binary designed for connecting to FTP servers
+Author: 'Oddvar Moe'
+Created: '2018-12-10'
+Commands:
+  - Command: echo !calc.exe > ftpcommands.txt && ftp -s:ftpcommands.txt
+    Description: Executes the commands you put inside the text file.
+    Usecase: Spawn new process using ftp.exe. Ftp.exe runs cmd /C YourCommand
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10
+Full_Path:
+  - Path: C:\Windows\System32\ftp.exe
+  - Path: C:\Windows\SysWOW64\ftp.exe
+Code_Sample: 
+- Code:
+Detection:
+ - IOC: cmd /c as child process of ftp.exe
+Resources:
+  - Link: https://twitter.com/0xAmit/status/1070063130636640256
+  - Link: https://medium.com/@0xamit/lets-talk-about-security-research-discoveries-and-proper-discussion-etiquette-on-twitter-10f9be6d1939
+  - Link: https://ss64.com/nt/ftp.html
+Acknowledgement:
+  - Person: Casey Smith
+    Handle: '@subtee'
+  - Person: BennyHusted
+    Handle: ''
+  - Person: Amit Serper
+    Handle: '@0xAmit '
+---
