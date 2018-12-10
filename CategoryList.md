@@ -1,14 +1,14 @@
 CATEGORY LIST
 
-ADS
-Execute
-Copy
-Download
-Upload
-AWL bypass
-Dump
-Decode
-Encode
-Credentials
-Compile
-Reconnaissance
+ADS   
+AWL bypass   
+Compile   
+Copy   
+Credentials   
+Decode   
+Download   
+Dump   
+Encode   
+Execute   
+Reconnaissance   
+Upload   
