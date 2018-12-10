@@ -47,7 +47,7 @@ Commands:
   - Command: rundll32 "C:\ads\file.txt:ADSDLL.dll",DllMain
     Description: Use Rundll32.exe to execute a .DLL file stored in an Alternate Data Stream (ADS).
     Usecase: Execute code from alternate data stream
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
@@ -60,10 +60,10 @@ Commands:
     MitreID: 
     MitreLink: 
     OperatingSystem: Windows 10 (and likely previous versions)
-Full Path:
+Full_Path:
   - Path: C:\Windows\System32\rundll32.exe
   - Path: C:\Windows\SysWOW64\rundll32.exe
-Code Sample: 
+Code_Sample: 
 - Code:
 Detection:
  - IOC:

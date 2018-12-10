@@ -9,10 +9,10 @@ Commands:
     Description: Opens the target file with the default application.
   - Command: OpenWith.exe /c C:\testing.msi
     Description: Opens the target file with the default application.
-Full Path:
+Full_Path:
   - c:\windows\system32\Openwith.exe
   - c:\windows\sysWOW64\Openwith.exe
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - https://twitter.com/harr0ey/status/991670870384021504

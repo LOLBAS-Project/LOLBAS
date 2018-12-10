@@ -12,9 +12,9 @@ Commands:
     MitreID: T1218
     MItreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
-Full Path:
+Full_Path:
   - Path: c:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE
-Code Sample:
+Code_Sample:
   - Code:
 Detection:
   - IOC:

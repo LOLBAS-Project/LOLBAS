@@ -26,10 +26,10 @@ Commands:
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
-Full Path:
+Full_Path:
   - Path: c:\windows\system32\shell32.dll
   - Path: c:\windows\syswow64\shell32.dll
-Code Sample:
+Code_Sample:
   - Code:
 Detection:
   - IOC:

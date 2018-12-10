@@ -7,9 +7,9 @@ Categories: []
 Commands:
   - Command: Gpup.exe -w whatever -e c:\Windows\System32\calc.exe
     Description: Execute another command through gpup.exe (Notepad++ binary).
-Full Path:
+Full_Path:
   - 'C:\Program Files (x86)\Notepad++\updater\gpup.exe    '
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - https://twitter.com/pabraeken/status/997892519827558400

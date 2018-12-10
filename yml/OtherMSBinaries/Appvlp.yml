@@ -28,10 +28,10 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 w/Office 2016
-Full Path:
+Full_Path:
   - Path: C:\Program Files\Microsoft Office\root\client\appvlp.exe
   - Path: C:\Program Files (x86)\Microsoft Office\root\client\appvlp.exe
-Code Sample:
+Code_Sample:
   - Code:
 Detection:
   - IOC:

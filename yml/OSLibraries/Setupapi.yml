@@ -20,10 +20,10 @@ Commands:
     MitreID: T1085
     MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
-Full Path:
+Full_Path:
   - Path: c:\windows\system32\setupapi.dll
   - Path: c:\windows\syswow64\setupapi.dll
-Code Sample:
+Code_Sample:
   - Code: https://raw.githubusercontent.com/huntresslabs/evading-autoruns/master/shady.inf
   - Code: https://gist.github.com/enigma0x3/469d82d1b7ecaf84f4fb9e6c392d25ba#file-backdoor-minimalist-sct
   - Code: https://gist.githubusercontent.com/enigma0x3/469d82d1b7ecaf84f4fb9e6c392d25ba/raw/6cb52b88bcc929f5555cd302d9ed848b7e407052/Backdoor-Minimalist.sct

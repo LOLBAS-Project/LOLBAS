@@ -17,9 +17,9 @@ Commands:
     Description: Kill a process.
   - Command: nvuhda6.exe Run foo
     Description: Run process
-Full Path:
+Full_Path:
   - Missing
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - http://www.hexacorn.com/blog/2017/11/10/reusigned-binaries-living-off-the-signed-land/

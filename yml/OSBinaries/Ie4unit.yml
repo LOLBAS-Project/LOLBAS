@@ -12,12 +12,12 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-Full Path:
+Full_Path:
   - Path: c:\windows\system32\ie4unit.exe
   - Path: c:\windows\sysWOW64\ie4unit.exe
   - Path: c:\windows\system32\ieuinit.inf
   - Path: c:\windows\sysWOW64\ieuinit.inf
-Code Sample: 
+Code_Sample: 
 - Code:
 Detection:
  - IOC: ie4unit.exe loading a inf file from outside %windir%

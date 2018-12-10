@@ -7,10 +7,10 @@ Categories: []
 Commands:
   - Command: explorer.exe calc.exe
     Description: 'Executes calc.exe as a subprocess of explorer.exe.'
-Full Path:
+Full_Path:
   - c:\windows\explorer.exe
   - c:\windows\sysWOW64\explorer.exe
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - https://twitter.com/bohops/status/986984122563391488

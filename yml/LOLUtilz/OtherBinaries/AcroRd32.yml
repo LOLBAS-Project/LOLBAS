@@ -7,9 +7,9 @@ Categories: []
 Commands:
   - Command: Replace C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroCEF\RdrCEF.exe by your binary
     Description: Hijack RdrCEF.exe with a payload executable to launch when opening Adobe
-Full Path:
+Full_Path:
   - C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - https://twitter.com/pabraeken/status/997997818362155008

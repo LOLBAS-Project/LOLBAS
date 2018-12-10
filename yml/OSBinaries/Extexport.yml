@@ -12,10 +12,10 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-Full Path:
+Full_Path:
   - Path: C:\Program Files\Internet Explorer\Extexport.exe
   - Path: C:\Program Files\Internet Explorer(x86)\Extexport.exe
-Code Sample: 
+Code_Sample: 
 - Code:
 Detection:
  - IOC: Extexport.exe loads dll and is execute from other folder the original path

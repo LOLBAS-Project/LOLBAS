@@ -36,10 +36,10 @@ Commands:
     MitreID: T1170
     MitreLink: https://attack.mitre.org/wiki/Technique/T1170
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-Full Path:
+Full_Path:
   - Path: C:\Windows\System32\mshta.exe
   - Path: C:\Windows\SysWOW64\mshta.exe
-Code Sample: 
+Code_Sample: 
 - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Mshta_calc.sct
 Detection:
  - IOC: mshta.exe executing raw or obfuscated script within the command-line

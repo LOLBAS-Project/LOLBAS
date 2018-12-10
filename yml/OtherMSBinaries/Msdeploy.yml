@@ -12,9 +12,9 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
-Full Path:
+Full_Path:
   - Path: C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe
-Code Sample:
+Code_Sample:
   - Code:
 Detection:
   - IOC:

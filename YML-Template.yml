@@ -7,7 +7,7 @@ Commands:
   - Command: The command
     Description: Description of the command
     Usecase: A description of the usecase
-    Category: Execution
+    Category: Execute
     Privileges: Required privs
     MitreID: T1055
     MitreLink: https://attack.mitre.org/wiki/Technique/T1055
@@ -15,15 +15,15 @@ Commands:
   - Command: The second command
     Description: Description of the second command
     Usecase: A description of the usecase
-    Category: AWL-Bypass
+    Category: AWL Bypass
     Privileges: Required privs
     MitreID: T1033
     MitreLink: https://attack.mitre.org/wiki/Technique/T1033
     OperatingSystem: Windows 10 All
-Full Path:
+Full_Path:
 - Path: c:\windows\system32\bin.exe
 - Path: c:\windows\syswow64\bin.exe
-Code Sample: 
+Code_Sample: 
 - Code: http://url.com/git.txt
 Detection: 
 - IOC: Event ID 10

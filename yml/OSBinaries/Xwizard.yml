@@ -20,10 +20,10 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-Full Path:
+Full_Path:
   - Path: C:\Windows\System32\xwizard.exe
   - Path: C:\Windows\SysWOW64\xwizard.exe
-Code Sample: 
+Code_Sample: 
 - Code:
 Detection:
  - IOC: 
@@ -38,5 +38,5 @@ Acknowledgement:
   - Person: Nick Tyrer
     Handle: '@NickTyrer'
   - Person: harr0ey
-    Handle: @harr0ey
+    Handle: '@harr0ey'
 ---

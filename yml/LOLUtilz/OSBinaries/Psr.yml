@@ -11,10 +11,10 @@ Commands:
     Description: Capture a maximum of 100 screenshots of the desktop and save them in the target .ZIP file.
   - Command: psr.exe /stop
     Description: Stop the Problem Step Recorder.
-Full Path:
+Full_Path:
   - C:\Windows\System32\Psr.exe
   - C:\Windows\SysWOW64\Psr.exe
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - https://www.sans.org/summit-archives/file/summit-archive-1493861893.pdf

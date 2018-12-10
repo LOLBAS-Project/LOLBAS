@@ -28,10 +28,10 @@ Commands:
     MitreID: T1105
     MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-Full Path:
+Full_Path:
   - Path: C:\Windows\System32\print.exe
   - Path: C:\Windows\SysWOW64\print.exe
-Code Sample: 
+Code_Sample: 
 - Code:
 Detection:
  - IOC: Print.exe getting files from internet

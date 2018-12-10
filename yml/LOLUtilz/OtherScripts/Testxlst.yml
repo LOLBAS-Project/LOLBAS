@@ -18,9 +18,9 @@ Commands:
     MitreID: T1064
     MitreLink: https://attack.mitre.org/wiki/Technique/T1064
     OperatingSystem: Windows
-Full Path:
+Full_Path:
   - c:\python27amd64\Lib\site-packages\win32com\test\testxslt.js (Visual Studio Installation)
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - https://twitter.com/bohops/status/993314069116485632

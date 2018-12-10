@@ -7,9 +7,9 @@ Categories: []
 Commands:
   - Command: Run Setup.exe
     Description: Hijack hpbcsiServiceMarshaller.exe and run Setup.exe to launch a payload.
-Full Path:
+Full_Path:
   - C:\LJ-Ent-700-color-MFP-M775-Full-Solution-15315
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - https://twitter.com/pabraeken/status/994381620588236800

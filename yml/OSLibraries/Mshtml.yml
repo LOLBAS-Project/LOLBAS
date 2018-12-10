@@ -12,10 +12,10 @@ Commands:
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
-Full Path:
+Full_Path:
   - Path: c:\windows\system32\mshtml.dll
   - Path: c:\windows\syswow64\mshtml.dll
-Code Sample:
+Code_Sample:
   - Code:
 Detection:
   - IOC:

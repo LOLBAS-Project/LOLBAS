@@ -13,10 +13,10 @@ Commands:
     Description: Load (execute) NetSh.exe helper DLL file.
   - Command: netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8000 connectaddress=192.168.1.1
     Description: Forward traffic from the listening address and proxy to a remote system.
-Full Path:
+Full_Path:
   - C:\Windows\System32
   - C:\Windows\SysWOW64
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - https://github.com/redcanaryco/atomic-red-team/blob/master/Windows/Persistence/Netsh_Helper_DLL.md

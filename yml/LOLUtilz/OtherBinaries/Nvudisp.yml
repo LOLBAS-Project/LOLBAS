@@ -17,9 +17,9 @@ Commands:
     Description: Kill a process.
   - Command: Nvudisp.exe Run foo
     Description: Run process
-Full Path:
+Full_Path:
   - C:\windows\system32\nvuDisp.exe
-Code Sample: []
+Code_Sample: []
 Detection: []
 Resources:
   - http://sysadminconcombre.blogspot.ca/2018/04/run-system-commands-through-nvidia.html

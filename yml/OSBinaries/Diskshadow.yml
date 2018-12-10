@@ -20,10 +20,10 @@ Commands:
     MitreID: T1003
     MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows server
-Full Path:
+Full_Path:
   - Path: C:\Windows\System32\diskshadow.exe
   - Path: C:\Windows\SysWOW64\diskshadow.exe
-Code Sample: 
+Code_Sample: 
 - Code:
 Detection:
  - IOC: Child process from diskshadow.exe

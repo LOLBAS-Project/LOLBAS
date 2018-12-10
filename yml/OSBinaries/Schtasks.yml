@@ -12,10 +12,10 @@ Commands:
     MitreID: T1053
     MitreLink: https://attack.mitre.org/wiki/Technique/T1053
     OperatingSystem: Windows
-Full Path:
+Full_Path:
   - Path: c:\windows\system32\schtasks.exe
   - Path: c:\windows\syswow64\schtasks.exe
-Code Sample: 
+Code_Sample: 
   - Code:
 Detection:
   - IOC: Services that gets created

@@ -20,12 +20,12 @@ Commands:
     MitreID: T1121
     MitreLink: https://attack.mitre.org/wiki/Technique/T1121
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-Full Path:
+Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe
-Code Sample: 
+Code_Sample: 
 - Code:
 Detection:
  - IOC: regasm.exe executing dll file

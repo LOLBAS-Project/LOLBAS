@@ -12,10 +12,10 @@ Commands:
     MitreID: T1216
     MitreLink: https://attack.mitre.org/wiki/Technique/T1216
     OperatingSystem: Windows 10
-Full Path:
+Full_Path:
   - Path: c:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\bin\Pester.bat
   - Path: c:\Program Files\WindowsPowerShell\Modules\Pester\*\bin\Pester.bat
-Code Sample: 
+Code_Sample: 
   - Code:
 Detection:
   - IOC:

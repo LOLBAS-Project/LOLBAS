@@ -20,10 +20,10 @@ Commands:
     MitreID: T1003
     MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows
-Full Path:
+Full_Path:
   - Path: C:\Program Files\Microsoft SQL Server\90\Shared\SQLDumper.exe
   - Path: C:\Program Files (x86)\Microsoft Office\root\vfs\ProgramFilesX86\Microsoft Analysis\AS OLEDB\140\SQLDumper.exe
-Code Sample:
+Code_Sample:
   - Code:
 Detection:
   - IOC:

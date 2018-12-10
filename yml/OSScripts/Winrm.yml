@@ -36,10 +36,10 @@ Commands:
     MitreID: T1216
     MitreLink: https://attack.mitre.org/wiki/Technique/T1216
     OperatingSystem: Windows 10
-Full Path:
+Full_Path:
   - Path: C:\Windows\System32\winrm.vbs
   - Path: C:\Windows\SysWOW64\winrm.vbs
-Code Sample: 
+Code_Sample: 
   - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSScripts/Payload/Slmgr.reg
   - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSScripts/Payload/Slmgr_calc.sct
 Detection:

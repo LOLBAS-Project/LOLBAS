@@ -42,10 +42,10 @@ Commands:
     Privileges: User
     MitreID: T1085
     MItreLink: https://attack.mitre.org/wiki/Technique/T1085
-Full Path:
+Full_Path:
   - Path: c:\windows\system32\advpack.dll
   - Path: c:\windows\syswow64\advpack.dll
-Code Sample:
+Code_Sample:
   - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack.inf
   - Code: https://github.com/LOLBAS-Project/LOLBAS-Project.github.io/blob/master/_lolbas/Libraries/Payload/Advpack_calc.sct
 Detection:

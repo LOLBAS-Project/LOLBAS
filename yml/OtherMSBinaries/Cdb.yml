@@ -12,10 +12,10 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
-Full Path:
+Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\cdb.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\cdb.exe
-Code Sample:
+Code_Sample:
   - Code:
 Detection:
   - IOC:

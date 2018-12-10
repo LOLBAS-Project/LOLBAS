@@ -12,10 +12,10 @@ Commands:
     MitreID: T1035
     MitreLink: https://attack.mitre.org/wiki/Technique/T1035
     OperatingSystem: Windows server
-Full Path:
+Full_Path:
   - Path: C:\Windows\System32\Dnscmd.exe
   - Path: C:\Windows\SysWOW64\Dnscmd.exe
-Code Sample: 
+Code_Sample: 
 - Code:
 Detection:
  - IOC: Dnscmd.exe loading dll from UNC path
