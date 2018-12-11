@@ -13,7 +13,7 @@ Commands:
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full_Path:
-  - Path: C:\Program files (x86\Microsoft SQL Server\100\Tools\Binn\sqlps.exe
+  - Path: C:\Program files (x86)\Microsoft SQL Server\100\Tools\Binn\sqlps.exe
 Code_Sample:
   - Code:
 Detection:
