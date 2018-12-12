@@ -12,7 +12,7 @@ Commands:
     MitreID: T1088
     MitreLink: https://attack.mitre.org/wiki/Technique/T1088
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-Full Path:
+Full_Path:
   - Path: C:\Windows\System32\eventvwr.exe
   - Path: C:\Windows\SysWOW64\eventvwr.exe
 Code Sample:
@@ -22,6 +22,7 @@ Detection:
  - IOC: Creation or modification of the registry value HKCU\Software\Classes\mscfile\shell\open\command
 Resources:
   - Link: https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/
+  - Link: https://github.com/enigma0x3/Misc-PowerShell-Stuff/blob/master/Invoke-EventVwrBypass.ps1
 Acknowledgement:
   - Person: Matt Nelson
     Handle: '@enigma0x3'
