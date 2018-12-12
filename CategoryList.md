@@ -11,4 +11,5 @@ Dump
 Encode   
 Execute   
 Reconnaissance   
+UAC bypass   
 Upload   
