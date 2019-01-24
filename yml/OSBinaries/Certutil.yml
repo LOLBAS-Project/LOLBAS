@@ -12,7 +12,7 @@ Commands:
     MitreID: T1105
     MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: certutil.exe -verifyctl -f -spli http://7-zip.org/a/7z1604-x64.exe 7zip.exe
+  - Command: certutil.exe -verifyctl -f -split http://7-zip.org/a/7z1604-x64.exe 7zip.exe
     Description: Download and save 7zip to disk in the current folder.
     Usecase: Download file from Internet
     Category: Download
