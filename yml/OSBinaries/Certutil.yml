@@ -12,6 +12,14 @@ Commands:
     MitreID: T1105
     MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: certutil.exe -verifyctl -f -spli http://7-zip.org/a/7z1604-x64.exe 7zip.exe
+    Description: Download and save 7zip to disk in the current folder.
+    Usecase: Download file from Internet
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: certutil.exe -urlcache -split -f https://raw.githubusercontent.com/Moriarty2016/git/master/test.ps1 c:\temp:ttt
     Description: Download and save a PS1 file to an Alternate Data Stream (ADS).
     Usecase: Download file from Internet and save it in an NTFS Alternate Data Stream
@@ -48,9 +56,12 @@ Detection:
 Resources:
   - Link: https://twitter.com/Moriarty_Meng/status/984380793383370752
   - Link: https://twitter.com/mattifestation/status/620107926288515072
+  - Link: https://twitter.com/egre55/status/1087685529016193025
 Acknowledgement:
   - Person: Matt Graeber
     Handle: '@mattifestation'
   - Person: Moriarty
     Handle: '@Moriarty_Meng'
+  - Person: egre55
+    Handle: '@egre55'
 ---
