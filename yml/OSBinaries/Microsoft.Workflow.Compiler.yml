@@ -4,7 +4,7 @@ Description: A utility included with .NET that is capable of compiling and execu
 Author: 'Conor Richard'
 Created: '2018-10-22'
 Commands:
-  - Command: Microsoft.Worflow.Compiler.exe tests.xml results.xml
+  - Command: Microsoft.Workflow.Compiler.exe tests.xml results.xml
     Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.xml file.
     Usecase: Compile and run code
     Category: Execute
@@ -12,7 +12,7 @@ Commands:
     MitreID: T1127
     MitreLink: https://attack.mitre.org/wiki/Technique/T1127
     OperatingSystem: Windows 10S
-  - Command: Microsoft.Worflow.Compiler.exe tests.txt results.txt
+  - Command: Microsoft.Workflow.Compiler.exe tests.txt results.txt
     Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.txt file.
     Usecase: Compile and run code
     Category: Execute
@@ -20,7 +20,7 @@ Commands:
     MitreID: T1127
     MitreLink: https://attack.mitre.org/wiki/Technique/T1127
     OperatingSystem: Windows 10S 
-  - Command: Microsoft.Worflow.Compiler.exe tests.txt results.txt
+  - Command: Microsoft.Workflow.Compiler.exe tests.txt results.txt
     Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.txt file.
     Usecase: Compile and run code
     Category: AWL Bypass
