@@ -12,7 +12,7 @@ Commands:
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: regedit C:\ads\file.txt:regfile.reg"
+  - Command: regedit C:\ads\file.txt:regfile.reg
     Description: Import the target .REG file into the Registry.
     Usecase: Import hidden registry data from alternate data stream
     Category: ADS
