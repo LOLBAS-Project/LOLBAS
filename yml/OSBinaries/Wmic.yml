@@ -69,8 +69,8 @@ Commands:
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
-  - Path: C:\Windows\System32\wmic.exe
-  - Path: C:\Windows\SysWOW64\wmic.exe
+  - Path: C:\Windows\System32\wbem\wmic.exe
+  - Path: C:\Windows\SysWOW64\wbem\wmic.exe
 Code_Sample: 
   - Code:
 Detection:

@@ -14,7 +14,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Program Files\Internet Explorer\Extexport.exe
-  - Path: C:\Program Files\Internet Explorer(x86)\Extexport.exe
+  - Path: C:\Program Files (x86)\Internet Explorer\Extexport.exe
 Code_Sample: 
 - Code:
 Detection:
