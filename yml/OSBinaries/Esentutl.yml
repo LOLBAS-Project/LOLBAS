@@ -44,6 +44,14 @@ Commands:
     MitreID: T1096
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: esentutl.exe /y /vss c:\windows\ntds\ntds.dit /d c:\folder\ntds.dit
+    Description: Copies a (locked) file using Volume Shadow Copy
+    Usecase: Copy/extract a locked file such as the AD Database
+    Category: Copy 
+    Privileges: Admin
+    MitreID: T1003
+    MitreLink: https://attack.mitre.org/techniques/T1003/
+    OperatingSystem: Windows 10, Windows 2016 Server, Windows 2019 Server
 Full_Path:
   - Path: C:\Windows\System32\esentutl.exe
   - Path: C:\Windows\SysWOW64\esentutl.exe
@@ -53,7 +61,11 @@ Detection:
  - IOC: 
 Resources:
   - Link: https://twitter.com/egre55/status/985994639202283520
+  - Link: https://dfironthemountain.wordpress.com/2018/12/06/locked-file-access-using-esentutl-exe/
+  - Link: https://twitter.com/bohops/status/1094810861095534592
 Acknowledgement:
   - Person: egre55
     Handle: '@egre55'
+  - Person: Mike Cary
+    Handle: 'grayfold3d'
 ---
