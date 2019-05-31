@@ -34,5 +34,5 @@ Resources:
   - Link: https://www.phpied.com/make-your-javascript-a-windows-exe/
 Acknowledgement:
   - Person: Malwrologist
-    Handle: @DissectMalware
+    Handle: '@DissectMalware'
 ---
