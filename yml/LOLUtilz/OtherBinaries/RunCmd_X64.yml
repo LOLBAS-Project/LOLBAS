@@ -1,0 +1,27 @@
+---
+Name: RunCmd_X64.exe
+Description: A tool to execute a command file
+Author: Bart
+Created: 2019-03-17
+Commands:
+  - Command: RunCmd_X64 file.cmd /F
+    Description: Launch command file and hide the console window
+    Usecase: Run applications and scripts using Acer's RunCmd
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+Full_Path:
+- Path: C:\OEM\Preload\utility
+Code_Sample: 
+- Code: 
+Detection: 
+- IOC: RunCmd_X64.exe spawned
+Resources:
+ - Link: https://bartblaze.blogspot.com/2019/03/run-applications-and-scripts-using.html
+ - Link: https://twitter.com/bartblaze/status/1107390776147881984
+ Acknowledgement:
+  - Person: Bart
+    Handle: @bartblaze
+---
