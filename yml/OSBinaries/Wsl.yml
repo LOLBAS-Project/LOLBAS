@@ -1,0 +1,23 @@
+---
+Name: Wsl.exe
+Description: Windows subsystem for Linux executable
+Author: 'Matthew Brown'
+Created: '2019-06-27'
+Commands:
+  - Command: wsl.exe -e /mnt/c/Windows/System32/calc.exe
+    Description: Executes calc.exe from wsl.exe
+    Usecase: Performs execution of specified file, can be used to execute arbitrary Linux commands.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    MitreLink: https://attack.mitre.org/techniques/T1202
+    OperatingSystem: Windows 10, Windows 19 Server
+Full_Path:
+  - Path: C:\Windows\System32\wsl.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: Child process from wsl.exe
+Resources:
+  - Link: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+---
