@@ -59,6 +59,9 @@ Common hashtags for these files are:
 * #LOLLib
 * #LOLLibs
 
+Our primary maintainer (@oddvarmoe) of this project did a talk at DerbyCon 2018 called: #Lolbins Nothing to LOL about! - https://www.youtube.com/watch?v=NiYTdmZ8GR4
+This talk goes over the history of this project. 
+
 ## Thanks
 
 As with many open-source projects, this one is the product of a community and we would like to thank ours:
