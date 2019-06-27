@@ -1,3 +1,4 @@
+---
 Name: Squirrel.exe
 Description: Binary to update the existing installed Nuget/squirrel package. Part of Microsoft Teams installation.
 Author: 'Reegun J (OCBC Bank) - @reegun21'
