@@ -35,7 +35,7 @@ Commands:
     Privileges: User
     MitreID: T1170
     MitreLink: https://attack.mitre.org/wiki/Technique/T1170
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 (Does not work on 1903 and newer)
 Full_Path:
   - Path: C:\Windows\System32\mshta.exe
   - Path: C:\Windows\SysWOW64\mshta.exe
