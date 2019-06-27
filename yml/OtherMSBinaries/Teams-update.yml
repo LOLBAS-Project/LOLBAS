@@ -1,0 +1,25 @@
+---
+Name: Update.exe
+Description: Update is the squirrel update utility used by Microsoft Electron app (Teams in this case)
+Author: Mr.Un1k0d3r
+Created: 2019-06-26
+Commands:
+  - Command: Copy your payload into `%userprofile%\AppData\Local\Microsoft\Teams\current\`. Then run the following command `%userprofile%\AppData\Local\Microsoft\Teams\Update.exe --processStart payload.exe --process-start-args "whatever args"`
+    Description: The Update.exe will execute the file you copied into the current folder.
+    Usecase: Application Whitelisting Bypass
+    Category: AWL Bypass
+    Privileges: user privs
+    MitreID: T1033
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1033
+    OperatingSystem: Windows 7 and up with Microsoft Teams installed
+Full_Path:
+- Path: %userprofile%\AppData\Local\Microsoft\Teams\Update.exe
+
+Detection: 
+- IOC: Update.exe spawned an unknown process
+Resources:
+ - Link: https://twitter.com/MrUn1k0d3r/status/1143928885211537408
+ Acknowledgement:
+  - Person: Mr.Un1k0d3r
+    Handle: @MrUn1k0d3r
+---
