@@ -21,18 +21,18 @@ Commands:
     MitreLink: https://attack.mitre.org/wiki/Technique/T1033
     OperatingSystem: Windows 10 All
 Full_Path:
-- Path: c:\windows\system32\bin.exe
-- Path: c:\windows\syswow64\bin.exe
+  - Path: c:\windows\system32\bin.exe
+  - Path: c:\windows\syswow64\bin.exe
 Code_Sample: 
-- Code: http://url.com/git.txt
+  - Code: http://url.com/git.txt
 Detection: 
-- IOC: Event ID 10
-- IOC: binary.exe spawned
+  - IOC: Event ID 10
+  - IOC: binary.exe spawned
 Resources:
- - Link: http://blogpost.com
- - Link: http://twitter.com/something
- - Link: Threatintelreport...
- Acknowledgement:
+  - Link: http://blogpost.com
+  - Link: http://twitter.com/something
+  - Link: Threatintelreport...
+Acknowledgement:
   - Person: John Doe
     Handle: @johndoe
   - Person: Ola Norman
