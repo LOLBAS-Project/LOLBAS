@@ -28,7 +28,7 @@ Detection:
   - IOC: Child process from wsl.exe
 Resources:
   - Link: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
- Acknowledgement:
+Acknowledgement:
   - Person: Alex Ionescu
     Handle: '@aionescu'
   - Person: Matt
