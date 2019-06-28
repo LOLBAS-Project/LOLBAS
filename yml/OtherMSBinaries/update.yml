@@ -55,6 +55,7 @@ Resources:
   - Link: https://twitter.com/reegun21/status/1144182772623269889
   - Link: https://twitter.com/MrUn1k0d3r/status/1143928885211537408
   - Link: http://www.hexacorn.com/blog/2018/08/16/squirrel-as-a-lolbin/
+  - Link: https://medium.com/@reegun/nuget-squirrel-uncontrolled-endpoints-leads-to-arbitrary-code-execution-80c9df51cf12
 Acknowledgement:
   - Person: Reegun J (OCBC Bank)
     Handle: '@reegun21'
