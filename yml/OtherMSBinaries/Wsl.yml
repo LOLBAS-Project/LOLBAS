@@ -12,6 +12,14 @@ Commands:
     MitreID: T1202
     MitreLink: https://attack.mitre.org/techniques/T1202
     OperatingSystem: Windows 10, Windows 19 Server
+  - Command: wsl.exe -u root -e cat /etc/shadow
+      Description: Cats /etc/shadow file as root
+      Usecase: Performs execution of arbitrary Linux commands as root without need for password.
+      Category: Execute
+      Privileges: User
+      MitreID: T1202
+      MitreLink: https://attack.mitre.org/techniques/T1202
+      OperatingSystem: Windows 10, Windows 19 Server
 Full_Path:
   - Path: C:\Windows\System32\wsl.exe
 Code_Sample:
