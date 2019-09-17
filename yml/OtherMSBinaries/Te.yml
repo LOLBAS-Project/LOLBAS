@@ -20,7 +20,7 @@ Detection:
   - IOC:
 Resources:
   - Link: https://twitter.com/gn3mes1s/status/927680266390384640?lang=bg
-Acknowlegement:
+Acknowledgement:
   - Person: Giuseppe N3mes1s
     Handle: '@gN3mes1s'
 ---

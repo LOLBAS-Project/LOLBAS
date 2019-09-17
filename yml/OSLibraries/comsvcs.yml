@@ -20,7 +20,7 @@ Detection:
   - IOC: MiniDump being used in library
 Resources:
   - Link: https://modexp.wordpress.com/2019/08/30/minidumpwritedump-via-com-services-dll/
-Acknowledegment:
+Acknowledgement:
   - Person: modexp
     Handle: 
 ---
