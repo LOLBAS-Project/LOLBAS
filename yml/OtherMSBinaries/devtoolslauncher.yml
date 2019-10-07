@@ -25,7 +25,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection: 
-  - IOC: devtoolslauncher.exe spawned an unknown process
+  - IOC: DeveloperToolsSvc.exe spawned an unknown process
 Resources:
   - Link: https://twitter.com/_felamos/status/1179811992841797632
 Acknowledgement:
