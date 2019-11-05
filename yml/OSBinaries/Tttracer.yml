@@ -4,7 +4,7 @@ Description: Used by Windows 1809 and newer to Debug Time Travel
 Author: 'Oddvar Moe'
 Created: '2019-11-5'
 Commands:
-  - Command: tttracer.exe "C:\windows\system32\calc.exe"
+  - Command: tttracer.exe C:\windows\system32\calc.exe
     Description: Execute calc using tttracer.exe. Requires administrator privileges
     Usecase: Spawn process using other binary
     Category: Execute
