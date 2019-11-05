@@ -16,9 +16,9 @@ Full_Path:
   - Path: C:\Windows\System32\tttracer.exe
   - Path: C:\Windows\SysWOW64\tttracer.exe
 Code_Sample: 
-  - Code:
+- Code:
 Detection:
-  - IOC: Parent child relationship. Tttracer parent for executed command
+ - IOC: Parent child relationship. Tttracer parent for executed command
 Resources:
   - Link: https://twitter.com/oulusoyum/status/1191329746069655553
 Acknowledgement:
