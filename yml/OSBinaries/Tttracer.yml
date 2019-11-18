@@ -12,6 +12,14 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 1809 and newer
+  - Command: TTTracer.exe -dumpFull -attach <lsass_pid>
+    Description: Dumps process using tttracer.exe. Requires administrator privileges
+    Usecase: Dump process by PID
+    Category: Dump
+    Privileges: Administrator
+    MitreID: T1003
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
+    OperatingSystem: Windows 10 1809 and newer
 Full_Path:
   - Path: C:\Windows\System32\tttracer.exe
   - Path: C:\Windows\SysWOW64\tttracer.exe
@@ -21,7 +29,11 @@ Detection:
  - IOC: Parent child relationship. Tttracer parent for executed command
 Resources:
   - Link: https://twitter.com/oulusoyum/status/1191329746069655553
+  - Link: https://twitter.com/mattifestation/status/1196390321783025666
+  - Link: https://lists.samba.org/archive/cifs-protocol/2016-April/002877.html
 Acknowledgement:
   - Person: Onur Ulusoy
     Handle: '@oulusoyum'
+  - Person: Matt Graeber
+    Handle: '@mattifestation'
 ---
