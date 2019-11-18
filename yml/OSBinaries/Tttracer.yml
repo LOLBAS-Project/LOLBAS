@@ -12,7 +12,7 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 1809 and newer
-  - Command: TTTracer.exe -dumpFull -attach <lsass_pid>
+  - Command: TTTracer.exe -dumpFull -attach pid
     Description: Dumps process using tttracer.exe. Requires administrator privileges
     Usecase: Dump process by PID
     Category: Dump
