@@ -1,0 +1,37 @@
+---
+Name: Xcopy.exe
+Description: Xcopy
+Author: 'Freddie Barr-Smith'
+Created: '2019-12-24'
+Commands:
+  - Command: xcopy.exe file.bat  "C:\Users\IEUser\Start Menu\Programs\Startup"
+    Description: Open the target .EXE using the Program Compatibility Assistant.
+    Usecase: Proxy execution of binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1060
+    MitreLink: https://attack.mitre.org/techniques/T1060/
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+
+Full_Path:
+  - Path: C:\Windows\System32\xcopy.exe
+Code_Sample: 
+  - Code:
+Detection:
+  - IOC: Xcopy to a directory that runs all files within at system startup
+Resources:
+  - Link: https://freddiebarrsmith.com/trix/trix.html
+  - Link: https://azeria-labs.com/persistence/
+
+
+Acknowledgement:
+  - Person: 'Freddie Barr-Smith'
+    Handle:
+  - Person: 'Riccardo Spolaor'
+    Handle:
+  - Person: 'Mariano Graziano'
+    Handle:
+  - Person: 'Xabier Ugarte-Pedrero'
+    Handle:
+---
+https://freddiebarrsmith.com/trix/trix.html
