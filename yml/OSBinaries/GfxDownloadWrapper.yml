@@ -10,7 +10,7 @@ Commands:
     Privileges: User
     MitreID: T1105
     MitreLink: https://attack.mitre.org/techniques/T1105/
-    OperatingSystem: Windows 10, Windows 7
+    OperatingSystem: Windows 10
 Full_Path:
   - Path: c:\windows\system32\driverstore\filerepository\64kb6472.inf_amd64_3daef03bbe98572b\
   - Path: c:\windows\system32\driverstore\filerepository\cui_comp.inf_amd64_0e9c57ae3396e055\
