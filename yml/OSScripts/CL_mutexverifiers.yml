@@ -16,6 +16,8 @@ Full_Path:
   - Path: C:\Windows\diagnostics\system\WindowsUpdate\CL_Mutexverifiers.ps1
   - Path: C:\Windows\diagnostics\system\Audio\CL_Mutexverifiers.ps1
   - Path: C:\Windows\diagnostics\system\WindowsUpdate\CL_Mutexverifiers.ps1
+  - Path: C:\Windows\diagnostics\system\Video\CL_Mutexverifiers.ps1
+  - Path: C:\Windows\diagnostics\system\Speech\CL_Mutexverifiers.ps1
 Code_Sample: 
   - Code:
 Detection:
