@@ -4,9 +4,9 @@ Description: Remote file download used by the Intel Graphics Control Panel, rece
 Author: Jesus Galvez
 Created: Jesus Galvez
 Commands:
-  - Command: C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_[0-9]+\GfxDownloadWrapper.exe "<URL>" "<DESTINATION FILE>"
-    Description: GfxDownloadWrapper.exe downloads the content that returns <URL> and writes it to the file <DESTINATION FILE PATH>. The binary is signed by "Microsoft Windows Hardware", "Compatibility Publisher", "Microsoft Windows Third Party Component CA 2012", "Microsoft Time-Stamp PCA 2010", "Microsoft Time-Stamp Service".
-    Usecase: C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_5fc14233495bec91\GfxDownloadWrapper.exe "http://127.0.0.1:8005" "%temp%\test"
+  - Command: C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_[0-9]+\GfxDownloadWrapper.exe "URL" "DESTINATION FILE"
+    Description: GfxDownloadWrapper.exe downloads the content that returns URL and writes it to the file DESTINATION FILE PATH. The binary is signed by "Microsoft Windows Hardware", "Compatibility Publisher", "Microsoft Windows Third Party Component CA 2012", "Microsoft Time-Stamp PCA 2010", "Microsoft Time-Stamp Service".
+    Usecase: Download file from internet
     Category: Download
     Privileges: User
     MitreID: T1105
