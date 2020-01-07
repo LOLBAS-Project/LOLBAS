@@ -1,5 +1,5 @@
 ---
-Name: dotnet.exe
+Name: Dotnet.exe
 Description: dotnet.exe comes with .NET Framework
 Author: 'felamos'
 Created: '2019-11-12'
