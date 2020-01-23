@@ -73,6 +73,8 @@ Resources:
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/
   - Link: https://oddvar.moe/2018/01/14/putting-data-in-alternate-data-streams-and-how-to-execute-it/
   - Link: https://bohops.com/2018/06/28/abusing-com-registry-structure-clsid-localserver32-inprocserver32/
+  - Link: https://github.com/sailay1996/expl-bin/blob/master/obfus.md
+  - Link: https://github.com/sailay1996/misc-bin/blob/master/rundll32.md
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
@@ -80,4 +82,6 @@ Acknowledgement:
     Handle: '@oddvarmoe'
   - Person: Jimmy
     Handle: '@bohops'
+  - Person: Sailay
+    Handle: '@404death'
 ---
