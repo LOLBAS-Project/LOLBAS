@@ -1,0 +1,33 @@
+---
+Name: protocolhandler.exe
+Description: Binary to download and execute URI based Office documents.
+Author: 'Reegun J - @reegun21'
+Created: '2020-01-24'
+Commands:
+  - Command: protocolhandler.exe "Remote File"
+    Description: The above binary will go to url and download the remote file.
+    Usecase: Download binary
+    Category: Download
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/techniques/T1218/
+    OperatingSystem: Windows OS with Microsoft Office installed
+ - Command: protocolhandler.exe "Remote File"
+   Description: The above binary will go to url and download the remote file.
+   Usecase: Download binary
+   Category: AWL Bypass
+   Privileges: User
+   MitreID: T1218
+   MitreLink: https://attack.mitre.org/techniques/T1218/
+   OperatingSystem: Windows OS with Microsoft Office installed
+Full_Path:
+  - Path: 'C:\[Microsoft Office Installed]\root\[version]>\protocolhandler.exe'
+Detection:
+  - IOC: protocolhandler.exe downloads a remote file
+Resources:
+  - Link: https://youtu.be/eUTFeRwZxH0
+  - Link: https://twitter.com/reegun21/status/1220561299009990656
+Acknowledgement:
+  - Person: Reegun J
+    Handle: '@reegun21'
+---
