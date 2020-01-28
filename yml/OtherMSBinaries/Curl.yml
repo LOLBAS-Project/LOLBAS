@@ -1,0 +1,45 @@
+---
+Name: curl.exe
+Description: Binary to handle files on remote servers.
+Author: 'Reegun J - @reegun21'
+Created: '2020-01-28'
+Commands:
+ - Command: curl.exe [remote file]
+   Description: The above binary will go to url and download the remote file.
+   Usecase: Download binary
+   Category: Download
+   Privileges: User
+   MitreID: T1218
+   MitreLink: https://attack.mitre.org/techniques/T1218/
+   OperatingSystem: Windows 10 build 17063 and later
+ - Command: curl.exe [remote file]
+   Description: The above binary will go to url and download the remote file.
+   Usecase: Download binary
+   Category: AWL Bypass
+   Privileges: User
+   MitreID: T1218
+   MitreLink: https://attack.mitre.org/techniques/T1218/
+   OperatingSystem: Windows 10 build 17063 and later
+ - Command: curl.exe [remote file]
+   Description: The above binary will go to url and download the remote file.
+   Usecase: Upload Files
+   Category: Upload
+   Privileges: User
+   MitreID: T1218
+   MitreLink: https://attack.mitre.org/techniques/T1218/
+   OperatingSystem: Windows 10 build 17063 and later
+
+Full_Path:
+  - Path: 'C:\Windows\System32'
+  - Path: 'C:\Windows\SysWOW64'
+  - Path: 'C:\Windows\WinSxS\amd64_curl_*\'
+Detection:
+  - IOC: curl.exe downloads a remote file
+Resources:
+  - Link: https://youtu.be/f2xpCl2Y7t8
+  - Link: https://medium.com/@reegun/curl-exe-is-the-new-rundll32-exe-lolbin-3f79c5f35983
+  - Link: https://twitter.com/reegun21/status/1222093798009790464?s=20
+Acknowledgement:
+  - Person: Reegun J
+    Handle: '@reegun21'
+---
