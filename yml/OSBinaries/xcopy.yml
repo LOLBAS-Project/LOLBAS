@@ -1,0 +1,23 @@
+Name: xcopy.exe
+Description: xcopy used for copy files from one location to another. 
+Author: Lux(hai vaknin)
+Created: 27/02/2020
+Commands:
+  - Command: xcopy.exe C:\Windows\System32\calc.exe C:\Users\hai\Desktop\
+    Description: copy files from one location to another
+    Usecase: Copy binary file specified. Can be used as a defensive evasion.
+    Category: Copy
+    Privileges: Required privs
+    MitreID: -
+    MitreLink: -
+    OperatingSystem: Windows 10 1803, Windows 10 1703
+	
+Full_Path:
+  - Path: c:\windows\system32\xcopy.exe
+
+Resources:
+
+Acknowledgement:
+  - Person: Hai vaknin (lux)
+    Person: @Lior adar
+---
