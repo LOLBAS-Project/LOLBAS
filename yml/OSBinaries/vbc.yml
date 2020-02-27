@@ -1,0 +1,38 @@
+---
+Name: vbc.exe
+Description: Binary file used for compile vbs code
+Author: Lior Adar
+Created: 27/02/2020
+Commands:
+  - Command: 
+  vbc.exe /target:exe c:\temp\vbs\run.vb
+    Description: Binary file used by .NET to compile vb code to .exe
+    Usecase: Compile attacker code on system. Bypass defensive counter measures.
+    Category: Compile
+    Privileges required:User
+    MitreID: T1127
+    MitreLink: https://attack.mitre.org/techniques/T1127/
+    OperatingSystem: Windows 10,7 
+  - Command: vbc -reference:Microsoft.VisualBasic.dll c:\temp\vbs\run.vb
+    Description: Description of the second command
+    Usecase: A description of the usecase
+    Category: Compile
+    Privileges required:User
+    MitreID: T1127
+    MitreLink: https://attack.mitre.org/techniques/T1127/
+    
+Full_Path:
+  - Path:
+c:\Windows\Microsoft.NET\Framework64\v4.0.30319\vbc.exe
+C:\Windows\Microsoft.NET\Framework64\v3.5\vbc.exe
+Code_Sample: 
+Code:
+1.vbc.exe /target:exe c:\temp\vbs\run.vb
+2.vbc.exe -reference:Microsoft.VisualBasic.dll c:\temp\vbs\run.vb
+Acknowledgement:
+  - Person: 
+Lior Adar  
+Hai Vaknin(Lux)
+    
+
+---
