@@ -12,6 +12,14 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: forfiles /c calc.exe
+    Description: Executes calc.exe using Forfiles utility.
+    Usecase: Use forfiles to start a new process to evade defensive counter measures
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    OperatingSystem: Windows 10
   - Command: forfiles /p c:\windows\system32 /m notepad.exe /c "c:\folder\normal.dll:evil.exe"
     Description: Executes the evil.exe Alternate Data Stream (AD) since there is a match for notepad.exe in the c:\windows\system32 folder.
     Usecase: Use forfiles to start a new process from a binary hidden in an alternate data stream
