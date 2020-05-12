@@ -18,8 +18,8 @@ Full_Path:
 Code_Sample: 
   - Code: 
 Detection: 
-  - IOC: Event ID 10
-  - IOC: binary.exe spawned
+  - IOC: Parent child relationship. Ttdinject.exe parent for executed command
+  - IOC: Multiple queries made to the IFEO registry key of an untrusted executable (Ex. "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\payload.exe") from the ttdinject.exe process
 Resources:
   - Link: https://twitter.com/Oddvarmoe/status/1196333160470138880
 Acknowledgement:
