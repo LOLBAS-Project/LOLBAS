@@ -1,0 +1,26 @@
+---
+Name: wevtutil.exe
+Description: Enables you to retrieve information about event logs and publishers.
+Author: Suraj Krishnaswami
+Created: Date the person created this file
+Commands: '2020-05-13'
+  - Command: wevtutil.exe cl Security
+    Description: Clears all logs without any prompt or conformation.
+    Usecase: Can be use to delete the attack trace logs.
+    Category: Log evasion/modification
+    Privileges: Administrator
+    MitreID: T1070
+    MitreLink: https://attack.mitre.org/techniques/T1070/
+    OperatingSystem: Windows 10 1803
+Full_Path:
+  - Path: C:\Windows\System32\wevtutil.exe
+Code_Sample: 
+  - Code: 
+Detection: 
+  - IOC:
+Resources:
+  - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil
+Acknowledgement:
+  - Person: JSuraj Krishnaswami
+    Handle: @smkrishnaswami
+---
