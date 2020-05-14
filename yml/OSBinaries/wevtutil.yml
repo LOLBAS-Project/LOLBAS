@@ -21,6 +21,6 @@ Detection:
 Resources:
   - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil
 Acknowledgement:
-  - Person: JSuraj Krishnaswami
+  - Person: Suraj Krishnaswami
     Handle: @smkrishnaswami
 ---
