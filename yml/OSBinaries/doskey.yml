@@ -1,0 +1,16 @@
+## doskey.exe
+* Functions: Recalls and executes perviously entered commands/executable.
+```
+
+doskey zero="C:\Windows\System32\calc.exe"
+zero
+Executes calc
+```
+   
+* Resources:   
+  * https://www.inputzero.io/p/doskeyexe-as-lolbin.html
+   
+* Full path:   
+  * C:\Windows\System32\doskey.exe
+   
+* Notes: Thanks to Dhiraj Mishra - @RandomDhiraj
