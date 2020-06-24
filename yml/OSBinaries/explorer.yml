@@ -14,6 +14,7 @@ Commands:
     OperatingSystem: Windows XP, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\explorer.exe
+  - Path: C:\Windows\SysWOW64\explorer.exe
 Code_Sample: 
 - Code:
 Detection:
