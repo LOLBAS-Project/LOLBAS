@@ -4,14 +4,6 @@ Description: Script used for manage Windows RM settings
 Author: 'Oddvar Moe'
 Created: '2018-05-25'
 Commands:
-  - Command: reg.exe import c:\path\to\Slmgr.reg & winrm quickconfig
-    Description: Hijack the Scripting.Dictionary COM Object to execute remote scriptlet (SCT) code.
-    Usecase: Proxy execution
-    Category: Execute
-    Privileges: User
-    MitreID: T1216
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1216
-    OperatingSystem: Windows 10
   - Command: 'winrm invoke Create wmicimv2/Win32_Process @{CommandLine="notepad.exe"} -r:http://target:5985'
     Description: Lateral movement/Remote Command Execution via WMI Win32_Process class over the WinRM protocol
     Usecase: Proxy execution
