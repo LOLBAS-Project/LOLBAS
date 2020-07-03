@@ -6,15 +6,15 @@ Created: '2018-05-25'
 Commands:
   - Command: sqldumper.exe 464 0 0x0110
     Description: Dump process by PID and create a dump file (Appears to create a dump file called SQLDmprXXXX.mdmp).
-    Usecase: Dump process uisng PID.
+    Usecase: Dump process using PID.
     Category: Dump
     Privileges: Administrator
     MitreID: T1003
     MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows
   - Command: sqldumper.exe 540 0 0x01100:40
-    Description: 0x01100:40 flag will create a Mimikatz compatibile dump file.
-    Usecase: Dump LSASS.exe to Mimikatz compatable dump uisng PID.
+    Description: 0x01100:40 flag will create a Mimikatz compatible dump file.
+    Usecase: Dump LSASS.exe to Mimikatz compatible dump using PID.
     Category: Dump
     Privileges: Administrator
     MitreID: T1003
