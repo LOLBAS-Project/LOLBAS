@@ -9,8 +9,8 @@ Commands:
     Usecase: Download arbitrary files from a web server
     Category: Download
     Privileges: User
-    MitreID: - T1105
-    MitreLink: - https://attack.mitre.org/techniques/T1105/
+    MitreID: T1105
+    MitreLink: https://attack.mitre.org/techniques/T1105/
     OperatingSystem: Windows 10
 Full_Path:
   - Path: c:\windows\system32\desktopimgdownldr.exe
@@ -23,5 +23,5 @@ Resources:
   - Link: https://labs.sentinelone.com/living-off-windows-land-a-new-native-file-downldr/
 Acknowledgement:
   - Person: Gal Kristal
-    Handle: @gal_kristal
+    Handle: '@gal_kristal'
 ---
