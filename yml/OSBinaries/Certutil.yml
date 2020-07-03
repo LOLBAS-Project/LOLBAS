@@ -25,8 +25,8 @@ Commands:
     Usecase: Download file from Internet and save it in an NTFS Alternate Data Stream
     Category: ADS
     Privileges: User
-    MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
+    MitreID: T1096
+    MitreLink: https://attack.mitre.org/techniques/T1096
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: certutil -encode inputFileName encodedOutputFileName
     Description: Command to encode a file using Base64
