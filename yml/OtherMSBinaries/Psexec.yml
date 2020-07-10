@@ -1,0 +1,45 @@
+---
+Name: Psexec.exe
+Description: PsExec is a light-weight telnet-replacement that lets you execute processes on other systems, complete with full interactivity for console applications, without having to manually install client software.
+Author: 'Codi Starks'
+Created: '2020-07-10'
+Commands:
+  - Command: PsExec.exe \\X.X.X.X -u PoppedUser -p Badpass123 -b cmd.exe
+    Description: Create a shell connection to a remote system via SMB with the provided credentials.
+    Usecase: Get a shell on a remote system
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1570
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1570
+    OperatingSystem: Windows
+  - Command: PsExec.exe -accepteula \\X.X.X.X -u PoppedUser -p Badpass123 ipconfig
+    Description: Run an arbitrary executable on a remote system via SMB with the provided credentials. Running with the "-accepteula" flag indicates the binary has not been executed on the system previously.
+    Usecase: Enumerate information about a remote system.
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1570
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1570
+    OperatingSystem: Windows
+  - Command: PsExec.exe \\X.X.X.X -u PoppedUser -p Badpass123 -s cmd.exe
+    Description: Create a shell connection to a remote system via SMB with the provided credentials. Providing the "-s" flag will escalate privileges to SYSTEM.
+    Usecase: Get a shell on a remote system as SYSTEM.
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1570
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1570
+    OperatingSystem: Windows
+Full_Path:
+  - Path: N/A
+Code_Sample: 
+  - Code: 
+Detection: 
+  - IOC: PsExec running with the "-accepteula" argument in the command line
+  - IOC: PsExec running with the "-s" argument in the command line
+  - IOC: PsExec calling "cmd.exe" on a remote system
+Resources:
+  - Link: https://ired.team/offensive-security/lateral-movement/lateral-movement-with-psexec
+  - Link: https://www.toshellandback.com/2017/02/11/psexec/
+Acknowledgement:
+  - Person: Codi Starks
+    Handle: @codistarks2
+---
