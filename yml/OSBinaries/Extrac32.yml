@@ -28,6 +28,14 @@ Commands:
     MitreID: T1105
     MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: extrac32.exe /C C:\Windows\System32\calc.exe C:\Users\*\Desktop\calc.exe
+    Description: Command for copying calc.exe to another folder
+    Usecase: Copy file
+    Category: Copy
+    Privileges: User
+    MitreID: T1105
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\extrac32.exe
   - Path: C:\Windows\SysWOW64\extrac32.exe
@@ -40,6 +48,8 @@ Resources:
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
   - Link: https://twitter.com/egre55/status/985994639202283520
 Acknowledgement:
+  - Person: Hai Vaknin(Lux) https://github.com/LuxNoBulIshit
+  - Person: Tamir Yehuda https://github.com/tamirye
   - Person: egre55
     Handle: '@egre55'
   - Person: Oddvar Moe
