@@ -1,5 +1,5 @@
 ---
-Name: ttdinject.exe
+Name: Ttdinject.exe
 Description: Used by Windows 1809 and newer to Debug Time Travel (Underlying call of tttracer.exe)
 Author: 'Maxime Nadeau'
 Created: '2020-05-12'
