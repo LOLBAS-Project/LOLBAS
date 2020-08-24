@@ -1,8 +1,8 @@
 ---
 Name: Diantz.exe
 Description: Binary that package existing files into a cabinet (.cab) file
-Author: Tamir Yehuda
-Created: 08/08/2020
+Author: 'Tamir Yehuda'
+Created: '08/08/2020'
 Commands:
   - Command: diantz.exe c:\pathToFile\file.exe c:\destinationFolder\targetFile.txt:targetFile.cab
     Description: Compress taget file into a cab file stored in the Alternate Data Stream (ADS) of the target file.
