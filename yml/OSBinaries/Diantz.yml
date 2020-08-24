@@ -1,6 +1,5 @@
-
 ---
-Name: diantz.exe
+Name: Diantz.exe
 Description: Binary that package existing files into a cabinet (.cab) file
 Author: Tamir Yehuda
 Created: 08/08/2020
@@ -33,7 +32,7 @@ Resources:
   - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diantz
 Acknowledgement:
   - Person: Tamir Yehuda
-    Handle: @tim8288
+    Handle: '@tim8288'
   - Person: Hai Vaknin
-    Handle: @vakninhai
+    Handle: '@vakninhai'
 ---
