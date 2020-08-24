@@ -1,7 +1,7 @@
 ---
-Name: pktmon.exe
+Name: Pktmon.exe
 Description: Capture Network Packets on the windows 10 with October 2018 Update or later.
-Author: Derek Johnson
+Author: 'Derek Johnson'
 Created: '2020-08-12'
 Commands:
   - Command: pktmon.exe start --etw
@@ -12,7 +12,7 @@ Commands:
     MitreID: T1040
     MitreLink: https://attack.mitre.org/wiki/Technique/T1040
     OperatingSystem: Windows 10 1809 and later
-- Command: pktmon.exe filter add -p 445
+  - Command: pktmon.exe filter add -p 445
     Description: Select Desired ports for packet capture
     Usecase: Look for interesting traffic such as telent or FTP
     Category: Reconnaissance
@@ -24,12 +24,12 @@ Full_Path:
   - Path: c:\windows\system32\pktmon.exe
   - Path: c:\windows\syswow64\pktmon.exe
 Code_Sample: 
-  - Code: http://url.com/git.txt
+  - Code:
 Detection: 
   - IOC: .etl files found on system
 Resources:
   - Link: https://binar-x79.com/windows-10-secret-sniffer/
 Acknowledgement:
-  - Person: 
-    Handle:
+  - Person: Derek Johnson
+    Handle: ''
 ---
