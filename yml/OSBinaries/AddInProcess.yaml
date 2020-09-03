@@ -1,0 +1,30 @@
+---
+Name: AddInProcess.exe 
+Description: Used to compile and execute code
+Author: 'Chris Spehn'
+Created: '2020-09-03'
+Commands:
+  - Command: AddInProcess.exe /guid:32a91b0f-30cd-4c75-be79-ccbd6345de11 /pid:XXXX
+    Description: Execute a .NET assembly
+    Usecase: Code execution
+    Category: AWL bypass
+    Privileges: User
+    MitreID: T1127
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10
+Full_Path:
+  - Path: C:\Windows\Microsoft.NET\Framework\v3.5\AddInProcess.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v3.5\AddInProcess.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\AddInProcess.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\AddInProcess.exe
+Code_Sample: 
+- Code:
+Detection:
+ - IOC: AddInProcess.exe should not normally be executed on workstations
+Resources:
+  - Link: https://www.tiraniddo.dev/2017/07/dg-on-windows-10-s-executing-arbitrary.html
+  - Link: https://github.com/tyranid/DeviceGuardBypasses
+Acknowledgement:
+  - Person: James Forshaw
+    Handle: 'https://twitter.com/tiraniddo'
+---
