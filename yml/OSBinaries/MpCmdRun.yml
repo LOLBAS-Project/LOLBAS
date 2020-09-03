@@ -32,6 +32,7 @@ Detection:
 Resources:
   - Link: https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/command-line-arguments-microsoft-defender-antivirus
   - Link: https://twitter.com/mohammadaskar2/status/1301263551638761477
+  - Link: https://twitter.com/Oddvarmoe/status/1301444858910052352
 Acknowledgement:
   - Person: Askar
     Handle: '@mohammadaskar2'
