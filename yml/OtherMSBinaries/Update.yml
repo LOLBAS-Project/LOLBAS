@@ -1,4 +1,5 @@
 ---
+Id: 07538653-7047-4973-a4c4-2ef132175bd7
 Name: Update.exe
 Description: Binary to update the existing installed Nuget/squirrel package. Part of Microsoft Teams installation.
 Author: 'Oddvar Moe'

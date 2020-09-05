@@ -1,4 +1,5 @@
 ---
+Id: 83f2192a-c8b8-494c-9c07-b9a7269beb49
 Name: Regsvcs.exe
 Description: Regsvcs and Regasm are Windows command-line utilities that are used to register .NET Component Object Model (COM) assemblies
 Author: 'Oddvar Moe'

@@ -1,4 +1,5 @@
 ---
+Id: 60d8e9c7-98ca-41d4-9b89-f0b1eaca9e16
 Name: Ttdinject.exe
 Description: Used by Windows 1809 and newer to Debug Time Travel (Underlying call of tttracer.exe)
 Author: 'Maxime Nadeau'

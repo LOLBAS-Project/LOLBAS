@@ -1,4 +1,5 @@
 ---
+Id: a6f75528-00d8-4140-bea5-03b12aa3687c
 Name: SQLToolsPS.exe
 Description: Tool included with Microsoft SQL that loads SQL Server cmdlts. A replacement for sqlps.exe. Successor to sqlps.exe in SQL Server 2016+.
 Author: 'Oddvar Moe'

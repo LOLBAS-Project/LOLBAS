@@ -1,4 +1,5 @@
 ---
+Id: bfffe288-06d3-4fe7-9d49-9402c0591d7c
 Name: Register-cimprovider.exe
 Description: Used to register new wmi providers
 Author: 'Oddvar Moe'

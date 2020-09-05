@@ -1,4 +1,5 @@
 ---
+Id: 1204b2d5-3aec-45a2-a60c-319e208a6c54
 Name: Microsoft.Workflow.Compiler.exe
 Description: A utility included with .NET that is capable of compiling and executing C# or VB.net code.
 Author: 'Conor Richard'

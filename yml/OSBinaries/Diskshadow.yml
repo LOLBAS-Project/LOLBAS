@@ -1,4 +1,5 @@
 ---
+Id: 463c4364-3f76-400c-b83f-67e861ecd369
 Name: Diskshadow.exe
 Description: Diskshadow.exe is a tool that exposes the functionality offered by the volume shadow copy Service (VSS).
 Author: 'Oddvar Moe'

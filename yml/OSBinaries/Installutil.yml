@@ -1,4 +1,5 @@
 ---
+Id: b89098cd-9c69-4a75-82e7-68da86c619ff
 Name: Installutil.exe
 Description: The Installer tool is a command-line utility that allows you to install and uninstall server resources by executing the installer components in specified assemblies
 Author: 'Oddvar Moe'

@@ -1,4 +1,5 @@
 ---
+Id: c00db34d-2e77-4e29-a8e3-54d5bdfe46dc
 Name: GfxDownloadWrapper.exe
 Description: Remote file download used by the Intel Graphics Control Panel, receives as first parameter a URL and a destination file path.
 Author: Jesus Galvez
