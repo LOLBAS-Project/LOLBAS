@@ -34,6 +34,6 @@ Resources:
 Acknowledgement:
   - Person: Jai Minton
     Handle: '@CyberRaiju'
-   - Person: Jimmy
+  - Person: Jimmy
     Handle: '@bohops'
 ---
