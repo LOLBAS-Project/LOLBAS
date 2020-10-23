@@ -1,7 +1,7 @@
 ---
 Name: DefaultPack.EXE
 Description: This binary can be downloaded along side multiple software downloads on the microsoft website. It gets downloaded when the user forgets to uncheck the option to set Bing as the default search provider.
-Author: @checkymander
+Author: '@checkymander'
 Created: '2020-10-01'
 Commands:
   - Command: DefaultPack.EXE /C:"process.exe args"
@@ -22,5 +22,5 @@ Resources:
   - Link: https://twitter.com/checkymander/status/1311509470275604480.
 Acknowledgement:
   - Person: checkymander
-    Handle: @checkymander
+    Handle: '@checkymander'
 ---
