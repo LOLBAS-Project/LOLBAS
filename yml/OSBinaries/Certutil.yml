@@ -56,7 +56,7 @@ Full_Path:
   - Path: C:\Windows\System32\certutil.exe
   - Path: C:\Windows\SysWOW64\certutil.exe
 Code_Sample: 
-  - Code:546573745f62795f4c696f72(example of the encoded hexadecimal file)
+  - Code:
 Detection:
   - IOC: Certutil.exe creating new files on disk
   - IOC: Useragent Microsoft-CryptoAPI/10.0
