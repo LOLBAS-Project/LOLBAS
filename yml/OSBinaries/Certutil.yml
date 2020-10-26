@@ -44,6 +44,14 @@ Commands:
     MitreID: T1140
     MitreLink: https://attack.mitre.org/wiki/Technique/T1140
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: certutil --decodehex encoded_hexadecimal_InputFileName 
+    Description: Command to decode a hexadecimal-encoded file decodedOutputFileName
+    Usecase: Decode files to evade defensive measures
+    Category: Decode
+    Privileges: User
+    MitreID: T1140
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1140
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\certutil.exe
   - Path: C:\Windows\SysWOW64\certutil.exe
@@ -64,4 +72,5 @@ Acknowledgement:
     Handle: '@Moriarty_Meng'
   - Person: egre55
     Handle: '@egre55'
+  - Person: Lior Adar
 ---
