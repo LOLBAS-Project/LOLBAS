@@ -19,7 +19,7 @@ Code_Sample:
 - Code:
 Detection:
  - IOC: Changes to HKCU\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\Configuration
- - IOC: Changes to HKCU\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs
+ - IOC: Changes to HKLM\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs
  - IOC: Unknown AT starting C:\Windows\System32\ATBroker.exe /start malware
 Resources:
   - Link: http://www.hexacorn.com/blog/2016/07/22/beyond-good-ol-run-key-part-42/

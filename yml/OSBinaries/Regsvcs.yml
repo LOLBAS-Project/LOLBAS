@@ -8,7 +8,7 @@ Commands:
     Description: Loads the target .DLL file and executes the RegisterClass function.
     Usecase: Execute dll file and bypass Application whitelisting
     Category: Execute
-    Privileges: User
+    Privileges: Local Admin
     MitreID: T1121
     MitreLink: https://attack.mitre.org/wiki/Technique/T1121
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
@@ -16,7 +16,7 @@ Commands:
     Description: Loads the target .DLL file and executes the RegisterClass function.
     Usecase: Execute dll file and bypass Application whitelisting
     Category: AWL bypass
-    Privileges: User
+    Privileges: Local Admin
     MitreID: T1121
     MitreLink: https://attack.mitre.org/wiki/Technique/T1121
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10

@@ -29,9 +29,12 @@ Detection:
 Resources:
   - Link: https://gist.github.com/bohops/735edb7494fe1bd1010d67823842b712
   - Link: https://twitter.com/bohops/status/980659399495741441
+  - Link: https://twitter.com/JohnLaTwC/status/1223292479270600706
 Acknowledgement:
   - Person: Jimmy
     Handle: '@bohops'
   - Person: Daniel Bohannon
     Handle: '@danielbohannon'
+  - Person: John Lambert
+    Handle: '@JohnLaTwC'
 ---
