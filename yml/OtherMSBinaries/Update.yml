@@ -92,6 +92,22 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
+  - Command: Update.exe --createShortcut=payload.exe -l=Startup
+    Description: Copy your payload into "%localappdata%\Microsoft\Teams\current\". Then run the command. Update.exe will create a payload.exe shortcut in "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup". Then payload will run on every login of the user who runs it.
+    Usecase: Execute binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1547
+    MitreLink: https://attack.mitre.org/techniques/T1547/001/
+    OperatingSystem: Windows 7 and up with Microsoft Teams installed
+  - Command: Update.exe --removeShortcut=payload.exe -l=Startup
+    Description: Run the command to remove the shortcut created in the "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup" directory you created with the LolBinExecution "--createShortcut" described on this page.
+    Usecase: Execute binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1070
+    MitreLink: https://attack.mitre.org/techniques/T1070/
+    OperatingSystem: Windows 7 and up with Microsoft Teams installed
 Full_Path:
   - Path: '%localappdata%\Microsoft\Teams\update.exe'
 Code_Sample: 
@@ -114,4 +130,5 @@ Acknowledgement:
     Handle: '@MrUn1k0d3r'
   - Person: Adam
     Handle: '@Hexacorn'
+  - Person: Jesus Galvez
 ---
