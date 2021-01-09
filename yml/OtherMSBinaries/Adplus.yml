@@ -7,7 +7,7 @@ Commands:
   - Command: adplus.exe -hang -pn lsass.exe -o c:\users\mr.d0x\output\folder -quiet
     Description: Creates a memory dump of the lsass process
     Usecase: Create memory dump and parse it offline
-    Category: Credentials
+    Category: Dump
     Privileges: SYSTEM
     MitreID: T1003
     MitreLink: https://attack.mitre.org/techniques/T1003/
