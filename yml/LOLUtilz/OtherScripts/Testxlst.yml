@@ -6,14 +6,14 @@ Created: 2018-05-25
 Commands:
   - Command: cscript testxlst.js C:\test\test.xml c:\test\test.xls c:\test\test.out
     Description: Test Jscript included in Python tool to perform XSL transform (for payload execution).
-    Categories: Execution
+    Category: Execution
     Privileges: User
     MitreID: T1064
     MitreLink: https://attack.mitre.org/wiki/Technique/T1064
     OperatingSystem: Windows
   - Command: wscript testxlst.js C:\test\test.xml c:\test\test.xls c:\test\test.out
     Description: Test Jscript included in Python tool to perform XSL transform (for payload execution).
-    Categories: Execution
+    Category: Execution
     Privileges: User
     MitreID: T1064
     MitreLink: https://attack.mitre.org/wiki/Technique/T1064

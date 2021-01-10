@@ -3,7 +3,6 @@ Name: VBoxDrvInst.exe
 Description: Persistence
 Author: ''
 Created: 2018-05-25
-Categories: []
 Commands:
   - Command: VBoxDrvInst.exe driver executeinf c:\temp\calc.inf
     Description: Set registry key-value for persistance via INF file call through VBoxDrvInst.exe

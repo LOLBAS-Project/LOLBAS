@@ -3,7 +3,6 @@ Name: Nltest.exe
 Description: Credentials
 Author: ''
 Created: 2018-05-25
-Categories: []
 Commands:
   - Command: nltest.exe /SERVER:192.168.1.10 /QUERY
     Description: ''

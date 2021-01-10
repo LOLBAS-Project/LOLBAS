@@ -3,7 +3,6 @@ Name: Nvuhda6.exe
 Description: Execute, Copy, Add registry, Create shortcut, kill process
 Author: ''
 Created: 2018-05-25
-Categories: []
 Commands:
   - Command: nvuhda6.exe System calc.exe
     Description: Execute calc.exe as a subprocess.

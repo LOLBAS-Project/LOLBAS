@@ -3,7 +3,6 @@ Name: Usbinst.exe
 Description: Execute
 Author: ''
 Created: 2018-05-25
-Categories: []
 Commands:
   - Command: Usbinst.exe InstallHinfSection "DefaultInstall 128 c:\temp\calc.inf"
     Description: Execute calc.exe through DefaultInstall Section Directive in INF file.

@@ -3,7 +3,6 @@ Name: Setup.exe
 Description: Execute
 Author: ''
 Created: 2018-05-25
-Categories: []
 Commands:
   - Command: Run Setup.exe
     Description: Hijack hpbcsiServiceMarshaller.exe and run Setup.exe to launch a payload.
