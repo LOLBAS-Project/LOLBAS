@@ -14,5 +14,7 @@ Code_Sample: []
 Detection: []
 Resources:
   - https://twitter.com/bohops/status/986984122563391488
-Notes: Thanks to Jimmy - @bohops
+Acknowledgement:
+  - Person: Jimmy
+    Handle: '@bohops'
 

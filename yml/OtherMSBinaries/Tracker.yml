@@ -29,7 +29,7 @@ Detection:
 Resources:
   - Link: https://twitter.com/subTee/status/793151392185589760
   - Link: https://attack.mitre.org/wiki/Execution
-Acknowledgment:
+Acknowledgement:
   - Person: Casey Smith
     Handle: '@subTee'
 ---

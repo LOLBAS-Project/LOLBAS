@@ -25,4 +25,6 @@ Detection: []
 Resources:
   - https://twitter.com/bohops/status/993314069116485632
   - https://github.com/mhammond/pywin32
-Notes: Thanks to Jimmy - @bohops
+Acknowledgement:
+  - Person: Jimmy
+    Handle: '@bohops'

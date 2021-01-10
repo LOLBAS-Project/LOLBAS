@@ -14,4 +14,6 @@ Detection: []
 Resources:
   - https://gist.github.com/danielbohannon/50ec800e92a888b7d45486e5733c359f
   - https://twitter.com/HanseSecure/status/995578436059127808
-Notes: Thanks to Daniel Bohannon - @danielhbohannon
+Acknowledgement:
+  - Person: Daniel Bohannon
+    Handle: '@danielhbohannon'
