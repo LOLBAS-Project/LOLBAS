@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\eventvwr.exe
   - Path: C:\Windows\SysWOW64\eventvwr.exe
-Code Sample:
+Code_Sample:
   - Code: https://github.com/enigma0x3/Misc-PowerShell-Stuff/blob/master/Invoke-EventVwrBypass.ps1
 Detection:
  - IOC: eventvwr.exe launching child process other than mmc.exe

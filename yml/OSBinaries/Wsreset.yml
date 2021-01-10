@@ -14,7 +14,7 @@ Commands:
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\Windows\System32\wsreset.exe
-Code Sample:
+Code_Sample:
   - Code:
 Detection:
  - IOC: wsreset.exe launching child process other than mmc.exe
