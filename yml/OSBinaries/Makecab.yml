@@ -2,7 +2,7 @@
 Name: Makecab.exe
 Description: Binary to package existing files into a cabinet (.cab) file
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: makecab c:\ADS\autoruns.exe c:\ADS\cabtest.txt:autoruns.cab
     Description: Compresses the target file into a CAB file stored in the Alternate Data Stream (ADS) of the target file.
@@ -31,7 +31,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\makecab.exe
   - Path: C:\Windows\SysWOW64\makecab.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Makecab getting files from Internet

@@ -2,7 +2,7 @@
 Name: Robocopy.exe
 Description: Copy
 Author: ''
-Created: '2018-05-25'
+Created: 2018-05-25
 Categories: []
 Commands:
   - Command: Robocopy.exe C:\SourceFolder C:\DestFolder

@@ -1,8 +1,8 @@
 ---
 Name: Xwizard.exe
-Description: 
+Description:
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: xwizard RunWizard {00000001-0000-0000-0000-0000FEEDACDC}
     Description: Xwizard.exe running a custom class that has been added to the registry.
@@ -31,10 +31,10 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\xwizard.exe
   - Path: C:\Windows\SysWOW64\xwizard.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
- - IOC: 
+ - IOC:
 Resources:
   - Link: http://www.hexacorn.com/blog/2017/07/31/the-wizard-of-x-oppa-plugx-style/
   - Link: https://www.youtube.com/watch?v=LwDHX7DVHWU

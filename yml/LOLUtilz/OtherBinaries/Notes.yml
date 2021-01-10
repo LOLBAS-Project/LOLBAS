@@ -2,7 +2,7 @@
 Name: Notes.exe
 Description: Execute
 Author: ''
-Created: '2018-05-25'
+Created: 2018-05-25
 Categories: []
 Commands:
   - Command: Notes.exe "=N:\Lotus\Notes\Data\notes.ini" -Command if((Get-ExecutionPolicy) -ne AllSigned) { Set-ExecutionPolicy -Scope Process Bypass }

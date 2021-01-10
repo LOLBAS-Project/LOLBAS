@@ -2,7 +2,7 @@
 Name: Explorer.exe
 Description: Execute
 Author: ''
-Created: '2018-05-25'
+Created: 2018-05-25
 Categories: []
 Commands:
   - Command: explorer.exe calc.exe

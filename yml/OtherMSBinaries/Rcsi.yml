@@ -2,7 +2,7 @@
 Name: rcsi.exe
 Description: Non-Interactive command line inerface included with Visual Studio.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rcsi.exe bypass.csx
     Description: Use embedded C# within the csx script to execute the code.

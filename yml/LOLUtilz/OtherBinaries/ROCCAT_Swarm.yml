@@ -2,7 +2,7 @@
 Name: ROCCAT_Swarm.exe
 Description: Execute
 Author: ''
-Created: '2018-05-25'
+Created: 2018-05-25
 Categories: []
 Commands:
   - Command: Replace ROCCAT_Swarm_Monitor.exe with your binary.exe

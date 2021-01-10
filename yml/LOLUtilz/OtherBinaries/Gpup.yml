@@ -2,7 +2,7 @@
 Name: Gpup.exe
 Description: Execute
 Author: ''
-Created: '2018-05-25'
+Created: 2018-05-25
 Categories: []
 Commands:
   - Command: Gpup.exe -w whatever -e c:\Windows\System32\calc.exe

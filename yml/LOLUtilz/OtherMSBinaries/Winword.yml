@@ -2,7 +2,7 @@
 Name: winword.exe
 Description: Document editor included with Microsoft Office.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: winword.exe /l dllfile.dll
     Description: Launch DLL payload.

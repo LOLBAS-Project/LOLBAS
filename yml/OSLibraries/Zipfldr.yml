@@ -2,7 +2,7 @@
 Name: Zipfldr.dll
 Description: Compressed Folder library
 Author:
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe zipfldr.dll,RouteTheCall calc.exe
     Description: Launch an executable payload by calling RouteTheCall.

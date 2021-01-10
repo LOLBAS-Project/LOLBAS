@@ -2,7 +2,7 @@
 Name: Register-cimprovider.exe
 Description: Used to register new wmi providers
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: Register-cimprovider -path "C:\folder\evil.dll"
     Description: Load the target .DLL.
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\Register-cimprovider.exe
   - Path: C:\Windows\SysWOW64\Register-cimprovider.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC:

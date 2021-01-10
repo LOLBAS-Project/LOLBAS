@@ -2,7 +2,7 @@
 Name: Wscript.exe
 Description: Used by Windows to execute scripts
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: wscript c:\ads\file.txt:script.vbs
     Description: Execute script stored in an alternate data stream
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\wscript.exe
   - Path: C:\Windows\SysWOW64\wscript.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Wscript.exe executing code from alternate data streams

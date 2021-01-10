@@ -2,7 +2,7 @@
 Name: Rundll32.exe
 Description: Used by Windows to execute dll files
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe AllTheThingsx64,EntryPoint
     Description: AllTheThingsx64 would be a .DLL file and EntryPoint would be the name of the entry point in the .DLL file to execute.
@@ -65,13 +65,13 @@ Commands:
     Usecase: Execute a DLL/EXE COM server payload or ScriptletURL code.
     Category: Execute
     Privileges: User
-    MitreID: 
-    MitreLink: 
+    MitreID:
+    MitreLink:
     OperatingSystem: Windows 10 (and likely previous versions)
 Full_Path:
   - Path: C:\Windows\System32\rundll32.exe
   - Path: C:\Windows\SysWOW64\rundll32.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC:

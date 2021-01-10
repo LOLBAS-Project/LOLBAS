@@ -2,7 +2,7 @@
 Name: Mshtml.dll
 Description: Microsoft HTML Viewer
 Author:
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe Mshtml.dll,PrintHTML "C:\temp\calc.hta"
     Description: Invoke an HTML Application via mshta.exe (Note - Pops a security warning and a print dialogue box).

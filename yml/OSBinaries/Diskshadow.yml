@@ -2,7 +2,7 @@
 Name: Diskshadow.exe
 Description: Diskshadow.exe is a tool that exposes the functionality offered by the volume shadow copy Service (VSS).
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: diskshadow.exe /s c:\test\diskshadow.txt
     Description: Execute commands using diskshadow.exe from a prepared diskshadow script.
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\diskshadow.exe
   - Path: C:\Windows\SysWOW64\diskshadow.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Child process from diskshadow.exe

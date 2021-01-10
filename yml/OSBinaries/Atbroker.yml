@@ -2,7 +2,7 @@
 Name: Atbroker.exe
 Description: Helper binary for Assistive Technology (AT)
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: ATBroker.exe /start malware
     Description: Start a registered Assistive Technology (AT).
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\Atbroker.exe
   - Path: C:\Windows\SysWOW64\Atbroker.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Changes to HKCU\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\Configuration

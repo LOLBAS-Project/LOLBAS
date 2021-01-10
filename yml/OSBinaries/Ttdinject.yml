@@ -2,7 +2,7 @@
 Name: Ttdinject.exe
 Description: Used by Windows 1809 and newer to Debug Time Travel (Underlying call of tttracer.exe)
 Author: 'Maxime Nadeau'
-Created: '2020-05-12'
+Created: 2020-05-12
 Commands:
   - Command: TTDInject.exe /ClientParams "7 tmp.run 0 0 0 0 0 0 0 0 0 0" /Launch "C:/Windows/System32/calc.exe"
     Description: Execute calc using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated.
@@ -23,9 +23,9 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\ttdinject.exe
   - Path: C:\Windows\Syswow64\ttdinject.exe
-Code_Sample: 
-  - Code: 
-Detection: 
+Code_Sample:
+  - Code:
+Detection:
   - IOC: Parent child relationship. Ttdinject.exe parent for executed command
   - IOC: Multiple queries made to the IFEO registry key of an untrusted executable (Ex. "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\payload.exe") from the ttdinject.exe process
 Resources:

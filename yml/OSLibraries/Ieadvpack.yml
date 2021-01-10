@@ -2,7 +2,7 @@
 Name: Ieadvpack.dll
 Description: INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.
 Author:
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe ieadvpack.dll,LaunchINFSection c:\test.inf,DefaultInstall_SingleUser,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).

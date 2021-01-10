@@ -2,7 +2,7 @@
 Name: winrm.vbs
 Description: Script used for manage Windows RM settings
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: 'winrm invoke Create wmicimv2/Win32_Process @{CommandLine="notepad.exe"} -r:http://target:5985'
     Description: Lateral movement/Remote Command Execution via WMI Win32_Process class over the WinRM protocol
@@ -31,7 +31,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\winrm.vbs
   - Path: C:\Windows\SysWOW64\winrm.vbs
-Code_Sample: 
+Code_Sample:
   - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSScripts/Payload/Slmgr.reg
   - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSScripts/Payload/Slmgr_calc.sct
 Detection:

@@ -2,7 +2,7 @@
 Name: Manage-bde.wsf
 Description: Script for managing BitLocker
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: set comspec=c:\windows\system32\calc.exe & cscript c:\windows\system32\manage-bde.wsf
     Description: Set the comspec variable to another executable prior to calling manage-bde.wsf for execution.
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\manage-bde.wsf
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC: Manage-bde.wsf should normally not be invoked by a user

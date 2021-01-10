@@ -1,8 +1,8 @@
 ---
 Name: Scriptrunner.exe
-Description: 
+Description:
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: Scriptrunner.exe -appvscript calc.exe
     Description: Executes calc.exe
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\scriptrunner.exe
   - Path: C:\Windows\SysWOW64\scriptrunner.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Scriptrunner.exe should not be in use unless App-v is deployed

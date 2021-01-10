@@ -2,7 +2,7 @@
 Name: te.exe
 Description: Testing tool included with Microsoft Test Authoring and Execution Framework (TAEF).
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: te.exe bypass.wsc
     Description: Run COM Scriptlets (e.g. VBScript) by calling a Windows Script Component (WSC) file.

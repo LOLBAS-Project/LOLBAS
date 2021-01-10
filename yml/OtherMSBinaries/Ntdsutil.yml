@@ -2,7 +2,7 @@
 Name: ntdsutil.exe
 Description: Command line utility used to export Actove Directory.
 Author: 'Tony Lambert'
-Created: '2020-01-10'
+Created: 2020-01-10
 Commands:
   - Command: ntdsutil.exe "ac i ntds" "ifm" "create full c:\" q q
     Description: Dump NTDS.dit into folder
