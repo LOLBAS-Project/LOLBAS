@@ -7,7 +7,7 @@ Commands:
   - Command: pnputil.exe -i -a C:\Users\hai\Desktop\mo.inf
     Description: used for Install drivers
     Usecase: add malicious driver.
-    Category: Execution
+    Category: Execute
     Privileges: Administrator
     MitreID: T1215
     MitreLink: https://attack.mitre.org/techniques/T1215
