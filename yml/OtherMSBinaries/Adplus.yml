@@ -20,7 +20,7 @@ Code_Sample:
 Detection: 
   - IOC: 
 Resources:
-  - Link: https://blog.thecybersecuritytutor.com/Exeuction-AWL-Bypass-Remote-exe-LOLBin/
+  - Link: https://blog.thecybersecuritytutor.com/adplus-debugging-tool-lsass-dump/
 Acknowledgement:
   - Person: mr.d0x
     Handle: '@mrd0x'
