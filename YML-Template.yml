@@ -34,7 +34,7 @@ Resources:
   - Link: Threatintelreport...
 Acknowledgement:
   - Person: John Doe
-    Handle: @johndoe
+    Handle: '@johndoe'
   - Person: Ola Norman
-    Handle: @olaNor
+    Handle: '@olaNor'
 ---
