@@ -1,12 +1,12 @@
+---
 name: Yaml Lint
 on: [push]
 jobs:
   lintFiles:
-      runs-on: ubuntu-latest
-      steps:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v1
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:
-          file_or_dir: yml/*.yml
-          config_file: .yamllint.yml     
+          config_file: .yamllint
