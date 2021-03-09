@@ -1,6 +1,6 @@
 ---
 name: Yaml Lint
-on: [push]
+on: [push, pull_request]
 jobs:
   lintFiles:
     runs-on: ubuntu-latest
