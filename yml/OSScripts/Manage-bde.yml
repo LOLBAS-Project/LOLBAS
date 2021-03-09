@@ -22,8 +22,8 @@ Commands:
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\manage-bde.wsf
-Code_Sample: 
-  - Code:
+Code_Sample:
+  - Code: ~
 Detection:
   - IOC: Manage-bde.wsf should normally not be invoked by a user
 Resources:
