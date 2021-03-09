@@ -8,5 +8,5 @@ jobs:
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:
-          file_or_dir: yml/**/**/*.yml YML-Template.yml
+          file_or_dir: .
           config_file: .yamllint.yml     
