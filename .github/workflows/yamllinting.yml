@@ -1,0 +1,21 @@
+name: Yaml Lint
+on: [push]
+jobs:
+  lintDataFiles:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v1
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: yml/*.yaml
+          config_file: .yamllint.yml
+  lintTemplate:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v1
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: YML-Template.yaml
+          config_file: .yamllint.yml        
