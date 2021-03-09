@@ -3,7 +3,6 @@ extends: default
 yaml-files:
   - '*.yml'
 rules:
-
   new-line-at-end-of-file:
     level: warning
   trailing-spaces:
