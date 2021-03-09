@@ -30,4 +30,3 @@ Acknowledgement:
   - Person: Adam
     Handle: '@hexacorn'
 ---
-
