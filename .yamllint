@@ -12,3 +12,5 @@ rules:
     level: warning
   new-lines:
     level: warning
+  indentation:
+    level: warning
