@@ -1,0 +1,24 @@
+---
+Name: winrs.exe
+Description: Windows Remote Shell (WinRS) allows you to manage and execute programs remotely while expecting to communicating with a WinRM server. Communication is performed via HTTP (5985) or HTTPS SOAP (5986) and support Kerberos and NTLM authentication or Basic authentication. If WinRM service is not enabled, 'winrm quickconfig' can be used to enable and configure the server locally.
+Author: Sharon Brizinov
+Created: 04/11/2021
+Commands:
+  - Command: winrs -r:MYSERVER msiexec.exe /i c:\install.msi /quiet
+    Description: Run an install package on a remote server over the WinRM protocol.
+    Usecase: Lateral movement/Remote Command Execution
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1021
+    MitreLink: https://attack.mitre.org/techniques/T1021
+    OperatingSystem: Windows 7/Server 2008
+Full_Path:
+  - Path: c:\windows\system32\winrs.exe
+  - Path: c:\windows\syswow64\winrs.exe
+Code_Sample: 
+  - Code: 
+Resources:
+  - Link: https://ss64.com/nt/winrs.html
+Detection: 
+  - IOC: winrs.exe spawned
+---
