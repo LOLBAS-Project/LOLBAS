@@ -23,7 +23,6 @@ Commands:
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
 Detection: 
-  - IOC: Non msedge.exe process spawned under msedge.exe
 Acknowledgement:
   - Person: Ido Veltzman
     Handle: @idov31
