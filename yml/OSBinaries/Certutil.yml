@@ -1,6 +1,6 @@
 ---
 Name: Certutil.exe
-Description: Windows binary used for handeling certificates
+Description: Windows binary used for handling certificates
 Author: 'Oddvar Moe'
 Created: '2018-05-25'
 Commands:
