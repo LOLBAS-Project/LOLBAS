@@ -1,0 +1,24 @@
+---
+Name: fsutil.exe
+Description: File System Utility
+Author: 'Elliot Killick'
+Created: '2021-08-16'
+Commands:
+  - Command: fsutil file setZeroData offset=0 length=9999999999 C:\Windows\Temp\payload.dll
+    Description: Zero out a file
+    Usecase: Can be used to forensically erase a file
+    Category: Forensics
+    Privileges: User
+    MitreID: T1485
+    MitreLink: https://attack.mitre.org/techniques/T1485/
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+Full_Path:
+  - Path: C:\Windows\System32\fsutil.exe
+  - Path: C:\Windows\SysWOW64\fsutil.exe
+Detection:
+  - IOC: fsutil.exe should not be run on a normal workstation
+  - IOC: file setZeroData (not case-sensitive) in the process arguments
+Acknowledgement:
+  - Person: Elliot Killick
+    Handle: '@elliotkillick'
+---
