@@ -4,8 +4,8 @@ Description: Windows Defender Offline Shell
 Author: 'Elliot Killick'
 Created: '2021-08-16'
 Commands:
-  - Command: OfflineScannerShell.exe
-    Description: Execute mpclient.dll library in the current directory
+  - Command: OfflineScannerShell
+    Description: Execute mpclient.dll library in the current working directory
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: Execute
     Privileges: Administrator
