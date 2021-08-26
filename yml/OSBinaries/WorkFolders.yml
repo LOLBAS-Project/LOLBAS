@@ -4,8 +4,8 @@ Description: Work Folders
 Author: 'Elliot Killick'
 Created: '2021-08-16'
 Commands:
-  - Command: WorkFolders.exe
-    Description: Execute control.exe in the current directory
+  - Command: WorkFolders
+    Description: Execute control.exe in the current working directory
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: Execute
     Privileges: User
