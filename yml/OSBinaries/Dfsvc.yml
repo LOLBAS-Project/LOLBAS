@@ -12,6 +12,14 @@ Commands:
     MitreID: T1127
     MitreLink: https://attack.mitre.org/wiki/Technique/T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: rundll32.exe dfshim.dll,ShOpenVerbShortcut \absolute\path\application.appref-ms 
+    Description: Executes click-once-application from click-once shortcut
+    Usecase: Use binary to bypass Application whitelisting
+    Category: AWL bypass
+    Privileges: User
+    MitreID: T1127
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Dfsvc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Dfsvc.exe
@@ -24,7 +32,11 @@ Detection:
 Resources:
   - Link: https://github.com/api0cradle/ShmooCon-2015/blob/master/ShmooCon-2015-Simple-WLEvasion.pdf
   - Link: https://stackoverflow.com/questions/13312273/clickonce-runtime-dfsvc-exe
+  - Link: https://stackoverflow.com/questions/33003209/what-does-12-mean-in-a-shell-open-command
+  - Link: https://twitter.com/nas_bench/status/1433344116071583746
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
+  - Person: Nasreddine Bencherchali
+    Handle: '@nas_bench'
 ---
