@@ -19,7 +19,7 @@ Code_Sample:
 Detection: 
   - IOC: VSIISExeLauncher.exe spawned an unknown process
 Resources:
-  - Link: 
+  - Link: https://github.com/timwhitez
 Acknowledgement:
   - Person: timwhite
     Handle: 
