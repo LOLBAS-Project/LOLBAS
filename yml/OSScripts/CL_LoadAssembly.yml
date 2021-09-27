@@ -24,7 +24,3 @@ Acknowledgement:
   - Person: Jimmy
     Handle: '@bohops'
 ---
-
-
-
-powershell.exe -command "set-location -path C:\Windows\diagnostics\system\Audio; import-module .\CL_LoadAssembly.ps1; RegSnapin ..\..\..\..\testing\fun.dll;[Program.Class]::Fun()
