@@ -19,7 +19,7 @@ Detection:
   - IOC: systeminfo.exe, fltmc.exe or schtasks.exe being executed outside of their normal path of c:\windows\system32\
 
 Resources:
-  - Link: https://twitter.com/eral4m/status/1451110158428512256
+  - Link: https://twitter.com/eral4m/status/1451112385041911809
 Acknowledgement:
   - Person: Eral4m
     Handle: @eral4m
