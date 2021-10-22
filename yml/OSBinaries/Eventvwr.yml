@@ -2,11 +2,11 @@
 Name: Eventvwr.exe
 Description: Displays Windows Event Logs in a GUI window.
 Author: 'Jacob Gajek'
-Created: '2018-11-01'
+Created: 2018-11-01
 Commands:
   - Command: eventvwr.exe
     Description: During startup, eventvwr.exe checks the registry value HKCU\Software\Classes\mscfile\shell\open\command for the location of mmc.exe, which is used to open the eventvwr.msc saved console file. If the location of another binary or script is added to this registry value, it will be executed as a high-integrity process without a UAC prompt being displayed to the user.
-    Usecase: Execute a binary or script as a high-integrity process without a UAC prompt. 
+    Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
     Category: UAC bypass
     Privileges: User
     MitreID: T1088
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\eventvwr.exe
   - Path: C:\Windows\SysWOW64\eventvwr.exe
-Code Sample:
+Code_Sample:
   - Code: https://github.com/enigma0x3/Misc-PowerShell-Stuff/blob/master/Invoke-EventVwrBypass.ps1
 Detection:
  - IOC: eventvwr.exe launching child process other than mmc.exe

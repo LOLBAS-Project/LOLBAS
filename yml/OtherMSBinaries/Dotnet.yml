@@ -2,7 +2,7 @@
 Name: Dotnet.exe
 Description: dotnet.exe comes with .NET Framework
 Author: 'felamos'
-Created: '2019-11-12'
+Created: 2019-11-12
 Commands:
   - Command: dotnet.exe [PATH_TO_DLL]
     Description: dotnet.exe will execute any dll even if applocker is enabled.
@@ -28,7 +28,7 @@ Commands:
     OperatingSystem: Windows 10 with .NET Core installed
 Full_Path:
   - Path: 'C:\Program Files\dotnet\dotnet.exe'
-Detection: 
+Detection:
   - IOC: dotnet.exe spawned an unknown process
 Resources:
   - Link: https://twitter.com/_felamos/status/1204705548668555264
@@ -38,5 +38,5 @@ Acknowledgement:
   - Person: felamos
     Handle: '@_felamos'
   - Person: Jimmy
-    Handle: '@bohops'  
+    Handle: '@bohops'
 ---

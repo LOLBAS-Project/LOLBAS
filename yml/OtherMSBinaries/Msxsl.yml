@@ -2,7 +2,7 @@
 Name: msxsl.exe
 Description: Command line utility used to perform XSL transformations.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: msxsl.exe customers.xml script.xsl
     Description: Run COM Scriptlet code within the script.xsl file (local).

@@ -2,7 +2,7 @@
 Name: Installutil.exe
 Description: The Installer tool is a command-line utility that allows you to install and uninstall server resources by executing the installer components in specified assemblies
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
     Description: Execute the target .NET DLL or EXE.
@@ -25,7 +25,7 @@ Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\InstallUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC:

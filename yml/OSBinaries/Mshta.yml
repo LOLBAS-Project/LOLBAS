@@ -2,7 +2,7 @@
 Name: Mshta.exe
 Description: Used by Windows to execute html applications. (.hta)
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: mshta.exe evilfile.hta
     Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
@@ -39,7 +39,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\mshta.exe
   - Path: C:\Windows\SysWOW64\mshta.exe
-Code_Sample: 
+Code_Sample:
 - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Mshta_calc.sct
 Detection:
  - IOC: mshta.exe executing raw or obfuscated script within the command-line
@@ -48,7 +48,7 @@ Resources:
   - Link: https://evi1cg.me/archives/AppLocker_Bypass_Techniques.html#menu_index_4
   - Link: https://github.com/redcanaryco/atomic-red-team/blob/master/Windows/Payloads/mshta.sct
   - Link: https://oddvar.moe/2017/12/21/applocker-case-study-how-insecure-is-it-really-part-2/
-  - Link: https://oddvar.moe/2018/01/14/putting-data-in-alternate-data-streams-and-how-to-execute-it/  
+  - Link: https://oddvar.moe/2018/01/14/putting-data-in-alternate-data-streams-and-how-to-execute-it/
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'

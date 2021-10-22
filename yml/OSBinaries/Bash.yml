@@ -2,7 +2,7 @@
 Name: Bash.exe
 Description: File used by Windows subsystem for Linux
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: bash.exe -c calc.exe
     Description: Executes calc.exe from bash.exe
@@ -39,7 +39,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\bash.exe
   - Path: C:\Windows\SysWOW64\bash.exe
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC: Child process from bash.exe

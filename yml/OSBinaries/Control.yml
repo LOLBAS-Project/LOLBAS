@@ -2,7 +2,7 @@
 Name: Control.exe
 Description: Binary used to launch controlpanel items in Windows
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: control.exe c:\windows\tasks\file.txt:evil.dll
     Description: Execute evil.dll which is stored in an Alternate Data Stream (ADS).
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\control.exe
   - Path: C:\Windows\SysWOW64\control.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Control.exe executing files from alternate data streams.

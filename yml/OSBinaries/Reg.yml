@@ -2,7 +2,7 @@
 Name: Reg.exe
 Description: Used to manipulate the registry
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: reg export HKLM\SOFTWARE\Microsoft\Evilreg c:\ads\file.txt:evilreg.reg
     Description: Export the target Registry key and save it to the specified .REG file within an Alternate data stream.
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\reg.exe
   - Path: C:\Windows\SysWOW64\reg.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: reg.exe writing to an ADS

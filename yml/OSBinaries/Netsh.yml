@@ -2,7 +2,7 @@
 Name: Netsh.exe
 Description: Netsh is a Windows tool used to manipulate network interface settings.
 Author: 'Freddie Barr-Smith'
-Created: '2019-12-24'
+Created: 2019-12-24
 Commands:
   - Command: netsh.exe add helper C:\Users\User\file.dll
     Description: Use Netsh in order to execute a .dll file and also gain persistence, every time the netsh command is called
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\WINDOWS\System32\Netsh.exe
   - Path: C:\WINDOWS\SysWOW64\Netsh.exe
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC: Netsh initiating a network connection

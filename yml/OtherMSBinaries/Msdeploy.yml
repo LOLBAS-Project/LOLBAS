@@ -2,7 +2,7 @@
 Name: Msdeploy.exe
 Description: Microsoft tool used to deploy Web Applications.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand="c:\temp\calc.bat"
     Description: Launch calc.bat via msdeploy.exe.

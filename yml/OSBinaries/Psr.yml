@@ -2,7 +2,7 @@
 Name: Psr.exe
 Description: Windows Problem Steps Recorder, used to record screen and clicks.
 Author: Leon Rodenko
-Created: '2020-06-27'
+Created: 2020-06-27
 Commands:
   - Command: psr.exe /start /output D:\test.zip /sc 1 /gui 0
     Description: Record a user screen without creating a GUI. You should use "psr.exe /stop" to stop recording and create output file.
@@ -15,9 +15,9 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\psr.exe
   - Path: c:\windows\syswow64\psr.exe
-Code_Sample: 
-  - Code: 
-Detection: 
+Code_Sample:
+  - Code:
+Detection:
   - IOC: psr.exe spawned
   - IOC: suspicious activity when running with "/gui 0" flag
 Resources:

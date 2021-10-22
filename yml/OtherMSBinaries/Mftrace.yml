@@ -2,7 +2,7 @@
 Name: Mftrace.exe
 Description: Trace log generation tool for Media Foundation Tools.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: Mftrace.exe cmd.exe
     Description: Launch cmd.exe as a subprocess of Mftrace.exe.

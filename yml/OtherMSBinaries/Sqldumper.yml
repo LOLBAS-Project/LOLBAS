@@ -2,7 +2,7 @@
 Name: Sqldumper.exe
 Description: Debugging utility included with Microsoft SQL.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: sqldumper.exe 464 0 0x0110
     Description: Dump process by PID and create a dump file (Appears to create a dump file called SQLDmprXXXX.mdmp).

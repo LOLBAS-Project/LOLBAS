@@ -1,8 +1,8 @@
 ---
 Name: Gpscript.exe
-Description: Used by group policy to process scripts 
+Description: Used by group policy to process scripts
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: Gpscript /logon
     Description: Executes logon scripts configured in Group Policy.
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\gpscript.exe
   - Path: C:\Windows\SysWOW64\gpscript.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Scripts added in local group policy

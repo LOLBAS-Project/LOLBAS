@@ -1,8 +1,8 @@
 ---
 Name: Ie4uinit.exe
-Description: 
+Description:
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: ie4uinit.exe -BaseSettings
     Description: Executes commands from a specially prepared ie4uinit.inf file.
@@ -17,7 +17,7 @@ Full_Path:
   - Path: c:\windows\sysWOW64\ie4uinit.exe
   - Path: c:\windows\system32\ieuinit.inf
   - Path: c:\windows\sysWOW64\ieuinit.inf
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: ie4uinit.exe loading a inf file from outside %windir%

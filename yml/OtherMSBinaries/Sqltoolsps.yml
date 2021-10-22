@@ -2,7 +2,7 @@
 Name: SQLToolsPS.exe
 Description: Tool included with Microsoft SQL that loads SQL Server cmdlts. A replacement for sqlps.exe. Successor to sqlps.exe in SQL Server 2016+.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: SQLToolsPS.exe -noprofile -command Start-Process calc.exe
     Description: Run a SQL Server PowerShell mini-console without Module and ScriptBlock Logging.

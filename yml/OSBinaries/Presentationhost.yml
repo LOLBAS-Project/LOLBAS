@@ -2,7 +2,7 @@
 Name: Presentationhost.exe
 Description: File is used for executing Browser applications
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: Presentationhost.exe C:\temp\Evil.xbap
     Description: Executes the target XAML Browser Application (XBAP) file
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\Presentationhost.exe
   - Path: C:\Windows\SysWOW64\Presentationhost.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC:

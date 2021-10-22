@@ -2,7 +2,7 @@
 Name: Devtoolslauncher.exe
 Description: Binary will execute specified binary. Part of VS/VScode installation.
 Author: 'felamos'
-Created: '2019-10-04'
+Created: 2019-10-04
 Commands:
   - Command: devtoolslauncher.exe LaunchForDeploy [PATH_TO_BIN] "argument here" test
     Description: The above binary will execute other binary.
@@ -24,7 +24,7 @@ Full_Path:
   - Path: 'c:\windows\system32\devtoolslauncher.exe'
 Code_Sample:
   - Code:
-Detection: 
+Detection:
   - IOC: DeveloperToolsSvc.exe spawned an unknown process
 Resources:
   - Link: https://twitter.com/_felamos/status/1179811992841797632

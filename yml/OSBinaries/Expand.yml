@@ -2,7 +2,7 @@
 Name: Expand.exe
 Description: Binary that expands one or more compressed files
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: expand \\webdav\folder\file.bat c:\ADS\file.bat
     Description: Copies source file to destination.
@@ -31,10 +31,10 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\Expand.exe
   - Path: C:\Windows\SysWOW64\Expand.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
- - IOC: 
+ - IOC:
 Resources:
   - Link: https://twitter.com/infosecn1nja/status/986628482858807297
   - Link: https://twitter.com/Oddvarmoe/status/986709068759949319

@@ -2,7 +2,7 @@
 Name: Forfiles.exe
 Description: Selects and executes a command on a file or set of files. This command is useful for batch processing.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: forfiles /p c:\windows\system32 /m notepad.exe /c calc.exe
     Description: Executes calc.exe since there is a match for notepad.exe in the c:\windows\System32 folder.
@@ -23,10 +23,10 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\forfiles.exe
   - Path: C:\Windows\SysWOW64\forfiles.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
- - IOC: 
+ - IOC:
 Resources:
   - Link: https://twitter.com/vector_sec/status/896049052642533376
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f

