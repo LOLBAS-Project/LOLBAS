@@ -19,6 +19,7 @@ Code_Sample:
 Detection:
  - IOC: wsreset.exe launching child process other than mmc.exe
  - IOC: Creation or modification of the registry value HKCU\Software\Classes\AppX82a6gwre4fdg3bt635tn5ctqjf8msdd2\Shell\open\command
+ - IOC: Microsoft Defender Antivirus as Behavior:Win32/UACBypassExp.T!gen
 Resources:
   - Link: https://www.activecyber.us/activelabs/windows-uac-bypass
   - Link: https://twitter.com/ihack4falafel/status/1106644790114947073

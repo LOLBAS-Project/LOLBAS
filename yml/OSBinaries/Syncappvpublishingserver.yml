@@ -11,7 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows 10 1709, Windows 10 1703, Windows 10 1607
 Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.exe
   - Path: C:\Windows\SysWOW64\SyncAppvPublishingServer.exe
