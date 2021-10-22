@@ -2,7 +2,7 @@
 Name: Bitsadmin.exe
 Description: Used for managing background intelligent transfer
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: bitsadmin /create 1 bitsadmin /addfile 1 c:\windows\system32\cmd.exe c:\data\playfolder\cmd.exe bitsadmin /SetNotifyCmdLine 1 c:\data\playfolder\1.txt:cmd.exe NULL bitsadmin /RESUME 1 bitsadmin /complete 1
     Description: Create a bitsadmin job named 1, add cmd.exe to the job, configure the job to run the target command from an Alternate data stream, then resume and complete the job.
@@ -39,7 +39,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\bitsadmin.exe
   - Path: C:\Windows\SysWOW64\bitsadmin.exe
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC: Child process from bitsadmin.exe

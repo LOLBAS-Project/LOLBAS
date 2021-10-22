@@ -2,7 +2,7 @@
 Name: Odbcconf.exe
 Description: Used in Windows for managing ODBC connections
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: odbcconf -f file.rsp
     Description: Load DLL specified in target .RSP file. See the Playloads folder for an example .RSP file.
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\odbcconf.exe
   - Path: C:\Windows\SysWOW64\odbcconf.exe
-Code_Sample: 
+Code_Sample:
 - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/file.rsp
 Detection:
  - IOC:

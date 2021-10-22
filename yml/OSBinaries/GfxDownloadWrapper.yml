@@ -2,7 +2,7 @@
 Name: GfxDownloadWrapper.exe
 Description: Remote file download used by the Intel Graphics Control Panel, receives as first parameter a URL and a destination file path.
 Author: Jesus Galvez
-Created: Jesus Galvez
+Created: 2019-12-27
 Commands:
   - Command: C:\Windows\System32\DriverStore\FileRepository\igdlh64.inf_amd64_[0-9]+\GfxDownloadWrapper.exe "URL" "DESTINATION FILE"
     Description: GfxDownloadWrapper.exe downloads the content that returns URL and writes it to the file DESTINATION FILE PATH. The binary is signed by "Microsoft Windows Hardware", "Compatibility Publisher", "Microsoft Windows Third Party Component CA 2012", "Microsoft Time-Stamp PCA 2010", "Microsoft Time-Stamp Service".
@@ -169,7 +169,7 @@ Full_Path:
   - Path: c:\windows\system32\driverstore\filerepository\ki132574.inf_amd64_54c9b905b975ee55\
   - Path: c:\windows\system32\driverstore\filerepository\ki132869.inf_amd64_052eb72d070df60f\
   - Path: c:\windows\system32\driverstore\filerepository\kit126731.inf_amd64_1905c9d5f38631d9\
-Detection: 
+Detection:
   - IOC: Usually GfxDownloadWrapper downloads a JSON file from https://gameplayapi.intel.com.
 Resources:
   - Link: https://www.sothis.tech/author/jgalvez/

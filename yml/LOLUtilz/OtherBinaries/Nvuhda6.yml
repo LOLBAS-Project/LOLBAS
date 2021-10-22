@@ -2,8 +2,7 @@
 Name: Nvuhda6.exe
 Description: Execute, Copy, Add registry, Create shortcut, kill process
 Author: ''
-Created: '2018-05-25'
-Categories: []
+Created: 2018-05-25
 Commands:
   - Command: nvuhda6.exe System calc.exe
     Description: Execute calc.exe as a subprocess.
@@ -23,4 +22,6 @@ Code_Sample: []
 Detection: []
 Resources:
   - http://www.hexacorn.com/blog/2017/11/10/reusigned-binaries-living-off-the-signed-land/
-Notes: Thanks to Adam - @hexacorn
+Acknowledgement:
+  - Person: Adam
+    Handle: '@hexacorn'

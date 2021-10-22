@@ -2,15 +2,15 @@
 Name: Mshtml.dll
 Description: Microsoft HTML Viewer
 Author:
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe Mshtml.dll,PrintHTML "C:\temp\calc.hta"
     Description: Invoke an HTML Application via mshta.exe (Note - Pops a security warning and a print dialogue box).
-    UseCase: Launch an HTA application.
+    Usecase: Launch an HTA application.
     Category: Execute
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\mshtml.dll

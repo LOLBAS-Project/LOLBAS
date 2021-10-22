@@ -2,7 +2,7 @@
 Name: Regedit.exe
 Description: Used by Windows to manipulate registry
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: regedit /E c:\ads\file.txt:regfile.reg HKEY_CURRENT_USER\MyCustomRegKey
     Description: Export the target Registry key to the specified .REG file.
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\regedit.exe
   - Path: C:\Windows\SysWOW64\regedit.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: regedit.exe reading and writing to alternate data stream

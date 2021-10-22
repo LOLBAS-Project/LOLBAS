@@ -2,7 +2,7 @@
 Name: Binary.exe
 Description: Something general about the binary
 Author: The person that created this file
-Created: Date the person created this file
+Created: Date the person created this file (use YYYY-MM-DD without quotes)
 Commands:
   - Command: The command
     Description: Description of the command
@@ -23,9 +23,9 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\bin.exe
   - Path: c:\windows\syswow64\bin.exe
-Code_Sample: 
+Code_Sample:
   - Code: http://url.com/git.txt
-Detection: 
+Detection:
   - IOC: Event ID 10
   - IOC: binary.exe spawned
 Resources:
@@ -34,7 +34,7 @@ Resources:
   - Link: Threatintelreport...
 Acknowledgement:
   - Person: John Doe
-    Handle: @johndoe
+    Handle: '@johndoe'
   - Person: Ola Norman
-    Handle: @olaNor
+    Handle: '@olaNor'
 ---

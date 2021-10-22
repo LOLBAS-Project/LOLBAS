@@ -2,7 +2,7 @@
 Name: vsjitdebugger.exe
 Description: Just-In-Time (JIT) debugger included with Visual Studio
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: Vsjitdebugger.exe calc.exe
     Description: Executes calc.exe as a subprocess of Vsjitdebugger.exe.
@@ -17,7 +17,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC: 
+  - IOC:
 Resources:
   - Link: https://twitter.com/pabraeken/status/990758590020452353
 Acknowledgement:

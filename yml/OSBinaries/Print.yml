@@ -2,7 +2,7 @@
 Name: Print.exe
 Description: Used by Windows to send files to the printer
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: print /D:C:\ADS\File.txt:file.exe C:\ADS\File.exe
     Description: Copy file.exe into the Alternate Data Stream (ADS) of file.txt.
@@ -31,7 +31,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\print.exe
   - Path: C:\Windows\SysWOW64\print.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Print.exe getting files from internet

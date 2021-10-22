@@ -2,8 +2,7 @@
 Name: Robocopy.exe
 Description: Copy
 Author: ''
-Created: '2018-05-25'
-Categories: []
+Created: 2018-05-25
 Commands:
   - Command: Robocopy.exe C:\SourceFolder C:\DestFolder
     Description: Copy the entire contents of the SourceFolder to the DestFolder.
@@ -16,5 +15,3 @@ Code_Sample: []
 Detection: []
 Resources:
   - https://social.technet.microsoft.com/wiki/contents/articles/1073.robocopy-and-a-few-examples.aspx
-Notes: Thanks to Name of guy - @twitterhandle
-

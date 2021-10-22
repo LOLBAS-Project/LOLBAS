@@ -2,7 +2,7 @@
 Name: Mavinject.exe
 Description: Used by App-v in Windows
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: MavInject.exe 3110 /INJECTRUNNING c:\folder\evil.dll
     Description: Inject evil.dll into a process with PID 3110.
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\mavinject.exe
   - Path: C:\Windows\SysWOW64\mavinject.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: mavinject.exe should not run unless APP-v is in use on the workstation

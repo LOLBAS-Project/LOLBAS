@@ -2,9 +2,9 @@
 Name: Regasm.exe
 Description: Part of .NET
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
-  - Command: regasm.exe AllTheThingsx64.dll 
+  - Command: regasm.exe AllTheThingsx64.dll
     Description: Loads the target .DLL file and executes the RegisterClass function.
     Usecase: Execute code and bypass Application whitelisting
     Category: AWL bypass
@@ -12,7 +12,7 @@ Commands:
     MitreID: T1121
     MitreLink: https://attack.mitre.org/wiki/Technique/T1121
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: regasm.exe /U AllTheThingsx64.dll 
+  - Command: regasm.exe /U AllTheThingsx64.dll
     Description: Loads the target .DLL file and executes the UnRegisterClass function.
     Usecase: Execute code and bypass Application whitelisting
     Category: Execute
@@ -25,7 +25,7 @@ Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: regasm.exe executing dll file

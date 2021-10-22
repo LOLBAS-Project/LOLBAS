@@ -1,8 +1,8 @@
 ---
 Name: Runonce.exe
-Description: 
+Description:
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: Runonce.exe /AlternateShellStartup
     Description: Executes a Run Once Task that has been configured in the registry
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\runonce.exe
   - Path: C:\Windows\SysWOW64\runonce.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: HKLM\SOFTWARE\Microsoft\Active Setup\Installed Components\YOURKEY

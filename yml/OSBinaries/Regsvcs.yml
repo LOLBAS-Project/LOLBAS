@@ -2,7 +2,7 @@
 Name: Regsvcs.exe
 Description: Regsvcs and Regasm are Windows command-line utilities that are used to register .NET Component Object Model (COM) assemblies
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: regsvcs.exe AllTheThingsx64.dll
     Description: Loads the target .DLL file and executes the RegisterClass function.
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\regsvcs.exe
   - Path: C:\Windows\SysWOW64\regsvcs.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC:

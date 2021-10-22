@@ -2,7 +2,7 @@
 Name: csi.exe
 Description: Command line interface included with Visual Studio.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: csi.exe file
     Description: Use csi.exe to run unsigned C# code.

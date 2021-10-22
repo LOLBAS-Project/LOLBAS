@@ -2,8 +2,7 @@
 Name: Explorer.exe
 Description: Execute
 Author: ''
-Created: '2018-05-25'
-Categories: []
+Created: 2018-05-25
 Commands:
   - Command: explorer.exe calc.exe
     Description: 'Executes calc.exe as a subprocess of explorer.exe.'
@@ -14,5 +13,7 @@ Code_Sample: []
 Detection: []
 Resources:
   - https://twitter.com/bohops/status/986984122563391488
-Notes: Thanks to Jimmy - @bohops
+Acknowledgement:
+  - Person: Jimmy
+    Handle: '@bohops'
 
