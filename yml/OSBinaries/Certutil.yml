@@ -2,7 +2,7 @@
 Name: Certutil.exe
 Description: Windows binary used for handling certificates
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: certutil.exe -urlcache -split -f http://7-zip.org/a/7z1604-x64.exe 7zip.exe
     Description: Download and save 7zip to disk in the current folder.
@@ -44,7 +44,7 @@ Commands:
     MitreID: T1140
     MitreLink: https://attack.mitre.org/wiki/Technique/T1140
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: certutil --decodehex encoded_hexadecimal_InputFileName 
+  - Command: certutil --decodehex encoded_hexadecimal_InputFileName
     Description: Command to decode a hexadecimal-encoded file decodedOutputFileName
     Usecase: Decode files to evade defensive measures
     Category: Decode
@@ -55,7 +55,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\certutil.exe
   - Path: C:\Windows\SysWOW64\certutil.exe
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC: Certutil.exe creating new files on disk

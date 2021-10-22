@@ -2,14 +2,14 @@
 Name: Update.exe
 Description: Binary to update the existing installed Nuget/squirrel package. Part of Microsoft Teams installation.
 Author: 'Oddvar Moe'
-Created: '2019-06-26'
+Created: 2019-06-26
 Commands:
   - Command: Update.exe --download [url to package]
     Description: The above binary will go to url and look for RELEASES file and download the nuget package.
     Usecase: Download binary
     Category: Download
     Privileges: User
-    MitreID: T1218 
+    MitreID: T1218
     MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --update=[url to package]
@@ -110,9 +110,9 @@ Commands:
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
 Full_Path:
   - Path: '%localappdata%\Microsoft\Teams\update.exe'
-Code_Sample: 
+Code_Sample:
   - Code: https://github.com/jreegun/POC-s/tree/master/nuget-squirrel
-Detection: 
+Detection:
   - IOC: Update.exe spawned an unknown process
 Resources:
   - Link: https://www.youtube.com/watch?v=rOP3hnkj7ls

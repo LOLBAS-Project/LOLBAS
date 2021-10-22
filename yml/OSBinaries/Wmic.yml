@@ -2,7 +2,7 @@
 Name: Wmic.exe
 Description: The WMI command-line (WMIC) utility provides a command-line interface for WMI
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: wmic.exe process call create "c:\ads\file.txt:program.exe"
     Description: Execute a .EXE file stored as an Alternate Data Stream (ADS)
@@ -71,7 +71,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\wbem\wmic.exe
   - Path: C:\Windows\SysWOW64\wbem\wmic.exe
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC: Wmic getting scripts from remote system

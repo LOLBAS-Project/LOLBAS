@@ -2,7 +2,7 @@
 Name: CL_Mutexverifiers.ps1
 Description:
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: . C:\\Windows\\diagnostics\\system\\AERO\\CL_Mutexverifiers.ps1   \nrunAfterCancelProcess calc.ps1
     Description: Import the PowerShell Diagnostic CL_Mutexverifiers script and call runAfterCancelProcess to launch an executable.
@@ -18,7 +18,7 @@ Full_Path:
   - Path: C:\Windows\diagnostics\system\WindowsUpdate\CL_Mutexverifiers.ps1
   - Path: C:\Windows\diagnostics\system\Video\CL_Mutexverifiers.ps1
   - Path: C:\Windows\diagnostics\system\Speech\CL_Mutexverifiers.ps1
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC:

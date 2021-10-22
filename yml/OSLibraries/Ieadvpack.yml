@@ -2,46 +2,46 @@
 Name: Ieadvpack.dll
 Description: INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.
 Author:
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe ieadvpack.dll,LaunchINFSection c:\test.inf,DefaultInstall_SingleUser,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
-    UseCase: Run local or remote script(let) code through INF file specification.
+    Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
   - Command: rundll32.exe ieadvpack.dll,LaunchINFSection c:\test.inf,,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied).
-    UseCase: Run local or remote script(let) code through INF file specification.
+    Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
   - Command: rundll32.exe ieadvpack.dll,RegisterOCX test.dll
     Description: Launch a DLL payload by calling the RegisterOCX function.
-    UseCase: Load a DLL payload.
+    Usecase: Load a DLL payload.
     Category: Execute
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
   - Command: rundll32.exe ieadvpack.dll,RegisterOCX calc.exe
     Description: Launch an executable by calling the RegisterOCX function.
-    UseCase: Run an executable payload.
+    Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
   - Command: rundll32 ieadvpack.dll, RegisterOCX "cmd.exe /c calc.exe"
     Description: Launch command line by calling the RegisterOCX function.
-    UseCase: Run an executable payload.
+    Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
 Full_Path:
   - Path: c:\windows\system32\ieadvpack.dll
   - Path: c:\windows\syswow64\ieadvpack.dll

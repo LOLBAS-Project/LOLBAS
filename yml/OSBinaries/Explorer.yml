@@ -2,7 +2,7 @@
 Name: Explorer.exe
 Description: Binary used for managing files and system components within Windows
 Author: 'Jai Minton'
-Created: '2020-06-24'
+Created: 2020-06-24
 Commands:
   - Command: explorer.exe /root,"C:\Windows\System32\calc.exe"
     Description: Execute calc.exe with the parent process spawning from a new instance of explorer.exe
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\explorer.exe
   - Path: C:\Windows\SysWOW64\explorer.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Multiple instances of explorer.exe or explorer.exe using the /root command line can help to detect this.

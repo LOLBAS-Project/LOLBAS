@@ -2,7 +2,7 @@
 Name: Wsl.exe
 Description: Windows subsystem for Linux executable
 Author: 'Matthew Brown'
-Created: '2019-06-27'
+Created: 2019-06-27
 Commands:
   - Command: wsl.exe -e /mnt/c/Windows/System32/calc.exe
     Description: Executes calc.exe from wsl.exe

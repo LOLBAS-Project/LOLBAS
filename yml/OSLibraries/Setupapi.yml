@@ -37,7 +37,7 @@ Resources:
 Acknowledgement:
   - Person: Kyle Hanslovan (COM Scriptlet)
     Handle: '@KyleHanslovan'
-  - Person:  Huntress Labs (COM Scriptlet)
+  - Person: Huntress Labs (COM Scriptlet)
     Handle: '@HuntressLabs'
   - Person: Casey Smith (COM Scriptlet)
     Handle: '@subTee'

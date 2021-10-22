@@ -2,7 +2,7 @@
 Name: Tttracer.exe
 Description: Used by Windows 1809 and newer to Debug Time Travel
 Author: 'Oddvar Moe'
-Created: '2019-11-5'
+Created: 2019-11-05
 Commands:
   - Command: tttracer.exe C:\windows\system32\calc.exe
     Description: Execute calc using tttracer.exe. Requires administrator privileges
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\tttracer.exe
   - Path: C:\Windows\SysWOW64\tttracer.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Parent child relationship. Tttracer parent for executed command

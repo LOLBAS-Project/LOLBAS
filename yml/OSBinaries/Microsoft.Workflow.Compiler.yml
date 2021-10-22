@@ -2,7 +2,7 @@
 Name: Microsoft.Workflow.Compiler.exe
 Description: A utility included with .NET that is capable of compiling and executing C# or VB.net code.
 Author: 'Conor Richard'
-Created: '2018-10-22'
+Created: 2018-10-22
 Commands:
   - Command: Microsoft.Workflow.Compiler.exe tests.xml results.xml
     Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.xml file.
@@ -19,7 +19,7 @@ Commands:
     Privileges: User
     MitreID: T1127
     MitreLink: https://attack.mitre.org/wiki/Technique/T1127
-    OperatingSystem: Windows 10S 
+    OperatingSystem: Windows 10S
   - Command: Microsoft.Workflow.Compiler.exe tests.txt results.txt
     Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.txt file.
     Usecase: Compile and run code
@@ -27,10 +27,10 @@ Commands:
     Privileges: User
     MitreID: T1127
     MitreLink: https://attack.mitre.org/wiki/Technique/T1127
-    OperatingSystem: Windows 10S 
+    OperatingSystem: Windows 10S
 Full_Path:
   - Path: C:\Windows\Microsoft.Net\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Microsoft.Workflow.Compiler.exe would not normally be run on workstations.

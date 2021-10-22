@@ -2,7 +2,7 @@
 Name: Regini.exe
 Description: Used to manipulate the registry
 Author: 'Oddvar Moe'
-Created: '2020-07-03'
+Created: 2020-07-03
 Commands:
   - Command: regini.exe newfile.txt:hidden.ini
     Description: Write registry keys from data inside the Alternate data stream.
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\regini.exe
   - Path: C:\Windows\SysWOW64\regini.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: regini.exe reading from ADS

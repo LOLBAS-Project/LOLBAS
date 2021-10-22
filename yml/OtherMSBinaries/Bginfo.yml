@@ -2,7 +2,7 @@
 Name: Bginfo.exe
 Description: Background Information Utility included with SysInternals Suite
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: bginfo.exe bginfo.bgi /popup /nolicprompt
     Description: Execute VBscript code that is referenced within the bginfo.bgi file.

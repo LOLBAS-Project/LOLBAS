@@ -2,7 +2,7 @@
 Name: Cdb.exe
 Description: Debugging tool included with Windows Debugging Tools.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: cdb.exe -cf x64_calc.wds -o notepad.exe
     Description: Launch 64-bit shellcode from the x64_calc.wds file using cdb.exe.
