@@ -2,7 +2,7 @@
 Name: dnx.exe
 Description: .Net Execution environment file included with .Net.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: dnx.exe consoleapp
     Description: Execute C# code located in the consoleapp folder via 'Program.cs' and 'Project.json' (Note - Requires dependencies)

@@ -2,15 +2,15 @@
 Name: Pcwutl.dll
 Description: Microsoft HTML Viewer
 Author:
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe pcwutl.dll,LaunchApplication calc.exe
     Description: Launch executable by calling the LaunchApplication function.
-    UseCase: Launch an executable.
+    Usecase: Launch an executable.
     Category: Execute
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\pcwutl.dll

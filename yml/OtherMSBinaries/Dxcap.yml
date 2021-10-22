@@ -1,8 +1,8 @@
 ---
 Name: Dxcap.exe
-Description: DirectX diagnostics/debugger included with Visual Studio. 
+Description: DirectX diagnostics/debugger included with Visual Studio.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: Dxcap.exe -c C:\Windows\System32\notepad.exe
     Description: Launch notepad as a subprocess of Dxcap.exe

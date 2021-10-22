@@ -2,15 +2,15 @@
 Name: Shdocvw.dll
 Description: Shell Doc Object and Control Library.
 Author:
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe shdocvw.dll,OpenURL "C:\test\calc.url"
     Description: Launch an executable payload via proxy through a(n) URL (information) file by calling OpenURL.
-    UseCase: Load an executable payload by calling a .url file with or without quotes.  The .url file extension can be renamed.
+    Usecase: Load an executable payload by calling a .url file with or without quotes.  The .url file extension can be renamed.
     Category: Execute
     Privileges: User
     MitreID: T1085
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\shdocvw.dll

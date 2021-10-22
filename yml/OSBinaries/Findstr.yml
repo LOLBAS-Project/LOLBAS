@@ -1,8 +1,8 @@
 ---
 Name: Findstr.exe
-Description: 
+Description:
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: findstr /V /L W3AllLov3DonaldTrump c:\ADS\file.exe > c:\ADS\file.txt:file.exe
     Description: Searches for the string W3AllLov3DonaldTrump, since it does not exist (/V) file.exe is written to an Alternate Data Stream (ADS) of the file.txt file.
@@ -39,10 +39,10 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\findstr.exe
   - Path: C:\Windows\SysWOW64\findstr.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
- - IOC: finstr.exe should normally not be invoked on a client system
+ - IOC: findstr.exe should normally not be invoked on a client system
 Resources:
   - Link: https://oddvar.moe/2018/04/11/putting-data-in-alternate-data-streams-and-how-to-execute-it-part-2/
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f

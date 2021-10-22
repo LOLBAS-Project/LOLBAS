@@ -2,7 +2,7 @@
 Name: Msiexec.exe
 Description: Used by Windows to execute msi files
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: msiexec /quiet /i cmd.msi
     Description: Installs the target .MSI file silently.
@@ -35,11 +35,11 @@ Commands:
     Privileges: User
     MitreID: T1218
     MitreLink: https://attack.mitre.org/wiki/Technique/T1218
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10    
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\msiexec.exe
   - Path: C:\Windows\SysWOW64\msiexec.exe
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC: msiexec.exe getting files from Internet

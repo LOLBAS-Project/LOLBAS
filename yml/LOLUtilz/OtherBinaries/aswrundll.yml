@@ -1,7 +1,7 @@
 Name: aswrundll.exe
 Description: This process is used by AVAST antivirus to run and execute any modules
 Author: Eli Salem
-Created: 19\03\2019
+Created: '2019-03-19'
 Commands:
   - Command: '"C:\Program Files\Avast Software\Avast\aswrundll" "C:\Users\Public\Libraries\tempsys\module.dll"'
     Description: Load and execute modules using aswrundll
@@ -17,4 +17,4 @@ Resources:
  - Link: https://www.cybereason.com/blog/information-stealing-malware-targeting-brazil-full-research
 Acknowledgement:
   - Person: Eli Salem 
-    handle: https://www.linkedin.com/in/eli-salem-954728150
+    handle: 'https://www.linkedin.com/in/eli-salem-954728150'

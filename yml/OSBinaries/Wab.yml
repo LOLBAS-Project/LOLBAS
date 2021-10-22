@@ -2,7 +2,7 @@
 Name: Wab.exe
 Description: Windows address book manager
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: wab.exe
     Description: Change HKLM\Software\Microsoft\WAB\DLLPath and execute DLL of choice
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\Windows Mail\wab.exe
   - Path: C:\Program Files (x86)\Windows Mail\wab.exe
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
   - IOC: WAB.exe should normally never be used

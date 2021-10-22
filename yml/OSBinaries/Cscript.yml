@@ -2,7 +2,7 @@
 Name: Cscript.exe
 Description: Binary used to execute scripts in Windows
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: cscript c:\ads\file.txt:script.vbs
     Description: Use cscript.exe to exectute a Visual Basic script stored in an Alternate Data Stream (ADS).
@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\cscript.exe
   - Path: C:\Windows\SysWOW64\cscript.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: Cscript.exe executing files from alternate data streams

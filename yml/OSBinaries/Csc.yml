@@ -1,8 +1,8 @@
 ---
 Name: Csc.exe
-Description: Binary file used by .NET to compile C# code 
+Description: Binary file used by .NET to compile C# code
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: csc.exe -out:My.exe File.cs
     Description: Use CSC.EXE to compile C# code stored in File.cs and output the compiled version to My.exe.
@@ -23,13 +23,13 @@ Commands:
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Csc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Csc.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
- - IOC: Csc.exe should normally not run a system unless it is used for development. 
+ - IOC: Csc.exe should normally not run a system unless it is used for development.
 Resources:
   - Link: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe
 Acknowledgement:
-  - Person: 
+  - Person:
     Handle:
 ---

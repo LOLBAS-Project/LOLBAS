@@ -2,7 +2,7 @@
 Name: Ftp.exe
 Description: A binary designed for connecting to FTP servers
 Author: 'Oddvar Moe'
-Created: '2018-12-10'
+Created: 2018-12-10
 Commands:
   - Command: echo !calc.exe > ftpcommands.txt && ftp -s:ftpcommands.txt
     Description: Executes the commands you put inside the text file.
@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\ftp.exe
   - Path: C:\Windows\SysWOW64\ftp.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: cmd /c as child process of ftp.exe

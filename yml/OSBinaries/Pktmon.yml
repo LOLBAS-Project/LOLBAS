@@ -2,7 +2,7 @@
 Name: Pktmon.exe
 Description: Capture Network Packets on the windows 10 with October 2018 Update or later.
 Author: 'Derek Johnson'
-Created: '2020-08-12'
+Created: 2020-08-12
 Commands:
   - Command: pktmon.exe start --etw
     Description: Will start a packet capture and store log file as PktMon.etl. Use pktmon.exe stop
@@ -23,9 +23,9 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\pktmon.exe
   - Path: c:\windows\syswow64\pktmon.exe
-Code_Sample: 
+Code_Sample:
   - Code:
-Detection: 
+Detection:
   - IOC: .etl files found on system
 Resources:
   - Link: https://binar-x79.com/windows-10-secret-sniffer/
