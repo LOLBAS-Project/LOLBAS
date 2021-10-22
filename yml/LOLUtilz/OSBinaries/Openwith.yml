@@ -2,7 +2,7 @@
 Name: Openwith.exe
 Description: Execute
 Author: ''
-Created: 2018-05-25
+Created: '2018-05-25'
 Commands:
   - Command: OpenWith.exe /c C:\test.hta
     Description: Opens the target file with the default application.

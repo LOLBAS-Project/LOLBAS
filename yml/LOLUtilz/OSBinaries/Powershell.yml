@@ -2,7 +2,7 @@
 Name: Powershell.exe
 Description: Execute, Read ADS
 Author: ''
-Created: 2018-05-25
+Created: '2018-05-25'
 Commands:
   - Command: powershell -ep bypass - < c:\temp:ttt
     Description: Execute the encoded PowerShell command stored in an Alternate Data Stream (ADS).
@@ -16,4 +16,3 @@ Resources:
 Acknowledgement:
   - Person: Moriarty
     Handle: '@Moriarty_Meng'
-

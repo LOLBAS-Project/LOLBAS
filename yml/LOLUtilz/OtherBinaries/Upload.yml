@@ -3,6 +3,7 @@ Name: Update.exe
 Description: Binary to update the existing installed Nuget/squirrel package. Part of Whatsapp installation.
 Author: 'Jesus Galvez'
 Created: '2020-11-01'
+Commands:
   - Command: Update.exe --processStart payload.exe --process-start-args "whatever args"
     Description: Copy your payload into "%localappdata%\Whatsapp\app-[version]\". Then run the command. Update.exe will execute the file you copied.
     Usecase: Execute binary
@@ -14,5 +15,5 @@ Created: '2020-11-01'
 Full_Path:
   - Path: '%localappdata%\Whatsapp\Update.exe'
 Detection: 
-  - IOC: "%localappdata%\Whatsapp\Update.exe" spawned an unknown process
+  - IOC: '"%localappdata%\Whatsapp\Update.exe" spawned an unknown process'
 ---

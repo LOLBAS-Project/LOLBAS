@@ -1,0 +1,15 @@
+---
+extends: default
+yaml-files:
+  - '*.yml'
+rules:
+  new-line-at-end-of-file:
+    level: warning
+  trailing-spaces:
+    level: warning
+  line-length:
+    level: warning
+  new-lines:
+    level: warning
+  indentation:
+    level: warning
