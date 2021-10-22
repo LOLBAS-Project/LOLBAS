@@ -62,6 +62,17 @@ Common hashtags for these files are:
 Our primary maintainer (@oddvarmoe) of this project did a talk at DerbyCon 2018 called: #Lolbins Nothing to LOL about! - https://www.youtube.com/watch?v=NiYTdmZ8GR4
 This talk goes over the history of this project. 
 
+## Maintainers
+
+The following folks help maintain the LOLBAS Project on their personal time:
+
+* Oddvar Moe ([@oddvarmoe](https://twitter.com/Oddvarmoe))
+* Jimmy Bayne ([@bohops](https://twitter.com/bohops))
+* Conor Richard ([@xenosCR](https://twitter.com/xenosCR))
+* Chris 'Lopi' Spehn ([@ConsciousHacker](https://twitter.com/ConsciousHacker))
+* Liam ([@liamsomerville](https://twitter.com/liamsomerville))
+* Wietze ([@Wietze](https://twitter.com/@Wietze))
+
 ## Thanks
 
 As with many open-source projects, this one is the product of a community and we would like to thank ours:
