@@ -18,6 +18,8 @@ Full_Path:
 Detection:
   - IOC: Reports of downloading from suspicious URLs in %TMP%\config.log
   - IOC: Useragent Microsoft(R) Connection Manager Vpn File Update
+Resource:
+  - Link: https://github.com/LOLBAS-Project/LOLBAS/pull/151
 Acknowledgement:
   - Person: Elliot Killick
     Handle: '@elliotkillick'
