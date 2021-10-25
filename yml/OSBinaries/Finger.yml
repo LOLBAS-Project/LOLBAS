@@ -15,7 +15,7 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\finger.exe
   - Path: c:\windows\syswow64\finger.exe
-Detection: 
+Detection:
   - IOC: finger.exe should not be run on a normal workstation.
   - IOC: finger.exe connecting to external resources.
 Resources:
