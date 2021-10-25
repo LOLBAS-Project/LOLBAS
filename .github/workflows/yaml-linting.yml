@@ -1,6 +1,13 @@
 ---
-name: Yaml Lint
-on: [push, pull_request]
+name: YAML Lint
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
 jobs:
   lintFiles:
     runs-on: ubuntu-latest
@@ -9,4 +16,4 @@ jobs:
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:
-          config_file: .yamllint
+          config_file: .github/.yamllint
