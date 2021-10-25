@@ -20,7 +20,7 @@ Detection:
   - IOC: finger.exe connecting to external resources.
 Resources:
   - Link: https://twitter.com/DissectMalware/status/997340270273409024
-  - Link: https://docs.microsoft.com/es-es/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ff961508(v=ws.11)
+  - Link: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ff961508(v=ws.11)
 Acknowledgement:
   - Person: Ruben Revuelta (MAPFRE CERT)
     Handle: '@rubn_RB'
