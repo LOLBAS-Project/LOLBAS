@@ -1,0 +1,36 @@
+---
+name: Update LOLBAS-Project.github.io
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "yml/**.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.fork == false
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Change .yml to .md
+        run: |
+          for x in $(find yml/ -name '*.yml'); do mv "$x" "${x/%\.yml/.md}"; done
+          mv yml/OSBinaries yml/Binaries
+          mv yml/OSLibraries yml/Libraries
+          mv yml/OSScripts yml/Scripts
+
+      - name: Deploy to LOLBAS-Project.github.io repo
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: LOLBAS-Project/LOLBAS-Project.github.io
+          publish_branch: master
+          publish_dir: yml
+          destination_dir: _lolbas
+          enable_jekyll: true
+          keep_files: false
+          commit_message: "Applying update "
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
