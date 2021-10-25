@@ -63,6 +63,7 @@ Resources:
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/
   - Link: https://gist.github.com/bohops/4ffc43a281e87d108875f07614324191
   - Link: https://github.com/LOLBAS-Project/LOLBAS/issues/165
+  - Link: https://www.daveaglick.com/posts/msbuild-loggers-and-logging-events
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
