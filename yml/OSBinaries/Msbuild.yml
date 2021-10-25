@@ -20,6 +20,22 @@ Commands:
     MitreID: T1127
     MitreLink: https://attack.mitre.org/wiki/Technique/T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: msbuild.exe @sample.rsp
+    Description: Executes Logger statements from rsp file 
+    Usecase: Execute DLL
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+   - Command: msbuild.exe /logger:TargetLogger,C:\Loggers\TargetLogger.dll;MyParameters,Foo
+    Description: Executes generated Logger dll file with TargetLogger export
+    Usecase: Execute DLL
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: msbuild.exe project.proj
     Description: Execute jscript/vbscript code through XML/XSL Transformation. Requires Visual Studio MSBuild v14.0+.
     Usecase: Execute project file that contains XslTransformation tag parameters
@@ -46,6 +62,7 @@ Resources:
   - Link: https://pentestlab.blog/2017/05/29/applocker-bypass-msbuild/
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/
   - Link: https://gist.github.com/bohops/4ffc43a281e87d108875f07614324191
+  - Link: https://github.com/LOLBAS-Project/LOLBAS/issues/165
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
