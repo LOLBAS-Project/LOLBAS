@@ -28,7 +28,7 @@ Commands:
     MitreID: T1127
     MitreLink: https://attack.mitre.org/wiki/Technique/T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-   - Command: msbuild.exe /logger:TargetLogger,C:\Loggers\TargetLogger.dll;MyParameters,Foo
+  - Command: msbuild.exe /logger:TargetLogger,C:\Loggers\TargetLogger.dll;MyParameters,Foo
     Description: Executes generated Logger dll file with TargetLogger export
     Usecase: Execute DLL
     Category: Execute
