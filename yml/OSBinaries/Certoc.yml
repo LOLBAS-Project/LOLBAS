@@ -19,8 +19,7 @@ Commands:
     Privileges: User
     MitreID: T1105
     MitreLink: https://attack.mitre.org/wiki/Technique/T1105
-    OperatingSystem: Windows Server 2022
-  
+    OperatingSystem: Windows Server 2022  
 Full_Path:
   - Path: c:\windows\system32\certoc.exe
   - Path: c:\windows\syswow64\certoc.exe
