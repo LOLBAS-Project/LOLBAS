@@ -16,7 +16,7 @@ Commands:
     Usecase: Dump LSASS.exe to Mimikatz compatible dump using PID.
     Category: Dump
     Privileges: Administrator
-    MitreID: T1003
+    MitreID: T1003.001
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Program Files\Microsoft SQL Server\90\Shared\SQLDumper.exe

