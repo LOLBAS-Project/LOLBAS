@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1216
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1216
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\Windows\diagnostics\system\AERO\CL_Invocation.ps1

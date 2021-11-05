@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218/
     OperatingSystem: Windows 8, Windows 8.1, Windows 10
   - Command: SettingSyncHost -LoadAndRunDiagScriptNoCab anything
     Description: Execute a batch script in the background (no window ever pops up) which can be subverted to running arbitrary programs by setting the current working directory to %TMP% and creating files such as reg.bat/reg.exe in that directory thereby causing them to execute instead of the ones in C:\Windows\System32.
@@ -18,7 +17,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218/
     OperatingSystem: Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\SettingSyncHost.exe

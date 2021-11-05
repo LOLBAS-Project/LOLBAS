@@ -10,10 +10,9 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Whatsapp installed
 Full_Path:
   - Path: '%localappdata%\Whatsapp\Update.exe'
-Detection: 
+Detection:
   - IOC: '"%localappdata%\Whatsapp\Update.exe" spawned an unknown process'
 ---

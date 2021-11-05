@@ -10,7 +10,6 @@ Commands:
     Category: AWL bypass
     Privileges: User
     MitreID: T1127
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Dfsvc.exe

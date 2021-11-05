@@ -10,7 +10,6 @@ Commands:
     Category: Reconnaissance
     Privileges: Administrator
     MitreID: T1040
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1040
     OperatingSystem: Windows 10 1809 and later
   - Command: pktmon.exe filter add -p 445
     Description: Select Desired ports for packet capture
@@ -18,7 +17,6 @@ Commands:
     Category: Reconnaissance
     Privileges: Administrator
     MitreID: T1040
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1040
     OperatingSystem: Windows 10 1809 and later
 Full_Path:
   - Path: c:\windows\system32\pktmon.exe

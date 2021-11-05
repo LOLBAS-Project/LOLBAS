@@ -9,7 +9,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 7 and up with .NET installed
   - Command: dotnet.exe [PATH_TO_DLL]
     Description: dotnet.exe will execute any DLL.
@@ -17,14 +16,12 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 7 and up with .NET installed
   - Command: dotnet.exe msbuild [Path_TO_XML_CSPROJ]
     Description: dotnet.exe with msbuild (SDK Version) will execute unsigned code
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 with .NET Core installed
 Full_Path:
   - Path: 'C:\Program Files\dotnet\dotnet.exe'

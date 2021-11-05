@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows server
   - Command: msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand="c:\temp\calc.bat"
     Description: Launch calc.bat via msdeploy.exe.
@@ -18,7 +17,6 @@ Commands:
     Category: AWL bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows server
 Full_Path:
   - Path: C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe

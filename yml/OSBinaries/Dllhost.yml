@@ -10,12 +10,11 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1546.015
-    MitreLink: https://attack.mitre.org/techniques/T1546/015/
     OperatingSystem: Windows 10 (and likely previous versions)
 Full_Path:
   - Path: C:\Windows\System32\dllhost.exe
   - Path: C:\Windows\SysWOW64\dllhost.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC:

@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows XP, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: explorer.exe C:\Windows\System32\notepad.exe
     Description: Execute calc.exe with the parent process spawning from a new instance of explorer.exe
@@ -18,7 +17,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 (Tested)
 Full_Path:
   - Path: C:\Windows\explorer.exe

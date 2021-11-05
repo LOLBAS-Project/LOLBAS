@@ -10,7 +10,6 @@ Commands:
     Category: Reconnaissance
     Privileges: User
     MitreID: T1113
-    MitreLink: https://attack.mitre.org/techniques/T1113/
     OperatingSystem: since Windows 7 (client) / Windows 2008 R2
 Full_Path:
   - Path: c:\windows\system32\psr.exe

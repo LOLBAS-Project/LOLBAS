@@ -10,7 +10,6 @@ Commands:
     Category: Dump
     Privileges: SYSTEM
     MitreID: T1003
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\comsvcs.dll

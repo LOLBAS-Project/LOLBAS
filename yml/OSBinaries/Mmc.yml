@@ -9,8 +9,7 @@ Commands:
     Usecase: Configure a snap-in to load a COM custom class (CLSID) that has been added to the registry
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1218.014
     OperatingSystem: Windows 10 (and possibly earlier versions)
 Full_Path:
   - Path: C:\Windows\System32\mmc.exe

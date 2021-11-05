@@ -9,16 +9,14 @@ Commands:
     Usecase: Execute code and bypass Application whitelisting
     Category: AWL bypass
     Privileges: Local Admin
-    MitreID: T1121
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1121
+    MitreID: T1218.009
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: regasm.exe /U AllTheThingsx64.dll
     Description: Loads the target .DLL file and executes the UnRegisterClass function.
     Usecase: Execute code and bypass Application whitelisting
     Category: Execute
     Privileges: User
-    MitreID: T1121
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1121
+    MitreID: T1218.009
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\regasm.exe
@@ -32,7 +30,7 @@ Detection:
 Resources:
   - Link: https://pentestlab.blog/2017/05/19/applocker-bypass-regasm-and-regsvcs/
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/
-  - Link: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1121/T1121.md
+  - Link: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1218.009/T1218.009.md
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'

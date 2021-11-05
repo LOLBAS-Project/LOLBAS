@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Program files (x86)\Microsoft SQL Server\130\Tools\Binn\sqlps.exe

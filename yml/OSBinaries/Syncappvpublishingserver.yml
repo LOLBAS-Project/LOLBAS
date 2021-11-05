@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 1709, Windows 10 1703, Windows 10 1607
 Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.exe

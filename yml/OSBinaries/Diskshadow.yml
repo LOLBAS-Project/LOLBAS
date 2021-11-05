@@ -10,7 +10,6 @@ Commands:
     Category: Dump
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows server
   - Command: diskshadow> exec calc.exe
     Description: Execute commands using diskshadow.exe to spawn child process
@@ -18,7 +17,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1003
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows server
 Full_Path:
   - Path: C:\Windows\System32\diskshadow.exe

@@ -7,14 +7,13 @@ Commands:
   - Command: fltMC.exe unload SysmonDrv
     Description: Unloads a driver used by security agents
     Usecase: Defense evasion
-    Category: ADS 
+    Category: ADS
     Privileges: Admin
     MitreID: T1562
-    MitreLink: https://attack.mitre.org/techniques/T1562/002/
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\fltMC.exe
-Code_Sample: 
+Code_Sample:
 - Code:
 Detection:
  - IOC: 4688 events with fltMC.exe

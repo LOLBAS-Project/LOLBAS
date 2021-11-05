@@ -10,7 +10,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Office 16\ClientX86\Root\Office16\Excel.exe

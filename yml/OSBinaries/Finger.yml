@@ -10,7 +10,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/techniques/T1105
     OperatingSystem: Windows 8.1, Windows 10, Windows 11, Windows Server 2008, Windows Server 2008R2, Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019, Windows Server 2022
 Full_Path:
   - Path: c:\windows\system32\finger.exe

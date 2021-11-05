@@ -10,7 +10,6 @@ Commands:
     Category: Credentials
     Privileges: User
     MitreID: T1078
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1078
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\cmdkey.exe

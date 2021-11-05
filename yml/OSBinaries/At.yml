@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: Local Admin
     MitreID: T1053
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1053
     OperatingSystem: Windows 7 or older
 Full_Path:
   - Path: C:\WINDOWS\System32\At.exe

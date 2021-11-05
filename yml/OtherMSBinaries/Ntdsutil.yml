@@ -10,7 +10,6 @@ Commands:
     Category: Dump
     Privileges: Administrator
     MitreID: T1003
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Windows\System32\ntdsutil.exe

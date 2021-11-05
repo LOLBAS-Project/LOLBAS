@@ -10,15 +10,13 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/techniques/T1105/
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: PrintBrm -r -f C:\Users\user\Desktop\data.txt:hidden.zip -d C:\Users\user\Desktop\new_folder
     Description: Extract the contents of a ZIP file stored in an Alternate Data Stream (ADS) and store it in a folder
     Usecase: Decompress and extract a ZIP file stored on an alternate data stream to a new folder
     Category: ADS
     Privileges: User
-    MitreID: T1096
-    MitreLink: https://attack.mitre.org/techniques/T1096/
+    MitreID: T1564.004
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\spool\tools\PrintBrm.exe
