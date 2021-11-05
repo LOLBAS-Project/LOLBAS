@@ -1,6 +1,6 @@
 ---
 Name: ntdsutil.exe
-Description: Command line utility used to export Actove Directory.
+Description: Command line utility used to export Active Directory.
 Author: 'Tony Lambert'
 Created: 2020-01-10
 Commands:

@@ -9,7 +9,7 @@ Commands:
     Usecase: Execute Visual Basic script stored in local Windows Script Component file.
     Category: Execute
     Privileges: User
-    MitreID: T1218
+    MitreID: T1127
     OperatingSystem: Windows
 Full_Path:
   - Path:

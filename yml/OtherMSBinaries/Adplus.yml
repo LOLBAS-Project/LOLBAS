@@ -2,7 +2,7 @@
 Name: adplus.exe
 Description: Debugging tool included with Windows Debugging Tools
 Author: mr.d0x
-Created: 1/9/2021
+Created: 2021-09-01
 Commands:
   - Command: adplus.exe -hang -pn lsass.exe -o c:\users\mr.d0x\output\folder -quiet
     Description: Creates a memory dump of the lsass process

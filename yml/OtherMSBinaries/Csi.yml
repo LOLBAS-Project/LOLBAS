@@ -9,7 +9,7 @@ Commands:
     Usecase: Local execution of unsigned C# code.
     Category: Execute
     Privileges: User
-    MitreID: T1218
+    MitreID: T1127
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Roslyn\csi.exe

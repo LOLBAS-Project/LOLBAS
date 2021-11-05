@@ -9,7 +9,7 @@ Commands:
     Usecase: Spawn process using other binary
     Category: Execute
     Privileges: Administrator
-    MitreID: T1218
+    MitreID: T1127
     OperatingSystem: Windows 10 1809 and newer
   - Command: TTTracer.exe -dumpFull -attach pid
     Description: Dumps process using tttracer.exe. Requires administrator privileges
