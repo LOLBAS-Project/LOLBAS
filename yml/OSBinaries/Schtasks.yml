@@ -9,7 +9,7 @@ Commands:
     Usecase: Create a recurring task, to eg. to keep reverse shell session(s) alive
     Category: Execute
     Privileges: User
-    MitreID: T1053
+    MitreID: T1053.005
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\schtasks.exe
