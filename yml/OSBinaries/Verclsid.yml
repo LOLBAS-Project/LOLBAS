@@ -9,7 +9,7 @@ Commands:
     Usecase: Run a com object created in registry to evade defensive counter measures
     Category: Execute
     Privileges: User
-    MitreID: T1218
+    MitreID: T1218.012
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\Windows\System32\verclsid.exe
