@@ -1,0 +1,28 @@
+---
+Name: register_app.vbs
+Description: Script used for registering a VSS/VDS Provider as a COM+ application
+Author: 'Ensar Samil'
+Created: 2021-11-05
+Commands:
+  - Command: cscript.exe "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64\register_app.vbs" -register <Provider_Name> <Provider.DLL> <Provider_Description>
+    Description: Loads DLL file
+    Usecase: Execute code within DLL file
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/techniques/T1218/
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64\register_app.vbs
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\register_app.vbs
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x64\register_app.vbs
+Code_Sample:
+  - Code:
+Detection:
+  - IOC:
+Resources:
+  - Link: https://twitter.com/sblmsrsn/status/1456613494783160325?s=20
+Acknowledgement:
+  - Person: Ensar Samil
+    Handle: '@sblmsrsn'
+---
