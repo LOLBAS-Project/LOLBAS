@@ -9,7 +9,7 @@ Commands:
     Usecase: Use forfiles to start a new process to evade defensive counter measures
     Category: Execute
     Privileges: User
-    MitreID: T1218
+    MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: forfiles /p c:\windows\system32 /m notepad.exe /c "c:\folder\normal.dll:evil.exe"
     Description: Executes the evil.exe Alternate Data Stream (AD) since there is a match for notepad.exe in the c:\windows\system32 folder.

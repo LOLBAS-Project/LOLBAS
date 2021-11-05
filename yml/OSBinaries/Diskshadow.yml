@@ -16,7 +16,7 @@ Commands:
     Usecase: Use diskshadow to bypass defensive counter measures
     Category: Execute
     Privileges: User
-    MitreID: T1003
+    MitreID: T1202
     OperatingSystem: Windows server
 Full_Path:
   - Path: C:\Windows\System32\diskshadow.exe
