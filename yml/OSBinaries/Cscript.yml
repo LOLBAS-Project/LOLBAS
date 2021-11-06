@@ -17,7 +17,12 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_script_execution.yml
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/file_event/sysmon_susp_clr_logs.yml
+ - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
  - IOC: Cscript.exe executing files from alternate data streams
+ - IOC: DotNet CLR libraries loaded into Cscript.exe
+ - IOF: DotNet CLR Usage Log - Cscript.exe.log
 Resources:
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
   - Link: https://oddvar.moe/2018/01/14/putting-data-in-alternate-data-streams-and-how-to-execute-it/

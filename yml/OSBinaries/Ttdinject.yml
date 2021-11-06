@@ -24,6 +24,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma:
   - IOC: Parent child relationship. Ttdinject.exe parent for executed command
   - IOC: Multiple queries made to the IFEO registry key of an untrusted executable (Ex. "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\payload.exe") from the ttdinject.exe process
 Resources:

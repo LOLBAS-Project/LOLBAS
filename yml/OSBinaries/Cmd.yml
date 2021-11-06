@@ -24,6 +24,7 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
+ - Sigma: 
  - IOC: cmd.exe executing files from alternate data streams.
 Resources:
   - Link: https://twitter.com/yeyint_mth/status/1143824979139579904

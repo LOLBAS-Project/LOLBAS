@@ -24,6 +24,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma:
   - IOC: .etl files found on system
 Resources:
   - Link: https://binar-x79.com/windows-10-secret-sniffer/

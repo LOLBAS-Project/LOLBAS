@@ -22,9 +22,9 @@ Full_Path:
   - Path: C:\Windows\System32\regsvcs.exe
   - Path: C:\Windows\SysWOW64\regsvcs.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/a04fbe2a99f1dcbbfeb0ee4957ae4b06b0866254/rules/windows/process_creation/win_possible_applocker_bypass.yml
 Resources:
   - Link: https://pentestlab.blog/2017/05/19/applocker-bypass-regasm-and-regsvcs/
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/

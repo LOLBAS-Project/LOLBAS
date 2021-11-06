@@ -17,7 +17,8 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
- - IOC: Dnscmd.exe loading dll from UNC path
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/b08b3e2b0d5111c637dbede1381b07cb79f8c2eb/rules/windows/process_creation/process_creation_dns_serverlevelplugindll.yml
+ - IOC: Dnscmd.exe loading dll from UNC/arbitrary path
 Resources:
   - Link: https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83
   - Link: https://blog.3or.de/hunting-dns-server-level-plugin-dll-injection.html

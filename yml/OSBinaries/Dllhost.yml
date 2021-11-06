@@ -17,7 +17,7 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
- - IOC:
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/network_connection/sysmon_dllhost_net_connections.yml
 Resources:
   - Link: https://twitter.com/CyberRaiju/status/1167415118847598594
   - Link: https://nasbench.medium.com/what-is-the-dllhost-exe-process-actually-running-ef9fe4c19c08

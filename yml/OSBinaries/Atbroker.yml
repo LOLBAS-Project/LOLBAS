@@ -17,6 +17,8 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/eb406ba36fc607986970c09e53058af412093647/rules/windows/process_creation/win_susp_atbroker.yml
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/7bca85e40618126643b9712b80bd663c21908e26/rules/windows/registry_event/sysmon_susp_atbroker_change.yml
  - IOC: Changes to HKCU\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\Configuration
  - IOC: Changes to HKLM\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs
  - IOC: Unknown AT starting C:\Windows\System32\ATBroker.exe /start malware

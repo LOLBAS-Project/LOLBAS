@@ -16,7 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/973e0666acffb8fd7ea8356449eb916381ab0cc6/rules/windows/process_creation/process_creation_syncappvpublishingserver_vbs_execute_powershell.yml
 Resources:
   - Link: https://twitter.com/monoxgas/status/895045566090010624
   - Link: https://twitter.com/subTee/status/855738126882316288

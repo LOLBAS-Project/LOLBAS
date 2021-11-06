@@ -14,9 +14,10 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\fltMC.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: 4688 events with fltMC.exe
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c27084dd0c432335fa4369e5002a61dfe0ab9c65/rules/windows/process_creation/win_sysmon_driver_unload.yml
+  - IOC: 4688 events with fltMC.exe
 Resources:
   - Link: https://www.darkoperator.com/blog/2018/10/5/operating-offensively-against-sysmon
 Acknowledgement:

@@ -24,7 +24,7 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
- - IOC:
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/ff0f1a0222b5100120ae3e43df18593f904c69c0/rules/windows/process_creation/win_indirect_cmd.yml
 Resources:
   - Link: https://twitter.com/vector_sec/status/896049052642533376
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f

@@ -17,7 +17,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC: Services that gets created
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/59000b993d6280d9bf063eefdcdf30ea0e83aa5e/rules/windows/process_creation/win_susp_schtask_creation.yml
+  - IOC: Suspicious task creation events
 Resources:
   - Link: https://isc.sans.edu/forums/diary/Adding+Persistence+Via+Scheduled+Tasks/23633/
 Acknowledgement:

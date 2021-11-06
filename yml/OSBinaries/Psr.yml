@@ -17,6 +17,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c44b22b52fce406d45ddb6743a02b9ff8c62c7c6/rules/windows/process_creation/win_susp_psr_capture_screenshots.yml
   - IOC: psr.exe spawned
   - IOC: suspicious activity when running with "/gui 0" flag
 Resources:

@@ -36,10 +36,15 @@ Full_Path:
   - Path: C:\Windows\System32\regsvr32.exe
   - Path: C:\Windows\SysWOW64\regsvr32.exe
 Code_Sample:
-- Code:
+ - Code:
 Detection:
- - IOC: regsvr32.exe getting files from Internet
- - IOC: regsvr32.exe executing scriptlet files
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6fbce11094285e5ba13fe101b9cb70f5b1ece198/rules/windows/process_creation/win_susp_regsvr32_anomalies.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6d56e400d209daa77a7900d950a7c587dc0cd2e5/rules/windows/network_connection/sysmon_regsvr32_network_activity.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/5951ad1d9a781a49d61df9af03c7b83ac67a0012/rules/windows/dns_query/dns_query_regsvr32_network_activity.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_regsvr32_flags_anomaly.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/file_event/sysmon_susp_clr_logs.yml
+  - IOC: regsvr32.exe retrieving files from Internet
+  - IOC: regsvr32.exe executing scriptlet (sct) files
 Resources:
   - Link: https://pentestlab.blog/2017/05/11/applocker-bypass-regsvr32/
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/

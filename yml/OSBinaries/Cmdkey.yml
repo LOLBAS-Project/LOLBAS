@@ -17,7 +17,7 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
- - IOC: Usage of this command could be an IOC
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/c3c152d457773454f67895008a1abde823be0755/rules/windows/process_creation/win_cmdkey_recon.yml
 Resources:
   - Link: https://www.peew.pw/blog/2017/11/26/exploring-cmdkey-an-edge-case-for-privilege-escalation
   - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey

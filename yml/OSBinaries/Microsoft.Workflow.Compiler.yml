@@ -28,11 +28,13 @@ Commands:
 Full_Path:
   - Path: C:\Windows\Microsoft.Net\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: Microsoft.Workflow.Compiler.exe would not normally be run on workstations.
- - IOC: The presence of csc.exe or vbc.exe as child processes of Microsoft.Workflow.Compiler.exe
- - IOC: Presence of "<CompilerInput" in a text file.
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/85d47aeabc25bbd023284849f4466c1e00b855ce/rules/windows/process_creation/win_workflow_compiler.yml
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - IOC: Microsoft.Workflow.Compiler.exe would not normally be run on workstations.
+  - IOC: The presence of csc.exe or vbc.exe as child processes of Microsoft.Workflow.Compiler.exe
+  - IOC: Presence of "<CompilerInput" in a text file.
 Resources:
   - Link: https://twitter.com/mattifestation/status/1030445200475185154
   - Link: https://posts.specterops.io/arbitrary-unsigned-code-execution-vector-in-microsoft-workflow-compiler-exe-3d9294bc5efb

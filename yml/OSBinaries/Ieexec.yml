@@ -24,7 +24,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/a04fbe2a99f1dcbbfeb0ee4957ae4b06b0866254/rules/windows/process_creation/win_possible_applocker_bypass.yml
+  - IOC: Network connections originating from ieexec.exe may be suspicious
 Resources:
   - Link: https://room362.com/post/2014/2014-01-16-application-whitelist-bypass-using-ieexec-dot-exe/
 Acknowledgement:

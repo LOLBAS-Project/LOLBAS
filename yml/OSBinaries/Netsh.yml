@@ -17,6 +17,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/0a410010a2655bc6f2aae73b9fb3b2c00ed589f7/rules/windows/process_creation/win_susp_netsh_dll_persistence.yml
   - IOC: Netsh initiating a network connection
 Resources:
   - Link: https://freddiebarrsmith.com/trix/trix.html

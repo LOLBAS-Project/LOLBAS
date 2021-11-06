@@ -26,7 +26,7 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
- - IOC:
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/a04fbe2a99f1dcbbfeb0ee4957ae4b06b0866254/rules/windows/process_creation/win_possible_applocker_bypass.yml
 Resources:
   - Link: https://pentestlab.blog/2017/05/08/applocker-bypass-installutil/
   - Link: https://evi1cg.me/archives/AppLocker_Bypass_Techniques.html#menu_index_12

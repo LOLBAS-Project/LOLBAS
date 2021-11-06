@@ -66,6 +66,11 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/8beb70e970b814d0ab60625206ea0d8a21a9bff8/rules/windows/image_load/sysmon_wmic_remote_xsl_scripting_dlls.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff0f1a0222b5100120ae3e43df18593f904c69c0/rules/windows/process_creation/win_xsl_script_processing.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_bypass_squiblytwo.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c90e31275d2f98b21e55df8a46d0678cfca458d6/rules/windows/process_creation/win_susp_wmic_eventconsumer_create.yml
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules 
   - IOC: Wmic getting scripts from remote system
 Resources:
   - Link: https://stackoverflow.com/questions/24658745/wmic-how-to-use-process-call-create-with-a-specific-working-directory

@@ -50,7 +50,10 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
- - IOC: Msbuild.exe should not normally be executed on workstations
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/a04fbe2a99f1dcbbfeb0ee4957ae4b06b0866254/rules/windows/process_creation/win_possible_applocker_bypass.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/5a3af872d86903c13e508348f54e3b519eb01dce/rules/windows/network_connection/silenttrinity_stager_msbuild_activity.yml
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules 
+  - IOC: Msbuild.exe should not normally be executed on workstations
 Resources:
   - Link: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1127/T1127.md
   - Link: https://github.com/Cn33liz/MSBuildShell

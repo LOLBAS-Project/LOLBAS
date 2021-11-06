@@ -32,7 +32,10 @@ Code_Sample:
   - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSScripts/Payload/Slmgr.reg
   - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSScripts/Payload/Slmgr_calc.sct
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/10b70edff055cfb12b16d934c77f9ccf4b97a529/rules/windows/process_creation/win_susp_winrm_awl_bypass.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/7bca85e40618126643b9712b80bd663c21908e26/rules/windows/process_creation/win_susp_winrm_execution.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/3107ede1c4d253c89a26f3a0be79122a3a562f29/rules/windows/file_event/file_event_winrm_awl_bypass.yml
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
 Resources:
   - Link: https://www.slideshare.net/enigma0x3/windows-operating-system-archaeology
   - Link: https://www.youtube.com/watch?v=3gz1QmiMhss
