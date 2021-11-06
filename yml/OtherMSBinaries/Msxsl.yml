@@ -37,7 +37,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - IOC: https://github.com/SigmaHQ/sigma/blob/ff0f1a0222b5100120ae3e43df18593f904c69c0/rules/windows/process_creation/win_xsl_script_processing.yml
 Resources:
   - Link: https://twitter.com/subTee/status/877616321747271680
   - Link: https://github.com/3gstudent/Use-msxsl-to-bypass-AppLocker

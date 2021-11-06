@@ -19,6 +19,8 @@ Commands:
     MitreID: T1202
     OperatingSystem: Windows 8.1 and higher, Windows Server 2012 and higher.
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/f36b1cbd2a3f1a7423f43a67a182549778700615/rules/windows/process_creation/win_susp_procdump.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/f36b1cbd2a3f1a7423f43a67a182549778700615/rules/windows/process_creation/win_procdump.yml
   - IOC: Process creation with given '-md' parameter
   - IOC: Anomalous child processes of procdump
   - IOC: Unsigned DLL load via procdump.exe or procdump64.exe

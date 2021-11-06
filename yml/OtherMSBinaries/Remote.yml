@@ -31,7 +31,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC: remote.exe spawned
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/network_connection/sysmon_susp_rdp.yml
+  - IOC: remote.exe process spawns
 Resources:
   - Link: https://blog.thecybersecuritytutor.com/Exeuction-AWL-Bypass-Remote-exe-LOLBin/
 Acknowledgement:
