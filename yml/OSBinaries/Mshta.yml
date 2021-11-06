@@ -49,6 +49,8 @@ Detection:
   - IOC: mshta.exe executing raw or obfuscated script within the command-line
   - IOC: General usage of HTA file
   - IOC: msthta.exe network connection to Internet/WWW resource
+  - IOC: DotNet CLR libraries loaded into mshta.exe
+  - IOC: DotNet CLR Usage Log - mshta.exe.log
 Resources:
   - Link: https://evi1cg.me/archives/AppLocker_Bypass_Techniques.html#menu_index_4
   - Link: https://github.com/redcanaryco/atomic-red-team/blob/master/Windows/Payloads/mshta.sct

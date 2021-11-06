@@ -45,6 +45,8 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/file_event/sysmon_susp_clr_logs.yml
   - IOC: regsvr32.exe retrieving files from Internet
   - IOC: regsvr32.exe executing scriptlet (sct) files
+  - IOC: DotNet CLR libraries loaded into regsvr32.exe
+  - IOC: DotNet CLR Usage Log - regsvr32.exe.log
 Resources:
   - Link: https://pentestlab.blog/2017/05/11/applocker-bypass-regsvr32/
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/
