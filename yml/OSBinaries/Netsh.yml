@@ -9,8 +9,7 @@ Commands:
     Usecase: Proxy execution of .dll
     Category: Execute
     Privileges: User
-    MitreID: T1128
-    MitreLink: https://attack.mitre.org/techniques/T1128/
+    MitreID: T1546.007
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\WINDOWS\System32\Netsh.exe

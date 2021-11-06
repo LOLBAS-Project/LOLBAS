@@ -9,8 +9,7 @@ Commands:
     Usecase: Launch an executable.
     Category: Execute
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\pcwutl.dll

@@ -9,16 +9,14 @@ Commands:
     Usecase: Run local or remote script(let) code through INF file specification (Note May pop an error window).
     Category: AWL Bypass
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
     OperatingSystem: Windows
   - Command: rundll32 syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 c:\temp\something.inf
     Description: Launch an executable file via the SetupInfObjectInstallAction function and .inf file section directive.
     Usecase: Load an executable payload.
     Category: Execute
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\syssetup.dll

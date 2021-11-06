@@ -9,8 +9,7 @@ Commands:
     Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
     Category: UAC bypass
     Privileges: User
-    MitreID: T1088
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1088
+    MitreID: T1548.002
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\eventvwr.exe

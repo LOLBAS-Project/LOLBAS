@@ -10,15 +10,13 @@ Commands:
     Category: Dump
     Privileges: Administrator
     MitreID: T1003
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows
   - Command: sqldumper.exe 540 0 0x01100:40
     Description: 0x01100:40 flag will create a Mimikatz compatible dump file.
     Usecase: Dump LSASS.exe to Mimikatz compatible dump using PID.
     Category: Dump
     Privileges: Administrator
-    MitreID: T1003
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
+    MitreID: T1003.001
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Program Files\Microsoft SQL Server\90\Shared\SQLDumper.exe

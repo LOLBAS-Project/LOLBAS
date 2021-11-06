@@ -10,7 +10,6 @@ Commands:
     Category: Upload
     Privileges: User
     MitreID: T1567
-    MitreLink: https://attack.mitre.org/techniques/T1567/
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\ConfigSecurityPolicy.exe

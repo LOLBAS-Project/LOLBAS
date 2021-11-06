@@ -9,8 +9,7 @@ Commands:
     Usecase: Local execution of C# project stored in consoleapp folder.
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1127
     OperatingSystem: Windows
 Full_Path:
   - Path: N/A

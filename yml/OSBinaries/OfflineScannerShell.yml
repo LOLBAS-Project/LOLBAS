@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: Administrator
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218/
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\Program Files\Windows Defender\Offline\OfflineScannerShell.exe

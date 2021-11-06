@@ -6,19 +6,17 @@ Created: 2018-05-25
 Commands:
   - Command: Scriptrunner.exe -appvscript calc.exe
     Description: Executes calc.exe
-    Usecase: Execute binary through proxy binary to evade defensive counter measurments
+    Usecase: Execute binary through proxy binary to evade defensive counter measures
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: ScriptRunner.exe -appvscript "\\fileserver\calc.cmd"
-    Description: Executes calc.cmde from remote server
-    Usecase: Execute binary through proxy binary  from external server to evade defensive counter measurments
+    Description: Executes calc.cmd from remote server
+    Usecase: Execute binary through proxy binary from external server to evade defensive counter measures
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\scriptrunner.exe

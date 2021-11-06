@@ -9,39 +9,36 @@ Commands:
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
     OperatingSystem: Windows
   - Command: rundll32.exe advpack.dll,LaunchINFSection c:\test.inf,,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied).
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
     OperatingSystem: Windows
   - Command: rundll32.exe advpack.dll,RegisterOCX test.dll
     Description: Launch a DLL payload by calling the RegisterOCX function.
     Usecase: Load a DLL payload.
     Category: Execute
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
     OperatingSystem: Windows
   - Command: rundll32.exe advpack.dll,RegisterOCX calc.exe
     Description: Launch an executable by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
+    OperatingSystem: Windows
   - Command: rundll32 advpack.dll, RegisterOCX "cmd.exe /c calc.exe"
     Description: Launch command line by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
+    OperatingSystem: Windows 10
 Full_Path:
   - Path: c:\windows\system32\advpack.dll
   - Path: c:\windows\syswow64\advpack.dll

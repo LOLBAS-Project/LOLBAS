@@ -9,14 +9,13 @@ Commands:
     Usecase: Execute proxied payload with Microsoft signed binary to bypass WDAC policies
     Category: AWL Bypass
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
+    MitreID: T1127
     OperatingSystem: Windows 10 2004 (likely previous and newer versions as well)
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\wfc.exe
-Code_Sample: 
+Code_Sample:
   - Code: https://bohops.com/2020/11/02/exploring-the-wdac-microsoft-recommended-block-rules-part-ii-wfc-fsi/
-Detection: 
+Detection:
   - IOC: Sysmon Event ID 1 - Process Creation
 Resources:
   - Link: https://bohops.com/2020/11/02/exploring-the-wdac-microsoft-recommended-block-rules-part-ii-wfc-fsi/

@@ -1,6 +1,6 @@
 ---
 Name: ntdsutil.exe
-Description: Command line utility used to export Actove Directory.
+Description: Command line utility used to export Active Directory.
 Author: 'Tony Lambert'
 Created: 2020-01-10
 Commands:
@@ -9,8 +9,7 @@ Commands:
     Usecase: Dumping of Active Directory NTDS.dit database
     Category: Dump
     Privileges: Administrator
-    MitreID: T1003
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
+    MitreID: T1003.003
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Windows\System32\ntdsutil.exe

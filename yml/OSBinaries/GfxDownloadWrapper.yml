@@ -10,7 +10,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/techniques/T1105/
     OperatingSystem: Windows 10
 Full_Path:
   - Path: c:\windows\system32\driverstore\filerepository\64kb6472.inf_amd64_3daef03bbe98572b\

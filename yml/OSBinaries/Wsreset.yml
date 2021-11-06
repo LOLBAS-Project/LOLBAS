@@ -9,8 +9,7 @@ Commands:
     Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
     Category: UAC bypass
     Privileges: User
-    MitreID: T1088
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1088
+    MitreID: T1548.002
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\Windows\System32\wsreset.exe

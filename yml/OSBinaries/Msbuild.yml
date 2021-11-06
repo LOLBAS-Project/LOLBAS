@@ -9,41 +9,36 @@ Commands:
     Usecase: Compile and run code
     Category: AWL bypass
     Privileges: User
-    MitreID: T1127
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: msbuild.exe project.csproj
     Description: Build and execute a C# project stored in the target csproj file.
     Usecase: Compile and run code
     Category: Execute
     Privileges: User
-    MitreID: T1127
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: msbuild.exe @sample.rsp
-    Description: Executes Logger statements from rsp file 
+    Description: Executes Logger statements from rsp file
     Usecase: Execute DLL
     Category: Execute
     Privileges: User
-    MitreID: T1127
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: msbuild.exe /logger:TargetLogger,C:\Loggers\TargetLogger.dll;MyParameters,Foo
     Description: Executes generated Logger dll file with TargetLogger export
     Usecase: Execute DLL
     Category: Execute
     Privileges: User
-    MitreID: T1127
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
+    MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: msbuild.exe project.proj
     Description: Execute jscript/vbscript code through XML/XSL Transformation. Requires Visual Studio MSBuild v14.0+.
     Usecase: Execute project file that contains XslTransformation tag parameters
     Category: Execute
     Privileges: User
-    MitreID: T1127
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10    
+    MitreID: T1127.001
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Msbuild.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Msbuild.exe
@@ -52,7 +47,7 @@ Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Msbuild.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Msbuild.exe
   - Path: C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
  - IOC: Msbuild.exe should not normally be executed on workstations

@@ -9,14 +9,13 @@ Commands:
     Usecase: Execute proxied payload with Microsoft signed binary
     Category: Execute
     Privileges: User
-    MitreID: T1059.001
-    MitreLink: https://attack.mitre.org/techniques/T1059/001/
+    MitreID: T1216
     OperatingSystem: Windows 10 21H1 (likely other versions as well)
 Full_Path:
   - Path: C:\Windows\diagnostics\system\Networking\UtilityFunctions.ps1
-Code_Sample: 
+Code_Sample:
   - Code:
-Detection: 
+Detection:
   - IOC:
 Resources:
   - Link: https://twitter.com/nickvangilder/status/1441003666274668546

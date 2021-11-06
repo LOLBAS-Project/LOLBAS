@@ -10,7 +10,6 @@ Commands:
     Category: Compile
     Privileges: User
     MitreID: T1127
-    MitreLink: https://attack.mitre.org/techniques/T1127/
     OperatingSystem: Windows 10,7
   - Command: vbc -reference:Microsoft.VisualBasic.dll c:\temp\vbs\run.vb
     Description: Description of the second command
@@ -18,7 +17,6 @@ Commands:
     Category: Compile
     Privileges: User
     MitreID: T1127
-    MitreLink: https://attack.mitre.org/techniques/T1127/
     OperatingSystem: Windows 10,7
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\vbc.exe

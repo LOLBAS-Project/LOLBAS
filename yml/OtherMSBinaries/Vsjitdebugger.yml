@@ -9,8 +9,7 @@ Commands:
     Usecase: Execution of local PE file as a subprocess of Vsjitdebugger.exe.
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1127
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\vsjitdebugger.exe

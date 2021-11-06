@@ -10,7 +10,6 @@ Commands:
     Category: Compile
     Privileges: User
     MitreID: T1127
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: jsc.exe /t:library Library.js
     Description: Use jsc.exe to compile javascript code stored in Library.js and output Library.dll.
@@ -18,7 +17,6 @@ Commands:
     Category: Compile
     Privileges: User
     MitreID: T1127
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Jsc.exe

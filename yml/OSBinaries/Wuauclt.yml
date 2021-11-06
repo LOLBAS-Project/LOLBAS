@@ -9,8 +9,7 @@ Commands:
     Usecase: Execute dll via attach/detach methods
     Category: Execute
     Privileges: User
-    MitreID: T1085
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1085
+    MitreID: T1218.011
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\Windows\System32\wuauclt.exe

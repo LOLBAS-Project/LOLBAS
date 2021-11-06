@@ -9,16 +9,14 @@ Commands:
     Usecase: Use diskshadow to exfiltrate data from VSS such as NTDS.dit
     Category: Dump
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
+    MitreID: T1003.003
     OperatingSystem: Windows server
   - Command: diskshadow> exec calc.exe
     Description: Execute commands using diskshadow.exe to spawn child process
     Usecase: Use diskshadow to bypass defensive counter measures
     Category: Execute
     Privileges: User
-    MitreID: T1003
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
+    MitreID: T1202
     OperatingSystem: Windows server
 Full_Path:
   - Path: C:\Windows\System32\diskshadow.exe

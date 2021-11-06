@@ -10,15 +10,13 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: HH.exe c:\windows\system32\calc.exe
     Description: Executes calc.exe with HTML Help.
     Usecase: Execute process with HH.exe
     Category: Execute
     Privileges: User
-    MitreID: T1216
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1216
+    MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\hh.exe

@@ -9,8 +9,7 @@ Commands:
     Usecase: Dump Lsass.exe process memory to retrieve credentials.
     Category: Dump
     Privileges: SYSTEM
-    MitreID: T1003
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
+    MitreID: T1003.001
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\comsvcs.dll
