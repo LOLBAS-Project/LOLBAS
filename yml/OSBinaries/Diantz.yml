@@ -9,7 +9,8 @@ Commands:
     Usecase: Hide data compressed into an Alternate Data Stream.
     Category: ADS
     Privileges: User
-    MitreID: T1564.004
+    MitreID: T1096
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1096
     OperatingSystem: Windows XP, Windows vista, Windows 7, Windows 8, Windows 8.1.
   - Command: diantz.exe \\remotemachine\pathToFile\file.exe c:\destinationFolder\file.cab
     Description: Download and compress a remote file and store it in a cab file on local machine.
@@ -17,6 +18,7 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019
 Full_Path:
   - Path: c:\windows\system32\diantz.exe

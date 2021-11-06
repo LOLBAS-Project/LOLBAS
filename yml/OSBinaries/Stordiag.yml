@@ -10,11 +10,12 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10
 Full_Path:
   - Path: c:\windows\system32\stordiag.exe
   - Path: c:\windows\syswow64\stordiag.exe
-Detection:
+Detection: 
   - IOC: systeminfo.exe, fltmc.exe or schtasks.exe being executed outside of their normal path of c:\windows\system32\ or c:\windows\syswow64\
 Resources:
   - Link: https://twitter.com/eral4m/status/1451112385041911809

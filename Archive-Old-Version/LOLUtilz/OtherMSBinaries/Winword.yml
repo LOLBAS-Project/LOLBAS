@@ -10,6 +10,7 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full_Path:
   - Path: c:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE

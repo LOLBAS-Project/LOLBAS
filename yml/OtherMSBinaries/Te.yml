@@ -9,7 +9,8 @@ Commands:
     Usecase: Execute Visual Basic script stored in local Windows Script Component file.
     Category: Execute
     Privileges: User
-    MitreID: T1127
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows
 Full_Path:
   - Path:

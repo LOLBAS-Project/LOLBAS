@@ -10,6 +10,7 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
+    MitreLink: https://attack.mitre.org/techniques/T1105/
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\cmdl32.exe
