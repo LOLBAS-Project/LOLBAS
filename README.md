@@ -80,3 +80,7 @@ As with many open-source projects, this one is the product of a community and we
 * The domain http://lolbins.com has been registered by an unknown individual and redirected it to the old version of this project.
 * The domain http://lolbas-project.com has been registered by Jimmy (@bohops).
 * The logos for the project were created by Adam Nadrowski (@_sup_mane). We #@&!!@#! love them.
+
+## Notice
+
+* Please refer to NOTICE.txt for license information
