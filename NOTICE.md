@@ -8,7 +8,7 @@
 
 ## Project License
 
-* The LOLBAS Project is licensed under GPL 3.0. For license information, please refer to LICENSE file.
+* The LOLBAS Project is licensed under GPL 3.0. For license information, please refer to the [LICENSE file](/LICENSE).
 
 ## Definitions
 
@@ -30,45 +30,59 @@
 
 ## Project Usage
 
-* For consuming content on the LOLBAS Project, please refer to the content on this page, navigate to resources under /yml, and/or visit: https://lolbas-project.github.io.
-* For making a contribution to the LOLBAS Project, please refer to this notice, README.md, and CONTRIBUTING.md.
+* For consuming content on the LOLBAS Project, please refer to the content on this page, navigate to resources under [/yml](/yml), and/or visit: https://lolbas-project.github.io.
+* For making a contribution to the LOLBAS Project, please refer to this notice, [README.md](/README.md), and [CONTRIBUTING.md](/CONTRIBUTING.md).
 
 ## LOLBAS Entry Structure & Information
 
-* Name Field: The name of the LOL binary, script, or library resource.
+* `Name` Field: The name of the LOL binary, script, or library resource.
 
-* Description Field: A short sentence of the legitimate functionality of the 'lol' resource.
+* `Description` Field: A short sentence of the legitimate functionality of the 'lol' resource.
 
-* Author Field: The submitter of the 'lol' resource.
+* `Author` Field: The submitter of the 'lol' resource.
 
-* Created Field: The date when the 'lol' resource is submitted or this entry is created.
+* `Created` Field: The date when the 'lol' resource is submitted or this entry is created.
 
-* Commands Field: Contains subfields to describe usage of the 'lol' resource. Includes 1) 'Command' (the command or sequence of commands/details needed to perform the 'lol' effect), 2) 'Description' (details of the 'lol' command behavior), 3) 'Usecase' (details of the use case such as the purpose and technique, 4) 'Category' (LOLBAS categories include AWL Bypass - Application Control Bypass; Execution; Defense Evasion; Download, Upload, Copy, Encode, Decode, Compile, ADS - Alternate Data Stream, UAC Bypass - User Account Control Bypass, Credentials - Harvest/Dump Credentials, Reconnaissance, Tamper) 5) 'Privilege' (User or Administrator level privileges required), 6) 'MitreId' (MITRE (R) ATT&CK(R) Tactic/Technique mapping), 7) 'OperatingSystem' (version such as Windows 10).
+* `Commands` Field: Contains subfields to describe usage of the 'lol' resource. Includes:
+  * `Command` (the command or sequence of commands/details needed to perform the 'lol' effect);
+  * `Description` (details of the 'lol' command behavior);
+  * `Usecase` (details of the use case such as the purpose and technique;
+  * `Category` (LOLBAS categories include AWL Bypass - Application Control Bypass; Execution; Defense Evasion; Download, Upload, Copy, Encode, Decode, Compile, ADS - Alternate Data Stream, UAC Bypass - User Account Control Bypass, Credentials - Harvest/Dump Credentials, Reconnaissance, Tamper);
+  * `Privilege` (User or Administrator level privileges required);
+  * `MitreId`[^1] (MITRE (R) ATT&CK(R) Tactic/Technique mapping);
+  * `OperatingSystem` (version such as Windows 10).
 
-* FullPath Field: Includes the 'Path' subfield to record commonly located file system paths of the 'lol' resource.
+* `FullPath` Field: Includes the `Path` subfield to record commonly located file system paths of the 'lol' resource.
 
-* Code Sample Field: Includes the 'Code' subfield to specify a link to a code snippet (if applicable).
+* `Code Sample` Field: Includes the `Code` subfield to specify a link to a code snippet (if applicable).
 
-* Detection Field: Contains subfields to describe potential detection criteria of the 'lol' resource. Includes 1) 'Sigma' (a link to Sigma detection rule on Sigma’s git repository), 2) 'Splunk' a (link to Splunk detection rule on Splunk’s git repository), 3) 'Elastic' (a link to Elastic detection rule on Elastic’s git repository), 4) 'IOC' (to provide information about indicators of compromise), and 5) 'Analysis' (a placeholder for linked resources - e.g. blog, gist, write-up, Twitter post, etc.).
+* `Detection` Field: Contains subfields to describe potential detection criteria of the 'lol' resource. Includes:
+  * `Sigma`[^2] (a link to Sigma detection rule on Sigma's git repository);
+  * `Splunk`[^2] (a link to Splunk detection rule on Splunk's git repository);
+  * `Elastic`[^2] (a link to Elastic detection rule on Elastic's git repository);
+  * `IOC`[^3] (to provide information about indicators of compromise);
+  * `Analysis`[^4] (a placeholder for linked resources - e.g. blog, gist, write-up, Twitter post, etc.).
 
-* Resources Field: The 'Link' subfield is a placeholder for a referenced resource link about the 'lol' resource.
+* `Resources` Field[^5]: The `Link` subfield is a placeholder for a referenced resource link about the 'lol' resource.
 
-* Acknowledgements Field: Includes the following subfields - 1) 'Person' (identifies the individual who originally discovered the technique/command) and 2) 'Handle' (the person's Twitter handle if applicable).
+* `Acknowledgements` Field: Includes the following subfields:
+  * `Person` (identifies the individual who originally discovered the technique/command);
+  * `Handle` (the person's Twitter handle if applicable).
 
 
-* Note on MITRE(R) ATT&CK(R) Reference Model: Since the ATT&CK(R) model is widely adopted, LOLBAS attempts map to the appropriate technique if applicable. The applicable ATT&CK(R) license appears in the 'Licenses' section below.
+[^1]: Note on MITRE(R) ATT&CK(R) Reference Model: Since the ATT&CK(R) model is widely adopted, LOLBAS attempts map to the appropriate technique if applicable. The applicable ATT&CK(R) license appears in the 'Licenses' section.
 
-* Note on Detection References: LOLBAS does not guarantee that a particular detection reference included by a submitter/maintainer will detect associated LOLBIN behavior. The reference is simply an acknowledgment that a resource exists, and the resource could potentially be useful for a consumer. Furthermore, LOLBAS does not endorse any referenced project over another, but rather, appreciates the efforts made by individuals and organizations for providing publicly available resources/projects. Consumers of such projects are encouraged to understand a referenced project's Terms of Use and abide by the project's licensing criteria if applicable. 
+[^2]: Note on Detection References: LOLBAS does not guarantee that a particular detection reference included by a submitter/maintainer will detect associated LOLBIN behavior. The reference is simply an acknowledgment that a resource exists, and the resource could potentially be useful for a consumer. Furthermore, LOLBAS does not endorse any referenced project over another, but rather, appreciates the efforts made by individuals and organizations for providing publicly available resources/projects. Consumers of such projects are encouraged to understand a referenced project's Terms of Use and abide by the project's licensing criteria if applicable. 
 
-* Note on Detection IOCs: LOLBAS does not guarantee that a particular detection IOC included by a submitter/maintainer will detect associated LOLBIN behavior.
+[^3]: Note on Detection IOCs: LOLBAS does not guarantee that a particular detection IOC included by a submitter/maintainer will detect associated LOLBIN behavior.
 
-* Note on Detection Analysis Links: A linked analysis resource under the Detection Field (e.g. blog, gist, write-up, etc.) and contents provided by a submitter/maintainer are not endorsed by the LOLBAS project. However, LOLBAS does appreciate the efforts made by individuals and organizations for providing publicly available resources. Consumers of the 'Analysis' resource are encouraged to understand the respective resource's Terms of Use and abide by the resource’s licensing criteria if applicable.
+[^4]: Note on Detection Analysis Links: A linked analysis resource under the Detection Field (e.g. blog, gist, write-up, etc.) and contents provided by a submitter/maintainer are not endorsed by the LOLBAS project. However, LOLBAS does appreciate the efforts made by individuals and organizations for providing publicly available resources. Consumers of the 'Analysis' resource are encouraged to understand the respective resource's Terms of Use and abide by the resource's licensing criteria if applicable.
 
-* Note on Resource Links: A linked resource under the Resources Field (e.g. blog, gist, write-up, Twitter post, etc.) and contents provided by submitters/maintainers are not endorsed by the LOLBAS project. However, LOLBAS does appreciate the efforts made by individuals and organizations for providing publicly available resources. Consumers of the linked resource are encouraged to understand the respective resource's Terms of Use and abide by the resource’s licensing criteria if applicable.
+[^5]: Note on Resource Links: A linked resource under the Resources Field (e.g. blog, gist, write-up, Twitter post, etc.) and contents provided by submitters/maintainers are not endorsed by the LOLBAS project. However, LOLBAS does appreciate the efforts made by individuals and organizations for providing publicly available resources. Consumers of the linked resource are encouraged to understand the respective resource's Terms of Use and abide by the resource's licensing criteria if applicable.
 
 ## MITRE ATT&CK License
 
-* Mitre ATT&CK Terms of Use Link: https://attack.mitre.org/resources/terms-of-use/
+* MITRE ATT&CK Terms of Use Link: https://attack.mitre.org/resources/terms-of-use/
 
 LICENSE
 The MITRE Corporation (MITRE) hereby grants you a non-exclusive, royalty-free license to use ATT&CK® for research, development, and commercial purposes. Any copy you make for such purposes is authorized provided that you reproduce MITRE's copyright designation and this license in any such copy.
