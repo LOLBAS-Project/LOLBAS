@@ -62,9 +62,9 @@
 
 * Note on Detection IOCs: LOLBAS does not guarantee that a particular detection IOC included by a submitter/maintainer will detect associated LOLBIN behavior.
 
-* Note on Detection Analysis Resources: A linked analysis resource (e.g. blog, gist, write-up, etc.) and contents provided by a submitter/maintainer are not endorsed by the LOLBAS project. However, LOLBAS does appreciate the efforts made by individuals and organizations for providing publicly available resources. Consumers of the 'Analysis' resource are encouraged to understand the respective resource's Terms of Use and abide by the resource’s licensing criteria if applicable.
+* Note on Detection Analysis Links: A linked analysis resource under the Detection Field (e.g. blog, gist, write-up, etc.) and contents provided by a submitter/maintainer are not endorsed by the LOLBAS project. However, LOLBAS does appreciate the efforts made by individuals and organizations for providing publicly available resources. Consumers of the 'Analysis' resource are encouraged to understand the respective resource's Terms of Use and abide by the resource’s licensing criteria if applicable.
 
-* Note on LOL Resources: Linked resources (e.g. blog, gist, write-up, Twitter post, etc.) and contents provided by submitters/maintainers are not endorsed by the LOLBAS project. However, LOLBAS does appreciate the efforts made by individuals and organizations for providing publicly available resources. Consumers of the linked resource are encouraged to understand the respective resource's Terms of Use and abide by the resource’s licensing criteria if applicable.
+* Note on Resource Links: A linked resource under the Resources Field (e.g. blog, gist, write-up, Twitter post, etc.) and contents provided by submitters/maintainers are not endorsed by the LOLBAS project. However, LOLBAS does appreciate the efforts made by individuals and organizations for providing publicly available resources. Consumers of the linked resource are encouraged to understand the respective resource's Terms of Use and abide by the resource’s licensing criteria if applicable.
 
 ## MITRE ATT&CK License
 
