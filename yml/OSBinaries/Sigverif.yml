@@ -1,0 +1,25 @@
+---
+Name: Sigverif.exe
+Description: Looks for system files that are not digitally signed
+Author: 'Moshe Kaplan'
+Created: 2021-11-08
+Commands:
+  - Command: sigverif.exe, then click "Advanced", input the executable's path as the Log file name, then click "View Log"
+    Description: Execute programs using sigverif.exe to spawn child process
+    Usecase: Use sigverif as a proxy binary to evade defensive countermeasures 
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10 (possibly since Windows XP and Server 2003)
+Full_Path:
+  - Path: c:\windows\system32\sigverif.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: Child process from sigverif.exe
+Resources:
+  - Link: https://twitter.com/0gtweet/status/1457676633809330184
+  - Link: https://www.hexacorn.com/blog/2018/04/27/i-shot-the-sigverif-exe-the-gui-based-lolbin/
+Acknowledgement:
+  - Person: Grzegorz Tworek
+    Handle: '@0gtweet'
