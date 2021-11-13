@@ -30,7 +30,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_msoffice.yml
+  - IOC: Suspicious Office application Internet/network traffic
 Resources:
   - Link: https://twitter.com/reegun21/status/1150032506504151040
   - Link: https://medium.com/@reegun/unsanitized-file-validation-leads-to-malicious-payload-download-via-office-binaries-202d02db7191

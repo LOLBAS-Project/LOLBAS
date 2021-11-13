@@ -23,7 +23,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma:
 Resources:
   - Link:
 Acknowledgement:

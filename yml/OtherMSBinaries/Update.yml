@@ -100,6 +100,7 @@ Full_Path:
 Code_Sample:
   - Code: https://github.com/jreegun/POC-s/tree/master/nuget-squirrel
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_squirrel_lolbin.yml
   - IOC: Update.exe spawned an unknown process
 Resources:
   - Link: https://www.youtube.com/watch?v=rOP3hnkj7ls

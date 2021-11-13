@@ -23,7 +23,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/f16aca7a353bb01d9862ea1f2a10fa0d866e83c3/rules/windows/process_creation/process_creation_msdeploy.yml
 Resources:
   - Link: https://twitter.com/pabraeken/status/995837734379032576
   - Link: https://twitter.com/pabraeken/status/999090532839313408

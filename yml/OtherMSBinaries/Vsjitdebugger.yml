@@ -16,7 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/8beb70e970b814d0ab60625206ea0d8a21a9bff8/rules/windows/process_creation/win_susp_use_of_vsjitdebugger_bin.yml
 Resources:
   - Link: https://twitter.com/pabraeken/status/990758590020452353
 Acknowledgement:
