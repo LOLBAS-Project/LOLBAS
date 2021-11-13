@@ -17,7 +17,14 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
- - IOC:
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/network_connection/sysmon_dllhost_net_connections.yml
+ - Splunk: https://github.com/splunk/security_content/blob/552b67da9452fb0765e3624b3d6e3ef6c0508bda/detections/endpoint/dllhost_with_no_command_line_arguments_with_network.yml
+ - Splunk: https://github.com/splunk/security_content/blob/961a81d4a5cb5c5febec4894d6d812497171a85c/detections/endpoint/suspicious_dllhost_no_command_line_arguments.yml
+ - Elastic: https://github.com/elastic/detection-rules/blob/82ec6ac1eeb62a1383792719a1943b551264ed16/rules/windows/defense_evasion_suspicious_managedcode_host_process.toml
+ - Elastic: https://github.com/elastic/detection-rules/blob/c457614e37bf7b6db02de84c7fa71a5620783236/rules/windows/defense_evasion_unusual_network_connection_via_dllhost.toml
+ - IOC: DotNet CLR libraries loaded into dllhost.exe
+ - IOC: DotNet CLR Usage Log - dllhost.exe.log
+ - IOC: Suspicious network connectings originating from dllhost.exe
 Resources:
   - Link: https://twitter.com/CyberRaiju/status/1167415118847598594
   - Link: https://nasbench.medium.com/what-is-the-dllhost-exe-process-actually-running-ef9fe4c19c08

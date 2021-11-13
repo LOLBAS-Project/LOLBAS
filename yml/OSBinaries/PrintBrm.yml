@@ -21,6 +21,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\spool\tools\PrintBrm.exe
 Detection:
+  - Sigma:
   - IOC: PrintBrm.exe should not be run on a normal workstation
 Resources:
   - Link: https://twitter.com/elliotkillick/status/1404117015447670800

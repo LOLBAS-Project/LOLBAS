@@ -22,6 +22,7 @@ Full_Path:
   - Path: C:\Windows\System32\SettingSyncHost.exe
   - Path: C:\Windows\SysWOW64\SettingSyncHost.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_using_settingsynchost_as_lolbin.yml
   - IOC: SettingSyncHost.exe should not be run on a normal workstation
 Resources:
   - Link: https://www.hexacorn.com/blog/2020/02/02/settingsynchost-exe-as-a-lolbin/

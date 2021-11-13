@@ -22,9 +22,9 @@ Full_Path:
   - Path: C:\Windows\System32\rpcping.exe
   - Path: C:\Windows\SysWOW64\rpcping.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rpcping.yml
 Resources:
   - Link: https://github.com/vysec/RedTips
   - Link: https://twitter.com/vysecurity/status/974806438316072960

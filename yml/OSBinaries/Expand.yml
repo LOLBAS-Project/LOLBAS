@@ -31,7 +31,8 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
- - IOC:
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/b25fbbea54014565fc4551f94c97c0d7550b1c04/rules/windows/process_creation/sysmon_expand_cabinet_files.yml
+ - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/defense_evasion_misc_lolbin_connecting_to_the_internet.toml
 Resources:
   - Link: https://twitter.com/infosecn1nja/status/986628482858807297
   - Link: https://twitter.com/Oddvarmoe/status/986709068759949319

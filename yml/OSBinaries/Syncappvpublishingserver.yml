@@ -15,9 +15,11 @@ Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.exe
   - Path: C:\Windows\SysWOW64\SyncAppvPublishingServer.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: SyncAppvPublishingServer.exe should never be in use unless App-V is deployed
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/fb750721b25ec4573acc32a0822d047a8ecdf269/rules/windows/deprecated/powershell_syncappvpublishingserver_exe.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/fb750721b25ec4573acc32a0822d047a8ecdf269/rules/windows/deprecated/process_creation_syncappvpublishingserver_exe.yml
+  - IOC: SyncAppvPublishingServer.exe should never be in use unless App-V is deployed
 Resources:
   - Link: https://twitter.com/monoxgas/status/895045566090010624
 Acknowledgement:

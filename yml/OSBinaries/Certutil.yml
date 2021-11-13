@@ -52,6 +52,14 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/0fcbce993288f993e626494a50dad15fc26c8a0c/rules/windows/process_creation/win_susp_certutil_command.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_certutil_encode.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/e9260679d4aeae7f696001c5b14d318d31c8f076/rules/windows/process_creation/process_creation_root_certificate_installed.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/4a11ef9514938e7a7e32cf5f379e975cebf5aed3/rules/windows/defense_evasion_suspicious_certutil_commands.toml
+  - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/command_and_control_certutil_network_connection.toml
+  - Splunk: https://github.com/splunk/security_content/blob/3f77e24974239fcb7a339080a1a483e6bad84a82/detections/endpoint/certutil_download_with_urlcache_and_split_arguments.yml
+  - Splunk: https://github.com/splunk/security_content/blob/3f77e24974239fcb7a339080a1a483e6bad84a82/detections/endpoint/certutil_download_with_verifyctl_and_split_arguments.yml
+  - Splunk: https://github.com/splunk/security_content/blob/3f77e24974239fcb7a339080a1a483e6bad84a82/detections/endpoint/certutil_with_decode_argument.yml
   - IOC: Certutil.exe creating new files on disk
   - IOC: Useragent Microsoft-CryptoAPI/10.0
   - IOC: Useragent CertUtil URL Agent

@@ -15,6 +15,7 @@ Full_Path:
   - Path: C:\Windows\System32\cmdl32.exe
   - Path: C:\Windows\SysWOW64\cmdl32.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/3416db73016f25ce115f5597fe74320d2428db66/rules/windows/process_creation/win_pc_susp_cmdl32_lolbas.yml
   - IOC: Reports of downloading from suspicious URLs in %TMP%\config.log
   - IOC: Useragent Microsoft(R) Connection Manager Vpn File Update
 Resources:

@@ -15,9 +15,11 @@ Full_Path:
   - Path: C:\Windows\System32\regini.exe
   - Path: C:\Windows\SysWOW64\regini.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: regini.exe reading from ADS
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/d9edc9f0e365257aa497cc7707e58f396088958e/rules/windows/process_creation/win_regini_ads.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/d9edc9f0e365257aa497cc7707e58f396088958e/rules/windows/process_creation/win_regini.yml
+  - IOC: regini.exe reading from ADS
 Resources:
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
 Acknowledgement:

@@ -32,8 +32,10 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/159bf4bbc103cc2be3fef4b7c2e7c8b23b63fd10/rules/windows/process_creation/win_susp_mpcmdrun_download.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/6ef5c53b0c15e344f0f2d1649941391aea6fa253/rules/windows/command_and_control_remote_file_copy_mpcmdrun.toml
   - IOC: MpCmdRun storing data into alternate data streams.
-  - IOC: MpCmdRun getting a file from a remote machine or the internet that is not expected.
+  - IOC: MpCmdRun retrieving a file from a remote machine or the internet that is not expected.
   - IOC: Monitor process creation for non-SYSTEM and non-LOCAL SERVICE accounts launching mpcmdrun.exe.
   - IOC: Monitor for the creation of %USERPROFILE%\AppData\Local\Temp\MpCmdRun.log
   - IOC: User Agent is "MpCommunication"

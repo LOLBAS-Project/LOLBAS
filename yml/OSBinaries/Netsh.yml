@@ -17,6 +17,9 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/0a410010a2655bc6f2aae73b9fb3b2c00ed589f7/rules/windows/process_creation/win_susp_netsh_dll_persistence.yml
+  - Splunk: https://github.com/splunk/security_content/blob/2b87b26bdc2a84b65b1355ffbd5174bdbdb1879c/detections/endpoint/processes_launching_netsh.yml
+  - Splunk: https://github.com/splunk/security_content/blob/08ed88bd88259c03c771c30170d2934ed0a8f878/detections/deprecated/processes_created_by_netsh.yml
   - IOC: Netsh initiating a network connection
 Resources:
   - Link: https://freddiebarrsmith.com/trix/trix.html

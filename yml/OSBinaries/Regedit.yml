@@ -22,10 +22,11 @@ Full_Path:
   - Path: C:\Windows\System32\regedit.exe
   - Path: C:\Windows\SysWOW64\regedit.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: regedit.exe reading and writing to alternate data stream
- - IOC: regedit.exe should normally not be executed by end-users
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/d9edc9f0e365257aa497cc7707e58f396088958e/rules/windows/process_creation/win_regedit_import_keys_ads.yml
+  - IOC: regedit.exe reading and writing to alternate data stream
+  - IOC: regedit.exe should normally not be executed by end-users
 Resources:
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
 Acknowledgement:

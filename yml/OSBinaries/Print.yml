@@ -29,10 +29,11 @@ Full_Path:
   - Path: C:\Windows\System32\print.exe
   - Path: C:\Windows\SysWOW64\print.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: Print.exe getting files from internet
- - IOC: Print.exe creating executable files on disk
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_print.yml
+  - IOC: Print.exe retrieving files from internet
+  - IOC: Print.exe creating executable files on disk
 Resources:
   - Link: https://twitter.com/Oddvarmoe/status/985518877076541440
   - Link: https://www.youtube.com/watch?v=nPBcSP8M7KE&lc=z22fg1cbdkabdf3x404t1aokgwd2zxasf2j3rbozrswnrk0h00410

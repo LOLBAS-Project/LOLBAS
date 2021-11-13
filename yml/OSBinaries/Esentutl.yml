@@ -52,7 +52,12 @@ Full_Path:
 Code_Sample:
 - Code:
 Detection:
- - IOC:
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/fb750721b25ec4573acc32a0822d047a8ecdf269/rules/windows/deprecated/win_susp_vssadmin_ntds_activity.yml
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/fb750721b25ec4573acc32a0822d047a8ecdf269/rules/windows/deprecated/win_susp_esentutl_activity.yml
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/bacb44ab972343358bae612e4625f8ba2e043573/rules/windows/process_creation/process_susp_esentutl_params.yml
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_copying_sensitive_files_with_credential_data.yml
+ - Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/esentutl_sam_copy.yml
+ - Elastic: https://github.com/elastic/detection-rules/blob/f6421d8c534f295518a2c945f530e8afc4c8ad1b/rules/windows/credential_access_copy_ntds_sam_volshadowcp_cmdline.toml
 Resources:
   - Link: https://twitter.com/egre55/status/985994639202283520
   - Link: https://dfironthemountain.wordpress.com/2018/12/06/locked-file-access-using-esentutl-exe/

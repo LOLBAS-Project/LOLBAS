@@ -14,6 +14,7 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\Windows Defender\Offline\OfflineScannerShell.exe
 Detection:
+  - Sigma:
   - IOC: OfflineScannerShell.exe should not be run on a normal workstation
 Acknowledgement:
   - Person: Elliot Killick

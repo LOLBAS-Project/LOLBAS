@@ -22,9 +22,11 @@ Full_Path:
   - Path: C:\Windows\System32\mavinject.exe
   - Path: C:\Windows\SysWOW64\mavinject.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: mavinject.exe should not run unless APP-v is in use on the workstation
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_mavinject_proc_inj.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c44b22b52fce406d45ddb6743a02b9ff8c62c7c6/rules/windows/process_creation/sysmon_creation_mavinject_dll.yml
+  - IOC: mavinject.exe should not run unless APP-v is in use on the workstation
 Resources:
   - Link: https://twitter.com/gN3mes1s/status/941315826107510784
   - Link: https://twitter.com/Hexcorn/status/776122138063409152

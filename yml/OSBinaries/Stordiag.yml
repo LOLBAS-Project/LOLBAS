@@ -15,6 +15,7 @@ Full_Path:
   - Path: c:\windows\system32\stordiag.exe
   - Path: c:\windows\syswow64\stordiag.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/8b86a79ef0ca2f32c006c327350b76b47b604690/rules/windows/process_creation/process_creation_stordiag_execution.yml
   - IOC: systeminfo.exe, fltmc.exe or schtasks.exe being executed outside of their normal path of c:\windows\system32\ or c:\windows\syswow64\
 Resources:
   - Link: https://twitter.com/eral4m/status/1451112385041911809
