@@ -9,7 +9,7 @@ Commands:
     Usecase: Add malicious driver
     Category: Execute
     Privileges: Administrator
-    MitreID: T1547.008
+    MitreID: T1547
     OperatingSystem: Windows 10,7
 Full_Path:
   - Path: C:\Windows\system32\pnputil.exe
