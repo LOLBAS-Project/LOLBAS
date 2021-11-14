@@ -17,7 +17,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/commit/a38c0218765a89f5d18eadd49639c72a5d25d944
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/a38c0218765a89f5d18eadd49639c72a5d25d944/rules/windows/process_creation/win_susp_presentationhost_execution.yml
   - IOC: Execution of .xbap files may not be common on production workstations
 Resources:
   - Link: https://github.com/api0cradle/ShmooCon-2015/blob/master/ShmooCon-2015-Simple-WLEvasion.pdf
