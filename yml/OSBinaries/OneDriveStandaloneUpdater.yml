@@ -14,7 +14,6 @@ Commands:
 Full_Path:
   - Path: '%localappdata%\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe'
 Detection:
-  - Sigma:
   - IOC: HKCU\Software\Microsoft\OneDrive\UpdateOfficeConfig\UpdateRingSettingURLFromOC being set to a suspicious non-Microsoft controlled URL
   - IOC: Reports of downloading from suspicious URLs in %localappdata%\OneDrive\setup\logs\StandaloneUpdate_*.log files
 Resources:

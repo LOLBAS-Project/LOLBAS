@@ -31,7 +31,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma:
   - IOC: Suspicious Office application Internet/network traffic
 Resources:
   - Link: https://twitter.com/reegun21/status/1150032506504151040

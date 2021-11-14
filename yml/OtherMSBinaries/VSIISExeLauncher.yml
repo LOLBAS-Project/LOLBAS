@@ -16,7 +16,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma:
   - IOC: VSIISExeLauncher.exe spawned an unknown process
 Resources:
   - Link: https://github.com/timwhitez

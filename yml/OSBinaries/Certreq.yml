@@ -24,7 +24,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma:
   - IOC: certreq creates new files
   - IOC: certreq makes POST requests
 Resources:

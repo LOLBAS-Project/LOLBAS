@@ -28,7 +28,6 @@ Full_Path:
   - Path: C:\Program Files\Microsoft Office\Office12\Powerpnt.exe
   - Path: C:\Program Files\Microsoft Office\Office12\Powerpnt.exe
 Detection:
-  - Sigma:
   - IOC: Suspicious Office application Internet/network traffic
 Resources:
   - Link: https://twitter.com/reegun21/status/1150032506504151040

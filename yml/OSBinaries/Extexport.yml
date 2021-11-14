@@ -17,7 +17,6 @@ Full_Path:
 Code_Sample:
  - Code:
 Detection:
-  - Sigma:
   - IOC: Extexport.exe loads dll and is execute from other folder the original path
 Resources:
   - Link: http://www.hexacorn.com/blog/2018/04/24/extexport-yet-another-lolbin/

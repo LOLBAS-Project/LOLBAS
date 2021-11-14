@@ -24,7 +24,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma:
   - IOC: diantz storing data into alternate data streams.
   - IOC: diantz getting a file from a remote machine or the internet.
 Resources:

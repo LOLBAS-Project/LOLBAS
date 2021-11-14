@@ -26,7 +26,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: 
   - IOC: Jsc.exe should normally not run a system unless it is used for development.
 Resources:
   - Link: https://twitter.com/DissectMalware/status/998797808907046913

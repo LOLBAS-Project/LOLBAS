@@ -24,7 +24,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma:
   - IOC: Replace.exe retrieving files from remote server
 Resources:
   - Link: https://twitter.com/elceef/status/986334113941655553

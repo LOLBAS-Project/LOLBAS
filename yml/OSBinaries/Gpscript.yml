@@ -24,7 +24,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: 
   - IOC: Scripts added in local group policy
   - IOC: Execution of Gpscript.exe after logon
 Resources:

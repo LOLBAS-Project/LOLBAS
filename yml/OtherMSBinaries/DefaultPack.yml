@@ -16,7 +16,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma:
   - IOC: DefaultPack.EXE spawned an unknown process
 Resources:
   - Link: https://twitter.com/checkymander/status/1311509470275604480.
