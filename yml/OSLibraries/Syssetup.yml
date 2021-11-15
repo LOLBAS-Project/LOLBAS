@@ -26,7 +26,8 @@ Code_Sample:
   - Code: https://gist.github.com/enigma0x3/469d82d1b7ecaf84f4fb9e6c392d25ba#file-backdoor-minimalist-sct
   - Code: https://gist.github.com/homjxi0e/87b29da0d4f504cb675bb1140a931415
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
+  - Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/detect_rundll32_application_control_bypass___syssetup.yml
 Resources:
   - Link: https://twitter.com/pabraeken/status/994392481927258113
   - Link: https://twitter.com/harr0ey/status/975350238184697857

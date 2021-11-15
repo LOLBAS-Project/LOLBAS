@@ -17,7 +17,7 @@ Full_Path:
 Code_Sample:
   - Code: https://github.com/ThunderGunExpress/BringYourOwnBuilder
 Detection:
-  - IOC: Sysmon Event ID 1 - Process Creation
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
 Resources:
   - Link: https://ijustwannared.team/2020/08/01/the-curious-case-of-aspnet_compiler-exe/
   - Link: https://docs.microsoft.com/en-us/dotnet/api/system.web.compilation.buildprovider.generatecode?view=netframework-4.8

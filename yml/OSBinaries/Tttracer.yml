@@ -22,9 +22,12 @@ Full_Path:
   - Path: C:\Windows\System32\tttracer.exe
   - Path: C:\Windows\SysWOW64\tttracer.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: Parent child relationship. Tttracer parent for executed command
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/5951ad1d9a781a49d61df9af03c7b83ac67a0012/rules/windows/image_load/process_creation_tttracer_mod_load.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/5951ad1d9a781a49d61df9af03c7b83ac67a0012/rules/windows/image_load/sysmon_tttracer_mod_load.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/5bdf70e72c6cd4547624c521108189af994af449/rules/windows/credential_access_cmdline_dump_tool.toml
+  - IOC: Parent child relationship. Tttracer parent for executed command
 Resources:
   - Link: https://twitter.com/oulusoyum/status/1191329746069655553
   - Link: https://twitter.com/mattifestation/status/1196390321783025666

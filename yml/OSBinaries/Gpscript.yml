@@ -22,10 +22,10 @@ Full_Path:
   - Path: C:\Windows\System32\gpscript.exe
   - Path: C:\Windows\SysWOW64\gpscript.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: Scripts added in local group policy
- - IOC: Execution of Gpscript.exe after logon
+  - IOC: Scripts added in local group policy
+  - IOC: Execution of Gpscript.exe after logon
 Resources:
   - Link: https://oddvar.moe/2018/04/27/gpscript-exe-another-lolbin-to-the-list/
 Acknowledgement:

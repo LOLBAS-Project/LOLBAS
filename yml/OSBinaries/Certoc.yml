@@ -24,6 +24,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/406f10b583469f7f7c245ff41002f75902693b7d/rules/windows/process_creation/process_creation_certoc_execution.yml
   - IOC: Process creation with given parameter
   - IOC: Unsigned DLL load via certoc.exe
   - IOC: Network connection via certoc.exe

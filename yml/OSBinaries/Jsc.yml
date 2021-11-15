@@ -24,9 +24,9 @@ Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Jsc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Jsc.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: Jsc.exe should normally not run a system unless it is used for development.
+  - IOC: Jsc.exe should normally not run a system unless it is used for development.
 Resources:
   - Link: https://twitter.com/DissectMalware/status/998797808907046913
   - Link: https://www.phpied.com/make-your-javascript-a-windows-exe/

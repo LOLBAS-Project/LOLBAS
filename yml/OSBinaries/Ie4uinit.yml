@@ -17,9 +17,10 @@ Full_Path:
   - Path: c:\windows\system32\ieuinit.inf
   - Path: c:\windows\sysWOW64\ieuinit.inf
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: ie4uinit.exe loading a inf file from outside %windir%
+  - IOC: ie4uinit.exe copied outside of %windir%
+  - IOC: ie4uinit.exe loading an inf file (ieuinit.inf) from outside %windir%
 Resources:
   - Link: https://bohops.com/2018/03/10/leveraging-inf-sct-fetch-execute-techniques-for-bypass-evasion-persistence-part-2/
 Acknowledgement:

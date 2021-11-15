@@ -23,7 +23,8 @@ Full_Path:
 Code_Sample:
   - Code: https://gist.github.com/NickTyrer/51eb8c774a909634fa69b4d06fc79ae1
 Detection:
-  - IOC: Sysmon Event ID 1 - Process Creation
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - IOC: FsiAnyCpu.exe execution may be suspicious on non-developer machines
 Resources:
   - Link: https://bohops.com/2020/11/02/exploring-the-wdac-microsoft-recommended-block-rules-part-ii-wfc-fsi/
 Acknowledgement:

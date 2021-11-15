@@ -13,6 +13,7 @@ Commands:
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\Windows\System32\IME\SHARED\IMEWDBLD.exe
+Detection:
 Resources:
   - Link: https://twitter.com/notwhickey/status/1367493406835040265
 Acknowledgement:

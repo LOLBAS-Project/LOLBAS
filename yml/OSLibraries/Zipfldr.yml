@@ -24,7 +24,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
 Resources:
   - Link: https://twitter.com/moriarty_meng/status/977848311603380224
   - Link: https://twitter.com/bohops/status/997896811904929792

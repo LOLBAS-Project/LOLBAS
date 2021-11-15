@@ -16,7 +16,8 @@ Full_Path:
 Code_Sample:
   - Code: https://bohops.com/2020/11/02/exploring-the-wdac-microsoft-recommended-block-rules-part-ii-wfc-fsi/
 Detection:
-  - IOC: Sysmon Event ID 1 - Process Creation
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - IOC: As a Windows SDK binary, execution on a system may be suspicious
 Resources:
   - Link: https://bohops.com/2020/11/02/exploring-the-wdac-microsoft-recommended-block-rules-part-ii-wfc-fsi/
 Acknowledgement:

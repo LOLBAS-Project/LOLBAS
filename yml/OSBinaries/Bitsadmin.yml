@@ -38,6 +38,10 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/90ca1a8ad2e5c96d09a9ae4ff92483a2110d49ff/rules/windows/process_creation/win_process_creation_bitsadmin_download.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/abcaf00aeef3769aa2a6f66f7fb6537b867c1691/rules/proxy/proxy_ua_bitsadmin_susp_tld.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/e40b8592544721c689f8ae96477ea1218e4c7a05/rules/windows/process_creation/win_monitoring_for_persistence_via_bits.yml
+  - Splunk: https://github.com/splunk/security_content/blob/3f77e24974239fcb7a339080a1a483e6bad84a82/detections/endpoint/bitsadmin_download_file.yml
   - IOC: Child process from bitsadmin.exe
   - IOC: bitsadmin creates new files
   - IOC: bitsadmin adds data to alternate data stream

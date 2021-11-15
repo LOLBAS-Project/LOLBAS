@@ -22,10 +22,16 @@ Full_Path:
   - Path: C:\Windows\System32\cmstp.exe
   - Path: C:\Windows\SysWOW64\cmstp.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: Execution of cmstp.exe should not be normal unless VPN is in use
- - IOC: Cmstp.exe communication towards internet and getting files
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/6d0d58dfe240f7ef46e7da928c0b65223a46c3b2/rules/windows/process_creation/sysmon_cmstp_execution_by_creation.yml
+ - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_uac_cmstp.yml
+ - Splunk: https://github.com/splunk/security_content/blob/bee2a4cefa533f286c546cbe6798a0b5dec3e5ef/detections/endpoint/cmlua_or_cmstplua_uac_bypass.yml
+ - Elastic: https://github.com/elastic/detection-rules/blob/82ec6ac1eeb62a1383792719a1943b551264ed16/rules/windows/defense_evasion_suspicious_managedcode_host_process.toml
+ - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml
+ - IOC: Execution of cmstp.exe without a VPN use case is suspicious
+ - IOC: DotNet CLR libraries loaded into cmstp.exe
+ - IOC: DotNet CLR Usage Log - cmstp.exe.log
 Resources:
   - Link: https://twitter.com/NickTyrer/status/958450014111633408
   - Link: https://gist.github.com/NickTyrer/bbd10d20a5bb78f64a9d13f399ea0f80

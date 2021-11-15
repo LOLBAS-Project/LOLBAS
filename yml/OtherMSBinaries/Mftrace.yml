@@ -26,7 +26,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
 Resources:
   - Link: https://twitter.com/0rbz_/status/988911181422186496
 Acknowledgement:

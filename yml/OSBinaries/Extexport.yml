@@ -15,9 +15,9 @@ Full_Path:
   - Path: C:\Program Files\Internet Explorer\Extexport.exe
   - Path: C:\Program Files (x86)\Internet Explorer\Extexport.exe
 Code_Sample:
-- Code:
+ - Code:
 Detection:
- - IOC: Extexport.exe loads dll and is execute from other folder the original path
+  - IOC: Extexport.exe loads dll and is execute from other folder the original path
 Resources:
   - Link: http://www.hexacorn.com/blog/2018/04/24/extexport-yet-another-lolbin/
 Acknowledgement:

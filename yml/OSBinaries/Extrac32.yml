@@ -36,9 +36,9 @@ Full_Path:
   - Path: C:\Windows\System32\extrac32.exe
   - Path: C:\Windows\SysWOW64\extrac32.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC:
+ - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/defense_evasion_misc_lolbin_connecting_to_the_internet.toml
 Resources:
   - Link: https://oddvar.moe/2018/04/11/putting-data-in-alternate-data-streams-and-how-to-execute-it-part-2/
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f

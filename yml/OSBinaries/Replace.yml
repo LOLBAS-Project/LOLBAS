@@ -22,9 +22,9 @@ Full_Path:
   - Path: C:\Windows\System32\replace.exe
   - Path: C:\Windows\SysWOW64\replace.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: Replace.exe getting files from remote server
+  - IOC: Replace.exe retrieving files from remote server
 Resources:
   - Link: https://twitter.com/elceef/status/986334113941655553
   - Link: https://twitter.com/elceef/status/986842299861782529

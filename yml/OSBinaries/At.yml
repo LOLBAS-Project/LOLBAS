@@ -15,8 +15,9 @@ Full_Path:
   - Path: C:\WINDOWS\System32\At.exe
   - Path: C:\WINDOWS\SysWOW64\At.exe
 Detection:
-  - IOC: Scheduled task is created
-  - IOC: Windows event log - type 3 login
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff0f1a0222b5100120ae3e43df18593f904c69c0/rules/windows/process_creation/win_interactive_at.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/network/zeek/zeek_smb_converted_win_atsvc_task.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/builtin/win_atsvc_task.yml
   - IOC: C:\Windows\System32\Tasks\At1 (substitute 1 with subsequent number of at job)
   - IOC: C:\Windows\Tasks\At1.job
   - IOC: Registry Key - Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\At1.

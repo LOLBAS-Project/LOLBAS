@@ -16,7 +16,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
 Resources:
   - Link: https://twitter.com/nickvangilder/status/1441003666274668546
 Acknowledgement:

@@ -38,7 +38,11 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC: msiexec.exe getting files from Internet
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_msiexec_web_install.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_msiexec_cwd.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
+  - Splunk: https://github.com/splunk/security_content/blob/18f63553a9dc1a34122fa123deae2b2f9b9ea391/detections/endpoint/uninstall_app_using_msiexec.yml
+  - IOC: msiexec.exe retrieving files from Internet
 Resources:
   - Link: https://pentestlab.blog/2017/06/16/applocker-bypass-msiexec/
   - Link: https://twitter.com/PhilipTsukerman/status/992021361106268161

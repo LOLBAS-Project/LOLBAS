@@ -64,9 +64,13 @@ Full_Path:
   - Path: C:\Windows\System32\rundll32.exe
   - Path: C:\Windows\SysWOW64\rundll32.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/network_connection/sysmon_rundll32_net_connections.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/defense_evasion_unusual_network_connection_via_rundll32.toml
+  - IOC: Outbount Internet/network connections made from rundll32
+  - IOC: Suspicious use of cmdline flags such as -sta
 Resources:
   - Link: https://pentestlab.blog/2017/05/23/applocker-bypass-rundll32/
   - Link: https://evi1cg.me/archives/AppLocker_Bypass_Techniques.html#menu_index_7
@@ -75,6 +79,7 @@ Resources:
   - Link: https://bohops.com/2018/06/28/abusing-com-registry-structure-clsid-localserver32-inprocserver32/
   - Link: https://github.com/sailay1996/expl-bin/blob/master/obfus.md
   - Link: https://github.com/sailay1996/misc-bin/blob/master/rundll32.md
+  - Link: https://nasbench.medium.com/a-deep-dive-into-rundll32-exe-642344b41e90
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'

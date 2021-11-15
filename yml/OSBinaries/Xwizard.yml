@@ -29,9 +29,12 @@ Full_Path:
   - Path: C:\Windows\System32\xwizard.exe
   - Path: C:\Windows\SysWOW64\xwizard.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_class_exec_xwizard.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/8909eefb90c799fb642f6d9d0d6ee6d855a6a654/rules/windows/process_creation/win_dll_sideload_xwizard.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/execution_com_object_xwizard.toml
+  - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml
 Resources:
   - Link: http://www.hexacorn.com/blog/2017/07/31/the-wizard-of-x-oppa-plugx-style/
   - Link: https://www.youtube.com/watch?v=LwDHX7DVHWU

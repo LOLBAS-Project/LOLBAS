@@ -23,7 +23,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC: Manage-bde.wsf should normally not be invoked by a user
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/3107ede1c4d253c89a26f3a0be79122a3a562f29/rules/windows/process_creation/win_manage_bde_lolbas.yml
+  - IOC: Manage-bde.wsf should not be invoked by a standard user under normal situations
 Resources:
   - Link: https://gist.github.com/bohops/735edb7494fe1bd1010d67823842b712
   - Link: https://twitter.com/bohops/status/980659399495741441

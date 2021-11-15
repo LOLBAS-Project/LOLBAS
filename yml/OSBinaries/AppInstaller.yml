@@ -13,6 +13,7 @@ Commands:
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.11.2521.0_x64__8wekyb3d8bbwe\AppInstaller.exe
+Detection:
 Resources:
   - Link: https://twitter.com/notwhickey/status/1333900137232523264
 Acknowledgement:

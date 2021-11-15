@@ -20,7 +20,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
 Resources:
   - Link: https://twitter.com/pabraeken/status/995111125447577600
 Acknowledgement:

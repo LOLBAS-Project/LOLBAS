@@ -16,7 +16,6 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
 Resources:
   - Link: https://bohops.com/2018/01/07/executing-commands-and-bypassing-applocker-with-powershell-diagnostic-scripts/
 Acknowledgement:

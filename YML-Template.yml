@@ -26,6 +26,11 @@ Code_Sample:
 Detection:
   - IOC: Event ID 10
   - IOC: binary.exe spawned
+  - Analysis: https://link/to/blog/gist/writeup/if/applicable
+  - Sigma: https://link/to/sigma/rule/if/applicable
+  - Elastic: https://link/to/elastic/rule/if/applicable
+  - Splunk: https://link/to/splunk/rule/if/applicable
+  - BlockRule: https://link/to/microsoft/block/rules/if/applicable
 Resources:
   - Link: http://blogpost.com
   - Link: http://twitter.com/something

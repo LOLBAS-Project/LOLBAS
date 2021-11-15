@@ -15,9 +15,9 @@ Full_Path:
   - Path: C:\Windows\System32\Register-cimprovider.exe
   - Path: C:\Windows\SysWOW64\Register-cimprovider.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC:
+  - IOC: Register-cimprovider.exe execution and cmdline DLL load may be supsicious
 Resources:
   - Link: https://twitter.com/PhilipTsukerman/status/992021361106268161
 Acknowledgement:

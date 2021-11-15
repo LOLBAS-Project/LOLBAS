@@ -16,6 +16,7 @@ Full_Path:
 Code_Sample:
   - Code: https://gist.github.com/teixeira0xfffff/837e5bfed0d1b0a29a7cb1e5dbdd9ca6
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/dc030e0128a38510b0a866e1210f5ebd7c418c0b/rules/windows/process_creation/process_creation_lolbas_data_exfiltration_by_using_datasvcutil.yml
   - IOC: The DataSvcUtil.exe tool is installed in the .NET Framework directory.
   - IOC: Preventing/Detecting DataSvcUtil with non-RFC1918 addresses by Network IPS/IDS.
   - IOC: Monitor process creation for non-SYSTEM and non-LOCAL SERVICE accounts launching DataSvcUtil.

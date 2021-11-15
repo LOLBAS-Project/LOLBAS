@@ -26,6 +26,8 @@ Commands:
 Full_Path:
   - Path: 'C:\Program Files\dotnet\dotnet.exe'
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/0bf262539301693a18646056ea789b9b56b9c7f6/rules/windows/process_creation/process_creation_dotnet.yml
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
   - IOC: dotnet.exe spawned an unknown process
 Resources:
   - Link: https://twitter.com/_felamos/status/1204705548668555264

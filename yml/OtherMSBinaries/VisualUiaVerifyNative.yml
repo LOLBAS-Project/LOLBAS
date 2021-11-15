@@ -18,7 +18,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC: Sysmon Event ID 1 - Process Creation
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - IOC: As a Windows SDK binary, execution on a system may be suspicious
 Resources:
   - Link: https://bohops.com/2020/10/15/exploring-the-wdac-microsoft-recommended-block-rules-visualuiaverifynative/
   - Link: https://github.com/MicrosoftDocs/windows-itpro-docs/commit/937db704b9148e9cee7c7010cad4d00ce9c4fdad

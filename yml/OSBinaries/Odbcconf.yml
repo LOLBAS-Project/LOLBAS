@@ -22,9 +22,11 @@ Full_Path:
   - Path: C:\Windows\System32\odbcconf.exe
   - Path: C:\Windows\SysWOW64\odbcconf.exe
 Code_Sample:
-- Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/file.rsp
+  - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/file.rsp
 Detection:
- - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_odbcconf.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml
+  - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
 Resources:
   - Link: https://gist.github.com/NickTyrer/6ef02ce3fd623483137b45f65017352b
   - Link: https://github.com/woanware/application-restriction-bypasses

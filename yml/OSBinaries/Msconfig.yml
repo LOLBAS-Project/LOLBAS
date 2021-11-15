@@ -14,10 +14,11 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\msconfig.exe
 Code_Sample:
-- Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/mscfgtlc.xml
+  - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/mscfgtlc.xml
 Detection:
- - IOC: mscfgtlc.xml changes in system32 folder
- - IOC: msconfig.exe executing
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b731c2059445eef53e37232a5f3634c3473aae0c/rules/windows/process_creation/win_uac_bypass_msconfig_gui.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b731c2059445eef53e37232a5f3634c3473aae0c/rules/windows/file_event/sysmon_uac_bypass_msconfig_gui.yml
+  - IOC: mscfgtlc.xml changes in system32 folder
 Resources:
   - Link: https://twitter.com/pabraeken/status/991314564896690177
 Acknowledgement:

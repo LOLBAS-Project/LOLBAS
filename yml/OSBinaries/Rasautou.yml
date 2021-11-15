@@ -14,9 +14,10 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\rasautou.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: rasautou.exe command line containing -d and -p
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_rasautou_dll_execution.yml
+  - IOC: rasautou.exe command line containing -d and -p
 Resources:
   - Link: https://github.com/fireeye/DueDLLigence
   - Link: https://www.fireeye.com/blog/threat-research/2019/10/staying-hidden-on-the-endpoint-evading-detection-with-shellcode.html

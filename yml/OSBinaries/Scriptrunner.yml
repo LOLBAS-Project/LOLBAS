@@ -22,9 +22,10 @@ Full_Path:
   - Path: C:\Windows\System32\scriptrunner.exe
   - Path: C:\Windows\SysWOW64\scriptrunner.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: Scriptrunner.exe should not be in use unless App-v is deployed
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/765acac3742310764495ed5a2006bc0ced5b1a67/rules/windows/process_creation/win_susp_servu_process_pattern.yml
+  - IOC: Scriptrunner.exe should not be in use unless App-v is deployed
 Resources:
   - Link: https://twitter.com/KyleHanslovan/status/914800377580503040
   - Link: https://twitter.com/NickTyrer/status/914234924655312896

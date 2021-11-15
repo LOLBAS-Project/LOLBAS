@@ -17,7 +17,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - IOC: As a Windows SDK binary, execution on a system may be suspicious
 Resources:
   - Link: https://blog.thecybersecuritytutor.com/adplus-debugging-tool-lsass-dump/
 Acknowledgement:

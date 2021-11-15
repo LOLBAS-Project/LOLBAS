@@ -31,7 +31,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC: remote.exe spawned
+  - IOC: remote.exe process spawns
 Resources:
   - Link: https://blog.thecybersecuritytutor.com/Exeuction-AWL-Bypass-Remote-exe-LOLBin/
 Acknowledgement:

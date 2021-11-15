@@ -24,9 +24,13 @@ Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: regasm.exe executing dll file
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/a04fbe2a99f1dcbbfeb0ee4957ae4b06b0866254/rules/windows/process_creation/win_possible_applocker_bypass.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/execution_register_server_program_connecting_to_the_internet.toml
+  - Splunk: https://github.com/splunk/security_content/blob/bc93e670f5dcb24e96fbe3664d6bcad92df5acad/docs/_stories/suspicious_regsvcs_regasm_activity.md
+  - Splunk: https://github.com/splunk/security_content/blob/bee2a4cefa533f286c546cbe6798a0b5dec3e5ef/detections/endpoint/detect_regasm_with_network_connection.yml
+  - IOC: regasm.exe executing dll file
 Resources:
   - Link: https://pentestlab.blog/2017/05/19/applocker-bypass-regasm-and-regsvcs/
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/

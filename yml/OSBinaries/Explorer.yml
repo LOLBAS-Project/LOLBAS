@@ -22,9 +22,12 @@ Full_Path:
   - Path: C:\Windows\explorer.exe
   - Path: C:\Windows\SysWOW64\explorer.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - IOC: Multiple instances of explorer.exe or explorer.exe using the /root command line can help to detect this.
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_explorer_break_proctree.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_explorer.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/f2bc0c685d83db7db395fc3dc4b9729759cd4329/rules/windows/initial_access_via_explorer_suspicious_child_parent_args.toml
+  - IOC: Multiple instances of explorer.exe or explorer.exe using the /root command line is suspicious.
 Resources:
   - Link: https://twitter.com/CyberRaiju/status/1273597319322058752?s=20
   - Link: https://twitter.com/bohops/status/1276356245541335048

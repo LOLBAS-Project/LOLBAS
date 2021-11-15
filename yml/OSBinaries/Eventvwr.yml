@@ -17,8 +17,12 @@ Full_Path:
 Code_Sample:
   - Code: https://github.com/enigma0x3/Misc-PowerShell-Stuff/blob/master/Invoke-EventVwrBypass.ps1
 Detection:
- - IOC: eventvwr.exe launching child process other than mmc.exe
- - IOC: Creation or modification of the registry value HKCU\Software\Classes\mscfile\shell\open\command
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b08b3e2b0d5111c637dbede1381b07cb79f8c2eb/rules/windows/process_creation/process_creation_sysmon_uac_bypass_eventvwr.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b08b3e2b0d5111c637dbede1381b07cb79f8c2eb/rules/windows/registry_event/registry_event_uac_bypass_eventvwr.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/d31ea6253ea40789b1fc49ade79b7ec92154d12a/rules/windows/privilege_escalation_uac_bypass_event_viewer.toml
+  - Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/eventvwr_uac_bypass.yml
+  - IOC: eventvwr.exe launching child process other than mmc.exe
+  - IOC: Creation or modification of the registry value HKCU\Software\Classes\mscfile\shell\open\command
 Resources:
   - Link: https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/
   - Link: https://github.com/enigma0x3/Misc-PowerShell-Stuff/blob/master/Invoke-EventVwrBypass.ps1

@@ -44,7 +44,6 @@ Full_Path:
 Code_Sample:
   - Code: https://github.com/jreegun/POC-s/tree/master/nuget-squirrel
 Detection:
-  - IOC: Update.exe spawned an unknown process
 Resources:
   - Link: https://www.youtube.com/watch?v=rOP3hnkj7ls
   - Link: https://twitter.com/reegun21/status/1144182772623269889
