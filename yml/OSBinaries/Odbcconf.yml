@@ -9,14 +9,14 @@ Commands:
     Usecase: Execute dll file using technique that can evade defensive counter measures
     Category: Execute
     Privileges: User
-    MitreID: T1218
+    MitreID: T1218.008
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: odbcconf /a {REGSVR c:\test\test.dll}
     Description: Execute DllREgisterServer from DLL specified.
     Usecase: Execute dll file using technique that can evade defensive counter measures
     Category: Execute
     Privileges: User
-    MitreID: T1218
+    MitreID: T1218.008
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\odbcconf.exe
