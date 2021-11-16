@@ -2,7 +2,7 @@
 Name: dump64.exe
 Description: Memory dump tool that comes with Microsoft Visual Studio
 Author: mr.d0x
-Created: 2021-09-01
+Created: 2021-11-16
 Commands:
   - Command: dump64.exe <pid> c:\users\mrd0x\Desktop\out.dmp
     Description: Creates a memory dump of the lsass process
