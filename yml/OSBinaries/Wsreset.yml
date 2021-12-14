@@ -10,7 +10,7 @@ Commands:
     Category: UAC bypass
     Privileges: User
     MitreID: T1548.002
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\wsreset.exe
 Code_Sample:

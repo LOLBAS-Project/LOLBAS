@@ -10,7 +10,7 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Program Files\Internet Explorer\Extexport.exe
   - Path: C:\Program Files (x86)\Internet Explorer\Extexport.exe

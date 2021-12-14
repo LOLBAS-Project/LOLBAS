@@ -10,7 +10,7 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\desktopimgdownldr.exe
 Code_Sample:
