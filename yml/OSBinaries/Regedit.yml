@@ -19,8 +19,7 @@ Commands:
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
-  - Path: C:\Windows\System32\regedit.exe
-  - Path: C:\Windows\SysWOW64\regedit.exe
+  - Path: C:\Windows\regedit.exe
 Code_Sample:
   - Code:
 Detection:

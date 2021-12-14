@@ -5,7 +5,7 @@ Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
   - Command: odbcconf -f file.rsp
-    Description: Load DLL specified in target .RSP file. See the Playloads folder for an example .RSP file.
+    Description: Load DLL specified in target .RSP file. See the payloads folder for an example .RSP file.
     Usecase: Execute dll file using technique that can evade defensive counter measures
     Category: Execute
     Privileges: User

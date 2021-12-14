@@ -4,7 +4,7 @@ Description: Windows Shell Common Dll
 Author:
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe shell32.dll,Control_RunDLL payload.dll
+  - Command: rundll32.exe shell32.dll,Control_RunDLL c:\path\to\payload.dll
     Description: Launch a DLL payload by calling the Control_RunDLL function.
     Usecase: Load a DLL payload.
     Category: Execute

@@ -4,7 +4,7 @@ Description: Used by Windows to execute scripts
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
-  - Command: wscript c:\ads\file.txt:script.vbs
+  - Command: wscript //e:vbscript c:\ads\file.txt:script.vbs
     Description: Execute script stored in an alternate data stream
     Usecase: Execute hidden code to evade defensive counter measures
     Category: ADS
