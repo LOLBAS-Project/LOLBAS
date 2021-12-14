@@ -2,7 +2,7 @@
 Name: WorkFolders.exe
 Description: Work Folders
 Author: 'Elliot Killick'
-Created: '2021-08-16'
+Created: 2021-08-16
 Commands:
   - Command: WorkFolders
     Description: Execute control.exe in the current working directory

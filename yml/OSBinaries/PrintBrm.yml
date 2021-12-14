@@ -2,7 +2,7 @@
 Name: PrintBrm.exe
 Description: Printer Migration Command-Line Tool
 Author: 'Elliot Killick'
-Created: '2021-06-21'
+Created: 2021-06-21
 Commands:
   - Command: PrintBrm -b -d \\1.2.3.4\share\example_folder -f C:\Users\user\Desktop\new.zip
     Description: Create a ZIP file from a folder in a remote drive

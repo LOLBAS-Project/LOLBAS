@@ -2,7 +2,7 @@
 Name: Ieaframe.dll
 Description: Internet Browser DLL for translating HTML code.
 Author:
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe ieframe.dll,OpenURL "C:\test\calc.url"
     Description: Launch an executable payload via proxy through a(n) URL (information) file by calling OpenURL.

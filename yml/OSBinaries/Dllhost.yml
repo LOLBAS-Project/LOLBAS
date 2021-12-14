@@ -2,7 +2,7 @@
 Name: Dllhost.exe
 Description: Used by Windows to DLL Surrogate COM Objects
 Author: 'Nasreddine Bencherchali'
-Created: '2020-11-07'
+Created: 2020-11-07
 Commands:
   - Command: dllhost.exe /Processid:{CLSID}
     Description: Use dllhost.exe to load a registered or hijacked COM Server payload.

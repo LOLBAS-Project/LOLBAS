@@ -2,7 +2,7 @@
 Name: Stordiag.exe
 Description: Storage diagnostic tool
 Author: 'Eral4m'
-Created: '2021-10-21'
+Created: 2021-10-21
 Commands:
   - Command: stordiag.exe
     Description: Once executed, Stordiag.exe will execute schtasks.exe systeminfo.exe and fltmc.exe - if stordiag.exe is copied to a folder and an arbitrary executable is renamed to one of these names, stordiag.exe will execute it.
