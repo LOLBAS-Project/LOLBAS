@@ -2,7 +2,7 @@
 Name: SettingSyncHost.exe
 Description: Host Process for Setting Synchronization
 Author: 'Elliot Killick'
-Created: '2021-08-26'
+Created: 2021-08-26
 Commands:
   - Command: SettingSyncHost -LoadAndRunDiagScript anything
     Description: Execute file specified in %COMSPEC%

@@ -2,7 +2,7 @@
 Name: cmdl32.exe
 Description: Microsoft Connection Manager Auto-Download
 Author: 'Elliot Killick'
-Created: '2021-08-26'
+Created: 2021-08-26
 Commands:
   - Command: cmdl32 /vpn /lan %cd%\config
     Description: Download a file from the web address specified in the configuration file. The downloaded file will be in %TMP% under the name VPNXXXX.tmp where "X" denotes a random number or letter.

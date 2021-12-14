@@ -6,7 +6,7 @@ Created: 2018-05-25
 Commands:
   - Command: ATBroker.exe /start malware
     Description: Start a registered Assistive Technology (AT).
-    Usecase: Executes code defined in registry for a new AT. Modifications must be made to the system registry to either register or modify an existing Assistibe Technology (AT) service entry.
+    Usecase: Executes code defined in registry for a new AT. Modifications must be made to the system registry to either register or modify an existing Assistive Technology (AT) service entry.
     Category: Execute
     Privileges: User
     MitreID: T1218

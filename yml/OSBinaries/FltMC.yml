@@ -2,7 +2,7 @@
 Name: fltMC.exe
 Description: Filter Manager Control Program used by Windows
 Author: 'John Lambert'
-Created: '2021-09-18'
+Created: 2021-09-18
 Commands:
   - Command: fltMC.exe unload SysmonDrv
     Description: Unloads a driver used by security agents
