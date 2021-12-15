@@ -10,7 +10,7 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\calc_exe.inf
     Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
     UseCase: Load an executable payload.

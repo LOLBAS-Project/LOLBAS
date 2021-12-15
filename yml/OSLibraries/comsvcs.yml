@@ -10,7 +10,7 @@ Commands:
     Category: Dump
     Privileges: SYSTEM
     MitreID: T1003.001
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\comsvcs.dll
 Code_Sample:
