@@ -1,0 +1,25 @@
+---
+Name: Colorcpl.exe
+Description: Colorcpl.exe file copy
+Author: 'Eral4m'
+Created: '2022-01-10'
+Commands:
+  - Command: colorcpl.exe c:\windows\system32\calc.exe
+    Description: Once executed, colorcpl.exe will copy the arbitrary file to c:\windows\system32\spool\drivers\color\
+    Usecase: Possible defence evasion purposes - moving from common staging locations via a process not normally monitored.
+    Category: Copy
+    Privileges: User
+    MitreID: T1564
+    MitreLink: https://attack.mitre.org/techniques/T1564/
+    OperatingSystem: Windows 10
+Full_Path:
+  - Path: c:\windows\system32\colorcpl.exe
+  - Path: c:\windows\syswow64\colorcpl.exe
+Detection: 
+  - IOC: colorcpl.exe creating/writing files, especially executable content.
+Resources:
+  - Link: https://twitter.com/eral4m/status/1480468728324231172?s=20
+Acknowledgement:
+  - Person: Eral4m
+    Handle: '@eral4m'
+---
