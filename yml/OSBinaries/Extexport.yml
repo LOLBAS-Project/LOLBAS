@@ -17,6 +17,7 @@ Full_Path:
 Code_Sample:
  - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/0f33cbc85bf4b23b8d8308bfcc8b21a9e5431ee7/rules/windows/process_creation/win_pc_lolbas_extexport.yml
   - IOC: Extexport.exe loads dll and is execute from other folder the original path
 Resources:
   - Link: http://www.hexacorn.com/blog/2018/04/24/extexport-yet-another-lolbin/

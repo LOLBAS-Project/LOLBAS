@@ -83,4 +83,4 @@ As with many open-source projects, this one is the product of a community and we
 
 ## Notice
 
-* Please refer to NOTICE.txt for license information
+* Please refer to NOTICE.md for license information

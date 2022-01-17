@@ -16,6 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/5e57e476c29980800dcc88a7a001ddb75d21a58b/rules/windows/process_creation/win_pc_lolbas_configsecuritypolicy.yml
   - IOC: ConfigSecurityPolicy storing data into alternate data streams.
   - IOC: Preventing/Detecting ConfigSecurityPolicy with non-RFC1918 addresses by Network IPS/IDS.
   - IOC: Monitor process creation for non-SYSTEM and non-LOCAL SERVICE accounts launching ConfigSecurityPolicy.exe.
