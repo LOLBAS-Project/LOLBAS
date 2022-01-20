@@ -1,0 +1,21 @@
+---
+Name: Createdump.exe
+Description: Dump tool part of .NET Core
+Author: mr.d0x
+Created: 2022-01-20
+Commands:
+  - Command: createdump.exe --full -f c:\users\mr.d0x\desktop\out.dmp 736
+    Description: Creates a memory dump of the lsass process
+    Usecase: Create memory dump and parse it offline
+    Category: Dump
+    Privileges: SYSTEM
+    MitreID: T1003.001
+    OperatingSystem: All Windows
+Full_Path:
+  - Path: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.1
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\dotnet\runtime\shared\Microsoft.NETCore.App\6.0.0
+  - Path: C:\Program Files (x86)\dotnet\shared\Microsoft.NETCore.App\6.0.1
+Acknowledgement:
+  - Person: mr.d0x
+    Handle: '@mrd0x'
+---
