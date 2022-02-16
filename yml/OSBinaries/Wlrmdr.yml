@@ -1,16 +1,16 @@
 ---
 Name: Wlrmdr.exe
 Description: Windows Logon Reminder executable
-Author: 'Moshe Kaplan'
-Created: 2021-11-08
+Author: Moshe Kaplan
+Created: 2022-02-16
 Commands:
-  - Command: wlrmdr.exe -s 3600 -f 0 -t _ -m _ -a 11 -u calc.exe
-    Description: Execute calc.exe with the parent process spawning from wlrmdr.exe
+  - Command: "wlrmdr.exe -s 3600 -f 0 -t _ -m _ -a 11 -u calc.exe"
+    Description: Execute calc.exe with wlrmdr.exe as parent process
     Usecase: Use wlrmdr as a proxy binary to evade defensive countermeasures
     Category: Execute
     Privileges: User
     MitreID: T1202
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\wlrmdr.exe
 Code_Sample:
@@ -29,3 +29,4 @@ Acknowledgement:
     Handle: '@Oddvarmoe'
   - Person: Freddy
     Handle: '@falsneg'
+---
