@@ -1,12 +1,12 @@
 ---
 Name: Wlrmdr.exe
-Description: Winlogon Balloon Reminder
+Description: Windows Logon Reminder executable
 Author: 'Moshe Kaplan'
 Created: 2021-11-08
 Commands:
-  - Command: wlrmdr.exe -s 3600 -f 0 -t Click me! -m To run notepad -a 11 -u notepad.exe
-    Description: Execute programs using wlrmdr.exe to spawn child process
-    Usecase: Use wlrmdr as a proxy binary to evade defensive countermeasures 
+  - Command: wlrmdr.exe -s 3600 -f 0 -t _ -m _ -a 11 -u calc.exe
+    Description: Execute calc.exe with the parent process spawning from wlrmdr.exe
+    Usecase: Use wlrmdr as a proxy binary to evade defensive countermeasures
     Category: Execute
     Privileges: User
     MitreID: T1202
@@ -16,7 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC: Child process from wlrmdr.exe
+  - IOC: wlrmdr.exe spawning any new processes
 Resources:
   - Link: https://twitter.com/0gtweet/status/1493963591745220608
   - Link: https://twitter.com/Oddvarmoe/status/927437787242090496
