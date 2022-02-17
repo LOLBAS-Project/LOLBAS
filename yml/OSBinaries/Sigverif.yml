@@ -5,7 +5,7 @@ Author: 'Moshe Kaplan'
 Created: 2021-11-08
 Commands:
   - Command: sigverif.exe, then click "Advanced", input the executable's path as the Log file name, then click "View Log"
-    Description: Execute programs using sigverif.exe to spawn child process
+    Description: Execute calc.exe with the parent process spawning from sigverif.exe
     Usecase: Use sigverif as a proxy binary to evade defensive countermeasures 
     Category: Execute
     Privileges: User
@@ -16,7 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC: Child process from sigverif.exe
+  - IOC: sigverif.exe spawning any new processes
 Resources:
   - Link: https://twitter.com/0gtweet/status/1457676633809330184
   - Link: https://www.hexacorn.com/blog/2018/04/27/i-shot-the-sigverif-exe-the-gui-based-lolbin/
