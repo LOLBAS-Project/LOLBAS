@@ -24,6 +24,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - sigma: https://github.com/SigmaHQ/sigma/blob/5571938ac093244e269b39dedf0d86b5f94e7f81/rules/windows/image_load/image_load_tttracer_mod_load.yml
   - IOC: Parent child relationship. Ttdinject.exe parent for executed command
   - IOC: Multiple queries made to the IFEO registry key of an untrusted executable (Ex. "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\payload.exe") from the ttdinject.exe process
 Resources:
