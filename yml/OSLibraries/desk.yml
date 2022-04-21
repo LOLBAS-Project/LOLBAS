@@ -1,0 +1,33 @@
+---
+Name: desk.cpl
+Description: Display Propertieslibary
+Author: Hai vaknin
+Created: 2022-04-21
+Commands:
+  - Command: rundll32.exe desk.cpl,InstallScreenSaver C:\Users\Hai\Desktop\calc.scr
+    Description: Launch an scr payload by calling InstallScreenSaver.
+    Usecase: Launch an screen saver file.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.011
+    OperatingSystem: Windows
+
+Full_Path:
+  - Path: C:\Windows\System32\desk.cpl
+  - Path: C:\Windows\SysWOW64\desk.cpl
+  - Path: C:\Windows\WinSxS\amd64_microsoft-windows-desk_31bf3856ad364e35_10.0.19041.1_none_6273e6cab85afd8c\desk.cpl
+  - Path: C:\Windows\WinSxS\wow64_microsoft-windows-desk_31bf3856ad364e35_10.0.19041.1_none_6cc8911cecbbbf87\desk.cpl
+Code_Sample:
+  - Code: https://twitter.com/VakninHai/status/1517027824984547329
+Detection:
+  - IOC: Event ID 10
+  - IOC: binary.exe spawned
+  - Analysis: https://link/to/blog/gist/writeup/if/applicable
+  - Sigma: https://link/to/sigma/rule/if/applicable
+  - Elastic: https://link/to/elastic/rule/if/applicable
+  - Splunk: https://link/to/splunk/rule/if/applicable
+  - BlockRule: https://link/to/microsoft/block/rules/if/applicable
+Resources:
+  - Link: https://file.io/x3CRqMdX95i0
+
+
