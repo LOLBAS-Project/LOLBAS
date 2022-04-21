@@ -1,0 +1,28 @@
+---
+Name: desk.cpl
+Description: Display Propertieslibary
+Author: Hai vaknin
+Created: 2022-04-21
+Commands:
+  - Command: "rundll32.exe desk.cpl,InstallScreenSaver C:\temp\file.scr"
+    Description: Launch an scr payload by calling InstallScreenSaver.
+    Usecase: Launch an screen saver file.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.011
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\desk.cpl
+  - Path: C:\Windows\SysWOW64\desk.cpl
+  - Path: C:\Windows\WinSxS\amd64_microsoft-windows-desk_31bf3856ad364e35_10.0.19041.1_none_6273e6cab85afd8c\desk.cpl
+  - Path: C:\Windows\WinSxS\wow64_microsoft-windows-desk_31bf3856ad364e35_10.0.19041.1_none_6cc8911cecbbbf87\desk.cpl
+Detection:
+  - IOC: conhost.exe spawning unexpected processes
+Resources:
+  - Link: https://twitter.com/VakninHai/status/1517027824984547329
+  - Link: https://file.io/x3CRqMdX95i0
+
+Acknowledgement:
+  - Person: hai
+    Handle: '@VakninHai'
+---
