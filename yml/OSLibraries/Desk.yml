@@ -1,5 +1,5 @@
 ---
-Name: desk.cpl
+Name: Desk.cpl
 Description: Desktop Settings Control Panel
 Author: Hai Vaknin
 Created: 2022-04-21
