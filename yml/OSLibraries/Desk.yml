@@ -24,9 +24,12 @@ Full_Path:
 Detection:
   - IOC: 
 Resources:
+  - Link: https://vxug.fakedoma.in/zines/29a/29a7/Articles/29A-7.030.txt
   - Link: https://twitter.com/pabraeken/status/998627081360695297
   - Link: https://twitter.com/VakninHai/status/1517027824984547329
 Acknowledgement:
+  - Person: Rafael S Marques
+    Handle: '@pegabizu'
   - Person: Pierre-Alexandre Braeken
     Handle: '@pabraeken'
   - Person: hai
