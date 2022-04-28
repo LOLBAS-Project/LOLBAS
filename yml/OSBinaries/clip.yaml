@@ -1,0 +1,24 @@
+
+---
+Name: clip.exe
+Description: Redirects output of command line tools to the Windows clipboard.
+Author: 'Erez Kalman'
+Created: 2022-04-28
+Commands:
+  - Command: C:\Windows\System32\clip.exe < a.txt:evil.txt
+    Description: Move data from an ADS.
+    Usecase: May be accessed by scripts and programs for execution and communications circumventing security agents.
+    Category: ADS,Copy
+    Privileges: User
+    MitreID: T1564.004
+    MitreID: T1105
+    OperatingSystem: Windows 7 or older
+Full_Path:
+  - Path: C:\WINDOWS\System32\Clip.exe
+  - Path: C:\WINDOWS\SysWOW64\Clip.exe
+Detection:
+  - IOC: Clip command execution
+Acknowledgement:
+  - Person: 'Erez Kalman'
+    Handle: '@kaerez'
+---
