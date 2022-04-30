@@ -22,7 +22,6 @@ Full_Path:
   - Path: C:\Windows\System32\desk.cpl
   - Path: C:\Windows\SysWOW64\desk.cpl
 Detection:
-  - IOC: 
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/file_event/file_event_win_new_src_file.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_rundll32_installscreensaver.yml
 Resources:
@@ -36,6 +35,6 @@ Acknowledgement:
     Handle: '@pabraeken'
   - Person: hai
     Handle: '@VakninHai'
-    Person: Christopher Peacock
+  - Person: Christopher Peacock
     Handle: '@SecurePeacock'
 ---
