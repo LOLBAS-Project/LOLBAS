@@ -1,0 +1,16 @@
+---
+Name: Ssh.exe
+Description: SSH Client for Windows
+Author: 'Felix Boulet'
+Created: 2022-05-02
+Commands:
+  - Command: ssh -o ProxyCommand=calc.exe .
+    Description: Executes calc.exe from ssh.exe
+    Usecase: Performs execution of specified file, can be used as a defensive evasion.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10
+Resources:
+  - Link: https://gtfobins.github.io/gtfobins/ssh/
+---
