@@ -15,7 +15,7 @@ Commands:
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied).
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
-    Privileges: Admin
+    Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe advpack.dll,RegisterOCX test.dll

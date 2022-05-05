@@ -18,15 +18,8 @@ Commands:
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: msbuild.exe @sample.rsp
-    Description: Executes Logger statements from rsp file
-    Usecase: Execute DLL
-    Category: Execute
-    Privileges: User
-    MitreID: T1127.001
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
   - Command: msbuild.exe /logger:TargetLogger,C:\Loggers\TargetLogger.dll;MyParameters,Foo
-    Description: Executes generated Logger dll file with TargetLogger export
+    Description: Executes generated Logger DLL file with TargetLogger export
     Usecase: Execute DLL
     Category: Execute
     Privileges: User
@@ -38,6 +31,13 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1127.001
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: msbuild.exe @sample.rsp
+    Description: By putting any valid msbuild.exe command-line options in an RSP file and calling it as above will interpret the options as if they were passed on the command line.
+    Usecase: Bypass command-line based detections
+    Category: Execute
+    Privileges: User
+    MitreID: T1036
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Msbuild.exe
@@ -69,6 +69,7 @@ Resources:
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/
   - Link: https://gist.github.com/bohops/4ffc43a281e87d108875f07614324191
   - Link: https://github.com/LOLBAS-Project/LOLBAS/issues/165
+  - Link: https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-response-files
   - Link: https://www.daveaglick.com/posts/msbuild-loggers-and-logging-events
 Acknowledgement:
   - Person: Casey Smith
