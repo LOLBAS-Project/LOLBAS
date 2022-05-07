@@ -15,6 +15,7 @@ Full_Path:
   - Path: C:\Windows\System32\IME\SHARED\IMEWDBLD.exe
 Detection:
 Resources:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/35a7244c62820fbc5a832e50b1e224ac3a1935da/rules/windows/network_connection/net_connection_win_imewdbld.yml
   - Link: https://twitter.com/notwhickey/status/1367493406835040265
 Acknowledgement:
   - Person: Wade Hickey
