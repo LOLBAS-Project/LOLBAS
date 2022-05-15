@@ -10,7 +10,7 @@ Commands:
     Category: Dump
     Privileges: SYSTEM
     MitreID: T1003.001
-    OperatingSystem: All Windows
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.1
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\dotnet\runtime\shared\Microsoft.NETCore.App\6.0.0
