@@ -12,9 +12,6 @@ Commands:
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\NodeJsTools\NodeJsTools\Microsoft.NodejsTools.PressAnyKey.exe
-Code_Sample:
-  - Code:
-Detection:
 Resources:
   - Link: https://twitter.com/mrd0x/status/1463526834918854661
 Acknowledgement:
