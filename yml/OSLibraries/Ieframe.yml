@@ -1,5 +1,5 @@
 ---
-Name: Ieaframe.dll
+Name: Ieframe.dll
 Description: Internet Browser DLL for translating HTML code.
 Author:
 Created: '2018-05-25'
