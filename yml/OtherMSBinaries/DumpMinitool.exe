@@ -10,7 +10,7 @@ Commands:
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.001
-    OperatingSystem: All Windows
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\TestPlatform\Extensions
 Resources:
