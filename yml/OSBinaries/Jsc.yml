@@ -26,6 +26,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/35a7244c62820fbc5a832e50b1e224ac3a1935da/rules/windows/process_creation/proc_creation_win_lolbin_jsc.yml
   - IOC: Jsc.exe should normally not run a system unless it is used for development.
 Resources:
   - Link: https://twitter.com/DissectMalware/status/998797808907046913
