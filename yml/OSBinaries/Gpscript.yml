@@ -6,7 +6,7 @@ Created: 2018-05-25
 Commands:
   - Command: Gpscript /logon
     Description: Executes logon scripts configured in Group Policy.
-    Usecase: Add local group policy logon script to execute file and hide from defensive counter measures
+    Usecase: Binary file used by .NET to compile javascript code to .exe or .dll format
     Category: Execute
     Privileges: Administrator
     MitreID: T1218
