@@ -37,6 +37,7 @@ Detection:
 Resources:
   - Link: https://twitter.com/0gtweet/status/1299071304805560321?s=21
   - Link: https://www.pureid.io/dumping-abusing-windows-credentials-part-1/
+  - Link: https://github.com/LOLBAS-Project/LOLBAS/issues/84
 Acknowledgement:
   - Person: Grzegorz Tworek
     Handle: '@0gtweet'
