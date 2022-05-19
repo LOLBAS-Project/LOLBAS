@@ -1,6 +1,6 @@
 ---
 Name: rdrleakdiag.exe
-Description:  Microsoft Windows resource leak diagnostic tool
+Description: Microsoft Windows resource leak diagnostic tool
 Author: 'John Dwyer'
 Created: 2022-05-18
 Commands:
