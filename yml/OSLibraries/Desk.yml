@@ -24,10 +24,12 @@ Full_Path:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/file_event/file_event_win_new_src_file.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_rundll32_installscreensaver.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_set/registry_set_scr_file_executed_by_rundll32.yml
 Resources:
   - Link: https://vxug.fakedoma.in/zines/29a/29a7/Articles/29A-7.030.txt
   - Link: https://twitter.com/pabraeken/status/998627081360695297
   - Link: https://twitter.com/VakninHai/status/1517027824984547329
+  - Link: https://jstnk9.github.io/jstnk9/research/InstallScreenSaver-SCR-files
 Acknowledgement:
   - Person: Rafael S Marques
     Handle: '@pegabizu'
@@ -37,4 +39,6 @@ Acknowledgement:
     Handle: '@VakninHai'
   - Person: Christopher Peacock
     Handle: '@SecurePeacock'
+  - Person: Jose Luis Sanchez
+    Handle: '@Joseliyo_Jstnk'
 ---
