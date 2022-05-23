@@ -21,6 +21,7 @@ Code_Sample:
 Detection:
   - IOC: ie4uinit.exe copied outside of %windir%
   - IOC: ie4uinit.exe loading an inf file (ieuinit.inf) from outside %windir%
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/bea6f18d350d9c9fdc067f93dde0e9b11cc22dc2/rules/windows/process_creation/proc_creation_win_lolbin_ie4uinit.yml
 Resources:
   - Link: https://bohops.com/2018/03/10/leveraging-inf-sct-fetch-execute-techniques-for-bypass-evasion-persistence-part-2/
 Acknowledgement:

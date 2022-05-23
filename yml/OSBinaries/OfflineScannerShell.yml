@@ -12,9 +12,9 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows 10
 Full_Path:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/35a7244c62820fbc5a832e50b1e224ac3a1935da/rules/windows/process_creation/proc_creation_win_lolbas_offlinescannershell.yml
   - Path: C:\Program Files\Windows Defender\Offline\OfflineScannerShell.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/bea6f18d350d9c9fdc067f93dde0e9b11cc22dc2/rules/windows/process_creation/proc_creation_win_lolbas_offlinescannershell.yml
   - IOC: OfflineScannerShell.exe should not be run on a normal workstation
 Acknowledgement:
   - Person: Elliot Killick
