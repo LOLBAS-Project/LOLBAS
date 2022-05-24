@@ -17,6 +17,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/35a7244c62820fbc5a832e50b1e224ac3a1935da/rules/windows/process_creation/proc_creation_win_susp_register_cimprovider.yml
   - IOC: Register-cimprovider.exe execution and cmdline DLL load may be supsicious
 Resources:
   - Link: https://twitter.com/PhilipTsukerman/status/992021361106268161

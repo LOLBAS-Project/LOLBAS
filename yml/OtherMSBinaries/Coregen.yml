@@ -4,7 +4,7 @@ Description: Binary coregen.exe (Microsoft CoreCLR Native Image Generator) loads
 Author: Martin Sohn Christensen
 Created: 2020-10-09
 Commands:
-  - Command: coregon.exe.exe /L C:\folder\evil.dll dummy_assembly_name
+  - Command: coregen.exe /L C:\folder\evil.dll dummy_assembly_name
     Description: Loads the target .DLL in arbitrary path specified with /L.
     Usecase: Execute DLL code
     Category: Execute

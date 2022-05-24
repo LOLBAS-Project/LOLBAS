@@ -25,6 +25,7 @@ Code_Sample:
   - Code:
 Detection:
   - IOC: Replace.exe retrieving files from remote server
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/bea6f18d350d9c9fdc067f93dde0e9b11cc22dc2/rules/windows/process_creation/proc_creation_win_lolbas_replace.yml
 Resources:
   - Link: https://twitter.com/elceef/status/986334113941655553
   - Link: https://twitter.com/elceef/status/986842299861782529
