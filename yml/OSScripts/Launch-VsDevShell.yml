@@ -1,0 +1,33 @@
+---
+Name: Launch-VsDevShell.ps1
+Description: Locates and imports a Developer PowerShell module and calls the Enter-VsDevShell cmdlet
+Author: 'Nasreddine Bencherchali'
+Created: 2022-06-13
+Commands:
+  - Command: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\Launch-VsDevShell.ps1 -VsWherePath "<executable>"
+    Description: Execute binaries from the context of the signed script using the "VsWherePath" flag
+    Usecase: Proxy execution
+    Category: Execute
+    Privileges: User
+    MitreID: T1216
+    OperatingSystem: Windows 10, Windows 11
+  - Command: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\Launch-VsDevShell.ps1 -VsInstallationPath "/../../../../../; <command> ;"
+    Description: Execute binaries and commands  from the context of the signed script using the "VsInstallationPath" flag
+    Usecase: Proxy execution
+    Category: Execute
+    Privileges: User
+    MitreID: T1216
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\Launch-VsDevShell.ps1
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1
+Code_Sample:
+  - Code:
+Detection:
+  - Sigma: 
+Resources:
+  - Link: https://twitter.com/nas_bench/status/1535981653239255040
+Acknowledgement:
+  - Person: Nasreddine Bencherchali
+    Handle: '@nas_bench'
+---

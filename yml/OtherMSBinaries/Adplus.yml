@@ -11,16 +11,35 @@ Commands:
     Privileges: SYSTEM
     MitreID: T1003.001
     OperatingSystem: All Windows
+  - Command: adplus.exe -c <config>
+    Description: Execute arbitrary commands or dump process memory using config adplus file
+    Usecase: Run commands under a trusted Microsoft signed binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: All Windows
+  - Command: adplus.exe -crash -o <outputfolder> -sc <command>
+    Description: Execute arbitrary commands and binaries from the context of adplus
+    Usecase: Run commands under a trusted Microsoft signed binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: All Windows
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\adplus.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\adplus.exe
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/2d51c7719ebca9bd04eabd2f62a58322f8ff8394/rules/windows/process_creation/proc_creation_win_lolbin_adplus.yml
   - IOC: As a Windows SDK binary, execution on a system may be suspicious
 Resources:
   - Link: https://blog.thecybersecuritytutor.com/adplus-debugging-tool-lsass-dump/
+  - Link: https://twitter.com/nas_bench/status/1534916659676422152
+  - Link: https://twitter.com/nas_bench/status/1534915321856917506
 Acknowledgement:
   - Person: mr.d0x
     Handle: '@mrd0x'
+  - Person: Nasreddine Bencherchali
+    Handle: '@nas_bench'
 ---
