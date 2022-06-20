@@ -1,0 +1,66 @@
+---
+Name: Nltest.exe
+Description: Windows binary used for remote domain administration, and enumeration 
+Author: 'Daniel Gott'
+Created: 2022-06-20
+Commands:
+  - Command: nltest.exe /dsgetdc:<DomainName>
+    Description: Description of the command
+    Usecase: Enumerate a domains active domain controllers and their corresponding IP addresses
+    Category: Discovery
+    Privileges: Administrator
+    MitreID: T1482
+    OperatingSystem: Windows Server 2003, Windows Server 2008, Windows Server 2003 R2, Windows Server 2008 R2, Windows Server 2012, Windows Server 2003 with SP1, Windows 8
+  - Command: nltest.exe /dclist:<DomainName>
+    Description: Lists all domain controllers in the domain
+    Usecase: Enumerate domain controllers within a domain
+    Category: Discovery
+    Privileges: Administrator
+    MitreID: T1482
+    OperatingSystem: Windows Server 2003, Windows Server 2008, Windows Server 2003 R2, Windows Server 2008 R2, Windows Server 2012, Windows Server 2003 with SP1, Windows 8
+  - Command: nltest.exe /dnsgetdc:<DomainName>
+    Description: Queries the DNS server for a list of domain controllers and their corresponding IP addresses.
+    Usecase: Enumerate a domains active domain controllers and their corresponding IP addresses
+    Category: Discovery
+    Privileges: Administrator
+    MitreID: T1482
+    OperatingSystem: Windows Server 2003, Windows Server 2008, Windows Server 2003 R2, Windows Server 2008 R2, Windows Server 2012, Windows Server 2003 with SP1, Windows 8
+  - Command: nltest.exe /parentdomain
+    Description: Returns the name of the parent domain of the server.
+    Usecase: Discover parent domains
+    Category: Discovery
+    Privileges: Administrator
+    MitreID: T1482
+    OperatingSystem: Windows Server 2003, Windows Server 2008, Windows Server 2003 R2, Windows Server 2008 R2, Windows Server 2012, Windows Server 2003 with SP1, Windows 8
+  - Command: nltest.exe /domain_trusts
+    Description: Returns a list of trusted domains
+    Usecase: Discover trusted domains
+    Category: Discovery
+    Privileges: Administrator
+    MitreID: T1482
+    OperatingSystem: Windows Server 2003, Windows Server 2008, Windows Server 2003 R2, Windows Server 2008 R2, Windows Server 2012, Windows Server 2003 with SP1, Windows 8
+  - Command: nltest.exe /user:<Username>
+    Description: Displays many of the attributes that you maintain in the SAM account database for the user that you specify
+    Usecase: Enumerate domain accounts
+    Category: Discovery
+    Privileges: Administrator
+    MitreID: T1087
+    OperatingSystem: Windows Server 2003, Windows Server 2008, Windows Server 2003 R2, Windows Server 2008 R2, Windows Server 2012, Windows Server 2003 with SP1, Windows 8
+Full_Path:
+  - Path: C:\Windows\System32\nltest.exe
+  - Path: C:\Windows\SysWOW64\nltest.exe
+Code_Sample:
+  - Code:
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_nltest_recon.yml
+Resources:
+  - Link: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731935(v=ws.11)
+  - Link: https://attack.mitre.org/software/S0359/
+  - Link: https://attack.mitre.org/techniques/T1016/
+  - Link: https://book.hacktricks.xyz/windows/basic-cmd-for-pentesters
+  - Link: https://thedfirreport.com/2021/08/16/trickbot-leads-up-to-fake-1password-installation/
+Acknowledgement:
+  - Person: Daniel Gott
+    Handle: '@gott_cyber'
+  - Person: frack113
+    Handle: '@frack113'
