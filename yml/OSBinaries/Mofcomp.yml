@@ -31,6 +31,8 @@ Resources:
   - Link: https://docs.microsoft.com/en-us/windows/win32/wmisdk/mofcomp
   - Link: https://docs.microsoft.com/en-us/windows/win32/wmisdk/managed-object-format--mof-
   - Link: https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/
+  - Link: https://in.security/2019/04/03/an-intro-into-abusing-and-identifying-wmi-event-subscriptions-for-persistence/
+  - Link: https://medium.com/threatpunter/detecting-removing-wmi-persistence-60ccbb7dff96
 Acknowledgement:
   - Person: Daniel Gott
     Handle: '@gott_cyber'
