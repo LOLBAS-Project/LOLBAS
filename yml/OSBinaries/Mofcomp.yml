@@ -1,6 +1,7 @@
 ---
-Name: Mofcomp.exe
-Description: A compiler that parses a file containing MOF statements and adds the classes and class instances defined in the file to the WMI repository.
+Name: mofcomp.exe
+Description: Compiler that parses a file containing MOF statements and adds the classes and class instances defined in the file to the WMI repository. Threat actors can leverage this binary to install malicious MOF scripts
+Author: Daniel Gott
 Created: 2022-07-19
 Commands:
   - Command: mofcomp.exe C:\Windows\SERVIC~1\MSSQL$~1\AppData\Local\Temp\xitmf
@@ -19,12 +20,12 @@ Commands:
     MitreID: T1047 & T1546.003 
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 & Windows Server 2008 and above
 Full_Path:
-  - Path: c:\windows\system32\mofcomp.exe
-  - Path: c:\windows\syswow64\mofcomp.exe
+  - Path: C:\Windows\System32\wbem\mofcomp.exe
+  - Path: C:\Windows\SysWOW64\wbem\mofcomp.exe
 Code_Sample:
   - Code:
 Detection:
-  - IOC: Strange parent processes spawning mofcomp.exe like cmd.exe or powershell.exe
+  - IOC: strange parent processes spawning mofcomp.exe like cmd.exe or powershell.exe
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_mofcomp_execution.yml
   - Sigma: https://github.com/The-DFIR-Report/Sigma-Rules/blob/75260568a7ffe61b2458ca05f6f25914efb44337/win_mofcomp_execution.yml
 Resources:
