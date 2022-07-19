@@ -1,0 +1,40 @@
+---
+Name: Mofcomp.exe
+Description: A compiler that parses a file containing MOF statements and adds the classes and class instances defined in the file to the WMI repository.
+Created: 2022-07-19
+Commands:
+  - Command: mofcomp.exe C:\Windows\SERVIC~1\MSSQL$~1\AppData\Local\Temp\xitmf
+    Description: Abuse of mofcomp.exe to parse a file which contains MOF statements in order create new classes as part of the WMI repository
+    Usecase: Threat actors can use mofcomp.exe to decompile a BMOF binary and then register a malicious class in the WMI repository
+    Category: Execution and Persistence
+    Privileges: User
+    MitreID: T1047 & T1546.003 
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 & Windows Server 2008 and above
+Commands:
+  - Command: mofcomp.exe C:\Programdata\x.mof
+    Description: Abuse of mofcomp.exe to parse a file which contains MOF statements in order create new classes as part of the WMI repository
+    Usecase: Threat actors can use mofcomp.exe to decompile a BMOF binary and then register a malicious class in the WMI repository
+    Category: Execution and Persistence
+    Privileges: User
+    MitreID: T1047 & T1546.003 
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 & Windows Server 2008 and above
+Full_Path:
+  - Path: c:\windows\system32\mofcomp.exe
+  - Path: c:\windows\syswow64\mofcomp.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: Strange parent processes spawning mofcomp.exe like cmd.exe or powershell.exe
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_mofcomp_execution.yml
+  - Sigma: https://github.com/The-DFIR-Report/Sigma-Rules/blob/75260568a7ffe61b2458ca05f6f25914efb44337/win_mofcomp_execution.yml
+Resources:
+  - Link: https://docs.microsoft.com/en-us/windows/win32/wmisdk/mofcomp
+  - Link: https://docs.microsoft.com/en-us/windows/win32/wmisdk/managed-object-format--mof-
+  - Link: https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/
+Acknowledgement:
+  - Person: Daniel Gott
+    Handle: '@gott_cyber'
+  - Person: The DFIR Report
+    Handle: '@TheDFIRReport'
+  - Person: Nasreddine Bencherchali
+    Handle: '@nas_bench'
