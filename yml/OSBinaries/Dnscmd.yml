@@ -11,6 +11,21 @@ Commands:
     Privileges: DNS admin
     MitreID: T1543.003
     OperatingSystem: Windows server
+Commands:
+  - Command: dnscmd.exe 127.0.0.1 /enumrecords fakedomain.local
+    Description: Enumerates local DNS resource records on the fakedomain.local domain
+    Usecase: Enumerate DNS zones for a particular domain. DNS zones are used to host the DNS records for a particular domain.
+    Category: Reconnaissance
+    Privileges: Domain Administrator, or SYSTEM
+    MitreID: TA0007
+    OperatingSystem: Windows server
+Command: cmd.exe /Q /c powershell.exe dnscmd.exe 127.0.0.1 /enumrecords fakedomain.local @ 1> \\127.0.0.1\ADMIN$\__1659026954.961697 2>&1
+    Description: Successful execution of dnscmd.exe to enumerate the DNS zones of fakedomain.local, then redirect the output to the local interface (Impacket Execution) 
+    Usecase: Enumerate DNS zones for a particular domain. DNS zones are used to host the DNS records for a particular domain.
+    Category: Reconnaissance
+    Privileges: Domain Administrator, or SYSTEM
+    MitreID: TA0007
+    OperatingSystem: Windows server
 Full_Path:
   - Path: C:\Windows\System32\Dnscmd.exe
   - Path: C:\Windows\SysWOW64\Dnscmd.exe
@@ -25,6 +40,7 @@ Resources:
   - Link: https://github.com/dim0x69/dns-exe-persistance/tree/master/dns-plugindll-vcpp
   - Link: https://twitter.com/Hexacorn/status/994000792628719618
   - Link: http://www.labofapenetrationtester.com/2017/05/abusing-dnsadmins-privilege-for-escalation-in-active-directory.html
+  - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/dnscmd
 Acknowledgement:
   - Person: Shay Ber
     Handle:
@@ -32,4 +48,6 @@ Acknowledgement:
     Handle: '@dim0x69'
   - Person: Nikhil SamratAshok
     Handle: '@nikhil_mitt'
+  - Person: Daniel Gott
+    Handle: '@gott_cyber'
 ---
