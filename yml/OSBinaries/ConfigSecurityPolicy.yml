@@ -21,7 +21,6 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\Windows Defender\ConfigSecurityPolicy.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\ConfigSecurityPolicy.exe
-  
 Code_Sample:
   - Code:
 Detection:
