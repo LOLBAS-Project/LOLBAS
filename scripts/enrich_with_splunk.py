@@ -180,11 +180,3 @@ if __name__ == "__main__":
     enriched_lolbas = enrich_lolbas(detections, lolbas, VERBOSE)
     print("writing enriched lolbas")
     write_lolbas(enriched_lolbas, LOLBAS_PATH, VERBOSE)
-
-
-
-
-    
-
-
-
