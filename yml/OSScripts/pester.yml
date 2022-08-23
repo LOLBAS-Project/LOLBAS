@@ -12,7 +12,7 @@ Commands:
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
   - Command: Pester.bat ;calc.exe
-    Description: Execute code using Pester. The third parameter can be anything. The fourth is the payload. Example here executes notepad
+    Description: Execute code using Pester. Example here executes calc.exe
     Usecase: Proxy execution
     Category: Execute
     Privileges: User
