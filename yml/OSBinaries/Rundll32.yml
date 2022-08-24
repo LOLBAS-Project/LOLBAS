@@ -80,6 +80,7 @@ Resources:
   - Link: https://github.com/sailay1996/expl-bin/blob/master/obfus.md
   - Link: https://github.com/sailay1996/misc-bin/blob/master/rundll32.md
   - Link: https://nasbench.medium.com/a-deep-dive-into-rundll32-exe-642344b41e90
+  - Link: https://www.cybereason.com/blog/rundll32-the-infamous-proxy-for-executing-malicious-code
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
