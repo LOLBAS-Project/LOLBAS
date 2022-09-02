@@ -16,6 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/0.21-688-gd172b136b/rules/windows/process_creation/proc_creation_win_lolbas_utilityfunctions.yml
 Resources:
   - Link: https://twitter.com/nickvangilder/status/1441003666274668546
 Acknowledgement:
