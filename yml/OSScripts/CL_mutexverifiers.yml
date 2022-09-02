@@ -20,6 +20,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff6c54ded6b52f379cec11fe17c1ccb956faa660/rules/windows/process_creation/proc_creation_win_lolbas_cl_mutexverifiers.yml
 Resources:
   - Link: https://twitter.com/pabraeken/status/995111125447577600
 Acknowledgement:
