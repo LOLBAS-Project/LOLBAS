@@ -39,7 +39,7 @@ Commands:
     Privileges: User
     MitreID: T1140
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: certutil --decodehex encoded_hexadecimal_InputFileName
+  - Command: certutil -decodehex encoded_hexadecimal_InputFileName decodedOutputFileName
     Description: Command to decode a hexadecimal-encoded file decodedOutputFileName
     Usecase: Decode files to evade defensive measures
     Category: Decode
