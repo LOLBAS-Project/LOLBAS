@@ -10,22 +10,22 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Validate OSBinaries YAML Schema
-      uses: eliezio/action-pykwalify@v1
+      uses: eliezio/action-pykwalify@v0.3
       with:
         files: yml/OSBinaries/*.yml
         schema: YML-Schema.yml
     - name: Validate OSLibraries YAML Schema
-      uses: eliezio/action-pykwalify@v1
+      uses: eliezio/action-pykwalify@v0.3
       with:
         files: yml/OSLibraries/*.yml
         schema: YML-Schema.yml
     - name: Validate OSScripts YAML Schema
-      uses: eliezio/action-pykwalify@v1
+      uses: eliezio/action-pykwalify@v0.3
       with:
         files: yml/OSScripts/*.yml
         schema: YML-Schema.yml
     - name: Validate OtherMSBinaries YAML Schema
-      uses: eliezio/action-pykwalify@v1
+      uses: eliezio/action-pykwalify@v0.3
       with:
         files: yml/OtherMSBinaries/*.yml
         schema: YML-Schema.yml
