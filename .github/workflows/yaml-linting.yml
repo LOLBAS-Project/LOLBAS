@@ -1,20 +1,13 @@
 ---
-name: YAML Lint
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+name: YAML Lint Push Check
+on: [push]
 
 jobs:
   lintFiles:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run yamllint
-        uses: reviewdog/action-yamllint@v1
+      - name: Frenck's yamllint
+        uses: frenck/action-yamllint@v1
         with:
-          reporter: github-pr-review # Change reporter.
-          yamllint_flags: '--config-file .github/.yamllint'
+          config: ".github/.yamllint"
