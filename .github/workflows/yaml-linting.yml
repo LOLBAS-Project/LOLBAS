@@ -12,8 +12,8 @@ jobs:
   lintFiles:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: yaml-lint
-        uses: ibiqlik/action-yamllint@v3.1.0
+      - uses: actions/checkout
+      - name: Run yamllint
+        uses: frenck/action-yamllint
         with:
-          config_file: .github/.yamllint
+          config: ".github/.yamllint"
