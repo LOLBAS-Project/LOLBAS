@@ -10,4 +10,4 @@ jobs:
       - name: Frenck's yamllint
         uses: frenck/action-yamllint@v1
         with:
-          config: ".github/.yamllint"
+          config: "./.github/.yamllint"
