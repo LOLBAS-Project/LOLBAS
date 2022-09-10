@@ -1,0 +1,16 @@
+name: Validate YAML Schema
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Validate YAML Schema
+      uses: eliezio/action-pykwalify@v0.3
+        with:
+          files: yml/*/*.yml
+          schema: YML-Schema.yml

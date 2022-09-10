@@ -1,0 +1,92 @@
+---
+type: map
+mapping:
+# Id field enhancement possibility commenting out for now
+#  "Id":
+#    type: str
+#    required: yes
+#    pattern: '[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}'
+  "Name":
+    type: str
+    required: yes
+  "Description":
+    type: str
+    required: yes
+  "Author":
+    type: str
+    required: yes
+  "Created":
+    type: str
+    required: yes
+  "Commands":
+    type: seq
+    sequence:
+      - type: map
+        mapping:
+          "Command":
+            type: str
+            required: yes
+          "Description":
+            type: str
+            required: yes
+          "Usecase":
+            type: str
+            required: yes
+          "Category":
+            type: str
+            required: yes
+            enum: [ADS, AWL Bypass, Compile, Copy, Credentials, Decode, Download, Dump, Encode, Execute, Reconnaissance, UAC Bypass, Upload]
+          "Privileges":
+            type: str
+            required: yes
+          "MitreID":
+            type: str
+            required: yes
+            pattern: 'T[0-9]{4}'
+          "OperatingSystem":
+            type: str
+            required: yes
+  "Full_Path":
+    type: seq
+    required: yes
+    sequence:
+      - type: map
+        mapping:
+          "Path":
+            type: str
+            required: yes
+  "Code_Sample":
+    type: seq
+    required: yes
+    sequence:
+      - type: map
+        mapping:
+          "Code":
+            type: str
+  "Detection":
+    type: seq
+    required: yes
+    sequence:
+      - type: map
+        mapping:
+          "IOC":
+            type: str
+  "Resources":
+    type: seq
+    required: yes
+    sequence:
+      - type: map
+        mapping:
+          "Link":
+            type: str
+            pattern: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+  "Acknowledgement":
+    type: seq
+    required: yes
+    sequence:
+      - type: map
+        mapping:
+          "Person":
+            type: str
+          "Handle":
+            type: str
