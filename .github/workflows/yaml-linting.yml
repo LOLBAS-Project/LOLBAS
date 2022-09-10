@@ -14,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run yamllint
-        uses: frenck/action-yamllint@v1
+        uses: reviewdog/action-yamllint@v1
         with:
-          config: ".github/.yamllint"
+          reporter: github-pr-review # Change reporter.
+          yamllint_flags: '--config-file .github/.yamllint'
