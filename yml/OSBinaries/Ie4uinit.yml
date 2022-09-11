@@ -1,6 +1,6 @@
 ---
 Name: Ie4uinit.exe
-Description:
+Description: Executes commands from a specially prepared ie4uinit.inf file.
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:

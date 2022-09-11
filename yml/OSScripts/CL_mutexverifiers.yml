@@ -1,6 +1,6 @@
 ---
 Name: CL_Mutexverifiers.ps1
-Description:
+Description: Proxy execution with CL_Mutexverifiers.ps1
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:

@@ -1,6 +1,6 @@
 ---
 Name: Runscripthelper.exe
-Description:
+Description: Execute target PowerShell script
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:

@@ -1,6 +1,6 @@
 ---
 Name: Scriptrunner.exe
-Description:
+Description: Execute binary through proxy binary to evade defensive counter measures
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:

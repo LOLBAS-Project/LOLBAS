@@ -1,6 +1,6 @@
 ---
 Name: Pubprn.vbs
-Description:
+Description: Proxy execution with Pubprn.vbs
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:

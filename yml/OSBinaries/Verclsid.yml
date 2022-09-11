@@ -1,6 +1,6 @@
 ---
 Name: Verclsid.exe
-Description:
+Description: Used to verify a COM object before it is instantiated by Windows Explorer
 Author: '@bohops'
 Created: 2018-12-04
 Commands:

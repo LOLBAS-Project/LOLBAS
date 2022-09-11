@@ -1,6 +1,6 @@
 ---
 Name: Runonce.exe
-Description:
+Description: Executes a Run Once Task that has been configured in the registry
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
