@@ -7,7 +7,7 @@ Commands:
   - Command: eventvwr.exe
     Description: During startup, eventvwr.exe checks the registry value HKCU\Software\Classes\mscfile\shell\open\command for the location of mmc.exe, which is used to open the eventvwr.msc saved console file. If the location of another binary or script is added to this registry value, it will be executed as a high-integrity process without a UAC prompt being displayed to the user.
     Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
-    Category: UAC bypass
+    Category: UAC Bypass
     Privileges: User
     MitreID: T1548.002
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
