@@ -20,6 +20,7 @@ mapping:
     required: true
   "Commands":
     type: seq
+    required: true
     sequence:
       - type: map
         mapping:
@@ -57,7 +58,7 @@ mapping:
             required: true
   "Code_Sample":
     type: seq
-    required: true
+    required: false
     sequence:
       - type: map
         mapping:
@@ -65,7 +66,7 @@ mapping:
             type: str
   "Detection":
     type: seq
-    required: true
+    required: false
     sequence:
       - type: map
         mapping:
@@ -88,7 +89,7 @@ mapping:
             pattern: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
   "Resources":
     type: seq
-    required: true
+    required: false
     sequence:
       - type: map
         mapping:
@@ -97,7 +98,7 @@ mapping:
             pattern: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
   "Acknowledgement":
     type: seq
-    required: true
+    required: false
     sequence:
       - type: map
         mapping:
