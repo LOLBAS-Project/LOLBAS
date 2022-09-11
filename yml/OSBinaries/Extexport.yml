@@ -1,6 +1,6 @@
 ---
 Name: Extexport.exe
-Description:
+Description: Load a DLL located in the c:\test folder with a specific name.
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
