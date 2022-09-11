@@ -11,7 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1053.005
     OperatingSystem: Windows
-  - Command: schtasks /create /s targetmachine /tn "MyTask" /tr c:\some\directory\notevil.exe /sc daily 
+  - Command: schtasks /create /s targetmachine /tn "MyTask" /tr c:\some\directory\notevil.exe /sc daily
     Description: Create a scheduled task on a remote computer for persistence/lateral movement
     Usecase: Create a remote task to run daily relative to the the time of creation
     Category: Execute

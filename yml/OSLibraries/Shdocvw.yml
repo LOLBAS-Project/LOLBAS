@@ -19,10 +19,10 @@ Code_Sample:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
 Resources:
-    - Link: http://www.hexacorn.com/blog/2018/03/15/running-programs-via-proxy-jumping-on-a-edr-bypass-trampoline-part-5/
-    - Link: https://bohops.com/2018/03/17/abusing-exported-functions-and-exposed-dcom-interfaces-for-pass-thru-command-execution-and-lateral-movement/
-    - Link: https://twitter.com/bohops/status/997690405092290561
-    - Link: https://windows10dll.nirsoft.net/shdocvw_dll.html
+  - Link: http://www.hexacorn.com/blog/2018/03/15/running-programs-via-proxy-jumping-on-a-edr-bypass-trampoline-part-5/
+  - Link: https://bohops.com/2018/03/17/abusing-exported-functions-and-exposed-dcom-interfaces-for-pass-thru-command-execution-and-lateral-movement/
+  - Link: https://twitter.com/bohops/status/997690405092290561
+  - Link: https://windows10dll.nirsoft.net/shdocvw_dll.html
 Acknowledgement:
   - Person: Adam
     Handle: '@hexacorn'

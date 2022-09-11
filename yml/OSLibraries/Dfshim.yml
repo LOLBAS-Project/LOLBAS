@@ -17,9 +17,9 @@ Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Dfsvc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Dfsvc.exe
 Code_Sample:
-- Code:
+  - Code:
 Detection:
- - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
 Resources:
   - Link: https://github.com/api0cradle/ShmooCon-2015/blob/master/ShmooCon-2015-Simple-WLEvasion.pdf
   - Link: https://stackoverflow.com/questions/13312273/clickonce-runtime-dfsvc-exe
