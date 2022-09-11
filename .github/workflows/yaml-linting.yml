@@ -1,5 +1,5 @@
 ---
-name: YAML Lint Push Check
+name: YAML Lint and Validation Push Check
 on: [push]
 
 jobs:
@@ -11,3 +11,23 @@ jobs:
         uses: ibiqlik/action-yamllint@v3
         with:
           config_file: .github/.yamllint
+    - name: Validate OSBinaries YAML Schema
+      uses: cketti/action-pykwalify@v0.3-temp-fix
+      with:
+        files: yml/OSBinaries/*.yml
+        schema: YML-Schema.yml
+    - name: Validate OSLibraries YAML Schema
+      uses: cketti/action-pykwalify@v0.3-temp-fix
+      with:
+        files: yml/OSLibraries/*.yml
+        schema: YML-Schema.yml
+    - name: Validate OSScripts YAML Schema
+      uses: cketti/action-pykwalify@v0.3-temp-fix
+      with:
+        files: yml/OSScripts/*.yml
+        schema: YML-Schema.yml
+    - name: Validate OtherMSBinaries YAML Schema
+      uses: cketti/action-pykwalify@v0.3-temp-fix
+      with:
+        files: yml/OtherMSBinaries/*.yml
+        schema: YML-Schema.yml
