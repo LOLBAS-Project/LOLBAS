@@ -16,7 +16,7 @@ mapping:
     type: str
     required: true
   "Created":
-    type: str
+    type: date
     required: true
   "Commands":
     type: seq
