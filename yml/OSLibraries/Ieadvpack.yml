@@ -31,12 +31,14 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218.011
+    OperatingSystem: Windows
   - Command: rundll32 ieadvpack.dll, RegisterOCX "cmd.exe /c calc.exe"
     Description: Launch command line by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
+    OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\ieadvpack.dll
   - Path: c:\windows\syswow64\ieadvpack.dll
