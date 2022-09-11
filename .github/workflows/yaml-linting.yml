@@ -1,6 +1,6 @@
 ---
-name: PUSH - YAML Lint and Schema Validation Checks
-on: [push]
+name: PUSH & PULL REQUEST - YAML Lint and Schema Validation Checks
+on: [push,pull_request]
 
 jobs:
   lintFiles:
