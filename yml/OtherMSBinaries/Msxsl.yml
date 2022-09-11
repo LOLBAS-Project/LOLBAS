@@ -33,7 +33,7 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows
 Full_Path:
-  - Path:
+  - Path: no default
 Code_Sample:
   - Code:
 Detection:
