@@ -10,6 +10,7 @@ jobs:
       - name: Run yamllint
         uses: reviewdog/action-yamllint@v1
         with:
+          level: error
           reporter: github-pr-review # Change reporter.
           yamllint_flags: '--config-file .github/.yamllint yml/**/*.yml'
       - name: Validate OSBinaries YAML Schema
