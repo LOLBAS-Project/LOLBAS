@@ -1,5 +1,5 @@
 ---
-name: PULL_REQUEST: YAML Lint with Reviewdog & Schema Checks
+name: PULL_REQUEST - YAML Lint with Reviewdog & Schema Checks
 on: [pull_request]
 
 jobs:

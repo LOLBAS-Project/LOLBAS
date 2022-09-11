@@ -1,5 +1,5 @@
 ---
-name: PUSH: YAML Lint and Schema Validation Checks
+name: PUSH - YAML Lint and Schema Validation Checks
 on: [push]
 
 jobs:
