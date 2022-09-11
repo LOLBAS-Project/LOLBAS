@@ -12,7 +12,7 @@ Commands:
     MitreID: T1127
     OperatingSystem: Windows
 Full_Path:
-  - Path:
+  - Path: no default
 Code_Sample:
   - Code:
 Detection:
