@@ -10,6 +10,7 @@ jobs:
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:
+          no_warnings: true
           file_or_dir: yml/**/*.yml
           config_file: .github/.yamllint
       - name: Validate OSBinaries YAML Schema
