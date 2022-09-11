@@ -1,7 +1,7 @@
 ---
 Name: Advpack.dll
 Description: Utility for installing software and drivers with rundll32.exe
-Author:
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe advpack.dll,LaunchINFSection c:\test.inf,DefaultInstall_SingleUser,1,

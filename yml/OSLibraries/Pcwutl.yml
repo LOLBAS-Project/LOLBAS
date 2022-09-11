@@ -1,7 +1,7 @@
 ---
 Name: Pcwutl.dll
 Description: Microsoft HTML Viewer
-Author:
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe pcwutl.dll,LaunchApplication calc.exe

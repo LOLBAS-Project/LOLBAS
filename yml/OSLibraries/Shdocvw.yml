@@ -1,7 +1,7 @@
 ---
 Name: Shdocvw.dll
 Description: Shell Doc Object and Control Library.
-Author:
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe shdocvw.dll,OpenURL "C:\test\calc.url"

@@ -1,7 +1,7 @@
 ---
 Name: Url.dll
 Description: Internet Shortcut Shell Extension DLL.
-Author:
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe url.dll,OpenURL "C:\test\calc.hta"

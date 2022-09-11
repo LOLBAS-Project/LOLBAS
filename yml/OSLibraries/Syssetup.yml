@@ -1,7 +1,7 @@
 ---
 Name: Syssetup.dll
 Description: Windows NT System Setup
-Author:
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 c:\test\shady.inf
