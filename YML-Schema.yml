@@ -43,7 +43,7 @@ mapping:
           "MitreID":
             type: str
             required: true
-            pattern: 'T[0-9]{4}'
+            pattern: '^T[0-9]{4}(\.[0-9]{3})?$'
           "OperatingSystem":
             type: str
             required: true
@@ -74,19 +74,19 @@ mapping:
             type: str
           "Sigma":
             type: str
-            pattern: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
           "Analysis":
             type: str
-            pattern: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
           "Elastic":
             type: str
-            pattern: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
           "Splunk":
             type: str
-            pattern: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
           "BlockRule":
             type: str
-            pattern: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
   "Resources":
     type: seq
     required: false
@@ -95,7 +95,7 @@ mapping:
         mapping:
           "Link":
             type: str
-            pattern: 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
   "Acknowledgement":
     type: seq
     required: false
@@ -106,3 +106,4 @@ mapping:
             type: str
           "Handle":
             type: str
+            pattern: '^@(\w){1,15}$'
