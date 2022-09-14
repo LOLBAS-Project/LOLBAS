@@ -23,7 +23,7 @@ Detection:
   - IOC: Registry Key - Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\At1.
 Resources:
   - Link: https://freddiebarrsmith.com/at.txt
-  - Link: https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html - Escalate to System from Administrator
+  - Link: https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html
   - Link: https://www.secureworks.com/blog/where-you-at-indicators-of-lateral-movement-using-at-exe-on-windows-7-systems
 Acknowledgement:
   - Person: 'Freddie Barr-Smith'
