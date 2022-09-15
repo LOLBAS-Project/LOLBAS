@@ -12,6 +12,15 @@ mapping:
   "Description":
     type: str
     required: true
+  "Aliases":
+    type: seq
+    required: false
+    sequence:
+      - type: map
+        mapping:
+          "Alias":
+          type: str
+          required: false
   "Author":
     type: str
     required: true
@@ -36,7 +45,7 @@ mapping:
           "Category":
             type: str
             required: true
-            enum: [ADS, AWL Bypass, Compile, Copy, Credentials, Decode, Download, Dump, Encode, Execute, Reconnaissance, UAC Bypass, Upload]
+            enum: [ADS, AWL Bypass, Compile, Conceal, Copy, Credentials, Decode, Download, Dump, Encode, Execute, Reconnaissance, Tamper, UAC Bypass, Upload]
           "Privileges":
             type: str
             required: true
