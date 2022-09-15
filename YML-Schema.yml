@@ -19,8 +19,8 @@ mapping:
       - type: map
         mapping:
           "Alias":
-          type: str
-          required: false
+            type: str
+            required: false
   "Author":
     type: str
     required: true
