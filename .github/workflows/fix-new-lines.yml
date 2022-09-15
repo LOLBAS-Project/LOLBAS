@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "yml/**.yml"
+#    paths:
+#      - "yml/**.yml"
 
 jobs:
   build:
