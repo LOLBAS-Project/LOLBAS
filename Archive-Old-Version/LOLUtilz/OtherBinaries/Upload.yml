@@ -15,4 +15,3 @@ Full_Path:
   - Path: '%localappdata%\Whatsapp\Update.exe'
 Detection:
   - IOC: '"%localappdata%\Whatsapp\Update.exe" spawned an unknown process'
----

@@ -1,18 +1,18 @@
 ---
-name: PUSH & PULL REQUEST - YAML Lint and Schema Validation Checks
-on: [push,pull_request]
+name: PULL_REQUEST - YAML Lint with Reviewdog & Schema Checks
+on: [pull_request]
 
 jobs:
   lintFiles:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: yaml-lint
-        uses: ibiqlik/action-yamllint@v3
+      - name: Run yamllint
+        uses: reviewdog/action-yamllint@v1
         with:
-          no_warnings: true
-          file_or_dir: yml/**/*.yml
-          config_file: .github/.yamllint
+          level: error
+          reporter: github-pr-review # Change reporter.
+          yamllint_flags: '--config-file .github/.yamllint yml/**/*.yml'
       - name: Validate OSBinaries YAML Schema
         uses: cketti/action-pykwalify@v0.3-temp-fix
         with:

@@ -8,6 +8,8 @@ Created: YYYY-MM-DD (date the person created this file)
 Commands:
   - Command: The command
     Description: Description of the command
+    Aliases:
+      - An alias for the command (example: ProcDump.exe & ProcDump64.exe)
     Usecase: A description of the usecase
     Category: Execute
     Privileges: Required privs

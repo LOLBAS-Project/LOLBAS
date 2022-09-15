@@ -1,7 +1,7 @@
 ---
 Name: Shell32.dll
 Description: Windows Shell Common Dll
-Author:
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe shell32.dll,Control_RunDLL payload.dll
@@ -17,12 +17,14 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218.011
+    OperatingSystem: Windows
   - Command: rundll32 SHELL32.DLL,ShellExec_RunDLL "cmd.exe" "/c echo hi"
     Description: Launch command line by calling the ShellExec_RunDLL function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
+    OperatingSystem: Windows
 Full_Path:
   - Path: c:\windows\system32\shell32.dll
   - Path: c:\windows\syswow64\shell32.dll
@@ -46,4 +48,3 @@ Acknowledgement:
     Handle: '@mattifestation'
   - Person: Kyle Hanslovan (ShellExec_RunDLL)
     Handle: '@KyleHanslovan'
----
