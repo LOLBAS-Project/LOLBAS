@@ -2,7 +2,7 @@
 Name: Binary.exe
 Description: Something general about the binary
 Aliases:  # Optional field if any common aliases exist of the binary with nearly the same functionality,
-  - Binary64.exe  # but for example, is built for different architecture.
+  - Alias: Binary64.exe  # but for example, is built for different architecture.
 Author: The name of the person that created this file
 Created: YYYY-MM-DD (date the person created this file)
 Commands:
