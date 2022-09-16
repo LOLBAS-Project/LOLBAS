@@ -1,6 +1,8 @@
 ---
-Name: Procdump(64).exe
+Name: Procdump.exe
 Description: SysInternals Memory Dump Tool
+Aliases:
+  - Alias: Procdump64.exe
 Author: 'Alfie Champion (@ajpc500)'
 Created: '2020-10-14'
 Commands:
