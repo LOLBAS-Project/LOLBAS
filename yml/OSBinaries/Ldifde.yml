@@ -15,13 +15,13 @@ Full_Path:
   - Path: c:\windows\system32\ldifde.exe
   - Path: c:\windows\syswow64\ldifde.exe
 Code_Sample:
-  - Code: 
+  - Code:
 Detection:
-  - IOC: 
-  - Analysis: 
-  - Sigma: 
-  - Elastic: 
-  - Splunk: 
+  - IOC:
+  - Analysis:
+  - Sigma:
+  - Elastic:
+  - Splunk:
   - BlockRule:
 Resources:
   - Link: https://twitter.com/0gtweet/status/1564968845726580736
