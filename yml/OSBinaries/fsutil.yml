@@ -4,14 +4,14 @@ Description: File System Utility
 Author: 'Elliot Killick'
 Created: '2021-08-16'
 Commands:
-  - Command: fsutil file setZeroData offset=0 length=9999999999 C:\Windows\Temp\payload.dll
+  - Command: fsutil.exe file setZeroData offset=0 length=9999999999 C:\Windows\Temp\payload.dll
     Description: Zero out a file
     Usecase: Can be used to forensically erase a file
     Category: Tamper
     Privileges: User
     MitreID: T1485
     OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: fsutil.exe usn deletejournal /d c:
+  - Command: 'fsutil.exe usn deletejournal /d c:'
     Description: Delete the USN journal volume to hide file creation activity
     Usecase: Can be used to hide file creation activity
     Category: Tamper
