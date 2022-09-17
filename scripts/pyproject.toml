@@ -8,6 +8,8 @@ authors = ["d1vious <josehelps@gmail.com>"]
 python = "^3.10"
 PyYAML = "^6.0"
 tdqm = "^0.0.1"
+Jinja2 = "^3.1.2"
+argparse = "^1.4.0"
 
 [tool.poetry.dev-dependencies]
 
