@@ -11,7 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1485
     OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
- - Command: fsutil.exe usn deletejournal /d c:
+  - Command: fsutil.exe usn deletejournal /d c:
     Description: Delete the USN journal volume to hide file creation activity
     Usecase: Can be used to hide file creation activity
     Category: Tamper
