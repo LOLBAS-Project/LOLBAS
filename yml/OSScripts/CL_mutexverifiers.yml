@@ -1,6 +1,6 @@
 Name: CL_Mutexverifiers.ps1
-Description: null
-Author: Oddvar Moe
+Description: Proxy execution with CL_Mutexverifiers.ps1
+Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
 - Command: . C:\\Windows\\diagnostics\\system\\AERO\\CL_Mutexverifiers.ps1   \nrunAfterCancelProcess
@@ -27,5 +27,5 @@ Detection:
 Resources:
 - Link: https://twitter.com/pabraeken/status/995111125447577600
 Acknowledgement:
-- Person: Pierre-Alexandre Braeken
-  Handle: '@pabraeken'
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'

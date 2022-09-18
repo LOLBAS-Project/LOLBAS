@@ -23,5 +23,5 @@ Detection:
 Resources:
 - Link: https://social.technet.microsoft.com/wiki/contents/articles/51722.windows-problem-steps-recorder-psr-quick-and-easy-documenting-of-your-steps-and-procedures.aspx
 Acknowledgement:
-- Person: Leon Rodenko
-  Handle: '@L3m0nada'
+  - Person: Leon Rodenko
+    Handle: '@L3m0nada'

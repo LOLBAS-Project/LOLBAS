@@ -33,7 +33,7 @@ Resources:
 - Link: https://twitter.com/Hexcorn/status/776122138063409152
 - Link: https://oddvar.moe/2018/01/14/putting-data-in-alternate-data-streams-and-how-to-execute-it/
 Acknowledgement:
-- Person: Giuseppe N3mes1s
-  Handle: '@gN3mes1s'
-- Person: Oddvar Moe
-  Handle: '@oddvarmoe'
+  - Person: Giuseppe N3mes1s
+    Handle: '@gN3mes1s'
+  - Person: Oddvar Moe
+    Handle: '@oddvarmoe'

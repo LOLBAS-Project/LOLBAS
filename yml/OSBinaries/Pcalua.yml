@@ -34,7 +34,7 @@ Detection:
 Resources:
 - Link: https://twitter.com/KyleHanslovan/status/912659279806640128
 Acknowledgement:
-- Person: Kyle Hanslovan
-  Handle: '@kylehanslovan'
-- Person: Fab
-  Handle: '@0rbz_'
+  - Person: Kyle Hanslovan
+    Handle: '@kylehanslovan'
+  - Person: Fab
+    Handle: '@0rbz_'

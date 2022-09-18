@@ -20,5 +20,5 @@ Detection:
 Resources:
 - Link: https://github.com/timwhitez
 Acknowledgement:
-- Person: timwhite
-  Handle: null
+  - Person: timwhite
+    Handle:

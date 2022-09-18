@@ -59,14 +59,13 @@ Detection:
 - IOC: bitsadmin adds data to alternate data stream
 - Splunk: https://research.splunk.com/endpoint/80630ff4-8e4c-11eb-aab5-acde48001122/
 Resources:
-- Link: https://www.slideshare.net/chrisgates/windows-attacks-at-is-the-new-black-26672679
-    - slide 53
-- Link: https://www.youtube.com/watch?v=_8xJaaQlpBo
-- Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
+  - Link: https://www.slideshare.net/chrisgates/windows-attacks-at-is-the-new-black-26672679
+  - Link: https://www.youtube.com/watch?v=_8xJaaQlpBo
+  - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
 Acknowledgement:
-- Person: Rob Fuller
-  Handle: '@mubix'
-- Person: Chris Gates
-  Handle: '@carnal0wnage'
-- Person: Oddvar Moe
-  Handle: '@oddvarmoe'
+  - Person: Rob Fuller
+    Handle: '@mubix'
+  - Person: Chris Gates
+    Handle: '@carnal0wnage'
+  - Person: Oddvar Moe
+    Handle: '@oddvarmoe'

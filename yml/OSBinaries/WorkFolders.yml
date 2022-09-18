@@ -20,7 +20,7 @@ Resources:
 - Link: https://www.ctus.io/2021/04/12/exploading/
 - Link: https://twitter.com/ElliotKillick/status/1449812843772227588
 Acknowledgement:
-- Person: John Carroll
-  Handle: '@YoSignals'
-- Person: Elliot Killick
-  Handle: '@elliotkillick'
+  - Person: John Carroll
+    Handle: '@YoSignals'
+  - Person: Elliot Killick
+    Handle: '@elliotkillick'

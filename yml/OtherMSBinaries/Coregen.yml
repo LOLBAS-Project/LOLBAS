@@ -45,9 +45,9 @@ Resources:
 - Link: https://www.youtube.com/watch?v=75XImxOOInU
 - Link: https://www.fireeye.com/blog/threat-research/2019/10/staying-hidden-on-the-endpoint-evading-detection-with-shellcode.html
 Acknowledgement:
-- Person: Nicky Tyrer
-  Handle: null
-- Person: Evan Pena
-  Handle: null
-- Person: Casey Erikson
-  Handle: null
+  - Person: Nicky Tyrer
+    Handle:
+  - Person: Evan Pena
+    Handle:
+  - Person: Casey Erikson
+    Handle:

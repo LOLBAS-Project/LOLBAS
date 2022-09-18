@@ -1,6 +1,6 @@
 Name: Syssetup.dll
 Description: Windows NT System Setup
-Author: null
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
 - Command: rundll32.exe syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128
@@ -38,9 +38,9 @@ Resources:
 - Link: https://twitter.com/bohops/status/975549525938135040
 - Link: https://windows10dll.nirsoft.net/syssetup_dll.html
 Acknowledgement:
-- Person: Pierre-Alexandre Braeken (Execute)
-  Handle: '@pabraeken'
-- Person: Matt harr0ey (Execute)
-  Handle: '@harr0ey'
-- Person: Jimmy (Scriptlet)
-  Handle: '@bohops'
+  - Person: Pierre-Alexandre Braeken (Execute)
+    Handle: '@pabraeken'
+  - Person: Matt harr0ey (Execute)
+    Handle: '@harr0ey'
+  - Person: Jimmy (Scriptlet)
+    Handle: '@bohops'

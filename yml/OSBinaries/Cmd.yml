@@ -21,22 +21,16 @@ Commands:
   MitreID: T1059.003
   OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
-- Path: C:\Windows\System32\cmd.exe
-- Path: C:\Windows\SysWOW64\cmd.exe
-Code_Sample:
-- Code: null
+  - Path: C:\Windows\System32\cmd.exe
+  - Path: C:\Windows\SysWOW64\cmd.exe
 Detection:
-- Sigma: https://github.com/SigmaHQ/sigma/blob/688df3405afd778d63a2ea36a084344a2052848c/rules/windows/process_creation/process_creation_alternate_data_streams.yml
-- Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_ads_file_creation.toml
-- Elastic: https://github.com/elastic/detection-rules/blob/61afb1c1c0c3f50637b1bb194f3e6fb09f476e50/rules/windows/defense_evasion_unusual_dir_ads.toml
-- IOC: cmd.exe executing files from alternate data streams.
-- IOC: cmd.exe creating/modifying file contents in an alternate data stream.
-- Splunk: https://research.splunk.com/endpoint/dcfd6b40-42f9-469d-a433-2e53f7486664/
-- Splunk: https://research.splunk.com/endpoint/54a6ed00-3256-11ec-b031-acde48001122/
-- Splunk: https://research.splunk.com/endpoint/eb277ba0-b96b-11eb-b00e-acde48001122/
-- Splunk: https://research.splunk.com/endpoint/b89919ed-fe5f-492c-b139-95dbb162039e/
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/688df3405afd778d63a2ea36a084344a2052848c/rules/windows/process_creation/process_creation_alternate_data_streams.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_ads_file_creation.toml
+  - Elastic: https://github.com/elastic/detection-rules/blob/61afb1c1c0c3f50637b1bb194f3e6fb09f476e50/rules/windows/defense_evasion_unusual_dir_ads.toml
+  - IOC: cmd.exe executing files from alternate data streams.
+  - IOC: cmd.exe creating/modifying file contents in an alternate data stream.
 Resources:
 - Link: https://twitter.com/yeyint_mth/status/1143824979139579904
 Acknowledgement:
-- Person: r0lan
-  Handle: '@yeyint_mth'
+  - Person: r0lan
+    Handle: '@yeyint_mth'

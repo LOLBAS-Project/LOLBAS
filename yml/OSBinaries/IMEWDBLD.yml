@@ -20,5 +20,5 @@ Detection:
 Resources:
 - Link: https://twitter.com/notwhickey/status/1367493406835040265
 Acknowledgement:
-- Person: Wade Hickey
-  Handle: '@notwhickey'
+  - Person: Wade Hickey
+    Handle: '@notwhickey'

@@ -27,5 +27,5 @@ Resources:
 - Link: https://docs.microsoft.com/en-us/dotnet/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services
 - Link: https://docs.microsoft.com/en-us/dotnet/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services
 Acknowledgement:
-- Person: Ialle Teixeira
-  Handle: '@NtSetDefault'
+  - Person: Ialle Teixeira
+    Handle: '@NtSetDefault'

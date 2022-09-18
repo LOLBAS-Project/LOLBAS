@@ -22,5 +22,5 @@ Detection:
 Resources:
 - Link: https://www.darkoperator.com/blog/2018/10/5/operating-offensively-against-sysmon
 Acknowledgement:
-- Person: Carlos Perez
-  Handle: '@Carlos_Perez'
+  - Person: Carlos Perez
+    Handle: '@Carlos_Perez'

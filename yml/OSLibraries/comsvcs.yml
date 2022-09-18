@@ -1,6 +1,6 @@
 Name: Comsvcs.dll
 Description: COM+ Services
-Author: null
+Author: LOLBAS Team
 Created: 2019-08-30
 Commands:
 - Command: rundll32 C:\windows\system32\comsvcs.dll MiniDump "[LSASS_PID] dump.bin
@@ -26,5 +26,5 @@ Detection:
 Resources:
 - Link: https://modexp.wordpress.com/2019/08/30/minidumpwritedump-via-com-services-dll/
 Acknowledgement:
-- Person: modexp
-  Handle: null
+  - Person: modexp
+    Handle:

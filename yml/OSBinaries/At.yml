@@ -25,16 +25,15 @@ Detection:
 - Splunk: https://research.splunk.com/endpoint/4be54858-432f-11ec-8209-3e22fbd008af/
 - Splunk: https://research.splunk.com/endpoint/bf0a378e-5f3c-11ec-a6de-acde48001122/
 Resources:
-- Link: https://freddiebarrsmith.com/at.txt
-- Link: https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html
-    - Escalate to System from Administrator
-- Link: https://www.secureworks.com/blog/where-you-at-indicators-of-lateral-movement-using-at-exe-on-windows-7-systems
+  - Link: https://freddiebarrsmith.com/at.txt
+  - Link: https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_windows.html
+  - Link: https://www.secureworks.com/blog/where-you-at-indicators-of-lateral-movement-using-at-exe-on-windows-7-systems
 Acknowledgement:
-- Person: Freddie Barr-Smith
-  Handle: null
-- Person: Riccardo Spolaor
-  Handle: null
-- Person: Mariano Graziano
-  Handle: null
-- Person: Xabier Ugarte-Pedrero
-  Handle: null
+  - Person: 'Freddie Barr-Smith'
+    Handle:
+  - Person: 'Riccardo Spolaor'
+    Handle:
+  - Person: 'Mariano Graziano'
+    Handle:
+  - Person: 'Xabier Ugarte-Pedrero'
+    Handle:

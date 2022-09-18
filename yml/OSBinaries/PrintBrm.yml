@@ -27,5 +27,5 @@ Detection:
 Resources:
 - Link: https://twitter.com/elliotkillick/status/1404117015447670800
 Acknowledgement:
-- Person: Elliot Killick
-  Handle: '@elliotkillick'
+  - Person: Elliot Killick
+    Handle: '@elliotkillick'

@@ -23,5 +23,5 @@ Resources:
 - Link: https://twitter.com/pabraeken/status/993298228840992768
 - Link: https://docs.microsoft.com/en-us/sql/powershell/sql-server-powershell?view=sql-server-2017
 Acknowledgement:
-- Person: Pierre-Alexandre Braeken
-  Handle: '@pabraeken'
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'

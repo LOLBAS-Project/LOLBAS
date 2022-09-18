@@ -22,5 +22,5 @@ Resources:
 - Link: https://twitter.com/Hexacorn/status/991447379864932352
 - Link: http://www.hexacorn.com/blog/2018/05/01/wab-exe-as-a-lolbin/
 Acknowledgement:
-- Person: Adam
-  Handle: '@Hexacorn'
+  - Person: Adam
+    Handle: '@Hexacorn'

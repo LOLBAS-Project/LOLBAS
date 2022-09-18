@@ -56,7 +56,7 @@ Resources:
 - Link: https://medium.com/@reegun/nuget-squirrel-uncontrolled-endpoints-leads-to-arbitrary-code-execution-80c9df51cf12
 - Link: https://medium.com/@reegun/update-nuget-squirrel-uncontrolled-endpoints-leads-to-arbitrary-code-execution-b55295144b56
 Acknowledgement:
-- Person: Reegun J (OCBC Bank)
-  Handle: '@reegun21'
-- Person: Adam
-  Handle: '@Hexacorn'
+  - Person: Reegun J (OCBC Bank)
+    Handle: '@reegun21'
+  - Person: Adam
+    Handle: '@Hexacorn'

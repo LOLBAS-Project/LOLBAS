@@ -31,5 +31,5 @@ Detection:
 Resources:
 - Link: https://oddvar.moe/2018/04/27/gpscript-exe-another-lolbin-to-the-list/
 Acknowledgement:
-- Person: Oddvar Moe
-  Handle: '@oddvarmoe'
+  - Person: Oddvar Moe
+    Handle: '@oddvarmoe'

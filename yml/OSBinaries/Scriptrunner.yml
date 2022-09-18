@@ -1,6 +1,6 @@
 Name: Scriptrunner.exe
-Description: null
-Author: Oddvar Moe
+Description: Execute binary through proxy binary to evade defensive counter measures
+Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
 - Command: Scriptrunner.exe -appvscript calc.exe
@@ -31,5 +31,5 @@ Resources:
 - Link: https://twitter.com/NickTyrer/status/914234924655312896
 - Link: https://github.com/MoooKitty/Code-Execution
 Acknowledgement:
-- Person: Nick Tyrer
-  Handle: '@nicktyrer'
+  - Person: Nick Tyrer
+    Handle: '@nicktyrer'

@@ -53,11 +53,11 @@ Resources:
 - Link: https://www.fortynorthsecurity.com/microsoft-workflow-compiler-exe-veil-and-cobalt-strike/
 - Link: https://medium.com/@Bank_Security/undetectable-c-c-reverse-shells-fab4c0ec4f15
 Acknowledgement:
-- Person: Matt Graeber
-  Handle: '@mattifestation'
-- Person: John Bergbom
-  Handle: '@BergbomJohn'
-- Person: FortyNorth Security
-  Handle: '@FortyNorthSec'
-- Person: Bank Security
-  Handle: '@Bank_Security'
+  - Person: Matt Graeber
+    Handle: '@mattifestation'
+  - Person: John Bergbom
+    Handle: '@BergbomJohn'
+  - Person: FortyNorth Security
+    Handle: '@FortyNorthSec'
+  - Person: Bank Security
+    Handle: '@Bank_Security'

@@ -53,11 +53,11 @@ Resources:
 - Link: https://twitter.com/Oddvarmoe/status/1301444858910052352
 - Link: https://twitter.com/NotMedic/status/1301506813242867720
 Acknowledgement:
-- Person: Askar
-  Handle: '@mohammadaskar2'
-- Person: Oddvar Moe
-  Handle: '@oddvarmoe'
-- Person: RichRumble
-  Handle: ''
-- Person: Cedric
-  Handle: '@th3c3dr1c'
+  - Person: Askar
+    Handle: '@mohammadaskar2'
+  - Person: Oddvar Moe
+    Handle: '@oddvarmoe'
+  - Person: RichRumble
+    Handle: ''
+  - Person: Cedric
+    Handle: '@th3c3dr1c'

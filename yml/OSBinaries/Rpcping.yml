@@ -32,11 +32,11 @@ Resources:
 - Link: https://twitter.com/vysecurity/status/873181705024266241
 - Link: https://twitter.com/splinter_code/status/1421144623678988298
 Acknowledgement:
-- Person: Casey Smith
-  Handle: '@subtee'
-- Person: Vincent Yiu
-  Handle: '@vysecurity'
-- Person: Antonio Cocomazzi
-  Handle: '@splinter_code'
-- Person: ap
-  Handle: '@decoder_it'
+  - Person: Casey Smith
+    Handle: '@subtee'
+  - Person: Vincent Yiu
+    Handle: '@vysecurity'
+  - Person: Antonio Cocomazzi
+    Handle: '@splinter_code'
+  - Person: ap
+    Handle: '@decoder_it'

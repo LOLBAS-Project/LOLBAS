@@ -28,5 +28,5 @@ Detection: []
 Resources:
 - Link: https://twitter.com/0rbz_/status/988911181422186496
 Acknowledgement:
-- Person: fabrizio
-  Handle: '@0rbz_'
+  - Person: fabrizio
+    Handle: '@0rbz_'

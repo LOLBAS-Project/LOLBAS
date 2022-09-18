@@ -37,9 +37,9 @@ Resources:
 - Link: https://gist.github.com/mattifestation/94e2b0a9e3fe1ac0a433b5c3e6bd0bda
 - Link: https://blog.thecybersecuritytutor.com/the-power-of-cdb-debugging-tool/
 Acknowledgement:
-- Person: Matt Graeber
-  Handle: '@mattifestation'
-- Person: mr.d0x
-  Handle: '@mrd0x'
-- Person: Spooky Sec
-  Handle: '@sec_spooky'
+  - Person: Matt Graeber
+    Handle: '@mattifestation'
+  - Person: mr.d0x
+    Handle: '@mrd0x'
+  - Person: Spooky Sec
+    Handle: '@sec_spooky'

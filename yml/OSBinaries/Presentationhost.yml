@@ -22,5 +22,5 @@ Resources:
 - Link: https://github.com/api0cradle/ShmooCon-2015/blob/master/ShmooCon-2015-Simple-WLEvasion.pdf
 - Link: https://oddvar.moe/2017/12/21/applocker-case-study-how-insecure-is-it-really-part-2/
 Acknowledgement:
-- Person: Casey Smith
-  Handle: '@subtee'
+  - Person: Casey Smith
+    Handle: '@subtee'

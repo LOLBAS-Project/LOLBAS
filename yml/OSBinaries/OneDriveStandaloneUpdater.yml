@@ -25,5 +25,5 @@ Detection:
 Resources:
 - Link: https://github.com/LOLBAS-Project/LOLBAS/pull/153
 Acknowledgement:
-- Person: Elliot Killick
-  Handle: '@elliotkillick'
+  - Person: Elliot Killick
+    Handle: '@elliotkillick'

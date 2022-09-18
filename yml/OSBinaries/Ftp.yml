@@ -24,19 +24,19 @@ Full_Path:
 - Path: C:\Windows\System32\ftp.exe
 - Path: C:\Windows\SysWOW64\ftp.exe
 Code_Sample:
-- Code: null
+  - Code:
 Detection:
-- Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_ftp.yml
-- IOC: cmd /c as child process of ftp.exe
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_ftp.yml
+  - IOC: cmd /c as child process of ftp.exe
 Resources:
 - Link: https://twitter.com/0xAmit/status/1070063130636640256
 - Link: https://medium.com/@0xamit/lets-talk-about-security-research-discoveries-and-proper-discussion-etiquette-on-twitter-10f9be6d1939
 - Link: https://ss64.com/nt/ftp.html
 - Link: https://www.asafety.fr/vuln-exploit-poc/windows-dos-powershell-upload-de-fichier-en-ligne-de-commande-one-liner/
 Acknowledgement:
-- Person: Casey Smith
-  Handle: '@subtee'
-- Person: BennyHusted
-  Handle: ''
-- Person: Amit Serper
-  Handle: '@0xAmit '
+  - Person: Casey Smith
+    Handle: '@subtee'
+  - Person: BennyHusted
+    Handle: ''
+  - Person: Amit Serper
+    Handle: '@0xAmit'

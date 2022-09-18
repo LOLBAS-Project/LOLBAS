@@ -33,5 +33,5 @@ Resources:
 - Link: https://twitter.com/DissectMalware/status/998797808907046913
 - Link: https://www.phpied.com/make-your-javascript-a-windows-exe/
 Acknowledgement:
-- Person: Malwrologist
-  Handle: '@DissectMalware'
+  - Person: Malwrologist
+    Handle: '@DissectMalware'

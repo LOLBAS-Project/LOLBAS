@@ -23,5 +23,5 @@ Resources:
 - Link: https://github.com/fireeye/DueDLLigence
 - Link: https://www.fireeye.com/blog/threat-research/2019/10/staying-hidden-on-the-endpoint-evading-detection-with-shellcode.html
 Acknowledgement:
-- Person: FireEye
-  Handle: '@FireEye'
+  - Person: FireEye
+    Handle: '@FireEye'

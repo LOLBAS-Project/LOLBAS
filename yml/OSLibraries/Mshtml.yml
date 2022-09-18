@@ -1,6 +1,6 @@
 Name: Mshtml.dll
 Description: Microsoft HTML Viewer
-Author: null
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
 - Command: rundll32.exe Mshtml.dll,PrintHTML "C:\temp\calc.hta"
@@ -22,5 +22,5 @@ Resources:
 - Link: https://twitter.com/pabraeken/status/998567549670477824
 - Link: https://windows10dll.nirsoft.net/mshtml_dll.html
 Acknowledgement:
-- Person: Pierre-Alexandre Braeken
-  Handle: '@pabraeken'
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'

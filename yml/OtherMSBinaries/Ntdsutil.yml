@@ -23,5 +23,5 @@ Detection:
 Resources:
 - Link: https://adsecurity.org/?p=2398#CreateIFM
 Acknowledgement:
-- Person: Sean Metcalf
-  Handle: '@PyroTek3'
+  - Person: Sean Metcalf
+    Handle: '@PyroTek3'

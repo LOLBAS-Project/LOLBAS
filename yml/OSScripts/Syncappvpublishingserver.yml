@@ -23,7 +23,7 @@ Resources:
 - Link: https://twitter.com/monoxgas/status/895045566090010624
 - Link: https://twitter.com/subTee/status/855738126882316288
 Acknowledgement:
-- Person: Nick Landers
-  Handle: '@monoxgas'
-- Person: Casey Smith
-  Handle: '@subtee'
+  - Person: Nick Landers
+    Handle: '@monoxgas'
+  - Person: Casey Smith
+    Handle: '@subtee'

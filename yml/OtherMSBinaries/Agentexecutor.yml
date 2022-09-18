@@ -30,5 +30,5 @@ Detection: []
 Resources:
 - Link: null
 Acknowledgement:
-- Person: Eleftherios Panos
-  Handle: '@lefterispan'
+  - Person: Eleftherios Panos
+    Handle: '@lefterispan'

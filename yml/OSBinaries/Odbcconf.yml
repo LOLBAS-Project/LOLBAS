@@ -35,7 +35,7 @@ Resources:
 - Link: https://github.com/woanware/application-restriction-bypasses
 - Link: https://twitter.com/Hexacorn/status/1187143326673330176
 Acknowledgement:
-- Person: Casey Smith
-  Handle: '@subtee'
-- Person: Adam
-  Handle: '@Hexacorn'
+  - Person: Casey Smith
+    Handle: '@subtee'
+  - Person: Adam
+    Handle: '@Hexacorn'

@@ -1,6 +1,6 @@
 Name: Url.dll
 Description: Internet Shortcut Shell Extension DLL.
-Author: null
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
 - Command: rundll32.exe url.dll,OpenURL "C:\test\calc.hta"
@@ -61,11 +61,11 @@ Resources:
 - Link: https://twitter.com/Hexacorn/status/974063407321223168
 - Link: https://windows10dll.nirsoft.net/url_dll.html
 Acknowledgement:
-- Person: Adam (OpenURL)
-  Handle: '@hexacorn'
-- Person: Jimmy (OpenURL)
-  Handle: '@bohops'
-- Person: Malwrologist (FileProtocolHandler - HTA)
-  Handle: '@DissectMalware'
-- Person: r0lan (Obfuscation)
-  Handle: '@r0lan'
+  - Person: Adam (OpenURL)
+    Handle: '@hexacorn'
+  - Person: Jimmy (OpenURL)
+    Handle: '@bohops'
+  - Person: Malwrologist (FileProtocolHandler - HTA)
+    Handle: '@DissectMalware'
+  - Person: r0lan (Obfuscation)
+    Handle: '@r0lan'

@@ -41,5 +41,5 @@ Resources:
 - Link: https://www.pureid.io/dumping-abusing-windows-credentials-part-1/
 - Link: https://github.com/LOLBAS-Project/LOLBAS/issues/84
 Acknowledgement:
-- Person: Grzegorz Tworek
-  Handle: '@0gtweet'
+  - Person: Grzegorz Tworek
+    Handle: '@0gtweet'

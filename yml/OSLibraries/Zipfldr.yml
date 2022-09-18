@@ -1,6 +1,6 @@
 Name: Zipfldr.dll
 Description: Compressed Folder library
-Author: null
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
 - Command: rundll32.exe zipfldr.dll,RouteTheCall calc.exe
@@ -29,7 +29,7 @@ Resources:
 - Link: https://twitter.com/bohops/status/997896811904929792
 - Link: https://windows10dll.nirsoft.net/zipfldr_dll.html
 Acknowledgement:
-- Person: Moriarty (Execution)
-  Handle: '@moriarty_meng'
-- Person: r0lan (Obfuscation)
-  Handle: '@r0lan'
+  - Person: Moriarty (Execution)
+    Handle: '@moriarty_meng'
+  - Person: r0lan (Obfuscation)
+    Handle: '@r0lan'

@@ -37,7 +37,7 @@ Resources:
 - Link: https://twitter.com/bohops/status/1276356245541335048
 - Link: https://twitter.com/bohops/status/986984122563391488
 Acknowledgement:
-- Person: Jai Minton
-  Handle: '@CyberRaiju'
-- Person: Jimmy
-  Handle: '@bohops'
+  - Person: Jai Minton
+    Handle: '@CyberRaiju'
+  - Person: Jimmy
+    Handle: '@bohops'

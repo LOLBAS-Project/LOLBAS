@@ -44,7 +44,7 @@ Detection:
 Resources:
 - Link: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
 Acknowledgement:
-- Person: Alex Ionescu
-  Handle: '@aionescu'
-- Person: Asif Matadar
-  Handle: '@d1r4c'
+  - Person: Alex Ionescu
+    Handle: '@aionescu'
+  - Person: Asif Matadar
+    Handle: '@d1r4c'

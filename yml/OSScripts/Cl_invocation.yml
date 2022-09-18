@@ -25,7 +25,7 @@ Detection:
 Resources:
 - Link: null
 Acknowledgement:
-- Person: Jimmy
-  Handle: '@bohops'
-- Person: Pierre-Alexandre Braeken
-  Handle: '@pabraeken'
+  - Person: Jimmy
+    Handle: '@bohops'
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'
