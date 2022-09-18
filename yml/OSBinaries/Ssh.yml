@@ -16,7 +16,7 @@ Commands:
     Usecase: Performs execution of specified file, can be used to bypass Application Whitelisting.
     Category: AWL Bypass
     Privileges: User
-    MitreID: T1202
+    MitreID: T1218
     OperatingSystem: Windows 10 1809, Windows Server 2019
 Full_Path:
   - Path: c:\windows\system32\OpenSSH\ssh.exe
@@ -25,4 +25,3 @@ Detection:
   - IOC: command line arguments specifying execution.
 Acknowledgement:
   - Person: Akshat Pradhan
----
