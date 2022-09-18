@@ -1,6 +1,6 @@
 ---
 Name: ssh.exe
-Description: ssh.exe is the OpenSSH compatible client can be used to connect to Windows 10 (build 1809 and later) and Windows Server 2019 devices. 
+Description: Ssh.exe is the OpenSSH compatible client can be used to connect to Windows 10 (build 1809 and later) and Windows Server 2019 devices.
 Author: 'Akshat Pradhan'
 Created: '2021-11-08'
 Commands:
