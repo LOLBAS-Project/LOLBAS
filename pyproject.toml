@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "enrich_with_splunk"
+name = "LOLBAS"
 version = "0.1.0"
-description = "Enriches LOLBAS YAMLs with Splunk Security Content detections"
+description = "LOLBAS tools and scripts"
 authors = ["d1vious <josehelps@gmail.com>"]
 
 [tool.poetry.dependencies]
