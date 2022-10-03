@@ -1,7 +1,7 @@
 ---
 Name: Shell32.dll
 Description: Windows Shell Common Dll
-Author:
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe shell32.dll,Control_RunDLL c:\path\to\payload.dll
@@ -48,4 +48,3 @@ Acknowledgement:
     Handle: '@mattifestation'
   - Person: Kyle Hanslovan (ShellExec_RunDLL)
     Handle: '@KyleHanslovan'
----

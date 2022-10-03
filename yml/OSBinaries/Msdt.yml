@@ -14,7 +14,7 @@ Commands:
   - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af C:\PCW8E57.xml /skip TRUE
     Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the PCW8E57.xml file.
     Usecase: Execute code bypass Application whitelisting
-    Category: AWL bypass
+    Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
@@ -33,4 +33,3 @@ Resources:
 Acknowledgement:
   - Person:
     Handle:
----

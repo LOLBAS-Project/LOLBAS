@@ -1,7 +1,7 @@
 ---
 Name: Ieadvpack.dll
 Description: INF installer for Internet Explorer. Has much of the same functionality as advpack.dll.
-Author:
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe ieadvpack.dll,LaunchINFSection c:\test.inf,DefaultInstall_SingleUser,1,
@@ -59,4 +59,3 @@ Acknowledgement:
     Handle: '@0rbz_'
   - Person: Pierre-Alexandre Braeken (RegisterOCX - CMD)
     Handle: '@pabraeken'
----

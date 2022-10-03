@@ -1,6 +1,6 @@
 ---
 Name: Xwizard.exe
-Description:
+Description: Execute custom class that has been added to the registry or download a file with Xwizard.exe
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
@@ -50,4 +50,3 @@ Acknowledgement:
     Handle: '@harr0ey'
   - Person: Wade Hickey
     Handle: '@notwhickey'
----
