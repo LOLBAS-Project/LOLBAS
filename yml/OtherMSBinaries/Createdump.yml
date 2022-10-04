@@ -8,7 +8,7 @@ Commands:
     Description: Dump process by PID and create a minidump file. If not specified, the file is created as '%TEMP%\dump.%p.dmp' where %p is the PID of the target process.
     Usecase: Dump process memory contents using PID.
     Category: Dump
-    Privileges: Administrator
+    Privileges: SYSTEM
     MitreID: T1003
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
