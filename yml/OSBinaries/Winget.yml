@@ -21,7 +21,6 @@ Detection:
   - Analysis: https://saulpanders.github.io/2022/01/02/New-Year-New-LOLBAS.html
   - Sigma: https://github.com/SigmaHQ/sigma/blob/8bb3379b6807610d61d29db1d76f5af4840b8208/rules/windows/process_creation/proc_creation_win_lolbin_execution_via_winget.yml
 Resources:
-  - Link: https://gist.github.com/saulpanders/00e1177602a8c01a3a8bfa932b3886b0
   - Link: https://saulpanders.github.io/2022/01/02/New-Year-New-LOLBAS.html
   - Link: https://docs.microsoft.com/en-us/windows/package-manager/winget/#production-recommended
 Acknowledgement:
