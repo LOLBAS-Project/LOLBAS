@@ -1,6 +1,8 @@
 ---
-Name: Procdump(64).exe
+Name: Procdump.exe
 Description: SysInternals Memory Dump Tool
+Aliases:
+  - Alias: Procdump64.exe
 Author: 'Alfie Champion (@ajpc500)'
 Created: '2020-10-14'
 Commands:
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 8.1 and higher, Windows Server 2012 and higher.
+Full_Path:
+  - Path: no default
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/f36b1cbd2a3f1a7423f43a67a182549778700615/rules/windows/process_creation/win_susp_procdump.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/f36b1cbd2a3f1a7423f43a67a182549778700615/rules/windows/process_creation/win_procdump.yml
@@ -29,6 +33,5 @@ Detection:
 Resources:
   - Link: https://twitter.com/ajpc500/status/1448588362382778372?s=20
 Acknowledgement:
-  - Name: Alfie Champion
+  - Person: Alfie Champion
     Handle: '@ajpc500'
----
