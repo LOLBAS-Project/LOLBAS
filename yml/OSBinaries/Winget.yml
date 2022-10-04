@@ -1,12 +1,12 @@
 ---
 Name: winget.exe
 Description: Windows Package Manager tool
-Author: Paul Sanders 
+Author: Paul Sanders
 Created: 2022-01-03
 Commands:
   - Command: winget.exe install --manifest manifest.yml
-    Description: Downloads a file from the web address specified in manifest.yml and executes it on the system. Local manifest setting must be enabled in winget for it to work: "winget settings --enable LocalManifestFiles"
-    Usecase: Download and execute an arbitrary file from the internet 
+    Description: 'Downloads a file from the web address specified in manifest.yml and executes it on the system. Local manifest setting must be enabled in winget for it to work: "winget settings --enable LocalManifestFiles"'
+    Usecase: Download and execute an arbitrary file from the internet
     Category: Execute
     Privileges: Local Aministrator - required to enabled local manifest setting
     MitreID: T1105
