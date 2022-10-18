@@ -18,6 +18,7 @@ Code_Sample:
   - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSScripts/Payload/Pubprn_calc.sct
 Detection:
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff5102832031425f6eed011dd3a2e62653008c94/rules/windows/process_creation/proc_creation_win_lolbin_pubprn.yml
 Resources:
   - Link: https://enigma0x3.net/2017/08/03/wsh-injection-a-case-study/
   - Link: https://www.slideshare.net/enigma0x3/windows-operating-system-archaeology
