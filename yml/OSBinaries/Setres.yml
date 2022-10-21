@@ -1,0 +1,26 @@
+---
+Name: Setres.exe
+Description: Sets the screen resoulution on Windows Server.
+Author: Grzegorz Tworek
+Created: 2022-10-21 # YYYY-MM-DD (date the person created this file)
+Commands:
+  - Command: setres.exe -w 800 -h 600
+    Description: Sets the resolution and then launches 'choice' command from the local folder.
+    Usecase: Executes arbitrary code
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows Server
+Full_Path:
+  - Path: c:\windows\system32\setres.exe
+Code_Sample:
+  - Code: 
+Detection:
+  - IOC: Unusual location for choice.exe file
+  - IOC: Process created from choice.com binary
+  - IOC: Choice.cmd
+Resources:
+  - Link: https://twitter.com/0gtweet/status/1583356502340870144
+Acknowledgement:
+  - Person: Grzegorz Tworek
+    Handle: '@0gtweet'
