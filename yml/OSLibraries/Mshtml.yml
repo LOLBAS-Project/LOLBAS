@@ -5,12 +5,12 @@ Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe Mshtml.dll,PrintHTML "C:\temp\calc.hta"
-    Description: Invoke an HTML Application via mshta.exe (Note - Pops a security warning and a print dialogue box).
+    Description: "Invoke an HTML Application via mshta.exe (note: pops a security warning and a print dialogue box)."
     Usecase: Launch an HTA application.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\mshtml.dll
   - Path: c:\windows\syswow64\mshtml.dll

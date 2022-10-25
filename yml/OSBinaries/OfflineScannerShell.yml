@@ -2,7 +2,7 @@
 Name: OfflineScannerShell.exe
 Description: Windows Defender Offline Shell
 Author: 'Elliot Killick'
-Created: '2021-08-16'
+Created: 2021-08-16
 Commands:
   - Command: OfflineScannerShell
     Description: Execute mpclient.dll library in the current working directory
@@ -10,7 +10,7 @@ Commands:
     Category: Execute
     Privileges: Administrator
     MitreID: T1218
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Program Files\Windows Defender\Offline\OfflineScannerShell.exe
 Detection:

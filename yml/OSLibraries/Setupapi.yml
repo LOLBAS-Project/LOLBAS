@@ -2,7 +2,7 @@
 Name: Setupapi.dll
 Description: Windows Setup Application Programming Interface
 Author: LOLBAS Team
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\shady.inf
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
@@ -10,8 +10,8 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
-  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\\Tools\\calc_exe.inf
+    OperatingSystem: Windows 10, Windows 11
+  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\calc_exe.inf
     Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
     Usecase: Load an executable payload.
     Category: Execute

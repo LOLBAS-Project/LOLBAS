@@ -8,9 +8,9 @@ Commands:
     Description: Executes SCT script using scrobj.dll from a command in entered into a specially prepared INF file.
     Usecase: Code execution
     Category: Execute
-    Privileges: User
+    Privileges: Admin
     MitreID: T1218
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\Infdefaultinstall.exe
   - Path: C:\Windows\SysWOW64\Infdefaultinstall.exe

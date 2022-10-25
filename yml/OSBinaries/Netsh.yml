@@ -8,9 +8,9 @@ Commands:
     Description: Use Netsh in order to execute a .dll file and also gain persistence, every time the netsh command is called
     Usecase: Proxy execution of .dll
     Category: Execute
-    Privileges: User
+    Privileges: Admin
     MitreID: T1546.007
-    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\WINDOWS\System32\Netsh.exe
   - Path: C:\WINDOWS\SysWOW64\Netsh.exe

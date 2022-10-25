@@ -10,14 +10,14 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: HH.exe c:\windows\system32\calc.exe
     Description: Executes calc.exe with HTML Help.
     Usecase: Execute process with HH.exe
     Category: Execute
     Privileges: User
     MitreID: T1218.001
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\hh.exe
   - Path: C:\Windows\SysWOW64\hh.exe

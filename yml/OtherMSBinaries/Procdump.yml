@@ -4,7 +4,7 @@ Description: SysInternals Memory Dump Tool
 Aliases:
   - Alias: Procdump64.exe
 Author: 'Alfie Champion (@ajpc500)'
-Created: '2020-10-14'
+Created: 2020-10-14
 Commands:
   - Command: procdump.exe -md calc.dll explorer.exe
     Description: Loads calc.dll where DLL is configured with a 'MiniDumpCallbackRoutine' exported function. Valid process must be provided as dump still created.

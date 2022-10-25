@@ -10,21 +10,21 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: expand c:\ADS\file1.bat c:\ADS\file2.bat
     Description: Copies source file to destination.
     Usecase: Copies files from A to B
     Category: Copy
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: expand \\webdav\folder\file.bat c:\ADS\file.txt:file.bat
     Description: Copies source file to destination Alternate Data Stream (ADS)
     Usecase: Copies files from A to B
     Category: ADS
     Privileges: User
     MitreID: T1564.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\Expand.exe
   - Path: C:\Windows\SysWOW64\Expand.exe

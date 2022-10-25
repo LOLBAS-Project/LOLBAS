@@ -10,35 +10,35 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe ieadvpack.dll,LaunchINFSection c:\test.inf,,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied).
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe ieadvpack.dll,RegisterOCX test.dll
     Description: Launch a DLL payload by calling the RegisterOCX function.
     Usecase: Load a DLL payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe ieadvpack.dll,RegisterOCX calc.exe
     Description: Launch an executable by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32 ieadvpack.dll, RegisterOCX "cmd.exe /c calc.exe"
     Description: Launch command line by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\ieadvpack.dll
   - Path: c:\windows\syswow64\ieadvpack.dll

@@ -10,7 +10,7 @@ Commands:
     Category: Execute
     Privileges: Administrator
     MitreID: T1547
-    OperatingSystem: Windows 10,7
+    OperatingSystem: Windows 7, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\system32\pnputil.exe
 Code_Sample:

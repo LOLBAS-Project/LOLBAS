@@ -10,14 +10,14 @@ Commands:
     Category: AWL Bypass
     Privileges: Local Admin
     MitreID: T1218.009
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: regasm.exe /U AllTheThingsx64.dll
     Description: Loads the target .DLL file and executes the UnRegisterClass function.
     Usecase: Execute code and bypass Application whitelisting
     Category: Execute
     Privileges: User
     MitreID: T1218.009
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\regasm.exe

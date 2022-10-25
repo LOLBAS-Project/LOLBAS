@@ -10,14 +10,14 @@ Commands:
     Category: ADS
     Privileges: User
     MitreID: T1059.003
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: cmd.exe - < fakefile.doc:payload.bat
     Description: Execute payload.bat stored in an Alternate Data Stream (ADS).
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: ADS
     Privileges: User
     MitreID: T1059.003
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\cmd.exe
   - Path: C:\Windows\SysWOW64\cmd.exe

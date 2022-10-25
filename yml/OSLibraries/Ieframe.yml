@@ -2,7 +2,7 @@
 Name: Ieframe.dll
 Description: Internet Browser DLL for translating HTML code.
 Author: LOLBAS Team
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: rundll32.exe ieframe.dll,OpenURL "C:\test\calc.url"
     Description: Launch an executable payload via proxy through a(n) URL (information) file by calling OpenURL.
@@ -10,7 +10,7 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\ieframe.dll
   - Path: c:\windows\syswow64\ieframe.dll

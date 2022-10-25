@@ -10,7 +10,7 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1127
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\Windows\Microsoft.NET\Framework\v4.0.30319\aspnet_compiler.exe
   - Path: c:\Windows\Microsoft.NET\Framework64\v4.0.30319\aspnet_compiler.exe

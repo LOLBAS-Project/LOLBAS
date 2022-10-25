@@ -10,14 +10,14 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32 syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 c:\temp\something.inf
     Description: Launch an executable file via the SetupInfObjectInstallAction function and .inf file section directive.
     Usecase: Load an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\syssetup.dll
   - Path: c:\windows\syswow64\syssetup.dll

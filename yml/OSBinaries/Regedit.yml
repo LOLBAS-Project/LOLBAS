@@ -10,17 +10,16 @@ Commands:
     Category: ADS
     Privileges: User
     MitreID: T1564.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: regedit C:\ads\file.txt:regfile.reg
     Description: Import the target .REG file into the Registry.
     Usecase: Import hidden registry data from alternate data stream
     Category: ADS
     Privileges: User
     MitreID: T1564.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
-  - Path: C:\Windows\System32\regedit.exe
-  - Path: C:\Windows\SysWOW64\regedit.exe
+  - Path: C:\Windows\regedit.exe
 Code_Sample:
   - Code:
 Detection:
