@@ -15,6 +15,7 @@ Full_Path:
   - Path: C:\Windows\System32\DeviceCredentialDeployment.exe
 Detection:
   - IOC: DeviceCredentialDeployment.exe should not be run on a normal workstation
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff5102832031425f6eed011dd3a2e62653008c94/rules/windows/process_creation/proc_creation_win_lolbin_device_credential_deployment.yml
 Acknowledgement:
   - Person: Elliot Killick
     Handle: '@elliotkillick'
