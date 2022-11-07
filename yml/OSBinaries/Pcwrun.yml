@@ -10,14 +10,14 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: Pcwrun.exe /../../$(<payload>).exe
     Description: Levreage the MSDT follina vulnerability through Pcwrun to execute arbitrary commands and binaries
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
     MitreID: T1218
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\pcwrun.exe
 Code_Sample:
@@ -31,6 +31,9 @@ Resources:
 Acknowledgement:
   - Person: Pierre-Alexandre Braeken
     Handle: '@pabraeken'
+<<<<<<< HEAD
   - Person: Nasreddine Bencherchali
     Handle: '@nas_bench'
 ---
+=======
+>>>>>>> upstream/master

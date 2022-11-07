@@ -4,13 +4,13 @@ Description: PowerShell Diagnostic Script
 Author: Jimmy (@bohops)
 Created: 2021-09-26
 Commands:
-  - Command: '”powershell.exe -command "set-location -path C:\Windows\diagnostics\system\Audio; import-module .\CL_LoadAssembly.ps1; LoadAssemblyFromPath ..\..\..\..\testing\fun.dll;[Program]::Fun()'
+  - Command: 'powershell.exe -ep bypass -command "set-location -path C:\Windows\diagnostics\system\Audio; import-module .\CL_LoadAssembly.ps1; LoadAssemblyFromPath ..\..\..\..\testing\fun.dll;[Program]::Fun()"'
     Description: Proxy execute Managed DLL with PowerShell
     Usecase: Execute proxied payload with Microsoft signed binary
     Category: Execute
     Privileges: User
     MitreID: T1216
-    OperatingSystem: Windows 10 21H1 (likely other versions as well)
+    OperatingSystem: Windows 10 21H1 (likely other versions as well), Windows 11
 Full_Path:
   - Path: C:\Windows\diagnostics\system\Audio\CL_LoadAssembly.ps1
 Code_Sample:
@@ -22,4 +22,3 @@ Resources:
 Acknowledgement:
   - Person: Jimmy
     Handle: '@bohops'
----

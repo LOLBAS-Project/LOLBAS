@@ -1,10 +1,10 @@
 ---
 Name: CL_Mutexverifiers.ps1
-Description:
+Description: Proxy execution with CL_Mutexverifiers.ps1
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
-  - Command: . C:\\Windows\\diagnostics\\system\\AERO\\CL_Mutexverifiers.ps1   \nrunAfterCancelProcess calc.ps1
+  - Command: . C:\Windows\diagnostics\system\AERO\CL_Mutexverifiers.ps1   \nrunAfterCancelProcess calc.ps1
     Description: Import the PowerShell Diagnostic CL_Mutexverifiers script and call runAfterCancelProcess to launch an executable.
     Usecase: Proxy execution
     Category: Execute
@@ -26,4 +26,3 @@ Resources:
 Acknowledgement:
   - Person: Pierre-Alexandre Braeken
     Handle: '@pabraeken'
----
