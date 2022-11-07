@@ -24,10 +24,9 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: 
+  - Sigma:
 Resources:
   - Link: https://twitter.com/nas_bench/status/1535981653239255040
 Acknowledgement:
   - Person: Nasreddine Bencherchali
     Handle: '@nas_bench'
----
