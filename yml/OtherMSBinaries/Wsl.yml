@@ -25,7 +25,7 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 19 Server
-  - Command: wsl.exe --system <command>
+  - Command: wsl.exe --system calc.exe
     Description: Execute the command as root
     Usecase: Performs execution of arbitrary Linux commands as root without need for password.
     Category: Execute

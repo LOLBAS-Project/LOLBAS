@@ -11,20 +11,17 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: Pcwrun.exe /../../$(<payload>).exe
-    Description: Levreage the MSDT follina vulnerability through Pcwrun to execute arbitrary commands and binaries
+  - Command: Pcwrun.exe /../../$(calc).exe
+    Description: Leverage the MSDT follina vulnerability through Pcwrun to execute arbitrary commands and binaries. Note that this specific technique will not work on a patched system with the June 2022 Windows Security update.
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
-    MitreID: T1218
+    MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\pcwrun.exe
-Code_Sample:
-  - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_indirect_cmd_compatibility_assistant.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/40be326cceb8183fffb8d7e5034cd36fa33fe80e/rules/windows/process_creation/proc_creation_win_lolbin_pcwrun_follina.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6199a703221a98ae6ad343c79c558da375203e4e/rules/windows/process_creation/proc_creation_win_lolbin_pcwrun_follina.yml
 Resources:
   - Link: https://twitter.com/pabraeken/status/991335019833708544
   - Link: https://twitter.com/nas_bench/status/1535663791362519040

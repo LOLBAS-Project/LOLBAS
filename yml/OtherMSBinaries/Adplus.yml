@@ -11,15 +11,22 @@ Commands:
     Privileges: SYSTEM
     MitreID: T1003.001
     OperatingSystem: All Windows
-  - Command: adplus.exe -c <config>
-    Description: Execute arbitrary commands or dump process memory using config adplus file
+  - Command: adplus.exe -c config-adplus.xml
+    Description: Execute arbitrary commands using adplus config file
     Usecase: Run commands under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: All Windows
-  - Command: adplus.exe -crash -o <outputfolder> -sc <command>
-    Description: Execute arbitrary commands and binaries from the context of adplus
+  - Command: adplus.exe -c config-adplus.xml
+    Description: Dump process memory using adplus config file
+    Usecase: Run commands under a trusted Microsoft signed binary
+    Category: Dump
+    Privileges: SYSTEM
+    MitreID: T1003.001
+    OperatingSystem: All Windows
+  - Command: adplus.exe -crash -o "C:\temp\" -sc calc.exe
+    Description: Execute arbitrary commands and binaries from the context of adplus. The output directory is required
     Usecase: Run commands under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
@@ -29,9 +36,9 @@ Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\adplus.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\adplus.exe
 Code_Sample:
-  - Code:
+  - Code: https://gist.github.com/nasbench/e34ca2cd90e3a845a558a102a4f607da
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/2d51c7719ebca9bd04eabd2f62a58322f8ff8394/rules/windows/process_creation/proc_creation_win_lolbin_adplus.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6199a703221a98ae6ad343c79c558da375203e4e/rules/windows/process_creation/proc_creation_win_lolbin_adplus.yml
   - IOC: As a Windows SDK binary, execution on a system may be suspicious
 Resources:
   - Link: https://blog.thecybersecuritytutor.com/adplus-debugging-tool-lsass-dump/
