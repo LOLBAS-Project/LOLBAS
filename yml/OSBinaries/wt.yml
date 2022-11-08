@@ -1,20 +1,18 @@
 ---
 Name: wt.exe
 Description: Windows Terminal
-Author: 'Nasreddine Bencherchali'
+Author: Nasreddine Bencherchali
 Created: 2022-07-27
 Commands:
-  - Command: wt.exe <command>
-    Description: Execute the command in question via WindowsTerminal.
-    Usecase: Proxy execution of binary
+  - Command: wt.exe calc.exe
+    Description: Execute calc.exe via Windows Terminal.
+    Usecase: Use wt.exe as a proxy binary to evade defensive counter-measures
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    OperatingSystem: By default on Windows 11, need to install Windows Terminal on Windows 10
+    MitreID: T1202
+    OperatingSystem: Windows 11
 Full_Path:
   - Path: C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_<version_packageid>\wt.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/add077b8f54474cbfa859cf45a1ca62be5462b0f/rules/windows/process_creation/proc_creation_win_windows_terminal_susp_children.yml
 Resources:
