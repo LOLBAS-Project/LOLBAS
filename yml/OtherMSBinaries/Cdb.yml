@@ -14,14 +14,14 @@ Commands:
   - Command: |
      cdb.exe -pd -pn <process_name>
      .shell <cmd>
-    Description: Attaching to any process and executing shell commands
+    Description: Attaching to any process and executing shell commands.
     Usecase: Run a shell command under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
   - Command: cdb.exe -c C:\debug-script.txt calc
-    Description: Execute arbitrary commands and binaries using a debugging script
+    Description: Execute arbitrary commands and binaries using a debugging script (see Resources section for a sample file).
     Usecase: Run commands under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
