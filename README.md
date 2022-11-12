@@ -72,6 +72,7 @@ The following folks help maintain the LOLBAS Project on their personal time:
 * Chris 'Lopi' Spehn ([@ConsciousHacker](https://twitter.com/ConsciousHacker))
 * Liam ([@liamsomerville](https://twitter.com/liamsomerville))
 * Wietze ([@Wietze](https://twitter.com/@Wietze))
+* Jose Hernandez ([@_josehelps](https://twitter.com/_josehelps))
 
 ## Thanks
 
