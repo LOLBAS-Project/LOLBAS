@@ -10,13 +10,14 @@ Commands:
     Category: Compile
     Privileges: User
     MitreID: T1127
-    OperatingSystem: Windows 10,7
+    OperatingSystem: Windows 7, Windows 10, Windows 11
   - Command: ilasm.exe C:\public\test.txt /dll
     Description: Binary file used by .NET to compile C#/intermediate (IL) code to dll
     Usecase: A description of the usecase
     Category: Compile
     Privileges: User
     MitreID: T1127
+    OperatingSystem: Windows 7, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\ilasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ilasm.exe
@@ -32,4 +33,3 @@ Acknowledgement:
     Handle: '@VakninHai'
   - Person: Lior Adar
     Handle:
----
