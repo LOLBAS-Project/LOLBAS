@@ -15,7 +15,7 @@ Commands:
     Description: During startup, eventvwr.exe uses .NET deserialization with %LOCALAPPDATA%\Microsoft\EventV~1\RecentViews file. This file can be created using https://github.com/pwntester/ysoserial.net
     Usecase: Execute a command to bypass security restrictions that limit the use of command-line interpreters.
     Category: Execute
-    Privileges: User
+    Privileges: Administrator
     MitreID: T1202
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
@@ -40,4 +40,6 @@ Acknowledgement:
     Handle: '@enigma0x3'
   - Person: Matt Graeber
     Handle: '@mattifestation'
+  - Person: Orange Tsai
+    Handle: '@orange_8361'
 ---
