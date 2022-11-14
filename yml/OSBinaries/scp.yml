@@ -2,7 +2,7 @@
 Name: scp.exe
 Description: Secure Copy Protocol
 Author: Nir Chako
-Created: 2022-11-06
+Created: 2022-11-14
 Commands:
   - Command: 'scp -S "C:\windows\system32\notepad.exe" file.txt localhost:'
     Description: Execute notepad.exe with scp.exe as parent process
