@@ -1,0 +1,35 @@
+---
+Name: secedit.exe
+Description: Tool used to analyse system security settings in Windows and also used for applying security configurations. An adversary may use this tool to discover security settings as well as abuse certain features within the tool to achieve their objectives.
+Aliases:
+  - Alias:
+Author: Janantha Marasinghe (https://twitter.com/blueteam0ps_)
+Created: 2022-11-20
+Commands:
+  - Command: secedit.exe /export /areas SECURITYPOLICY /cfg output_mysecpol.txt
+    Description: Exports local security policy to destination.
+    Usecase: Use to discover the current local security policy applied to a host.
+    Category: Discovery
+    Privileges: Administrator
+    MitreID: T1007, T1201 
+    OperatingSystem: All Windows versions since Windows 95
+  - Command: secedit.exe /configuration /db test.db
+    Description: Apply configuration on ESE db to the host
+    Usecase: Use the custom configuration stored on ESE db and apply to host.
+    Category: Reconnaissance, Credentials, Persistence, Log Evasion 
+    Privileges: Administrator
+    MitreID: T1562,T1562.002,T1546.007,T1546.008,T1547.001,T1547.002,T1547.010,T1547.014,T1505.005,T1556.002,T1574.007,T1564.002,T1557,T1082
+    OperatingSystem: WAll Windows versions since Windows 95
+Full_Path:
+  - Path: C:\Windows\system32\SecEdit.exe
+  - Path: C:\Windows\SysWOW64\SecEdit.exe
+Code_Sample:
+  - Code: https://raw.githubusercontent.com/defendthehoneypot/Server-GPOs/master/Server%20Computer%20Security%20v1.0/%7B3E18C7F8-B3E3-4866-BBDC-F56F4F93A60C%7D/DomainSysvol/GPO/Machine/microsoft/windows%20nt/SecEdit/GptTmpl.inf
+Detection:
+  - Sigma: https://example.com/to/sigma/rule/if/applicable
+Resources:
+  - Link: https://blueteamops.medium.com/secedit-and-i-know-it-595056dee53d
+  - Link: https://strontic.github.io/xcyclopedia/library/SecEdit.exe-A075298AC8966078C2A1D2C9FE946E7C.html
+Acknowledgement:
+  - Person: 
+    Handle: 
