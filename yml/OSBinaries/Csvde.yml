@@ -1,0 +1,42 @@
+
+---
+Name: Csvde.exe
+Description: Creates, modifies, and deletes Active Directory objects.
+Author: 'Mihhail Sokolov'
+Created: 2022-12-16
+Commands:
+  - Command: Csvde -i -f inputfile.csv
+    Description: Import inputfile.csv into Active Directory
+    Usecase: Update data in Active Directory
+    Category: Upload
+    Privileges: Administrator
+    MitreID: T1565
+    OperatingSystem: Windows Server with AD Domain Services role,  Windows 10 with AD LDS role.
+  - Command: Csvde -f outputfile.csv
+    Description: Export data from Active Directory to outputfile.csv
+    Usecase: Dump data for further analysis
+    Category: Dump
+    Privileges: Administrator
+    MitreID: T1589
+    OperatingSystem: Windows Server with AD Domain Services role,  Windows 10 with AD LDS role.
+Full_Path:
+  - Path: C:\Windows\System32\Csvde.exe
+  - Path: C:\Windows\SysWOW64\Csvde.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: csvde.exe spawned
+  - IOC: 'C:\Users\[User Name]\AppData\Local\Temp\csv[Random Number].tmp' was created
+  - Analysis:
+  - Sigma:
+  - Elastic:
+  - Splunk:
+  - BlockRule:
+Resources:
+  - Link: https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc732101(v=ws.11)
+  - Link: https://www.jpcert.or.jp/english/pub/sr/20170612ac-ir_research_en.pdf
+Acknowledgement:
+  - Person: Mihhail Sokolov
+    Handle: '@sokolov_mihhail'
+  - Person: Chad Brigance
+    Handle: '@ChadBrigance'
