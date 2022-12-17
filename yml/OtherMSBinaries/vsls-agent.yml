@@ -13,8 +13,6 @@ Commands:
     OperatingSystem: Windows 10 21H2 (likely previous and newer versions with modern versions of Visual Studio installed)
 Full_Path:
   - Path: c:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\Extensions\Microsoft\LiveShare\Agent\vsls-agent.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_vslsagent_agentextensionpath_load.yml
 Resources:
