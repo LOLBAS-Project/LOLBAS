@@ -1,9 +1,7 @@
 ---
-Name: secedit.exe
+Name: Secedit.exe
 Description: Tool used to analyse system security settings in Windows and also used for applying security configurations. An adversary may use this tool to discover security settings as well as abuse certain features within the tool to achieve their objectives.
-Aliases:
-  - Alias:
-Author: Janantha Marasinghe (https://twitter.com/blueteam0ps_)
+Author: Janantha Marasinghe
 Created: 2022-11-20
 Commands:
   - Command: secedit.exe /export /areas SECURITYPOLICY /cfg output_mysecpol.txt
@@ -26,10 +24,10 @@ Full_Path:
 Code_Sample:
   - Code: https://raw.githubusercontent.com/defendthehoneypot/Server-GPOs/master/Server%20Computer%20Security%20v1.0/%7B3E18C7F8-B3E3-4866-BBDC-F56F4F93A60C%7D/DomainSysvol/GPO/Machine/microsoft/windows%20nt/SecEdit/GptTmpl.inf
 Detection:
-  - Sigma: https://example.com/to/sigma/rule/if/applicable
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_secedit.yml
 Resources:
   - Link: https://blueteamops.medium.com/secedit-and-i-know-it-595056dee53d
   - Link: https://strontic.github.io/xcyclopedia/library/SecEdit.exe-A075298AC8966078C2A1D2C9FE946E7C.html
 Acknowledgement:
-  - Person: 
-    Handle: 
+  - Person: Janantha Marasinghe
+    Handle: '@blueteam0ps_'
