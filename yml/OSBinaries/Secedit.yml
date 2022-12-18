@@ -17,7 +17,7 @@ Commands:
     Category: Reconnaissance, Credentials, Persistence, Log Evasion
     Privileges: Administrator
     MitreID: T1562,T1562.002,T1546.007,T1546.008,T1547.001,T1547.002,T1547.010,T1547.014,T1505.005,T1556.002,T1574.007,T1564.002,T1557,T1082
-    OperatingSystem: WAll Windows versions since Windows 95
+    OperatingSystem: All Windows versions since Windows 95
 Full_Path:
   - Path: C:\Windows\system32\SecEdit.exe
   - Path: C:\Windows\SysWOW64\SecEdit.exe
