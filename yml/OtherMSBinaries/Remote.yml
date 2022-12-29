@@ -32,6 +32,7 @@ Code_Sample:
   - Code:
 Detection:
   - IOC: remote.exe process spawns
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_lolbin_remote.yml
 Resources:
   - Link: https://blog.thecybersecuritytutor.com/Exeuction-AWL-Bypass-Remote-exe-LOLBin/
 Acknowledgement:
