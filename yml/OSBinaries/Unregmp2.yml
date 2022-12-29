@@ -15,7 +15,7 @@ Full_Path:
   - Path: C:\Windows\System32\unregmp2.exe
   - Path: C:\Windows\SysWOW64\unregmp2.exe
 Detection:
-  - Sigma: https://github.com/frack113/sigma/blob/197615345b927682ab7ad7fa3c5f5bb2ed911eed/rules/windows/process_creation/proc_creation_win_lolbin_unregmp2.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/197615345b927682ab7ad7fa3c5f5bb2ed911eed/rules/windows/process_creation/proc_creation_win_lolbin_unregmp2.yml
   - IOC: Low-prevalence binaries, with filename 'wmpnscfg.exe', spawned as child-processes of `unregmp2.exe /HideWMP`
 Resources:
   - Link: https://twitter.com/notwhickey/status/1466588365336293385
