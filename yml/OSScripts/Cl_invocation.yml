@@ -4,7 +4,7 @@ Description: Aero diagnostics script
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
-  - Command: . C:\\Windows\\diagnostics\\system\\AERO\\CL_Invocation.ps1   \nSyncInvoke <executable> [args]
+  - Command: . C:\Windows\diagnostics\system\AERO\CL_Invocation.ps1   \nSyncInvoke <executable> [args]
     Description: Import the PowerShell Diagnostic CL_Invocation script and call SyncInvoke to launch an executable.
     Usecase: Proxy execution
     Category: Execute
@@ -28,4 +28,3 @@ Acknowledgement:
     Handle: '@bohops'
   - Person: Pierre-Alexandre Braeken
     Handle: '@pabraeken'
----

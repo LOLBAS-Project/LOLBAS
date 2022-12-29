@@ -2,7 +2,7 @@
 Name: VSIISExeLauncher.exe
 Description: Binary will execute specified binary. Part of VS/VScode installation.
 Author: 'timwhite'
-Created: '2021-09-24'
+Created: 2021-09-24
 Commands:
   - Command: VSIISExeLauncher.exe -p [PATH_TO_BIN] -a "argument here"
     Description: The above binary will execute other binary.
@@ -22,4 +22,3 @@ Resources:
 Acknowledgement:
   - Person: timwhite
     Handle:
----
