@@ -1,4 +1,3 @@
----
 Name: Fsi.exe
 Description: 64-bit FSharp (F#) Interpreter included with Visual Studio and DotNet Core SDK.
 Author: Jimmy (@bohops)
@@ -28,6 +27,7 @@ Detection:
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
   - IOC: Fsi.exe execution may be suspicious on non-developer machines
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6b34764215b0e97e32cbc4c6325fc933d2695c3a/rules/windows/process_creation/proc_creation_win_lolbin_fsharp_interpreters.yml
 Resources:
   - Link: https://twitter.com/NickTyrer/status/904273264385589248
   - Link: https://bohops.com/2020/11/02/exploring-the-wdac-microsoft-recommended-block-rules-part-ii-wfc-fsi/
@@ -36,4 +36,3 @@ Acknowledgement:
     Handle: '@NickTyrer'
   - Person: Jimmy
     Handle: '@bohops'
----
