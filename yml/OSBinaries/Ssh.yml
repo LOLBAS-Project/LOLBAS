@@ -21,6 +21,7 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\OpenSSH\ssh.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/197615345b927682ab7ad7fa3c5f5bb2ed911eed/rules/windows/process_creation/proc_creation_win_lolbin_ssh.yml
   - IOC: Event ID 4624 with process name C:\Windows\System32\OpenSSH\sshd.exe.
   - IOC: command line arguments specifying execution.
 Acknowledgement:

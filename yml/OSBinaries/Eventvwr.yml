@@ -26,7 +26,7 @@ Code_Sample:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/b08b3e2b0d5111c637dbede1381b07cb79f8c2eb/rules/windows/process_creation/process_creation_sysmon_uac_bypass_eventvwr.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/b08b3e2b0d5111c637dbede1381b07cb79f8c2eb/rules/windows/registry_event/registry_event_uac_bypass_eventvwr.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/file_event/file_event_win_uac_bypass_eventvwr.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/197615345b927682ab7ad7fa3c5f5bb2ed911eed/rules/windows/file/file_event/file_event_win_uac_bypass_eventvwr.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/d31ea6253ea40789b1fc49ade79b7ec92154d12a/rules/windows/privilege_escalation_uac_bypass_event_viewer.toml
   - Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/eventvwr_uac_bypass.yml
   - IOC: eventvwr.exe launching child process other than mmc.exe

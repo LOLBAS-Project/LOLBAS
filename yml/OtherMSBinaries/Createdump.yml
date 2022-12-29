@@ -14,6 +14,8 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\*\createdump.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/19396788dbedc57249a46efed2bb1927abc376d4/rules/windows/process_creation/proc_creation_win_proc_dump_createdump.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/19396788dbedc57249a46efed2bb1927abc376d4/rules/windows/process_creation/proc_creation_win_susp_renamed_createdump.yml
   - IOC: createdump.exe process with a command line containing the lsass.exe process id
 Resources:
   - Link: https://twitter.com/bopin2020/status/1366400799199272960
