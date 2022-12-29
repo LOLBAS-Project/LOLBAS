@@ -1,6 +1,6 @@
 ---
 Name: Verclsid.exe
-Description:
+Description: Used to verify a COM object before it is instantiated by Windows Explorer
 Author: '@bohops'
 Created: 2018-12-04
 Commands:
@@ -10,7 +10,7 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218.012
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\verclsid.exe
   - Path: C:\Windows\SysWOW64\verclsid.exe
@@ -25,4 +25,3 @@ Resources:
 Acknowledgement:
   - Person: Nick Tyrer
     Handle: '@NickTyrer'
----

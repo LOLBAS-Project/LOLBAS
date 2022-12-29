@@ -10,14 +10,14 @@ Commands:
     Category: Reconnaissance
     Privileges: Administrator
     MitreID: T1040
-    OperatingSystem: Windows 10 1809 and later
+    OperatingSystem: Windows 10 1809 and later, Windows 11
   - Command: pktmon.exe filter add -p 445
     Description: Select Desired ports for packet capture
     Usecase: Look for interesting traffic such as telent or FTP
     Category: Reconnaissance
     Privileges: Administrator
     MitreID: T1040
-    OperatingSystem: Windows 10 1809 and later
+    OperatingSystem: Windows 10 1809 and later, Windows 11
 Full_Path:
   - Path: c:\windows\system32\pktmon.exe
   - Path: c:\windows\syswow64\pktmon.exe
@@ -31,4 +31,3 @@ Resources:
 Acknowledgement:
   - Person: Derek Johnson
     Handle: ''
----

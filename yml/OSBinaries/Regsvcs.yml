@@ -8,19 +8,19 @@ Commands:
     Description: Loads the target .DLL file and executes the RegisterClass function.
     Usecase: Execute dll file and bypass Application whitelisting
     Category: Execute
-    Privileges: Local Admin
+    Privileges: User
     MitreID: T1218.009
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: regsvcs.exe AllTheThingsx64.dll
     Description: Loads the target .DLL file and executes the RegisterClass function.
     Usecase: Execute dll file and bypass Application whitelisting
-    Category: AWL bypass
+    Category: AWL Bypass
     Privileges: Local Admin
     MitreID: T1218.009
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
-  - Path: C:\Windows\System32\regsvcs.exe
-  - Path: C:\Windows\SysWOW64\regsvcs.exe
+  - Path: c:\Windows\Microsoft.NET\Framework\v*\regsvcs.exe
+  - Path: c:\Windows\Microsoft.NET\Framework64\v*\regsvcs.exe
 Code_Sample:
   - Code:
 Detection:
@@ -34,4 +34,3 @@ Resources:
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
----
