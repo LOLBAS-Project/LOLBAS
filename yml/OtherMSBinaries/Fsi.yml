@@ -1,4 +1,19 @@
 ---
+Name: FsiAnyCpu.exe
+Description: 32/64-bit FSharp (F#) Interpreter included with Visual Studio.
+Author: Jimmy (@bohops)
+Created: 2021-09-26
+Commands:
+  - Command: fsianycpu.exe c:\path\to\test.fsscript
+    Description: Execute F# code via script file
+    Usecase: Execute payload with Microsoft signed binary to bypass WDAC policies
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1059
+    OperatingSystem: Windows 10 2004 (likely previous and newer versions as well)
+  - Command: fsianycpu.exe
+    Description: Execute F# code via interactive command line
+    Usecase: Execute payload with Microsoft signed binary to bypass WDAC policies---
 Name: Fsi.exe
 Description: 64-bit FSharp (F#) Interpreter included with Visual Studio and DotNet Core SDK.
 Author: Jimmy (@bohops)
@@ -37,4 +52,3 @@ Acknowledgement:
     Handle: '@NickTyrer'
   - Person: Jimmy
     Handle: '@bohops'
----
