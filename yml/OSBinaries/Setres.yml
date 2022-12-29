@@ -14,6 +14,7 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\setres.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/19396788dbedc57249a46efed2bb1927abc376d4/rules/windows/process_creation/proc_creation_win_lolbin_setres.yml
   - IOC: Unusual location for choice.exe file
   - IOC: Process created from choice.com binary
   - IOC: Existence of choice.cmd file
