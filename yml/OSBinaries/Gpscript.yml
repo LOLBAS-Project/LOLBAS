@@ -10,20 +10,21 @@ Commands:
     Category: Execute
     Privileges: Administrator
     MitreID: T1218
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: Gpscript /startup
     Description: Executes startup scripts configured in Group Policy
     Usecase: Add local group policy logon script to execute file and hide from defensive counter measures
     Category: Execute
     Privileges: Administrator
     MitreID: T1218
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\gpscript.exe
   - Path: C:\Windows\SysWOW64\gpscript.exe
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/35a7244c62820fbc5a832e50b1e224ac3a1935da/rules/windows/process_creation/proc_creation_win_lolbin_gpscript.yml
   - IOC: Scripts added in local group policy
   - IOC: Execution of Gpscript.exe after logon
 Resources:
@@ -31,4 +32,3 @@ Resources:
 Acknowledgement:
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
----

@@ -1,0 +1,118 @@
+---
+type: map
+mapping:
+# Id field enhancement possibility commenting out for now
+#  "Id":
+#    type: str
+#    required: true
+#    pattern: '[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}'
+  "Name":
+    type: str
+    required: true
+  "Description":
+    type: str
+    required: true
+  "Aliases":
+    type: seq
+    required: false
+    sequence:
+      - type: map
+        mapping:
+          "Alias":
+            type: str
+            required: false
+  "Author":
+    type: str
+    required: true
+  "Created":
+    type: date
+    required: true
+  "Commands":
+    type: seq
+    required: true
+    sequence:
+      - type: map
+        mapping:
+          "Command":
+            type: str
+            required: true
+          "Description":
+            type: str
+            required: true
+          "Usecase":
+            type: str
+            required: true
+          "Category":
+            type: str
+            required: true
+            enum: [ADS, AWL Bypass, Compile, Conceal, Copy, Credentials, Decode, Download, Dump, Encode, Execute, Reconnaissance, Tamper, UAC Bypass, Upload]
+          "Privileges":
+            type: str
+            required: true
+          "MitreID":
+            type: str
+            required: true
+            pattern: '^T[0-9]{4}(\.[0-9]{3})?$'
+          "OperatingSystem":
+            type: str
+            required: true
+  "Full_Path":
+    type: seq
+    required: true
+    sequence:
+      - type: map
+        mapping:
+          "Path":
+            type: str
+            required: true
+  "Code_Sample":
+    type: seq
+    required: false
+    sequence:
+      - type: map
+        mapping:
+          "Code":
+            type: str
+  "Detection":
+    type: seq
+    required: false
+    sequence:
+      - type: map
+        mapping:
+          "IOC":
+            type: str
+          "Sigma":
+            type: str
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+          "Analysis":
+            type: str
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+          "Elastic":
+            type: str
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+          "Splunk":
+            type: str
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+          "BlockRule":
+            type: str
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+  "Resources":
+    type: seq
+    required: false
+    sequence:
+      - type: map
+        mapping:
+          "Link":
+            type: str
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+  "Acknowledgement":
+    type: seq
+    required: false
+    sequence:
+      - type: map
+        mapping:
+          "Person":
+            type: str
+          "Handle":
+            type: str
+            pattern: '^(@(\w){1,15})?$'

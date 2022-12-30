@@ -1,7 +1,7 @@
 ---
 Name: Advpack.dll
 Description: Utility for installing software and drivers with rundll32.exe
-Author:
+Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe advpack.dll,LaunchINFSection c:\test.inf,DefaultInstall_SingleUser,1,
@@ -10,35 +10,35 @@ Commands:
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe advpack.dll,LaunchINFSection c:\test.inf,,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied).
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe advpack.dll,RegisterOCX test.dll
     Description: Launch a DLL payload by calling the RegisterOCX function.
     Usecase: Load a DLL payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe advpack.dll,RegisterOCX calc.exe
     Description: Launch an executable by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
   - Command: rundll32 advpack.dll, RegisterOCX "cmd.exe /c calc.exe"
     Description: Launch command line by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\advpack.dll
   - Path: c:\windows\syswow64\advpack.dll
@@ -62,4 +62,3 @@ Acknowledgement:
     Handle: '@moriarty_meng'
   - Person: Nick Carr (Threat Intel)
     Handle: '@ItsReallyNick'
----
