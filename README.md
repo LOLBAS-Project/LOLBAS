@@ -1,12 +1,10 @@
-
-</p>
 <p align="center">
     <a href="https://github.com/LOLBAS-Project/LOLBAS/actions/workflows/yaml-linting.yml/badge.svg?branch=master">
-        <img src="https://img.shields.io/github/workflow/status/splunk/security_content/build-and-validate/develop" /></a>
-    <a href="https://github.com/splunk/security_content">
-        <img src="https://lolbas-project.s3.us-east-2.amazonaws.com/lolbas_count.svg" /></a>
+        <img src="https://img.shields.io/github/actions/workflow/status/LOLBAS-Project/LOLBAS/yaml-linting.yml?branch=master" /></a>
+    <a href="https://github.com/LOLBAS-Project/LOLBAS">
+        <img src="assets/lolbas-count.svg" /></a>
     <a href="https://github.com/LOLBAS-Project/LOLBAS/stargazers">
-        <img src="https://img.shields.io/github/stars/splunk/security_content?style=social" /></a>
+        <img src="https://img.shields.io/github/stars/LOLBAS-Project/LOLBAS?style=social" /></a>
 </p>
 
 # Living Off The Land Binaries and Scripts (and now also Libraries)
