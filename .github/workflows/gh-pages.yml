@@ -16,7 +16,7 @@ jobs:
 
       - name: Change .yml to .md
         run: |
-          for x in $(find yml/ -name '*.yml'); do mv "$x" "${x/%\.yml/.md}"; done
+          for x in $(find yml/ -name '*.yml'); do echo "---" >> "$x"; mv "$x" "${x/%\.yml/.md}"; done
           mv yml/OSBinaries yml/Binaries
           mv yml/OSLibraries yml/Libraries
           mv yml/OSScripts yml/Scripts

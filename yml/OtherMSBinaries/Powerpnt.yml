@@ -27,10 +27,11 @@ Full_Path:
 - Path: C:\Program Files\Microsoft Office\Office12\Powerpnt.exe
 - Path: C:\Program Files\Microsoft Office\Office12\Powerpnt.exe
 Detection:
-- IOC: Suspicious Office application Internet/network traffic
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/8bb3379b6807610d61d29db1d76f5af4840b8208/rules/windows/process_creation/proc_creation_win_susp_msoffice.yml
+  - IOC: Suspicious Office application Internet/network traffic
 Resources:
 - Link: https://twitter.com/reegun21/status/1150032506504151040
 - Link: https://medium.com/@reegun/unsanitized-file-validation-leads-to-malicious-payload-download-via-office-binaries-202d02db7191
 Acknowledgement:
-- Person: Reegun J (OCBC Bank)
-  Handle: '@reegun21'
+  - Person: Reegun J (OCBC Bank)
+    Handle: '@reegun21'

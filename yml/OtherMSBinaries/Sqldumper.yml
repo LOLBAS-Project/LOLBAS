@@ -33,5 +33,5 @@ Resources:
 - Link: https://twitter.com/countuponsec/status/910977826853068800
 - Link: https://support.microsoft.com/en-us/help/917825/how-to-use-the-sqldumper-exe-utility-to-generate-a-dump-file-in-sql-se
 Acknowledgement:
-- Person: Luis Rocha
-  Handle: '@countuponsec'
+  - Person: Luis Rocha
+    Handle: '@countuponsec'

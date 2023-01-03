@@ -1,7 +1,7 @@
 Name: SettingSyncHost.exe
 Description: Host Process for Setting Synchronization
-Author: Elliot Killick
-Created: '2021-08-26'
+Author: 'Elliot Killick'
+Created: 2021-08-26
 Commands:
 - Command: SettingSyncHost -LoadAndRunDiagScript anything
   Description: Execute file specified in %COMSPEC%
@@ -32,7 +32,7 @@ Detection:
 Resources:
 - Link: https://www.hexacorn.com/blog/2020/02/02/settingsynchost-exe-as-a-lolbin/
 Acknowledgement:
-- Person: Adam
-  Handle: '@hexacorn'
-- Person: Elliot Killick
-  Handle: '@elliotkillick'
+  - Person: Adam
+    Handle: '@hexacorn'
+  - Person: Elliot Killick
+    Handle: '@elliotkillick'

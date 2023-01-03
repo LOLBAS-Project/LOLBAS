@@ -22,7 +22,7 @@ Commands:
   MitreID: T1127
   OperatingSystem: Windows
 Full_Path:
-- Path: null
+  - Path: no default
 Code_Sample:
 - Code: null
 Detection:
@@ -31,5 +31,5 @@ Resources:
 - Link: https://twitter.com/subTee/status/793151392185589760
 - Link: https://attack.mitre.org/wiki/Execution
 Acknowledgement:
-- Person: Casey Smith
-  Handle: '@subTee'
+  - Person: Casey Smith
+    Handle: '@subTee'

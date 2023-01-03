@@ -1,24 +1,22 @@
 Name: Setupapi.dll
 Description: Windows Setup Application Programming Interface
-Author: null
-Created: '2018-05-25'
+Author: LOLBAS Team
+Created: 2018-05-25
 Commands:
-- Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\shady.inf
-  Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll
-    in the .inf file by calling an information file directive (section name specified).
-  UseCase: Run local or remote script(let) code through INF file specification.
-  Category: AWL Bypass
-  Privileges: User
-  MitreID: T1218.011
-  OperatingSystem: Windows
-- Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\\Tools\\calc_exe.inf
-  Description: Launch an executable file via the InstallHinfSection function and .inf
-    file section directive.
-  UseCase: Load an executable payload.
-  Category: Execute
-  Privileges: User
-  MitreID: T1218.011
-  OperatingSystem: Windows
+  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\shady.inf
+    Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
+    Usecase: Run local or remote script(let) code through INF file specification.
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1218.011
+    OperatingSystem: Windows 10, Windows 11
+  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\calc_exe.inf
+    Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
+    Usecase: Load an executable payload.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.011
+    OperatingSystem: Windows
 Full_Path:
 - Path: c:\windows\system32\setupapi.dll
 - Path: c:\windows\syswow64\setupapi.dll
@@ -37,11 +35,11 @@ Resources:
 - Link: https://twitter.com/pabraeken/status/994742106852941825
 - Link: https://windows10dll.nirsoft.net/setupapi_dll.html
 Acknowledgement:
-- Person: Kyle Hanslovan (COM Scriptlet)
-  Handle: '@KyleHanslovan'
-- Person: Huntress Labs (COM Scriptlet)
-  Handle: '@HuntressLabs'
-- Person: Casey Smith (COM Scriptlet)
-  Handle: '@subTee'
-- Person: Nick Carr (Threat Intel)
-  Handle: '@ItsReallyNick'
+  - Person: Kyle Hanslovan (COM Scriptlet)
+    Handle: '@KyleHanslovan'
+  - Person: Huntress Labs (COM Scriptlet)
+    Handle: '@HuntressLabs'
+  - Person: Casey Smith (COM Scriptlet)
+    Handle: '@subTee'
+  - Person: Nick Carr (Threat Intel)
+    Handle: '@ItsReallyNick'

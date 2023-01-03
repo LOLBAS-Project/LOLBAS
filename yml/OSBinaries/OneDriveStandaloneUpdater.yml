@@ -1,7 +1,7 @@
 Name: OneDriveStandaloneUpdater.exe
 Description: OneDrive Standalone Updater
-Author: Elliot Killick
-Created: '2021-08-22'
+Author: 'Elliot Killick'
+Created: 2021-08-22
 Commands:
 - Command: OneDriveStandaloneUpdater
   Description: Download a file from the web address specified in HKCU\Software\Microsoft\OneDrive\UpdateOfficeConfig\UpdateRingSettingURLFromOC.
@@ -18,12 +18,11 @@ Commands:
 Full_Path:
 - Path: '%localappdata%\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe'
 Detection:
-- IOC: HKCU\Software\Microsoft\OneDrive\UpdateOfficeConfig\UpdateRingSettingURLFromOC
-    being set to a suspicious non-Microsoft controlled URL
-- IOC: Reports of downloading from suspicious URLs in %localappdata%\OneDrive\setup\logs\StandaloneUpdate_*.log
-    files
+  - IOC: HKCU\Software\Microsoft\OneDrive\UpdateOfficeConfig\UpdateRingSettingURLFromOC being set to a suspicious non-Microsoft controlled URL
+  - IOC: Reports of downloading from suspicious URLs in %localappdata%\OneDrive\setup\logs\StandaloneUpdate_*.log files
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff5102832031425f6eed011dd3a2e62653008c94/rules/windows/registry/registry_set/registry_set_lolbin_onedrivestandaloneupdater.yml
 Resources:
 - Link: https://github.com/LOLBAS-Project/LOLBAS/pull/153
 Acknowledgement:
-- Person: Elliot Killick
-  Handle: '@elliotkillick'
+  - Person: Elliot Killick
+    Handle: '@elliotkillick'

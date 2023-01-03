@@ -36,7 +36,7 @@ Commands:
   MitreID: T1218
   OperatingSystem: Windows
 Full_Path:
-- Path: null
+  - Path: no default
 Code_Sample:
 - Code: null
 Detection:
@@ -48,5 +48,5 @@ Resources:
 - Link: https://twitter.com/subTee/status/877616321747271680
 - Link: https://github.com/3gstudent/Use-msxsl-to-bypass-AppLocker
 Acknowledgement:
-- Person: Casey Smith
-  Handle: '@subtee'
+  - Person: Casey Smith
+    Handle: '@subtee'

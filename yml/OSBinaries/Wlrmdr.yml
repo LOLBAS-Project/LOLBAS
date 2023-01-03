@@ -23,9 +23,9 @@ Resources:
 - Link: https://twitter.com/falsneg/status/1461625526640992260
 - Link: https://docs.microsoft.com/en-us/windows/win32/api/shellapi/ns-shellapi-notifyicondataw
 Acknowledgement:
-- Person: Grzegorz Tworek
-  Handle: '@0gtweet'
-- Person: Oddvar Moe
-  Handle: '@Oddvarmoe'
-- Person: Freddy
-  Handle: '@falsneg'
+  - Person: Grzegorz Tworek
+    Handle: '@0gtweet'
+  - Person: Oddvar Moe
+    Handle: '@Oddvarmoe'
+  - Person: Freddy
+    Handle: '@falsneg'

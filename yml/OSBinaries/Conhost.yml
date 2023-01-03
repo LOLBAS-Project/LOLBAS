@@ -19,7 +19,7 @@ Resources:
 - Link: https://www.hexacorn.com/blog/2020/05/25/how-to-con-your-host/
 - Link: https://twitter.com/Wietze/status/1511397781159751680
 Acknowledgement:
-- Person: Adam
-  Handle: '@hexacorn'
-- Person: Wietze
-  Handle: '@wietze'
+  - Person: Adam
+    Handle: '@hexacorn'
+  - Person: Wietze
+    Handle: '@wietze'
