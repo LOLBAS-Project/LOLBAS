@@ -1,24 +1,24 @@
----
 Name: Cmdkey.exe
 Description: creates, lists, and deletes stored user names and passwords or credentials.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: cmdkey /list
-    Description: List cached credentials
-    Usecase: Get credential information from host
-    Category: Credentials
-    Privileges: User
-    MitreID: T1078
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+- Command: cmdkey /list
+  Description: List cached credentials
+  Usecase: Get credential information from host
+  Category: Credentials
+  Privileges: User
+  MitreID: T1078
+  OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows
+    11
 Full_Path:
-  - Path: C:\Windows\System32\cmdkey.exe
-  - Path: C:\Windows\SysWOW64\cmdkey.exe
+- Path: C:\Windows\System32\cmdkey.exe
+- Path: C:\Windows\SysWOW64\cmdkey.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/c3c152d457773454f67895008a1abde823be0755/rules/windows/process_creation/win_cmdkey_recon.yml
+- Sigma: https://github.com/SigmaHQ/sigma/blob/c3c152d457773454f67895008a1abde823be0755/rules/windows/process_creation/win_cmdkey_recon.yml
 Resources:
-  - Link: https://www.peew.pw/blog/2017/11/26/exploring-cmdkey-an-edge-case-for-privilege-escalation
-  - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey
+- Link: https://www.peew.pw/blog/2017/11/26/exploring-cmdkey-an-edge-case-for-privilege-escalation
+- Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey
 Acknowledgement:
-  - Person:
-    Handle:
+- Person: null
+  Handle: null

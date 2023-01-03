@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "enrich_with_splunk"
+version = "0.1.0"
+description = "Enriches LOLBAS YAMLs with Splunk Security Content detections"
+authors = ["d1vious <josehelps@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+PyYAML = "^6.0"
+tdqm = "^0.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
