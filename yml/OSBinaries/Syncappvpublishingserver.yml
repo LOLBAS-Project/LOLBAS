@@ -21,8 +21,9 @@ Detection:
 - Sigma: https://github.com/SigmaHQ/sigma/blob/fb750721b25ec4573acc32a0822d047a8ecdf269/rules/windows/deprecated/powershell_syncappvpublishingserver_exe.yml
 - Sigma: https://github.com/SigmaHQ/sigma/blob/fb750721b25ec4573acc32a0822d047a8ecdf269/rules/windows/deprecated/process_creation_syncappvpublishingserver_exe.yml
 - IOC: SyncAppvPublishingServer.exe should never be in use unless App-V is deployed
+- Splunk: https://research.splunk.com/endpoint/8dd73f89-682d-444c-8b41-8e679966ad3c/
 Resources:
 - Link: https://twitter.com/monoxgas/status/895045566090010624
 Acknowledgement:
-  - Person: Nick Landers
-    Handle: '@monoxgas'
+- Person: Nick Landers
+  Handle: '@monoxgas'

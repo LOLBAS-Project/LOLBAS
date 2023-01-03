@@ -32,7 +32,7 @@ Resources:
 - Link: https://twitter.com/bryon_/status/975835709587075072
 - Link: https://docs.microsoft.com/en-us/sql/powershell/sql-server-powershell?view=sql-server-2017
 Acknowledgement:
-  - Person: Bryon
-    Handle: '@bryon_'
-  - Person: Manny
-    Handle: '@ManuelBerrueta'
+- Person: Bryon
+  Handle: '@bryon_'
+- Person: Manny
+  Handle: '@ManuelBerrueta'

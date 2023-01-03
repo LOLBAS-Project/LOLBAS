@@ -33,7 +33,7 @@ Detection:
 Resources:
 - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diantz
 Acknowledgement:
-  - Person: Tamir Yehuda
-    Handle: '@tim8288'
-  - Person: Hai Vaknin
-    Handle: '@vakninhai'
+- Person: Tamir Yehuda
+  Handle: '@tim8288'
+- Person: Hai Vaknin
+  Handle: '@vakninhai'

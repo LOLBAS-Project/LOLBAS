@@ -3,20 +3,22 @@ Description: Schedule periodic tasks
 Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: schtasks /create /sc minute /mo 1 /tn "Reverse shell" /tr c:\some\directory\revshell.exe
-    Description: Create a recurring task to execute every minute.
-    Usecase: Create a recurring task to keep reverse shell session(s) alive
-    Category: Execute
-    Privileges: User
-    MitreID: T1053.005
-    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: schtasks /create /s targetmachine /tn "MyTask" /tr c:\some\directory\notevil.exe /sc daily
-    Description: Create a scheduled task on a remote computer for persistence/lateral movement
-    Usecase: Create a remote task to run daily relative to the the time of creation
-    Category: Execute
-    Privileges: Administrator
-    MitreID: T1053.005
-    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+- Command: schtasks /create /sc minute /mo 1 /tn "Reverse shell" /tr c:\some\directory\revshell.exe
+  Description: Create a recurring task to execute every minute.
+  Usecase: Create a recurring task to keep reverse shell session(s) alive
+  Category: Execute
+  Privileges: User
+  MitreID: T1053.005
+  OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+- Command: schtasks /create /s targetmachine /tn "MyTask" /tr c:\some\directory\notevil.exe
+    /sc daily
+  Description: Create a scheduled task on a remote computer for persistence/lateral
+    movement
+  Usecase: Create a remote task to run daily relative to the the time of creation
+  Category: Execute
+  Privileges: Administrator
+  MitreID: T1053.005
+  OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
 - Path: c:\windows\system32\schtasks.exe
 - Path: c:\windows\syswow64\schtasks.exe
@@ -33,5 +35,5 @@ Detection:
 Resources:
 - Link: https://isc.sans.edu/forums/diary/Adding+Persistence+Via+Scheduled+Tasks/23633/
 Acknowledgement:
-  - Person:
-    Handle:
+- Person: null
+  Handle: null

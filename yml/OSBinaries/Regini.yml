@@ -3,24 +3,25 @@ Description: Used to manipulate the registry
 Author: Oddvar Moe
 Created: 2020-07-03
 Commands:
-  - Command: regini.exe newfile.txt:hidden.ini
-    Description: Write registry keys from data inside the Alternate data stream.
-    Usecase: Write to registry
-    Category: ADS
-    Privileges: User
-    MitreID: T1564.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+- Command: regini.exe newfile.txt:hidden.ini
+  Description: Write registry keys from data inside the Alternate data stream.
+  Usecase: Write to registry
+  Category: ADS
+  Privileges: User
+  MitreID: T1564.004
+  OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows
+    11
 Full_Path:
 - Path: C:\Windows\System32\regini.exe
 - Path: C:\Windows\SysWOW64\regini.exe
 Code_Sample:
 - Code: null
 Detection:
-- Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_finger_usage.yml
-- IOC: finger.exe should not be run on a normal workstation.
-- IOC: finger.exe connecting to external resources.
+- Sigma: https://github.com/SigmaHQ/sigma/blob/197615345b927682ab7ad7fa3c5f5bb2ed911eed/rules/windows/process_creation/proc_creation_win_lolbin_ssh.yml
+- IOC: Event ID 4624 with process name C:\Windows\System32\OpenSSH\sshd.exe.
+- IOC: command line arguments specifying execution.
 Resources:
 - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
 Acknowledgement:
-  - Person: Eli Salem
-    Handle: '@elisalem9'
+- Person: Eli Salem
+  Handle: '@elisalem9'

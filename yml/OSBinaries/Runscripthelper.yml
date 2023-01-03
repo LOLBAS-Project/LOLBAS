@@ -1,6 +1,6 @@
 Name: Runscripthelper.exe
 Description: Execute target PowerShell script
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
 - Command: runscripthelper.exe surfacecheck \\?\C:\Test\Microsoft\Diagnosis\scripts\test.txt
@@ -17,12 +17,12 @@ Full_Path:
 Code_Sample:
 - Code: null
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_runscripthelper.yml
-  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
-  - IOC: Event 4014 - Powershell logging
-  - IOC: Event 400
+- Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_runscripthelper.yml
+- BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+- IOC: Event 4014 - Powershell logging
+- IOC: Event 400
 Resources:
 - Link: https://posts.specterops.io/bypassing-application-whitelisting-with-runscripthelper-exe-1906923658fc
 Acknowledgement:
-  - Person: Matt Graeber
-    Handle: '@mattifestation'
+- Person: Matt Graeber
+  Handle: '@mattifestation'

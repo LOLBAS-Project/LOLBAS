@@ -128,10 +128,10 @@ Resources:
 - Link: https://medium.com/@reegun/update-nuget-squirrel-uncontrolled-endpoints-leads-to-arbitrary-code-execution-b55295144b56
 - Link: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/microsoft-teams-updater-living-off-the-land/
 Acknowledgement:
-  - Person: Reegun Richard Jayapaul (SpiderLabs, Trustwave)
-    Handle: '@reegun21'
-  - Person: Mr.Un1k0d3r
-    Handle: '@MrUn1k0d3r'
-  - Person: Adam
-    Handle: '@Hexacorn'
-  - Person: Jesus Galvez
+- Person: Reegun Richard Jayapaul (SpiderLabs, Trustwave)
+  Handle: '@reegun21'
+- Person: Mr.Un1k0d3r
+  Handle: '@MrUn1k0d3r'
+- Person: Adam
+  Handle: '@Hexacorn'
+- Person: Jesus Galvez

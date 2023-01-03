@@ -40,9 +40,9 @@ Resources:
 - Link: https://enigma0x3.net/2018/06/11/the-tale-of-settingcontent-ms-files/
 - Link: https://securityboulevard.com/2018/07/attackers-test-new-document-attack-vector-that-slips-past-office-defenses/
 Acknowledgement:
-  - Person: fab
-    Handle: '@0rbz_'
-  - Person: Will
-    Handle: '@moo_hax'
-  - Person: Matt Wilson
-    Handle: '@enigma0x3'
+- Person: fab
+  Handle: '@0rbz_'
+- Person: Will
+  Handle: '@moo_hax'
+- Person: Matt Wilson
+  Handle: '@enigma0x3'

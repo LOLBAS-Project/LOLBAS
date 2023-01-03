@@ -13,7 +13,7 @@ Commands:
   MitreID: T1127
   OperatingSystem: Windows
 Full_Path:
-  - Path: no default
+- Path: no default
 Code_Sample:
 - Code: null
 Detection:
@@ -21,5 +21,5 @@ Detection:
 Resources:
 - Link: https://twitter.com/gn3mes1s/status/927680266390384640?lang=bg
 Acknowledgement:
-  - Person: Giuseppe N3mes1s
-    Handle: '@gN3mes1s'
+- Person: Giuseppe N3mes1s
+  Handle: '@gN3mes1s'
