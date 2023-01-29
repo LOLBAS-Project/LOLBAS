@@ -1,0 +1,22 @@
+---
+Name: Tar.exe
+Description: Used by Windows to extract and create archives.
+Author: 'Brian Lucero'
+Created: 2023-01-30
+Commands:
+  - Command: tar -xf \\host1\archive.tar
+    Description: Extracts archive.tar from the remote (internal) host (host1) to the current host.
+    Usecase: Copy files
+    Category: Copy
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\tar.exe
+Detection:
+  - IOC: Tar.exe extracting files from a separate host within the environment
+Resources:
+https://twitter.com/Cyber_Sorcery/status/1619819249886969856
+Acknowledgement:
+  - Person: Brian Lucero
+    Handle: '@Cyber_Sorcery'
