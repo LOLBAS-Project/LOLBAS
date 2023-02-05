@@ -27,7 +27,7 @@ Detection:
   - IOC: Processtree: code.exe -> cmd.exe -> node.exe -> winpty-agent.exe
   - IOC: Filewrite of code_tunnel.json which is parametizable, but defaults to: %UserProfile%\.vscode-cli\code_tunnel.json
 Resources:
-  - Link: https://badoption.eu/docs/blog/2023/01/31/code_c2.html
+  - Link: https://badoption.eu/blog/2023/01/31/code_c2.html
   - Link: https://code.visualstudio.com/docs/remote/tunnels
   - Link: https://code.visualstudio.com/blogs/2022/12/07/remote-even-better
 Acknowledgement:
