@@ -19,7 +19,7 @@ Commands:
     MitreID: T1105
     OperatingSystem: Windows
 Full_Path:
-  - Path: %LOCALAPPDATA%\Programs\Microsoft VS Code\Code.exe
+  - Path: '%LOCALAPPDATA%\Programs\Microsoft VS Code\Code.exe'
   - Path: C:\Program Files\Microsoft VS Code\Code.exe
   - Path: C:\Program Files (x86)\Microsoft VS Code\Code.exe
 Detection:
