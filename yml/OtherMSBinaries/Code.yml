@@ -24,8 +24,8 @@ Full_Path:
   - Path: C:\Program Files (x86)\Microsoft VS Code\Code.exe
 Detection:
   - IOC: Websocket traffic to global.rel.tunnels.api.visualstudio.com
-  - IOC: Process tree: code.exe -> cmd.exe -> node.exe -> winpty-agent.exe
-  - IOC: File write of code_tunnel.json which is parametizable, but defaults to: %UserProfile%\.vscode-cli\code_tunnel.json
+  - IOC: 'Process tree: code.exe -> cmd.exe -> node.exe -> winpty-agent.exe'
+  - IOC: 'File write of code_tunnel.json which is parametizable, but defaults to: %UserProfile%\.vscode-cli\code_tunnel.json'
 Resources:
   - Link: https://badoption.eu/blog/2023/01/31/code_c2.html
   - Link: https://code.visualstudio.com/docs/remote/tunnels
