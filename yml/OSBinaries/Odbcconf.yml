@@ -11,7 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.008
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: odbcconf INSTALLDRIVER "lolbas-project|Driver=c:\test\test.dll|APILevel=2"
+  - Command: |
+      odbcconf INSTALLDRIVER "lolbas-project|Driver=c:\test\test.dll|APILevel=2"
       odbcconf configsysdsn "lolbas-project" "DSN=lolbas-project"
     Description: Install a driver and load the DLL. Requires administrator privileges.
     Usecase: Execute dll file using technique that can evade defensive counter measures
