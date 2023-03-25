@@ -5,14 +5,14 @@ Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\shady.inf
-    Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
+    Description: "Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified). As an alternative to export name InstallHinfSection, ordinal #240 can be used."
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\calc_exe.inf
-    Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
+    Description: "Launch an executable file via the InstallHinfSection function and .inf file section directive. As an alternative to export name InstallHinfSection, ordinal #240 can be used."
     Usecase: Load an executable payload.
     Category: Execute
     Privileges: User

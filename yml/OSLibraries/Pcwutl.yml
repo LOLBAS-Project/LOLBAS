@@ -5,7 +5,7 @@ Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe pcwutl.dll,LaunchApplication calc.exe
-    Description: Launch executable by calling the LaunchApplication function.
+    Description: "Launch executable by calling the LaunchApplication function. As an alternative to export name LaunchApplication, ordinal #1 can be used."
     Usecase: Launch an executable.
     Category: Execute
     Privileges: User

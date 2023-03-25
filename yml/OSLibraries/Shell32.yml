@@ -5,21 +5,21 @@ Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
   - Command: rundll32.exe shell32.dll,Control_RunDLL c:\path\to\payload.dll
-    Description: Launch a DLL payload by calling the Control_RunDLL function.
+    Description: "Launch a DLL payload by calling the Control_RunDLL function. As an alternative to export name Control_RunDLL, ordinal #277 can be used."
     Usecase: Load a DLL payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
   - Command: rundll32.exe shell32.dll,ShellExec_RunDLL beacon.exe
-    Description: Launch an executable by calling the ShellExec_RunDLL function.
+    Description: "Launch an executable by calling the ShellExec_RunDLL function. As an alternative to export name ShellExec_RunDLL, ordinal #572 can be used."
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
   - Command: rundll32 SHELL32.DLL,ShellExec_RunDLL "cmd.exe" "/c echo hi"
-    Description: Launch command line by calling the ShellExec_RunDLL function.
+    Description: "Launch command line by calling the ShellExec_RunDLL function. As an alternative to export name ShellExec_RunDLL, ordinal #572 can be used."
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
