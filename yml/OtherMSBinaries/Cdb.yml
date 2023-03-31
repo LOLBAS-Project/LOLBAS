@@ -11,11 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
-  - Command: 'cdb.exe -pd -pn <process_name>
-
+  - Command: |
+      cdb.exe -pd -pn <process_name>
       .shell <cmd>
-
-      '
     Description: Attaching to any process and executing shell commands.
     Usecase: Run a shell command under a trusted Microsoft signed binary
     Category: Execute
