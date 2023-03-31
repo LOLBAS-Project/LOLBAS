@@ -16,6 +16,7 @@ Full_Path:
   - Path: C:\Program files (x86)\Microsoft SQL Server\110\Tools\Binn\sqlps.exe
   - Path: C:\Program files (x86)\Microsoft SQL Server\120\Tools\Binn\sqlps.exe
   - Path: C:\Program files (x86)\Microsoft SQL Server\130\Tools\Binn\sqlps.exe
+  - Path: C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\SQLPS.exe
 Code_Sample:
   - Code:
 Detection:
@@ -24,9 +25,11 @@ Detection:
   - Elastic: https://github.com/elastic/detection-rules/blob/5bdf70e72c6cd4547624c521108189af994af449/rules/windows/execution_suspicious_powershell_imgload.toml
   - Splunk: https://github.com/splunk/security_content/blob/aa9f7e0d13a61626c69367290ed1b7b71d1281fd/docs/_posts/2021-10-05-suspicious_copy_on_system32.md
 Resources:
+  - Link: https://twitter.com/ManuelBerrueta/status/1527289261350760455
   - Link: https://twitter.com/bryon_/status/975835709587075072
   - Link: https://docs.microsoft.com/en-us/sql/powershell/sql-server-powershell?view=sql-server-2017
 Acknowledgement:
   - Person: Bryon
     Handle: '@bryon_'
----
+  - Person: Manny
+    Handle: '@ManuelBerrueta'

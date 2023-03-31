@@ -10,20 +10,22 @@ Commands:
     Category: Execute
     Privileges: Administrator
     MitreID: T1127
-    OperatingSystem: Windows 10 2004
+    OperatingSystem: Windows 10 2004 and above, Windows 11
   - Command: ttdinject.exe /ClientScenario TTDRecorder /ddload 0 /ClientParams "7 tmp.run 0 0 0 0 0 0 0 0 0 0" /launch "C:/Windows/System32/calc.exe"
     Description: Execute calc using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated.
     Usecase: Spawn process using other binary
     Category: Execute
     Privileges: Administrator
     MitreID: T1127
-    OperatingSystem: Windows 10 1909
+    OperatingSystem: Windows 10 1909 and below
 Full_Path:
   - Path: C:\Windows\System32\ttdinject.exe
   - Path: C:\Windows\Syswow64\ttdinject.exe
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/7ea6ed3db65e0bd812b051d9bb4fffd27c4c4d0a/rules/windows/create_remote_thread/create_remote_thread_win_ttdinjec.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/7ea6ed3db65e0bd812b051d9bb4fffd27c4c4d0a/rules/windows/process_creation/proc_creation_win_lolbin_ttdinject.yml
   - IOC: Parent child relationship. Ttdinject.exe parent for executed command
   - IOC: Multiple queries made to the IFEO registry key of an untrusted executable (Ex. "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\payload.exe") from the ttdinject.exe process
 Resources:
@@ -33,4 +35,3 @@ Acknowledgement:
     Handle: '@oddvarmoe'
   - Person: Maxime Nadeau
     Handle: '@m_nad0'
----
