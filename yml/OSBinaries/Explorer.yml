@@ -1,7 +1,7 @@
 ---
 Name: Explorer.exe
 Description: Binary used for managing files and system components within Windows
-Author: 'Jai Minton'
+Author: Jai Minton
 Created: 2020-06-24
 Commands:
   - Command: explorer.exe /root,"C:\Windows\System32\calc.exe"
@@ -21,8 +21,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\explorer.exe
   - Path: C:\Windows\SysWOW64\explorer.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_explorer_break_proctree.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_explorer.yml
