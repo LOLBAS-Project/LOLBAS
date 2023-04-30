@@ -28,6 +28,7 @@ Full_Path:
   - Path: C:\Program Files\Microsoft Office\Office12\MSOHTMED.exe
   - Path: C:\Program Files\Microsoft Office\Office12\MSOHTMED.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/19396788dbedc57249a46efed2bb1927abc376d4/rules/windows/process_creation/proc_creation_win_lolbin_msohtmed_download.yml
   - IOC: Suspicious Office application internet/network traffic
 Acknowledgement:
   - Person: Nir Chako (Pentera)

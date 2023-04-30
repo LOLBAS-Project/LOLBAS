@@ -41,7 +41,7 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6199a703221a98ae6ad343c79c558da375203e4e/rules/windows/process_creation/proc_creation_win_lolbin_adplus.yml
   - IOC: As a Windows SDK binary, execution on a system may be suspicious
 Resources:
-  - Link: https://blog.thecybersecuritytutor.com/adplus-debugging-tool-lsass-dump/
+  - Link: https://mrd0x.com/adplus-debugging-tool-lsass-dump/
   - Link: https://twitter.com/nas_bench/status/1534916659676422152
   - Link: https://twitter.com/nas_bench/status/1534915321856917506
 Acknowledgement:
