@@ -16,7 +16,7 @@ Full_Path:
 Detection:
   - IOC: Tar.exe extracting files from a separate host within the environment
 Resources:
-https://twitter.com/Cyber_Sorcery/status/1619819249886969856
+- https://twitter.com/Cyber_Sorcery/status/1619819249886969856
 Acknowledgement:
   - Person: Brian Lucero
     Handle: '@Cyber_Sorcery'
