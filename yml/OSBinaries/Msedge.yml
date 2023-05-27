@@ -18,6 +18,13 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
+  - Command: msedge.exe --disable-gpu-sandbox --gpu-launcher="C:\Windows\system32\cmd.exe /c ping google.com &&"
+    Description: Edge spawns cmd.exe as a child process of msedge.exe and executes the ping command
+    Usecase: Executes a process under a trusted Microsoft signed binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\Program Files\Microsoft\Edge\Application\msedge.exe
   - Path: c:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
