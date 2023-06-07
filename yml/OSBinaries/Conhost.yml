@@ -22,7 +22,7 @@ Full_Path:
   - Path: c:\windows\system32\conhost.exe
 Detection:
   - IOC: conhost.exe spawning unexpected processes
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/bea6f18d350d9c9fdc067f93dde0e9b11cc22dc2/rules/windows/process_creation/proc_creation_win_susp_conhost.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%207dc2dedd-7603-461a-bc13-15803d132355
 Resources:
   - Link: https://www.hexacorn.com/blog/2020/05/25/how-to-con-your-host/
   - Link: https://twitter.com/Wietze/status/1511397781159751680

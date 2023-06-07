@@ -45,10 +45,10 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/8beb70e970b814d0ab60625206ea0d8a21a9bff8/rules/windows/image_load/sysmon_wmic_remote_xsl_scripting_dlls.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff0f1a0222b5100120ae3e43df18593f904c69c0/rules/windows/process_creation/win_xsl_script_processing.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_bypass_squiblytwo.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/c90e31275d2f98b21e55df8a46d0678cfca458d6/rules/windows/process_creation/win_susp_wmic_eventconsumer_create.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2006ce37c2-61ab-4f05-9ff5-b1a96d18ae32
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2005c36dd6-79d6-4a9a-97da-3db20298ab2d
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%208d63dadf-b91b-4187-87b6-34a1114577ea
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20ebef4391-1a81-4761-a40a-1db446c0e625
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_suspicious_wmi_script.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/61afb1c1c0c3f50637b1bb194f3e6fb09f476e50/rules/windows/persistence_via_windows_management_instrumentation_event_subscription.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/82ec6ac1eeb62a1383792719a1943b551264ed16/rules/windows/defense_evasion_suspicious_managedcode_host_process.toml

@@ -22,9 +22,9 @@ Full_Path:
   - Path: C:\Windows\System32\desk.cpl
   - Path: C:\Windows\SysWOW64\desk.cpl
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/1d7ee1cd197d3b35508e2a5bf34d9d3b6ca4f504/rules/windows/file/file_event/file_event_win_new_src_file.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/1f8e37351e7c5d89ce7808391edaef34bd8db6c0/rules/windows/process_creation/proc_creation_win_lolbin_rundll32_installscreensaver.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/940f89d43dbac5b7108610a5bde47cda0d2a643b/rules/windows/registry/registry_set/registry_set_scr_file_executed_by_rundll32.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20c048f047-7e2a-4888-b302-55f509d4a91d
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2015bd98ea-55f4-4d37-b09a-e7caa0fa2221
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2040b6e656-4e11-4c0c-8772-c1cc6dae34ce
 Resources:
   - Link: https://vxug.fakedoma.in/zines/29a/29a7/Articles/29A-7.030.txt
   - Link: https://twitter.com/pabraeken/status/998627081360695297

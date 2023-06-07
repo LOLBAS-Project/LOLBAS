@@ -22,7 +22,7 @@ Full_Path:
   - Path: C:\Windows\System32\Presentationhost.exe
   - Path: C:\Windows\SysWOW64\Presentationhost.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/a38c0218765a89f5d18eadd49639c72a5d25d944/rules/windows/process_creation/win_susp_presentationhost_execution.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20d149a338-ae47-408e-a8ff-9064220c0b34
   - IOC: Execution of .xbap files may not be common on production workstations
 Resources:
   - Link: https://github.com/api0cradle/ShmooCon-2015/blob/master/ShmooCon-2015-Simple-WLEvasion.pdf

@@ -14,7 +14,7 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\runexehelper.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/197615345b927682ab7ad7fa3c5f5bb2ed911eed/rules/windows/process_creation/proc_creation_win_lolbin_runexehelper.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20cd71385d-fd9b-4691-9b98-2b1f7e508714
   - IOC: c:\windows\system32\runexehelper.exe is run
   - IOC: Existence of runexewithargs_output.txt file
 Resources:

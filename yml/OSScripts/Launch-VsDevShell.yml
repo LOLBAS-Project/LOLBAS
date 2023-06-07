@@ -22,7 +22,7 @@ Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\Launch-VsDevShell.ps1
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/6199a703221a98ae6ad343c79c558da375203e4e/rules/windows/process_creation/proc_creation_win_lolbin_launch_vsdevshell.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2045d3a03d-f441-458c-8883-df101a3bb146
 Resources:
   - Link: https://twitter.com/nas_bench/status/1535981653239255040
 Acknowledgement:

@@ -23,7 +23,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/f16aca7a353bb01d9862ea1f2a10fa0d866e83c3/rules/windows/process_creation/process_creation_msdeploy.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20646bc99f-6682-4b47-a73a-17b1b64c9d34
 Resources:
   - Link: https://twitter.com/pabraeken/status/995837734379032576
   - Link: https://twitter.com/pabraeken/status/999090532839313408

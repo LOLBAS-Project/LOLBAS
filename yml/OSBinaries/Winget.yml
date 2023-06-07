@@ -19,7 +19,7 @@ Detection:
   - IOC: winget.exe spawned with local manifest file
   - IOC: Sysmon Event ID 1 - Process Creation
   - Analysis: https://saulpanders.github.io/2022/01/02/New-Year-New-LOLBAS.html
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/8bb3379b6807610d61d29db1d76f5af4840b8208/rules/windows/process_creation/proc_creation_win_lolbin_execution_via_winget.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20313d6012-51a0-4d93-8dfc-de8553239e25
 Resources:
   - Link: https://saulpanders.github.io/2022/01/02/New-Year-New-LOLBAS.html
   - Link: https://docs.microsoft.com/en-us/windows/package-manager/winget/#production-recommended

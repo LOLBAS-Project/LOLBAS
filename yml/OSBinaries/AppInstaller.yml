@@ -14,7 +14,7 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.11.2521.0_x64__8wekyb3d8bbwe\AppInstaller.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/bdb00f403fd8ede0daa04449ad913200af9466ff/rules/windows/dns_query/win_dq_lobas_appinstaller.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%207cff77e1-9663-46a3-8260-17f2e1aa9d0a
 Resources:
   - Link: https://twitter.com/notwhickey/status/1333900137232523264
 Acknowledgement:

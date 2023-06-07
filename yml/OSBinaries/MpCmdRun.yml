@@ -32,7 +32,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/159bf4bbc103cc2be3fef4b7c2e7c8b23b63fd10/rules/windows/process_creation/win_susp_mpcmdrun_download.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2046123129-1024-423e-9fae-43af4a0fa9a5
   - Elastic: https://github.com/elastic/detection-rules/blob/6ef5c53b0c15e344f0f2d1649941391aea6fa253/rules/windows/command_and_control_remote_file_copy_mpcmdrun.toml
   - IOC: MpCmdRun storing data into alternate data streams.
   - IOC: MpCmdRun retrieving a file from a remote machine or the internet that is not expected.

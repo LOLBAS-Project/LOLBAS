@@ -17,7 +17,7 @@ Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\Terminal\ServiceHub\os64\OpenConsole.exe
 Detection:
   - IOC: OpenConsole.exe spawning unexpected processes
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/9e0ef7251b075f15e7abafbbec16d3230c5fa477/rules/windows/process_creation/proc_creation_win_lolbin_openconsole.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20814c95cc-8192-4378-a70a-f1aafd877af1
 Resources:
   - Link: https://twitter.com/nas_bench/status/1537563834478645252
 Acknowledgement:

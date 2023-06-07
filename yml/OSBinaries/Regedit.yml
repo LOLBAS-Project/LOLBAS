@@ -23,7 +23,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/d9edc9f0e365257aa497cc7707e58f396088958e/rules/windows/process_creation/win_regedit_import_keys_ads.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%200b80ade5-6997-4b1d-99a1-71701778ea61
   - IOC: regedit.exe reading and writing to alternate data stream
   - IOC: regedit.exe should normally not be executed by end-users
 Resources:

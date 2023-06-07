@@ -16,7 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_use_of_sqltoolsps_bin.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20a746c9b8-a2fb-4ee5-a428-92bee9e99060
   - Splunk: https://github.com/splunk/security_content/blob/aa9f7e0d13a61626c69367290ed1b7b71d1281fd/docs/_posts/2021-10-05-suspicious_copy_on_system32.md
 Resources:
   - Link: https://twitter.com/pabraeken/status/993298228840992768

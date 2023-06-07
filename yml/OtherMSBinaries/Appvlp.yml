@@ -31,7 +31,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/8b170ff5628376c87632635a5fde4e48bba70275/rules/windows/builtin/win_asr_bypass_via_appvlp_re.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%209c7e131a-0f2c-4ae0-9d43-b04f4e266d43
 Resources:
   - Link: https://github.com/MoooKitty/Code-Execution
   - Link: https://twitter.com/moo_hax/status/892388990686347264

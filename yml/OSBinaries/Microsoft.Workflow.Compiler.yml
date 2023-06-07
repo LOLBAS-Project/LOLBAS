@@ -30,7 +30,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/85d47aeabc25bbd023284849f4466c1e00b855ce/rules/windows/process_creation/win_workflow_compiler.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20419dbf2b-8a9b-4bea-bf99-7544b050ec8d
   - Splunk: https://github.com/splunk/security_content/blob/961a81d4a5cb5c5febec4894d6d812497171a85c/detections/endpoint/suspicious_microsoft_workflow_compiler_usage.yml
   - Splunk: https://github.com/splunk/security_content/blob/18f63553a9dc1a34122fa123deae2b2f9b9ea391/detections/endpoint/suspicious_microsoft_workflow_compiler_rename.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml

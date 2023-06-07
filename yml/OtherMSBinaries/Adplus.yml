@@ -38,7 +38,7 @@ Full_Path:
 Code_Sample:
   - Code: https://gist.github.com/nasbench/e34ca2cd90e3a845a558a102a4f607da
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/6199a703221a98ae6ad343c79c558da375203e4e/rules/windows/process_creation/proc_creation_win_lolbin_adplus.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%202f869d59-7f6a-4931-992c-cce556ff2d53
   - IOC: As a Windows SDK binary, execution on a system may be suspicious
 Resources:
   - Link: https://mrd0x.com/adplus-debugging-tool-lsass-dump/

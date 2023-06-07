@@ -14,7 +14,7 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_<version_packageid>\wt.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/add077b8f54474cbfa859cf45a1ca62be5462b0f/rules/windows/process_creation/proc_creation_win_windows_terminal_susp_children.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%208de89e52-f6e1-4b5b-afd1-41ecfa300d48
 Resources:
   - Link: https://twitter.com/nas_bench/status/1552100271668469761
 Acknowledgement:

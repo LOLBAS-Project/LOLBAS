@@ -24,8 +24,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/5951ad1d9a781a49d61df9af03c7b83ac67a0012/rules/windows/image_load/process_creation_tttracer_mod_load.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/5951ad1d9a781a49d61df9af03c7b83ac67a0012/rules/windows/image_load/sysmon_tttracer_mod_load.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%200b4ae027-2a2d-4b93-8c7e-962caaba5b2a
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20e76c8240-d68f-4773-8880-5c6f63595aaf
   - Elastic: https://github.com/elastic/detection-rules/blob/5bdf70e72c6cd4547624c521108189af994af449/rules/windows/credential_access_cmdline_dump_tool.toml
   - IOC: Parent child relationship. Tttracer parent for executed command
 Resources:

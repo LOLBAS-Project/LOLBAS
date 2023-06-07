@@ -21,7 +21,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\spool\tools\PrintBrm.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/35a7244c62820fbc5a832e50b1e224ac3a1935da/rules/windows/process_creation/proc_creation_win_lolbin_printbrm.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20cafeeba3-01da-4ab4-b6c4-a31b1d9730c7
   - IOC: PrintBrm.exe should not be run on a normal workstation
 Resources:
   - Link: https://twitter.com/elliotkillick/status/1404117015447670800

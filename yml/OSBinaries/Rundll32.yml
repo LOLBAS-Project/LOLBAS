@@ -66,8 +66,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/network_connection/sysmon_rundll32_net_connections.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20cdc8da7d-c303-42f8-b08c-b4ab47230263
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20e593cf51-88db-4ee1-b920-37e89012a3c9
   - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/defense_evasion_unusual_network_connection_via_rundll32.toml
   - IOC: Outbount Internet/network connections made from rundll32
   - IOC: Suspicious use of cmdline flags such as -sta

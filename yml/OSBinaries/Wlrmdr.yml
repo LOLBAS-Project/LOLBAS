@@ -16,7 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/35a7244c62820fbc5a832e50b1e224ac3a1935da/rules/windows/process_creation/proc_creation_win_lolbin_wlrmdr.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%209cfc00b6-bfb7-49ce-9781-ef78503154bb
   - IOC: wlrmdr.exe spawning any new processes
 Resources:
   - Link: https://twitter.com/0gtweet/status/1493963591745220608

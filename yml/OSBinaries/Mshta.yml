@@ -45,13 +45,13 @@ Full_Path:
 Code_Sample:
   - Code: https://gist.github.com/bohops/6ded40c4989c673f2e30b9a6c1985019
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/05c58b4892942c34bfa01e9ada88ef2663858e1c/rules/windows/process_creation/win_susp_mshta_pattern.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_invoke_obfuscation_via_use_mhsta.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_lethalhta.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/f4ac416ef44862930730f8b7f16362b0e987bc71/rules/windows/process_creation/win_shell_spawn_mshta.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff0f1a0222b5100120ae3e43df18593f904c69c0/rules/windows/process_creation/win_mshta_javascript.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/file_event/sysmon_susp_clr_logs.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/image_load/sysmon_susp_script_dotnet_clr_dll_load.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20e32f92d1-523e-49c3-9374-bdb13b46a3ba
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20ac20ae82-8758-4f38-958e-b44a3140ca88
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20ed5d72a6-f8f4-479d-ba79-02f6a80d7471
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20772bb24c-8df2-4be0-9157-ae4dfa794037
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2067f113fa-e23d-4271-befa-30113b3e08b1
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20e4b63079-6198-405c-abd7-3fe8b0ce3263
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%204508a70e-97ef-4300-b62b-ff27992990ea
   - Elastic: https://github.com/elastic/detection-rules/blob/f8f643041a584621e66cf8e6d534ad3db92edc29/rules/windows/defense_evasion_mshta_beacon.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/cc241c0b5ec590d76cb88ec638d3cc37f68b5d50/rules/windows/lateral_movement_dcom_hta.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/82ec6ac1eeb62a1383792719a1943b551264ed16/rules/windows/defense_evasion_suspicious_managedcode_host_process.toml

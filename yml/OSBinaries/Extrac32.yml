@@ -39,8 +39,8 @@ Code_Sample:
   - Code:
 Detection:
   - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/defense_evasion_misc_lolbin_connecting_to_the_internet.toml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/0f33cbc85bf4b23b8d8308bfcc8b21a9e5431ee7/rules/windows/process_creation/win_pc_lolbas_extrac32.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/0f33cbc85bf4b23b8d8308bfcc8b21a9e5431ee7/rules/windows/process_creation/win_pc_lolbas_extrac32_ads.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20aa8e035d-7be4-48d3-a944-102aec04400d
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%204b13db67-0c45-40f1-aba8-66a1a7198a1e
 Resources:
   - Link: https://oddvar.moe/2018/04/11/putting-data-in-alternate-data-streams-and-how-to-execute-it-part-2/
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f

@@ -24,8 +24,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_mmc_spawn_shell.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/b731c2059445eef53e37232a5f3634c3473aae0c/rules/windows/file_event/sysmon_uac_bypass_dotnet_profiler.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2005a2ab7e-ce11-4b63-86db-ab32e763e11d
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2093a19907-d4f9-4deb-9f91-aac4692776a6
 Resources:
   - Link: https://bohops.com/2018/08/18/abusing-the-com-registry-structure-part-2-loading-techniques-for-evasion-and-persistence/
   - Link: https://offsec.almond.consulting/UAC-bypass-dotnet.html

@@ -17,8 +17,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/fb750721b25ec4573acc32a0822d047a8ecdf269/rules/windows/deprecated/powershell_syncappvpublishingserver_exe.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/fb750721b25ec4573acc32a0822d047a8ecdf269/rules/windows/deprecated/process_creation_syncappvpublishingserver_exe.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%209f7aa113-9da6-4a8d-907c-5f1a4b908299
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20fde7929d-8beb-4a4c-b922-be9974671667
   - IOC: SyncAppvPublishingServer.exe should never be in use unless App-V is deployed
 Resources:
   - Link: https://twitter.com/monoxgas/status/895045566090010624

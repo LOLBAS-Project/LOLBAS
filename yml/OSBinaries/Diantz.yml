@@ -24,8 +24,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/0593446f96c57a8b64e2b5b9fd15a20f1c56acab/rules/windows/process_creation/win_pc_lolbas_diantz_ads.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/0f33cbc85bf4b23b8d8308bfcc8b21a9e5431ee7/rules/windows/process_creation/win_pc_lolbas_diantz_remote_cab.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%206b369ced-4b1d-48f1-b427-fdc0de0790bd
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20185d7418-f250-42d0-b72e-0c8b70661e93
   - IOC: diantz storing data into alternate data streams.
   - IOC: diantz getting a file from a remote machine or the internet.
 Resources:

@@ -16,10 +16,10 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_wsreset_uac_bypass.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/af599e487728ec95eab96d8a980718aa6a0699e4/rules/windows/process_creation/win_uac_bypass_wsreset.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_uac_wsreset.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/registry_event/sysmon_bypass_via_wsreset.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20bdc8918e-a1d5-49d1-9db7-ea0fd91aa2ae
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%2089a9a0e0-f61a-42e5-8957-b1479565a658
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20d797268e-28a9-49a7-b9a8-2f5039011c5c
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%206ea3bf32-9680-422d-9f50-e90716b12a66
   - Splunk: https://github.com/splunk/security_content/blob/18f63553a9dc1a34122fa123deae2b2f9b9ea391/detections/endpoint/wsreset_uac_bypass.yml
   - IOC: wsreset.exe launching child process other than mmc.exe
   - IOC: Creation or modification of the registry value HKCU\Software\Classes\AppX82a6gwre4fdg3bt635tn5ctqjf8msdd2\Shell\open\command

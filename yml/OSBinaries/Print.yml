@@ -31,7 +31,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_print.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20bafac3d6-7de9-4dd9-8874-4a1194b493ed
   - IOC: Print.exe retrieving files from internet
   - IOC: Print.exe creating executable files on disk
 Resources:

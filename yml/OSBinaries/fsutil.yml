@@ -24,7 +24,7 @@ Full_Path:
 Detection:
   - IOC: fsutil.exe should not be run on a normal workstation
   - IOC: file setZeroData (not case-sensitive) in the process arguments
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff5102832031425f6eed011dd3a2e62653008c94/rules/windows/process_creation/proc_creation_win_susp_fsutil_usage.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20add64136-62e5-48ea-807e-88638d02df1e
 Acknowledgement:
   - Person: Elliot Killick
     Handle: '@elliotkillick'

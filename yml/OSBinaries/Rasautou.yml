@@ -16,7 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_rasautou_dll_execution.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20cd3d1298-eb3b-476c-ac67-12847de55813
   - IOC: rasautou.exe command line containing -d and -p
 Resources:
   - Link: https://github.com/fireeye/DueDLLigence

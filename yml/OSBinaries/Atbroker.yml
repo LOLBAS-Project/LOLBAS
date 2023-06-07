@@ -15,8 +15,8 @@ Full_Path:
   - Path: C:\Windows\System32\Atbroker.exe
   - Path: C:\Windows\SysWOW64\Atbroker.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/eb406ba36fc607986970c09e53058af412093647/rules/windows/process_creation/win_susp_atbroker.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/7bca85e40618126643b9712b80bd663c21908e26/rules/windows/registry_event/sysmon_susp_atbroker_change.yml
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%20f24bcaea-0cd1-11eb-adc1-0242ac120002
+  - Sigma: https://github.com/search?q=repo%3ASigmaHQ%2Fsigma%209577edbb-851f-4243-8c91-1d5b50c1a39b
   - IOC: Changes to HKCU\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\Configuration
   - IOC: Changes to HKLM\Software\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs
   - IOC: Unknown AT starting C:\Windows\System32\ATBroker.exe /start malware
