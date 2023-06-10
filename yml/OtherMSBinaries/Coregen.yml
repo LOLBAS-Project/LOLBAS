@@ -31,6 +31,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b02e3b698afbaae143ac4fb36236eb0b41122ed7/rules/windows/image_load/image_load_side_load_coregen.yml
   - IOC: coregen.exe loading .dll file not in "C:\Program Files (x86)\Microsoft Silverlight\5.1.50918.0\"
   - IOC: coregen.exe loading .dll file not named coreclr.dll
   - IOC: coregen.exe command line containing -L or -l
