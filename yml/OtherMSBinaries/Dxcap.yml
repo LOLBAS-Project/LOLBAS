@@ -5,6 +5,7 @@ Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
   - Command: Dxcap.exe -c C:\Windows\System32\notepad.exe
+  - Command: DXCap.exe -file C:\Windows\Temp\log.txt -C C:\Windows\System32\ftp.exe
     Description: Launch notepad as a subprocess of Dxcap.exe
     Usecase: Local execution of a process as a subprocess of Dxcap.exe
     Category: Execute
@@ -23,3 +24,5 @@ Resources:
 Acknowledgement:
   - Person: Matt harr0ey
     Handle: '@harr0ey'
+  - Person: Vikas Singh
+    Handle: '@vikas891'
