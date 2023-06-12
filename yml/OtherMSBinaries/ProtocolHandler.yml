@@ -21,6 +21,7 @@ Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Office\Office15\ProtocolHandler.exe
   - Path: C:\Program Files\Microsoft Office\Office15\ProtocolHandler.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b02e3b698afbaae143ac4fb36236eb0b41122ed7/rules/windows/process_creation/proc_creation_win_lolbin_protocolhandler_download.yml
   - IOC: Suspicious Office application Internet/network traffic
 Acknowledgement:
   - Person: Nir Chako (Pentera)
