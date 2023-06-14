@@ -1,0 +1,27 @@
+---
+Name: Dllhost.exe
+Description: Dllhost.exe is COM Surrogate object used to execute code using DLL Surrogate porcess, means actions performed via these COM objects will originate from dllhost.exe process.
+Author: Pawan Kumar N
+Created: '2023-06-13'
+Commands:
+  - Command: dllhost.exe /Processid:{CLSID}
+    Description: using above command we can launch any COM objects/process without any UAC prompt
+    Usecase: Adversaries may bypass UAC mechanisms to elevate process privileges on system.
+    Category: Execute
+    Privileges: User
+    MitreID: T1548.002
+    OperatingSystem: Windows 10 Pro  
+Full_Path:
+  - Path: C:\Windows\System32\dllhost.exe
+  - Path: C:\Windows\SysWOW64\dllhost.exe
+Detection:
+  - IOC: command line arguments specifying execution
+  - Elastic: https://www.elastic.co/guide/en/security/current/uac-bypass-attempt-with-ieditionupgrademanager-elevated-com-interface.html
+Resources:
+  - Link: https://medium.com/falconforce/falconfriday-detecting-uac-bypasses-0xff16-86c2a9107abf
+  - Link: https://twitter.com/ACEResponder/status/1644491679225860097
+  - Link: https://www.elastic.co/guide/en/security/current/uac-bypass-attempt-with-ieditionupgrademanager-elevated-com-interface.html
+  - Link: https://www.reddit.com/r/blueteamsec/comments/jdbnpt/what_is_the_dllhostexe_process_actually_running/
+  
+Acknowledgement:
+  - Person: Pawan Kumar N
