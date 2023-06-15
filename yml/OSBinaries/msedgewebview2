@@ -1,0 +1,70 @@
+---
+Name: msedgewebview2.exe
+Description: msedgewebview2.exe is the executable file for Microsoft Edge WebView2, which is a web browser control used by applications to display web content.
+Author: 
+Created: 
+Commands:
+  - Command: msedgewebview2.exe --no-sandbox --browser-subprocess-path="C:\Windows\System32\calc.exe
+    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and uses the Calculator application as its subprocess.
+    Category: Execution
+    Privileges: Low privileges
+    MitreID: TA0002
+    OperatingSystem: Windows 10 All, Windows 11 All
+  - Command: msedgewebview2.exe --utility-cmd-prefix="calc.exe"
+    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and uses the Calculator application as its subprocess.
+    Category: Execution
+    Privileges: Low privileges
+    MitreID: TA0002
+    OperatingSystem: Windows 10 All, Windows 11 All
+  - Command: msedgewebview2.exe --disable-gpu-sandbox --gpu-launcher="calc.exe"
+    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and uses the Calculator application as its subprocess.
+    Category: Execution
+    Privileges: Low privileges
+    MitreID: TA0002
+    OperatingSystem: Windows 10 All, Windows 11 All
+  - Command: msedgewebview2.exe --no-sandbox --renderer-cmd-prefix="calc.exe"
+    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and uses the Calculator application as its subprocess.
+    Category: Execution
+    Privileges: Low privileges
+    MitreID: TA0002
+    OperatingSystem: Windows 10 All, Windows 11 All
+
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft\Edge\Application\114.0.1823.43\msedgewebview2.exe
+Code_Sample:
+  - Code: |
+      # Example code for using Microsoft Edge WebView2
+      import webview
+      webview.create_window("My Web App", "https://example.com")
+Detection:
+  - IOC: Event ID 1
+  - IOC: msedgewebview2.exe spawned
+  - Analysis:
+  - Sigma:
+  - Elastic:
+  - Splunk:
+  - BlockRule:
+  - Sysmon:
+    <RuleGroup name="" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <Image condition="end with">.exe</Image>
+        <CommandLine condition="contains">--gpu-launcher=</CommandLine>
+        <CommandLine condition="contains">--utility-cmd-prefix=</CommandLine>
+        <CommandLine condition="contains">--renderer-cmd-prefix=</CommandLine>
+        <CommandLine condition="contains">--browser-subprocess-path=</CommandLine>
+      </ProcessCreate>
+    </RuleGroup>
+
+Resources:
+  - Link:
+  - Link:
+  - Link:
+Acknowledgement:
+  - Person: Uriel Kosayev
+    Handle: https://twitter.com/MalFuzzer?s=20
+  - Person: Hai Vaknin
+    Handle: https://twitter.com/VakninHai?s=20
+  - Person: Tamir Yehuda
+    Handle: https://twitter.com/Tamirye94?s=20
+  - Person: Matan Bahar
+    Handle: https://twitter.com/Bl4ckShad3?s=20
