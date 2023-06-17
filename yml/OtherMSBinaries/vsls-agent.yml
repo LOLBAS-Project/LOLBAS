@@ -14,7 +14,7 @@ Commands:
 Full_Path:
   - Path: c:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\Extensions\Microsoft\LiveShare\Agent\vsls-agent.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_vslsagent_agentextensionpath_load.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_vslsagent_agentextensionpath_load.yml
 Resources:
   - Link: https://twitter.com/bohops/status/1583916360404729857
 Acknowledgement:
