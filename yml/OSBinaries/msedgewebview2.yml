@@ -31,7 +31,7 @@ Commands:
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft\Edge\Application\114.0.1823.43\msedgewebview2.exe
 Detection:
-  - IOC: msedgewebview2.exe spawned with any of the following: --gpu-launcher, --utility-cmd-prefix, --renderer-cmd-prefix, --browser-subprocess-path
+  - IOC: 'msedgewebview2.exe spawned with any of the following: --gpu-launcher, --utility-cmd-prefix, --renderer-cmd-prefix, --browser-subprocess-path'
 Resources:
   - Link: https://medium.com/@MalFuzzer/one-electron-to-rule-them-all-dc2e9b263daf
 Acknowledgement:
