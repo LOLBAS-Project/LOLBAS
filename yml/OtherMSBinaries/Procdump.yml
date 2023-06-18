@@ -23,7 +23,7 @@ Commands:
 Full_Path:
   - Path: no default
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/f36b1cbd2a3f1a7423f43a67a182549778700615/rules/windows/process_creation/win_susp_procdump.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_renamed_sysinternals_procdump.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/f36b1cbd2a3f1a7423f43a67a182549778700615/rules/windows/process_creation/win_procdump.yml
   - Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/dump_lsass_via_procdump.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/5bdf70e72c6cd4547624c521108189af994af449/rules/windows/credential_access_cmdline_dump_tool.toml

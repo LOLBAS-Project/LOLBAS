@@ -18,9 +18,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/2d36d62e88c45a59e22d17849b41ba346a1cb66a/rules/windows/process_creation/win_cl_invocation_lolscript.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/e5b3a1cc14aaad6f2acc569fab9849567f98df3e/rules/windows/powershell/powershell_script/powershell_cl_invocation_lolscript_count.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/e5b3a1cc14aaad6f2acc569fab9849567f98df3e/rules/windows/powershell/powershell_script/powershell_cl_invocation_lolscript.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_lolbin_cl_invocation.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/powershell/powershell_script/posh_ps_cl_invocation_lolscript.yml#L4
 Resources:
   - Link:
 Acknowledgement:
