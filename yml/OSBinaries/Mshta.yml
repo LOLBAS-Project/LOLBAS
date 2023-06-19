@@ -48,9 +48,8 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/05c58b4892942c34bfa01e9ada88ef2663858e1c/rules/windows/process_creation/win_susp_mshta_pattern.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_invoke_obfuscation_via_use_mhsta.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_lethalhta.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/f4ac416ef44862930730f8b7f16362b0e987bc71/rules/windows/process_creation/win_shell_spawn_mshta.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/ff0f1a0222b5100120ae3e43df18593f904c69c0/rules/windows/process_creation/win_mshta_javascript.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/file_event/sysmon_susp_clr_logs.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/file/file_event/file_event_win_net_cli_artefact.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/image_load/sysmon_susp_script_dotnet_clr_dll_load.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/f8f643041a584621e66cf8e6d534ad3db92edc29/rules/windows/defense_evasion_mshta_beacon.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/cc241c0b5ec590d76cb88ec638d3cc37f68b5d50/rules/windows/lateral_movement_dcom_hta.toml
