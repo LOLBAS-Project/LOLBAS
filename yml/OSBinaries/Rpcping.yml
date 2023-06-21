@@ -24,7 +24,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rpcping.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_rpcping_credential_capture.yml
 Resources:
   - Link: https://github.com/vysec/RedTips
   - Link: https://twitter.com/vysecurity/status/974806438316072960

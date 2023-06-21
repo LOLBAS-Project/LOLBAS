@@ -17,7 +17,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/b08b3e2b0d5111c637dbede1381b07cb79f8c2eb/rules/windows/process_creation/process_creation_dns_serverlevelplugindll.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_dnscmd_install_new_server_level_plugin_dll.yml
   - IOC: Dnscmd.exe loading dll from UNC/arbitrary path
 Resources:
   - Link: https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83

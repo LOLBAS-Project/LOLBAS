@@ -16,7 +16,7 @@ Full_Path:
 Code_Sample:
   - Code: https://github.com/LuxNoBulIshit/test.inf/blob/main/inf
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/a8a0d546f347febb0423aa920dbc10713cc1f92f/rules/windows/process_creation/process_creation_lolbins_suspicious_driver_installed_by_pnputil.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_susp_driver_installed_by_pnputil.yml
 Acknowledgement:
   - Person: Hai Vaknin(Lux)
     Handle: '@LuxNoBulIshit'
