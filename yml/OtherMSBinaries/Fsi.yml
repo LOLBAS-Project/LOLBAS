@@ -1,3 +1,4 @@
+---
 Name: Fsi.exe
 Description: 64-bit FSharp (F#) Interpreter included with Visual Studio and DotNet Core SDK.
 Author: Jimmy (@bohops)
