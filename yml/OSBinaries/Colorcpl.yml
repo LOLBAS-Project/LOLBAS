@@ -1,0 +1,25 @@
+---
+Name: Colorcpl.exe
+Description: Binary that handles Color Management
+Author: 'Arjan Onwezen'
+Created: 2023-06-26
+Commands:
+  - Command: colorcpl test.txt
+    Description: Copies source file to system folder.
+    Usecase: Copies files from A to %Systemroot%\system32\spool\drivers\color\, typically c:\windows\system32\spool\drivers\color\
+    Category: Copy
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\colorcpl.exe
+  - Path: C:\Windows\SysWOW64\colorcpl.exe
+Code_Sample:
+  - Code:
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/file/file_event/file_event_win_susp_colorcpl.yml
+Resources:
+  - Link: https://twitter.com/eral4m/status/1480468728324231172?s=20
+Acknowledgement:
+  - Person: eral4m
+    Handle: '@eral4m'
