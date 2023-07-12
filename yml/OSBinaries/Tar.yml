@@ -25,9 +25,9 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
- - Command: tar -x -f  c:\folder\folder\file
+  - Command: tar -x -f  c:\folder\folder\file
     Description: Decrypt encrypted tools/software.
-    Usecase: Can also be used to unzip office documents and zip files.
+    Usecase: Can also be used to unzip office documents and zip files
     Category: Deobfuscate/Decode Files or Information
     Privileges: User
     MitreID: T1140
@@ -44,3 +44,4 @@ Acknowledgement:
   - Person: Brian Lucero
     Handle: '@Cyber_Sorcery'
   - Person: Avester Fahimipour
+    Handle: '@avesta_f'
