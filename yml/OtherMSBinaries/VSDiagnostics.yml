@@ -1,0 +1,30 @@
+---
+Name: VSDiagnostics.exe
+Description: Command-line tool used for performing diagnostics.
+Author: Bobby Cooke
+Created: 2023-07-12
+Commands:
+  - Command: VSDiagnostics.exe start 1 /launch:calc.exe
+    Description: Starts a collection session with sessionID 1 and calls kernelbase.CreateProcessW to launch specified executable.
+    Usecase: Proxy execution of binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10 
+  - Command: VSDiagnostics.exe start 2 /launch:cmd.exe /launchArgs:"/c calc.exe"
+    Description: Starts a collection session with sessionID 2 and calls kernelbase.CreateProcessW to launch specified executable. Arguments specified in launchArgs are passed to CreateProcessW.
+    Usecase: Proxy execution of binary with arguments
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10
+Full_Path:
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Team Tools\DiagnosticsHub\Collector\VSDiagnostics.exe
+Detection:
+  - IOC: DS0017	Command	Execution
+  - IOC: DS0009	Process Creation
+Resources:
+  - Link: http://twitter.com/something
+Acknowledgement:
+  - Person: Bobby Cooke
+    Handle: '@0xBoku'
