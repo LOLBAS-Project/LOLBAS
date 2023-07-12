@@ -7,14 +7,14 @@ Commands:
   - Command: tar -cf compressedfilename \\shared\folder\file
     Description: compress a shared file to the local machine.
     Usecase: Data collection and movement
-    Category: Archive Collected Data
+    Category: Conceal
     Privileges: User
     MitreID: T1560
     OperatingSystem: Windows 10, Windows 11
   - Command: tar -c -f compressedfilename c:\folder\path\file
     Description: compress a local file.
     Usecase: Staging files for exfiltration
-    Category: Archive Collected Data
+    Category: Conceal
     Privileges: User
     MitreID: T1560
     OperatingSystem: Windows 10, Windows 11
@@ -28,7 +28,7 @@ Commands:
   - Command: tar -x -f  c:\folder\folder\file
     Description: Decrypt encrypted tools/software.
     Usecase: Can also be used to unzip office documents and zip files
-    Category: Deobfuscate/Decode Files or Information
+    Category: Decode
     Privileges: User
     MitreID: T1140
     OperatingSystem: Windows 10, Windows 11
