@@ -21,10 +21,10 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Team Tools\DiagnosticsHub\Collector\VSDiagnostics.exe
 Detection:
-  - IOC: DS0017	Command	Execution
-  - IOC: DS0009	Process Creation
+  - IOC: DS0017 Command Execution
+  - IOC: DS0009 Process Creation
 Resources:
-  - Link: https://twitter.com/0xBoku/status/1679200664013135872
+  - Link: http://twitter.com/something
 Acknowledgement:
   - Person: Bobby Cooke
     Handle: '@0xBoku'
