@@ -24,7 +24,7 @@ Detection:
   - IOC: DS0017 Command Execution
   - IOC: DS0009 Process Creation
 Resources:
-  - Link: http://twitter.com/something
+  - Link: https://twitter.com/0xBoku/status/1679200664013135872
 Acknowledgement:
   - Person: Bobby Cooke
     Handle: '@0xBoku'
