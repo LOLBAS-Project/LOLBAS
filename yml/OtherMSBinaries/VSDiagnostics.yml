@@ -9,20 +9,19 @@ Commands:
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
-    MitreID: T1202
+    MitreID: T1218
     OperatingSystem: Windows 10
   - Command: VSDiagnostics.exe start 2 /launch:cmd.exe /launchArgs:"/c calc.exe"
     Description: Starts a collection session with sessionID 2 and calls kernelbase.CreateProcessW to launch specified executable. Arguments specified in launchArgs are passed to CreateProcessW.
     Usecase: Proxy execution of binary with arguments
     Category: Execute
     Privileges: User
-    MitreID: T1202
+    MitreID: T1218
     OperatingSystem: Windows 10
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Team Tools\DiagnosticsHub\Collector\VSDiagnostics.exe
 Detection:
-  - IOC: DS0017 Command Execution
-  - IOC: DS0009 Process Creation
+  - Sigma: https://github.com/tsale/Sigma_rules/blob/main/LOL_BINs/VSDiagnostics_LoLBin.yml
 Resources:
   - Link: https://twitter.com/0xBoku/status/1679200664013135872
 Acknowledgement:
