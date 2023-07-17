@@ -16,6 +16,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b02e3b698afbaae143ac4fb36236eb0b41122ed7/rules/windows/process_creation/proc_creation_win_lolbin_defaultpack.yml
   - IOC: DefaultPack.EXE spawned an unknown process
 Resources:
   - Link: https://twitter.com/checkymander/status/1311509470275604480.

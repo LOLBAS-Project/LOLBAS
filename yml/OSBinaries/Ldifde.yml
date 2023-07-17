@@ -14,15 +14,10 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\ldifde.exe
   - Path: c:\windows\syswow64\ldifde.exe
-Code_Sample:
-  - Code:
 Detection:
-  - IOC:
-  - Analysis:
-  - Sigma:
-  - Elastic:
-  - Splunk:
-  - BlockRule:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/3d172914f6c2bd5c2b5ed471bf0657a662d395af/rules/windows/process_creation/proc_creation_win_ldifde_export.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/3d172914f6c2bd5c2b5ed471bf0657a662d395af/rules/windows/process_creation/proc_creation_win_ldifde_file_load.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/3d172914f6c2bd5c2b5ed471bf0657a662d395af/rules-emerging-threats/2019/TA/APT31/proc_creation_win_apt_apt31_judgement_panda.yml
 Resources:
   - Link: https://twitter.com/0gtweet/status/1564968845726580736
 Acknowledgement:

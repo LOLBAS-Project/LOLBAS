@@ -45,7 +45,6 @@ Code_Sample:
   - Code: https://github.com/jreegun/POC-s/tree/master/nuget-squirrel
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/19396788dbedc57249a46efed2bb1927abc376d4/rules/windows/process_creation/proc_creation_win_lolbin_squirrel.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/19396788dbedc57249a46efed2bb1927abc376d4/rules/windows/process_creation/proc_creation_win_susp_squirrel_lolbin.yml
 Resources:
   - Link: https://www.youtube.com/watch?v=rOP3hnkj7ls
   - Link: https://twitter.com/reegun21/status/1144182772623269889
