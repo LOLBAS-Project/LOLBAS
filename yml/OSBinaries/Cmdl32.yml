@@ -20,6 +20,8 @@ Detection:
   - IOC: Useragent Microsoft(R) Connection Manager Vpn File Update
 Resources:
   - Link: https://github.com/LOLBAS-Project/LOLBAS/pull/151
+  - Link: https://twitter.com/ElliotKillick/status/1455897435063074824
+  - Link: https://elliotonsecurity.com/living-off-the-land-reverse-engineering-methodology-plus-tips-and-tricks-cmdl32-case-study/
 Acknowledgement:
   - Person: Elliot Killick
     Handle: '@elliotkillick'
