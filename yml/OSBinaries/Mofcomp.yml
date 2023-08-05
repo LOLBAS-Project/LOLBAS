@@ -9,21 +9,19 @@ Commands:
     Usecase: Threat actors can use mofcomp.exe to decompile a BMOF binary and then register a malicious class in the WMI repository
     Category: Execution and Persistence
     Privileges: User
-    MitreID: T1047 & T1546.003 
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 & Windows Server 2008 and above
+    MitreID: T1047 
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11 & Windows Server 2008 and above
 Commands:
   - Command: mofcomp.exe C:\Programdata\x.mof
     Description: Abuse of mofcomp.exe to parse a file which contains MOF statements in order create new classes as part of the WMI repository
     Usecase: Threat actors can use mofcomp.exe to decompile a BMOF binary and then register a malicious class in the WMI repository
     Category: Execution and Persistence
     Privileges: User
-    MitreID: T1047 & T1546.003 
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 & Windows Server 2008 and above
+    MitreID: T1047
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11 & Windows Server 2008 and above
 Full_Path:
   - Path: C:\Windows\System32\wbem\mofcomp.exe
   - Path: C:\Windows\SysWOW64\wbem\mofcomp.exe
-Code_Sample:
-  - Code:
 Detection:
   - IOC: strange parent processes spawning mofcomp.exe like cmd.exe or powershell.exe
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_mofcomp_execution.yml
