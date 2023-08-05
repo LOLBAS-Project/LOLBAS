@@ -10,14 +10,14 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    OperatingSystem: Windows 7 and up with Microsoft Teams installed
+    OperatingSystem: Windows
   - Command: Teams.exe
     Description: Generate JavaScript payload and package.json, archive in ASAR file and save to %LOCALAPPDATA%\Microsoft\Teams\current\app.asar before executing.
     Usecase: Execute JavaScript code
     Category: Execute
     Privileges: User
     MitreID: T1218
-    OperatingSystem: Windows 7 and up with Microsoft Teams installed
+    OperatingSystem: Windows
 Full_Path:
   - Path: %LOCALAPPDATA%\Microsoft\Teams\current\Teams.exe
 Code_Sample:
