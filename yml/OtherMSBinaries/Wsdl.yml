@@ -1,6 +1,6 @@
 ---
 Name: wsdl.exe
-Description: .NET Frameworks WebService install and administration tool 
+Description: .NET Frameworks WebService install and administration tool
 Author: Ialle Teixeira
 Created: 2022-03-28
 Commands:
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\wsdl.exe
-Detection:  
+Detection:
   - IOC: Preventing/Detecting wsdl.exe with non-RFC1918 addresses by Network IPS/IDS.
   - IOC: Monitor process creation for non-SYSTEM and non-LOCAL SERVICE accounts launching wsdl.exe file.
   - IOC: User Agent is "Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 4.0.30319.42000)"
