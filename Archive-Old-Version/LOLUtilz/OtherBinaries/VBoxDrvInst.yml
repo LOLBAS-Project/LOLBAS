@@ -1,0 +1,17 @@
+---
+Name: VBoxDrvInst.exe
+Description: Persistence
+Author: ''
+Created: 2018-05-25
+Commands:
+  - Command: VBoxDrvInst.exe driver executeinf c:\temp\calc.inf
+    Description: Set registry key-value for persistance via INF file call through VBoxDrvInst.exe
+Full_Path:
+  - C:\Program Files\Oracle\VirtualBox Guest Additions
+Code_Sample: []
+Detection: []
+Resources:
+  - https://twitter.com/pabraeken/status/993497996179492864
+Acknowledgement:
+  - Person: Pierre-Alexandre Braeken
+    Handle: '@pabraeken'

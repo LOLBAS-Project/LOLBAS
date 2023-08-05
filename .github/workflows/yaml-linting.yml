@@ -1,0 +1,40 @@
+---
+name: PUSH & PULL REQUEST - YAML Lint and Schema Validation Checks
+on: [push,pull_request]
+
+jobs:
+  lintFiles:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          no_warnings: true
+          file_or_dir: yml/**/*.yml
+          config_file: .github/.yamllint
+      - name: Validate Template Schema
+        uses: cketti/action-pykwalify@v0.3-temp-fix
+        with:
+          files: YML-Template.yml
+          schema: YML-Schema.yml
+      - name: Validate OSBinaries YAML Schema
+        uses: cketti/action-pykwalify@v0.3-temp-fix
+        with:
+          files: yml/OSBinaries/*.yml
+          schema: YML-Schema.yml
+      - name: Validate OSLibraries YAML Schema
+        uses: cketti/action-pykwalify@v0.3-temp-fix
+        with:
+          files: yml/OSLibraries/*.yml
+          schema: YML-Schema.yml
+      - name: Validate OSScripts YAML Schema
+        uses: cketti/action-pykwalify@v0.3-temp-fix
+        with:
+          files: yml/OSScripts/*.yml
+          schema: YML-Schema.yml
+      - name: Validate OtherMSBinaries YAML Schema
+        uses: cketti/action-pykwalify@v0.3-temp-fix
+        with:
+          files: yml/OtherMSBinaries/*.yml
+          schema: YML-Schema.yml

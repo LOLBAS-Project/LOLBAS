@@ -1,0 +1,19 @@
+---
+Name: Explorer.exe
+Description: Execute
+Author: ''
+Created: '2018-05-25'
+Categories: []
+Commands:
+  - Command: explorer.exe calc.exe
+    Description: 'Executes calc.exe as a subprocess of explorer.exe.'
+Full_Path:
+  - c:\windows\explorer.exe
+  - c:\windows\sysWOW64\explorer.exe
+Code_Sample: []
+Detection: []
+Resources:
+  - https://twitter.com/bohops/status/986984122563391488
+Acknowledgement:
+  - Person: Jimmy
+    Handle: '@bohops'

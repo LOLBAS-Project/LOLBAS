@@ -1,6 +1,6 @@
 ---
 Name: Aspnet_Compiler.exe
-Description: ASP.NET Compilation Tool 
+Description: ASP.NET Compilation Tool
 Author: Jimmy (@bohops)
 Created: 2021-09-26
 Commands:
@@ -9,20 +9,19 @@ Commands:
     Usecase: Execute proxied payload with Microsoft signed binary to bypass application control solutions
     Category: AWL Bypass
     Privileges: User
-    MitreID: T1218
-    MitreLink: https://attack.mitre.org/techniques/T1218/
-    OperatingSystem: Windows 10
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\Windows\Microsoft.NET\Framework\v4.0.30319\aspnet_compiler.exe
   - Path: c:\Windows\Microsoft.NET\Framework64\v4.0.30319\aspnet_compiler.exe
-Code_Sample: 
+Code_Sample:
   - Code: https://github.com/ThunderGunExpress/BringYourOwnBuilder
-Detection: 
-  - IOC: Sysmon Event ID 1 - Process Creation
+Detection:
+  - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/960a03eaf480926ed8db464477335a713e9e6630/rules/windows/process_creation/win_pc_lobas_aspnet_compiler.yml
 Resources:
   - Link: https://ijustwannared.team/2020/08/01/the-curious-case-of-aspnet_compiler-exe/
   - Link: https://docs.microsoft.com/en-us/dotnet/api/system.web.compilation.buildprovider.generatecode?view=netframework-4.8
 Acknowledgement:
   - Person: cpl
     Handle: '@cpl3h'
----

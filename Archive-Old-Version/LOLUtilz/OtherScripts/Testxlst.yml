@@ -1,0 +1,28 @@
+---
+Name: testxlst.js
+Description: Script included with Pywin32.
+Author: 'Oddvar Moe'
+Created: 2018-05-25
+Commands:
+  - Command: cscript testxlst.js C:\test\test.xml c:\test\test.xls c:\test\test.out
+    Description: Test Jscript included in Python tool to perform XSL transform (for payload execution).
+    Category: Execution
+    Privileges: User
+    MitreID: T1064
+    OperatingSystem: Windows
+  - Command: wscript testxlst.js C:\test\test.xml c:\test\test.xls c:\test\test.out
+    Description: Test Jscript included in Python tool to perform XSL transform (for payload execution).
+    Category: Execution
+    Privileges: User
+    MitreID: T1064
+    OperatingSystem: Windows
+Full_Path:
+  - c:\python27amd64\Lib\site-packages\win32com\test\testxslt.js (Visual Studio Installation)
+Code_Sample: []
+Detection: []
+Resources:
+  - https://twitter.com/bohops/status/993314069116485632
+  - https://github.com/mhammond/pywin32
+Acknowledgement:
+  - Person: Jimmy
+    Handle: '@bohops'
