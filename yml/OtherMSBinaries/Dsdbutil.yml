@@ -2,7 +2,7 @@
 Name: dsdbutil.exe
 Description: Dsdbutil is a command-line tool that is built into Windows Server. It is available if you have the AD LDS server role installed. Can be used as a command line utility to export Active Directory. 
 Aliases: 
-  - Alias: dsDbUtil.exe  # PE Original filename
+  ---Alias: dsDbUtil.exe  # PE Original filename
 Author: Ekitji
 Created: 2023-05-31
 Commands:
@@ -54,15 +54,15 @@ Detection:
   - IOC: Event ID 4656
   - IOC: Regular and Volume Shadow Copy attempts to read or modify ntds.dit
   - Analysis:
-  - Sigma: 
-  - Elastic: 
-  - Splunk: 
+  - Sigma:
+  - Elastic:
+  - Splunk:
   - BlockRule:
 Resources:
   - Link: https://gist.github.com/bohops/88561ca40998e83deb3d1da90289e358
   - Link: https://www.netwrix.com/ntds_dit_security_active_directory.html
 Acknowledgement:
-  - Person: bohop
-    Handle: '@bohops'
-  - Person: Ekitji
-    Handle: '@eki_erk'
+- Person: bohop
+  Handle: '@bohops'
+- Person: Ekitji
+  Handle: '@eki_erk'
