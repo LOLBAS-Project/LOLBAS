@@ -2,7 +2,7 @@
 Name: dsdbutil.exe
 Description: Dsdbutil is a command-line tool that is built into Windows Server. It is available if you have the AD LDS server role installed. Can be used as a command line utility to export Active Directory. 
 Aliases: 
-  ---Alias: dsDbUtil.exe  # PE Original filename
+  - Alias: dsDbUtil.exe  # PE Original filename
 Author: Ekitji
 Created: 2023-05-31
 Commands:
