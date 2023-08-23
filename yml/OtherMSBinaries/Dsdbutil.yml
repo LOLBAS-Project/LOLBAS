@@ -1,12 +1,13 @@
 ---
 Name: dsdbutil.exe
-Description: Dsdbutil is a command-line tool that is built into Windows Server.
-  It is available if you have the AD LDS server role installed. Can be used as a
+Description: >-
+  Dsdbutil is a command-line tool that is built into Windows Server. It is
+  available if you have the AD LDS server role installed. Can be used as a
   command line utility to export Active Directory.
 Aliases:
   - Alias: dsDbUtil.exe
 Author: Ekitji
-Created: 2023-05-31
+Created: 2023-05-31T00:00:00.000Z
 Commands:
   - Command: dsdbutil.exe "activate instance ntds" "snapshot" "create" "quit" "quit"
     Description: dsdbutil supports VSS snapshot creation
@@ -14,45 +15,51 @@ Commands:
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
-    OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
-  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "mount {GUID}" "quit"
+    OperatingSystem: 'Windows Server 2012, Windows Server 2016, Windows Server 2019'
+  - Command: >-
+      dsdbutil.exe "activate instance ntds" "snapshot" "mount {GUID}" "quit"
       "quit"
     Description: Mounting the snapshot with its GUID
-    Usecase: Mounting the snapshot to access the ntds.dit with copy c:\[Snap
+    Usecase: >-
+      Mounting the snapshot to access the ntds.dit with copy c:\[Snap
       Volume]\windows\ntds\ntds.dit c:\users\administrator\desktop\ntds.dit.bak
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
-    OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
-  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "delete {GUID}" "quit"
+    OperatingSystem: 'Windows Server 2012, Windows Server 2016, Windows Server 2019'
+  - Command: >-
+      dsdbutil.exe "activate instance ntds" "snapshot" "delete {GUID}" "quit"
       "quit"
     Description: Deletes the mount of the snapshot
     Usecase: Deletes the snapshot
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
-    OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
-  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "create" "list all"
+    OperatingSystem: 'Windows Server 2012, Windows Server 2016, Windows Server 2019'
+  - Command: >-
+      dsdbutil.exe "activate instance ntds" "snapshot" "create" "list all"
       "mount 1" "quit" "quit"
     Description: Mounting with snapshot identifier
-    Usecase: Mounting the snapshot identifier 1 and accessing it with with copy
+    Usecase: >-
+      Mounting the snapshot identifier 1 and accessing it with with copy
       c:\[Snap Volume]\windows\ntds\ntds.dit
       c:\users\administrator\desktop\ntds.dit.bak
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
-    OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
-  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "list all" "delete 1"
+    OperatingSystem: 'Windows Server 2012, Windows Server 2016, Windows Server 2019'
+  - Command: >-
+      dsdbutil.exe "activate instance ntds" "snapshot" "list all" "delete 1"
       "quit" "quit"
     Description: Deletes the mount of the snapshot
     Usecase: deletes the snapshot
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
-    OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
+    OperatingSystem: 'Windows Server 2012, Windows Server 2016, Windows Server 2019'
 Full_Path:
-  - Path: C:\Windows\System32\dsdbutil.exe
-  - Path: C:\Windows\SysWOW64\dsdbutil.exe
+  - Path: 'C:\Windows\System32\dsdbutil.exe'
+  - Path: 'C:\Windows\SysWOW64\dsdbutil.exe'
 Code_Sample:
   - Code: null
 Detection:
@@ -68,10 +75,10 @@ Detection:
   - Splunk: null
   - BlockRule: null
 Resources:
-  - Link: https://gist.github.com/bohops/88561ca40998e83deb3d1da90289e358
-  - Link: https://www.netwrix.com/ntds_dit_security_active_directory.html
+  - Link: 'https://gist.github.com/bohops/88561ca40998e83deb3d1da90289e358'
+  - Link: 'https://www.netwrix.com/ntds_dit_security_active_directory.html'
 Acknowledgement:
   - Person: bohop
-    Handle: "@bohops"
+    Handle: '@bohops'
   - Person: Ekitji
-    Handle: "@eki_erk"
+    Handle: '@eki_erk'
