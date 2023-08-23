@@ -1,8 +1,10 @@
 ---
 Name: dsdbutil.exe
-Description: Dsdbutil is a command-line tool that is built into Windows Server. It is available if you have the AD LDS server role installed. Can be used as a command line utility to export Active Directory.
+Description: Dsdbutil is a command-line tool that is built into Windows Server.
+  It is available if you have the AD LDS server role installed. Can be used as a
+  command line utility to export Active Directory.
 Aliases:
-  - Alias: dsDbUtil.exe  # PE Original filename
+  - Alias: dsDbUtil.exe
 Author: Ekitji
 Created: 2023-05-31
 Commands:
@@ -13,28 +15,35 @@ Commands:
     Privileges: Administrator
     MitreID: T1003.003
     OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
-  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "mount {GUID}" "quit" "quit"
+  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "mount {GUID}" "quit"
+      "quit"
     Description: Mounting the snapshot with its GUID
-    Usecase: Mounting the snapshot to access the ntds.dit with copy c:\[Snap Volume]\windows\ntds\ntds.dit c:\users\administrator\desktop\ntds.dit.bak
+    Usecase: Mounting the snapshot to access the ntds.dit with copy c:\[Snap
+      Volume]\windows\ntds\ntds.dit c:\users\administrator\desktop\ntds.dit.bak
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
     OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
-  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "delete {GUID}" "quit" "quit"
+  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "delete {GUID}" "quit"
+      "quit"
     Description: Deletes the mount of the snapshot
     Usecase: Deletes the snapshot
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
     OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
-  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "create" "list all" "mount 1" "quit" "quit"
+  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "create" "list all"
+      "mount 1" "quit" "quit"
     Description: Mounting with snapshot identifier
-    Usecase: Mounting the snapshot identifier 1 and accessing it with with copy c:\[Snap Volume]\windows\ntds\ntds.dit c:\users\administrator\desktop\ntds.dit.bak
+    Usecase: Mounting the snapshot identifier 1 and accessing it with with copy
+      c:\[Snap Volume]\windows\ntds\ntds.dit
+      c:\users\administrator\desktop\ntds.dit.bak
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
     OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
-  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "list all" "delete 1" "quit" "quit"
+  - Command: dsdbutil.exe "activate instance ntds" "snapshot" "list all" "delete 1"
+      "quit" "quit"
     Description: Deletes the mount of the snapshot
     Usecase: deletes the snapshot
     Category: Dump
@@ -45,7 +54,7 @@ Full_Path:
   - Path: C:\Windows\System32\dsdbutil.exe
   - Path: C:\Windows\SysWOW64\dsdbutil.exe
 Code_Sample:
-  - Code:
+  - Code: null
 Detection:
   - IOC: Event ID 4688
   - IOC: dsdbutil.exe process creation
@@ -53,16 +62,16 @@ Detection:
   - IOC: Regular and Volume Shadow Copy attempts to read or modify ntds.dit
   - IOC: Event ID 4656
   - IOC: Regular and Volume Shadow Copy attempts to read or modify ntds.dit
-  - Analysis:
-  - Sigma:
-  - Elastic:
-  - Splunk:
-  - BlockRule:
+  - Analysis: null
+  - Sigma: null
+  - Elastic: null
+  - Splunk: null
+  - BlockRule: null
 Resources:
   - Link: https://gist.github.com/bohops/88561ca40998e83deb3d1da90289e358
   - Link: https://www.netwrix.com/ntds_dit_security_active_directory.html
 Acknowledgement:
   - Person: bohop
-    Handle: '@bohops'
+    Handle: "@bohops"
   - Person: Ekitji
-    Handle: '@eki_erk'
+    Handle: "@eki_erk"
