@@ -6,6 +6,7 @@ Created: 2023-08-25
 Commands:
   - Command: wscript.exe gatherNetworkInfo.vbs
     Description: The script gathernetworkinfo.vbs is employed to collect system information.
+    Usecase: Proxy execution
     Category: Execute
     Privileges: User
     MitreID: T1082
