@@ -4,7 +4,7 @@ Description: Network Information Collector Script
 Author: Kyaw Pyiyt Htet (@KyawPyiytHtet)
 Created: 2023-08-25
 Commands:
-  - Command: "wscript gatherNetworkInfo.vbs", "wscript gatherNetworkInfo.vbs 'GetOSInfo'"
+  - Command: "wscript gatherNetworkInfo.vbs"
     Description: The script "gathernetworkinfo.vbs" is employed to collect system information such as the operating system, DNS details, firewall configuration, etc. Outputs are stored in "c:\Windows\System32\config" or "c:\Windows\System32\reg".
     Usecase: Execute proxied payload with Microsoft signed binary
     Category: Execute
