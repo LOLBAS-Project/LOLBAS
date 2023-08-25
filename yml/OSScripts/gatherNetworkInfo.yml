@@ -1,7 +1,7 @@
 ---
 Name: gatherNetworkInfo.vbs
 Description: Network Information Collector Script
-Author: 'Kyaw Pyiyt Htet (@KyawPyiytHtet)'
+Author: 'Kyaw Pyiyt Htet'
 Created: 2023-08-25
 Commands:
   - Command: wscript gatherNetworkInfo.vbs
