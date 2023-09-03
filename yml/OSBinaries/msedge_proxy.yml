@@ -20,7 +20,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
   - Command: "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe --disable-gpu-sandbox --gpu-launcher=\"C:\\\\Windows\\\\System32\\\\cmd.exe /c ping google.com &&\""
     Description: msedge_proxy.exe will execute file in the background
-    Usecase: Executes a process under a trusted Microsoft-signed binary
+    Usecase: Executes a process under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
     MitreID: T1218
