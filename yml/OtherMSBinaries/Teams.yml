@@ -19,12 +19,12 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows
 Full_Path:
-  - Path: %LOCALAPPDATA%\Microsoft\Teams\current\Teams.exe
+  - Path: "%LOCALAPPDATA%\Microsoft\Teams\current\Teams.exe"
 Code_Sample:
   - Code: https://github.com/lltltk/LOLBAS-research/tree/master/Teams
 Detection:
-  - IOC: %LOCALAPPDATA%\Microsoft\Teams\current\app directory created
-  - IOC: %LOCALAPPDATA%\Microsoft\Teams\current\app.asar file created/modified by non-Teams installer/updater
+  - IOC: "%LOCALAPPDATA%\Microsoft\Teams\current\app directory created"
+  - IOC: "%LOCALAPPDATA%\Microsoft\Teams\current\app.asar file created/modified by non-Teams installer/updater"
 Resources:
   - Link: https://l--k.uk/2022/01/16/microsoft-teams-and-other-electron-apps-as-lolbins/
 Acknowledgement:
