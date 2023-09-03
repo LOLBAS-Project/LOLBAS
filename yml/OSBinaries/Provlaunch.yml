@@ -14,6 +14,10 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\provlaunch.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/9cb124f841c4358ca859e8474d6e7bb5268284a2/rules/windows/process_creation/proc_creation_win_provlaunch_potential_abuse.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/9cb124f841c4358ca859e8474d6e7bb5268284a2/rules/windows/process_creation/proc_creation_win_provlaunch_susp_child_process.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/9cb124f841c4358ca859e8474d6e7bb5268284a2/rules/windows/process_creation/proc_creation_win_registry_provlaunch_provisioning_command.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/9cb124f841c4358ca859e8474d6e7bb5268284a2/rules/windows/registry/registry_set/registry_set_provisioning_command_abuse.yml
   - IOC: c:\windows\system32\provlaunch.exe executions
   - IOC: Creation/existence of HKLM\SOFTWARE\Microsoft\Provisioning\Commands subkeys
 Resources:
