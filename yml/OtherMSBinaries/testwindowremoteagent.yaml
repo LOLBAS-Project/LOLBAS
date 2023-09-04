@@ -17,4 +17,3 @@ Detection:
   - IOC: TestWindowRemoteAgent.exe spawning unexpectedly
 Acknowledgement:
   - Person: Onat Uzunyayla
-  
