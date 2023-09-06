@@ -5,7 +5,7 @@ Author: 'Kyaw Pyiyt Htet'
 Created: 2023-09-06
 Commands:
   - Command: wscript.exe C:\Windows\System32\gatherNetworkInfo.vbs
-    Description: System information gathering activities such as operating system version, DNS setting details as well as firewall configuration 
+    Description: System information gathering activities such as operating system version, DNS setting details as well as firewall configuration
     Usecase: Proxy execution from script
     Category: Execute
     Privileges: Admin
