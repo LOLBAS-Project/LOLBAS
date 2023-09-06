@@ -5,7 +5,7 @@ Author: Ayberk Halaç
 Created: 2023-11-06
 Commands:
   - Command: vshadow.exe -nw -exec=c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe C:
-    Description: Executes calc.exe from vshadow.exe
+    Description: Executes powershell.exe from vshadow.exe
     Usecase: Performs execution of specified executable file
     Category: Execute
     Privileges: High Privileged User
