@@ -9,7 +9,7 @@ Commands:
     Usecase: Download Files, Upload Files, Data Exfiltration
     Category: Download
     Privileges: Outlook account, GitHub account authentication/valid credentials/SSO required.
-    MitreID: T1105, T1218, T1048.003
+    MitreID: T1105
     OperatingSystem: Windows 10, Windows 11, MacOS
 Full_Path:
   - Path: C:\Users\<username>\AppData\Local\Temp\.net\devtunnel\
