@@ -16,8 +16,8 @@ Full_Path:
   - Path: C:\Users\<username>\AppData\Local\Temp\DevTunnels
 Detection:
   - IOC: devtunnel.exe binary spawned
-  - IOC: *.devtunnels.ms
-  - IOC: *.*.devtunnels.ms
+  - IOC: '*.devtunnels.ms'
+  - IOC: '*.*.devtunnels.ms'
   - Analysis: https://cydefops.com/vscode-data-exfiltration
 Resources:
   - Link: https://code.visualstudio.com/docs/editor/port-forwarding
