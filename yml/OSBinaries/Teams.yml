@@ -13,6 +13,8 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\Users\username\AppData\Local\Microsoft\Teams\current\Teams.exe
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_susp_electron_exeuction_proxy.yml#L7
 Resources:
 Acknowledgement:
   - Person: mr.d0x
