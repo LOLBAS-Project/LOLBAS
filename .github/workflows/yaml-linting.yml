@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Check file extensions
-        run: if [[ $(find ./yml -type f -not -name "*.yml") ]]; then echo "Files with unexpected extension found, please ensure you use '.yml' (all lower case) for files in the yml/ folder."; exit 1; fi
+        run: if [[ $(find "${GITHUB.WORKSPACE}/yml" -type f -not -name "*.yml") ]]; then echo "Files with unexpected extension found, please ensure you use '.yml' (all lower case) for files in the yml/ folder."; exit 1; fi
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:
