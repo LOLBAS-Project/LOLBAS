@@ -1,20 +1,20 @@
 ---
 Name: vshadow.exe
-Description: VShadow is a command-line tool that you can use to create and manage volume shadow copies.
+Description: VShadow is a command-line tool that can be used to create and manage volume shadow copies.
 Author: Ayberk Halaç
-Created: 2023-11-06
+Created: 2023-09-06
 Commands:
-  - Command: vshadow.exe -nw -exec=c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe C:
-    Description: Executes powershell.exe from vshadow.exe
-    Usecase: Performs execution of specified executable file
+  - Command: vshadow.exe -nw -exec=c:\windows\system32\calc.exe C:
+    Description: Executes calc.exe from vshadow.exe.
+    Usecase: Performs execution of specified executable file.
     Category: Execute
-    Privileges: High Privileged User
+    Privileges: Administrator
     MitreID: T1127
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.XXXXX.0\x64\vshadow.exe
 Detection:
-  - IOC: vshadow.exe usage with -exec parameter.
+  - IOC: vshadow.exe usage with -exec parameter
 Resources:
   - Link: https://learn.microsoft.com/en-us/windows/win32/vss/vshadow-tool-and-sample
 Acknowledgement:
