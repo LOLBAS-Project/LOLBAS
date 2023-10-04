@@ -25,7 +25,7 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-  - Command: tar -x -f  c:\folder\folder\file
+  - Command: tar -x -f  c:\folder\folder\file.docx OR file.zip
     Description: Decrypt encrypted tools/software.
     Usecase: Can also be used to unzip office documents and zip files
     Category: Decode
