@@ -4,13 +4,13 @@ Description: Diagnostics Utility for Internet Explorer
 Author: manasmbellani
 Created: 2022-03-29
 Commands:
-  - Command: set windir=c:\test; cd \"C:\Program Files\Internet Explorer\"; iediagcmd.exe /out:c:\test\http://foo.cab
+  - Command: set windir=c:\test & cd "C:\Program Files\Internet Explorer\" & iediagcmd.exe /out:c:\test\foo.cab
     Description: Executes binary that is pre-planted at C:\test\system32\netsh.exe. Discovered by Adam @hexacorn.
     Usecase: A description of the usecase
     Category: Execute
     Privileges: User
     MitreID: T1218
-    OperatingSystem: Windows 10 1803, Windows 10 1703
+    OperatingSystem: Windows 10 1803, Windows 10 1703, Windows 10 22H1, Windows 10 22H2
 Full_Path:
   - Path: C:\Program Files\Internet Explorer\iediagcmd.exe
   - Path: 
@@ -18,8 +18,6 @@ Code_Sample:
   - Code: 
 Detection:
   - Sigma: https://github.com/manasmbellani/mycode_public/blob/master/sigma/rules/win_proc_creation_lolbin_iediagcmd.yml
-  - Sigma: 
-  - Sigma: 
   - Splunk: 
   - Elastic: 
   - Elastic: 
@@ -27,11 +25,6 @@ Detection:
   - IOC: Execution of process iediagcmd.exe with /out could be suspicious
 Resources:
   - Link: https://twitter.com/Hexacorn/status/1507516393859731456?s=20&t=tTF5XrjAePMaIz2xp_Ve3w
-  - Link: 
-  - Link: 
-  - Link: 
-  - Link: 
-  - Link: 
 Acknowledgement:
   - Person: Adam
     Handle: '@hexacorn'
