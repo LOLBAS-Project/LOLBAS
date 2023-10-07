@@ -7,14 +7,14 @@ Commands:
   - Command: mofcomp.exe C:\Windows\SERVIC~1\MSSQL$~1\AppData\Local\Temp\xitmf
     Description: Abuse of mofcomp.exe to parse a file which contains MOF statements in order create new classes as part of the WMI repository
     Usecase: Threat actors can use mofcomp.exe to decompile a BMOF binary and then register a malicious class in the WMI repository
-    Category: Execution and Persistence
+    Category: Execution
     Privileges: User
     MitreID: T1047
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11 & Windows Server 2008 and above
   - Command: mofcomp.exe C:\Programdata\x.mof
     Description: Abuse of mofcomp.exe to parse a file which contains MOF statements in order create new classes as part of the WMI repository
     Usecase: Threat actors can use mofcomp.exe to decompile a BMOF binary and then register a malicious class in the WMI repository
-    Category: Execution and Persistence
+    Category: Execution
     Privileges: User
     MitreID: T1047
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11 & Windows Server 2008 and above
