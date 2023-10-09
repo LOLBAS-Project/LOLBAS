@@ -8,7 +8,7 @@ Commands:
     Description: Enabling a forwarded port for locally hosted service at port 8080 to be exposed on the internet.
     Usecase: Download Files, Upload Files, Data Exfiltration
     Category: Download
-    Privileges: Outlook account, GitHub account authentication/valid credentials/SSO required.
+    Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11, MacOS
 Full_Path:
