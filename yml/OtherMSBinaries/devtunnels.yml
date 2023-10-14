@@ -1,0 +1,26 @@
+---
+Name: devtunnel.exe
+Description: Binary to enable forwarded ports on windows operating systems.
+Author: Kamran Saifullah
+Created: 2023-09-16
+Commands:
+  - Command: devtunnel.exe host -p 8080
+    Description: Enabling a forwarded port for locally hosted service at port 8080 to be exposed on the internet.
+    Usecase: Download Files, Upload Files, Data Exfiltration
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11, MacOS
+Full_Path:
+  - Path: C:\Users\<username>\AppData\Local\Temp\.net\devtunnel\
+  - Path: C:\Users\<username>\AppData\Local\Temp\DevTunnels
+Detection:
+  - IOC: devtunnel.exe binary spawned
+  - IOC: '*.devtunnels.ms'
+  - IOC: '*.*.devtunnels.ms'
+  - Analysis: https://cydefops.com/vscode-data-exfiltration
+Resources:
+  - Link: https://code.visualstudio.com/docs/editor/port-forwarding
+Acknowledgement:
+  - Person: Kamran Saifullah
+    Handle: '@deFr0ggy'
