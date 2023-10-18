@@ -169,7 +169,7 @@ Full_Path:
   - Path: c:\windows\system32\driverstore\filerepository\ki132869.inf_amd64_052eb72d070df60f\
   - Path: c:\windows\system32\driverstore\filerepository\kit126731.inf_amd64_1905c9d5f38631d9\
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_file_download_via_gfxdownloadwrapper.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_lolbin_gfxdownloadwrapper_file_download.yml
   - IOC: Usually GfxDownloadWrapper downloads a JSON file from https://gameplayapi.intel.com.
 Resources:
   - Link: https://www.sothis.tech/author/jgalvez/

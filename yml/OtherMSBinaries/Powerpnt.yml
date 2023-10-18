@@ -28,7 +28,7 @@ Full_Path:
   - Path: C:\Program Files\Microsoft Office\Office12\Powerpnt.exe
   - Path: C:\Program Files\Microsoft Office\Office12\Powerpnt.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/8bb3379b6807610d61d29db1d76f5af4840b8208/rules/windows/process_creation/proc_creation_win_susp_msoffice.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_office.yml
   - IOC: Suspicious Office application Internet/network traffic
 Resources:
   - Link: https://twitter.com/reegun21/status/1150032506504151040

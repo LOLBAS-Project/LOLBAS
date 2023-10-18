@@ -18,7 +18,7 @@ Code_Sample:
   - Code:
 Detection:
   - Analysis: https://redcanary.com/threat-detection-report/techniques/rundll32/
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml
 Resources:
   - Link: https://twitter.com/harr0ey/status/989617817849876488
   - Link: https://windows10dll.nirsoft.net/pcwutl_dll.html
