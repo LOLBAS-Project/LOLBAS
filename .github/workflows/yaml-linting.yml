@@ -9,7 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Check file extensions
-        run: if [[ $(find "$GITHUB_WORKSPACE/yml" -type f -not -name "*.yml") ]]; then echo "Files with unexpected extension found, please ensure you use '.yml' (all lower case) for files in the yml/ folder."; exit 1; fi
+        run: |
+          files=$(find "$GITHUB_WORKSPACE/yml" -type f -not -name "*.yml");
+          if [[ $files ]]; then
+            echo "Files with unexpected extension found, please ensure you use '.yml' (all lower case) for files in the yml/ folder.";
+            for i in $files; do echo "::error file=$i,line=1::Unexpected extension"; done
+            exit 1;
+          fi
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:
