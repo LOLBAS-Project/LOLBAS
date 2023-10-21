@@ -15,7 +15,7 @@ Full_Path:
   - Path: C:\Windows\System32\dxcap.exe
   - Path: C:\Windows\SysWOW64\dxcap.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_dxcap.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_susp_dxcap.yml
 Resources:
   - Link: https://twitter.com/harr0ey/status/992008180904419328
 Acknowledgement:

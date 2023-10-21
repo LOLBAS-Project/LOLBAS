@@ -14,7 +14,7 @@ Commands:
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\Installer\Feedback\dump64.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/138b06628380468fb8a41fc27770e1630cb64326/rules/windows/process_creation/process_creation_win_lolbas_dump64.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_dump64.yml
   - IOC: As a Windows SDK binary, execution on a system may be suspicious
 Resources:
   - Link: https://twitter.com/mrd0x/status/1460597833917251595

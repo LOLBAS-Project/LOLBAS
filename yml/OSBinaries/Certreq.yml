@@ -24,7 +24,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/eb8c9c046b86e7d412bdcc3235693fa1c00f70d6/rules/windows/process_creation/win_susp_certreq_download.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_lolbin_susp_certreq_download.yml
   - IOC: certreq creates new files
   - IOC: certreq makes POST requests
 Resources:

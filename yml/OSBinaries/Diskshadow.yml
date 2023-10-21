@@ -24,8 +24,8 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/b4d5b44ea86cda24f38a87d3b0c5f9d4455bf841/rules/windows/process_creation/win_susp_diskshadow.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/b3df5bf325461df9bcfeb051895b0c8dc3258234/rules/windows/process_creation/win_shadow_copies_deletion.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_lolbin_diskshadow.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_susp_shadow_copies_deletion.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/5bdf70e72c6cd4547624c521108189af994af449/rules/windows/credential_access_cmdline_dump_tool.toml
   - IOC: Child process from diskshadow.exe
 Resources:
