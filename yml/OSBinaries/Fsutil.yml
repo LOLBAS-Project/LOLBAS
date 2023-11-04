@@ -1,0 +1,24 @@
+---
+Name: fsutil.exe
+Description: Filesystem management utility
+Author: gtworek
+Created: 2023-11-04
+Commands:
+  - Command: 'fsutil trace decode'
+    Description: Executes a pre-planted binary named netsh.exe from the current directory.
+    Usecase: Spawn a pre-planted executable from fsutil.exe.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\fsutil.exe
+Detection:
+  - IOC: Sysmon Event ID 1
+  - IOC: Execution of process fsutil.exe with trace decode could be suspicious
+  - IOC: Non-Windows netsh.exe execution
+Resources:
+  - Link: https://twitter.com/0gtweet/status/1720724516324704404
+Acknowledgement:
+  - Person: Grzegorz Tworek
+    Handle: '@0gtweet'
