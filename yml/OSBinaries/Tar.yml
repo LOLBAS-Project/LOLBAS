@@ -11,10 +11,10 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows 10, Windows 11
-  - Command: tar -xf compressedfilename:as 
+  - Command: tar -xf compressedfilename:as
     Description: decompress a compressed file from an alternative stream.
     Usecase: Extract From Alternative streams
-    Category: ADS 
+    Category: ADS
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows 10, Windows 11
