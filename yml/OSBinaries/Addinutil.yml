@@ -6,7 +6,7 @@ Created: 2023-10-05
 Commands:
   - Command: C:\Windows\Microsoft.NET\Framework\v4.0.30319\AddinUtil.exe -AddinRoot:.
     Description: AddinUtil is executed from the directory where the 'Addins.Store' payload exists, AddinUtil will execute the 'Addins.Store' payload.
-    Usecase: Proxy execution of malicious serliaized payload
+    Usecase: Proxy execution of malicious serialized payload
     Category: Execute
     Privileges: User
     MitreID: T1218
