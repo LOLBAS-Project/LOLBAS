@@ -9,7 +9,7 @@ Commands:
     Usecase: It will download a remote payload and place it in the cache folder
     Category: Download
     Privileges: User
-    MitreID: T1105: Ingress Tool Transfer
+    MitreID: T1105
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Office\Office14\WinProj.exe
