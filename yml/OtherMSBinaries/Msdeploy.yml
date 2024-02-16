@@ -10,16 +10,30 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218
-    OperatingSystem: Windows server
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11, Windows Server
   - Command: msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand="c:\temp\calc.bat"
     Description: Launch calc.bat via msdeploy.exe.
     Usecase: Local execution of batch file using msdeploy.exe.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
-    OperatingSystem: Windows server
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11, Windows Server
+  - Command: msdeploy.exe -verb:sync -source:filePath=C:\windows\system32\calc.exe -dest:filePath=C:\Users\Public\calc.exe
+    Description: Copy file from source to destination.
+    Usecase: Copy file.
+    Category: Copy
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11, Windows Server
 Full_Path:
+  - Path: C:\Program Files\IIS\Microsoft Web Deploy V2\msdeploy.exe
+  - Path: C:\Program Files (x86)\IIS\Microsoft Web Deploy V2\msdeploy.exe
+  - Path: C:\Program Files\IIS\Microsoft Web Deploy V3\msdeploy.exe
   - Path: C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe
+  - Path: C:\Program Files\IIS\Microsoft Web Deploy V4\msdeploy.exe
+  - Path: C:\Program Files (x86)\IIS\Microsoft Web Deploy V4\msdeploy.exe
+  - Path: C:\Program Files\IIS\Microsoft Web Deploy V5\msdeploy.exe
+  - Path: C:\Program Files (x86)\IIS\Microsoft Web Deploy V5\msdeploy.exe
 Code_Sample:
   - Code:
 Detection:
@@ -30,3 +44,5 @@ Resources:
 Acknowledgement:
   - Person: Pierre-Alexandre Braeken
     Handle: '@pabraeken'
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
