@@ -39,6 +39,13 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: wmic.exe datafile where "Name='C:\\windows\\system32\\calc.exe'" call Copy "C:\\users\\public\\calc.exe"
+    Description: Copy file from source to destination.
+    Usecase: Copy file.
+    Category: Copy
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\wbem\wmic.exe
   - Path: C:\Windows\SysWOW64\wbem\wmic.exe
@@ -60,6 +67,7 @@ Detection:
   - IOC: Wmic retrieving scripts from remote system/Internet location
   - IOC: DotNet CLR libraries loaded into wmic.exe
   - IOC: DotNet CLR Usage Log - wmic.exe.log
+  - IOC: wmiprvse.exe writing files
 Resources:
   - Link: https://stackoverflow.com/questions/24658745/wmic-how-to-use-process-call-create-with-a-specific-working-directory
   - Link: https://subt0x11.blogspot.no/2018/04/wmicexe-whitelisting-bypass-hacking.html
@@ -67,3 +75,5 @@ Resources:
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
