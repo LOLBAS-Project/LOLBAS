@@ -1,10 +1,10 @@
 ---
 Name: Auditpol.exe
 Description: a command-line tool that allows users to query and set audit policies on Windows systems.
-Author: Mahmoud Khalifa
+Author: 'Mahmoud Khalifa'
 Created: 2024-2-24 
 Commands:
-    Command: auditpol /set /subcategory:"System Integrity" /success:disable /failure:disable
+  - Command: auditpol /set /subcategory:"System Integrity" /success:disable /failure:disable
     Description: Disables auditing for system integrity, which is crucial for monitoring and ensuring the integrity of security features and the operating system.
     Usecase: modify the audit configuration silently and disable or alter important parameters, preventing the creation or recording of Event Logs. 
     Category: Execute
@@ -34,5 +34,4 @@ Resources:
   - Link: https://help.fortinet.com/fsiem/Public_Resource_Access/7_1_1/rules/PH_RULE_Suspicious_Auditpol_Usage.htm
 Acknowledgement:
   - Person: Mahmoud Khalifa
-    Handle: N/A
  
