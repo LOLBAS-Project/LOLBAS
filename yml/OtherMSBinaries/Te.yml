@@ -11,6 +11,13 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+  - Command: te.exe test.dll
+    Description: Execute commands from TAEF test (DLL) file.
+    Usecase: Execute C#\C++ code stored in DLL file.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
 Full_Path:
   - Path: no default
 Code_Sample:
@@ -22,3 +29,5 @@ Resources:
 Acknowledgement:
   - Person: Giuseppe N3mes1s
     Handle: '@gN3mes1s'
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
