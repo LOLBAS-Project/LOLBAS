@@ -1,0 +1,31 @@
+---
+Name: AppCert.exe
+Description: Windows App Certification Kit command-line tool.
+Author: 'Avihay Eldad'
+Created: 2024-03-06
+Commands:
+  - Command: appcert.exe test -apptype desktop -setuppath c:\windows\system32\notepad.exe -reportoutputpath c:\users\public\lala.xml
+    Description: Execute EXE file using Windows App Certification Kit command-line tool.
+    Usecase: Proxy execution of specified file with appcert.exe as a parent process.
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1127
+    OperatingSystem: Windows
+  - Command: appcert.exe test -apptype desktop -setuppath c:\users\public\malicious.msi -reportoutputpath c:\users\public\lala.xml
+    Description: Execute MSI file using Windows App Certification Kit command-line tool.
+    Usecase: Proxy execution of specified file with appcert.exe as a parent process.
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1127
+    OperatingSystem: Windows
+Full_Path:
+  - Path: C:\Program Files (x86)\Windows Kits\10\App Certification Kit\appcert.exe
+Code_Sample:
+  - Code:
+Detection:
+  - Sigma:
+Resources:
+  - Link:
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
