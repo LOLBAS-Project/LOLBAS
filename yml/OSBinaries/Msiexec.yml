@@ -26,7 +26,7 @@ Commands:
     MitreID: T1218.007
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: msiexec /z "C:\folder\evil.dll"
-    Description: Calls DLLRegisterServer to un-register the target DLL.
+    Description: Calls DLLUnregisterServer to un-register the target DLL.
     Usecase: Execute dll files
     Category: Execute
     Privileges: User
