@@ -4,16 +4,16 @@ Description: Used by Windows to extract and create archives.
 Author: 'Brian Lucero'
 Created: 2023-01-30
 Commands:
-  - Command: tar -cf compressedfilename:as C:\folder\file
-    Description: compress a file to an alternative stream.
-    Usecase: Data collection and movement
+  - Command: tar -cf compressedfilename:ads C:\folder\file
+    Description: Compress one or more files to an alternate data stream (ADS).
+    Usecase: Can be used to evade defensive countermeasures, or to hide as part of a persistence mechanism
     Category: ADS
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows 10, Windows 11
-  - Command: tar -xf compressedfilename:as
-    Description: decompress a compressed file from an alternative stream.
-    Usecase: Extract From Alternative streams
+  - Command: tar -xf compressedfilename:ads
+    Description: Decompress a compressed file from an alternate data stream (ADS).
+    Usecase: Can be used to evade defensive countermeasures, or to hide as part of a persistence mechanism
     Category: ADS
     Privileges: User
     MitreID: T1564.004
@@ -25,19 +25,13 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-  - Command: tar -x -f  c:\folder\folder\file.docx OR file.zip
-    Description: Decrypt encrypted tools/software.
-    Usecase: Can also be used to unzip office documents and zip files
-    Category: Decode
-    Privileges: User
-    MitreID: T1140
-    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\tar.exe
-  - Path: c:\windows\syswow64\tar.exe
+  - Path: C:\Windows\SysWOW64\tar.exe
 Detection:
   - IOC: tar.exe extracting files from a remote host within the environment
   - IOC: Abnormal processes spawning tar.exe
+  - IOC: tar.exe interacting with alternate data streams (ADS)
 Resources:
   - Link: https://twitter.com/Cyber_Sorcery/status/1619819249886969856
 Acknowledgement:
