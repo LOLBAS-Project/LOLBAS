@@ -20,12 +20,9 @@ Commands:
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\App Certification Kit\appcert.exe
-Code_Sample:
-  - Code:
-Detection:
-  - Sigma:
+  - Path: C:\Program Files\Windows Kits\10\App Certification Kit\appcert.exe
 Resources:
-  - Link:
+  - Link: https://learn.microsoft.com/windows/win32/win_cert/using-the-windows-app-certification-kit
 Acknowledgement:
   - Person: Avihay Eldad
     Handle: '@AvihayEldad'
