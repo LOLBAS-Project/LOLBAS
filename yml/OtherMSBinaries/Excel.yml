@@ -11,7 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows
-    Tags: [INetCache]
+    Tags: ['INetCache']
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Office 16\ClientX86\Root\Office16\Excel.exe
   - Path: C:\Program Files\Microsoft Office 16\ClientX64\Root\Office16\Excel.exe

@@ -11,7 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-    Tags: [INetCache]
+    Tags: ['INetCache']
 Full_Path:
   - Path: C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.11.2521.0_x64__8wekyb3d8bbwe\AppInstaller.exe
 Detection:

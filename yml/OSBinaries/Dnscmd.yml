@@ -11,7 +11,7 @@ Commands:
     Privileges: DNS admin
     MitreID: T1543.003
     OperatingSystem: Windows server
-    Tags: [DLL]
+    Tags: ['DLL']
 Full_Path:
   - Path: C:\Windows\System32\Dnscmd.exe
   - Path: C:\Windows\SysWOW64\Dnscmd.exe
