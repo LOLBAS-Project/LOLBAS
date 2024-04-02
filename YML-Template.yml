@@ -13,6 +13,7 @@ Commands:
     Privileges: Required privs
     MitreID: T1055
     OperatingSystem: Windows 10 1803, Windows 10 1703
+    Tags: ['Tag1', 'Tag2'] # Optional field for one or more tags
   - Command: The second command
     Description: Description of the second command
     Usecase: A description of the usecase

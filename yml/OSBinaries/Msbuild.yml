@@ -25,6 +25,7 @@ Commands:
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags: [DLL]
   - Command: msbuild.exe project.proj
     Description: Execute jscript/vbscript code through XML/XSL Transformation. Requires Visual Studio MSBuild v14.0+.
     Usecase: Execute project file that contains XslTransformation tag parameters
@@ -32,6 +33,7 @@ Commands:
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags: [WSH]
   - Command: msbuild.exe @sample.rsp
     Description: By putting any valid msbuild.exe command-line options in an RSP file and calling it as above will interpret the options as if they were passed on the command line.
     Usecase: Bypass command-line based detections

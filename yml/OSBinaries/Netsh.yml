@@ -11,11 +11,10 @@ Commands:
     Privileges: Admin
     MitreID: T1546.007
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags: [DLL]
 Full_Path:
   - Path: C:\WINDOWS\System32\Netsh.exe
   - Path: C:\WINDOWS\SysWOW64\Netsh.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_netsh_helper_dll_persistence.yml
   - Splunk: https://github.com/splunk/security_content/blob/2b87b26bdc2a84b65b1355ffbd5174bdbdb1879c/detections/endpoint/processes_launching_netsh.yml

