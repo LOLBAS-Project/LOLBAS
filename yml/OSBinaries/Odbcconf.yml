@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.008
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
   - Command: |
       odbcconf INSTALLDRIVER "lolbas-project|Driver=c:\test\test.dll|APILevel=2"
       odbcconf configsysdsn "lolbas-project" "DSN=lolbas-project"
@@ -20,6 +22,8 @@ Commands:
     Privileges: User
     MitreID: T1218.008
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
   - Command: odbcconf -f file.rsp
     Description: Load DLL specified in target .RSP file. See the Code Sample section for an example .RSP file.
     Usecase: Execute dll file using technique that can evade defensive counter measures

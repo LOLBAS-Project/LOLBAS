@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: DLL
   - Command: Tracker.exe /d .\calc.dll /c C:\Windows\write.exe
     Description: Use tracker.exe to proxy execution of an arbitrary DLL into another process. Since tracker.exe is also signed it can be used to bypass application whitelisting solutions.
     Usecase: Injection of locally stored DLL file into target process.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: no default
 Code_Sample:

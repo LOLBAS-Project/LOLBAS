@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Type: Compression
   - Command: PrintBrm -r -f C:\Users\user\Desktop\data.txt:hidden.zip -d C:\Users\user\Desktop\new_folder
     Description: Extract the contents of a ZIP file stored in an Alternate Data Stream (ADS) and store it in a folder
     Usecase: Decompress and extract a ZIP file stored on an alternate data stream to a new folder
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Type: Compression
 Full_Path:
   - Path: C:\Windows\System32\spool\tools\PrintBrm.exe
 Detection:

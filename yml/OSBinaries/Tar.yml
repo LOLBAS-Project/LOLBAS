@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Type: Compression
   - Command: tar -xf compressedfilename:ads
     Description: Decompress a compressed file from an alternate data stream (ADS).
     Usecase: Can be used to evade defensive countermeasures, or to hide as part of a persistence mechanism
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Type: Compression
   - Command: tar -xf \\host1\archive.tar
     Description: Extracts archive.tar from the remote (internal) host (host1) to the current host.
     Usecase: Copy files
@@ -25,6 +29,8 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Type: Compression
 Full_Path:
   - Path: C:\Windows\System32\tar.exe
   - Path: C:\Windows\SysWOW64\tar.exe
