@@ -10,21 +10,21 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1059.001
-    OperatingSystem: Windows 7 and up with .NET installed
+    OperatingSystem: Windows 7 and up
   - Command: powershell.exe -ep bypass -command "Invoke-AllTheThings..."
     Description: Set the execution policy to bypass and execute a PowerShell command
     Usecase: Execute PowerShell cmdlets, .NET code, and just about anything else your heart desires
     Category: Execute
     Privileges: User
     MitreID: T1059.001
-    OperatingSystem: Windows 7 and up with .NET installed
+    OperatingSystem: Windows 7 and up
   - Command: powershell.exe -ep bypass -ec IgBXAGUAIAA8ADMAIABMAE8ATABCAEEAUwAiAA==
     Description: Set the execution policy to bypass and execute a very malicious PowerShell encoded command
     Usecase: Execute PowerShell cmdlets, .NET code, and just about anything else your heart desires
     Category: Execute
     Privileges: User
     MitreID: T1059.001
-    OperatingSystem: Windows 7 and up with .NET installed
+    OperatingSystem: Windows 7 and up
 Full_Path:
   - Path: '%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe'
   - Path: '%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe'
