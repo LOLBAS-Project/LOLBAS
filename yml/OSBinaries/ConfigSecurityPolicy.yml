@@ -18,7 +18,8 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-    Tags: ['INetCache']
+    Tags:
+      - Download: INetCache
 Full_Path:
   - Path: C:\Program Files\Windows Defender\ConfigSecurityPolicy.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\ConfigSecurityPolicy.exe

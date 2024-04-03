@@ -25,7 +25,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
-    Tags: ['DLL']
+    Tags:
+      - Execute: DLL
   - Command: rundll32.exe ieadvpack.dll,RegisterOCX calc.exe
     Description: Launch an executable by calling the RegisterOCX function.
     Usecase: Run an executable payload.

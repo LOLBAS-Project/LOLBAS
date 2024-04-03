@@ -11,7 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 10, Windows 11
-    Tags: ['DLL']
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\2022\TestAgent\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe

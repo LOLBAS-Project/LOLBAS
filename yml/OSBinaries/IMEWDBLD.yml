@@ -11,7 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-    Tags: ['INetCache']
+    Tags:
+      - Download: INetCache
 Full_Path:
   - Path: C:\Windows\System32\IME\SHARED\IMEWDBLD.exe
 Detection:

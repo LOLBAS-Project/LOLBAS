@@ -60,7 +60,10 @@ mapping:
           "Tags":
             type: seq
             sequence:
-              - type: str
+              - type: map
+                mapping:
+                  regex;(^[A-Z]):
+                    type: str
             required: false
   "Full_Path":
     type: seq

