@@ -1,7 +1,7 @@
 ---
 Name: wbadmin.exe
-Description: Command line utility used to export Active Directory.
-Author: 'Chris Eastwood'
+Description: Windows Backup Administration utility
+Author: Chris Eastwood
 Created: 2024-04-05
 Commands:
   - Command: wbadmin start backup -backupTarget:C:\temp\ -include:C:\Windows\NTDS\NTDS.dit,C:\Windows\System32\config\SYSTEM -quiet
