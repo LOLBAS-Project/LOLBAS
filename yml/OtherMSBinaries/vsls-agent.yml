@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 21H2 (likely previous and newer versions with modern versions of Visual Studio installed)
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: c:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\Extensions\Microsoft\LiveShare\Agent\vsls-agent.exe
 Detection:

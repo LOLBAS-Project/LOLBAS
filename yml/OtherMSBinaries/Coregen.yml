@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1055
     OperatingSystem: Windows
+    Tags:
+      - Execute: DLL
   - Command: coregen.exe dummy_assembly_name
     Description: Loads the coreclr.dll in the corgen.exe directory (e.g. C:\Program Files\Microsoft Silverlight\5.1.50918.0).
     Usecase: Execute DLL code
@@ -25,6 +27,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Program Files\Microsoft Silverlight\5.1.50918.0\coregen.exe
   - Path: C:\Program Files (x86)\Microsoft Silverlight\5.1.50918.0\coregen.exe
@@ -42,8 +46,5 @@ Resources:
   - Link: https://www.fireeye.com/blog/threat-research/2019/10/staying-hidden-on-the-endpoint-evading-detection-with-shellcode.html
 Acknowledgement:
   - Person: Nicky Tyrer
-    Handle:
   - Person: Evan Pena
-    Handle:
   - Person: Casey Erikson
-    Handle:

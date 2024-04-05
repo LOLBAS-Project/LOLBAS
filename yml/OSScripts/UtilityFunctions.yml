@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10 21H1 (likely other versions as well), Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Windows\diagnostics\system\Networking\UtilityFunctions.ps1
 Code_Sample:
