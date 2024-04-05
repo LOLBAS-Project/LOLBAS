@@ -1,3 +1,4 @@
+---
 Name: VisualUiaVerifyNative.exe
 Description: A Windows SDK binary for manual and automated testing of Microsoft UI Automation implementation and controls.
 Author: Jimmy (@bohops)

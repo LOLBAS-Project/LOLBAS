@@ -15,7 +15,7 @@ Full_Path:
   - Path: C:\Windows\System32\cmdkey.exe
   - Path: C:\Windows\SysWOW64\cmdkey.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/c3c152d457773454f67895008a1abde823be0755/rules/windows/process_creation/win_cmdkey_recon.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_cmdkey_recon.yml
 Resources:
   - Link: https://www.peew.pw/blog/2017/11/26/exploring-cmdkey-an-edge-case-for-privilege-escalation
   - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey

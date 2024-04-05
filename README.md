@@ -47,6 +47,8 @@ Interesting functionality can include:
 * Log evasion/modification
 * DLL side-loading/hijacking without being relocated elsewhere in the filesystem.
 
+We do not approve binaries that allows for netntlm coercing, since most Windows binaries allows for that. Only exception is binaries that allows that on other than default ports (such as rpcping) or can allow direct credential theft. 
+
 ## Contributing
 
 If you have found a new LOLBin or LOLScript that you would like to contribute, please review the contributing guidelines located here: https://github.com/LOLBAS-Project/LOLBAS/blob/master/CONTRIBUTING.md

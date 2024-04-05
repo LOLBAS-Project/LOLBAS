@@ -4,9 +4,28 @@ on: [push,pull_request]
 
 jobs:
   lintFiles:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Check file extensions
+        run: |
+          files=$(find "$GITHUB_WORKSPACE/yml" -type f -not -name "*.yml");
+          if [[ $files ]]; then
+            echo "::error::Files with unexpected extension found, please ensure you use '.yml' (all lower case) for files in the yml/ folder.";
+            for i in $files; do echo "::error file=$i,line=1::Unexpected extension"; done
+            exit 1;
+          fi
+          unset files
+      - name: Check duplicate file names
+        run: |
+          files=$(find "$GITHUB_WORKSPACE/yml/OSBinaries" "$GITHUB_WORKSPACE/yml/OtherMSBinaries" -type f -printf '%h %f\n' -iname "*.yml" | sort -t ' ' -k 2,2 -f | uniq -i -f 1 --all-repeated=separate | tr ' ' '/')
+          if [[ $files ]]; then
+            echo "::error::Files with duplicate filenames detected, please make sure you don't create duplicate entries.";
+            for i in $files; do echo "::error file=$i,line=1::Duplicate filename"; done
+            exit 1;
+          fi
+          unset files
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:

@@ -1,0 +1,24 @@
+---
+Name: iediagcmd.exe
+Description: Diagnostics Utility for Internet Explorer
+Author: manasmbellani
+Created: 2022-03-29
+Commands:
+  - Command: 'set windir=c:\test& cd "C:\Program Files\Internet Explorer\" & iediagcmd.exe /out:c:\test\foo.cab'
+    Description: Executes binary that is pre-planted at C:\test\system32\netsh.exe.
+    Usecase: Spawn a pre-planted executable from iediagcmd.exe.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10 1803, Windows 10 1703, Windows 10 22H1, Windows 10 22H2, Windows 11
+Full_Path:
+  - Path: C:\Program Files\Internet Explorer\iediagcmd.exe
+Detection:
+  - Sigma: https://github.com/manasmbellani/mycode_public/blob/master/sigma/rules/win_proc_creation_lolbin_iediagcmd.yml
+  - IOC: Sysmon Event ID 1
+  - IOC: Execution of process iediagcmd.exe with /out could be suspicious
+Resources:
+  - Link: https://twitter.com/Hexacorn/status/1507516393859731456
+Acknowledgement:
+  - Person: Adam
+    Handle: '@hexacorn'

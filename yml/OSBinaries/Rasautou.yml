@@ -11,10 +11,10 @@ Commands:
     Privileges: User, Administrator in Windows 8
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Windows\System32\rasautou.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_rasautou_dll_execution.yml
   - IOC: rasautou.exe command line containing -d and -p

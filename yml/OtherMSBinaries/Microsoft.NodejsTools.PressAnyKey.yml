@@ -14,6 +14,9 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\*\Community\Common7\IDE\Extensions\Microsoft\NodeJsTools\NodeJsTools\Microsoft.NodejsTools.PressAnyKey.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\*\Community\Common7\IDE\Extensions\Microsoft\NodeJsTools\NodeJsTools\Microsoft.NodejsTools.PressAnyKey.exe
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b02e3b698afbaae143ac4fb36236eb0b41122ed7/rules/windows/process_creation/proc_creation_win_renamed_pressanykey.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b02e3b698afbaae143ac4fb36236eb0b41122ed7/rules/windows/process_creation/proc_creation_win_pressanykey_lolbin_execution.yml
 Resources:
   - Link: https://twitter.com/mrd0x/status/1463526834918854661
 Acknowledgement:

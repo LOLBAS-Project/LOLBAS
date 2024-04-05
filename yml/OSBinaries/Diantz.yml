@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows XP, Windows vista, Windows 7, Windows 8, Windows 8.1.
+    Tags:
+      - Type: Compression
   - Command: diantz.exe \\remotemachine\pathToFile\file.exe c:\destinationFolder\file.cab
     Description: Download and compress a remote file and store it in a cab file on local machine.
     Usecase: Download and compress into a cab file.
@@ -18,14 +20,16 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019
+    Tags:
+      - Type: Compression
 Full_Path:
   - Path: c:\windows\system32\diantz.exe
   - Path: c:\windows\syswow64\diantz.exe
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/0593446f96c57a8b64e2b5b9fd15a20f1c56acab/rules/windows/process_creation/win_pc_lolbas_diantz_ads.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/0f33cbc85bf4b23b8d8308bfcc8b21a9e5431ee7/rules/windows/process_creation/win_pc_lolbas_diantz_remote_cab.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_lolbin_diantz_ads.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_lolbin_diantz_remote_cab.yml
   - IOC: diantz storing data into alternate data streams.
   - IOC: diantz getting a file from a remote machine or the internet.
 Resources:

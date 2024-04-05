@@ -26,6 +26,7 @@ mapping:
     required: true
   "Created":
     type: date
+    format: '%Y-%M-%d'
     required: true
   "Commands":
     type: seq
@@ -56,6 +57,14 @@ mapping:
           "OperatingSystem":
             type: str
             required: true
+          "Tags":
+            type: seq
+            sequence:
+              - type: map
+                mapping:
+                  regex;(^[A-Z]):
+                    type: str
+            required: false
   "Full_Path":
     type: seq
     required: true

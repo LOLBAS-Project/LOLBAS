@@ -11,13 +11,13 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Program Files\Internet Explorer\Extexport.exe
   - Path: C:\Program Files (x86)\Internet Explorer\Extexport.exe
-Code_Sample:
-  - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/0f33cbc85bf4b23b8d8308bfcc8b21a9e5431ee7/rules/windows/process_creation/win_pc_lolbas_extexport.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_extexport.yml
   - IOC: Extexport.exe loads dll and is execute from other folder the original path
 Resources:
   - Link: http://www.hexacorn.com/blog/2018/04/24/extexport-yet-another-lolbin/

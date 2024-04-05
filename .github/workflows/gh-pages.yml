@@ -20,6 +20,7 @@ jobs:
           mv yml/OSBinaries yml/Binaries
           mv yml/OSLibraries yml/Libraries
           mv yml/OSScripts yml/Scripts
+          rm -r yml/HonorableMentions
 
       - name: Deploy to LOLBAS-Project.github.io repo
         uses: peaceiris/actions-gh-pages@v3
