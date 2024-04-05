@@ -10,17 +10,15 @@ Commands:
     Category: Dump
     Privileges: Administrator, Backup Operators, SeBackupPrivilege
     MitreID: T1003.003
-    OperatingSystem: Windows
+    OperatingSystem: Windows Server
   - Command: wbadmin start recovery -version:<VersionIdentifyer> -recoverytarget:C:\temp -itemtype:file -items:C:\Windows\NTDS\NTDS.dit,C:\Windows\System32\config\SYSTEM -notRestoreAcl -quiet
     Description: Restore a version of NTDS.dit (and SYSTEM hive) into file path
     Usecase: Dumping of Active Directory NTDS.dit database
     Category: Dump
     Privileges: Administrator, Backup Operators, SeBackupPrivilege
     MitreID: T1003.003
-    OperatingSystem: Windows
+    OperatingSystem: Windows Server
 Full_Path:
   - Path: C:\Windows\System32\wbadmin.exe
-Code_Sample:
-  - Code:
 Detection:
   - IOC: wbadmin.exe with command line including "NTDS.dit"
