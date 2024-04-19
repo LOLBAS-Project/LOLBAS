@@ -17,6 +17,7 @@ Full_Path:
   - Path: c:\windows\system32\shimgvw.dll
   - Path: c:\windows\syswow64\shimgvw.dll
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/e1a713d264ac072bb76b5c4e5f41315a015d3f41/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml
   - IOC: Execution of rundll32.exe with 'ImageView_Fullscreen' and a protocol handler ('://') on the command line
 Resources:
   - Link: https://twitter.com/eral4m/status/1479080793003671557
