@@ -35,6 +35,8 @@ Full_Path:
   - Path: C:\Windows\System32\tar.exe
   - Path: C:\Windows\SysWOW64\tar.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/e1a713d264ac072bb76b5c4e5f41315a015d3f41/rules/windows/process_creation/proc_creation_win_tar_compression.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/e1a713d264ac072bb76b5c4e5f41315a015d3f41/rules/windows/process_creation/proc_creation_win_tar_extraction.yml
   - IOC: tar.exe extracting files from a remote host within the environment
   - IOC: Abnormal processes spawning tar.exe
   - IOC: tar.exe interacting with alternate data streams (ADS)
