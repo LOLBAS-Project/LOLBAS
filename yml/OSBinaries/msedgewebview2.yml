@@ -9,28 +9,28 @@ Commands:
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: Low privileges
-    MitreID: T1202
+    MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
   - Command: msedgewebview2.exe --utility-cmd-prefix="calc.exe"
     Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn calc.exe as its subprocess.
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
-    MitreID: T1202
+    MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
   - Command: msedgewebview2.exe --disable-gpu-sandbox --gpu-launcher="calc.exe"
     Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn calc.exe as its subprocess.
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
-    MitreID: T1202
+    MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
   - Command: msedgewebview2.exe --no-sandbox --renderer-cmd-prefix="calc.exe"
     Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn calc.exe as its subprocess.
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
-    MitreID: T1202
+    MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft\Edge\Application\114.0.1823.43\msedgewebview2.exe

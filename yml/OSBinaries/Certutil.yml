@@ -30,7 +30,7 @@ Commands:
     Usecase: Encode files to evade defensive measures
     Category: Encode
     Privileges: User
-    MitreID: T1027
+    MitreID: T1027.013
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: certutil -decode encodedInputFileName decodedOutputFileName
     Description: Command to decode a Base64 encoded file.
