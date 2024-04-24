@@ -23,7 +23,7 @@ Commands:
     Usecase: Executes a process under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
-    MitreID: T1218
+    MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\Program Files\Microsoft\Edge\Application\msedge.exe
