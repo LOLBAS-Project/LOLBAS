@@ -1,0 +1,39 @@
+---
+Name: bcdedit.exe
+Description: BCDEdit is a command-line tool for managing BCD stores. It can be used for a variety of purposes, including creating new stores, modifying existing stores, adding boot menu parameters, and so on. 
+Author: Arik Day
+Created: 2024-05-10
+Commands:
+  - Command: bcdedit /set {current} recoveryenabled no
+    Description: Disable automatic Windows recovery features by modifying boot configuration data
+    Usecase: Disabling automatic windows recovery features
+    Category: AWL bypass
+    Privileges: Required privs
+    MitreID: T1490
+    OperatingSystem: Windows Vista, Windows 8.1, Windows 10, Windows 11, Windows Server 2008, Windows Server 2008R2, Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019, Windows Server 2022
+  - Command: bcdedit.exe /set {default} bootstatuspolicy ignoreallfailures
+    Description: Disable automatic Windows recovery features by modifying boot configuration data
+    Usecase: Disabling automatic windows recovery features
+    Category: AWL bypass
+    Privileges: Required privs
+    MitreID: T1490
+    OperatingSystem: Windows Vista, Windows 8.1, Windows 10, Windows 11, Windows Server 2008, Windows Server 2008R2, Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019, Windows Server 2022
+  - Command: bcdedit.exe /set TESTSIGNING ON
+    Description: Allowing Windows to load test-signed kernel-mode drivers
+    Usecase: 
+    Category: ADS
+    Privileges: Required privs
+    MitreID: T1547
+    OperatingSystem: Windows Vista, Windows 8.1, Windows 10, Windows 11, Windows Server 2008, Windows Server 2008R2, Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019, Windows Server 2022
+Full_Path:
+  - Path: C:\Windows\System32\bcdedit.exe
+  - Path: C:\Windows\SysWOW64\bcdedit.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: bcdedit.exe being lunched with arguments to disable automatic windows recovery features
+Resources:
+  - Link: https://twitter.com/ArdSec/status/1788849952589849020
+Acknowledgement:
+  - Person: Arik Day
+    Handle: '@ArdSec'
