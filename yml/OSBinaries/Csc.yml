@@ -1,11 +1,11 @@
 ---
 Name: Csc.exe
-Description: Binary file used by .NET to compile C# code
+Description: Binary file used by .NET Framework to compile C# code
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
   - Command: csc.exe -out:My.exe File.cs
-    Description: Use CSC.EXE to compile C# code stored in File.cs and output the compiled version to My.exe.
+    Description: Use CSC.EXE to compile .NET Framework C# code stored in File.cs and output the compiled version to My.exe.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
     Category: Compile
     Privileges: User
@@ -30,7 +30,7 @@ Detection:
   - Elastic: https://github.com/elastic/detection-rules/blob/82ec6ac1eeb62a1383792719a1943b551264ed16/rules/windows/defense_evasion_execution_msbuild_started_unusal_process.toml
   - IOC: Csc.exe should normally not run as System account unless it is used for development.
 Resources:
-  - Link: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/command-line-building-with-csc-exe
+  - Link: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/
 Acknowledgement:
   - Person:
     Handle:
