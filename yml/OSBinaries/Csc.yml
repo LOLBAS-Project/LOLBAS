@@ -4,15 +4,15 @@ Description: Binary file used by .NET Framework to compile C# code
 Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
-  - Command: csc.exe -out:My.exe File.cs
-    Description: Use CSC.EXE to compile .NET Framework C# code stored in File.cs and output the compiled version to My.exe.
+  - Command: csc.exe -out:Output.exe File.cs
+    Description: Use csc.exe to compile C# code, targeting the .NET Framework, stored in File.cs and output the compiled version to Output.exe.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
     Category: Compile
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: csc -target:library File.cs
-    Description: Use CSC.EXE to compile C# code stored in File.cs and output the compiled version to a dll file.
+    Description: Use csc.exe to compile C# code, targeting the .NET Framework, stored in File.cs and output the compiled version to a DLL file.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
     Category: Compile
     Privileges: User
@@ -31,6 +31,3 @@ Detection:
   - IOC: Csc.exe should normally not run as System account unless it is used for development.
 Resources:
   - Link: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/
-Acknowledgement:
-  - Person:
-    Handle:
