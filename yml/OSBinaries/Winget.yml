@@ -8,7 +8,7 @@ Commands:
     Description: 'Downloads a file from the web address specified in manifest.yml and executes it on the system. Local manifest setting must be enabled in winget for it to work: "winget settings --enable LocalManifestFiles"'
     Usecase: Download and execute an arbitrary file from the internet
     Category: Execute
-    Privileges: Local Aministrator - required to enabled local manifest setting
+    Privileges: Local Administrator - required to enable local manifest setting
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
