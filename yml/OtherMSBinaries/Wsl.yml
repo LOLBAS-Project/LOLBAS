@@ -18,8 +18,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 19 Server, Windows 11
-  - Command: wsl.exe --exec <command>
-    Description: Executes Linux command as the default user (unless stated otherwise using `-u <username>`) on the default WSL distro (unless  stated otherwise using `-d <distro name>`)
+  - Command: wsl.exe --exec bash -c "<command>"
+    Description: Executes Linux command (for example via bash) as the default user (unless stated otherwise using `-u <username>`) on the default WSL distro (unless  stated otherwise using `-d <distro name>`)
     Usecase: Performs execution of arbitrary Linux commands.
     Category: Execute
     Privileges: User
