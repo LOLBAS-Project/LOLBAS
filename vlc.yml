@@ -1,0 +1,26 @@
+---
+Name: vlc.exe
+Description: Popular media player tool.
+Aliases:  # Optional field if any common aliases exist of the binary with nearly the same functionality,
+  - Alias: vlc  # but for example, is built for different architecture.
+Author: Juozas Dautartas
+Created: 2024-07-29 # YYYY-MM-DD (date the person created this file)
+Commands:
+  - Command: C:\Program Files (x86)\VideoLAN\VLC\vlc.exe -I dummy screen:// :screen-fps=1 :screen-follow-mouse --video-filter=scene --vout=dummy --start-time=1 --run-time=1 --scene-format=png --scene-prefix=screenshot --scene-path=C:\\<your path>\\ vlc://quit
+    Description: Launches VLC player (headless mode so no GUI) and takes a screenshot.
+    Usecase: Covert way of taking screenshots with no GUI displayed for the user.
+    Category: Reconnaissance
+    Privileges: User
+    MitreID: T1113
+    OperatingSystem: Windows 10, Windows 11
+  - Command: C:\Program Files (x86)\VideoLAN\VLC\vlc.exe -I dummy screen:// :screen-fps=24 :screen-follow-mouse :run-time=20 :sout="#transcode{vcodec=mp4v,vb=800,scale=1,acodec=none}:file{dst=C:\\<your path>\\play_around.mp4}" :no-sout-all :sout-keep vlc://quit
+    Description: Launches VLC player (headless mode so no GUI) and records users screen to mp4 file for 20s.
+    Usecase: Record screen for specified amount of time and save the output to disk in mp4.
+    Category: Reconnaissance
+    Privileges: User
+    MitreID: T1113
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Program Files (x86)\VideoLAN\VLC\vlc.exe
+Acknowledgement:
+  - Person: Juozas Dautartas (<a href="https://www.mii.lt/en/structure/staff/1804-dautartas-juozas-en-gb</a>)
