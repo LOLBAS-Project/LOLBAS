@@ -36,7 +36,7 @@ Commands:
     Usecase: Bypass LOLBAS detection, execute Makecab commands without spawning additional processes or utilizing known command interpreters.
     Category: Execute
     Privileges: User
-    MitreID: T1059	
+    MitreID: T1059
     OperatingSystem: Windows 2000, Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\makecab.exe
