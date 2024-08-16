@@ -22,6 +22,13 @@ Commands:
     OperatingSystem: Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019
     Tags:
       - Type: Compression
+  - Command: diantz /f directives.ddf
+    Description: Execute diantz directives as they are defined in the .DDF (scripting) file.
+    Usecase: Bypass LOLBAS detection, execute diantz directives without spawning additional processes or utilizing known command interpreters.
+    Category: Execute
+    Privileges: User
+    MitreID: T1059
+    OperatingSystem: Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019
 Full_Path:
   - Path: c:\windows\system32\diantz.exe
   - Path: c:\windows\syswow64\diantz.exe
@@ -34,6 +41,7 @@ Detection:
   - IOC: diantz getting a file from a remote machine or the internet.
 Resources:
   - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diantz
+  - Link: https://github.com/MicrosoftDocs/windowsserverdocs/blob/main/WindowsServerDocs/administration/windows-commands/diantz.md
 Acknowledgement:
   - Person: Tamir Yehuda
     Handle: '@tim8288'
