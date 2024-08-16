@@ -31,6 +31,13 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
+  - Command: makecab /F directives.ddf
+    Description: Execute Makecab commands as they are defined in the .DDF (scripting) file.
+    Usecase: Bypass LOLBAS detection, execute Makecab commands without spawning additional processes or utilizing known command interpreters.
+    Category: Execute
+    Privileges: User
+    MitreID: T1059	
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\makecab.exe
   - Path: C:\Windows\SysWOW64\makecab.exe
@@ -41,6 +48,8 @@ Detection:
   - IOC: Makecab storing data into alternate data streams
 Resources:
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
+  - Link: https://ss64.com/nt/makecab-directives.html
+  - Link: https://learn.microsoft.com/en-us/previous-versions/bb417343(v=msdn.10)#makecab-application
 Acknowledgement:
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
