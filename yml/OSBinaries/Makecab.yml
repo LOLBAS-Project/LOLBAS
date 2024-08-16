@@ -48,7 +48,7 @@ Detection:
   - IOC: Makecab storing data into alternate data streams
 Resources:
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
-  - Link: https://www.cs.toronto.edu/~simon/howto/win2kcommands.html
+  - Link: https://www.cs.toronto.edu/%7Esimon/howto/win2kcommands.html
   - Link: https://www.informit.com/articles/article.aspx?p=101731&seqNum=2
   - Link: https://www.pearsonhighered.com/assets/samplechapter/0/7/8/9/0789728583.pdf
   - Link: https://ss64.com/nt/makecab-directives.html
