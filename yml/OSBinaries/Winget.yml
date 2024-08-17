@@ -5,18 +5,18 @@ Author: Paul Sanders
 Created: 2022-01-03
 Commands:
   - Command: winget.exe install --manifest manifest.yml
-    Description: 'Downloads a file from the web address specified in manifest.yml and executes it on the system. Local manifest setting must be enabled in winget for it to work: "winget settings --enable LocalManifestFiles"'
+    Description: 'Downloads a file from the web address specified in manifest.yml and executes it on the system. Local manifest setting must be enabled in winget for it to work: `winget settings --enable LocalManifestFiles`'
     Usecase: Download and execute an arbitrary file from the internet
     Category: Execute
     Privileges: Local Administrator - required to enable local manifest setting
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-  - Command: winget.exe install [ms store ID]
-    Description: 'Allows to download any MS Store program, using it's Store ID, even if MS Store itself is blocked on the machine. Has some potential if someone pushes malicious programs into the MS Store.'
-    Usecase: Download and install software from MS Store even if MS Store is blocked
-    Category: Execute
+  - Command: winget.exe install [Microsoft Store ID]
+    Description: Download and install any software from the Microsoft Store using its Store ID, even if the Microsoft Store App itself is blocked on the machine. For example, use `9p7knl5rwt25` for obtaining ProcDump, PsExec via the Sysinternals Suite.
+    Usecase: Download and install software from Microsoft Store, even if Microsoft Store App is blocked
+    Category: Download
     Privileges: User
-    MitreID: T1072
+    MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Users\user\AppData\Local\Microsoft\WindowsApps\winget.exe
