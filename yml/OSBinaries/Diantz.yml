@@ -30,7 +30,7 @@ Commands:
     MitreID: T1036
     OperatingSystem: Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019
     Tags:
-      - Type: Compression    
+      - Type: Compression
 Full_Path:
   - Path: c:\windows\system32\diantz.exe
   - Path: c:\windows\syswow64\diantz.exe
