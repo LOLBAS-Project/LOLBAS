@@ -23,8 +23,12 @@ Commands:
     Tags:
       - Execute: WSH
 Full_Path:
+  - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\vbc.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v3.5\vbc.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\vbc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\vbc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v3.5\vbc.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\vbc.exe
 Code_Sample:
   - Code:
 Detection:

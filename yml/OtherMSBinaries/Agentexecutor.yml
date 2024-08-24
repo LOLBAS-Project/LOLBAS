@@ -19,7 +19,7 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows 10
 Full_Path:
-  - Path: C:\Program Files (x86)\Microsoft Intune Management Extension
+  - Path: C:\Program Files (x86)\Microsoft Intune Management Extension\AgentExecutor.exe
 Code_Sample:
   - Code:
 Detection:
