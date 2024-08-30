@@ -17,7 +17,7 @@ Full_Path:
 Code_Sample:
   - Code: https://gist.github.com/KyleHanslovan/5e0f00d331984c1fb5be32c40f3b265a
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/85d47aeabc25bbd023284849f4466c1e00b855ce/rules/windows/process_creation/process_creation_infdefaultinstall.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_infdefaultinstall_execute_sct_scripts.yml
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
 Resources:
   - Link: https://twitter.com/KyleHanslovan/status/911997635455852544

@@ -14,7 +14,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\WorkFolders.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/b4d5b44ea86cda24f38a87d3b0c5f9d4455bf841/rules/windows/process_creation/win_susp_workfolders.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_susp_workfolders.yml
   - IOC: WorkFolders.exe should not be run on a normal workstation
 Resources:
   - Link: https://www.ctus.io/2021/04/12/exploading/

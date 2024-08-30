@@ -24,7 +24,7 @@ Full_Path:
 Code_Sample:
   - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/765acac3742310764495ed5a2006bc0ced5b1a67/rules/windows/process_creation/win_susp_servu_process_pattern.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_servu_susp_child_process.yml
   - IOC: Scriptrunner.exe should not be in use unless App-v is deployed
 Resources:
   - Link: https://twitter.com/KyleHanslovan/status/914800377580503040

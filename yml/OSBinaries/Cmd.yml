@@ -36,7 +36,7 @@ Full_Path:
   - Path: C:\Windows\System32\cmd.exe
   - Path: C:\Windows\SysWOW64\cmd.exe
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/688df3405afd778d63a2ea36a084344a2052848c/rules/windows/process_creation/process_creation_alternate_data_streams.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_susp_alternate_data_streams.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_ads_file_creation.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/61afb1c1c0c3f50637b1bb194f3e6fb09f476e50/rules/windows/defense_evasion_unusual_dir_ads.toml
   - IOC: cmd.exe executing files from alternate data streams.

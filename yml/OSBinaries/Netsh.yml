@@ -11,13 +11,13 @@ Commands:
     Privileges: Admin
     MitreID: T1546.007
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\WINDOWS\System32\Netsh.exe
   - Path: C:\WINDOWS\SysWOW64\Netsh.exe
-Code_Sample:
-  - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/0a410010a2655bc6f2aae73b9fb3b2c00ed589f7/rules/windows/process_creation/win_susp_netsh_dll_persistence.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_netsh_helper_dll_persistence.yml
   - Splunk: https://github.com/splunk/security_content/blob/2b87b26bdc2a84b65b1355ffbd5174bdbdb1879c/detections/endpoint/processes_launching_netsh.yml
   - Splunk: https://github.com/splunk/security_content/blob/08ed88bd88259c03c771c30170d2934ed0a8f878/detections/deprecated/processes_created_by_netsh.yml
   - IOC: Netsh initiating a network connection

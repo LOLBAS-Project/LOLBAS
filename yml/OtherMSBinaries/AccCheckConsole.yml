@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags:
+      - Execute: DLL
   - Command: AccCheckConsole.exe -window "Untitled - Notepad" C:\path\to\your\lolbas.dll
     Description: Load a managed DLL in the context of AccCheckConsole.exe. The -window switch value can be set to an arbitrary active window name.
     Usecase: Local execution of managed code to bypass AppLocker.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86\AccChecker\AccCheckConsole.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x64\AccChecker\AccCheckConsole.exe

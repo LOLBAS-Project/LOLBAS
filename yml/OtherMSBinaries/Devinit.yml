@@ -14,6 +14,8 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\*\Community\Common7\Tools\devinit\devinit.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\*\Community\Common7\Tools\devinit\devinit.exe
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/b02e3b698afbaae143ac4fb36236eb0b41122ed7/rules/windows/process_creation/proc_creation_win_devinit_lolbin_usage.yml
 Resources:
   - Link: https://twitter.com/mrd0x/status/1460815932402679809
 Acknowledgement:

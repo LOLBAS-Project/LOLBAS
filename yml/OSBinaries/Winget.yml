@@ -5,10 +5,17 @@ Author: Paul Sanders
 Created: 2022-01-03
 Commands:
   - Command: winget.exe install --manifest manifest.yml
-    Description: 'Downloads a file from the web address specified in manifest.yml and executes it on the system. Local manifest setting must be enabled in winget for it to work: "winget settings --enable LocalManifestFiles"'
+    Description: 'Downloads a file from the web address specified in manifest.yml and executes it on the system. Local manifest setting must be enabled in winget for it to work: `winget settings --enable LocalManifestFiles`'
     Usecase: Download and execute an arbitrary file from the internet
     Category: Execute
-    Privileges: Local Aministrator - required to enabled local manifest setting
+    Privileges: Local Administrator - required to enable local manifest setting
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+  - Command: winget.exe install --accept-package-agreements -s msstore [name or ID]
+    Description: 'Download and install any software from the Microsoft Store using its name or Store ID, even if the Microsoft Store App itself is blocked on the machine. For example, use "Sysinternals Suite" or `9p7knl5rwt25` for obtaining ProcDump, PsExec via the Sysinternals Suite. Note: a Microsoft account is required for this.'
+    Usecase: Download and install software from Microsoft Store, even if Microsoft Store App is blocked
+    Category: Download
+    Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
@@ -19,10 +26,11 @@ Detection:
   - IOC: winget.exe spawned with local manifest file
   - IOC: Sysmon Event ID 1 - Process Creation
   - Analysis: https://saulpanders.github.io/2022/01/02/New-Year-New-LOLBAS.html
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/8bb3379b6807610d61d29db1d76f5af4840b8208/rules/windows/process_creation/proc_creation_win_lolbin_execution_via_winget.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_winget_local_install_via_manifest.yml
 Resources:
   - Link: https://saulpanders.github.io/2022/01/02/New-Year-New-LOLBAS.html
   - Link: https://docs.microsoft.com/en-us/windows/package-manager/winget/#production-recommended
 Acknowledgement:
   - Person: Paul
     Handle: '@saulpanders'
+  - Person: Konrad 'unrooted' Klawikowski

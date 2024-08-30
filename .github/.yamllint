@@ -13,3 +13,6 @@ rules:
     level: error
   indentation:
     level: error
+  document-start:
+    present: true
+    level: error
