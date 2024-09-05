@@ -28,7 +28,7 @@ Commands:
     Description: Load DLL specified in target .RSP file. See the Code Sample section for an example .RSP file.
     Usecase: Execute dll file using technique that can evade defensive counter measures
     Category: Execute
-    Privileges: User
+    Privileges: Administrator
     MitreID: T1218.008
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
