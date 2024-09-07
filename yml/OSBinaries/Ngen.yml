@@ -14,10 +14,10 @@ Commands:
     Tags:
       - Download: INetCache
 Full_Path:
-  - Path: C:\Windows\Microsoft.NET\Framework\v2.0.xxx\ngen.exe
-  - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.xxx\ngen.exe
-  - Path: C:\Windows\Microsoft.NET\Framework\v4.0.xxx\ngen.exe
-  - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.xxx\ngen.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\ngen.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\ngen.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngen.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ngen.exe
 Acknowledgement:
   - Person: Avihay Eldad
     Handle: '@AvihayEldad'

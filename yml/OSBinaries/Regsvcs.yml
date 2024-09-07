@@ -25,8 +25,10 @@ Commands:
       - Execute: DLL
       - Input: Custom Format
 Full_Path:
-  - Path: c:\Windows\Microsoft.NET\Framework\v*\regsvcs.exe
-  - Path: c:\Windows\Microsoft.NET\Framework64\v*\regsvcs.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\RegSvcs.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\RegSvcs.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\RegSvcs.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\RegSvcs.exe
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_lolbin_regasm.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/execution_register_server_program_connecting_to_the_internet.toml

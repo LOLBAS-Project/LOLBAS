@@ -21,6 +21,10 @@ Commands:
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Csc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Csc.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v3.5\csc.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\csc.exe
 Code_Sample:
   - Code:
 Detection:
