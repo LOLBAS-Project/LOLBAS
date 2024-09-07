@@ -1,8 +1,6 @@
 ---
 Name: Stordiag.exe
 Description: Storage diagnostic tool
-Aliases:
-  - Alias: stordiag.exe  # PE Original filename
 Author: 'Eral4m'
 Created: 2021-10-21
 Commands:
