@@ -18,6 +18,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Input: INF
   - Command: rundll32.exe advpack.dll,RegisterOCX test.dll
     Description: Launch a DLL payload by calling the RegisterOCX function.
     Usecase: Load a DLL payload.
@@ -25,6 +27,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
   - Command: rundll32.exe advpack.dll,RegisterOCX calc.exe
     Description: Launch an executable by calling the RegisterOCX function.
     Usecase: Run an executable payload.

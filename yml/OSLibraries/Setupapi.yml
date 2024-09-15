@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Input: INF
   - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\calc_exe.inf
     Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
     Usecase: Load an executable payload.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows
+    Tags:
+      - Input: INF
 Full_Path:
   - Path: c:\windows\system32\setupapi.dll
   - Path: c:\windows\syswow64\setupapi.dll

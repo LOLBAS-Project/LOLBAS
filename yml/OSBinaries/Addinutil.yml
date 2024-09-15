@@ -14,6 +14,8 @@ Commands:
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\AddinUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\AddinUtil.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v3.5\AddInUtil.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v3.5\AddInUtil.exe
 Code_Sample:
   - Code: https://gist.github.com/SILJAEUROPA/a850d476179d73df230a876944e9f3b1#file-addins-store
 Detection:

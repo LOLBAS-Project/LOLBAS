@@ -21,8 +21,6 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\zipfldr.dll
   - Path: c:\windows\syswow64\zipfldr.dll
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml
 Resources:

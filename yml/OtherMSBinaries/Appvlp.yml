@@ -28,8 +28,6 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\Microsoft Office\root\client\appvlp.exe
   - Path: C:\Program Files (x86)\Microsoft Office\root\client\appvlp.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_appvlp.yml
 Resources:

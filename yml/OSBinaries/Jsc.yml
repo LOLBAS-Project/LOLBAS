@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: WSH
   - Command: jsc.exe /t:library Library.js
     Description: Use jsc.exe to compile JavaScript code stored in Library.js and output Library.dll.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: WSH
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Jsc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Jsc.exe

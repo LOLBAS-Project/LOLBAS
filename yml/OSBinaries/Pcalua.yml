@@ -18,6 +18,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    Tags:
+      - Execute: DLL
   - Command: pcalua.exe -a C:\Windows\system32\javacpl.cpl -c Java
     Description: Open the target .CPL file with the Program Compatibility Assistant.
     Usecase: Execution of CPL files
@@ -27,8 +29,6 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\pcalua.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_lolbin_pcalua.yml
 Resources:

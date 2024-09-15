@@ -9,12 +9,10 @@ Commands:
     Usecase: Use Powershell host invoked from vbs script
     Category: Execute
     Privileges: User
-    MitreID: T1216
+    MitreID: T1216.002
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.vbs
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_syncappvpublishingserver_vbs_execute_psh.yml
 Resources:

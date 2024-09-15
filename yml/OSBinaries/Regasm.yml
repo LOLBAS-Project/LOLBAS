@@ -11,6 +11,9 @@ Commands:
     Privileges: Local Admin
     MitreID: T1218.009
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Input: Custom Format
   - Command: regasm.exe /U AllTheThingsx64.dll
     Description: Loads the target .DLL file and executes the UnRegisterClass function.
     Usecase: Execute code and bypass Application whitelisting
@@ -18,13 +21,14 @@ Commands:
     Privileges: User
     MitreID: T1218.009
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_lolbin_regasm.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/execution_register_server_program_connecting_to_the_internet.toml

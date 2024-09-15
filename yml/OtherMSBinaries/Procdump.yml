@@ -12,14 +12,18 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1202
-    OperatingSystem: Windows 8.1 and higher, Windows Server 2012 and higher.
+    OperatingSystem: Windows 8.1 and higher, Windows Server 2012 and higher
+    Tags:
+      - Execute: DLL
   - Command: procdump.exe -md calc.dll foobar
     Description: Loads calc.dll where configured with DLL_PROCESS_ATTACH execution, process argument can be arbitrary.
     Usecase: Performs execution of unsigned DLL.
     Category: Execute
     Privileges: User
     MitreID: T1202
-    OperatingSystem: Windows 8.1 and higher, Windows Server 2012 and higher.
+    OperatingSystem: Windows 8.1 and higher, Windows Server 2012 and higher
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: no default
 Detection:

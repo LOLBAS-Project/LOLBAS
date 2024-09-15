@@ -57,6 +57,14 @@ mapping:
           "OperatingSystem":
             type: str
             required: true
+          "Tags":
+            type: seq
+            sequence:
+              - type: map
+                mapping:
+                  regex;(^[A-Z]):
+                    type: str
+            required: false
   "Full_Path":
     type: seq
     required: true
@@ -84,19 +92,19 @@ mapping:
             type: str
           "Sigma":
             type: str
-            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#~]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
           "Analysis":
             type: str
-            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#~]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
           "Elastic":
             type: str
-            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#~]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
           "Splunk":
             type: str
-            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#~]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
           "BlockRule":
             type: str
-            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#~]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
   "Resources":
     type: seq
     required: false
@@ -105,7 +113,7 @@ mapping:
         mapping:
           "Link":
             type: str
-            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
+            pattern: '^http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+#~]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+$'
   "Acknowledgement":
     type: seq
     required: false
