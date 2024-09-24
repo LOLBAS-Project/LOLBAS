@@ -1,0 +1,29 @@
+---
+Name: ComputerDefaults.exe
+Description: ComputerDefaults.exe is a Windows system utility for managing default applications for tasks like web browsing, emailing, and media playback.
+Aliases:  # Optional field if any common aliases exist of the binary with nearly the same functionality,
+  - Alias:  # but for example, is built for different architecture.
+Author: Eron Clarke
+Created: 2024-09-24 # YYYY-MM-DD (date the person created this file)
+Commands:
+  - Command: .\ComputerDefaults.exe
+    Description: Upon execution, ComputerDefaults.exe checks the registry value at HKEY_CURRENT_USER\Software\Classes\ms-settings\Shell\open\command, and if this key is created or modified by an attacker, it can force the binary to execute an arbitrary command.
+    Usecase: Used to execute a binary or script and bypass application whitelisting
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Key1: Execute # Optional field for one or more tags
+Full_Path:
+  - Path: C:\Windows\System32\ComputerDefaults.exe
+  - Path: C:\Windows\SysWOW64\ComputerDefaults.exe
+Detection:
+  - IOC: Event ID 10
+  - IOC: A binary or script spawned as a child process of ComputerDefaults.exe
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_uac_bypass_computerdefaults.yml
+Resources:
+  - Link: https://gist.github.com/havoc3-3/812547525107bd138a1a839118a3a44b
+Acknowledgement:
+  - Person: Eron Clarke
+    Handle: 
