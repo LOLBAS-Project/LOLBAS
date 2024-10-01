@@ -12,7 +12,7 @@ Commands:
     MitreID: T1127
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
-  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.XXXXX.0\x64\vshadow.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\<version>\x64\vshadow.exe
 Detection:
   - IOC: vshadow.exe usage with -exec parameter
 Resources:
