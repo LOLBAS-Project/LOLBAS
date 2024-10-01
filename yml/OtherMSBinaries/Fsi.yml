@@ -19,7 +19,7 @@ Commands:
     MitreID: T1059
     OperatingSystem: Windows 10 2004 (likely previous and newer versions as well)
 Full_Path:
-  - Path: C:\Program Files\dotnet\sdk\[sdk version]\FSharp\fsi.exe
+  - Path: C:\Program Files\dotnet\sdk\<version>\FSharp\fsi.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\FSharp\fsi.exe
 Code_Sample:
   - Code: https://gist.github.com/NickTyrer/51eb8c774a909634fa69b4d06fc79ae1

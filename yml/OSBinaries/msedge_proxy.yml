@@ -1,7 +1,7 @@
 ---
 Name: msedge_proxy.exe
 Full_Path:
-  - Path: C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe
+  - Path: C:\Program Files (x86)\Microsoft\Edge\Application\msedge_proxy.exe
 Description: Microsoft Edge Browser
 Author: 'Mert Daş'
 Created: 2023-08-18

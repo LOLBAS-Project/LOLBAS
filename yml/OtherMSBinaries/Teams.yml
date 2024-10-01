@@ -26,7 +26,7 @@ Commands:
     MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
-  - Path: "%LOCALAPPDATA%\\Microsoft\\Teams\\current\\Teams.exe"
+  - Path: 'C:\Users\<username>\AppData\Local\Microsoft\Teams\current\Teams.exe'
 Code_Sample:
   - Code: https://github.com/lltltk/LOLBAS-research/tree/master/Teams
 Detection:

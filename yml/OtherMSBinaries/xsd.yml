@@ -14,7 +14,7 @@ Commands:
     Tags:
       - Download: INetCache
 Full_Path:
-  - Path: C:\Program Files (x86)\Microsoft SDKs\Windows\{version}\bin\NETFX {version} Tools\xsd.exe
+  - Path: C:\Program Files (x86)\Microsoft SDKs\Windows\<version>\bin\NETFX <version> Tools\xsd.exe
 Detection:
   - IOC: URL on a xsd.exe command line
   - IOC: xsd.exe making unexpected network connections or DNS requests

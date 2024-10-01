@@ -28,8 +28,8 @@ Commands:
     MitreID: T1127
     OperatingSystem: Windows
 Full_Path:
-  - Path: C:\Program Files\Microsoft Visual Studio\{version}\Community\Common7\IDE\VSLaunchBrowser.exe
-  - Path: C:\Program Files (x86)\Microsoft Visual Studio\{version}\Community\Common7\IDE\VSLaunchBrowser.exe
+  - Path: C:\Program Files\Microsoft Visual Studio\<version>\Community\Common7\IDE\VSLaunchBrowser.exe
+  - Path: C:\Program Files (x86)\Microsoft Visual Studio\<version>\Community\Common7\IDE\VSLaunchBrowser.exe
 Detection:
   - IOC: cmd.exe as sub-process of VSLaunchBrowser
   - IOC: URL on a VSLaunchBrowser command line

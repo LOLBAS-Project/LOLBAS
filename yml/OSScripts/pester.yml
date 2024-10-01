@@ -26,8 +26,7 @@ Commands:
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
-  - Path: c:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\bin\Pester.bat
-  - Path: c:\Program Files\WindowsPowerShell\Modules\Pester\*\bin\Pester.bat
+  - Path: c:\Program Files\WindowsPowerShell\Modules\Pester\<version>\bin\Pester.bat
 Code_Sample:
   - Code:
 Detection:

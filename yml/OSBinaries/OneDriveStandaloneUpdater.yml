@@ -12,7 +12,7 @@ Commands:
     MitreID: T1105
     OperatingSystem: Windows 10
 Full_Path:
-  - Path: '%localappdata%\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe'
+  - Path: 'C:\Users\<username>\AppData\Local\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe'
 Detection:
   - IOC: HKCU\Software\Microsoft\OneDrive\UpdateOfficeConfig\UpdateRingSettingURLFromOC being set to a suspicious non-Microsoft controlled URL
   - IOC: Reports of downloading from suspicious URLs in %localappdata%\OneDrive\setup\logs\StandaloneUpdate_*.log files
