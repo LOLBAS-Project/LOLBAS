@@ -19,10 +19,10 @@ Commands:
     MitreID: T1127
     OperatingSystem: Windows
 Full_Path:
-  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x86
-  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x64
-  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x86
-  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x64
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x86\mftrace.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x64\mftrace.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x86\mftrace.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x64\mftrace.exe
 Code_Sample:
   - Code:
 Detection:

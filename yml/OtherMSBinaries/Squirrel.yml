@@ -40,7 +40,7 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
 Full_Path:
-  - Path: '%localappdata%\Microsoft\Teams\current\Squirrel.exe'
+  - Path: 'C:\Users\<username>\AppData\Local\Microsoft\Teams\current\Squirrel.exe'
 Code_Sample:
   - Code: https://github.com/jreegun/POC-s/tree/master/nuget-squirrel
 Detection:

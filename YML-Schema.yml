@@ -74,6 +74,7 @@ mapping:
           "Path":
             type: str
             required: true
+            pattern: '^(([cC]:)\\([a-zA-Z0-9\-\_\. \(\)\<\>]+\\)*([a-zA-Z0-9_\-\.]+\.[a-z0-9]{3})|no default)$'
   "Code_Sample":
     type: seq
     required: false

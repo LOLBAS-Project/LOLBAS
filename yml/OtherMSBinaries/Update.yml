@@ -96,7 +96,7 @@ Commands:
     MitreID: T1070
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
 Full_Path:
-  - Path: '%localappdata%\Microsoft\Teams\update.exe'
+  - Path: 'C:\Users\<username>\AppData\Local\Microsoft\Teams\update.exe'
 Code_Sample:
   - Code: https://github.com/jreegun/POC-s/tree/master/nuget-squirrel
 Detection:
