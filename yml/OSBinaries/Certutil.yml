@@ -24,7 +24,7 @@ Commands:
     Category: ADS
     Privileges: User
     MitreID: T1564.004
-    - Command: certutil.exe -URL http://7-zip.org/a/7z1604-x64.exe 7zip.exe
+  - Command: certutil.exe -URL http://7-zip.org/a/7z1604-x64.exe 7zip.exe
     Description: Download and save 7zip to disk in the current folder.
     Usecase: Download file from Internet
     Category: Download
