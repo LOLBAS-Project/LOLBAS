@@ -32,6 +32,8 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Application: GUI
   - Command: certutil -encode inputFileName encodedOutputFileName
     Description: Command to encode a file using Base64
     Usecase: Encode files to evade defensive measures
