@@ -6,7 +6,7 @@ Created: 2019-10-04
 Commands:
   - Command: devtoolslauncher.exe LaunchForDeploy [PATH_TO_BIN] "argument here" test
     Description: The above binary will execute other binary.
-    Usecase: Execute any binary with given arguments and it will call developertoolssvc.exe. developertoolssvc is actually executing the binary. https://i.imgur.com/Go7rc0I.png
+    Usecase: Execute any binary with given arguments and it will call developertoolssvc.exe. developertoolssvc is actually executing the binary.
     Category: Execute
     Privileges: User
     MitreID: T1127
