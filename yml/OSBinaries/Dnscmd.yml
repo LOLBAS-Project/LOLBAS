@@ -13,6 +13,8 @@ Commands:
     OperatingSystem: Windows server
     Tags:
       - Execute: DLL
+      - Execute: Remote
+      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\System32\Dnscmd.exe
   - Path: C:\Windows\SysWOW64\Dnscmd.exe
