@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\dxcap.exe
   - Path: C:\Windows\SysWOW64\dxcap.exe
