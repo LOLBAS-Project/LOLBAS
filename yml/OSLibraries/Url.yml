@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: HTA
   - Command: rundll32.exe url.dll,OpenURL "C:\test\calc.url"
     Description: Launch an executable payload via proxy through a(n) URL (information) file by calling OpenURL.
     Usecase: Load an executable payload by calling a .url file with or without quotes.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: rundll32.exe url.dll,OpenURL file://^C^:^/^W^i^n^d^o^w^s^/^s^y^s^t^e^m^3^2^/^c^a^l^c^.^e^x^e
     Description: Launch an executable by calling OpenURL.
     Usecase: Load an executable payload by specifying the file protocol handler (obfuscated).
@@ -25,6 +29,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: rundll32.exe url.dll,FileProtocolHandler calc.exe
     Description: Launch an executable by calling FileProtocolHandler.
     Usecase: Launch an executable.
@@ -32,6 +38,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: rundll32.exe url.dll,FileProtocolHandler file://^C^:^/^W^i^n^d^o^w^s^/^s^y^s^t^e^m^3^2^/^c^a^l^c^.^e^x^e
     Description: Launch an executable by calling FileProtocolHandler.
     Usecase: Load an executable payload by specifying the file protocol handler (obfuscated).
@@ -39,6 +47,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: rundll32.exe url.dll,FileProtocolHandler file:///C:/test/test.hta
     Description: Launch a HTML application payload by calling FileProtocolHandler.
     Usecase: Invoke an HTML Application via mshta.exe (Default Handler).
@@ -46,6 +56,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: HTA
 Full_Path:
   - Path: c:\windows\system32\url.dll
   - Path: c:\windows\syswow64\url.dll
