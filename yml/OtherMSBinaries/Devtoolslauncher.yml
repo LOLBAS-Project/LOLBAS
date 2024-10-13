@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 7 and up with VS/VScode installed
+    Tags:
+      - Execute: EXE
   - Command: devtoolslauncher.exe LaunchForDebug [PATH_TO_BIN] "argument here" test
     Description: The above binary will execute other binary.
     Usecase: Execute any binary with given arguments.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 7 and up with VS/VScode installed
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: 'c:\windows\system32\devtoolslauncher.exe'
 Code_Sample:
