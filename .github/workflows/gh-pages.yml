@@ -1,5 +1,5 @@
 ---
-name: Update LOLBAS-Project-hegusung.github.io
+name: Update LOLBAS-Project.github.io
 on:
   workflow_run:
     workflows: ["PUSH & PULL REQUEST - YAML Lint and Schema Validation Checks"]
@@ -21,11 +21,11 @@ jobs:
           mv yml/OSScripts yml/Scripts
           rm -r yml/HonorableMentions
 
-      - name: Deploy to LOLBAS-Project-hegusung.github.io repo
+      - name: Deploy to LOLBAS-Project.github.io repo
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: hegusung/LOLBAS-Project-hegusung.github.io
+          external_repository: LOLBAS-Project/LOLBAS-Project.github.io
           publish_branch: master
           publish_dir: yml
           destination_dir: _lolbas
