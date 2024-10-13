@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.repository.fork == false && github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v2
 
