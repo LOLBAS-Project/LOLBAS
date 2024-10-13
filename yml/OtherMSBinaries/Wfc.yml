@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 10 2004 (likely previous and newer versions as well)
+    Tags:
+      - Execute: Csharp
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\wfc.exe
 Code_Sample:
