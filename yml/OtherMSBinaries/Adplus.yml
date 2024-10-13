@@ -18,6 +18,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: All Windows
+    Tags:
+      - Execute: CMD
   - Command: adplus.exe -c config-adplus.xml
     Description: Dump process memory using adplus config file (see Resources section for a sample file).
     Usecase: Run commands under a trusted Microsoft signed binary
@@ -32,6 +34,9 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: All windows
+    Tags:
+      - Execute: CMD
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\adplus.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\adplus.exe
