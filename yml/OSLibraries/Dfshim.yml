@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: ClickOne
+      - Execute: Remote
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Dfsvc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Dfsvc.exe
