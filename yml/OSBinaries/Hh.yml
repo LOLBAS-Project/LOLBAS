@@ -31,6 +31,7 @@ Commands:
     Tags:
       - Execute: CMD
       - Execute: CHM
+      - Execute: Remote
       - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\hh.exe
