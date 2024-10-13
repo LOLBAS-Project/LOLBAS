@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows XP, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Input: Custom Format
   - Command: explorer.exe C:\Windows\System32\notepad.exe
     Description: Execute notepad.exe with the parent process spawning from a new instance of explorer.exe
     Usecase: Performs execution of specified file with explorer parent process breaking the process tree, can be used for defense evasion.
@@ -18,6 +21,9 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\explorer.exe
   - Path: C:\Windows\SysWOW64\explorer.exe
