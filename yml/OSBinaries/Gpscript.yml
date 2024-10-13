@@ -11,6 +11,9 @@ Commands:
     Privileges: Administrator
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Input: Fixed Format
   - Command: Gpscript /startup
     Description: Executes startup scripts configured in Group Policy
     Usecase: Add local group policy logon script to execute file and hide from defensive counter measures
@@ -18,6 +21,9 @@ Commands:
     Privileges: Administrator
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Input: Fixed Format
 Full_Path:
   - Path: C:\Windows\System32\gpscript.exe
   - Path: C:\Windows\SysWOW64\gpscript.exe
