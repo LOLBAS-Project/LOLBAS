@@ -13,7 +13,6 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
-      - Input: Custom Format
   - Command: "conhost.exe --headless calc.exe"
     Description: Execute calc.exe with conhost.exe as parent process
     Usecase: Specify --headless parameter to hide child process window (if applicable)
@@ -23,7 +22,6 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
-      - Input: Custom Format
 Full_Path:
   - Path: c:\windows\system32\conhost.exe
 Detection:

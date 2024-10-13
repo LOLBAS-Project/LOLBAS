@@ -13,7 +13,6 @@ Commands:
     OperatingSystem: Windows 10 1803, Windows 10 1703, Windows 10 22H1, Windows 10 22H2, Windows 11
     Tags:
       - Execute: EXE
-      - Input: Fixed Format
 Full_Path:
   - Path: C:\Program Files\Internet Explorer\iediagcmd.exe
 Detection:

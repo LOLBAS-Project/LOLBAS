@@ -13,7 +13,6 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
     Tags:
       - Execute: CMD
-      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\System32\msconfig.exe
 Code_Sample:

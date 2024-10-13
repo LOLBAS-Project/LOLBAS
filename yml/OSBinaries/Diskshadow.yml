@@ -13,7 +13,6 @@ Commands:
     OperatingSystem: Windows server
     Tags:
       - Execute: CMD
-      - Input: Custom Format
   - Command: diskshadow> exec calc.exe
     Description: Execute commands using diskshadow.exe to spawn child process
     Usecase: Use diskshadow to bypass defensive counter measures
@@ -23,7 +22,6 @@ Commands:
     OperatingSystem: Windows server
     Tags:
       - Execute: CMD
-      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\System32\diskshadow.exe
   - Path: C:\Windows\SysWOW64\diskshadow.exe

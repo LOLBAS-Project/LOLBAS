@@ -13,7 +13,6 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
-      - Input: Fixed Format
 Full_Path:
   - Path: C:\Windows\System32\CustomShellHost.exe
 Detection:

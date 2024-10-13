@@ -27,7 +27,6 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: CMD
-      - Input: Custom Format
 Full_Path:
   - Path: c:\Program Files\Microsoft\Edge\Application\msedge.exe
   - Path: c:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe

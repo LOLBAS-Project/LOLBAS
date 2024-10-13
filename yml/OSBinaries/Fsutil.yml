@@ -27,7 +27,6 @@ Commands:
     OperatingSystem: Windows 11
     Tags:
       - Execute: EXE
-      - Input: Fixed Format
 Full_Path:
   - Path: C:\Windows\System32\fsutil.exe
   - Path: C:\Windows\SysWOW64\fsutil.exe
