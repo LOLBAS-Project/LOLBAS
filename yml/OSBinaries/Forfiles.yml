@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Input: Custom Format
   - Command: forfiles /p c:\windows\system32 /m notepad.exe /c "c:\folder\normal.dll:evil.exe"
     Description: Executes the evil.exe Alternate Data Stream (AD) since there is a match for notepad.exe in the c:\windows\system32 folder.
     Usecase: Use forfiles to start a new process from a binary hidden in an alternate data stream
@@ -18,6 +21,9 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\System32\forfiles.exe
   - Path: C:\Windows\SysWOW64\forfiles.exe
