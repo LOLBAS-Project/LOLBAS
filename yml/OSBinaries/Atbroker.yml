@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\System32\Atbroker.exe
   - Path: C:\Windows\SysWOW64\Atbroker.exe
