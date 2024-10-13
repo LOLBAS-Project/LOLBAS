@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: Csharp
+      - Input: Custom Format
   - Command: msbuild.exe project.csproj
     Description: Build and execute a C# project stored in the target csproj file.
     Usecase: Compile and run code
@@ -18,6 +21,9 @@ Commands:
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: Csharp
+      - Input: Custom Format
   - Command: msbuild.exe /logger:TargetLogger,C:\Loggers\TargetLogger.dll;MyParameters,Foo
     Description: Executes generated Logger DLL file with TargetLogger export
     Usecase: Execute DLL
@@ -27,6 +33,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
+      - Input: Custom Format
   - Command: msbuild.exe project.proj
     Description: Execute jscript/vbscript code through XML/XSL Transformation. Requires Visual Studio MSBuild v14.0+.
     Usecase: Execute project file that contains XslTransformation tag parameters
@@ -36,6 +43,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: WSH
+      - Input: Custom Format
   - Command: msbuild.exe @sample.rsp
     Description: By putting any valid msbuild.exe command-line options in an RSP file and calling it as above will interpret the options as if they were passed on the command line.
     Usecase: Bypass command-line based detections
@@ -43,6 +51,9 @@ Commands:
     Privileges: User
     MitreID: T1036
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Input: Custom Format
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Msbuild.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Msbuild.exe
