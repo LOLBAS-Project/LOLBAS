@@ -19,8 +19,8 @@ Code_Sample:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_runscripthelper.yml
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
-  - IOC: Event 4014 - Powershell logging
-  - IOC: Event 400
+  - IOC: Event ID 4104 - Microsoft-Windows-PowerShell/Operational
+  - IOC: Event ID 400 - Windows PowerShell
 Resources:
   - Link: https://posts.specterops.io/bypassing-application-whitelisting-with-runscripthelper-exe-1906923658fc
 Acknowledgement:
