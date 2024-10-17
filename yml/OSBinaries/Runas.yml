@@ -10,6 +10,7 @@ Commands:
     Category: ADS
     Privileges: User
     MitreID: T1564.004
+    OperatingSystem: Windows Server 2003, Windows Vista, Windows XP, Windows HPC Server 2008 R2, Windows Server 2008, Windows 7, Windows Server 2003 R2, Windows Server 2000, Windows Server 2012, Windows Server 2003 with SP1, Windows 8,Windows 10,Windows 11
 
   - Command: /trustlevel:0x40000 "conhost cmd.exe /C C:\Users\Public\Music\ttt.exe"
     Description: Description of the second command
