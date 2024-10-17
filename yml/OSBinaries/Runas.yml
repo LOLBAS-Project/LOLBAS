@@ -1,0 +1,49 @@
+---
+Name: Runas.exe
+Description: Something general about the binary
+Author: 'Chenbin Su'
+Created: 2024-10-18
+Commands:
+  - Command: runas /trustlevel:0x20000 "cmd /c type F:\1.txt > D:\2.bat"
+    Description: Add content to an Alternate Data Stream (ADS).
+    Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism.
+    Category: ADS
+    Privileges: User
+    MitreID: T1564.004
+
+  - Command: /trustlevel:0x40000 "conhost cmd.exe /C C:\Users\Public\Music\ttt.exe"
+    Description: Description of the second command
+    Usecase: Use binary to bypass Application whitelisting.
+    Category: AWL Bypass
+    Privileges: Required privs
+    MitreID: T1033
+    OperatingSystem: Windows Server 2003, Windows Vista, Windows XP, Windows HPC Server 2008 R2, Windows Server 2008, Windows 7, Windows Server 2003 R2, Windows Server 2000, Windows Server 2012, Windows Server 2003 with SP1, Windows 8,Windows 10,Windows 11
+
+
+Full_Path:
+  - Path: C:\Windows\System32\runas.exe
+  - Path: C:\Windows\SysWOW64\runas.exe
+  - Path: C:\Windows\WinSxS\wow64_microsoft-windows-runas_31bf3856ad364e35_10.0.19041.3636_none_ded48a5a472298d8\runas.exe
+  - Path: C:\Windows\servicing\LCU\Package_for_RollupFix~31bf3856ad364e35~amd64~~19041.4780.1.15\amd64_microsoft-windows-runas_31bf3856ad364e35_10.0.19041.3636_none_d47fe00812c1d6dd\f\runas.exe
+
+
+Detection:
+  - IOC: Runas.exe executing files from alternate data streams.
+  - IOC: Runas.exe accessing unusual user accounts.
+  - IOC: Runas.exe connecting to external URLs to download files.
+  - IOC: Runas.exe modifying the Windows registry.
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_sysinternals_tools_masquerading.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/unsupported/windows/proc_creation_win_correlation_multiple_susp_cli.yml
+  - Splunk: https://github.com/splunk/security_content/blob/develop/macros/process_runas
+  - Splunk: https://github.com/splunk/security_content/blob/develop/detections/endpoint/runas_execution_in_commandline
+  - Elastic: https://github.com/elastic/detection-rules/blob/main/rules_building_block/defense_evasion_masquerading_windows_system32_exe.toml
+
+Resources:
+  - Link: https://x.com/guyrleech/status/1750179359837606193
+  - Link: https://github.com/microsoft/sudo/issues/56#issuecomment-1944852064
+  - Link: https://x.com/DubiStowCh/status/1423887248441765894
+  - Link: https://x.com/PoSHYoungTeam/status/1491097736753876994
+  - Link: https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771525(v=ws.11)
+  - Link: https://learn.microsoft.com/zh-cn/troubleshoot/windows-client/group-policy/group-policy-not-applied-user-account-runas
+Acknowledgement:
+  - Person: Chenbin Su

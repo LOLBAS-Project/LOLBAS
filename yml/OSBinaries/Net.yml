@@ -1,0 +1,46 @@
+---
+Name: Net.exe
+Description: Something general about the binary
+Author: 'Chenbin Su'
+Created: 2024-10-18
+Commands:
+  - Command: "net use Z: \\localhost\D$; Z:\malware.exe"
+    Description: Add content to an Alternate Data Stream (ADS).
+    Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism.
+    Category: ADS
+    Privileges: User
+    MitreID: T1564.004
+    OperatingSystem: Windows Server 2003, Windows Vista, Windows XP, Windows HPC Server 2008 R2, Windows Server 2008, Windows 7, Windows Server 2003 R2, Windows Server 2000, Windows Server 2012, Windows Server 2003 with SP1, Windows 8,Windows 10,Windows 11
+
+  - Command: net start [SERVICES]
+    Description: Utilize this command to see which services are active and can also start specific services if needed.
+    Usecase: The net start command is commonly used in various scenarios, particularly in system administration and remote link.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows Server 2003, Windows Vista, Windows XP, Windows HPC Server 2008 R2, Windows Server 2008, Windows 7, Windows Server 2003 R2, Windows Server 2000, Windows Server 2012, Windows Server 2003 with SP1, Windows 8,Windows 10,Windows 11
+
+
+Full_Path:
+  - Path: C:\Windows\System32\net.exe
+  - Path: C:\Windows\SysWOW64\net.exe
+
+
+Detection:
+  - IOC: Net.exe executing files from alternate data streams.
+  - IOC: Net.exe connecting to external URLs to download files.
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_java_manageengine_susp_child_process.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules-threat-hunting/windows/process_creation/proc_creation_win_net_execution.yml
+  - Splunk: https://github.com/splunk/security_content/blob/develop/detections/endpoint/create_local_admin_accounts_using_net_exe.yml
+  - Splunk: https://github.com/splunk/security_content/blob/develop/detections/endpoint/domain_group_discovery_with_net.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/main/rta/net_user_add.py
+  - Elastic: https://github.com/elastic/detection-rules/blob/main/rules_building_block/discovery_net_view.toml
+
+
+Resources:
+  - Link: https://medium.com/@boutnaru/the-windows-process-journey-net-exe-net-command-91e4964f20b8
+  - Link: https://www.file.net/process/net.exe.html
+  - Link: https://help.fortinet.com/fsiem/Public_Resource_Access/7_1_3/rules/PH_RULE_Net_exe_Execution.htm
+  - Link: https://www.processlibrary.com/en/directory/files/net/25879/
+Acknowledgement:
+  - Person: Chenbin Su
