@@ -2,9 +2,9 @@
 Name: Net.exe
 Description: Something general about the binary
 Author: 'Chenbin Su'
-Created: 2024-10-18
+Created: 2024-10-17
 Commands:
-  - Command: "net use Z: \\\\localhost\\D$; Z:\\malware.exe"
+  - Command: "net use Z: \\localhost\\D$; Z:\\malware.exe"
     Description: Add content to an Alternate Data Stream (ADS).
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism.
     Category: ADS

@@ -2,7 +2,7 @@
 Name: Runas.exe
 Description: Something general about the binary
 Author: 'Chenbin Su'
-Created: 2024-10-18
+Created: 2024-10-17
 Commands:
   - Command: runas /trustlevel:0x20000 "cmd /c type F:\1.txt > D:\2.bat"
     Description: Add content to an Alternate Data Stream (ADS).
@@ -23,8 +23,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\runas.exe
   - Path: C:\Windows\SysWOW64\runas.exe
-  - Path: C:\Windows\WinSxS\wow64_microsoft-windows-runas_31bf3856ad364e35_10.0.19041.3636_none_ded48a5a472298d8\runas.exe
-  - Path: C:\Windows\servicing\LCU\Package_for_RollupFix~31bf3856ad364e35~amd64~~19041.4780.1.15\amd64_microsoft-windows-runas_31bf3856ad364e35_10.0.19041.3636_none_d47fe00812c1d6dd\f\runas.exe
+
 
 
 Detection:
