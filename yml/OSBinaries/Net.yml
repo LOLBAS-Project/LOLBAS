@@ -11,7 +11,6 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows Server 2003, Windows Vista, Windows XP, Windows HPC Server 2008 R2, Windows Server 2008, Windows 7, Windows Server 2003 R2, Windows Server 2000, Windows Server 2012, Windows Server 2003 with SP1, Windows 8,Windows 10,Windows 11
-
   - Command: net start [SERVICES]
     Description: Utilize this command to see which services are active and can also start specific services if needed.
     Usecase: The net start command is commonly used in various scenarios, particularly in system administration and remote link.
@@ -19,13 +18,9 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows Server 2003, Windows Vista, Windows XP, Windows HPC Server 2008 R2, Windows Server 2008, Windows 7, Windows Server 2003 R2, Windows Server 2000, Windows Server 2012, Windows Server 2003 with SP1, Windows 8,Windows 10,Windows 11
-
-
 Full_Path:
   - Path: C:\Windows\System32\net.exe
   - Path: C:\Windows\SysWOW64\net.exe
-
-
 Detection:
   - IOC: Net.exe executing files from alternate data streams.
   - IOC: Net.exe connecting to external URLs to download files.
@@ -35,8 +30,6 @@ Detection:
   - Splunk: https://github.com/splunk/security_content/blob/develop/detections/endpoint/domain_group_discovery_with_net.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/main/rta/net_user_add.py
   - Elastic: https://github.com/elastic/detection-rules/blob/main/rules_building_block/discovery_net_view.toml
-
-
 Resources:
   - Link: https://medium.com/@boutnaru/the-windows-process-journey-net-exe-net-command-91e4964f20b8
   - Link: https://www.file.net/process/net.exe.html
