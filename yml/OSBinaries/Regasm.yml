@@ -5,15 +5,14 @@ Author: 'Oddvar Moe'
 Created: 2018-05-25
 Commands:
   - Command: regasm.exe AllTheThingsx64.dll
-    Description: Loads the target .DLL file and executes the RegisterClass function.
+    Description: Loads the target .Net DLL file and executes the RegisterClass function.
     Usecase: Execute code and bypass Application whitelisting
     Category: AWL Bypass
     Privileges: Local Admin
     MitreID: T1218.009
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: DLL
-      - Input: Custom Format
+      - Execute: .NetDLL
   - Command: regasm.exe /U AllTheThingsx64.dll
     Description: Loads the target .DLL file and executes the UnRegisterClass function.
     Usecase: Execute code and bypass Application whitelisting
@@ -22,8 +21,7 @@ Commands:
     MitreID: T1218.009
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: DLL
-      - Input: Custom Format
+      - Execute: .NetDLL
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\regasm.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\regasm.exe

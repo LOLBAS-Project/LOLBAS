@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\Terminal\ServiceHub\os64\OpenConsole.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\Terminal\ServiceHub\os86\OpenConsole.exe

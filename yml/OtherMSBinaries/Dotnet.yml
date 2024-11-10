@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with .NET installed
+    Tags:
+      - Execute: .NetDLL
   - Command: dotnet.exe [PATH_TO_DLL]
     Description: dotnet.exe will execute any DLL.
     Usecase: Execute DLL
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with .NET installed
+    Tags:
+      - Execute: .NetDLL
   - Command: dotnet.exe fsi
     Description: dotnet.exe will open a console which allows for the execution of arbitrary F# commands
     Usecase: Execute arbitrary F# code
@@ -25,6 +29,8 @@ Commands:
     Privileges: User
     MitreID: T1059
     OperatingSystem: Windows 10 and up with .NET SDK installed
+    Tags:
+      - Execute: Fsharp
   - Command: dotnet.exe msbuild [Path_TO_XML_CSPROJ]
     Description: dotnet.exe with msbuild (SDK Version) will execute unsigned code
     Usecase: Execute code bypassing AWL
@@ -32,6 +38,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 and up with .NET Core installed
+    Tags:
+      - Execute: CSProj
 Full_Path:
   - Path: 'C:\Program Files\dotnet\dotnet.exe'
 Detection:

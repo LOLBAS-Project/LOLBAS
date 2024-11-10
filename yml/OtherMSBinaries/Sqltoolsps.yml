@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags:
+      - Execute: Powershell
 Full_Path:
   - Path: C:\Program files (x86)\Microsoft SQL Server\130\Tools\Binn\sqlps.exe
 Code_Sample:

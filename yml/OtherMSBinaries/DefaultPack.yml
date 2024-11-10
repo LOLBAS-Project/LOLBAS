@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft\DefaultPack\DefaultPack.exe
 Code_Sample:

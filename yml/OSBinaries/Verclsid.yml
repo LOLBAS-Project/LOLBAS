@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.012
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Windows\System32\verclsid.exe
   - Path: C:\Windows\SysWOW64\verclsid.exe

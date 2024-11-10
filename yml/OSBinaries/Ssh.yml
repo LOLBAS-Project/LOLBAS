@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10 1809, Windows Server 2019
+    Tags:
+      - Execute: EXE
   - Command: ssh -o ProxyCommand=calc.exe .
     Description: Executes calc.exe from ssh.exe
     Usecase: Performs execution of specified file, can be used as a defensive evasion.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: c:\windows\system32\OpenSSH\ssh.exe
 Detection:

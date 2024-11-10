@@ -11,8 +11,6 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 7, Windows 10, Windows 11
-    Tags:
-      - Execute: WSH
   - Command: vbc -reference:Microsoft.VisualBasic.dll c:\temp\vbs\run.vb
     Description: Binary file used by .NET to compile Visual Basic code to an executable.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
@@ -20,8 +18,6 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 7, Windows 10, Windows 11
-    Tags:
-      - Execute: WSH
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\vbc.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v3.5\vbc.exe

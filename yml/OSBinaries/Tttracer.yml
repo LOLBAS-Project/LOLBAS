@@ -11,6 +11,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1127
     OperatingSystem: Windows 10 1809 and newer, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: TTTracer.exe -dumpFull -attach pid
     Description: Dumps process using tttracer.exe. Requires administrator privileges
     Usecase: Dump process by PID

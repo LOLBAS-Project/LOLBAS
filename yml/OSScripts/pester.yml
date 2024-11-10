@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: Pester.bat ;calc.exe
     Description: Execute code using Pester. Example here executes calc.exe
     Usecase: Proxy execution
@@ -18,13 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
-  - Command: Pester.bat ;calc.exe
-    Description: Execute code using Pester. Example here executes calc.exe
-    Usecase: Proxy execution
-    Category: Execute
-    Privileges: User
-    MitreID: T1216
-    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: c:\Program Files\WindowsPowerShell\Modules\Pester\<version>\bin\Pester.bat
 Code_Sample:

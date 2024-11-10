@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: sc config <existing> binPath="\"c:\\ADS\\file.txt:cmd.exe\" /c echo works > \"c:\ADS\works.txt\"" & sc start <existing>
     Description: Modifies an existing service and executes the file stored in the ADS.
     Usecase: Execute binary file hidden inside an alternate data stream
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\sc.exe
   - Path: C:\Windows\SysWOW64\sc.exe

@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 1709, Windows 10 1703, Windows 10 1607
+    Tags:
+      - Execute: Powershell
 Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.exe
   - Path: C:\Windows\SysWOW64\SyncAppvPublishingServer.exe

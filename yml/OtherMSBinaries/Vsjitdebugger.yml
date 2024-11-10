@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: c:\windows\system32\vsjitdebugger.exe
 Code_Sample:

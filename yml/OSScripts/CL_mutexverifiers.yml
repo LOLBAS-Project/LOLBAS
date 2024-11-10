@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: Powershell
 Full_Path:
   - Path: C:\Windows\diagnostics\system\WindowsUpdate\CL_Mutexverifiers.ps1
   - Path: C:\Windows\diagnostics\system\Audio\CL_Mutexverifiers.ps1

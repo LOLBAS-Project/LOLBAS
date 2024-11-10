@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11, Windows Server
+    Tags:
+      - Execute: CMD
   - Command: msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand="c:\temp\calc.bat"
     Description: Launch calc.bat via msdeploy.exe.
     Usecase: Local execution of batch file using msdeploy.exe.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11, Windows Server
+    Tags:
+      - Execute: CMD
   - Command: msdeploy.exe -verb:sync -source:filePath=C:\windows\system32\calc.exe -dest:filePath=C:\Users\Public\calc.exe
     Description: Copy file from source to destination.
     Usecase: Copy file.

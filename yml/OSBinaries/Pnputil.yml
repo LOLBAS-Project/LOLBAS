@@ -11,6 +11,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1547
     OperatingSystem: Windows 7, Windows 10, Windows 11
+    Tags:
+      - Execute: INF
 Full_Path:
   - Path: C:\Windows\system32\pnputil.exe
 Code_Sample:

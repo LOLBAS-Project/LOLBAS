@@ -13,6 +13,15 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
+  - Command: control.exe c:\windows\tasks\evil.cpl
+    Description: Execute evil.cpl payload. A CPL is a DLL file with CPlApplet export function)
+    Usecase: Use to execute code and bypass application whitelisting
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.002
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Windows\System32\control.exe
   - Path: C:\Windows\SysWOW64\control.exe

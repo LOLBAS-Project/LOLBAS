@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: Shellcode
   - Command: |
       cdb.exe -pd -pn <process_name>
       .shell <cmd>
@@ -20,6 +22,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
   - Command: cdb.exe -c C:\debug-script.txt calc
     Description: Execute arbitrary commands and binaries using a debugging script (see Resources section for a sample file).
     Usecase: Run commands under a trusted Microsoft signed binary
@@ -27,6 +31,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\cdb.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\cdb.exe

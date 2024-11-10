@@ -20,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: rundll32 SHELL32.DLL,ShellExec_RunDLL "cmd.exe" "/c echo hi"
     Description: Launch command line by calling the ShellExec_RunDLL function.
     Usecase: Run an executable payload.
@@ -27,6 +29,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: c:\windows\system32\shell32.dll
   - Path: c:\windows\syswow64\shell32.dll

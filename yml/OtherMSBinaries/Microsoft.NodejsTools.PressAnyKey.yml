@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\<version>\Community\Common7\IDE\Extensions\Microsoft\NodeJsTools\NodeJsTools\Microsoft.NodejsTools.PressAnyKey.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\<version>\Community\Common7\IDE\Extensions\Microsoft\NodeJsTools\NodeJsTools\Microsoft.NodejsTools.PressAnyKey.exe

@@ -20,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1055
     OperatingSystem: Windows
+    Tags:
+      - Execute: DLL
   - Command: coregen.exe /L C:\folder\evil.dll dummy_assembly_name
     Description: Loads the target .DLL in arbitrary path specified with /L. Since binary is signed it can also be used to bypass application whitelisting solutions.
     Usecase: Execute DLL code

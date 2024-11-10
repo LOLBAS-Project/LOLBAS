@@ -46,7 +46,6 @@ Commands:
     Privileges: Admin
     MitreID: T1003.003
     OperatingSystem: Windows 10, Windows 11, Windows 2016 Server, Windows 2019 Server
-
 Full_Path:
   - Path: C:\Windows\System32\esentutl.exe
   - Path: C:\Windows\SysWOW64\esentutl.exe

@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 and up with VS/VScode installed
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Web Tools\ProjectSystem\VSIISExeLauncher.exe'
 Code_Sample:

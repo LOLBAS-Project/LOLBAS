@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: INF
   - Command: rundll32.exe advpack.dll,LaunchINFSection c:\test.inf,,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied).
     Usecase: Run local or remote script(let) code through INF file specification.
@@ -19,7 +21,7 @@ Commands:
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Input: INF
+      - Execute: INF
   - Command: rundll32.exe advpack.dll,RegisterOCX test.dll
     Description: Launch a DLL payload by calling the RegisterOCX function.
     Usecase: Load a DLL payload.
@@ -36,6 +38,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: rundll32 advpack.dll, RegisterOCX "cmd.exe /c calc.exe"
     Description: Launch command line by calling the RegisterOCX function.
     Usecase: Run an executable payload.
@@ -43,6 +47,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: c:\windows\system32\advpack.dll
   - Path: c:\windows\syswow64\advpack.dll

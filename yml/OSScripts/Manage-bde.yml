@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: copy c:\users\person\evil.exe c:\users\public\manage-bde.exe & cd c:\users\public\ & cscript.exe c:\windows\system32\manage-bde.wsf
     Description: Run the manage-bde.wsf script with a payload named manage-bde.exe in the same directory to run the payload file.
     Usecase: Proxy execution from script
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\manage-bde.wsf
 Code_Sample:

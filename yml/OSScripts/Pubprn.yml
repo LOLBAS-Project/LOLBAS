@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1216.001
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: SCT
 Full_Path:
   - Path: C:\Windows\System32\Printing_Admin_Scripts\en-US\pubprn.vbs
   - Path: C:\Windows\SysWOW64\Printing_Admin_Scripts\en-US\pubprn.vbs
