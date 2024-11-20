@@ -32,8 +32,7 @@ Commands:
     MitreID: T1220
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Execute: CMD
-      - Execute: Remote
+      - Execute: XSL
 Full_Path:
   - Path: C:\Windows\System32\winrm.vbs
   - Path: C:\Windows\SysWOW64\winrm.vbs

@@ -21,7 +21,7 @@ Commands:
     MitreID: T1127
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Execute: EXE
+      - Execute: CMD
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Team Tools\DiagnosticsHub\Collector\VSDiagnostics.exe
 Detection:

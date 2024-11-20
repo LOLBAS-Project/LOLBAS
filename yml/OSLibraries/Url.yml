@@ -21,7 +21,7 @@ Commands:
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Execute: EXE
+      - Execute: URL
   - Command: rundll32.exe url.dll,OpenURL file://^C^:^/^W^i^n^d^o^w^s^/^s^y^s^t^e^m^3^2^/^c^a^l^c^.^e^x^e
     Description: Launch an executable by calling OpenURL.
     Usecase: Load an executable payload by specifying the file protocol handler (obfuscated).

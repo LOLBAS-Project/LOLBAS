@@ -51,6 +51,8 @@ Commands:
     MitreID: T1218.007
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
+      - Execute: MSI
+      - Execute: MST
       - Execute: Remote
 Full_Path:
   - Path: C:\Windows\System32\msiexec.exe

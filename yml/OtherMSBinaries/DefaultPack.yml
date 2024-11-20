@@ -12,7 +12,7 @@ Commands:
     MitreID: T1218
     OperatingSystem: Windows
     Tags:
-      - Execute: EXE
+      - Execute: CMD
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft\DefaultPack\DefaultPack.exe
 Code_Sample:

@@ -12,7 +12,7 @@ Commands:
     MitreID: T1127
     OperatingSystem: Windows
     Tags:
-      - Execute: Csharp
+      - Execute: CSharp
   - Command: rcsi.exe bypass.csx
     Description: Use embedded C# within the csx script to execute the code.
     Usecase: Local execution of arbitrary C# code stored in local CSX file.
@@ -21,7 +21,7 @@ Commands:
     MitreID: T1127
     OperatingSystem: Windows
     Tags:
-      - Execute: Csharp
+      - Execute: CSharp
 Full_Path:
   - Path: no default
 Code_Sample:
