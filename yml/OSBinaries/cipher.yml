@@ -1,9 +1,7 @@
 ---
 Name: Cipher.exe
 Description: Windows binary can be used to overwrite deleted data in Windows direoctry and volume
-Aliases:  # Optional field if any common aliases exist of the binary with nearly the same functionality,
-  - Alias:
-Author: Adetutu Ogunsowo 
+Author: Adetutu Ogunsowo
 Created: 2024-11-22 # YYYY-MM-DD (date the person created this file)
 Commands:
   - Command: cipher /w:<directory> 
