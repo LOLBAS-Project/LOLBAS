@@ -1,0 +1,28 @@
+---
+Name: Cipher.exe
+Description: Windows binary can be used to overwrite deleted data in Windows direoctry and volume
+Aliases:  # Optional field if any common aliases exist of the binary with nearly the same functionality,
+  - Alias:
+Author: Adetutu Ogunsowo 
+Created: 2024-11-22 # YYYY-MM-DD (date the person created this file)
+Commands:
+  - Command: cipher /w:<directory> 
+    Description: Causes all deallocated space on <idrectory> to be overwritten
+    Usecase: Attacker wants to permanently delete their artefacts, evidence, logs etc. and cannot be retrived by forensics means
+    Category: Encode
+    Privileges: User
+    MitreID:  T1485.001
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+Full_Path:
+  - Path: c:\windows\system32\cipher.exe
+  - Path: c:\windows\syswow64\cipher.exe
+Code_Sample:
+  - Code: 
+Detection:
+  - IOC: Event ID 10
+  - IOC: cipher.exe spawned
+Resources:
+  - Link: https://www.volexity.com/blog/2024/11/22/the-nearest-neighbor-attack-how-a-russian-apt-weaponized-nearby-wi-fi-networks-for-covert-access/
+Acknowledgement:
+  - Person: Ade Ogunsowo
+    Handle: '@i_am_tutu'
