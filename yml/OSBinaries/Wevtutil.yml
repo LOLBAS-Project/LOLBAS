@@ -20,7 +20,7 @@ Commands:
     OperatingSystem: Windows Vista and later
   - Command: wevtutil qe Security /f:xml > exported_logs.xml
     Description: Queries the Security event log and exports its contents in XML format to a file.
-    Usecase: sed to exfiltrate Security log data for analysis. The XML format allows attackers to parse and extract detailed information about audit events, user activity, or security configurations.
+    Usecase: Used to exfiltrate Security log data for analysis. The XML format allows attackers to parse and extract detailed information about audit events, user activity, or security configurations.
     Category: Dump
     Privileges: Administrator
     MitreID: T1005
@@ -29,14 +29,14 @@ Full_Path:
   - Path: C:\Windows\System32\wevtutil.exe
   - Path: C:\Windows\SysWOW64\wevtutil.exe
 Code_Sample:
-  - Code:
+  - Code: https://example.com/sample-code
 Detection:
   - IOC: Use of wevtutil cl in command-line logs.
   - IOC: Multiple wevtutil qe commands targeting specific Event IDs.
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_eventlog_clear.yml
   - Splunk: https://lantern.splunk.com/Security/UCE/Guided_Insights/Threat_hunting/Detecting_a_ransomware_attack/Wevtutil.exe_abuse
 Resources:
-  - Link: https://denwp.com/unexplored-lolbas-technique-wevtutil-exe/ 
+  - Link: https://denwp.com/unexplored-lolbas-technique-wevtutil-exe/
   - Link: https://x.com/tonmoy0010/status/1860963760774713805
 Acknowledgement:
   - Person: Tonmoy Jitu
