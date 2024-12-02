@@ -36,8 +36,12 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_eventlog_clear.yml
   - Splunk: https://lantern.splunk.com/Security/UCE/Guided_Insights/Threat_hunting/Detecting_a_ransomware_attack/Wevtutil.exe_abuse
 Resources:
+  - Link: https://www.reddit.com/r/ThreathuntingDFIR/comments/1b625v8/wevtutil_dumping_logs_without_powershell/
   - Link: https://denwp.com/unexplored-lolbas-technique-wevtutil-exe/
   - Link: https://x.com/tonmoy0010/status/1860963760774713805
+  - Link: https://attack.mitre.org/software/S0645/
 Acknowledgement:
   - Person: Tonmoy Jitu
     Handle: '@tonmoy0010'
+  - Person: Secret Guy
+    Handle: 'GoranLind'
