@@ -22,5 +22,6 @@ Detection:
   - IOC: Network connections originating from wmplayer.exe may be suspicious
 Resources:
   - Link: https://pampuna.nl/blog/2024/12/wmplayer.html
+Acknowledgement:
   - Person: Rutger Flohil
     Handle: ''
