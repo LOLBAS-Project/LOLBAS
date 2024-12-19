@@ -28,8 +28,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\wevtutil.exe
   - Path: C:\Windows\SysWOW64\wevtutil.exe
-Code_Sample:
-  - Code: https://example.com/sample-code
 Detection:
   - IOC: Use of wevtutil cl in command-line logs.
   - IOC: Multiple wevtutil qe commands targeting specific Event IDs.
