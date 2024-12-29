@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1216.002
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: PowerShell
 Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.vbs
 Detection:

@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\diagnostics\system\AERO\CL_Invocation.ps1
   - Path: C:\Windows\diagnostics\system\Audio\CL_Invocation.ps1

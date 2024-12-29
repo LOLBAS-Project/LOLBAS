@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
   - Command: Mftrace.exe powershell.exe
     Description: Launch cmd.exe as a subprocess of Mftrace.exe.
     Usecase: Local execution of powershell.exe as a subprocess of Mftrace.exe.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x86\mftrace.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x64\mftrace.exe

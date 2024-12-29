@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1218.007
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: MSI
+      - Execute: Remote
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\<version>\Community\Common7\Tools\devinit\devinit.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\<version>\Community\Common7\Tools\devinit\devinit.exe

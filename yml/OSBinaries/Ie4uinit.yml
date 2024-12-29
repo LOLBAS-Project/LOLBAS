@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: INF
 Full_Path:
   - Path: c:\windows\system32\ie4uinit.exe
   - Path: c:\windows\sysWOW64\ie4uinit.exe

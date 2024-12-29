@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CSharp
   - Command: msbuild.exe project.csproj
     Description: Build and execute a C# project stored in the target csproj file.
     Usecase: Compile and run code
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CSharp
   - Command: msbuild.exe /logger:TargetLogger,C:\Loggers\TargetLogger.dll;MyParameters,Foo
     Description: Executes generated Logger DLL file with TargetLogger export
     Usecase: Execute DLL
@@ -35,7 +39,7 @@ Commands:
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: WSH
+      - Execute: XSL
   - Command: msbuild.exe @sample.rsp
     Description: By putting any valid msbuild.exe command-line options in an RSP file and calling it as above will interpret the options as if they were passed on the command line.
     Usecase: Bypass command-line based detections
@@ -43,6 +47,8 @@ Commands:
     Privileges: User
     MitreID: T1036
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Msbuild.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Msbuild.exe

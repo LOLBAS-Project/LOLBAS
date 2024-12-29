@@ -11,6 +11,9 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 10S, Windows 11
+    Tags:
+      - Execute: VB.Net
+      - Execute: Csharp
   - Command: Microsoft.Workflow.Compiler.exe tests.txt results.txt
     Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.txt file.
     Usecase: Compile and run code
@@ -18,6 +21,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 10S, Windows 11
+    Tags:
+      - Execute: XOML
   - Command: Microsoft.Workflow.Compiler.exe tests.txt results.txt
     Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.txt file.
     Usecase: Compile and run code
@@ -25,6 +30,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 10S, Windows 11
+    Tags:
+      - Execute: XOML
 Full_Path:
   - Path: C:\Windows\Microsoft.Net\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe
 Code_Sample:

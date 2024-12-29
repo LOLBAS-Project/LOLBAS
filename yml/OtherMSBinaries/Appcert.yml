@@ -11,6 +11,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
   - Command: appcert.exe test -apptype desktop -setuppath c:\users\public\malicious.msi -setupcommandline /q -reportoutputpath c:\users\public\output.xml
     Description: Install an MSI file via an msiexec instance spawned via appcert.exe as parent process.
     Usecase: Execute custom made MSI file with malicious code
@@ -18,6 +20,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1218.007
     OperatingSystem: Windows
+    Tags:
+      - Execute: MSI
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\App Certification Kit\appcert.exe
   - Path: C:\Program Files\Windows Kits\10\App Certification Kit\appcert.exe

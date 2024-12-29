@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: CSharp
 Full_Path:
   - Path: no default
 Code_Sample:

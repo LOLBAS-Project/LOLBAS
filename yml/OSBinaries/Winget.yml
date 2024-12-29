@@ -11,6 +11,9 @@ Commands:
     Privileges: Local Administrator - required to enable local manifest setting
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: Remote
+      - Execute: EXE
   - Command: winget.exe install --accept-package-agreements -s msstore [name or ID]
     Description: 'Download and install any software from the Microsoft Store using its name or Store ID, even if the Microsoft Store App itself is blocked on the machine. For example, use "Sysinternals Suite" or `9p7knl5rwt25` for obtaining ProcDump, PsExec via the Sysinternals Suite. Note: a Microsoft account is required for this.'
     Usecase: Download and install software from Microsoft Store, even if Microsoft Store App is blocked

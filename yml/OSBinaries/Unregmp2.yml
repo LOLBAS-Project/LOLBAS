@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\unregmp2.exe
   - Path: C:\Windows\SysWOW64\unregmp2.exe

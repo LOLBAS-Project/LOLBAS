@@ -11,6 +11,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1127
     OperatingSystem: Windows 10 2004 and above, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: ttdinject.exe /ClientScenario TTDRecorder /ddload 0 /ClientParams "7 tmp.run 0 0 0 0 0 0 0 0 0 0" /launch "C:/Windows/System32/calc.exe"
     Description: Execute calc using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated.
     Usecase: Spawn process using other binary
@@ -18,6 +20,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1127
     OperatingSystem: Windows 10 1909 and below
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\ttdinject.exe
   - Path: C:\Windows\Syswow64\ttdinject.exe

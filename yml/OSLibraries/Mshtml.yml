@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: HTA
 Full_Path:
   - Path: c:\windows\system32\mshtml.dll
   - Path: c:\windows\syswow64\mshtml.dll

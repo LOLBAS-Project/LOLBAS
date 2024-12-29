@@ -11,6 +11,8 @@ Commands:
     Privileges: Local Admin
     MitreID: T1053.002
     OperatingSystem: Windows 7 or older
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\WINDOWS\System32\At.exe
   - Path: C:\WINDOWS\SysWOW64\At.exe

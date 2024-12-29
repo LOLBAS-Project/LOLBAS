@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.014
     OperatingSystem: Windows 10 (and possibly earlier versions), Windows 11
+    Tags:
+      - Execute: COM
   - Command: mmc.exe gpedit.msc
     Description: Load an arbitrary payload DLL by configuring COR Profiler registry settings and launching MMC to bypass UAC.
     Usecase: Modify HKCU\Environment key in Registry with COR profiler values then launch MMC to load the payload DLL.
@@ -18,6 +20,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1218.014
     OperatingSystem: Windows 10 (and possibly earlier versions), Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Windows\System32\mmc.exe
   - Path: C:\Windows\SysWOW64\mmc.exe

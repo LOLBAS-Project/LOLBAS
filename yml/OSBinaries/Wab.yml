@@ -11,6 +11,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Program Files\Windows Mail\wab.exe
   - Path: C:\Program Files (x86)\Windows Mail\wab.exe

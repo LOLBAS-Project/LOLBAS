@@ -11,6 +11,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1127
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\bin\<version>\x64\vshadow.exe
 Detection:
