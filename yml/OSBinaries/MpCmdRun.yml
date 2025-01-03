@@ -29,6 +29,9 @@ Full_Path:
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.4-0\MpCmdRun.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.7-0\MpCmdRun.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\MpCmdRun.exe
+  - Path: C:\Program Files\Windows Defender\MpCmdRun.exe
+  - Path: C:\Program Files (x86)\Windows Defender\MpCmdRun.exe
+  - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.23110.3-0\X86\MpCmdRun.exe
 Code_Sample:
   - Code:
 Detection:
