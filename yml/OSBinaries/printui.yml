@@ -16,10 +16,11 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\printui.exe
 Detection:
-  - Sigma: https:https://github.com/SigmaHQ/sigma/blob/master/rules/windows/image_load/image_load_side_load_from_non_system_location.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/image_load/image_load_side_load_from_non_system_location.yml
   - IOC: Load malicious DLL image
 Resources:
-  - Link: https:https://www.linkedin.com/pulse/uncovered-lolbas-yasin-g%C3%B6khan-ta%C5%9Fkin-gnpwf/?trackingId=WvE5YmopTtyh%2FuvEPcpyZQ%3D%3D
+  - Link: https://www.linkedin.com/pulse/uncovered-lolbas-yasin-g%C3%B6khan-ta%C5%9Fkin-gnpwf/?trackingId=WvE5YmopTtyh%2FuvEPcpyZQ%3D%3D
+  - Link: https://x.com/TaskinYasn/status/1876672639558947213
 Acknowledgement:
   - Person: Yasin Gökhan TAŞKIN
     Handle: '@TaskinYasn'
