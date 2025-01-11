@@ -1,0 +1,25 @@
+---
+Name: printui.exe
+Description: Malicious dll file load to memory via printui.exe
+Author: 'Yasin Gökhan TAŞKIN'
+Created: 2025-01-12
+Commands:
+  - Command: start "%SystemDrive%"\Windows\System32\printui.exe  
+    Description: Detects potential DLL sideloading of "printui.dll". While using legit "printui.exe" it can be abused to attach to an arbitrary process and force load DLL named "printui.dll" from the current directory of execution.
+    Usecase: Execute dll file
+    Category: Execute
+    Privileges: User
+    MitreID: T1574.002
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+Full_Path:
+  - Path: C:\Windows\System32\printui.exe
+Detection:
+  - Sigma: https:https://github.com/SigmaHQ/sigma/blob/master/rules/windows/image_load/image_load_side_load_from_non_system_location.yml
+  - IOC: Load malicious DLL image 
+Resources:
+  - Link: https:https://www.linkedin.com/pulse/uncovered-lolbas-yasin-g%C3%B6khan-ta%C5%9Fkin-gnpwf/?trackingId=WvE5YmopTtyh%2FuvEPcpyZQ%3D%3D
+Acknowledgement:
+  - Person: Yasin Gökhan TAŞKIN
+    Handle: '@TaskinYasn'
