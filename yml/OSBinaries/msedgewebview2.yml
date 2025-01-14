@@ -42,6 +42,7 @@ Commands:
       - Execute: CMD
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft\Edge\Application\114.0.1823.43\msedgewebview2.exe
+  - Path: C:\Program Files (x86)\Microsoft\EdgeWebView\Application\131.0.2903.70\msedgewebview2.exe
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/e1a713d264ac072bb76b5c4e5f41315a015d3f41/rules/windows/process_creation/proc_creation_win_susp_electron_execution_proxy.yml
   - IOC: 'msedgewebview2.exe spawned with any of the following: --gpu-launcher, --utility-cmd-prefix, --renderer-cmd-prefix, --browser-subprocess-path'

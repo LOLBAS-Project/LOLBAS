@@ -15,6 +15,7 @@ Commands:
       - Execute: DLL
 Full_Path:
   - Path: C:\Windows\System32\wuauclt.exe
+  - Path: C:\Windows\UUS\amd64\wuauclt.exe
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/network_connection/net_connection_win_wuauclt_network_connection.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_wuauclt.yml
