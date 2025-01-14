@@ -22,6 +22,15 @@ Commands:
     OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
+  - Command: copy /b extrac32.exe+files.cab files.exe
+    Description: Creates an Alternate Data Stream (ADS) of SFX CAB file that extracts files in the original CAB file on execution.
+    Usecase: Store data in an EXE that cab file and hide it in an alternate data stream. Move file contents.
+    Category: ADS
+    Privileges: User
+    MitreID: T1564.004
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Type: Compression
   - Command: extrac32 /Y /C \\webdavserver\share\test.txt C:\folder\test.txt
     Description: Copy the source file to the destination file and overwrite it.
     Usecase: Download file from UNC/WEBDav
@@ -49,6 +58,7 @@ Resources:
   - Link: https://oddvar.moe/2018/04/11/putting-data-in-alternate-data-streams-and-how-to-execute-it-part-2/
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
   - Link: https://twitter.com/egre55/status/985994639202283520
+  - Link: https://www.autoitscript.com/forum/topic/11330-extract-zip-folder/
 Acknowledgement:
   - Person: egre55
     Handle: '@egre55'
