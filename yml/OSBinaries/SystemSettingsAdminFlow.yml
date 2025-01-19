@@ -1,3 +1,4 @@
+---
 Name: SystemSettingsAdminFlow.exe
 Description: SystemSettingsAdminFlows.exe is responsible for the administrator privileges that are required for opening/editing/removing files.
 Author: 'Jason Phang Vern-Onn'
@@ -14,7 +15,7 @@ Commands:
     MitreID: T1562.001
     OperatingSystem: Windows 10 1803, Windows 10 1703
     Tags:
-      - Execute
+      - Execute: EXE
       - Tamper
 Full_Path:
   - Path: C:\Windows\System32\SystemSettingsFlowAdmin.exe
