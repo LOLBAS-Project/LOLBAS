@@ -1,6 +1,5 @@
----
 Name: SystemSettingsAdminFlow.exe
-Description: SystemSettingsAdminFlows.exe is responsible for the administrator privileges that are required for opening /editing/ removing files.
+Description: SystemSettingsAdminFlows.exe is responsible for the administrator privileges that are required for opening/editing/removing files.
 Author: 'Jason Phang Vern-Onn'
 Created: 2025-01-19
 Commands:
@@ -8,25 +7,25 @@ Commands:
   - Command: C:\Windows\System32\SystemSettingsFlowAdmin.exe Defender SubmitSamplesConsent 0
   - Command: C:\Windows\System32\SystemSettingsFlowAdmin.exe Defender SpynetReporting 0
   - Command: C:\Windows\System32\SystemSettingsFlowAdmin.exe Defender RTP 1
-    Description: SystemSettingsFlowAdmin.exe can be abused to modify Windows Defender settings, such as disabling enhanced notifications, submission consent, and real-time protection. This allows execution of potentially malicious software without detection.
+    Description: SystemSettingsFlowAdmin.exe can be abused to modify Windows Defender settings, such as disabling enhanced notifications, submission consent, and real-time protection.
     Usecase: Attackers can exploit this binary to disable critical Windows Defender settings and bypass security measures, enabling malware execution.
     Category: Execute
     Privileges: Administrator
-    MitreID:  T1562.001
+    MitreID: T1562.001
     OperatingSystem: Windows 10 1803, Windows 10 1703
     Tags:
-      - Execute: EXE
+      - Execute
       - Tamper
 Full_Path:
   - Path: C:\Windows\System32\SystemSettingsFlowAdmin.exe
   - Path: C:\Windows\Syswow64\SystemSettingsFlowAdmin.exe
 Detection:
-  - IOC: Microsoft-Windows-Windows Defender/Operational Event Log Event ID 5007 for changes 
+  - IOC: Microsoft-Windows-Windows Defender/Operational Event Log Event ID 5007 for changes.
   - IOC: SystemSettingsFlowAdmin.exe spawned with parent image not SystemSettings.exe
   - Sigma: https://gist.githubusercontent.com/ald3n5/b1a3f4138b1a1624f7e183a3d0859d17/raw/29e6f67fa3920a39cb4c4bc5226f21a6057fa5ad/susp_adminflows_tampering_defender.yml
 Resources:
   - Link: https://www.huntress.com/blog/lolbin-to-inc-ransomware
-  - Link: https://www.huntress.com/blog/its-not-safe-to-pay-safepay 
+  - Link: https://www.huntress.com/blog/its-not-safe-to-pay-safepay
 Acknowledgement:
-  - Person: Alden Schmidt 
+  - Person: Alden Schmidt
   - Person: Matt Anderson
