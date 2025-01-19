@@ -16,12 +16,11 @@ Commands:
     OperatingSystem: Windows 10 1803, Windows 10 1703
     Tags:
       - Execute: EXE
-      - Tamper
 Full_Path:
   - Path: C:\Windows\System32\SystemSettingsFlowAdmin.exe
   - Path: C:\Windows\Syswow64\SystemSettingsFlowAdmin.exe
 Detection:
-  - IOC: Microsoft-Windows-Windows Defender/Operational Event Log Event ID 5007 for changes.
+  - IOC: Microsoft-Windows-Windows Defender/Operational Event Log Event ID 5007 for changes
   - IOC: SystemSettingsFlowAdmin.exe spawned with parent image not SystemSettings.exe
   - Sigma: https://gist.githubusercontent.com/ald3n5/b1a3f4138b1a1624f7e183a3d0859d17/raw/29e6f67fa3920a39cb4c4bc5226f21a6057fa5ad/susp_adminflows_tampering_defender.yml
 Resources:
