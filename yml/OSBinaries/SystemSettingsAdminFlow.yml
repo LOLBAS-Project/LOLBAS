@@ -4,9 +4,6 @@ Description: SystemSettingsAdminFlows.exe is responsible for the administrator p
 Author: 'Jason Phang Vern-Onn'
 Created: 2025-01-19
 Commands:
-  - Command: C:\Windows\System32\SystemSettingsFlowAdmin.exe Defender DisableEnhancedNotifications 1
-  - Command: C:\Windows\System32\SystemSettingsFlowAdmin.exe Defender SubmitSamplesConsent 0
-  - Command: C:\Windows\System32\SystemSettingsFlowAdmin.exe Defender SpynetReporting 0
   - Command: C:\Windows\System32\SystemSettingsFlowAdmin.exe Defender RTP 1
     Description: SystemSettingsFlowAdmin.exe can be abused to modify Windows Defender settings, such as disabling enhanced notifications, submission consent, and real-time protection.
     Usecase: Attackers can exploit this binary to disable critical Windows Defender settings and bypass security measures, enabling malware execution.
