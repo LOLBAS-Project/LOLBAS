@@ -1,11 +1,11 @@
 ---
 Name: Msdeploy.exe
 Description: Microsoft tool used to deploy Web Applications.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand="c:\temp\calc.bat"
-    Description: Launch calc.bat via msdeploy.exe.
+  - Command: msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand="{PATH_ABSOLUTE:.bat}"
+    Description: Launch .bat file via msdeploy.exe.
     Usecase: Local execution of batch file using msdeploy.exe.
     Category: Execute
     Privileges: User
@@ -13,8 +13,8 @@ Commands:
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11, Windows Server
     Tags:
       - Execute: CMD
-  - Command: msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand="c:\temp\calc.bat"
-    Description: Launch calc.bat via msdeploy.exe.
+  - Command: msdeploy.exe -verb:sync -source:RunCommand -dest:runCommand="{PATH_ABSOLUTE:.bat}"
+    Description: Launch .bat file via msdeploy.exe.
     Usecase: Local execution of batch file using msdeploy.exe.
     Category: AWL Bypass
     Privileges: User
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11, Windows Server
     Tags:
       - Execute: CMD
-  - Command: msdeploy.exe -verb:sync -source:filePath=C:\windows\system32\calc.exe -dest:filePath=C:\Users\Public\calc.exe
+  - Command: msdeploy.exe -verb:sync -source:filePath={PATH_ABSOLUTE:.source.ext} -dest:filePath={PATH_ABSOLUTE:.dest.ext}
     Description: Copy file from source to destination.
     Usecase: Copy file.
     Category: Copy
@@ -38,8 +38,6 @@ Full_Path:
   - Path: C:\Program Files (x86)\IIS\Microsoft Web Deploy V4\msdeploy.exe
   - Path: C:\Program Files\IIS\Microsoft Web Deploy V5\msdeploy.exe
   - Path: C:\Program Files (x86)\IIS\Microsoft Web Deploy V5\msdeploy.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_msdeploy.yml
 Resources:

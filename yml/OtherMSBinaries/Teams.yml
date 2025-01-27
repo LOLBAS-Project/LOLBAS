@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: Node.JS
-  - Command: teams.exe --disable-gpu-sandbox --gpu-launcher="C:\Windows\system32\cmd.exe /c ping google.com &&"
+  - Command: teams.exe --disable-gpu-sandbox --gpu-launcher="{CMD} &&"
     Description: Teams spawns cmd.exe as a child process of teams.exe and executes the ping command
     Usecase: Executes a process under a trusted Microsoft signed binary
     Category: Execute

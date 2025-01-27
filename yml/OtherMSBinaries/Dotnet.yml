@@ -1,11 +1,11 @@
 ---
 Name: Dotnet.exe
 Description: dotnet.exe comes with .NET Framework
-Author: 'felamos'
+Author: felamos
 Created: 2019-11-12
 Commands:
-  - Command: dotnet.exe [PATH_TO_DLL]
-    Description: dotnet.exe will execute any dll even if applocker is enabled.
+  - Command: dotnet.exe {PATH:.dll}
+    Description: dotnet.exe will execute any DLL even if applocker is enabled.
     Usecase: Execute code bypassing AWL
     Category: AWL Bypass
     Privileges: User
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows 7 and up with .NET installed
     Tags:
       - Execute: DLL (.NET)
-  - Command: dotnet.exe [PATH_TO_DLL]
+  - Command: dotnet.exe {PATH:.dll}
     Description: dotnet.exe will execute any DLL.
     Usecase: Execute DLL
     Category: Execute
@@ -31,7 +31,7 @@ Commands:
     OperatingSystem: Windows 10 and up with .NET SDK installed
     Tags:
       - Execute: FSharp
-  - Command: dotnet.exe msbuild [Path_TO_XML_CSPROJ]
+  - Command: dotnet.exe msbuild {PATH:.csproj}
     Description: dotnet.exe with msbuild (SDK Version) will execute unsigned code
     Usecase: Execute code bypassing AWL
     Category: AWL Bypass

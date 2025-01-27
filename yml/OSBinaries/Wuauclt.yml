@@ -1,11 +1,11 @@
 ---
 Name: wuauclt.exe
 Description: Windows Update Client
-Author: 'David Middlehurst'
+Author: David Middlehurst
 Created: 2020-09-23
 Commands:
-  - Command: wuauclt.exe /UpdateDeploymentProvider Full_Path_To_DLL /RunHandlerComServer
-    Description: Full_Path_To_DLL would be the absolute path to .DLL file and would execute code on attach.
+  - Command: wuauclt.exe /UpdateDeploymentProvider {PATH_ABSOLUTE:.dll} /RunHandlerComServer
+    Description: Loads and executes DLL code on attach.
     Usecase: Execute dll via attach/detach methods
     Category: Execute
     Privileges: User

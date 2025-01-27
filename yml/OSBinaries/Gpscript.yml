@@ -1,7 +1,7 @@
 ---
 Name: Gpscript.exe
 Description: Used by group policy to process scripts
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: Gpscript /logon
@@ -25,8 +25,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\gpscript.exe
   - Path: C:\Windows\SysWOW64\gpscript.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_gpscript.yml
   - IOC: Scripts added in local group policy

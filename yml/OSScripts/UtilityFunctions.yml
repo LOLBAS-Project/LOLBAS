@@ -15,8 +15,6 @@ Commands:
       - Execute: DLL (.NET)
 Full_Path:
   - Path: C:\Windows\diagnostics\system\Networking\UtilityFunctions.ps1
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/0.21-688-gd172b136b/rules/windows/process_creation/proc_creation_win_lolbas_utilityfunctions.yml
 Resources:

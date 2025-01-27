@@ -4,7 +4,7 @@ Description: Command-line tool used for performing diagnostics.
 Author: Bobby Cooke
 Created: 2023-07-12
 Commands:
-  - Command: VSDiagnostics.exe start 1 /launch:calc.exe
+  - Command: VSDiagnostics.exe start 1 /launch:{PATH:.exe}
     Description: Starts a collection session with sessionID 1 and calls kernelbase.CreateProcessW to launch specified executable.
     Usecase: Proxy execution of binary
     Category: Execute
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
-  - Command: VSDiagnostics.exe start 2 /launch:cmd.exe /launchArgs:"/c calc.exe"
+  - Command: VSDiagnostics.exe start 2 /launch:{PATH:.exe} /launchArgs:"{CMD:args}"
     Description: Starts a collection session with sessionID 2 and calls kernelbase.CreateProcessW to launch specified executable. Arguments specified in launchArgs are passed to CreateProcessW.
     Usecase: Proxy execution of binary with arguments
     Category: Execute

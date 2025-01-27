@@ -4,14 +4,14 @@ Description: Windows Backup Administration utility
 Author: Chris Eastwood
 Created: 2024-04-05
 Commands:
-  - Command: wbadmin start backup -backupTarget:C:\temp\ -include:C:\Windows\NTDS\NTDS.dit,C:\Windows\System32\config\SYSTEM -quiet
+  - Command: wbadmin start backup -backupTarget:{PATH_ABSOLUTE:folder} -include:C:\Windows\NTDS\NTDS.dit,C:\Windows\System32\config\SYSTEM -quiet
     Description: Extract NTDS.dit and SYSTEM hive into backup virtual hard drive file (.vhdx)
     Usecase: Snapshoting of Active Directory NTDS.dit database
     Category: Dump
     Privileges: Administrator, Backup Operators, SeBackupPrivilege
     MitreID: T1003.003
     OperatingSystem: Windows Server
-  - Command: wbadmin start recovery -version:<VERSIONIDENTIFIER> -recoverytarget:C:\temp -itemtype:file -items:C:\Windows\NTDS\NTDS.dit,C:\Windows\System32\config\SYSTEM -notRestoreAcl -quiet
+  - Command: wbadmin start recovery -version:<VERSIONIDENTIFIER> -recoverytarget:{PATH_ABSOLUTE:folder} -itemtype:file -items:C:\Windows\NTDS\NTDS.dit,C:\Windows\System32\config\SYSTEM -notRestoreAcl -quiet
     Description: Restore a version of NTDS.dit and SYSTEM hive into file path. The command `wbadmin get versions` can be used to find version identifiers.
     Usecase: Dumping of Active Directory NTDS.dit database
     Category: Dump

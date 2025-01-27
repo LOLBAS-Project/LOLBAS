@@ -1,10 +1,10 @@
 ---
 Name: Pcwrun.exe
 Description: Program Compatibility Wizard
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: Pcwrun.exe c:\temp\beacon.exe
+  - Command: Pcwrun.exe {PATH_ABSOLUTE:.exe}
     Description: Open the target .EXE file with the Program Compatibility Wizard.
     Usecase: Proxy execution of binary
     Category: Execute

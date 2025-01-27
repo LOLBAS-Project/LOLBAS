@@ -4,8 +4,8 @@ Description: msedgewebview2.exe is the executable file for Microsoft Edge WebVie
 Author: Matan Bahar
 Created: 2023-06-15
 Commands:
-  - Command: msedgewebview2.exe --no-sandbox --browser-subprocess-path="C:\Windows\System32\calc.exe"
-    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn calc.exe as its subprocess.
+  - Command: msedgewebview2.exe --no-sandbox --browser-subprocess-path="{PATH_ABSOLUTE:.exe}"
+    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn the specified executable as its subprocess.
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: Low privileges
@@ -13,8 +13,8 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
-  - Command: msedgewebview2.exe --utility-cmd-prefix="calc.exe"
-    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn calc.exe as its subprocess.
+  - Command: msedgewebview2.exe --utility-cmd-prefix="{CMD}"
+    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn the specified command as its subprocess.
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
@@ -22,8 +22,8 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: CMD
-  - Command: msedgewebview2.exe --disable-gpu-sandbox --gpu-launcher="calc.exe"
-    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn calc.exe as its subprocess.
+  - Command: msedgewebview2.exe --disable-gpu-sandbox --gpu-launcher="{CMD}"
+    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn the specified command as its subprocess.
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
@@ -31,8 +31,8 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: CMD
-  - Command: msedgewebview2.exe --no-sandbox --renderer-cmd-prefix="calc.exe"
-    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn calc.exe as its subprocess.
+  - Command: msedgewebview2.exe --no-sandbox --renderer-cmd-prefix="{CMD}"
+    Description: This command launches the Microsoft Edge WebView2 browser control without sandboxing and will spawn the specified command as its subprocess.
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User

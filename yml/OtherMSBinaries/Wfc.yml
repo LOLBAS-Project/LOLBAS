@@ -4,7 +4,7 @@ Description: The Workflow Command-line Compiler tool is included with the Window
 Author: Jimmy (@bohops)
 Created: 2021-09-26
 Commands:
-  - Command: wfc.exe c:\path\to\test.xoml
+  - Command: wfc.exe {PATH_ABSOLUTE:.xoml}
     Description: Execute arbitrary C# code embedded in a XOML file.
     Usecase: Execute proxied payload with Microsoft signed binary to bypass WDAC policies
     Category: AWL Bypass

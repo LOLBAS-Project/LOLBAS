@@ -1,10 +1,10 @@
 ---
 Name: AccCheckConsole.exe
 Description: Verifies UI accessibility requirements
-Author: 'bohops'
+Author: bohops
 Created: 2022-01-02
 Commands:
-  - Command: AccCheckConsole.exe -window "Untitled - Notepad" C:\path\to\your\lolbas.dll
+  - Command: AccCheckConsole.exe -window "Untitled - Notepad" {PATH_ABSOLUTE:.dll}
     Description: Load a managed DLL in the context of AccCheckConsole.exe. The -window switch value can be set to an arbitrary active window name.
     Usecase: Local execution of managed code from assembly DLL.
     Category: Execute
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: DLL (.NET)
-  - Command: AccCheckConsole.exe -window "Untitled - Notepad" C:\path\to\your\lolbas.dll
+  - Command: AccCheckConsole.exe -window "Untitled - Notepad" {PATH_ABSOLUTE:.dll}
     Description: Load a managed DLL in the context of AccCheckConsole.exe. The -window switch value can be set to an arbitrary active window name.
     Usecase: Local execution of managed code to bypass AppLocker.
     Category: AWL Bypass

@@ -1,7 +1,7 @@
 ---
 Name: CustomShellHost.exe
 Description: A host process that is used by custom shells when using Windows in Kiosk mode.
-Author: 'Wietze Beukema'
+Author: Wietze Beukema
 Created: 2021-11-14
 Commands:
   - Command: CustomShellHost.exe

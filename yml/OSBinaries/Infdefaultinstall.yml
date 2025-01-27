@@ -1,10 +1,10 @@
 ---
 Name: Infdefaultinstall.exe
 Description: Binary used to perform installation based on content inside inf files
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: InfDefaultInstall.exe Infdefaultinstall.inf
+  - Command: InfDefaultInstall.exe {PATH:.inf}
     Description: Executes SCT script using scrobj.dll from a command in entered into a specially prepared INF file.
     Usecase: Code execution
     Category: Execute

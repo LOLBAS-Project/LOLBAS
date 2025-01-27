@@ -4,7 +4,7 @@ Description: Compressed Folder library
 Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe zipfldr.dll,RouteTheCall calc.exe
+  - Command: rundll32.exe zipfldr.dll,RouteTheCall {PATH:.exe}
     Description: Launch an executable payload by calling RouteTheCall.
     Usecase: Launch an executable.
     Category: Execute
