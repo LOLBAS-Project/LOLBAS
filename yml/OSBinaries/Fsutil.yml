@@ -4,7 +4,7 @@ Description: File System Utility
 Author: Elliot Killick
 Created: 2021-08-16
 Commands:
-  - Command: fsutil.exe file setZeroData offset=0 length=9999999999 {PATH_ABSOLUTE:.exe}
+  - Command: fsutil.exe file setZeroData offset=0 length=9999999999 {PATH_ABSOLUTE}
     Description: Zero out a file
     Usecase: Can be used to forensically erase a file
     Category: Tamper

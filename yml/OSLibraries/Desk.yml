@@ -23,7 +23,6 @@ Commands:
     Tags:
       - Execute: EXE
       - Execute: Remote
-      - Remote: SMB
 Full_Path:
   - Path: C:\Windows\System32\desk.cpl
   - Path: C:\Windows\SysWOW64\desk.cpl
