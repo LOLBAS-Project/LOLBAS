@@ -23,7 +23,7 @@ Commands:
     Tags:
       - Execute: EXE
 Full_Path:
-  - Path: c:\Program Files\WindowsPowerShell\Modules\Pester\{VERSION}\bin\Pester.bat
+  - Path: c:\Program Files\WindowsPowerShell\Modules\Pester\<VERSION>\bin\Pester.bat
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_pester_1.yml
 Resources:

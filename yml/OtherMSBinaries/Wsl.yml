@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows 10, Windows Server 2019, Windows 11
     Tags:
       - Execute: CMD
-  - Command: wsl.exe --exec bash -c "{command}"
+  - Command: wsl.exe --exec bash -c "{CMD}"
     Description: Executes Linux command (for example via bash) as the default user (unless stated otherwise using `-u <username>`) on the default WSL distro (unless stated otherwise using `-d <distro name>`)
     Usecase: Performs execution of arbitrary Linux commands.
     Category: Execute
