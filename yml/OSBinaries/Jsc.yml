@@ -14,7 +14,7 @@ Commands:
     Tags:
       - Execute: JScript
   - Command: jsc.exe /t:library {PATH:.js}
-    Description: Use jsc.exe to compile JavaScript code stored in the .JS file and generate library.dll.
+    Description: Use jsc.exe to compile JavaScript code stored in the .JS file and generate a DLL file with the same name.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
     Category: Compile
     Privileges: User
