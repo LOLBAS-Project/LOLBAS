@@ -1,7 +1,7 @@
 ---
 Name: Cmdkey.exe
 Description: creates, lists, and deletes stored user names and passwords or credentials.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: cmdkey /list

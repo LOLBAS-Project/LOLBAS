@@ -4,7 +4,7 @@ Description: Load snap-ins to locally and remotely manage Windows systems
 Author: '@bohops'
 Created: 2018-12-04
 Commands:
-  - Command: mmc.exe -Embedding c:\path\to\test.msc
+  - Command: mmc.exe -Embedding {PATH_ABSOLUTE:.msc}
     Description: Launch a 'backgrounded' MMC process and invoke a COM payload
     Usecase: Configure a snap-in to load a COM custom class (CLSID) that has been added to the registry
     Category: Execute
@@ -25,8 +25,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\mmc.exe
   - Path: C:\Windows\SysWOW64\mmc.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_mmc_susp_child_process.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/file/file_event/file_event_win_uac_bypass_dotnet_profiler.yml

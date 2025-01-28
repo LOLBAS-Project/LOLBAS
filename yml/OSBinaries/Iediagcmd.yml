@@ -4,7 +4,7 @@ Description: Diagnostics Utility for Internet Explorer
 Author: manasmbellani
 Created: 2022-03-29
 Commands:
-  - Command: 'set windir=c:\test& cd "C:\Program Files\Internet Explorer\" & iediagcmd.exe /out:c:\test\foo.cab'
+  - Command: 'set windir=c:\test& cd "C:\Program Files\Internet Explorer\" & iediagcmd.exe /out:{PATH_ABSOLUTE:.cab}'
     Description: Executes binary that is pre-planted at C:\test\system32\netsh.exe.
     Usecase: Spawn a pre-planted executable from iediagcmd.exe.
     Category: Execute

@@ -4,7 +4,7 @@ Description: Internet Shortcut Shell Extension DLL.
 Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe url.dll,OpenURL "C:\test\calc.hta"
+  - Command: rundll32.exe url.dll,OpenURL {PATH_ABSOLUTE:.hta}
     Description: Launch a HTML application payload by calling OpenURL.
     Usecase: Invoke an HTML Application via mshta.exe (Default Handler).
     Category: Execute
@@ -13,9 +13,9 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: HTA
-  - Command: rundll32.exe url.dll,OpenURL "C:\test\calc.url"
-    Description: Launch an executable payload via proxy through a(n) URL (information) file by calling OpenURL.
-    Usecase: Load an executable payload by calling a .url file with or without quotes.
+  - Command: rundll32.exe url.dll,OpenURL {PATH_ABSOLUTE:.url}
+    Description: Launch an executable payload via proxy through a .url (information) file by calling OpenURL.
+    Usecase: Load an executable payload by calling a .url file.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
@@ -31,7 +31,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
-  - Command: rundll32.exe url.dll,FileProtocolHandler calc.exe
+  - Command: rundll32.exe url.dll,FileProtocolHandler {PATH_ABSOLUTE:.exe}
     Description: Launch an executable by calling FileProtocolHandler.
     Usecase: Launch an executable.
     Category: Execute
@@ -61,8 +61,6 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\url.dll
   - Path: c:\windows\syswow64\url.dll
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml
 Resources:

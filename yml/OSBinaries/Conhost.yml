@@ -4,8 +4,8 @@ Description: Console Window host
 Author: Wietze Beukema
 Created: 2022-04-05
 Commands:
-  - Command: "conhost.exe calc.exe"
-    Description: Execute calc.exe with conhost.exe as parent process
+  - Command: conhost.exe {CMD}
+    Description: Execute a command line with conhost.exe as parent process
     Usecase: Use conhost.exe as a proxy binary to evade defensive counter-measures
     Category: Execute
     Privileges: User
@@ -13,8 +13,8 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: CMD
-  - Command: "conhost.exe --headless calc.exe"
-    Description: Execute calc.exe with conhost.exe as parent process
+  - Command: conhost.exe --headless {CMD}
+    Description: Execute a command line with conhost.exe as parent process
     Usecase: Specify --headless parameter to hide child process window (if applicable)
     Category: Execute
     Privileges: User

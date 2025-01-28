@@ -4,7 +4,7 @@ Description: Locates and imports a Developer PowerShell module and calls the Ent
 Author: 'Nasreddine Bencherchali'
 Created: 2022-06-13
 Commands:
-  - Command: 'powershell -ep RemoteSigned -f .\Launch-VsDevShell.ps1 -VsWherePath "C:\windows\system32\calc.exe"'
+  - Command: 'powershell -ep RemoteSigned -f .\Launch-VsDevShell.ps1 -VsWherePath {PATH_ABSOLUTE:.exe}'
     Description: Execute binaries from the context of the signed script using the "VsWherePath" flag.
     Usecase: Proxy execution
     Category: Execute
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
-  - Command: 'powershell -ep RemoteSigned -f .\Launch-VsDevShell.ps1 -VsInstallationPath "/../../../../../; calc.exe ;"'
+  - Command: 'powershell -ep RemoteSigned -f .\Launch-VsDevShell.ps1 -VsInstallationPath "/../../../../../; {PATH:.exe} ;"'
     Description: Execute binaries and commands from the context of the signed script using the "VsInstallationPath" flag.
     Usecase: Proxy execution
     Category: Execute

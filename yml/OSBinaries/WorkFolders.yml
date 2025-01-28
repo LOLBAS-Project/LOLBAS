@@ -1,7 +1,7 @@
 ---
 Name: WorkFolders.exe
 Description: Work Folders
-Author: 'Elliot Killick'
+Author: Elliot Killick
 Created: 2021-08-16
 Commands:
   - Command: WorkFolders

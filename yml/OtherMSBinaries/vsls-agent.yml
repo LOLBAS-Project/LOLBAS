@@ -4,7 +4,7 @@ Description: Agent for Visual Studio Live Share (Code Collaboration)
 Author: Jimmy (@bohops)
 Created: 2022-11-01
 Commands:
-  - Command: vsls-agent.exe --agentExtensionPath c:\path\to\payload.dll
+  - Command: vsls-agent.exe --agentExtensionPath {PATH_ABSOLUTE:.dll}
     Description: Load a library payload using the --agentExtensionPath parameter (32-bit)
     Usecase: Execute proxied payload with Microsoft signed binary
     Category: Execute

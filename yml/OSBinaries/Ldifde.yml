@@ -1,11 +1,11 @@
 ---
 Name: Ldifde.exe
 Description: Creates, modifies, and deletes LDAP directory objects.
-Author: 'Grzegorz Tworek'
+Author: Grzegorz Tworek
 Created: 2022-08-31
 Commands:
-  - Command: Ldifde -i -f inputfile.ldf
-    Description: Import inputfile.ldf into LDAP. If the file contains http-based attrval-spec such as thumbnailPhoto:< http://example.org/somefile.txt, the file will be downloaded into IE temp folder.
+  - Command: Ldifde -i -f {PATH:.ldf}
+    Description: Import specified .ldf file into LDAP. If the file contains http-based attrval-spec such as thumbnailPhoto:< http://example.org/somefile.txt, the file will be downloaded into IE temp folder.
     Usecase: Download file from Internet
     Category: Download
     Privileges: Administrator

@@ -1,11 +1,11 @@
 ---
 Name: Microsoft.Workflow.Compiler.exe
 Description: A utility included with .NET that is capable of compiling and executing C# or VB.net code.
-Author: 'Conor Richard'
+Author: Conor Richard
 Created: 2018-10-22
 Commands:
-  - Command: Microsoft.Workflow.Compiler.exe tests.xml results.xml
-    Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.xml file.
+  - Command: Microsoft.Workflow.Compiler.exe {PATH} {PATH:.log}
+    Description: Compile and execute C# or VB.net code in a XOML file referenced in the first argument (any extension accepted).
     Usecase: Compile and run code
     Category: Execute
     Privileges: User
@@ -14,7 +14,7 @@ Commands:
     Tags:
       - Execute: VB.Net
       - Execute: Csharp
-  - Command: Microsoft.Workflow.Compiler.exe tests.txt results.txt
+  - Command: Microsoft.Workflow.Compiler.exe {PATH} {PATH:.log}
     Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.txt file.
     Usecase: Compile and run code
     Category: Execute
@@ -23,7 +23,7 @@ Commands:
     OperatingSystem: Windows 10S, Windows 11
     Tags:
       - Execute: XOML
-  - Command: Microsoft.Workflow.Compiler.exe tests.txt results.txt
+  - Command: Microsoft.Workflow.Compiler.exe {PATH} {PATH:.log}
     Description: Compile and execute C# or VB.net code in a XOML file referenced in the test.txt file.
     Usecase: Compile and run code
     Category: AWL Bypass
@@ -34,8 +34,6 @@ Commands:
       - Execute: XOML
 Full_Path:
   - Path: C:\Windows\Microsoft.Net\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_workflow_compiler.yml
   - Splunk: https://github.com/splunk/security_content/blob/961a81d4a5cb5c5febec4894d6d812497171a85c/detections/endpoint/suspicious_microsoft_workflow_compiler_usage.yml

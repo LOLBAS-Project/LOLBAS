@@ -4,8 +4,8 @@ Description: Windows Terminal
 Author: Nasreddine Bencherchali
 Created: 2022-07-27
 Commands:
-  - Command: wt.exe calc.exe
-    Description: Execute calc.exe via Windows Terminal.
+  - Command: wt.exe {CMD}
+    Description: Execute a command via Windows Terminal.
     Usecase: Use wt.exe as a proxy binary to evade defensive counter-measures
     Category: Execute
     Privileges: User

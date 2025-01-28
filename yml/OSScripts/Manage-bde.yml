@@ -1,10 +1,10 @@
 ---
 Name: Manage-bde.wsf
 Description: Script for managing BitLocker
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: set comspec=c:\windows\system32\calc.exe & cscript c:\windows\system32\manage-bde.wsf
+  - Command: set comspec={PATH_ABSOLUTE:.exe} & cscript c:\windows\system32\manage-bde.wsf
     Description: Set the comspec variable to another executable prior to calling manage-bde.wsf for execution.
     Usecase: Proxy execution from script
     Category: Execute
@@ -24,8 +24,6 @@ Commands:
       - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\manage-bde.wsf
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_manage_bde.yml
   - IOC: Manage-bde.wsf should not be invoked by a standard user under normal situations

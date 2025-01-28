@@ -1,11 +1,11 @@
 ---
 Name: Dxcap.exe
 Description: DirectX diagnostics/debugger included with Visual Studio.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: Dxcap.exe -c C:\Windows\System32\notepad.exe
-    Description: 'Launch notepad.exe as a subprocess of dxcap.exe. Note that you should have write permissions in the current working directory for the command to succeed; alternatively, add ''-file c:\path\to\writable\location.ext'' as first argument.'
+  - Command: Dxcap.exe -c {PATH_ABSOLUTE:.exe}
+    Description: 'Launch specified executable as a subprocess of dxcap.exe. Note that you should have write permissions in the current working directory for the command to succeed; alternatively, add ''-file c:\path\to\writable\location.ext'' as first argument.'
     Usecase: Local execution of a process as a subprocess of dxcap.exe
     Category: Execute
     Privileges: User

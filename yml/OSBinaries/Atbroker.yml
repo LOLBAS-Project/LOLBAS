@@ -1,7 +1,7 @@
 ---
 Name: Atbroker.exe
 Description: Helper binary for Assistive Technology (AT)
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: ATBroker.exe /start malware

@@ -1,10 +1,10 @@
 ---
 Name: Control.exe
 Description: Binary used to launch controlpanel items in Windows
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: control.exe c:\windows\tasks\file.txt:evil.dll
+  - Command: control.exe {PATH_ABSOLUTE}:evil.dll
     Description: Execute evil.dll which is stored in an Alternate Data Stream (ADS).
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: ADS
@@ -13,8 +13,8 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: control.exe c:\windows\tasks\evil.cpl
-    Description: Execute evil.cpl payload. A CPL is a DLL file with CPlApplet export function)
+  - Command: control.exe {PATH_ABSOLUTE:.cpl}
+    Description: Execute .cpl file. A CPL is a DLL file with CPlApplet export function)
     Usecase: Use to execute code and bypass application whitelisting
     Category: Execute
     Privileges: User

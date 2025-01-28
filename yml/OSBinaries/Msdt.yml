@@ -1,11 +1,11 @@
 ---
 Name: Msdt.exe
 Description: Microsoft diagnostics tool
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af C:\PCW8E57.xml /skip TRUE
-    Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the PCW8E57.xml file.
+  - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af {PATH_ABSOLUTE:.xml} /skip TRUE
+    Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the .xml file.
     Usecase: Execute code
     Category: Execute
     Privileges: User
@@ -14,8 +14,8 @@ Commands:
     Tags:
       - Application: GUI
       - Execute: MSI
-  - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af C:\PCW8E57.xml /skip TRUE
-    Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the PCW8E57.xml file.
+  - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af {PATH_ABSOLUTE:.xml} /skip TRUE
+    Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the .xml file.
     Usecase: Execute code bypass Application whitelisting
     Category: AWL Bypass
     Privileges: User

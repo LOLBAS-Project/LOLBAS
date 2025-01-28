@@ -4,7 +4,7 @@ Description: INF installer for Internet Explorer. Has much of the same functiona
 Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe ieadvpack.dll,LaunchINFSection c:\test.inf,DefaultInstall_SingleUser,1,
+  - Command: rundll32.exe ieadvpack.dll,LaunchINFSection {PATH_ABSOLUTE:.inf},DefaultInstall_SingleUser,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: INF
-  - Command: rundll32.exe ieadvpack.dll,LaunchINFSection c:\test.inf,,1,
+  - Command: rundll32.exe ieadvpack.dll,LaunchINFSection {PATH_ABSOLUTE:.inf},,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied).
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: INF
-  - Command: rundll32.exe ieadvpack.dll,RegisterOCX test.dll
+  - Command: rundll32.exe ieadvpack.dll,RegisterOCX {PATH:.dll}
     Description: Launch a DLL payload by calling the RegisterOCX function.
     Usecase: Load a DLL payload.
     Category: Execute
@@ -31,7 +31,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: rundll32.exe ieadvpack.dll,RegisterOCX calc.exe
+  - Command: rundll32.exe ieadvpack.dll,RegisterOCX {PATH:.exe}
     Description: Launch an executable by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
@@ -40,7 +40,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
-  - Command: rundll32 ieadvpack.dll, RegisterOCX "cmd.exe /c calc.exe"
+  - Command: rundll32 ieadvpack.dll, RegisterOCX {CMD}
     Description: Launch command line by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute

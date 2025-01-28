@@ -4,7 +4,7 @@ Description: Testing tool included with Microsoft Test Authoring and Execution F
 Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: te.exe bypass.wsc
+  - Command: te.exe {PATH:.wsc}
     Description: Run COM Scriptlets (e.g. VBScript) by calling a Windows Script Component (WSC) file.
     Usecase: Execute Visual Basic script stored in local Windows Script Component file.
     Category: Execute
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: WSH
-  - Command: te.exe test.dll
+  - Command: te.exe {PATH:.dll}
     Description: Execute commands from a DLL file with Test Authoring and Execution Framework (TAEF) tests. See resources section for required structures.
     Usecase: Execute DLL file.
     Category: Execute

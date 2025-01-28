@@ -6,8 +6,8 @@ Aliases:
 Author: 'Alfie Champion (@ajpc500)'
 Created: 2020-10-14
 Commands:
-  - Command: procdump.exe -md calc.dll explorer.exe
-    Description: Loads calc.dll where DLL is configured with a 'MiniDumpCallbackRoutine' exported function. Valid process must be provided as dump still created.
+  - Command: procdump.exe -md {PATH:.dll} explorer.exe
+    Description: Loads the specified DLL where DLL is configured with a 'MiniDumpCallbackRoutine' exported function. Valid process must be provided as dump still created.
     Usecase: Performs execution of unsigned DLL.
     Category: Execute
     Privileges: User
@@ -15,8 +15,8 @@ Commands:
     OperatingSystem: Windows 8.1 and higher, Windows Server 2012 and higher
     Tags:
       - Execute: DLL
-  - Command: procdump.exe -md calc.dll foobar
-    Description: Loads calc.dll where configured with DLL_PROCESS_ATTACH execution, process argument can be arbitrary.
+  - Command: procdump.exe -md {PATH:.dll} foobar
+    Description: Loads the specified DLL where configured with DLL_PROCESS_ATTACH execution, process argument can be arbitrary.
     Usecase: Performs execution of unsigned DLL.
     Category: Execute
     Privileges: User

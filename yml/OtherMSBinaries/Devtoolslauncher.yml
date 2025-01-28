@@ -1,10 +1,10 @@
 ---
 Name: Devtoolslauncher.exe
 Description: Binary will execute specified binary. Part of VS/VScode installation.
-Author: 'felamos'
+Author: felamos
 Created: 2019-10-04
 Commands:
-  - Command: devtoolslauncher.exe LaunchForDeploy [PATH_TO_BIN] "argument here" test
+  - Command: devtoolslauncher.exe LaunchForDeploy {PATH_ABSOLUTE:.exe} "{CMD:args}" test
     Description: The above binary will execute other binary.
     Usecase: Execute any binary with given arguments and it will call developertoolssvc.exe. developertoolssvc is actually executing the binary.
     Category: Execute
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows 7 and up with VS/VScode installed
     Tags:
       - Execute: CMD
-  - Command: devtoolslauncher.exe LaunchForDebug [PATH_TO_BIN] "argument here" test
+  - Command: devtoolslauncher.exe LaunchForDebug {PATH_ABSOLUTE:.exe} "{CMD:args}" test
     Description: The above binary will execute other binary.
     Usecase: Execute any binary with given arguments.
     Category: Execute
@@ -24,8 +24,6 @@ Commands:
       - Execute: CMD
 Full_Path:
   - Path: 'c:\windows\system32\devtoolslauncher.exe'
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_devtoolslauncher.yml
   - IOC: DeveloperToolsSvc.exe spawned an unknown process

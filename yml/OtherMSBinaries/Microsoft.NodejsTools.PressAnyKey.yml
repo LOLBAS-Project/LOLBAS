@@ -4,8 +4,8 @@ Description: Part of the NodeJS Visual Studio tools.
 Author: mr.d0x
 Created: 2022-01-20
 Commands:
-  - Command: Microsoft.NodejsTools.PressAnyKey.exe normal 1 cmd.exe
-    Description: Launch cmd.exe as a subprocess of Microsoft.NodejsTools.PressAnyKey.exe.
+  - Command: Microsoft.NodejsTools.PressAnyKey.exe normal 1 {PATH:.exe}
+    Description: Launch specified executable as a subprocess of Microsoft.NodejsTools.PressAnyKey.exe.
     Usecase: Spawn a new process via Microsoft.NodejsTools.PressAnyKey.exe.
     Category: Execute
     Privileges: User
