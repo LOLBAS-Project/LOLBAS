@@ -1,0 +1,30 @@
+---
+Name: rdpinit.exe
+Description: RemoteApp Logon Application
+Author: '© Microsoft Corporation. All rights reserved.'
+Created: 1987-04-08
+Commands:
+  - Command: rdpinit.exe wtsapi32.dll
+    Description: The DLL "wtsapi32.dll" would be a malware or payload .DLL to execute.
+    Usecase: Execute dll file
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.011
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+Full_Path:
+  - Path: C:\Windows\system32\rdpinit.exe
+Detection:
+  - Sigma:
+  - Sigma:
+  - Elastic:
+  - IOC: Outbound Internet/network connections made from rdpinit.exe
+  - IOC:
+Resources:
+  - Link: https://www.virustotal.com/gui/file/5d15a2f1f9310e45612de06e0e68e754879324f936ea00a5f69c6be31d41d337/details (rdpinit.exe) RemoteApp Logon Application
+  - Link: https://www.virustotal.com/gui/file/cec8edd890e127b429f7801501f8637036048ca6f2d3c64b2c4d64f2168b07fd/relations (Lumma Stealer archive "Junction.zip" saved to disk as "a7wmwm.zip")
+  - Link: https://www.virustotal.com/gui/file/8160ea4afffed97a719545b2e540f1202ce78d82327ca44052bddbbd6957c549/relations (wtsapi32.dll) Padded Lumma Stealer DLL
+Acknowledgement:
+  - Person: Adair John Collins
+    Handle: '@AdairJCollins'
