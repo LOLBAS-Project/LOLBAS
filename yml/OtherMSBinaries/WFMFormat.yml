@@ -12,8 +12,8 @@ Commands:
     MitreID: T1127
     OperatingSystem: Windows 10, Windows 11
     Tags:
-    - Execute: EXE
-    - Requires: .NET Framework 3.5
+      - Execute: EXE
+      - Requires: .NET Framework 3.5
 Full_Path:
   - Path: C:\there\is\no\default\installation\path\WFMFormat.exe
 Detection:
