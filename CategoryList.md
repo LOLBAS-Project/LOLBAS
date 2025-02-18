@@ -3,6 +3,7 @@ CATEGORY LIST
 ADS   
 AWL bypass   
 Compile   
+Conceal   
 Copy   
 Credentials   
 Decode   
@@ -11,5 +12,6 @@ Dump
 Encode   
 Execute   
 Reconnaissance   
+Tamper   
 UAC bypass   
 Upload   
