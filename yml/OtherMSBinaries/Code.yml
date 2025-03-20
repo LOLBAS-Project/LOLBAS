@@ -1,0 +1,37 @@
+---
+Name: Code.exe
+Description: Visual Studio Code (VS Code) is a lightweight, open-source code editor with built-in debugging, Git integration, and extensive extension support.
+Author: Bobby Cooke
+Created: 2025-03-20
+Commands:
+  - Command: Code.exe
+    Description: Generate Node.JS JavaScript payload and package.json, and save to "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\\\resources\\app\\" before executing.
+    Usecase: Execute Node.JS JavaScript code
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.015
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: Node.JS
+Full_Path:
+  - Path: 'C:\Users\<username>\AppData\Local\Programs\Microsoft VS Code\Code.exe'
+Detection:
+  - IOC: "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\resources\\app directory created"
+  - IOC: "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\Code.exe file created/modified by non-Code installer/updater"
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_susp_electron_exeuction_proxy.yml
+Resources:
+  - Link: https://securityintelligence.com/x-force/bypassing-windows-defender-application-control-loki-c2/
+Acknowledgement:
+  - Person: Bobby Cooke
+    Handle: '@0xBoku'
+  - Person: Dylan Tran
+    Handle: '@d_tranman'
+  - Person: Ellis Springe    
+    Handle: '@knavesec'
+  - Person: Valentina Palmiotti
+    Handle: '@chompie1337'
+  - Person: Ruben Boonen
+    Handle: '@FuzzySec'
+  - Person: Andrew Kisliakov
+  - Person: mr.d0x
+    Handle: '@mrd0x'
