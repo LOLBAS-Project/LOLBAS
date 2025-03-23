@@ -1,7 +1,8 @@
-Name: wevtutil
-Description: This binary is created by windows to allow you to interact and preform actions(like stopping records or clearing) on logs within the windows local and remote host
+---
+Name: wevtutil.exe
+Description: Windows binary to allow you to interact and preform actions(like stopping records or clearing) on logs within the windows local and remote host
 Author: Abdul Mhanni
-Created: 2025-03-25
+Created: 2025-03-23
 Commands:
   - Command: WevtUtil.exe clear-log "log name"
     Description: Clearing the specified log, note is case sensitive and must be in quotation marks. All logs present can be retrived via wevtutil.exe el
@@ -10,28 +11,23 @@ Commands:
     Privileges: Local Administrator
     MitreID: T1070
     OperatingSystem: Windows vista and Up
-    Tags:
-      
   - Command: wevtutil set-log "Microsoft-Windows-PowerShell/Operational" /e:false
     Description: Setting the Microsoft-Windows-PowerShell/Operational log to false and thus stopping new events from being written to it
-    Usecase: When potentially trying to do a certain task or action, you can disable one or more logs, preform the action and then resume logging.
-    Allows for better stealth as opposed to complete clearing of all logs which may raise suspicion
+    Usecase: Disable logging while you preform potentially noisy actions and want to reduce the chance of detection and then re-enable when done using /e:true
     Category: Execute
     Privileges: Local Administrator
     MitreID: T1070
     OperatingSystem: Windows vista and Up
 Full_Path:
-  - Path: c:\windows\System32\wevtutil.exe
+  - Path: C:\Windows\System32\wevtutil.exe
 Detection:
-  - IOC: Event ID 4688 where wevtutil cmd args includes set-log(sl) or clear-log(cl)
-  - IOC: wevtutil.exe spawned
-  - IOC: Event ID 1102 - Event Log Cleared in the Security logs
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_eventlog_clear.yml
   - Elastic: https://www.elastic.co/guide/en/security/current/clearing-windows-event-logs.html
   - Splunk: https://lantern.splunk.com/Security/UCE/Guided_Insights/Threat_hunting/Detecting_a_ransomware_attack/Wevtutil.exe_abuse
 Resources:
-  - Link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil
   - Link: https://ss64.com/nt/wevtutil.html
+  - Link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil
 Acknowledgement:
   - Person: Abdul Mhanni
-    Handle: 'linkedin.com/in/abdulmhanni'
+    Handle: '@ThatTotallyRealMyth'
+  
