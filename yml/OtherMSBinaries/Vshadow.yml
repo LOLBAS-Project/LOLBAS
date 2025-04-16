@@ -9,7 +9,7 @@ Commands:
     Usecase: Performs execution of specified executable file.
     Category: Execute
     Privileges: Administrator
-    MitreID: T1218
+    MitreID: T1202
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
