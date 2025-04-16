@@ -17,7 +17,7 @@ Full_Path:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_cmdkey_recon.yml
 Resources:
-  - Link: https://www.peew.pw/blog/2017/11/26/exploring-cmdkey-an-edge-case-for-privilege-escalation
+  - Link: https://web.archive.org/web/20230202122017/https://www.peew.pw/blog/2017/11/26/exploring-cmdkey-an-edge-case-for-privilege-escalation
   - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey
 Acknowledgement:
   - Person:
