@@ -11,6 +11,15 @@ Commands:
     Privileges: User
     MitreID: T1219
     OperatingSystem: Windows 10, Windows 11
+  - Command: Code.exe
+    Description: Generate Node.JS JavaScript payload and package.json, and save to "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\\\resources\\app\\" before executing.
+    Usecase: Execute Node.JS JavaScript code
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.015
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: Node.JS
 Full_Path:
   - Path: 'C:\Users\<username>\AppData\Local\Programs\Microsoft VS Code\Code.exe'
   - Path: C:\Program Files\Microsoft VS Code\Code.exe
@@ -19,7 +28,14 @@ Detection:
   - IOC: Websocket traffic to global.rel.tunnels.api.visualstudio.com
   - IOC: 'Process tree: code.exe -> cmd.exe -> node.exe -> winpty-agent.exe'
   - IOC: 'File write of code_tunnel.json which is parametizable, but defaults to: %UserProfile%\.vscode-cli\code_tunnel.json'
+  - IOC: "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\resources\\app directory created"
+  - IOC: "%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\Code.exe file created/modified by non-Code installer/updater"
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_susp_electron_exeuction_proxy.yml
 Resources:
   - Link: https://badoption.eu/blog/2023/01/31/code_c2.html
   - Link: https://code.visualstudio.com/docs/remote/tunnels
   - Link: https://code.visualstudio.com/blogs/2022/12/07/remote-even-better
+  - Link: https://securityintelligence.com/x-force/bypassing-windows-defender-application-control-loki-c2/
+Acknowledgement:
+  - Person: Bobby Cooke
+    Handle: '@0xBoku'
