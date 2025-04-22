@@ -16,8 +16,7 @@ Full_Path:
 Detection:
   - IOC: wbemtest.exe binary spawned
 Resources:
-  - Link:
-
+  - Link: https://saulpanders.github.io/2025/01/20/lolbas-wbemtest.html
 Acknowledgement:
   - Person: Paul Sanders
     Handle: 'saulpanders'
