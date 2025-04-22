@@ -7,7 +7,7 @@ Commands:
   - Command: wbemtest.exe
     Description: Execute arbitary commands through WMI through a GUI managment interface for Web Based Enterprise Management testing (WBEM). Uses WMI to Create and instance of a Win32_Process WMI class with a commandline argument of the target command to spawn. Spawns a GUI so it requires interactive access. For a demo, see link to blog in resources.
     Usecase: Execute arbitrary commands through WMI classes
-    Category: Execute, AWL Bypass
+    Category: Execute
     Privileges: Any
     MitreID: T1047
     OperatingSystem: Windows 10, Windows 11
