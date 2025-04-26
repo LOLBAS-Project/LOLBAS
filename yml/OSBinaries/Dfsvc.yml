@@ -9,7 +9,7 @@ Commands:
     Usecase: Use binary to bypass Application whitelisting
     Category: AWL Bypass
     Privileges: User
-    MitreID: T1127
+    MitreID: T1127.002
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: ClickOnce

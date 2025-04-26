@@ -9,7 +9,7 @@ Commands:
     Usecase: Reverse PowerShell session over MS provided infrastructure.
     Category: Execute
     Privileges: User
-    MitreID: T1219
+    MitreID: T1219.001
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: 'C:\Users\<username>\AppData\Local\Programs\Microsoft VS Code\Code.exe'
