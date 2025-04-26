@@ -11,6 +11,9 @@ Commands:
     Privileges: Any
     MitreID: T1047
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Application: GUI
+      - Execute: CMD
 Full_Path:
   - Path: c:\windows\system32\wbem\wbemtest.exe
 Detection:
