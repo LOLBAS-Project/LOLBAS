@@ -1,0 +1,23 @@
+---
+Name: Cipher.exe
+Description: File Encryption Utility
+Author: Adetutu Ogunsowo
+Created: 2024-11-22
+Commands:
+  - Command: cipher /w:{PATH_ABSOLUTE:folder}
+    Description: Zero out a file
+    Usecase: Can be used to forensically erase a file
+    Category: Tamper
+    Privileges: User
+    MitreID: T1485
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+Full_Path:
+  - Path: c:\windows\system32\cipher.exe
+  - Path: c:\windows\syswow64\cipher.exe
+Detection:
+  - IOC: cipher.exe process with /w on the command line
+Resources:
+  - Link: https://www.volexity.com/blog/2024/11/22/the-nearest-neighbor-attack-how-a-russian-apt-weaponized-nearby-wi-fi-networks-for-covert-access/
+Acknowledgement:
+  - Person: Ade Ogunsowo
+    Handle: "@i_am_tutu"
