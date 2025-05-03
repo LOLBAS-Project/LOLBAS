@@ -1,0 +1,18 @@
+name: Taskkill
+description: taskkill.exe is a native Windows binary that can terminate processes locally or remotely. It can be abused by attackers to kill security, monitoring, or IR tools, either locally or over the network using valid credentials.
+author: Mahdi Hamedani Nezhad
+date: 2025-05-03
+commands:
+  - command: taskkill /S 192.168.1.10 /U DOMAIN\AdminUser /P P@ssw0rd! /IM defender.exe /F
+    description: Remotely kill a process on another host using valid domain credentials
+  - command: taskkill /IM csagent.exe /F
+    description: Kill a local CrowdStrike sensor
+  - command: for /f %i in (targetlist.txt) do taskkill /IM %i /F
+    description: Loop through a file to kill listed processes
+  - command: taskkill /PID 1234 /F
+    description: Forcefully kill a process using its PID
+full_path:
+  - C:\Windows\System32\taskkill.exe
+code_sign:
+  - Microsoft Windows
+
