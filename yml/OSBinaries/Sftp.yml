@@ -5,7 +5,7 @@ Author: Swachchhanda Shrawan Poudel
 Created: 2025-05-13
 Commands:
   - Command: sftp -o ProxyCommand="{CMD}" .
-    Description: Executes specified command using sftp.exe (via ssh.exe).
+    Description: "Spawns ssh.exe which in turn spawns the specified command line. See also this project's entry for ssh.exe."
     Usecase: Proxy execution of specified command, can be used as a defensive evasion.
     Category: Execute
     Privileges: User
@@ -16,8 +16,8 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\OpenSSH\sftp.exe
 Detection:
-  - IOC: sftp.exe executions with ProxyCommand specified
-  - IOC: sftp.exe spawning ssh.exe with ProxyCommand specified
+  - IOC: sftp.exe executions with ProxyCommand on the command line
+  - IOC: sftp.exe spawning ssh.exe with ProxyCommand on the command line
   - Sigma: https://github.com/SigmaHQ/sigma/pull/5414/files
 Resources:
   - Link: https://news.sophos.com/en-us/2025/05/09/lumma-stealer-coming-and-going/
