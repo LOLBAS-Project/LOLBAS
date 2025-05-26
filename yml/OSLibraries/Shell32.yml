@@ -31,9 +31,9 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: CMD
-  - Command: rundll32.exe shell32.dll,#44 {PATH:.cpl}
-    Description: Launch a CPL by calling undocumented Control_RunDLLNoFallback function.
-    Usecase: Load a CPL.
+  - Command: rundll32.exe shell32.dll,#44 {PATH:.dll}
+    Description: Load a DLL/CPL by calling undocumented Control_RunDLLNoFallback function.
+    Usecase: Load a DLL/CPL payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
