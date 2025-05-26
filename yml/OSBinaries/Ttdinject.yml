@@ -1,28 +1,30 @@
 ---
 Name: Ttdinject.exe
 Description: Used by Windows 1809 and newer to Debug Time Travel (Underlying call of tttracer.exe)
-Author: 'Maxime Nadeau'
+Author: Maxime Nadeau
 Created: 2020-05-12
 Commands:
-  - Command: TTDInject.exe /ClientParams "7 tmp.run 0 0 0 0 0 0 0 0 0 0" /Launch "C:/Windows/System32/calc.exe"
-    Description: Execute calc using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated.
+  - Command: TTDInject.exe /ClientParams "7 tmp.run 0 0 0 0 0 0 0 0 0 0" /Launch "{PATH:.exe}"
+    Description: Execute a program using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated.
     Usecase: Spawn process using other binary
     Category: Execute
     Privileges: Administrator
     MitreID: T1127
     OperatingSystem: Windows 10 2004 and above, Windows 11
-  - Command: ttdinject.exe /ClientScenario TTDRecorder /ddload 0 /ClientParams "7 tmp.run 0 0 0 0 0 0 0 0 0 0" /launch "C:/Windows/System32/calc.exe"
-    Description: Execute calc using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated.
+    Tags:
+      - Execute: EXE
+  - Command: ttdinject.exe /ClientScenario TTDRecorder /ddload 0 /ClientParams "7 tmp.run 0 0 0 0 0 0 0 0 0 0" /launch "{PATH:.exe}"
+    Description: Execute a program using ttdinject.exe. Requires administrator privileges. A log file will be created in tmp.run. The log file can be changed, but the length (7) has to be updated.
     Usecase: Spawn process using other binary
     Category: Execute
     Privileges: Administrator
     MitreID: T1127
     OperatingSystem: Windows 10 1909 and below
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\ttdinject.exe
   - Path: C:\Windows\Syswow64\ttdinject.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/create_remote_thread/create_remote_thread_win_ttdinjec.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/7ea6ed3db65e0bd812b051d9bb4fffd27c4c4d0a/rules/windows/process_creation/proc_creation_win_lolbin_ttdinject.yml

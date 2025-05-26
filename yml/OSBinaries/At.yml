@@ -4,13 +4,15 @@ Description: Schedule periodic tasks
 Author: 'Freddie Barr-Smith'
 Created: 2019-09-20
 Commands:
-  - Command: C:\Windows\System32\at.exe 09:00 /interactive /every:m,t,w,th,f,s,su C:\Windows\System32\revshell.exe
+  - Command: C:\Windows\System32\at.exe 09:00 /interactive /every:m,t,w,th,f,s,su {CMD}
     Description: Create a recurring task to execute every day at a specific time.
     Usecase: Create a recurring task, to eg. to keep reverse shell session(s) alive
     Category: Execute
     Privileges: Local Admin
     MitreID: T1053.002
     OperatingSystem: Windows 7 or older
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\WINDOWS\System32\At.exe
   - Path: C:\WINDOWS\SysWOW64\At.exe

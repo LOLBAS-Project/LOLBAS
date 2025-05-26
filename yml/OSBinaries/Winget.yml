@@ -4,14 +4,17 @@ Description: Windows Package Manager tool
 Author: Paul Sanders
 Created: 2022-01-03
 Commands:
-  - Command: winget.exe install --manifest manifest.yml
-    Description: 'Downloads a file from the web address specified in manifest.yml and executes it on the system. Local manifest setting must be enabled in winget for it to work: `winget settings --enable LocalManifestFiles`'
+  - Command: winget.exe install --manifest {PATH:.yml}
+    Description: 'Downloads a file from the web address specified in .yml file and executes it on the system. Local manifest setting must be enabled in winget for it to work: `winget settings --enable LocalManifestFiles`'
     Usecase: Download and execute an arbitrary file from the internet
     Category: Execute
     Privileges: Local Administrator - required to enable local manifest setting
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
-  - Command: winget.exe install --accept-package-agreements -s msstore [name or ID]
+    Tags:
+      - Execute: Remote
+      - Execute: EXE
+  - Command: winget.exe install --accept-package-agreements -s msstore {name or ID}
     Description: 'Download and install any software from the Microsoft Store using its name or Store ID, even if the Microsoft Store App itself is blocked on the machine. For example, use "Sysinternals Suite" or `9p7knl5rwt25` for obtaining ProcDump, PsExec via the Sysinternals Suite. Note: a Microsoft account is required for this.'
     Usecase: Download and install software from Microsoft Store, even if Microsoft Store App is blocked
     Category: Download

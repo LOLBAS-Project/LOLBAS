@@ -1,12 +1,12 @@
 ---
 Name: Odbcconf.exe
 Description: Used in Windows for managing ODBC connections
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: odbcconf /a {REGSVR c:\test\test.dll}
-    Description: Execute DllREgisterServer from DLL specified.
-    Usecase: Execute dll file using technique that can evade defensive counter measures
+  - Command: odbcconf /a {REGSVR {PATH_ABSOLUTE:.dll}}
+    Description: Execute DllRegisterServer from DLL specified.
+    Usecase: Execute a DLL file using technique that can evade defensive counter measures
     Category: Execute
     Privileges: User
     MitreID: T1218.008
@@ -14,7 +14,7 @@ Commands:
     Tags:
       - Execute: DLL
   - Command: |
-      odbcconf INSTALLDRIVER "lolbas-project|Driver=c:\test\test.dll|APILevel=2"
+      odbcconf INSTALLDRIVER "lolbas-project|Driver={PATH_ABSOLUTE:.dll}|APILevel=2"
       odbcconf configsysdsn "lolbas-project" "DSN=lolbas-project"
     Description: Install a driver and load the DLL. Requires administrator privileges.
     Usecase: Execute dll file using technique that can evade defensive counter measures
@@ -24,7 +24,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: odbcconf -f file.rsp
+  - Command: odbcconf -f {PATH:.rsp}
     Description: Load DLL specified in target .RSP file. See the Code Sample section for an example .RSP file.
     Usecase: Execute dll file using technique that can evade defensive counter measures
     Category: Execute

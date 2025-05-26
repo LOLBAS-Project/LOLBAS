@@ -12,8 +12,8 @@ Commands:
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11, MacOS
 Full_Path:
-  - Path: C:\Users\<username>\AppData\Local\Temp\.net\devtunnel\
-  - Path: C:\Users\<username>\AppData\Local\Temp\DevTunnels
+  - Path: C:\Users\<username>\AppData\Local\Temp\.net\devtunnel\devtunnel.exe
+  - Path: C:\Users\<username>\AppData\Local\Temp\DevTunnels\devtunnel.exe
 Detection:
   - IOC: devtunnel.exe binary spawned
   - IOC: '*.devtunnels.ms'

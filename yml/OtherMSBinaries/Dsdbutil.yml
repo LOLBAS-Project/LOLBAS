@@ -44,8 +44,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\dsdbutil.exe
   - Path: C:\Windows\SysWOW64\dsdbutil.exe
-Code_Sample:
-  - Code:
 Detection:
   - IOC: Event ID 4688
   - IOC: dsdbutil.exe process creation

@@ -4,14 +4,16 @@ Description: Utility for installing software and drivers with rundll32.exe
 Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe advpack.dll,LaunchINFSection c:\test.inf,DefaultInstall_SingleUser,1,
+  - Command: rundll32.exe advpack.dll,LaunchINFSection {PATH:.inf},DefaultInstall_SingleUser,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
-  - Command: rundll32.exe advpack.dll,LaunchINFSection c:\test.inf,,1,
+    Tags:
+      - Execute: INF
+  - Command: rundll32.exe advpack.dll,LaunchINFSection {PATH:.inf},,1,
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (DefaultInstall section implied).
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
@@ -19,8 +21,8 @@ Commands:
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Input: INF
-  - Command: rundll32.exe advpack.dll,RegisterOCX test.dll
+      - Execute: INF
+  - Command: rundll32.exe advpack.dll,RegisterOCX {PATH:.dll}
     Description: Launch a DLL payload by calling the RegisterOCX function.
     Usecase: Load a DLL payload.
     Category: Execute
@@ -29,20 +31,24 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: rundll32.exe advpack.dll,RegisterOCX calc.exe
+  - Command: rundll32.exe advpack.dll,RegisterOCX {PATH:.exe}
     Description: Launch an executable by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
-  - Command: rundll32 advpack.dll, RegisterOCX "cmd.exe /c calc.exe"
+    Tags:
+      - Execute: EXE
+  - Command: rundll32 advpack.dll, RegisterOCX {CMD}
     Description: Launch command line by calling the RegisterOCX function.
     Usecase: Run an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: c:\windows\system32\advpack.dll
   - Path: c:\windows\syswow64\advpack.dll

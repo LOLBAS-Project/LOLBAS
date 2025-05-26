@@ -4,13 +4,15 @@ Description: Internet Browser DLL for translating HTML code.
 Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe ieframe.dll,OpenURL "C:\test\calc.url"
+  - Command: rundll32.exe ieframe.dll,OpenURL {PATH_ABSOLUTE:.url}
     Description: Launch an executable payload via proxy through a(n) URL (information) file by calling OpenURL.
-    Usecase: Load an executable payload by calling a .url file with or without quotes.  The .url file extension can be renamed.
+    Usecase: Load an executable payload by calling a .url file with or without quotes. The .url file extension can be renamed.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: URL
 Full_Path:
   - Path: c:\windows\system32\ieframe.dll
   - Path: c:\windows\syswow64\ieframe.dll

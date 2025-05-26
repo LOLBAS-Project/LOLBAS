@@ -1,7 +1,7 @@
 ---
 Name: Rpcping.exe
 Description: Used to verify rpc connection
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: rpcping -s 127.0.0.1 -e 1234 -a privacy -u NTLM
@@ -21,8 +21,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\rpcping.exe
   - Path: C:\Windows\SysWOW64\rpcping.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_rpcping_credential_capture.yml
 Resources:
