@@ -33,7 +33,7 @@ Commands:
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Application: GUI  
+      - Application: GUI
   - Command: certutil -encode {PATH} {PATH:.base64}
     Description: Command to encode a file using Base64
     Usecase: Encode files to evade defensive measures
