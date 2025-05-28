@@ -12,7 +12,7 @@ Commands:
     MitreID: T1202
     OperatingSystem: Windows
     Tags:
-      - Execute: CMD    
+      - Execute: CMD
 Full_Path:
   - Path: C:\Program Files\Windows Kits\10\Windows Performance Toolkit\xbootmgrsleep.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\xbootmgrsleep.exe
