@@ -4,7 +4,7 @@ Description: Windows Performance Toolkit binary used for tracing and analyzing s
 Author: Avihay Eldad
 Created: 2024-06-13
 Commands:
-  - Command: xbootmgrsleep.exe 1000 {CMD}
+  - Command: xbootmgrsleep.exe 1000 "{CMD}"
     Description: Execute a command with XBootMgrSleep as a parent process, with a 1 second (=1000 milliseconds) delay.
     Usecase: Performs execution of specified command, can be used as a defense evasion
     Category: Execute
