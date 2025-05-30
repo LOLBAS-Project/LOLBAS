@@ -22,6 +22,15 @@ Commands:
     OperatingSystem: Windows 10 (and possibly earlier versions), Windows 11
     Tags:
       - Execute: DLL
+  - Command: mmc.exe -Embedding C:\Windows\Temp\download.msc
+    Description: Download and save an executable to disk
+    Usecase: Download file from Internet
+    Category: Download
+    Privileges: User
+    MitreID: T1218.014
+    OperatingSystem: Windows 10 (and possibly earlier versions), Windows 11
+    Tags:
+      - Application: GUI
 Full_Path:
   - Path: C:\Windows\System32\mmc.exe
   - Path: C:\Windows\SysWOW64\mmc.exe
@@ -36,3 +45,4 @@ Acknowledgement:
     Handle: '@bohops'
   - Person: clem
     Handle: '@clavoillotte'
+  - Person: Fredrik H. Brathen
