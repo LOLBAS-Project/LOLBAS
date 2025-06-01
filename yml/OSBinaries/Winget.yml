@@ -21,6 +21,13 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
+  - Command: winget.exe install --accept-package-agreements -s msstore {name or ID}
+    Description: 'Download and install any software from the Microsoft Store using its name or Store ID, even if the Microsoft Store App itself is blocked on the machine, and even if AppLocker is active on the machine. For example, use "Sysinternals Suite" or `9p7knl5rwt25` for obtaining ProcDump, PsExec via the Sysinternals Suite. Note: a Microsoft account is required for this.'
+    Usecase: Download and install software from Microsoft Store, even if Microsoft Store App is blocked, and AppLocker is activated on the machine
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Users\user\AppData\Local\Microsoft\WindowsApps\winget.exe
 Code_Sample:
@@ -33,7 +40,9 @@ Detection:
 Resources:
   - Link: https://saulpanders.github.io/2022/01/02/New-Year-New-LOLBAS.html
   - Link: https://docs.microsoft.com/en-us/windows/package-manager/winget/#production-recommended
+  - Link: https://www.youtube.com/watch?v=zuL7x4Wltto
 Acknowledgement:
   - Person: Paul
     Handle: '@saulpanders'
   - Person: Konrad 'unrooted' Klawikowski
+  - Person: Fredrik H. Brathen
