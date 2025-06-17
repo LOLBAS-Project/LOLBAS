@@ -1,0 +1,29 @@
+---
+Name: write.exe
+Description: Wrapper binary for launching wordpad. Historically it was used to launch Microsoft Write, a very basic word processor from pre-2000 era. Currently it's left as a compatibility stub after Windows 95 onwards
+Author: Michal Belzak
+Created: 2025-06-17
+Commands:
+  - Command: write.exe
+    Description: Executes a binary provided in default value of (HKCU|HKLM):\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe.
+    Usecase: This might be utilized to confuse detection solutions that rely on parent-child relationships (process will be spawned as a child to the write.exe). HKCU is checked first, allowing for user exploitation.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: C:\Windows\write.exe
+  - Path: C:\Windows\System32\write.exe
+  - Path: C:\Windows\SysWOW64\write.exe
+Detection:
+  - IOC: Changes to HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe
+  - IOC: Changes to HKLM:\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_set/registry_set_persistence_app_paths.yml
+Resources:
+  - Link: https://gist.github.com/mblzk/b8c5ff7c2bd0fb2b385cc2fdd119874b
+  - Link: https://learn.microsoft.com/en-us/windows/win32/shell/app-registration
+  - Link: https://en.wikipedia.org/wiki/Microsoft_Write
+Acknowledgement:
+  - Person: Michal Belzak
