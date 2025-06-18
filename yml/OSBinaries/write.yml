@@ -1,29 +1,47 @@
 ---
 Name: write.exe
-Description: Wrapper binary for launching wordpad. Historically it was used to launch Microsoft Write, a very basic word processor from pre-2000 era. Currently it's left as a compatibility stub after Windows 95 onwards
+Description: Wrapper binary for launching wordpad. Historically it was used to launch Microsoft Write, a very basic word processor from pre-2000 era. Currently it's left as a compatibility stub after Windows 95 onwards.
 Author: Michal Belzak
 Created: 2025-06-17
 Commands:
   - Command: write.exe
     Description: Executes a binary provided in default value of (HKCU|HKLM):\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe.
-    Usecase: This might be utilized to confuse detection solutions that rely on parent-child relationships (process will be spawned as a child to the write.exe). HKCU is checked first, allowing for user exploitation.
+    Usecase: Execute binary through legitimate proxy. This might be utilized to confuse detection solutions that rely on parent-child relationships.
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
     Tags:
       - Execute: EXE
+  - Command: write.exe
+    Description: It is possible to provide arguments by modifying HKCU:\Software\Classes\exefile\shell\open\command to include the following value: `"%1" <args>`
+    Usecase: Execute binary through legitimate proxy. This might be utilized to confuse detection solutions that rely on parent-child relationships.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+      - Execute: CMD
+  - Command: write.exe
+    Description: It is possible to execute remote binaries when using UNC path instead. This will display security prompt and fail in non-interactive environments. To offset for that, one needs to control a custom domain, be able to set A DNS record in it and register this record in `HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\`. For details, refer to Resources.
+    Usecase: Execute remote binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows
+    Tags:
+      - Execute: Remote
 Full_Path:
   - Path: C:\Windows\write.exe
   - Path: C:\Windows\System32\write.exe
   - Path: C:\Windows\SysWOW64\write.exe
 Detection:
   - IOC: Changes to HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe
-  - IOC: Changes to HKLM:\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe
+  - IOC: Changes to HKCU:\Software\Classes\exefile\shell\open\command
+  - IOC: (related to UNC prompt bypass) Changes to HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_set/registry_set_persistence_app_paths.yml
 Resources:
   - Link: https://gist.github.com/mblzk/b8c5ff7c2bd0fb2b385cc2fdd119874b
-  - Link: https://learn.microsoft.com/en-us/windows/win32/shell/app-registration
-  - Link: https://en.wikipedia.org/wiki/Microsoft_Write
 Acknowledgement:
   - Person: Michal Belzak
