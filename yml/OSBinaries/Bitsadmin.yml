@@ -49,6 +49,7 @@ Resources:
   - Link: https://www.slideshare.net/chrisgates/windows-attacks-at-is-the-new-black-26672679
   - Link: https://www.youtube.com/watch?v=_8xJaaQlpBo
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
+  - Link: https://www.soc-labs.top/en/detections/100
 Acknowledgement:
   - Person: Rob Fuller
     Handle: '@mubix'
