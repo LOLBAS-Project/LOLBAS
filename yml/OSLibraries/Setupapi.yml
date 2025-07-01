@@ -4,7 +4,7 @@ Description: Windows Setup Application Programming Interface
 Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\shady.inf
+  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 {PATH_ABSOLUTE:.inf}
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
     Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
@@ -12,8 +12,8 @@ Commands:
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Input: INF
-  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\calc_exe.inf
+      - Execute: INF
+  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 {PATH_ABSOLUTE:.inf}
     Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
     Usecase: Load an executable payload.
     Category: Execute
@@ -21,7 +21,7 @@ Commands:
     MitreID: T1218.011
     OperatingSystem: Windows
     Tags:
-      - Input: INF
+      - Execute: INF
 Full_Path:
   - Path: c:\windows\system32\setupapi.dll
   - Path: c:\windows\syswow64\setupapi.dll

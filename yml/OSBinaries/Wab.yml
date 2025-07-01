@@ -1,7 +1,7 @@
 ---
 Name: Wab.exe
 Description: Windows address book manager
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: wab.exe
@@ -11,11 +11,11 @@ Commands:
     Privileges: Administrator
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Program Files\Windows Mail\wab.exe
   - Path: C:\Program Files (x86)\Windows Mail\wab.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/registry/registry_set/registry_set_wab_dllpath_reg_change.yml
   - IOC: WAB.exe should normally never be used

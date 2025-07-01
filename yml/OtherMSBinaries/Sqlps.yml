@@ -1,7 +1,7 @@
 ---
 Name: Sqlps.exe
 Description: Tool included with Microsoft SQL Server that loads SQL Server cmdlets. Microsoft SQL Server\100 and 110 are Powershell v2. Microsoft SQL Server\120 and 130 are Powershell version 4. Replaced by SQLToolsPS.exe in SQL Server 2016, but will be included with installation for compatability reasons.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: Sqlps.exe -noprofile
@@ -11,14 +11,14 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows
+    Tags:
+      - Execute: PowerShell
 Full_Path:
   - Path: C:\Program files (x86)\Microsoft SQL Server\100\Tools\Binn\sqlps.exe
   - Path: C:\Program files (x86)\Microsoft SQL Server\110\Tools\Binn\sqlps.exe
   - Path: C:\Program files (x86)\Microsoft SQL Server\120\Tools\Binn\sqlps.exe
   - Path: C:\Program files (x86)\Microsoft SQL Server\130\Tools\Binn\sqlps.exe
   - Path: C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\SQLPS.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_mssql_sqlps_susp_execution.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/image_load/image_load_dll_system_management_automation_susp_load.yml

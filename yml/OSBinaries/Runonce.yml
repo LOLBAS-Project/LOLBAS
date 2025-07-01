@@ -1,21 +1,21 @@
 ---
 Name: Runonce.exe
 Description: Executes a Run Once Task that has been configured in the registry
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: Runonce.exe /AlternateShellStartup
-    Description: Executes a Run Once Task that has been configured in the registry
+    Description: Executes a Run Once Task that has been configured in the registry.
     Usecase: Persistence, bypassing defensive counter measures
     Category: Execute
     Privileges: Administrator
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\runonce.exe
   - Path: C:\Windows\SysWOW64\runonce.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/registry/registry_event/registry_event_runonce_persistence.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_runonce_execution.yml

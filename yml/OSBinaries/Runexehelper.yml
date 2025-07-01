@@ -4,13 +4,15 @@ Description: Launcher process
 Author: Grzegorz Tworek
 Created: 2022-12-13
 Commands:
-  - Command: runexehelper.exe c:\windows\system32\calc.exe
+  - Command: runexehelper.exe {PATH_ABSOLUTE:.exe}
     Description: 'Launches the specified exe. Prerequisites: (1) diagtrack_action_output environment variable must be set to an existing, writable folder; (2) runexewithargs_output.txt file cannot exist in the folder indicated by the variable.'
     Usecase: Executes arbitrary code
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10, Windows 11, Windows Server 2012, Windows Server 2016, Windows Server 2019, Windows Server 2022
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: c:\windows\system32\runexehelper.exe
 Detection:

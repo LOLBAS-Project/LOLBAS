@@ -4,7 +4,7 @@ Description: Binary coregen.exe (Microsoft CoreCLR Native Image Generator) loads
 Author: Martin Sohn Christensen
 Created: 2020-10-09
 Commands:
-  - Command: coregen.exe /L C:\folder\evil.dll dummy_assembly_name
+  - Command: coregen.exe /L {PATH_ABSOLUTE:.dll} dummy_assembly_name
     Description: Loads the target .DLL in arbitrary path specified with /L.
     Usecase: Execute DLL code
     Category: Execute
@@ -20,7 +20,9 @@ Commands:
     Privileges: User
     MitreID: T1055
     OperatingSystem: Windows
-  - Command: coregen.exe /L C:\folder\evil.dll dummy_assembly_name
+    Tags:
+      - Execute: DLL
+  - Command: coregen.exe /L {PATH_ABSOLUTE:.dll} dummy_assembly_name
     Description: Loads the target .DLL in arbitrary path specified with /L. Since binary is signed it can also be used to bypass application whitelisting solutions.
     Usecase: Execute DLL code
     Category: AWL Bypass
@@ -32,8 +34,6 @@ Commands:
 Full_Path:
   - Path: C:\Program Files\Microsoft Silverlight\5.1.50918.0\coregen.exe
   - Path: C:\Program Files (x86)\Microsoft Silverlight\5.1.50918.0\coregen.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/b02e3b698afbaae143ac4fb36236eb0b41122ed7/rules/windows/image_load/image_load_side_load_coregen.yml
   - IOC: coregen.exe loading .dll file not in "C:\Program Files (x86)\Microsoft Silverlight\5.1.50918.0\"

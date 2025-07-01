@@ -4,21 +4,21 @@ Description: Microsoft Windows resource leak diagnostic tool
 Author: 'John Dwyer'
 Created: 2022-05-18
 Commands:
-  - Command: rdrleakdiag.exe /p 940 /o c:\evil /fullmemdmp /wait 1
+  - Command: rdrleakdiag.exe /p 940 /o {PATH_ABSOLUTE:folder} /fullmemdmp /wait 1
     Description: Dump process by PID and create a dump file (Creates files called minidump_<PID>.dmp and results_<PID>.hlk).
     Usecase: Dump process by PID.
     Category: Dump
     Privileges: User
     MitreID: T1003
     OperatingSystem: Windows
-  - Command: rdrleakdiag.exe /p 832 /o c:\evil /fullmemdmp /wait 1
+  - Command: rdrleakdiag.exe /p 832 /o {PATH_ABSOLUTE:folder} /fullmemdmp /wait 1
     Description: Dump LSASS process by PID and create a dump file (Creates files called minidump_<PID>.dmp and results_<PID>.hlk).
     Usecase: Dump LSASS process.
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.001
     OperatingSystem: Windows
-  - Command: rdrleakdiag.exe /p 832 /o c:\evil /fullmemdmp /snap
+  - Command: rdrleakdiag.exe /p 832 /o {PATH_ABSOLUTE:folder} /fullmemdmp /snap
     Description: After dumping a process using /wait 1, subsequent dumps must use /snap (Creates files called minidump_<PID>.dmp and results_<PID>.hlk).
     Usecase: Dump LSASS process mutliple times.
     Category: Dump
@@ -28,8 +28,6 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\rdrleakdiag.exe
   - Path: c:\Windows\SysWOW64\rdrleakdiag.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_rdrleakdiag_process_dumping.yml
   - Elastic: https://www.elastic.co/guide/en/security/current/potential-credential-access-via-windows-utilities.html

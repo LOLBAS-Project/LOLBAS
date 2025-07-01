@@ -1,0 +1,25 @@
+---
+Name: wbemtest.exe
+Description: WMI/WBEM Test Binary
+Author: saulpanders
+Created: 2025-04-22
+Commands:
+  - Command: wbemtest.exe
+    Description: Execute arbitary commands through WMI through a GUI managment interface for Web Based Enterprise Management testing (WBEM). Uses WMI to Create and instance of a Win32_Process WMI class with a commandline argument of the target command to spawn. Spawns a GUI so it requires interactive access. For a demo, see link to blog in resources.
+    Usecase: Execute arbitrary commands through WMI classes
+    Category: Execute
+    Privileges: Any
+    MitreID: T1047
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Application: GUI
+      - Execute: CMD
+Full_Path:
+  - Path: c:\windows\system32\wbem\wbemtest.exe
+Detection:
+  - IOC: wbemtest.exe binary spawned
+Resources:
+  - Link: https://saulpanders.github.io/2025/01/20/lolbas-wbemtest.html
+Acknowledgement:
+  - Person: Paul Sanders
+    Handle: '@saulpanders'

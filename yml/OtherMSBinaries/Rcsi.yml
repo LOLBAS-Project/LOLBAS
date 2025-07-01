@@ -1,27 +1,29 @@
 ---
 Name: rcsi.exe
 Description: Non-Interactive command line inerface included with Visual Studio.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: rcsi.exe bypass.csx
+  - Command: rcsi.exe {PATH:.csx}
     Description: Use embedded C# within the csx script to execute the code.
     Usecase: Local execution of arbitrary C# code stored in local CSX file.
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
-  - Command: rcsi.exe bypass.csx
+    Tags:
+      - Execute: CSharp
+  - Command: rcsi.exe {PATH:.csx}
     Description: Use embedded C# within the csx script to execute the code.
     Usecase: Local execution of arbitrary C# code stored in local CSX file.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: CSharp
 Full_Path:
   - Path: no default
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_csi_execution.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml

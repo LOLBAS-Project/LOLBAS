@@ -4,7 +4,7 @@ Description: Windows NT System Setup
 Author: LOLBAS Team
 Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 c:\test\shady.inf
+  - Command: rundll32 syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 {PATH_ABSOLUTE:.inf}
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
     Usecase: Run local or remote script(let) code through INF file specification (Note May pop an error window).
     Category: AWL Bypass
@@ -12,8 +12,8 @@ Commands:
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Input: INF
-  - Command: rundll32 syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 c:\temp\something.inf
+      - Execute: INF
+  - Command: rundll32 syssetup.dll,SetupInfObjectInstallAction DefaultInstall 128 {PATH_ABSOLUTE:.inf}
     Description: Launch an executable file via the SetupInfObjectInstallAction function and .inf file section directive.
     Usecase: Load an executable payload.
     Category: Execute
@@ -21,7 +21,7 @@ Commands:
     MitreID: T1218.011
     OperatingSystem: Windows 10, Windows 11
     Tags:
-      - Input: INF
+      - Execute: INF
 Full_Path:
   - Path: c:\windows\system32\syssetup.dll
   - Path: c:\windows\syswow64\syssetup.dll

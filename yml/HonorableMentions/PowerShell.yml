@@ -26,8 +26,8 @@ Commands:
     MitreID: T1059.001
     OperatingSystem: Windows 7 and up
 Full_Path:
-  - Path: '%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe'
-  - Path: '%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe'
+  - Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe'
+  - Path: 'C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe'
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/tree/71ae004b32bb3c7fb04714f8a051fc8e5edda68c/rules/windows/powershell
 Resources:

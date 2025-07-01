@@ -1,10 +1,10 @@
 ---
 Name: Tracker.exe
 Description: Tool included with Microsoft .Net Framework.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: Tracker.exe /d .\calc.dll /c C:\Windows\write.exe
+  - Command: Tracker.exe /d {PATH:.dll} /c C:\Windows\write.exe
     Description: Use tracker.exe to proxy execution of an arbitrary DLL into another process. Since tracker.exe is also signed it can be used to bypass application whitelisting solutions.
     Usecase: Injection of locally stored DLL file into target process.
     Category: Execute
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: DLL
-  - Command: Tracker.exe /d .\calc.dll /c C:\Windows\write.exe
+  - Command: Tracker.exe /d {PATH:.dll} /c C:\Windows\write.exe
     Description: Use tracker.exe to proxy execution of an arbitrary DLL into another process. Since tracker.exe is also signed it can be used to bypass application whitelisting solutions.
     Usecase: Injection of locally stored DLL file into target process.
     Category: AWL Bypass
@@ -24,8 +24,6 @@ Commands:
       - Execute: DLL
 Full_Path:
   - Path: no default
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_tracker.yml
 Resources:
