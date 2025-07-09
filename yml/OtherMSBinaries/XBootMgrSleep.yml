@@ -5,7 +5,7 @@ Author: Avihay Eldad
 Created: 2024-06-13
 Commands:
   - Command: xbootmgrsleep.exe 1000 {PATH:.exe}
-    Description: Execute executable via XBootMgrSleep, with a 1 second (=1000 milliseconds) delay. Alternatively, it is also possible to replace the delay with any string for immediate execution. 
+    Description: Execute executable via XBootMgrSleep, with a 1 second (=1000 milliseconds) delay. Alternatively, it is also possible to replace the delay with any string for immediate execution.
     Usecase: Performs execution of specified executable, can be used as a defense evasion
     Category: Execute
     Privileges: User
