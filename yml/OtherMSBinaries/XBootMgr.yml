@@ -2,7 +2,7 @@
 Name: XBootMgr.exe
 Description: Windows Performance Toolkit binary used to start performance traces.
 Author: Avihay Eldad
-Created: 2025-07-01
+Created: 2025-07-10
 Commands:
   - Command: xbootmgr.exe -trace "{boot|hibernate|standby|shutdown|rebootCycle}" -callBack C:\Windows\System32\calc.exe
     Description: Executes an executable after the trace is complete using the callBack parameter.
