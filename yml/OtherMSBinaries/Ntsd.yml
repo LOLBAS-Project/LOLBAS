@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: EXE
-  - Command: ntsd.exe -c "g;q" calc.exe
+  - Command: ntsd.exe -g -G calc.exe
     Description: Launches calc.exe through the debugging process and exits the debugger automatically.
     Usecase: Executes an executable under a trusted microsoft signed binary.
     Category: Execute
@@ -31,7 +31,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: CMD
-  - Command: ntsd.exe -c "g;q" cmd /c calc
+  - Command: ntsd.exe -g -G cmd /c calc
     Description: Executes a CMD command through the debugging process and exits the debugger automatically.
     Usecase: Executes arbitrary CMD commands under a trusted microsoft signed binary.
     Category: Execute
