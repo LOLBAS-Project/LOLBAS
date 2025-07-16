@@ -1,0 +1,53 @@
+---
+Name: Ntsd.exe
+Description: Symbolic Debugger for Windows.
+Author: Avihay Eldad
+Created: 2025-07-16
+Commands:
+  - Command: ntsd.exe -c "g" calc.exe
+    Description: Launches calc.exe through the debugging process.
+    Usecase: Executes an executable under a trusted microsoft signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+  - Command: ntsd.exe -c "g;q" calc.exe
+    Description: Launches calc.exe through the debugging process and exits the debugger automatically.
+    Usecase: Executes an executable under a trusted microsoft signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+  - Command: ntsd.exe -c "g" cmd /c calc
+    Description: Executes a CMD command through the debugger process.
+    Usecase: Executes arbitrary CMD commands under a trusted microsoft signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+  - Command: ntsd.exe -c "g;q" cmd /c calc
+    Description: Executes a CMD command through the debugging process and exits the debugger automatically.
+    Usecase: Executes arbitrary CMD commands under a trusted microsoft signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\ntsd.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\ntsd.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\arm\ntsd.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\arm64\ntsd.exe
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/cdb-command-line-options
+  - Link: https://strontic.github.io/xcyclopedia/library/ntsd.exe-629EA12D527237B9CD945AC44C2DE80D.html
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
