@@ -4,7 +4,7 @@ Description: Symbolic Debugger for Windows.
 Author: Avihay Eldad
 Created: 2025-07-16
 Commands:
-  - Command: ntsd.exe -c "g" calc.exe
+  - Command: ntsd.exe -g calc.exe
     Description: Launches calc.exe through the debugging process.
     Usecase: Executes an executable under a trusted microsoft signed binary.
     Category: Execute
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: EXE
-  - Command: ntsd.exe -c "g" cmd /c calc
+  - Command: ntsd.exe -g cmd /c calc
     Description: Executes a CMD command through the debugger process.
     Usecase: Executes arbitrary CMD commands under a trusted microsoft signed binary.
     Category: Execute
