@@ -15,6 +15,8 @@ Full_Path:
   - Path: C:\Users\<username>\AppData\Local\Temp\.net\devtunnel\devtunnel.exe
   - Path: C:\Users\<username>\AppData\Local\Temp\DevTunnels\devtunnel.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c7998c92b3c5f23ea67045bee8ee364d2ed1a775/rules/windows/dns_query/dns_query_win_devtunnels_communication.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c7998c92b3c5f23ea67045bee8ee364d2ed1a775/rules/windows/network_connection/net_connection_win_domain_devtunnels.yml
   - IOC: devtunnel.exe binary spawned
   - IOC: '*.devtunnels.ms'
   - IOC: '*.*.devtunnels.ms'
