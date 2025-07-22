@@ -15,6 +15,7 @@ Full_Path:
   - Path: c:\windows\system32\cipher.exe
   - Path: c:\windows\syswow64\cipher.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c7998c92b3c5f23ea67045bee8ee364d2ed1a775/rules/windows/process_creation/proc_creation_win_cipher_overwrite_deleted_data.yml
   - IOC: cipher.exe process with /w on the command line
 Resources:
   - Link: https://www.volexity.com/blog/2024/11/22/the-nearest-neighbor-attack-how-a-russian-apt-weaponized-nearby-wi-fi-networks-for-covert-access/
