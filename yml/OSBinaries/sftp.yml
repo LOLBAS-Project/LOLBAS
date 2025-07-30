@@ -1,0 +1,20 @@
+---
+Name: sftp.exe
+Description: SSH File Transfer Protocol
+Author: Nir Chako
+Created: 2022-11-06
+Commands:
+  - Command: "sftp -D c:\\windows\\system32\\notepad.exe"
+    Description: Execute notepad.exe with sftp.exe as parent process
+    Usecase: Use sftp.exe as a proxy binary to evade defensive counter-measures
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: c:\windows\system32\OpenSSH\sftp.exe
+Detection:
+  - IOC: sftp.exe spawning unexpected processes
+Acknowledgement:
+  - Person: 'Nir Chako (Pentera)'
+    Handle: '@C_h4ck_0'
