@@ -35,9 +35,10 @@ Full_Path:
   - Path: c:\windows\system32\change.exe
   - Path: c:\windows\syswow64\change.exe
 Detection:
+  - Sigma:
   - IOC: change.exe being executed and executes a child process outside of its normal path of c:\windows\system32\ or c:\windows\syswow64\
 Resources:
-  - Link: 
+  - Link:
 Acknowledgement:
   - Person: Idan Lerman
     Handle: '@IdanLerman'
