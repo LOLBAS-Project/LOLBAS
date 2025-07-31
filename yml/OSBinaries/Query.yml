@@ -47,7 +47,7 @@ Detection:
   - Sigma:
   - IOC: query.exe being executed and executes a child process outside of its normal path of c:\windows\system32\ or c:\windows\syswow64\
 Resources:
-  - Link:
+  - Link: https://example.com/
 Acknowledgement:
   - Person: Idan Lerman
     Handle: '@IdanLerman'
