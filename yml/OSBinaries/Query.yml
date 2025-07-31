@@ -1,0 +1,52 @@
+---
+Name: Query.exe
+Description: Remote Desktop Services MultiUser Query Utility
+Author: 'Idan Lerman'
+Created: 2025-07-31
+Commands:
+  - Command: query.exe user
+    Description: Once executed, query.exe will execute quser.exe - if query.exe is copied to a folder and an arbitrary executable is renamed to 'quser.exe', query.exe will execute it.
+    Usecase: Possible defence evasion purposes.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+  - Command: query.exe session
+    Description: Once executed, query.exe will execute qwinsta.exe - if query.exe is copied to a folder and an arbitrary executable is renamed to 'qwinsta.exe', query.exe will execute it.
+    Usecase: Possible defence evasion purposes.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+  - Command: query.exe process
+    Description: Once executed, query.exe will execute qprocess.exe - if query.exe is copied to a folder and an arbitrary executable is renamed to 'qprocess.exe', query.exe will execute it.
+    Usecase: Possible defence evasion purposes.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+  - Command: query.exe termserver
+    Description: Once executed, query.exe will execute qappsrv.exe - if query.exe is copied to a folder and an arbitrary executable is renamed to 'qappsrv.exe', query.exe will execute it.
+    Usecase: Possible defence evasion purposes.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: c:\windows\system32\query.exe
+  - Path: c:\windows\syswow64\query.exe
+Detection:
+  - IOC: query.exe being executed and executes a child process outside of its normal path of c:\windows\system32\ or c:\windows\syswow64\
+Resources:
+  - Link: 
+Acknowledgement:
+  - Person: Idan Lerman
+    Handle: '@IdanLerman'
