@@ -17,7 +17,7 @@ Full_Path:
   - Path: c:\windows\system32\eudcedit.exe
   - Path: c:\windows\syswow64\eudcedit.exe
 Detection:
-  - Sigma: 
+  - Sigma:
   - IOC: eudcedit.exe being executed and executes powershell\cmd.
 Resources:
   - Link: https://medium.com/@matanb707/windows-fonts-exploitation-in-2025-bypassing-uac-with-eudcedit-915599705639
