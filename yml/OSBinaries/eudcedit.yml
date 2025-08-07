@@ -7,7 +7,7 @@ Commands:
   - Command: eudcedit.exe
     Description: Once executed, the Private Charecter Editor will be opened, press Ok, the press on file and Font Links. in the next window choose the option "Link with Selected Fonts" and press on Save As, then in the open window write "PowerShell\CMD"
     Usecase: UAC Bypass.
-    Category: Defense Evasion
+    Category: UAC Bypass
     Privileges: Administrator
     MitreID: T1548.002
     OperatingSystem: Windows 10, Windows 11
