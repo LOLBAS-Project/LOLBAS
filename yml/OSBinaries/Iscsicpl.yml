@@ -3,7 +3,7 @@ Name: iscsicpl.exe
 Description: Microsoft iSCSI Initiator Control Panel tool
 Aliases:
   - Alias: iscsicpl.exe  # PE Original filename
-Author: 'Ekkie'
+Author: 'Ekitji'
 Created: 2025-08-17
 Commands:
   - Command: iscsicpl.exe # SysWOW64 binary
