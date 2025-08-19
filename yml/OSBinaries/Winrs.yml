@@ -21,9 +21,8 @@ Full_Path:
   - Path: C:\Windows\SysWOW64\Winrs.exe
 
 Detection:
-  - Type: IOC
-    Content: "Winrs.exe executed without -r, /r, -remote or /remote (no remote endpoint)"
-
+  - IOC: "Winrs.exe executed without -r, /r, -remote or /remote (no remote endpoint)"
+  - Sigma:
 Resources:
   - Link: "https://cardinalops.com/blog/living-off-winrm-abusing-complexity-in-remote-management/"
   - Link: "https://learn.microsoft.com/windows-server/administration/windows-commands/winrs"
