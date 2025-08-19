@@ -3,6 +3,7 @@ Name: Winrs.exe
 Description: WinRM can run commands on remote hosts. By omitting the remote endpoint, it can also run commands locally, spawning a child process under winrshost.exe.
 Author: "Liran Ravich, CardinalOps"
 Created: 2025-08-19
+
 Commands:
   - Command: "winrs cmd /c whoami"
     Description: Run a command locally as a child process of winrshost.exe.
@@ -10,22 +11,22 @@ Commands:
     Category: Execute
     Privileges: "Remote Management Users or Local Admin"
     MitreID: T1218
-    OperatingSystem:
-      - Windows 10
-      - Windows 11
-      - Windows Server
+    OperatingSystem: "Windows 10, Windows 11, Windows Server"
     Tags:
-      - "Execute: CMD"
+      - Name: Execute
+        Value: CMD
+
 Full_Path:
   - Path: C:\Windows\System32\Winrs.exe
   - Path: C:\Windows\SysWOW64\Winrs.exe
+
 Detection:
-  - IOC:
-      - Winrs.exe execution without specifying -r or /r: (i.e., no remote endpoint)
-  - Sigma:
-      - https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_winrs_command_local_execution.yml
+  - Type: IOC
+    Content: "Winrs.exe executed without -r, /r, -remote or /remote (no remote endpoint)"
+
 Resources:
-  - Link: https://learn.microsoft.com/windows/win32/winrm/using-the-winrs-command-line-tool
-  - Link: https://learn.microsoft.com/windows-server/administration/windows-commands/winrs
+  - Link: "https://cardinalops.com/blog/living-off-winrm-abusing-complexity-in-remote-management/"
+  - Link: "https://learn.microsoft.com/windows-server/administration/windows-commands/winrs"
+
 Acknowledgement:
   - Person: "Liran Ravich, CardinalOps"
