@@ -13,8 +13,7 @@ Commands:
     MitreID: T1218
     OperatingSystem: "Windows 10, Windows 11, Windows Server"
     Tags:
-      - Name: Execute
-        Value: CMD
+      - Execute: CMD
 
 Full_Path:
   - Path: C:\Windows\System32\Winrs.exe
