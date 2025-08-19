@@ -1,0 +1,25 @@
+---
+Name: Winrs.exe
+Description: WinRM is commonly used to run commands on remote host. By ommiting the name of the remote host, it can be used to run command and execute files locally as a child process of winrshost.exe.
+Author: Liran Ravich
+Created: 2025-08-19
+Commands:
+  - Command: winrs cmd /c whoami
+    Description: Run a command locally as a child process of winrshost.exe.
+    Usecase: Run commands locally
+    Category: Execute
+    Privileges: Remote Management Users or Local Admin
+    MitreID: T1218
+    OperatingSystem: Windows Server, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Windows\System32\Winrs.exe
+  - Path: C:\Windows\SysWOW64\Winrs.exe
+Detection:
+  - Sigma: 
+  - IOC: Winrs being executed locally, without the "/remote" flag.
+Resources:
+  - Link: https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83
+Acknowledgement:
+  - Person: Liran Ravich
