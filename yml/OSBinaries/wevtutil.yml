@@ -1,3 +1,4 @@
+---
 Name: wevtutil.exe
 Description: Windows command-line utility to manage event logs.
 Author: Furkan Celik, Pure7
@@ -5,19 +6,19 @@ Created: 2025-08-22
 Commands:
   - Command: wevtutil.exe cl Security
     Description: Clears the Security event log using wevtutil.exe.
-    Usecase: Remove event logs to evade detection, bypassing AV/EDR/SIEM logging.
+    Usecase: Remove event logs to evade detection, bypassing AV/EDR/SIEM logging, or remove indicators of compromise through legitimate signed binary execution.
     Category: Anti-Forensics
     Privileges: Admin
     MitreID: T1070
     OperatingSystem: Windows 10, Windows 11
   - Command: wevtutil.exe cl Security
     Description: Clears the Security event log, evading defenses by using a signed Microsoft binary.
-    Usecase: Remove indicators of compromise while evading AV/EDR detection through legitimate signed binary execution.
+    Usecase: Remove indicators of compromise while evading AV/EDR detection.
     Category: AWL Bypass
     Privileges: Admin
     MitreID: T1218
     OperatingSystem: Windows 10, Windows 11
-- Command: wevtutil.exe epl Security malicious.evtx
+  - Command: wevtutil.exe epl Security malicious.evtx
     Description: Exports the Security event log to a malicious.evtx file using wevtutil.exe.
     Usecase: Extract sensitive security events or create a backup for log manipulation, bypassing AV/EDR/SIEM logging.
     Category: Collection
@@ -29,7 +30,7 @@ Full_Path:
   - Path: C:\Windows\SysWOW64\wevtutil.exe
 Detection:
   - IOC: wevtutil.exe clearing event logs (e.g., cl parameter)
-  - IOC: Unexpected log file deletions initiated by wevtutil.exe
+  - IOC: wevtutil.exe exporting logs to unexpected .evtx files
   - IOC: Event ID 1 with Image: wevtutil.exe and CommandLine: *cl*
   - IOC: Event ID 1 with Image: wevtutil.exe and CommandLine: *epl* and CommandLine: *Security* and CommandLine: *.evtx*
   - IOC: Event ID 4688 with New Process Name: wevtutil.exe and Process Command Line: *cl*
@@ -38,5 +39,7 @@ Detection:
 Resources:
   - Link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/wevtutil
 Acknowledgement:
-  - Person: Furkan Celik Pure7
+  - Person: Furkan Celik
     Handle: '@fkrnclk34'
+  - Person: Bogac Kaya
+    Handle: '@bogackaya'
