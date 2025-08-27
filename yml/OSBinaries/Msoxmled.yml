@@ -1,6 +1,7 @@
+    ---
 Name: msoxmled.exe
 Description: Microsoft Office XML Editor, used to handle XML documents in Microsoft Office.
-Author: Boğaç Kaya
+Author: Bogac Kaya
 Created: 2025-08-22
 Commands:
   - Command: .\msoxmled.exe /verb open https://live.sysinternals.com/Sysmon64.exe
@@ -25,9 +26,11 @@ Detection:
   - IOC: Unexpected file downloads initiated by msoxmled.exe
   - IOC: Event ID 1 with Image: msoxmled.exe and CommandLine: msoxmled.exe /verb open
   - IOC: Event ID 11 with Image: msoxmled.exe
-  - Sigma: https://github.com/frknclk34/SigmaRule/blob/main/Download%20Arbitrary%20Files%20Via%20Msoxmled.EXE
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_msoxmled_download.yml
 Resources:
   - Link: https://learn.microsoft.com/en-us/answers/questions/4805030/where-is-msoxmled-exe-for-office-professional-2013
 Acknowledgement:
-  - Person: Furkan CELİK
-    Handle: '@frknclk34'
+  - Person: Bogac Kaya
+    Handle: 'bogackayaa'
+  - Person: Furkan Celik
+    Handle: '@fkrnclk34'
