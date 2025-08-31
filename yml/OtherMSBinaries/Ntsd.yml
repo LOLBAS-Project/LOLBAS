@@ -4,42 +4,15 @@ Description: Symbolic Debugger for Windows.
 Author: Avihay Eldad
 Created: 2025-07-16
 Commands:
-  - Command: ntsd.exe -g calc.exe
-    Description: Launches calc.exe through the debugging process.
+  - Command: ntsd.exe -g {CMD}
+    Description: Launches command through the debugging process; optionally add `-G` to exit the debugger automatically.
     Usecase: Executes an executable under a trusted microsoft signed binary.
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
     Tags:
-      - Execute: EXE
-  - Command: ntsd.exe -g -G calc.exe
-    Description: Launches calc.exe through the debugging process and exits the debugger automatically.
-    Usecase: Executes an executable under a trusted microsoft signed binary.
-    Category: Execute
-    Privileges: User
-    MitreID: T1127
-    OperatingSystem: Windows
-    Tags:
-      - Execute: EXE
-  - Command: ntsd.exe -g cmd /c calc
-    Description: Executes a CMD command through the debugger process.
-    Usecase: Executes arbitrary CMD commands under a trusted microsoft signed binary.
-    Category: Execute
-    Privileges: User
-    MitreID: T1127
-    OperatingSystem: Windows
-    Tags:
-      - Execute: CMD
-  - Command: ntsd.exe -g -G cmd /c calc
-    Description: Executes a CMD command through the debugging process and exits the debugger automatically.
-    Usecase: Executes arbitrary CMD commands under a trusted microsoft signed binary.
-    Category: Execute
-    Privileges: User
-    MitreID: T1127
-    OperatingSystem: Windows
-    Tags:
-      - Execute: CMD
+      - Execute: CMC
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\ntsd.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\ntsd.exe
