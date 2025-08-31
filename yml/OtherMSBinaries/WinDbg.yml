@@ -1,0 +1,25 @@
+---
+Name: WinDbg.exe
+Description: Windows Debugger for advanced user-mode and kernel-mode debugging.
+Author: Avihay Eldad
+Created: 2025-07-16
+Commands:
+  - Command: windbg.exe -g {CMD}
+    Description: Launches a command line through the debugging process; optionally add `-G` to exit the debugger automatically.
+    Usecase: Executes an executable under a trusted microsoft signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\windbg.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\arm\windbg.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\arm64\windbg.exe
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/windbg-command-line-options
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
