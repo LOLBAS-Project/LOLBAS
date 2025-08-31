@@ -12,7 +12,7 @@ Commands:
     MitreID: T1127
     OperatingSystem: Windows
     Tags:
-      - Execute: CMC
+      - Execute: CMD
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\ntsd.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\ntsd.exe
