@@ -4,7 +4,7 @@ Description: Windows Performance Toolkit binary used to start performance traces
 Author: Avihay Eldad
 Created: 2025-07-10
 Commands:
-  - Command: xbootmgr.exe -trace "{boot|hibernate|standby|shutdown|rebootCycle}" -callBack C:\Windows\System32\calc.exe
+  - Command: xbootmgr.exe -trace "{boot|hibernate|standby|shutdown|rebootCycle}" -callBack {PATH:.exe}
     Description: Executes an executable after the trace is complete using the callBack parameter.
     Usecase: Executes code as part of post-trace automation flow.
     Category: Execute
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: EXE
-  - Command: xbootmgr.exe -trace "{boot|hibernate|standby|shutdown|rebootCycle}" -preTraceCmd C:\Windows\System32\calc.exe
+  - Command: xbootmgr.exe -trace "{boot|hibernate|standby|shutdown|rebootCycle}" -preTraceCmd {PATH:.exe}
     Description: Executes an executable before each trace run using the preTraceCmd parameter.
     Usecase: Executes code as part of pre-trace automation or staging.
     Category: Execute
