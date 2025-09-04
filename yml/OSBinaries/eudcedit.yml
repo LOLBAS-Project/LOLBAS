@@ -1,3 +1,4 @@
+---
 Name: eudcedit.exe
 Description: Private Character Editor (EUDC) — creates and edits end-user defined characters.
 Aliases:
@@ -29,7 +30,6 @@ Detection:
   - SysmonEvent: 1 (Process Create) with ParentImage = *\eudcedit.exe and suspicious ChildImage.
 Resources:
   - Link: https://rewterz.com/threat-advisory/windows-uac-bypassed-via-character-map
-  
 Acknowledgement:
   -Person: rewterz
   - Person: Ekitji
