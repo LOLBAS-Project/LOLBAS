@@ -1,0 +1,36 @@
+Name: odbcad32.exe
+Description: ODBC Data Source Administrator — manages User/System DSNs and ODBC drivers.
+Aliases:
+  - Alias: odbcad32.exe  # PE Original filename
+Author: 'Ekitji'
+Created: 2025-09-04
+Commands:
+  - Command: odbcad32.exe  # System32 (64-bit)
+    Description: Legitimate GUI tool. Can be abused for a UAC bypass by breaking out from the GUI to spawn other processes.
+    Usecase: Manage ODBC data sources; UAC bypass via GUI breakout by starting process --> Tracing --> Browse --> cmd.exe OR Tracing --> Select DLL --> cmd.exe
+
+    Category: UAC Bypass
+    Privileges: User
+    MitreID: T1548.002
+    OperatingSystem: Windows 10, Windows 11
+  - Command: odbcad32.exe  # SysWOW64 (32-bit)
+    Description: 32-bit variant of the same tool; similar UAC bypass via GUI breakout.
+    Usecase: Manage ODBC data sources; UAC bypass via GUI breakout by starting process --> Tracing --> Browse --> cmd.exe OR Tracing --> Select DLL --> cmd.exe
+    Category: UAC Bypass
+    Privileges: User
+    MitreID: T1548.002
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: c:\windows\system32\odbcad32.exe
+  - Path: c:\windows\syswow64\odbcad32.exe
+Detection:
+  - IOC: ParentImage = *\odbcad32.exe spawning interactive shells (cmd.exe, powershell.exe) or unexpected child processes.
+  - IOC: Elevated or high-integrity child processes with ParentImage = *\odbcad32.exe from a standard-user session.
+  - EventID: 4688 (Process Creation) with ParentImage = *\odbcad32.exe
+  - SysmonEvent: 1 (Process Create) with ParentImage = *\odbcad32.exe and suspicious ChildImage.
+Resources:
+  - Link: https://amonitoring.ru/article/uac_bypass_english/
+Acknowledgement:
+  - Person: amonitoring
+  - Person: Ekitji
+    Handle: '@eki_erk'
