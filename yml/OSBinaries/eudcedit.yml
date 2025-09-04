@@ -31,6 +31,6 @@ Detection:
 Resources:
   - Link: https://rewterz.com/threat-advisory/windows-uac-bypassed-via-character-map
 Acknowledgement:
-  -Person: rewterz
+  - Person: rewterz
   - Person: Ekitji
     Handle: '@eki_erk'
