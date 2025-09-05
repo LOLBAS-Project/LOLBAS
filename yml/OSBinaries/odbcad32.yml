@@ -27,8 +27,8 @@ Full_Path:
 Detection:
   - IOC: ParentImage = *\odbcad32.exe spawning interactive shells (cmd.exe, powershell.exe) or unexpected child processes.
   - IOC: Elevated or high-integrity child processes with ParentImage = *\odbcad32.exe from a standard-user session.
-  - EventID: 4688 (Process Creation) with ParentImage = *\odbcad32.exe
-  - SysmonEvent: 1 (Process Create) with ParentImage = *\odbcad32.exe and suspicious ChildImage.
+  - IOC: EventID: 4688 (Process Creation) with ParentImage = *\odbcad32.exe
+  - IOC: Sysmon EventID: 1 (Process Create) with ParentImage = *\odbcad32.exe and suspicious ChildImage.
 Resources:
   - Link: https://amonitoring.ru/article/uac_bypass_english/
 Acknowledgement:

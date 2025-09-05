@@ -26,8 +26,8 @@ Full_Path:
 Detection:
   - IOC: Parent process eudcedit.exe spawning interactive shells (e.g., cmd.exe, powershell.exe) or mmc.exe.
   - IOC: eudcedit.exe creating high-integrity child processes from a standard-user context.
-  - EventID: 4688 with ParentImage = *\eudcedit.exe and suspicious ChildImage.
-  - SysmonEvent: 1 (Process Create) with ParentImage = *\eudcedit.exe and suspicious ChildImage.
+  - IOC: EventID: 4688 with ParentImage = *\eudcedit.exe and suspicious ChildImage.
+  - IOC: Sysmon EventID: 1 (Process Create) with ParentImage = *\eudcedit.exe and suspicious ChildImage.
 Resources:
   - Link: https://rewterz.com/threat-advisory/windows-uac-bypassed-via-character-map
 Acknowledgement:
