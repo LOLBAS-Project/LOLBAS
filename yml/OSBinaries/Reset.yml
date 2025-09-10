@@ -1,7 +1,7 @@
 ---
 Name: Reset.exe
 Description: Remote Desktop Services Reset Utility
-Author: 'Matan Bahar'
+Author: Matan Bahar
 Created: 2025-07-31
 Commands:
   - Command: reset.exe session
@@ -22,3 +22,4 @@ Detection:
 Acknowledgement:
   - Person: Matan Bahar
     Handle: '@Bl4ckShad3'
+
