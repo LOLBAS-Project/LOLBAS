@@ -1,0 +1,24 @@
+---
+Name: Reset.exe
+Description: Remote Desktop Services Reset Utility
+Author: Matan Bahar
+Created: 2025-07-31
+Commands:
+  - Command: reset.exe session
+    Description: Once executed, `reset.exe` will execute `rwinsta.exe` in the same folder. Thus, if `reset.exe` is copied to a folder and an arbitrary executable is renamed to `rwinsta.exe`, `reset.exe` will spawn it.
+    Usecase: Execute an arbitrary executable via trusted system executable.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Requires: Rename
+Full_Path:
+  - Path: c:\windows\system32\reset.exe
+  - Path: c:\windows\syswow64\reset.exe
+Detection:
+  - IOC: reset.exe being executed and executes rwinsta.exe outside of its normal path of c:\windows\system32\ or c:\windows\syswow64\
+Acknowledgement:
+  - Person: Matan Bahar
+    Handle: '@Bl4ckShad3'
