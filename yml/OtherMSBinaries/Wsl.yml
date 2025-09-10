@@ -38,15 +38,28 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows Server 2019, Windows 11
+  - Command: wsl.exe
+    Description: When executed, wsl.exe queries the registry value of 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss\MSI\InstallLocation', which contains a folder path ('c:\program files\wsl' by default). If the value points to another folder containeing a file name wsl.exe, it will be executed instead of the legitimate wsl.exe in the program files folder.
+    Usecase: Execute a payload as a child process of bash.exe while masquerading as WSL.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218, T1036.005
+    OperatingSystem: Windows 10
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\wsl.exe
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_wsl_lolbin_execution.yml
+  - Sigma: TBA
+  - Sigma: TBA
+  - Sigma: TBA
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
   - IOC: Child process from wsl.exe
 Resources:
   - Link: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
   - Link: https://twitter.com/nas_bench/status/1535431474429808642
+  - Link: TBA
 Acknowledgement:
   - Person: Alex Ionescu
     Handle: '@aionescu'
@@ -57,3 +70,4 @@ Acknowledgement:
   - Person: Nasreddine Bencherchali
     Handle: '@nas_bench'
   - Person: Konrad 'unrooted' Klawikowski
+  - Person: Liran Ravich, CardinalOps
