@@ -1,0 +1,70 @@
+---
+Name: Logger.exe
+Description: A logging configuration tool from the Windows Kits used to start and manage process logging.
+Author: Avihay Eldad
+Created: 2025-07-13
+Commands:
+  - Command: logger.exe RUN "calc"
+    Description: Executes calc.exe using the RUN parameter.
+    Usecase: Executes an executable via a signed binary to evade detection.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+  - Command: logger.exe RUN "cmd /c calc"
+    Description: Executes a command using cmd.exe via the RUN parameter.
+    Usecase: Executes a command line interpreter via a signed binary to evade detection.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+  - Command: logger.exe RUNW "calc"
+    Description: Executes calc.exe using the RUNW parameter.
+    Usecase: Executes an executable via a signed binary to evade detection.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+  - Command: logger.exe RUNW "cmd /c calc"
+    Description: Executes a command using cmd.exe via the RUNW parameter.
+    Usecase: Executes a command line interpreter via a signed binary to evade detection.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+  - Command: logger.exe "calc"
+    Description: Executes calc.exe without any parameter.
+    Usecase: Executes an executable using undocumented implicit behavior.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+  - Command: logger.exe "cmd /c calc"
+    Description: Executes a command via cmd.exe without any parameter.
+    Usecase: Executes arbitrary commands using undocumented implicit behavior.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\logger.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\logger.exe
+  - Path: C:\Program Files\Windows Kits\10\Debuggers\x86\logger.exe
+  - Path: C:\Program Files\Windows Kits\10\Debuggers\x64\logger.exe
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/logger
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
