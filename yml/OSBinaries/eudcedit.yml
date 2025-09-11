@@ -1,0 +1,36 @@
+---
+Name: eudcedit.exe
+Description: Private Character Editor (EUDC) — creates and edits end-user defined characters.
+Aliases:
+  - Alias: EUDCEDIT.EXE  # PE Original filename
+Author: 'Ekitji'
+Created: 2025-09-04
+Commands:
+  - Command: eudcedit.exe  # System32 (64-bit)
+    Description: Legitimate GUI tool. Can be abused for a UAC bypass by breaking out from the GUI to spawn other processes.
+    Usecase: Start process --> OK --> File --> Font Links --> Link with Selected Fonts --> Saves As --> start cmd in adress bar.
+    Category: UAC Bypass
+    Privileges: User
+    MitreID: T1548.002
+    OperatingSystem: Windows 10, Windows 11
+  - Command: eudcedit.exe  # SysWOW64 (32-bit)
+    Description: 32-bit variant of the same tool; similar UAC bypass via GUI breakout .
+    Usecase: Start process --> OK --> File --> Font Links --> Link with Selected Fonts --> Saves As --> start cmd in adress bar.
+    Category: UAC Bypass
+    Privileges: User
+    MitreID: T1548.002
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: c:\windows\syswow64\eudcedit.exe
+  - Path: c:\windows\system32\eudcedit.exe
+Detection:
+  - IOC: Parent process eudcedit.exe spawning interactive shells (e.g., cmd.exe, powershell.exe) or mmc.exe.
+  - IOC: eudcedit.exe creating high-integrity child processes from a standard-user context.
+  - IOC: EventID 4688 with ParentImage = *\eudcedit.exe and suspicious ChildImage.
+  - IOC: Sysmon EventID 1 (Process Create) with ParentImage = *\eudcedit.exe and suspicious ChildImage.
+Resources:
+  - Link: https://rewterz.com/threat-advisory/windows-uac-bypassed-via-character-map
+Acknowledgement:
+  - Person: rewterz
+  - Person: Ekitji
+    Handle: '@eki_erk'
