@@ -31,6 +31,7 @@ Resources:
   - Link: https://medium.com/@0xamit/lets-talk-about-security-research-discoveries-and-proper-discussion-etiquette-on-twitter-10f9be6d1939
   - Link: https://ss64.com/nt/ftp.html
   - Link: https://www.asafety.fr/vuln-exploit-poc/windows-dos-powershell-upload-de-fichier-en-ligne-de-commande-one-liner/
+  - Link: https://www.soc-labs.top/en/detections/105
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
