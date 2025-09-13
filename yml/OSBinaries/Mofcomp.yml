@@ -1,0 +1,40 @@
+---
+Name: mofcomp.exe
+Description: Compiler that parses a file containing MOF statements and adds the classes and class instances defined in the file to the WMI repository. Threat actors can leverage this binary to install malicious MOF scripts
+Author: Daniel Gott
+Created: 2022-07-19
+Commands:
+  - Command: mofcomp.exe C:\Windows\SERVIC~1\MSSQL$~1\AppData\Local\Temp\xitmf
+    Description: Abuse of mofcomp.exe to parse a file which contains MOF statements in order create new classes as part of the WMI repository
+    Usecase: Threat actors can use mofcomp.exe to decompile a BMOF binary and then register a malicious class in the WMI repository
+    Category: Execute
+    Privileges: User
+    MitreID: T1047
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11 & Windows Server 2008 and above
+  - Command: mofcomp.exe C:\Programdata\x.mof
+    Description: Abuse of mofcomp.exe to parse a file which contains MOF statements in order create new classes as part of the WMI repository
+    Usecase: Threat actors can use mofcomp.exe to decompile a BMOF binary and then register a malicious class in the WMI repository
+    Category: Execute
+    Privileges: User
+    MitreID: T1047
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11 & Windows Server 2008 and above
+Full_Path:
+  - Path: C:\Windows\System32\wbem\mofcomp.exe
+  - Path: C:\Windows\SysWOW64\wbem\mofcomp.exe
+Detection:
+  - IOC: strange parent processes spawning mofcomp.exe like cmd.exe or powershell.exe
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_mofcomp_execution.yml
+  - Sigma: https://github.com/The-DFIR-Report/Sigma-Rules/blob/75260568a7ffe61b2458ca05f6f25914efb44337/win_mofcomp_execution.yml
+Resources:
+  - Link: https://docs.microsoft.com/en-us/windows/win32/wmisdk/mofcomp
+  - Link: https://docs.microsoft.com/en-us/windows/win32/wmisdk/managed-object-format--mof-
+  - Link: https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/
+  - Link: https://in.security/2019/04/03/an-intro-into-abusing-and-identifying-wmi-event-subscriptions-for-persistence/
+  - Link: https://medium.com/threatpunter/detecting-removing-wmi-persistence-60ccbb7dff96
+Acknowledgement:
+  - Person: Daniel Gott
+    Handle: '@gott_cyber'
+  - Person: The DFIR Report
+    Handle: '@TheDFIRReport'
+  - Person: Nasreddine Bencherchali
+    Handle: '@nas_bench'
