@@ -1,0 +1,28 @@
+---
+Name: Cleanmgr.exe
+Description: Used for disk cleanup as part of Windows update
+Author: 'Jan Miller'
+Created: 2022-18-03
+Commands:
+  - Command: %WINDIR%\system32\cleanmgr.exe /autoclean /d %systemdrive%
+    Description: Automatically reclaim unused disc space at the specified drive (/d switch)
+    Usecase: Exploiting HKEY_CURRENT_USER\Environment\windir registry, a malicious script (e.g. dropper) may be executed by cleanmgr
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+Full_Path:
+  - Path: C:\Windows\System32\cleanmgr.exe
+  - Path: C:\Windows\SysWOW64\cleanmgr.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: Child process from cleanmgr.exe
+Resources:
+  - Link: https://twitter.com/filescan_itsec/status/1504615170387161089
+Acknowledgement:
+  - Person: Jan Miller
+    Handle: '@miller_itsec'
+  - Person: FileScan GmbH
+    Handle: '@filescan_itsec'
+---
