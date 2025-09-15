@@ -42,6 +42,24 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: SCT
+  - Command: regsvr32.exe /s file.dll
+    Description: Execute code in a DLL. The code must be inside the exported function DllRegisterServer.
+    Usecase: Execute DLL file
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.010
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+  - Command: regsvr32.exe /u /s file.dll
+    Description: Execute code in a DLL. The code must be inside the exported function DllUnRegisterServer.
+    Usecase: Execute DLL file
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.010
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Windows\System32\regsvr32.exe
   - Path: C:\Windows\SysWOW64\regsvr32.exe
