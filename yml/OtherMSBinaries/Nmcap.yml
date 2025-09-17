@@ -24,12 +24,14 @@ Commands:
     Category: Reconnaissance
     Privileges: User
     MitreID: T1040
+    OperatingSystem: Windows
   - Command: nmcap.exe /network * /capture /file C:\Users\Public\nmcap.cap /TerminateWhen /KeyPress x
     Description: Start capture and terminate when the specified key is pressed.
     Usecase: Capture network traffic on windows to collect sensitive data.
     Category: Reconnaissance
     Privileges: User
     MitreID: T1040
+    OperatingSystem: Windows
 Full_Path:
   - Path: C:\Program Files\Microsoft Network Monitor 3\nmcap.exe
   - Path: C:\Program Files (x86)\Microsoft Network Monitor 3\nmcap.exe
