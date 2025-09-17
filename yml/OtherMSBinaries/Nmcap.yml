@@ -6,21 +6,21 @@ Created: 2025-09-16
 Commands:
   - Command: nmcap.exe /network * /capture /file C:\Users\Public\nmcap.cap
     Description: Start capture on all adapters and save to nmcap.cap (circular file).
-    Usecase: Capture network traffic on windows to capture senstive traffic.
+    Usecase: Capture network traffic on windows to collect senstive traffic.
     Category: Reconnaissance
     Privileges: User
     MitreID: T1040
     OperatingSystem: Windows
   - Command: nmcap.exe /network * /capture /file C:\Users\Public\nmcap.cap /TerminateWhen /TimeAfter 30 seconds.
     Description: Start capture and auto-terminate after a relative time period (seconds/minutes/hours/days).
-    Usecase: Capture network traffic on windows to capture senstive traffic.
+    Usecase: Capture network traffic on windows to collect senstive traffic.
     Category: Reconnaissance
     Privileges: User
     MitreID: T1040
     OperatingSystem: Windows
   - Command: nmcap.exe /network * /capture /file C:\Users\Public\nmcap.cap /TerminateWhen /Time 04:52:00 AM 9/17/2025
     Description: Start capture and auto-terminate at a specific time/date.
-    Usecase: Capture network traffic on windows to capture senstive traffic.
+    Usecase: Capture network traffic on windows to collect senstive traffic.
     Category: Reconnaissance
     Privileges: User
     MitreID: T1040
