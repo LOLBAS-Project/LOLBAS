@@ -1,0 +1,32 @@
+---
+Name: Mpiexec.exe
+Description: Command-line tool for running Message Passing Interface (MPI) applications.
+Author: Avihay Eldad
+Created: 2025-09-25
+Commands:
+  - Command: mpiexec.exe <exe>
+    Description: Launches an executable via MPI commad-line tool.
+    Usecase: Executes an executable under a trusted microsoft signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+  - Command: mpiexec.exe cmd /c <command>
+    Description: Execute CMD commands via MPI commad-line tool.
+    Usecase: Executes commands under a trusted microsoft signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Program Files\Microsoft MPI\Bin\mpiexec.exe
+  - Path: C:\Program Files (x86)\Microsoft MPI\Bin\mpiexec.exe
+Resources:
+  - Link: https://learn.microsoft.com/en-us/powershell/high-performance-computing/mpiexec
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
