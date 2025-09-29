@@ -87,11 +87,13 @@ class MainModel(LolbasModel):
 
 
 if __name__ == "__main__":
+    def escaper(x): return x.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+
     yaml_files = glob.glob("yml/**", recursive=True)
 
     if not yaml_files:
         print("No YAML files found under 'yml/**'.")
-        sys.exit(1)
+        sys.exit(-1)
 
     has_errors = False
     for file_path in yaml_files:
@@ -105,13 +107,14 @@ if __name__ == "__main__":
                 print(f"❌ Validation error in {file_path}:\n{ve}\n")
                 for err in ve.errors():
                     # GitHub Actions error format
+                    print(err)
                     path = '.'.join([str(x) for x in err.get('loc', [None])])
                     msg = err.get('msg', 'Unknown validation error')
-                    print(f"::error file=/{file_path},line=1,title=Schema error::'{msg}' for {path}")
+                    print(f"::error file={file_path},line=1,title={escaper(err.get('type') or 'Validation error')}::{escaper(msg)}: {escaper(path)}")
                     has_errors = True
             except Exception as e:
                 print(f"⚠️ Error processing {file_path}: {e}\n")
-                print(f"::error file=/{file_path},line=1,title=Processing error::Error processing file: {e}")
+                print(f"::error file={file_path},line=1,title=Processing error::Error processing file: {escaper(e)}")
                 has_errors = True
 
-    sys.exit(1 if has_errors else 0)
+    sys.exit(-1 if has_errors else 0)
