@@ -4,9 +4,9 @@ Description: User Experience Virtualization tool that launches applications unde
 Author: Avihay Eldad
 Created: 2025-09-21
 Commands:
-  - Command: AppLauncher.exe <exe>
+  - Command: AppLauncher.exe {PATH_ABSOLUTE:.exe}
     Description: Launches an executable via User Experience Virtualization tool.
-    Usecase: Executes an executable under a trusted microsoft signed binary.
+    Usecase: Executes an executable under a trusted, Microsoft signed binary.
     Category: Execute
     Privileges: User
     MitreID: T1127
