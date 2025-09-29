@@ -1,8 +1,6 @@
 import glob
 import os
 import sys
-import re
-from datetime import date
 from typing import List, Literal, Optional
 
 import yaml
@@ -109,11 +107,11 @@ if __name__ == "__main__":
                     # GitHub Actions error format
                     path = '.'.join([str(x) for x in err.get('loc', [None])])
                     msg = err.get('msg', 'Unknown validation error')
-                    print(f"::error file={file_path},line=1,title=Schema error::'{msg}' for {path}")
+                    print(f"::error file=/{file_path},line=1,title=Schema error::'{msg}' for {path}")
                     has_errors = True
             except Exception as e:
                 print(f"⚠️ Error processing {file_path}: {e}\n")
-                print(f"::error file={file_path},line=1,title=Processing error::Error processing file: {e}")
+                print(f"::error file=/{file_path},line=1,title=Processing error::Error processing file: {e}")
                 has_errors = True
 
     sys.exit(1 if has_errors else 0)
