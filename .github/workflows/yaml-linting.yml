@@ -2,8 +2,6 @@
 name: PUSH & PULL REQUEST - YAML Lint and Schema Validation Checks
 on:
   push:
-    branches:
-      - master
     paths:
       - "yml/**"
   pull_request:
