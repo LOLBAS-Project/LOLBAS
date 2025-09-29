@@ -1,12 +1,6 @@
 ---
 name: PUSH & PULL REQUEST - YAML Lint and Schema Validation Checks
-on:
-  push:
-    paths:
-      - "yml/**"
-  pull_request:
-    paths:
-      - "yml/**"
+on: [push,pull_request]
 
 jobs:
   lintFiles:
