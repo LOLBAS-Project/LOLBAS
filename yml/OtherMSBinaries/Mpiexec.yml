@@ -4,18 +4,9 @@ Description: Command-line tool for running Message Passing Interface (MPI) appli
 Author: Avihay Eldad
 Created: 2025-09-25
 Commands:
-  - Command: mpiexec.exe <exe>
-    Description: Launches an executable via MPI commad-line tool.
-    Usecase: Executes an executable under a trusted microsoft signed binary.
-    Category: Execute
-    Privileges: User
-    MitreID: T1127
-    OperatingSystem: Windows
-    Tags:
-      - Execute: EXE
-  - Command: mpiexec.exe cmd /c <command>
-    Description: Execute CMD commands via MPI commad-line tool.
-    Usecase: Executes commands under a trusted microsoft signed binary.
+  - Command: mpiexec.exe {CMD}
+    Description: Executes a command via MPI commad-line tool.
+    Usecase: Executes commands under a trusted, Microsoft signed binary.
     Category: Execute
     Privileges: User
     MitreID: T1127
