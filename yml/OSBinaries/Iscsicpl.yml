@@ -4,7 +4,7 @@ Description: Microsoft iSCSI Initiator Control Panel tool
 Author: Ekitji
 Created: 2025-08-17
 Commands:
-  - Command: c:\windows\syswow64\iscsicpl.exe  # SysWOW64 binary
+  - Command: c:\windows\syswow64\iscsicpl.exe # SysWOW64 binary
     Description: c:\windows\syswow64\iscsicpl.exe has a DLL injection through `C:\Users\<username>\AppData\Local\Microsoft\WindowsApps\ISCSIEXE.dll`, resulting in UAC bypass.
     Usecase: Execute a custom DLL via a trusted high-integrity process without a UAC prompt.
     Category: UAC Bypass
