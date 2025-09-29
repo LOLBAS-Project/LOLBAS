@@ -5,7 +5,7 @@ Author: Avihay Eldad
 Created: 2025-09-25
 Commands:
   - Command: mpiexec.exe {CMD}
-    Description: Executes a command via MPI commad-line tool.
+    Description: Executes a command via MPI command-line tool.
     Usecase: Executes commands under a trusted, Microsoft signed binary.
     Category: Execute
     Privileges: User
