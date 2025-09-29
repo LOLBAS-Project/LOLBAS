@@ -5,7 +5,7 @@ Author: Matan Bahar
 Created: 2025-08-07
 Commands:
   - Command: eudcedit
-    Description: Once executed, the Private Charecter Editor will be opened -  click OK, then click File -> Font Links. In the next window choose the option "Link with Selected Fonts" and click on Save As, then in the opened enter the command you want to execute.
+    Description: Once executed, the Private Charecter Editor will be opened - click OK, then click File -> Font Links. In the next window choose the option "Link with Selected Fonts" and click on Save As, then in the opened enter the command you want to execute.
     Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
     Category: UAC Bypass
     Privileges: Administrator

