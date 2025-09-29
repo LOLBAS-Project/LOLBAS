@@ -1,17 +1,25 @@
 import glob
 import os
 import sys
+import re
 from datetime import date
 from typing import List, Literal, Optional
 
 import yaml
-from pydantic import (BaseModel, Field, HttpUrl, RootModel, ValidationError,
-                      constr, model_validator)
+from pydantic import BaseModel, HttpUrl, RootModel, ValidationError, constr, model_validator, field_validator, ConfigDict
+
+# Disable datetime parsing
+yaml.SafeLoader.yaml_implicit_resolvers = {k: [r for r in v if r[0] != 'tag:yaml.org,2002:timestamp'] for k, v in yaml.SafeLoader.yaml_implicit_resolvers.items()}
+
 
 safe_str = constr(pattern=r'^([a-zA-Z0-9\s.,!?\'"():;\-\+_*#@/\\&%~=]|`[a-zA-Z0-9\s.,!?\'"():;\-\+_*#@/\\&<>%\{\}~=]+`|->)+$')
 
 
-class AliasItem(BaseModel):
+class LolbasModel(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+
+class AliasItem(LolbasModel):
     Alias: Optional[str]
 
 
@@ -19,7 +27,7 @@ class TagItem(RootModel[dict[constr(pattern=r'^[A-Z]'), str]]):
     pass
 
 
-class CommandItem(BaseModel):
+class CommandItem(LolbasModel):
     Command: str
     Description: safe_str
     Usecase: safe_str
@@ -30,15 +38,15 @@ class CommandItem(BaseModel):
     Tags: Optional[List[TagItem]] = None
 
 
-class FullPathItem(BaseModel):
+class FullPathItem(LolbasModel):
     Path: constr(pattern=r'^(([cC]:)\\([a-zA-Z0-9\-\_\. \(\)<>]+\\)*([a-zA-Z0-9_\-\.]+\.[a-z0-9]{3})|no default)$')
 
 
-class CodeSampleItem(BaseModel):
+class CodeSampleItem(LolbasModel):
     Code: str
 
 
-class DetectionItem(BaseModel):
+class DetectionItem(LolbasModel):
     IOC: Optional[str] = None
     Sigma: Optional[HttpUrl] = None
     Analysis: Optional[HttpUrl] = None
@@ -52,28 +60,26 @@ class DetectionItem(BaseModel):
         present = [field for field in url_fields if values.__dict__.get(field) is not None]
 
         if len(present) != 1:
-            raise ValueError(
-                f"Exactly one of the following must be provided: {url_fields}. "
-                f"Currently set: {present or 'none'}"
-            )
+            raise ValueError(f"Exactly one of the following must be provided: {url_fields}.", f"Currently set: {present or 'none'}")
 
         return values
 
-class ResourceItem(BaseModel):
+
+class ResourceItem(LolbasModel):
     Link: HttpUrl
 
 
-class AcknowledgementItem(BaseModel):
+class AcknowledgementItem(LolbasModel):
     Person: str
     Handle: Optional[constr(pattern=r'^(@(\w){1,15})?$')] = None
 
 
-class MainModel(BaseModel):
+class MainModel(LolbasModel):
     Name: str
-    Description: str
+    Description: safe_str
     Aliases: Optional[List[AliasItem]] = None
     Author: str
-    Created: date
+    Created: constr(pattern=r'\d{4}-\d{2}-\d{2}')
     Commands: List[CommandItem]
     Full_Path: List[FullPathItem]
     Code_Sample: Optional[List[CodeSampleItem]] = None
@@ -83,12 +89,11 @@ class MainModel(BaseModel):
 
 
 if __name__ == "__main__":
-
     yaml_files = glob.glob("yml/**", recursive=True)
 
     if not yaml_files:
         print("No YAML files found under 'yml/**'.")
-        sys.exit(0)
+        sys.exit(1)
 
     has_errors = False
     for file_path in yaml_files:
@@ -111,4 +116,4 @@ if __name__ == "__main__":
                 print(f"::error file={file_path},line=1,title=Processing error::Error processing file: {e}")
                 has_errors = True
 
-    sys.exit(-1 if has_errors else 0)
+    sys.exit(1 if has_errors else 0)
