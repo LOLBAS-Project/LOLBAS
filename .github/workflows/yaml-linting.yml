@@ -26,12 +26,13 @@ jobs:
             exit 1;
           fi
           unset files
-      - name: yaml-lint
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          no_warnings: true
-          file_or_dir: yml/**/*.yml
-          config_file: .github/.yamllint
+
+      - name: Install yamllint
+        run: pip install yamllint
+
+      - name: Lint YAML files
+        run: yamllint -c .github/.yamllint yml/**/
+
       - name: Validate Template Schema
         uses: cketti/action-pykwalify@v0.3-temp-fix
         with:

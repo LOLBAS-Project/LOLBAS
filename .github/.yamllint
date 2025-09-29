@@ -8,6 +8,7 @@ rules:
   trailing-spaces:
     level: error
   line-length:
+    max: 1000
     level: warning
   new-lines:
     level: error
