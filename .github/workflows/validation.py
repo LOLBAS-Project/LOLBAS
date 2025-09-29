@@ -90,6 +90,7 @@ if __name__ == "__main__":
         print("No YAML files found under 'yml/**'.")
         sys.exit(0)
 
+    has_errors = False
     for file_path in yaml_files:
         if os.path.isfile(file_path) and not file_path.startswith('yml/HonorableMentions/'):
             try:
@@ -104,6 +105,10 @@ if __name__ == "__main__":
                     path = '.'.join([str(x) for x in err.get('loc', [None])])
                     msg = err.get('msg', 'Unknown validation error')
                     print(f"::error file={file_path},line=1,col=1::'{msg}' for {path}")
+                    has_errors = True
             except Exception as e:
                 print(f"⚠️ Error processing {file_path}: {e}\n")
                 print(f"::error file={file_path},line=1,col=1::Error processing file: {e}")
+                has_errors = True
+
+    sys.exit(-1 if has_errors else 0)
