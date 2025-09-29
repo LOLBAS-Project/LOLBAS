@@ -1,0 +1,23 @@
+---
+Name: Pixtool.exe
+Description: Command line utility for taking and analyzing PIX GPU captures.
+Author: Avihay Eldad
+Created: 2025-09-21
+Commands:
+  - Command: pixtool.exe launch {PATH_ABSOLUTE:.exe}
+    Description: Launches an executable via PIX command-line utility.
+    Usecase: Executes an executable under a trusted, Microsoft signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: C:\Program Files\Microsoft PIX\pixtool.exe
+  - Path: C:\Program Files (x86)\Microsoft PIX\pixtool.exe
+Resources:
+  - Link: https://devblogs.microsoft.com/pix/pixtool/
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
