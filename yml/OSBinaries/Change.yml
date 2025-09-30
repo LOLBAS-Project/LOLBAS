@@ -1,0 +1,24 @@
+---
+Name: Change.exe
+Description: Remote Desktop Services MultiUser Change Utility
+Author: 'Idan Lerman'
+Created: 2025-07-31
+Commands:
+  - Command: change.exe user
+    Description: Once executed, `change.exe` will execute `chgusr.exe` in the same folder. Thus, if `change.exe` is copied to a folder and an arbitrary executable is renamed to `chgusr.exe`, `change.exe` will spawn it. Instead of `user`, it is also possible to use `port` or `logon` as command-line option.
+    Usecase: Execute an arbitrary executable via trusted system executable.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+      - Requires: Rename
+Full_Path:
+  - Path: c:\windows\system32\change.exe
+  - Path: c:\windows\syswow64\change.exe
+Detection:
+  - IOC: change.exe being executed and executes a child process outside of its normal path of c:\windows\system32\ or c:\windows\syswow64\
+Acknowledgement:
+  - Person: Idan Lerman
+    Handle: '@IdanLerman'
