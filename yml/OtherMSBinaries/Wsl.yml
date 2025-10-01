@@ -44,7 +44,7 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1218, T1036.005
-    OperatingSystem: Windows 10
+    OperatingSystem: Windows 10, Windows Server 2019, Windows 11
     Tags:
       - Execute: CMD
 Full_Path:
