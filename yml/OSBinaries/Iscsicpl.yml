@@ -4,7 +4,7 @@ Description: Microsoft iSCSI Initiator Control Panel tool
 Author: Ekitji
 Created: 2025-08-17
 Commands:
-  - Command: c:\windows\syswow64\iscsicpl.exe # SysWOW64 binary
+  - Command: c:\windows\syswow64\iscsicpl.exe  # SysWOW64 binary
     Description: c:\windows\syswow64\iscsicpl.exe has a DLL injection through `C:\Users\<username>\AppData\Local\Microsoft\WindowsApps\ISCSIEXE.dll`, resulting in UAC bypass.
     Usecase: Execute a custom DLL via a trusted high-integrity process without a UAC prompt.
     Category: UAC Bypass
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: iscsicpl.exe # SysWOW64/System32 binary
+  - Command: iscsicpl.exe  # SysWOW64/System32 binary
     Description: Both `c:\windows\system32\iscsicpl.exe` and `c:\windows\system64\iscsicpl.exe` have UAC bypass through launching iscicpl.exe, then navigating into the Configuration tab, clicking Report, then launching your custom command.
     Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
     Category: UAC Bypass
@@ -24,8 +24,8 @@ Commands:
       - Execute: CMD
       - Application: GUI
 Full_Path:
-  - Path: c:\windows\system32\iscsicpl.exe # UAC Bypass by breaking out from application
-  - Path: c:\windows\syswow64\iscsicpl.exe # UAC Bypass by DLL injection and breakout from application
+  - Path: c:\windows\system32\iscsicpl.exe  # UAC Bypass by breaking out from application
+  - Path: c:\windows\syswow64\iscsicpl.exe  # UAC Bypass by DLL injection and breakout from application
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/image_load/image_load_uac_bypass_iscsicpl.yml
   - IOC: C:\Users\<username>\AppData\Local\Microsoft\WindowsApps\ISCSIEXE.dll

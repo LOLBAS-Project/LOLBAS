@@ -5,7 +5,7 @@ Author: Jimmy (@bohops)
 Created: 2021-09-26
 Commands:
   - Command: VisualUiaVerifyNative.exe
-    Description: Generate Serialized gadget and save to - C:\Users\[current user]\AppData\Roaminguiverify.config before executing.
+    Description: Generate Serialized gadget and save to - `C:\Users\%USERNAME%\AppData\Roaminguiverify.config` before executing.
     Usecase: Execute proxied payload with Microsoft signed binary to bypass WDAC policies
     Category: AWL Bypass
     Privileges: User
