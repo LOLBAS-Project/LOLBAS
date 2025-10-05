@@ -15,7 +15,7 @@ Commands:
     OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
   - Command: dsdbutil.exe "activate instance ntds" "snapshot" "mount {GUID}" "quit" "quit"
     Description: Mounting the snapshot with its GUID
-    Usecase: Mounting the snapshot to access the ntds.dit with copy c:\[Snap Volume]\windows\ntds\ntds.dit c:\users\administrator\desktop\ntds.dit.bak
+    Usecase: Mounting the snapshot to access the ntds.dit with `copy c:\<Snap Volume>\windows\ntds\ntds.dit c:\users\administrator\desktop\ntds.dit.bak`
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
@@ -29,7 +29,7 @@ Commands:
     OperatingSystem: Windows Server 2012, Windows Server 2016, Windows Server 2019
   - Command: dsdbutil.exe "activate instance ntds" "snapshot" "create" "list all" "mount 1" "quit" "quit"
     Description: Mounting with snapshot identifier
-    Usecase: Mounting the snapshot identifier 1 and accessing it with with copy c:\[Snap Volume]\windows\ntds\ntds.dit c:\users\administrator\desktop\ntds.dit.bak
+    Usecase: Mounting the snapshot identifier 1 and accessing it with `copy c:\<Snap Volume>\windows\ntds\ntds.dit c:\users\administrator\desktop\ntds.dit.bak`
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.003
@@ -51,11 +51,6 @@ Detection:
   - IOC: Regular and Volume Shadow Copy attempts to read or modify ntds.dit
   - IOC: Event ID 4656
   - IOC: Regular and Volume Shadow Copy attempts to read or modify ntds.dit
-  - Analysis:
-  - Sigma:
-  - Elastic:
-  - Splunk:
-  - BlockRule:
 Resources:
   - Link: https://gist.github.com/bohops/88561ca40998e83deb3d1da90289e358
   - Link: https://www.netwrix.com/ntds_dit_security_active_directory.html
