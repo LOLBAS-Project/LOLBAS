@@ -9,7 +9,6 @@ Commands:
   - Command: odbcad32.exe  # System32 (64-bit)
     Description: Legitimate GUI tool. Can be abused for a UAC bypass by breaking out from the GUI to spawn other processes.
     Usecase: Manage ODBC data sources; UAC bypass via GUI breakout by starting process --> Tracing --> Browse --> cmd.exe OR Tracing --> Select DLL --> cmd.exe
-
     Category: UAC Bypass
     Privileges: User
     MitreID: T1548.002
@@ -21,7 +20,6 @@ Commands:
     Privileges: User
     MitreID: T1548.002
     OperatingSystem: Windows 10, Windows 11
-Full_Path:
   - Path: c:\windows\system32\odbcad32.exe
   - Path: c:\windows\syswow64\odbcad32.exe
 Detection:
