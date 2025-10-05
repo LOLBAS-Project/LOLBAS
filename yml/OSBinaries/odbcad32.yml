@@ -20,6 +20,7 @@ Commands:
     Privileges: User
     MitreID: T1548.002
     OperatingSystem: Windows 10, Windows 11
+Full_Path:
   - Path: c:\windows\system32\odbcad32.exe
   - Path: c:\windows\syswow64\odbcad32.exe
 Detection:
