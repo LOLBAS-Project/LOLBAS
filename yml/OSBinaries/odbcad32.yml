@@ -1,6 +1,6 @@
 ---
 Name: odbcad32.exe
-Description: ODBC Data Source Administrator — manages User/System DSNs and ODBC drivers.
+Description: ODBC Data Source Administrator to manage User/System DSNs and ODBC drivers.
 Aliases:
   - Alias: odbcad32.exe  # PE Original filename
 Author: 'Ekitji'
