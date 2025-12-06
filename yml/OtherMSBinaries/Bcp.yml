@@ -1,19 +1,16 @@
 ---
 Name: Bcp.exe
-Description: Microsoft SQL Server Bulk Copy Program utility for importing and exporting data between SQL Server instances and data files. Can be abused to stage and deliver malicious payloads by storing them in databases and extracting to the file system.
+Description: Microsoft SQL Server Bulk Copy Program utility for importing and exporting data between SQL Server instances and data files.
 Author: Mahir Ali Khan
 Created: 2025-11-13
 Commands:
   - Command: bcp "SELECT payload_data FROM database.dbo.payloads WHERE id=1" queryout "C:\Windows\Temp\payload.exe" -S localhost -T -c
-    Description: Export binary payload stored in SQL Server database to file system
-    Usecase: Extract malicious executable from database storage to local file system for execution
+    Description: Export binary payload stored in SQL Server database to file system.
+    Usecase: Extract malicious executable from database storage to local file system for execution.
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows
-    Tags:
-      - Payload: Staging
-      - Database: Abuse
 Full_Path:
   - Path: C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\bcp.exe
   - Path: C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\bcp.exe
