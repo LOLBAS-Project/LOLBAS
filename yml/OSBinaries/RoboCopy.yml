@@ -1,7 +1,6 @@
 ---
 Name: Robocopy.exe
-Description:
-  Robocopy is a built-in Windows utility used for directory replication, metadata-preserving file operations, and backup automation. Certain behaviors such as metadata preservation, Alternate Data Stream (ADS) copying, and directory mirroring.
+Description: Robocopy is a built-in Windows utility used for directory replication, metadata-preserving file operations, and backup automation. Certain behaviors such as metadata preservation, Alternate Data Stream (ADS) copying, and directory mirroring.
 
 Aliases: []
 
@@ -79,4 +78,5 @@ Resources:
 Acknowledgement:
   - Person: Raja Singh
     Handle: '@flux-warden'
+
 
