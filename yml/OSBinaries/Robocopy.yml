@@ -1,0 +1,80 @@
+---
+Name: Robocopy.exe
+Description: built-in Windows utility used for directory replication, metadata-preserving file operations, and backup automation
+
+Aliases: []
+
+Author: Raja Singh
+Created: 2025-12-10
+
+Commands:
+  - Command: robocopy "C:\source" "D:\dest" file.txt /COPYALL /R:0 /W:0
+    Description: file and directory copying while preserving timestamps, ACLs, and attributes.
+    Usecase: Detect unusual timestomp-like or stealth file movement behavior.
+    Category: Copy
+    Privileges: User or Administrator (depending on source/destination)
+    MitreID: T1005
+    OperatingSystem: Windows 7–11; Windows Server 2012–2022
+    Tags:
+      - Tag: MetadataPreservation
+
+  - Command: robocopy "C:\Source" "D:\Destination" /MIR /R:0 /W:0
+    Description: replicating entire folder structures and deletes mismatches in the destination.
+    Usecase: Identify large-scale replication or suspicious mirroring of sensitive directories.
+    Category: Copy
+    Privileges: User or Administrator
+    MitreID: T1074
+    OperatingSystem: Windows 7–11; Windows Server 2012–2022
+    Tags:
+      - Tag: Mirroring
+
+  - Command: robocopy "C:\Source" "D:\Destination" file.txt /COPY:DATS /R:0 /W:0
+    Description: copying NTFS Alternate Data Streams when present in source files.
+    Usecase: Surface rare ADS movements that may indicate concealment or staging.
+    Category: ADS
+    Privileges: User
+    MitreID: T1564
+    OperatingSystem: Windows 7–11; Windows Server 2012–2022
+    Tags:
+      - Tag: ADS
+
+  - Command: robocopy "C:\Source" "$env:TEMP" file.txt /R:0 /W:0
+    Description: copies files into temporary or user-writable directories.
+    Usecase: Identify data staging behaviors that may precede exfiltration.
+    Category: Copy
+    Privileges: User
+    MitreID: T1074
+    OperatingSystem: Windows 7–11; Windows Server 2012–2022
+    Tags:
+      - Tag: Staging
+
+Full_Path:
+  - Path: C:\Windows\System32\robocopy.exe
+  - Path: C:\Windows\SysWOW64\robocopy.exe
+
+Code_Sample: []
+
+Detection:
+  - IOC: robocopy.exe process execution
+  - IOC: Metadata, mirroring, or ADS-related switches observed in command line
+  - IOC: High-volume or unusual directory replication operations
+  - IOC: Execution from uncommon parent processes such as office applications or browsers
+  - IOC: Copy operations targeting temporary or user-writable staging directories
+  - IOC: Replication of files from sensitive or user-profile locations
+  - IOC: Use of robocopy.exe with deletion or mirroring flags (/MIR, /PURGE) in unexpected paths
+  - IOC: robocopy.exe executed by non-administrative users in abnormal contexts
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/13aae8c1eacb68172fd79f343b23d39aa1773d79/rules/windows/process_creation/proc_creation_win_susp_copy_browser_data.yml#L37
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/13aae8c1eacb68172fd79f343b23d39aa1773d79/rules/windows/process_creation/proc_creation_win_susp_copy_lateral_movement.yml#L30
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/13aae8c1eacb68172fd79f343b23d39aa1773d79/rules/windows/process_creation/proc_creation_win_susp_copy_system_dir_lolbin.yml#L38
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/13aae8c1eacb68172fd79f343b23d39aa1773d79/rules/windows/create_remote_thread/create_remote_thread_win_susp_relevant_source_image.yml#L51
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/13aae8c1eacb68172fd79f343b23d39aa1773d79/rules/windows/process_creation/proc_creation_win_susp_copy_system_dir.yml#L38
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/13aae8c1eacb68172fd79f343b23d39aa1773d79/unsupported/windows/proc_creation_win_correlation_multiple_susp_cli.yml#L48
+
+Resources:
+  - Link: https://learn.microsoft.com/windows-server/administration/windows-commands/robocopy
+  - Link: https://attack.mitre.org/groups/G0045/
+  - Link: https://www.cisa.gov/news-events/alerts/2018/10/03/advanced-persistent-threat-activity-exploiting-managed-service-providers
+
+Acknowledgement:
+  - Person: Raja Singh
+    Handle: '@flux-warden'
