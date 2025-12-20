@@ -1,0 +1,16 @@
+---
+Name: Powershell.exe
+Description: Windows PowerShell
+Author: x90slide
+Created: 2025-12-20
+Commands:
+  - Command: <Port, Port range> | % {echo ((new-object Net.Sockets.TcpClient).Connect("<IP Address>",$_)) "Port $_ is open"} 2>$null
+    # Port range can be defined via 1..1024 and multiple ports can be defined via 80,443
+    Description: Scans the IP address for open ports.
+    Usecase: Network Scanning
+    Category: Reconnaissance
+    Privileges: User
+    MitreID: T1046
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
