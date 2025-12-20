@@ -4,7 +4,9 @@ Description: Windows PowerShell
 Author: x90slide
 Created: 2025-12-20
 Commands:
-  - Command: <Port, Port range> | % {echo ((new-object Net.Sockets.TcpClient).Connect("<IP Address>",$_)) "Port $_ is open"} 2>$null
+  - Command: powershell
+    <Port, Port range> | % {echo ((new-object Net.Sockets.TcpClient).Connect("<IP Address>",$_)) "Port $_ is open"} 2>$null
+    
     # Port range can be defined via 1..1024 and multiple ports can be defined via 80,443
     Description: Scans the IP address for open ports.
     Usecase: Network Scanning
