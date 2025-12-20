@@ -2,8 +2,8 @@ Name: BackgroundTaskHost.exe
 Description: Microsoft-signed Windows component used to host and execute background tasks associated with applications and system components. While not malicious, it can act as a trusted execution context for attacker-controlled background logic.
 Aliases:
   - Alias: BackgroundTaskHost64.exe
-Author: Microsoft Corporation
-Created: 2012-10-26
+Author: Prakash Thakur
+Created: 2025-12-20
 Commands:
   - Command: BackgroundTaskHost.exe
     Description: Executes registered background task logic within a trusted Windows host process.
@@ -39,3 +39,4 @@ Resources:
 Acknowledgement:
   - Person: Prakash Munimsingh Thakur
     Handle: 'https://github.com/4renSick''
+
