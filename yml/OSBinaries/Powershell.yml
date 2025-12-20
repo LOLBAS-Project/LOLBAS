@@ -14,3 +14,6 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Detection:
+  - IOA: Multiple TCP SYN packets to sequential ports from a single source IP.
+  - IOA: High rate of connection attempts to closed ports.
