@@ -9,7 +9,7 @@ Commands:
     Usecase: Snapshoting of Active Directory NTDS.dit database
     Category: Execute
     Privileges: User
-    MitreID: 
+    MitreID:
       - T1574.001
       - T1562.002
     OperatingSystem: Windows 11, Windows 10, Windows Server
