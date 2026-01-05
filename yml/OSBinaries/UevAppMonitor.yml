@@ -9,7 +9,9 @@ Commands:
     Usecase: Snapshoting of Active Directory NTDS.dit database
     Category: Execute
     Privileges: User
-    MitreID: T1574.001, T1562.002
+    MitreID: 
+      - T1574.001
+      - T1562.002
     OperatingSystem: Windows 11, Windows 10, Windows Server
 Full_Path:
   - Path: C:\Windows\System32\UevAppMonitor.exe
@@ -19,3 +21,4 @@ Detection:
   - IOC: UevAppMonitor.exe executed by unusual parent process (commonly spawned by `svchost.exe -k netsvcs -p -s Schedule`)
 Resources:
   - Link: https://www.welivesecurity.com/en/eset-research/longnosedgoblin-tries-sniff-out-governmental-affairs-southeast-asia-japan/
+  - Link: https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/runtime/etwenable-element
