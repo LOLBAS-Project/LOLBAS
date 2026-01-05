@@ -5,11 +5,18 @@ Author: Liran Ravich
 Created: 2026-01-05
 Commands:
   - Command: UevAppMonitor.exe
-    Description: By using a custom config file (UevAppMonitor.exe.config), a malicious DLL can be loaded and the `<etwEnable>` flag can be set to false to prevent auditing.
-    Usecase: Snapshoting of Active Directory NTDS.dit database
+    Description: By using a custom config file (UevAppMonitor.exe.config), a malicious DLL can be loaded
+    Usecase: Execute a malicious DLL
     Category: Execute
     Privileges: User
-    MitreID: T1574.001, T1562.002
+    MitreID: T1574.001
+    OperatingSystem: Windows 11, Windows 10, Windows Server
+  - Command: UevAppMonitor.exe
+    Description: The `<etwEnable>` flag can be set to false to prevent auditing
+    Usecase: Preventing event tracing when executing the process
+    Category: Execute
+    Privileges: User
+    MitreID: T1562.002
     OperatingSystem: Windows 11, Windows 10, Windows Server
 Full_Path:
   - Path: C:\Windows\System32\UevAppMonitor.exe
