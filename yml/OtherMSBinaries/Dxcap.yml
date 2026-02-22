@@ -13,15 +13,32 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: EXE
+  - Command: copy C:\Windows\System32\dxcap.exe %TEMP%\dxcap.exe & copy calc.exe %TEMP%\Xperf.exe & %TEMP%\dxcap.exe -usage
+    Description: dxcap.exe attempts to execute Xperf.exe from the current directory or its own directory. By placing a malicious Xperf.exe alongside a copied dxcap.exe, an attacker can achieve proxy execution with standard user privileges.
+    Usecase: Proxy execution of malicious code by hijacking the Xperf.exe call.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\dxcap.exe
   - Path: C:\Windows\SysWOW64\dxcap.exe
+Code_Sample:
+  - Code: https://gist.github.com/ghosts621/1d0e0f43f7288c826035d5d011b6ca51
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_susp_dxcap.yml
+  - IOC: dxcap.exe executing from outside of System32/SysWOW64
+  - IOC: dxcap.exe spawning Xperf.exe
+  - IOC: Xperf.exe executing from unusual directories (if not running from ADK path)
 Resources:
   - Link: https://twitter.com/harr0ey/status/992008180904419328
+  - Link: https://github.com/ghosts621
 Acknowledgement:
   - Person: Matt harr0ey
     Handle: '@harr0ey'
   - Person: Vikas Singh
     Handle: '@vikas891'
+  - Person: Naor Evgi
+    Handle: '@ghosts621'
