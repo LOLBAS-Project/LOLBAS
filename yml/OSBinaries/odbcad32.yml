@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: CMD
-      - Application: GUI    
+      - Application: GUI
 Full_Path:
   - Path: c:\windows\system32\odbcad32.exe
   - Path: c:\windows\syswow64\odbcad32.exe
