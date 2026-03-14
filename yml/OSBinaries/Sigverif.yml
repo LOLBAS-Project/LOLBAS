@@ -5,20 +5,20 @@ Author: Moshe Kaplan
 Created: 2021-11-08
 Commands:
   - Command: sigverif.exe
-    Description: Launch sigverif.exe GUI, navigate to Advanced settings, specify arbitrary executable path as log file, then click View Log to execute the binary
-    Usecase: Execute arbitrary programs through a trusted Microsoft-signed binary to bypass application whitelisting
+    Description: Launch sigverif.exe GUI, click 'Advanced', specify arbitrary executable path as 'log file name', then click 'View Log' to execute the binary.
+    Usecase: Execute arbitrary programs through a trusted Microsoft-signed binary to bypass application whitelisting.
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 10, Windows 11
     Tags:
       - Execute: EXE
+      - Application: GUI
 Full_Path:
   - Path: C:\Windows\System32\sigverif.exe
   - Path: C:\Windows\SysWOW64\sigverif.exe
 Detection:
   - IOC: sigverif.exe spawning unexpected child processes
-  - IOC: sigverif.exe launching executables from non-standard paths
 Resources:
   - Link: https://twitter.com/0gtweet/status/1457676633809330184
   - Link: https://www.hexacorn.com/blog/2018/04/27/i-shot-the-sigverif-exe-the-gui-based-lolbin/
