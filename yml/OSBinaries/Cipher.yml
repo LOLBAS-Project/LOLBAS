@@ -6,11 +6,18 @@ Created: 2024-11-22
 Commands:
   - Command: cipher /w:{PATH_ABSOLUTE:folder}
     Description: Zero out a file
-    Usecase: Can be used to forensically erase a file
+    Usecase: Can be used to forensically erase a file.
     Category: Tamper
     Privileges: User
     MitreID: T1485
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: cipher.exe /e {PATH_ABSOLUTE}
+    Description: Encrypt a file
+    Usecase: Can be used to impair defences by e.g. encrypting a critical EDR solution file.
+    Category: Tamper
+    Privileges: Admin
+    MitreID: T1562
+    OperatingSystem: Windows 10
 Full_Path:
   - Path: c:\windows\system32\cipher.exe
   - Path: c:\windows\syswow64\cipher.exe
@@ -22,3 +29,5 @@ Resources:
 Acknowledgement:
   - Person: Ade Ogunsowo
     Handle: "@i_am_tutu"
+  - Person: Alexander Sennhauser
+    Handle: '@conitrade'
