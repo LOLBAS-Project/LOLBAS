@@ -1,0 +1,43 @@
+---
+Name: Logger.exe
+Description: A logging configuration tool from the Windows Kits used to start and manage process logging.
+Author: Avihay Eldad
+Created: 2025-07-13
+Commands:
+  - Command: logger.exe RUN "{CMD}"
+    Description: Executes the command specified after the `RUN` parameter as a child of `logger.exe`.
+    Usecase: Executes an abitrary command via a signed binary to evade detection.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+  - Command: logger.exe RUNW "{CMD}"
+    Description: Executes the command specified after the `RUNW` parameter as a child of `logger.exe`.
+    Usecase: Executes an abitrary command via a signed binary to evade detection.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+  - Command: logger.exe "{CMD}"
+    Description: Executes the command specified as a child of `logger.exe`.
+    Usecase: Executes an abitrary command via a signed binary to evade detection.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\logger.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\logger.exe
+  - Path: C:\Program Files\Windows Kits\10\Debuggers\x86\logger.exe
+  - Path: C:\Program Files\Windows Kits\10\Debuggers\x64\logger.exe
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/logger
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'
