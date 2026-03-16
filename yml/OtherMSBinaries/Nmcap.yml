@@ -13,7 +13,7 @@ Commands:
       - `/TerminateWhen /KeyPress x` to terminate when a specific key is pressed.
     Usecase: Capture network traffic on windows to collect sensitive data.
     Category: Reconnaissance
-    Privileges: Reconnaissance
+    Privileges: Administrator
     MitreID: T1040
     OperatingSystem: Windows
 Full_Path:
