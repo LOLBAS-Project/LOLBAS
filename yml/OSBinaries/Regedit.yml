@@ -18,6 +18,15 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: regedit.exe
+    Description: Upon execution, `regedit` checks two registry values at `HKCU\Software\Classes\exefile\Shell\open\command`; if these are set by an attacker, the set command will be executed as a high-integrity process without a UAC prompt being displayed to the user. See 'resources' for which registry keys/values to set.
+    Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
+    Category: UAC Bypass
+    Privileges: User
+    MitreID: T1548.002
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+    - Requires: Registry Change
 Full_Path:
   - Path: C:\Windows\regedit.exe
 Detection:
@@ -26,6 +35,7 @@ Detection:
   - IOC: regedit.exe should normally not be executed by end-users
 Resources:
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
+  - Link: https://gist.github.com/havoc3-3/812547525107bd138a1a839118a3a44b
 Acknowledgement:
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
