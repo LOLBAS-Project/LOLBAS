@@ -15,7 +15,7 @@ Commands:
       - Execute: EXE
       - Requires: Rename
   - Command: WorkFolders
-    Description: `WorkFolders` attempts to execute `control.exe`. By modifying the default value of the App Paths registry key for `control.exe` in `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\control.exe`, an attacker can achieve proxy execution.
+    Description: '`WorkFolders` attempts to execute `control.exe`. By modifying the default value of the App Paths registry key for `control.exe` in `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\control.exe`, an attacker can achieve proxy execution.'
     Usecase: Proxy execution of a malicious payload via App Paths registry hijacking.
     Category: Execute
     Privileges: User
