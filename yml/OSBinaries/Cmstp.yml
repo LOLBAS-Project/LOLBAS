@@ -23,6 +23,16 @@ Commands:
     Tags:
       - Execute: INF
       - Execute: Remote
+  - Command: cmstp.exe /nf
+    Description: cmstp.exe reads the `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\cmmgr32.exe\CmstpExtensionDll` registry value and passes its data directly to `LoadLibrary`. By modifying this registry key and setting it to an attack-controlled DLL, this will sideload the DLL via `cmstp.exe`.
+    Usecase: Proxy execution of a malicious DLL via registry modification.
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1218.003
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Requires: Registry Change
 Full_Path:
   - Path: C:\Windows\System32\cmstp.exe
   - Path: C:\Windows\SysWOW64\cmstp.exe
@@ -35,6 +45,7 @@ Detection:
   - IOC: Execution of cmstp.exe without a VPN use case is suspicious
   - IOC: DotNet CLR libraries loaded into cmstp.exe
   - IOC: DotNet CLR Usage Log - cmstp.exe.log
+  - IOC: Registry modification to HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\cmmgr32.exe\CmstpExtensionDll
 Resources:
   - Link: https://twitter.com/NickTyrer/status/958450014111633408
   - Link: https://gist.github.com/NickTyrer/bbd10d20a5bb78f64a9d13f399ea0f80
@@ -42,8 +53,11 @@ Resources:
   - Link: https://oddvar.moe/2017/08/15/research-on-cmstp-exe/
   - Link: https://gist.githubusercontent.com/tylerapplebaum/ae8cb38ed8314518d95b2e32a6f0d3f1/raw/3127ba7453a6f6d294cd422386cae1a5a2791d71/UACBypassCMSTP.ps1
   - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmstp
+  - Link: https://gist.github.com/ghosts621/ea8ad5b8a0904dd40b33f01f0e8285dc
 Acknowledgement:
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
   - Person: Nick Tyrer
     Handle: '@NickTyrer'
+  - Person: Naor Evgi
+    Handle: '@ghosts621'
