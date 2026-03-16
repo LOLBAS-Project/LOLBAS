@@ -5,7 +5,7 @@ Author: Michal Belzak
 Created: 2025-06-17
 Commands:
   - Command: write.exe
-    Description: 'Executes a binary provided in default value of `(HKCU|HKLM)\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe`.'
+    Description: 'Executes a binary provided in default value of `HKCU\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe`.'
     Usecase: Execute binary through legitimate proxy. This might be utilized to confuse detection solutions that rely on parent-child relationships.
     Category: Execute
     Privileges: User
