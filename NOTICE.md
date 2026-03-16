@@ -14,7 +14,7 @@
 
 * Submitter: An individual, group, organization, or entity that contributes to the LOLBAS project through project maintenance, issue submission, Pull Request (PR) submission, etc.
 * Consumer: An individual, group, organization, or entity that uses ("consumes") the LOLBAS project resources through the web portal or repository interfaces and capabilities.
-* OLBAS: Living Off The Land Binaries and Scripts
+* LOLBAS: Living Off The Land Binaries and Scripts
 * LOLBIN: Living Off The Land Binary
 * LOL/"lol": Living Off The Land
 

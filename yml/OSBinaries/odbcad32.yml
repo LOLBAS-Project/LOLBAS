@@ -1,0 +1,27 @@
+---
+Name: odbcad32.exe
+Description: ODBC Data Source Administrator to manage User/System DSNs and ODBC drivers.
+Author: 'Ekitji'
+Created: 2025-09-04
+Commands:
+  - Command: odbcad32.exe
+    Description: Launch odbcad32.exe GUI, click 'Tracing' tab, click 'Browsing' button, enter abitrary command in the File Dialog's path, press enter.
+    Usecase: Execute a binary as a high-integrity process without a UAC prompt.
+    Category: UAC Bypass
+    Privileges: User
+    MitreID: T1548.002
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Application: GUI
+Full_Path:
+  - Path: c:\windows\system32\odbcad32.exe
+  - Path: c:\windows\syswow64\odbcad32.exe
+Detection:
+  - IOC: odbcad32.exe spawning unexpected child processes.
+Resources:
+  - Link: https://medium.com/@thebinaryhashira/living-off-the-land-and-living-above-uac-6a66738d225c
+Acknowledgement:
+  - Person: amonitoring
+  - Person: Ekitji
+    Handle: '@eki_erk'

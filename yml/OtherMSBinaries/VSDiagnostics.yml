@@ -1,0 +1,33 @@
+---
+Name: VSDiagnostics.exe
+Description: Command-line tool used for performing diagnostics.
+Author: Bobby Cooke
+Created: 2023-07-12
+Commands:
+  - Command: VSDiagnostics.exe start 1 /launch:{PATH:.exe}
+    Description: Starts a collection session with sessionID 1 and calls kernelbase.CreateProcessW to launch specified executable.
+    Usecase: Proxy execution of binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+  - Command: VSDiagnostics.exe start 2 /launch:{PATH:.exe} /launchArgs:"{CMD:args}"
+    Description: Starts a collection session with sessionID 2 and calls kernelbase.CreateProcessW to launch specified executable. Arguments specified in launchArgs are passed to CreateProcessW.
+    Usecase: Proxy execution of binary with arguments
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Team Tools\DiagnosticsHub\Collector\VSDiagnostics.exe
+Detection:
+  - Sigma: https://github.com/tsale/Sigma_rules/blob/d5b4a09418edfeeb3a2d654f556d5bca82003cd7/LOL_BINs/VSDiagnostics_LoLBin.yml
+Resources:
+  - Link: https://twitter.com/0xBoku/status/1679200664013135872
+Acknowledgement:
+  - Person: Bobby Cooke
+    Handle: '@0xBoku'

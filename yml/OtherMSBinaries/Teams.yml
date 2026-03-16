@@ -1,0 +1,47 @@
+---
+Name: Teams.exe
+Description: Electron runtime binary which runs the Teams application
+Author: Andrew Kisliakov
+Created: 2022-01-17
+Commands:
+  - Command: teams.exe
+    Description: Generate JavaScript payload and package.json, and save to "%LOCALAPPDATA%\\Microsoft\\Teams\\current\\app\\" before executing.
+    Usecase: Execute JavaScript code
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.015
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: Node.JS
+  - Command: teams.exe
+    Description: Generate JavaScript payload and package.json, archive in ASAR file and save to "%LOCALAPPDATA%\\Microsoft\\Teams\\current\\app.asar" before executing.
+    Usecase: Execute JavaScript code
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.015
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: Node.JS
+  - Command: teams.exe --disable-gpu-sandbox --gpu-launcher="{CMD} &&"
+    Description: Teams spawns cmd.exe as a child process of teams.exe and executes the ping command
+    Usecase: Executes a process under a trusted Microsoft signed binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.015
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: 'C:\Users\<username>\AppData\Local\Microsoft\Teams\current\Teams.exe'
+Code_Sample:
+  - Code: https://github.com/lltltk/LOLBAS-research/tree/master/Teams
+Detection:
+  - IOC: "%LOCALAPPDATA%\\Microsoft\\Teams\\current\\app directory created"
+  - IOC: "%LOCALAPPDATA%\\Microsoft\\Teams\\current\\app.asar file created/modified by non-Teams installer/updater"
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/43277f26fc1c81fc98fc79147b711189e901b757/rules/windows/process_creation/proc_creation_win_susp_electron_exeuction_proxy.yml
+Resources:
+  - Link: https://l--k.uk/2022/01/16/microsoft-teams-and-other-electron-apps-as-lolbins/
+Acknowledgement:
+  - Person: Andrew Kisliakov
+  - Person: mr.d0x
+    Handle: '@mrd0x'

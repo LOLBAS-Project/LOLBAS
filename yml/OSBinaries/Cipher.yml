@@ -1,25 +1,33 @@
 ---
 Name: Cipher.exe
-Description: Security Tool for the Windows Encrypting File System
-Author: Alexander Sennhauser
-Created: 2023-01-09
+Description: File Encryption Utility
+Author: Adetutu Ogunsowo
+Created: 2024-11-22
 Commands:
-  - Command: cipher.exe /e "C:\ProgramData\Microsoft\Windows Defender\Platform\*\MsMpEng.exe" & certutil.exe -delstore -user my %username% & shutdown.exe /r /t 0
-    Description: Encrypt the Windows Defender binary to disable the service after a system restart.
-    Usecase: MSFT Defender bypass using LOLBINs
+  - Command: cipher /w:{PATH_ABSOLUTE:folder}
+    Description: Zero out a file
+    Usecase: Can be used to forensically erase a file.
+    Category: Tamper
+    Privileges: User
+    MitreID: T1485
+    OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: cipher.exe /e {PATH_ABSOLUTE}
+    Description: Encrypt a file
+    Usecase: Can be used to impair defences by e.g. encrypting a critical EDR solution file.
     Category: Tamper
     Privileges: Admin
     MitreID: T1562
-    OperatingSystem: Windows 10 All
+    OperatingSystem: Windows 10
 Full_Path:
   - Path: c:\windows\system32\cipher.exe
-Code_Sample:
-  - Code:
+  - Path: c:\windows\syswow64\cipher.exe
 Detection:
-  - IOC: cipher.exe spawned with unusual path arguments
-  - IOC: certutil.exe spawned to delete user certificates
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c7998c92b3c5f23ea67045bee8ee364d2ed1a775/rules/windows/process_creation/proc_creation_win_cipher_overwrite_deleted_data.yml
+  - IOC: cipher.exe process with /w on the command line
 Resources:
-  - Link:
+  - Link: https://www.volexity.com/blog/2024/11/22/the-nearest-neighbor-attack-how-a-russian-apt-weaponized-nearby-wi-fi-networks-for-covert-access/
 Acknowledgement:
+  - Person: Ade Ogunsowo
+    Handle: "@i_am_tutu"
   - Person: Alexander Sennhauser
     Handle: '@conitrade'

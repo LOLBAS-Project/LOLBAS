@@ -1,0 +1,38 @@
+---
+Name: Powershell.exe
+Description: Powershell.exe is a a task-based command-line shell built on .NET.
+Author: 'Everyone'
+Created: 2024-04-03
+Commands:
+  - Command: powershell.exe -ep bypass -file c:\path\to\a\script.ps1
+    Description: Set the execution policy to bypass and execute a PowerShell script without warning
+    Usecase: Execute PowerShell cmdlets, .NET code, and just about anything else your heart desires
+    Category: Execute
+    Privileges: User
+    MitreID: T1059.001
+    OperatingSystem: Windows 7 and up
+  - Command: powershell.exe -ep bypass -command "Invoke-AllTheThings..."
+    Description: Set the execution policy to bypass and execute a PowerShell command
+    Usecase: Execute PowerShell cmdlets, .NET code, and just about anything else your heart desires
+    Category: Execute
+    Privileges: User
+    MitreID: T1059.001
+    OperatingSystem: Windows 7 and up
+  - Command: powershell.exe -ep bypass -ec IgBXAGUAIAA8ADMAIABMAE8ATABCAEEAUwAiAA==
+    Description: Set the execution policy to bypass and execute a very malicious PowerShell encoded command
+    Usecase: Execute PowerShell cmdlets, .NET code, and just about anything else your heart desires
+    Category: Execute
+    Privileges: User
+    MitreID: T1059.001
+    OperatingSystem: Windows 7 and up
+Full_Path:
+  - Path: 'C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe'
+  - Path: 'C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe'
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/tree/71ae004b32bb3c7fb04714f8a051fc8e5edda68c/rules/windows/powershell
+Resources:
+  - Link: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1
+  - Link: https://attack.mitre.org/techniques/T1059/001/
+Acknowledgement:
+  - Person: Everyone
+    Handle: '@alltheoffensivecyberers'
