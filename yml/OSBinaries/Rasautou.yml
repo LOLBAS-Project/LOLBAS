@@ -1,10 +1,10 @@
 ---
 Name: Rasautou.exe
 Description: Windows Remote Access Dialer
-Author: 'Tony Lambert'
+Author: Tony Lambert
 Created: 2020-01-10
 Commands:
-  - Command: rasautou -d powershell.dll -p powershell -a a -e e
+  - Command: rasautou -d {PATH:.dll} -p export_name -a a -e e
     Description: Loads the target .DLL specified in -d and executes the export specified in -p. Options removed in Windows 10.
     Usecase: Execute DLL code
     Category: Execute

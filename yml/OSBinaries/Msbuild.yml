@@ -1,25 +1,29 @@
 ---
 Name: Msbuild.exe
 Description: Used to compile and execute code
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: msbuild.exe pshell.xml
+  - Command: msbuild.exe {PATH:.xml}
     Description: Build and execute a C# project stored in the target XML file.
     Usecase: Compile and run code
     Category: AWL Bypass
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: msbuild.exe project.csproj
+    Tags:
+      - Execute: CSharp
+  - Command: msbuild.exe {PATH:.csproj}
     Description: Build and execute a C# project stored in the target csproj file.
     Usecase: Compile and run code
     Category: Execute
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: msbuild.exe /logger:TargetLogger,C:\Loggers\TargetLogger.dll;MyParameters,Foo
-    Description: Executes generated Logger DLL file with TargetLogger export
+    Tags:
+      - Execute: CSharp
+  - Command: msbuild.exe /logger:TargetLogger,{PATH_ABSOLUTE:.dll};MyParameters,Foo
+    Description: Executes generated Logger DLL file with TargetLogger export.
     Usecase: Execute DLL
     Category: Execute
     Privileges: User
@@ -27,22 +31,24 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: msbuild.exe project.proj
-    Description: Execute jscript/vbscript code through XML/XSL Transformation. Requires Visual Studio MSBuild v14.0+.
+  - Command: msbuild.exe {PATH:.proj}
+    Description: Execute JScript/VBScript code through XML/XSL Transformation. Requires Visual Studio MSBuild v14.0+.
     Usecase: Execute project file that contains XslTransformation tag parameters
     Category: Execute
     Privileges: User
     MitreID: T1127.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: WSH
-  - Command: msbuild.exe @sample.rsp
+      - Execute: XSL
+  - Command: msbuild.exe @{PATH:.rsp}
     Description: By putting any valid msbuild.exe command-line options in an RSP file and calling it as above will interpret the options as if they were passed on the command line.
     Usecase: Bypass command-line based detections
     Category: Execute
     Privileges: User
     MitreID: T1036
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Msbuild.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Msbuild.exe
@@ -51,8 +57,6 @@ Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Msbuild.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Msbuild.exe
   - Path: C:\Program Files (x86)\MSBuild\14.0\bin\MSBuild.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/file/file_event/file_event_win_shell_write_susp_directory.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_msbuild_susp_parent_process.yml

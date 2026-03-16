@@ -1,10 +1,10 @@
 ---
 Name: Tar.exe
 Description: Used by Windows to extract and create archives.
-Author: 'Brian Lucero'
+Author: Brian Lucero
 Created: 2023-01-30
 Commands:
-  - Command: tar -cf compressedfilename:ads C:\folder\file
+  - Command: tar -cf {PATH}:ads {PATH_ABSOLUTE:folder}
     Description: Compress one or more files to an alternate data stream (ADS).
     Usecase: Can be used to evade defensive countermeasures, or to hide as part of a persistence mechanism
     Category: ADS
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Type: Compression
-  - Command: tar -xf compressedfilename:ads
+  - Command: tar -xf {PATH}:ads
     Description: Decompress a compressed file from an alternate data stream (ADS).
     Usecase: Can be used to evade defensive countermeasures, or to hide as part of a persistence mechanism
     Category: ADS
@@ -22,8 +22,8 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Type: Compression
-  - Command: tar -xf \\host1\archive.tar
-    Description: Extracts archive.tar from the remote (internal) host (host1) to the current host.
+  - Command: tar -xf {PATH_SMB:.tar}
+    Description: Extracts archive.tar from the remote (internal) host to the current host.
     Usecase: Copy files
     Category: Copy
     Privileges: User

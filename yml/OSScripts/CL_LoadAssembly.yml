@@ -12,11 +12,9 @@ Commands:
     MitreID: T1216
     OperatingSystem: Windows 10 21H1 (likely other versions as well), Windows 11
     Tags:
-      - Execute: DLL
+      - Execute: DLL (.NET)
 Full_Path:
   - Path: C:\Windows\diagnostics\system\Audio\CL_LoadAssembly.ps1
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/ff6c54ded6b52f379cec11fe17c1ccb956faa660/rules/windows/process_creation/proc_creation_win_lolbas_cl_loadassembly.yml
 Resources:

@@ -1,18 +1,18 @@
 ---
 Name: Csc.exe
 Description: Binary file used by .NET Framework to compile C# code
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: csc.exe -out:Output.exe File.cs
-    Description: Use csc.exe to compile C# code, targeting the .NET Framework, stored in File.cs and output the compiled version to Output.exe.
+  - Command: csc.exe -out:{PATH:.exe} {PATH:.cs}
+    Description: Use csc.exe to compile C# code, targeting the .NET Framework, stored in the specified .cs file and output the compiled version to the specified .exe path.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
     Category: Compile
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: csc -target:library File.cs
-    Description: Use csc.exe to compile C# code, targeting the .NET Framework, stored in File.cs and output the compiled version to a DLL file.
+  - Command: csc -target:library {PATH:.cs}
+    Description: Use csc.exe to compile C# code, targeting the .NET Framework, stored in the specified .cs file and output the compiled version to a DLL file with the same name.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
     Category: Compile
     Privileges: User
@@ -25,8 +25,6 @@ Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\csc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\csc.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_csc_susp_parent.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_csc_susp_folder.yml

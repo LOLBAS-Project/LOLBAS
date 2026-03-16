@@ -4,7 +4,7 @@ Description: VSTest.Console.exe is the command-line tool to run tests
 Author: Onat Uzunyayla
 Created: 2023-09-08
 Commands:
-  - Command: vstest.console.exe testcode.dll
+  - Command: vstest.console.exe {PATH:.dll}
     Description: VSTest functionality may allow an adversary to executes their malware by wrapping it as a test method then build it to a .exe or .dll file to be later run by vstest.console.exe. This may both allow AWL bypass or defense bypass in general
     Usecase: Proxy Execution and AWL bypass, Adversaries may run malicious code embedded inside the test methods of crafted dll/exe
     Category: AWL Bypass

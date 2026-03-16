@@ -1,7 +1,7 @@
 ---
 Name: ntdsutil.exe
 Description: Command line utility used to export Active Directory.
-Author: 'Tony Lambert'
+Author: Tony Lambert
 Created: 2020-01-10
 Commands:
   - Command: ntdsutil.exe "ac i ntds" "ifm" "create full c:\" q q
@@ -13,8 +13,6 @@ Commands:
     OperatingSystem: Windows
 Full_Path:
   - Path: C:\Windows\System32\ntdsutil.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_ntdsutil_usage.yml
   - Splunk: https://github.com/splunk/security_content/blob/2b87b26bdc2a84b65b1355ffbd5174bdbdb1879c/detections/endpoint/ntdsutil_export_ntds.yml

@@ -4,7 +4,7 @@ Description: Microsoft command line utility used to manage SQL Server Integratio
 Author: Avihay Eldad
 Created: 2024-06-17
 Commands:
-  - Command: dtutil.exe /FILE C:\Windows\System32\calc.exe /COPY FILE;C:\Users\Public\calc.exe
+  - Command: dtutil.exe /FILE {PATH_ABSOLUTE:.source.ext} /COPY FILE;{PATH_ABSOLUTE:.dest.ext}
     Description: Copy file from source to destination
     Usecase: Use to copies the source file to the destination file
     Category: Copy

@@ -4,8 +4,8 @@ Description: Binary that package existing files into a cabinet (.cab) file
 Author: Tamir Yehuda
 Created: 2020-08-08
 Commands:
-  - Command: diantz.exe c:\pathToFile\file.exe c:\destinationFolder\targetFile.txt:targetFile.cab
-    Description: Compress taget file into a cab file stored in the Alternate Data Stream (ADS) of the target file.
+  - Command: diantz.exe {PATH_ABSOLUTE:.exe} {PATH_ABSOLUTE}:targetFile.cab
+    Description: Compress a file (first argument) into a CAB file stored in the Alternate Data Stream (ADS) of the target file.
     Usecase: Hide data compressed into an Alternate Data Stream.
     Category: ADS
     Privileges: User
@@ -13,8 +13,8 @@ Commands:
     OperatingSystem: Windows XP, Windows vista, Windows 7, Windows 8, Windows 8.1.
     Tags:
       - Type: Compression
-  - Command: diantz.exe \\remotemachine\pathToFile\file.exe c:\destinationFolder\file.cab
-    Description: Download and compress a remote file and store it in a cab file on local machine.
+  - Command: diantz.exe {PATH_SMB:.exe} {PATH_ABSOLUTE:.cab}
+    Description: Download and compress a remote file and store it in a CAB file on local machine.
     Usecase: Download and compress into a cab file.
     Category: Download
     Privileges: User
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows Server 2012, Windows Server 2012R2, Windows Server 2016, Windows Server 2019
     Tags:
       - Type: Compression
-  - Command: diantz /f directives.ddf
+  - Command: diantz /f {PATH:.ddf}
     Description: Execute diantz directives as defined in the specified Diamond Definition File (.ddf); see resources for the format specification.
     Usecase: Bypass command-line based detections
     Category: Execute
@@ -34,8 +34,6 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\diantz.exe
   - Path: c:\windows\syswow64\diantz.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_lolbin_diantz_ads.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_lolbin_diantz_remote_cab.yml

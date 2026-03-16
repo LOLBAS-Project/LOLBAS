@@ -4,13 +4,15 @@ Description: Used for installing drivers
 Author: Hai vaknin (lux)
 Created: 2020-12-25
 Commands:
-  - Command: pnputil.exe -i -a C:\Users\hai\Desktop\mo.inf
+  - Command: pnputil.exe -i -a {PATH_ABSOLUTE:.inf}
     Description: Used for installing drivers
     Usecase: Add malicious driver
     Category: Execute
     Privileges: Administrator
     MitreID: T1547
     OperatingSystem: Windows 7, Windows 10, Windows 11
+    Tags:
+      - Execute: INF
 Full_Path:
   - Path: C:\Windows\system32\pnputil.exe
 Code_Sample:

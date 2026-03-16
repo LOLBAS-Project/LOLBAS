@@ -4,20 +4,24 @@ Description: Windows App Certification Kit command-line tool.
 Author: Avihay Eldad
 Created: 2024-03-06
 Commands:
-  - Command: appcert.exe test -apptype desktop -setuppath c:\windows\system32\notepad.exe -reportoutputpath c:\users\public\output.xml
+  - Command: appcert.exe test -apptype desktop -setuppath {PATH_ABSOLUTE:.exe} -reportoutputpath {PATH_ABSOLUTE:.xml}
     Description: Execute an executable file via the Windows App Certification Kit command-line tool.
     Usecase: Performs execution of specified file, can be used as a defense evasion
     Category: Execute
     Privileges: Administrator
     MitreID: T1127
     OperatingSystem: Windows
-  - Command: appcert.exe test -apptype desktop -setuppath c:\users\public\malicious.msi -setupcommandline /q -reportoutputpath c:\users\public\output.xml
+    Tags:
+      - Execute: EXE
+  - Command: appcert.exe test -apptype desktop -setuppath {PATH_ABSOLUTE:.msi} -setupcommandline /q -reportoutputpath {PATH_ABSOLUTE:.xml}
     Description: Install an MSI file via an msiexec instance spawned via appcert.exe as parent process.
     Usecase: Execute custom made MSI file with malicious code
     Category: Execute
     Privileges: Administrator
     MitreID: T1218.007
     OperatingSystem: Windows
+    Tags:
+      - Execute: MSI
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\App Certification Kit\appcert.exe
   - Path: C:\Program Files\Windows Kits\10\App Certification Kit\appcert.exe

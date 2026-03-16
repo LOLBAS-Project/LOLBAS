@@ -1,10 +1,10 @@
 ---
 Name: Mavinject.exe
 Description: Used by App-v in Windows
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: MavInject.exe 3110 /INJECTRUNNING c:\folder\evil.dll
+  - Command: MavInject.exe 3110 /INJECTRUNNING {PATH_ABSOLUTE:.dll}
     Description: Inject evil.dll into a process with PID 3110.
     Usecase: Inject dll file into running process
     Category: Execute
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: DLL
-  - Command: Mavinject.exe 4172 /INJECTRUNNING "c:\ads\file.txt:file.dll"
+  - Command: Mavinject.exe 4172 /INJECTRUNNING {PATH_ABSOLUTE}:file.dll
     Description: Inject file.dll stored as an Alternate Data Stream (ADS) into a process with PID 4172
     Usecase: Inject dll file into running process
     Category: ADS

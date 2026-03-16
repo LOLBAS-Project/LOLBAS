@@ -1,10 +1,10 @@
 ---
 Name: Fsutil.exe
 Description: File System Utility
-Author: 'Elliot Killick'
+Author: Elliot Killick
 Created: 2021-08-16
 Commands:
-  - Command: fsutil.exe file setZeroData offset=0 length=9999999999 C:\Windows\Temp\payload.dll
+  - Command: fsutil.exe file setZeroData offset=0 length=9999999999 {PATH_ABSOLUTE}
     Description: Zero out a file
     Usecase: Can be used to forensically erase a file
     Category: Tamper
@@ -25,6 +25,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\fsutil.exe
   - Path: C:\Windows\SysWOW64\fsutil.exe

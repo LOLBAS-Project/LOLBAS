@@ -1,11 +1,11 @@
 ---
 Name: Extexport.exe
 Description: Load a DLL located in the c:\test folder with a specific name.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: Extexport.exe c:\test foo bar
-    Description: Load a DLL located in the c:\test folder with one of the following names mozcrt19.dll, mozsqlite3.dll, or sqlite.dll
+  - Command: Extexport.exe {PATH_ABSOLUTE:folder} foo bar
+    Description: Load a DLL located in the specified folder with one of the following names mozcrt19.dll, mozsqlite3.dll, or sqlite.dll.
     Usecase: Execute dll file
     Category: Execute
     Privileges: User

@@ -1,7 +1,7 @@
 ---
 Name: Wsreset.exe
 Description: Used to reset Windows Store settings according to its manifest file
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2019-03-18
 Commands:
   - Command: wsreset.exe
@@ -13,8 +13,6 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\wsreset.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_uac_bypass_wsreset_integrity_level.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_uac_bypass_wsreset.yml

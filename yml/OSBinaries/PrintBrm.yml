@@ -1,10 +1,10 @@
 ---
 Name: PrintBrm.exe
 Description: Printer Migration Command-Line Tool
-Author: 'Elliot Killick'
+Author: Elliot Killick
 Created: 2021-06-21
 Commands:
-  - Command: PrintBrm -b -d \\1.2.3.4\share\example_folder -f C:\Users\user\Desktop\new.zip
+  - Command: PrintBrm -b -d {PATH_SMB:folder} -f {PATH_ABSOLUTE:.zip}
     Description: Create a ZIP file from a folder in a remote drive
     Usecase: Exfiltrate the contents of a remote folder on a UNC share into a zip file
     Category: Download
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Type: Compression
-  - Command: PrintBrm -r -f C:\Users\user\Desktop\data.txt:hidden.zip -d C:\Users\user\Desktop\new_folder
+  - Command: PrintBrm -r -f {PATH_ABSOLUTE}:hidden.zip -d {PATH_ABSOLUTE:folder}
     Description: Extract the contents of a ZIP file stored in an Alternate Data Stream (ADS) and store it in a folder
     Usecase: Decompress and extract a ZIP file stored on an alternate data stream to a new folder
     Category: ADS

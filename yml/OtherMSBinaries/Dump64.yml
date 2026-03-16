@@ -4,7 +4,7 @@ Description: Memory dump tool that comes with Microsoft Visual Studio
 Author: mr.d0x
 Created: 2021-11-16
 Commands:
-  - Command: dump64.exe <pid> out.dmp
+  - Command: dump64.exe {PID} out.dmp
     Description: Creates a memory dump of the LSASS process.
     Usecase: Create memory dump and parse it offline to retrieve credentials.
     Category: Dump

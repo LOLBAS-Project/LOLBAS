@@ -1,23 +1,27 @@
 ---
 Name: ssh.exe
 Description: Ssh.exe is the OpenSSH compatible client can be used to connect to Windows 10 (build 1809 and later) and Windows Server 2019 devices.
-Author: 'Akshat Pradhan'
-Created: '2021-11-08'
+Author: Akshat Pradhan
+Created: 2021-11-08
 Commands:
-  - Command: ssh localhost calc.exe
-    Description: Execute calc.exe on host machine. The prompt for password can be eliminated by adding the host's public key in the user's authorized_keys file. Adversaries can do the same for execution on remote machines.
+  - Command: ssh localhost "{CMD}"
+    Description: Executes specified command on host machine. The prompt for password can be eliminated by adding the host's public key in the user's authorized_keys file. Adversaries can do the same for execution on remote machines.
     Usecase: Execute specified command, can be used for defense evasion.
     Category: Execute
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10 1809, Windows Server 2019
-  - Command: ssh -o ProxyCommand=calc.exe .
-    Description: Executes calc.exe from ssh.exe
+    Tags:
+      - Execute: CMD
+  - Command: ssh -o ProxyCommand="{CMD}" .
+    Description: Executes specified command from ssh.exe
     Usecase: Performs execution of specified file, can be used as a defensive evasion.
     Category: Execute
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: c:\windows\system32\OpenSSH\ssh.exe
 Detection:
