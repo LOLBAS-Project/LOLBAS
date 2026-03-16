@@ -5,7 +5,7 @@ Author: Elliot Killick
 Created: 2021-08-16
 Commands:
   - Command: WorkFolders
-    Description: Execute control.exe in the current working directory
+    Description: Execute `control.exe` in the current working directory
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: Execute
     Privileges: User
@@ -13,8 +13,9 @@ Commands:
     OperatingSystem: Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: EXE
-  - Command: REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\control.exe" /ve /d "{PATH_ABSOLUTE:.exe}" /f & WorkFolders.exe
-    Description: WorkFolders.exe attempts to execute control.exe. By modifying the default value of the App Paths registry key for control.exe in HKCU, an attacker can achieve proxy execution.
+      - Requires: Rename
+  - Command: WorkFolders
+    Description: WorkFolders.exe attempts to execute `control.exe`. By modifying the default value of the App Paths registry key for `control.exe` in `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\control.exe`, an attacker can achieve proxy execution.
     Usecase: Proxy execution of a malicious payload via App Paths registry hijacking.
     Category: Execute
     Privileges: User
@@ -22,6 +23,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
+      - Requires: Registry change
 Full_Path:
   - Path: C:\Windows\System32\WorkFolders.exe
 Detection:
