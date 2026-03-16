@@ -23,13 +23,16 @@ Commands:
     Tags:
       - Execute: INF
       - Execute: Remote
-  - Command: REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\cmmgr32.exe" /v CmstpExtensionDll /t REG_SZ /d "{PATH_ABSOLUTE:.dll}" /f & cmstp.exe /nf
-    Description: cmstp.exe reads the CmstpExtensionDll registry value and passes its data directly to LoadLibrary. By modifying this registry key, an attacker can sideload an arbitrary DLL.
+  - Command: cmstp.exe /nf
+    Description: cmstp.exe reads the `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\cmmgr32.exe\CmstpExtensionDll` registry value and passes its data directly to `LoadLibrary`. By modifying this registry key and setting it to an attack-controlled DLL, this will sideload the DLL via `cmstp.exe`.
     Usecase: Proxy execution of a malicious DLL via registry modification.
     Category: Execute
     Privileges: Administrator
     MitreID: T1218.003
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Requires: Registry Change
 Full_Path:
   - Path: C:\Windows\System32\cmstp.exe
   - Path: C:\Windows\SysWOW64\cmstp.exe

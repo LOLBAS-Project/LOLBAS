@@ -13,15 +13,16 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: EXE
-  - Command: copy C:\Windows\System32\dxcap.exe %TEMP%\dxcap.exe & copy calc.exe %TEMP%\Xperf.exe & %TEMP%\dxcap.exe -usage
-    Description: dxcap.exe attempts to execute Xperf.exe from the current directory or its own directory. By placing a malicious Xperf.exe alongside a copied dxcap.exe, an attacker can achieve proxy execution with standard user privileges.
-    Usecase: Proxy execution of malicious code by hijacking the Xperf.exe call.
+  - Command: dxcap.exe -usage
+    Description: Once executed, `dxcap.exe` will execute `xperf.exe` in the same folder. Thus, if `dxcap.exe` is copied to a folder and an arbitrary executable is renamed to `xperf.exe`, `dxcap.exe` will spawn it.
+    Usecase: Execute an arbitrary executable via trusted system executable.
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: EXE
+      - Requires: Rename
 Full_Path:
   - Path: C:\Windows\System32\dxcap.exe
   - Path: C:\Windows\SysWOW64\dxcap.exe
@@ -34,7 +35,6 @@ Detection:
   - IOC: Xperf.exe executing from unusual directories (if not running from ADK path)
 Resources:
   - Link: https://twitter.com/harr0ey/status/992008180904419328
-  - Link: https://github.com/ghosts621
 Acknowledgement:
   - Person: Matt harr0ey
     Handle: '@harr0ey'
