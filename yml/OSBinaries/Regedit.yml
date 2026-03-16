@@ -26,6 +26,7 @@ Commands:
     MitreID: T1548.002
     OperatingSystem: Windows 10, Windows 11
     Tags:
+      - Execute: CMD
       - Requires: Registry Change
 Full_Path:
   - Path: C:\Windows\regedit.exe
