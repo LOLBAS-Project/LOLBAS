@@ -5,7 +5,7 @@ Author: Avihay Eldad
 Created: 2025-09-16
 Commands:
   - Command: nmcap.exe /network * /capture /file {PATH_ABSOLUTE:.cap}
-    Description:|
+    Description: |
       Start capture on all network adapters and save to specified .cap (circular) file.
       Optionally, one can add:
       - `/TerminateWhen /TimeAfter 30 seconds` to auto-terminate after a relative times (e.g. 30 seconds);
