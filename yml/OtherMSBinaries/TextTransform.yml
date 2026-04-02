@@ -1,3 +1,4 @@
+---
 Name: TextTransform.exe
 Description: T4 Text Template transformation tool included with Visual Studio. Processes T4 template files (.tt) that can contain arbitrary C# or VB.NET code which executes during template processing.
 Author: Noam Pomerantz
