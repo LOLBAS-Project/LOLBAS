@@ -1,7 +1,7 @@
 ---
 Name: Microsoft.XslDebugger.Host.exe
 Description: XSLT Execution Utility included with Visual Studio for debugging XSLT transformations
-Author: Noam
+Author: Noam Pomerantz
 Created: 2026-04-05
 Commands:
   - Command: Microsoft.XslDebugger.Host.exe input.xml payload.xsl /enable:all
