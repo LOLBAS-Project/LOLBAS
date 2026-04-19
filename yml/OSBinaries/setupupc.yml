@@ -1,18 +1,17 @@
----
 Name: setupugc.exe
 Description: Setup Unattend Generic Command Processor used during Windows deployment
 Author: Ang Kar Min
 Created: 2026-04-20
 Commands:
   - Command: reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\1" /v Path /d "{COMMAND}" /f && setupugc.exe specialize
-    Description: Write an arbitrary command to the UnattendSettings registry key and trigger execution via setupugc.exe. The command runs as a child process of setupugc.exe at the caller's integrity level. Only the Path value is required; Description and Order are optional.
+    Description: Write an arbitrary command to the UnattendSettings registry key and trigger execution via setupugc.exe.
     Usecase: Execute arbitrary commands through a Microsoft-signed binary, proxy process parentage
     Category: Execute
     Privileges: Administrator
     MitreID: T1218
     OperatingSystem: Windows 10, Windows 11, Windows Server 2025
   - Command: reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\1" /v Path /d "{COMMAND}" /f && setupugc.exe auditUser
-    Description: Same technique using the auditUser pass name instead of specialize. Both pass names trigger command execution; oobeSystem and auditSystem do not.
+    Description: Same technique using the auditUser pass name instead of specialize.
     Usecase: Execute arbitrary commands through a Microsoft-signed binary
     Category: Execute
     Privileges: Administrator
@@ -21,32 +20,12 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\setupugc.exe
 Detection:
-  - IOC: setupugc.exe spawning child processes outside of Windows Setup context. Legitimate parent is setuphost.exe or Windows setup infrastructure.
-  - IOC: Registry writes to HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\ on a deployed system (post-OOBE).
-  - IOC: C:\Windows\Panther\commandexec\ directory or commandexec.*.spl spool files on a production system.
+  - IOC: setupugc.exe spawning child processes outside of Windows Setup context. Legitimate parents are setuphost.exe or setup.exe.
+  - IOC: Registry writes to HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\ on a deployed system.
+  - IOC: Presence of C:\Windows\Panther\commandexec\ directory or commandexec.*.spl spool files on a production system.
   - IOC: Registry value CommandExecInProgress (DWORD 0x1) under HKLM\...\UnattendSettings\Setup-Unattend-Settings-Status created by a non-setup process.
-  - Sigma: |
-      title: Suspicious setupugc.exe Child Process
-      status: experimental
-      description: Detects setupugc.exe spawning child processes outside of Windows Setup context.
-      logsource:
-          product: windows
-          category: process_creation
-      detection:
-          selection:
-              ParentImage|endswith: '\setupugc.exe'
-          filter_legitimate:
-              ParentParentImage|endswith:
-                  - '\setuphost.exe'
-                  - '\setup.exe'
-          condition: selection and not filter_legitimate
-      level: high
-      tags:
-          - attack.defense_evasion
-          - attack.execution
-          - attack.t1218
 Resources:
   - Link: https://strontic.github.io/xcyclopedia/library/setupugc.exe-3CFE082E8656AD66B5B9FFEB28CF4EC3.html
 Acknowledgement:
   - Person: Ang Kar Min
-    Handle: karminang
+    Handle: '@karminang'
