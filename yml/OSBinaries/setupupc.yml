@@ -4,7 +4,7 @@ Author: Ang Kar Min
 Created: 2026-04-20
 Commands:
   - Command: reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\1" /v Path /d "{COMMAND}" /f && setupugc.exe specialize
-    Description: Write an arbitrary command to the UnattendSettings registry key and trigger execution via setupugc.exe.
+    Description: Write an arbitrary command to the UnattendSettings registry key and trigger execution via setupugc.exe. The command runs as a child process of setupugc.exe at the caller's integrity level. Only the Path value is required; Description and Order are optional.
     Usecase: Execute arbitrary commands through a Microsoft-signed binary, proxy process parentage
     Category: Execute
     Privileges: Administrator
