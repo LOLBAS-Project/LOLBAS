@@ -1,4 +1,4 @@
-Name: Sync Root Manager
+Name: RuntimeBroker.exe
 Description: >
   The Sync Root Manager COM object (CLSID F324E4F9-8496-40B2-A1FF-9617C1C9AFFE)
   is used by the Windows Shell for cloud file integration. While triggered by
