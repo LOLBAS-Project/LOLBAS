@@ -15,7 +15,7 @@ Commands:
       attacker-controlled DLL into RuntimeBroker.exe when cloud-aware
       applications are launched.
     Usecase: Persistence, Defense Evasion, Arbitrary Code Execution
-    Category: COM Hijacking
+    Category: Execute
     Privileges: User
     MitreID: T1546.015
     OperatingSystem: Windows 10, Windows 11
@@ -34,3 +34,4 @@ Resources:
 
 Acknowledgement:
   - Person: Nguyen Khanh Son
+    Handle: '@your_twitter_handle'
