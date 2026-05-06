@@ -24,7 +24,7 @@ Commands:
       - Execute: DLL
       - Type: COM Hijack
 Full_Path:
-  - Path: HKCU\Software\Classes\CLSID\{F324E4F9-8496-40B2-A1FF-9617C1C9AFFE}\InprocServer32
+  - Path: C:\Windows\System32\RuntimeBroker.exe
 Detection:
   - IOC: TODO
 Resources:
