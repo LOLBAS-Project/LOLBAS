@@ -1,18 +1,16 @@
 ---
 Name: RuntimeBroker.exe
 Description: >
-  The Sync Root Manager COM object (CLSID
-  F324E4F9-8496-40B2-A1FF-9617C1C9AFFE) is used by the Windows Shell for cloud
-  file integration. While triggered by user applications such as Outlook and
-  Snipping Tool, the object is initialized by RuntimeBroker.exe. By shadowing
-  this CLSID in the HKCU registry hive, an unprivileged user can achieve
-  arbitrary code execution within the signed RuntimeBroker.exe process.
+  The Sync Root Manager COM object (CLSID F324E4F9-8496-40B2-A1FF-9617C1C9AFFE)
+  is used by the Windows Shell for cloud file integration. While triggered by
+  user applications such as Outlook and Snipping Tool, the object is initialized
+  by RuntimeBroker.exe. By shadowing this CLSID in the HKCU registry hive, an
+  unprivileged user can achieve arbitrary code execution within the signed
+  RuntimeBroker.exe process.
 Author: Nguyen Khanh Son
 Created: 2026-05-05
 Commands:
-  - Command: reg add
-      "HKCU\Software\Classes\CLSID\{F324E4F9-8496-40B2-A1FF-9617C1C9AFFE}\InprocServer32"
-      /ve /t REG_SZ /d "C:\Users\Public\evil.dll" /f
+  - Command: reg add "HKCU\Software\Classes\CLSID\{F324E4F9-8496-40B2-A1FF-9617C1C9AFFE}\InprocServer32" /ve /t REG_SZ /d "C:\Users\Public\evil.dll" /f
     Description: >
       Hijack the Sync Root Manager COM class in the HKCU hive to load an
       attacker-controlled DLL into RuntimeBroker.exe when cloud-aware
