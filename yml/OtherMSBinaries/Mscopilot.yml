@@ -4,8 +4,8 @@ Description: Microsoft Copilot app
 Author: 4n4s4zi
 Created: 2026-04-14
 Commands:
-  - Command: mscopilot.exe --no-startup-window --disable-gpu-sandbox --gpu-launcher="cmd.exe /c calc.exe && taskkill /f /im mscopilot.exe &&"
-    Description: Copilot spawns cmd.exe as a child process of mscopilot.exe and executes the specified command (parent copilot process needs to be killed or command executes indefinitely)
+  - Command: mscopilot.exe --no-startup-window --disable-gpu-sandbox --gpu-launcher="{CMD} && taskkill /f /im mscopilot.exe &&"
+    Description: `mscopilot.exe` will spawn the provided command. Parent `mscopilot.exe` process needs to be killed to avoid command being executed an infinite number of times.
     Usecase: Executes a process under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
@@ -15,7 +15,6 @@ Commands:
       - Execute: CMD
 Full_Path:
   - Path: C:\Program Files (x86)\Microsoft\Copilot\Application\mscopilot.exe
-Detection:
 Resources:
   - Link: https://github.com/4n4s4zi/tour-de-mscopilot
 Acknowledgement:
