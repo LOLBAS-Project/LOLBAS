@@ -1,0 +1,25 @@
+---
+Name: xpsrchvw.exe
+Description: Windows XPS Viewer, a Microsoft-signed binary for viewing XPS documents
+Author: Ang Kar Min
+Created: 2026-04-20
+Commands:
+  - Command: copy C:\Windows\System32\xpsrchvw.exe C:\Users\Public\xpsrchvw.exe && copy WINMM.dll C:\Users\Public\WINMM.dll && C:\Users\Public\xpsrchvw.exe
+    Description: Copy xpsrchvw.exe to a user-writable directory alongside a malicious WINMM.dll. When executed, the binary resolves DLLs from its application directory before System32, loading the attacker-controlled DLL under the context of the Microsoft-signed binary.
+    Usecase: Execute arbitrary code via DLL search order hijacking through a Microsoft-signed binary, proxy process parentage
+    Category: Execute
+    Privileges: User
+    MitreID: T1574.001
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\xpsrchvw.exe
+Detection:
+  - IOC: xpsrchvw.exe executing from a non-standard path outside C:\Windows\System32\.
+  - IOC: xpsrchvw.exe loading WINMM.dll or other DLLs from its own application directory rather than System32.
+  - IOC: Child processes spawned by xpsrchvw.exe outside of normal XPS document viewing context.
+  - IOC: Presence of WINMM.dll or other hijackable DLL names in user-writable directories alongside a copy of xpsrchvw.exe.
+Resources:
+  - Link: https://github.com/karminang/poc/blob/main/x64-sideload-DLL-WINMM.py
+Acknowledgement:
+  - Person: Ang Kar Min
+    Handle: '@karminang'
