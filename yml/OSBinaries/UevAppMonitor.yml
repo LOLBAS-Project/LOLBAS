@@ -1,0 +1,29 @@
+---
+Name: UevAppMonitor.exe
+Description: Microsoft User Experience Virtualization (UE-V) App Monitor
+Author: Liran Ravich
+Created: 2026-01-05
+Commands:
+  - Command: UevAppMonitor.exe
+    Description: By using a custom config file (UevAppMonitor.exe.config), a malicious DLL can be loaded
+    Usecase: Execute a malicious DLL
+    Category: Execute
+    Privileges: User
+    MitreID: T1574.001
+    OperatingSystem: Windows 11, Windows 10, Windows Server
+  - Command: UevAppMonitor.exe
+    Description: The `<etwEnable>` flag can be set to false to prevent auditing
+    Usecase: Preventing event tracing when executing the process
+    Category: Execute
+    Privileges: User
+    MitreID: T1562.002
+    OperatingSystem: Windows 11, Windows 10, Windows Server
+Full_Path:
+  - Path: C:\Windows\System32\UevAppMonitor.exe
+Detection:
+  - IOC: Unusual modification to UevAppMonitor.exe.config
+  - IOC: UevAppMonitor.exe executed from unusual path
+  - IOC: UevAppMonitor.exe executed by unusual parent process (commonly spawned by `svchost.exe -k netsvcs -p -s Schedule`)
+Resources:
+  - Link: https://www.welivesecurity.com/en/eset-research/longnosedgoblin-tries-sniff-out-governmental-affairs-southeast-asia-japan/
+  - Link: https://learn.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/runtime/etwenable-element
