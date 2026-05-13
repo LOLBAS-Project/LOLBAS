@@ -1,0 +1,35 @@
+---
+Name: TextTransformCore.exe
+Description: .NET Core T4 Text Template transformation tool included with Visual Studio. Processes T4 template files (.tt) that can contain arbitrary C# code which executes during template processing.
+Author: Noam Pomerantz
+Created: 2026-04-03
+Commands:
+  - Command: TextTransformCore.exe {PATH:.tt}
+    Description: Processes a T4 template file (.tt) containing embedded C# code blocks. The C# code executes during template processing with .NET Core runtime access.
+    Usecase: Execute arbitrary C# code by embedding it in a T4 template file. Can write files, access the filesystem, and perform .NET operations. Process.Start requires additional assembly references.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\TextTransformCore.exe
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\TextTransformCore.exe
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\TextTransformCore.exe
+Code_Sample:
+  - Code: |-
+      <#@ template language="C#" #>
+      <#@ assembly name="System.Diagnostics.Process" #>
+      <#@ assembly name="System.ComponentModel.Primitives" #>
+      <#@ import namespace="System.Diagnostics" #>
+      <#
+          Process.Start("cmd.exe");
+      #>
+Detection:
+  - IOC: TextTransformCore.exe process execution outside of a typical Visual Studio development context.
+  - IOC: TextTransformCore.exe processing .tt files from unusual directories such as %TEMP% or user profile folders.
+  - IOC: Unexpected child processes (e.g., cmd.exe, powershell.exe) spawning directly from TextTransformCore.exe.
+Resources:
+  - Link: https://learn.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates
+Acknowledgement:
+  - Person: Noam Pomerantz
+    Handle: '@pumi96'
