@@ -1,0 +1,42 @@
+---
+Name: scp.exe
+Description: Secure Copy Protocol
+Author: Nir Chako
+Created: 2022-11-14
+Commands:
+  - Command: 'scp -S "C:\windows\system32\notepad.exe" file.txt localhost:'
+    Description: Execute notepad.exe with scp.exe as parent process
+    Usecase: Use scp.exe as a proxy binary to evade defensive counter-measures
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10, Windows 11
+  - Command: "scp <ssh-username>@192.168.187.128:<path_of_file_to_download> <path_to_save_file>"
+    Description: Download file with scp.exe from an SSH server
+    Usecase: Use scp.exe to download file from an SSH server. If needed, you will be asked to submit a password for the SSH session.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+  - Command: "scp <path_of_local_file_to_upload> <ssh-username>@192.168.187.128:<path_to_save_file>"
+    Description: Upload file with scp.exe to an SSH server
+    Usecase: Use scp.exe to Upload file from the local machine to remote SSH server. If needed, you will be asked to submit a password for the SSH session.
+    Category: Upload
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+  - Command: "scp <source_file_path> <copy_destination_path>"
+    Description: Copy file with scp.exe to a local path
+    Usecase: Use scp.exe to Copy a file from one location to another.
+    Category: Copy
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: c:\windows\system32\OpenSSH\scp.exe
+Detection:
+  - IOC: scp.exe spawning unexpected processes
+  - IOC: Suspicious SSH internet/network traffic
+Acknowledgement:
+  - Person: 'Nir Chako (Pentera)'
+    Handle: '@C_h4ck_0'
