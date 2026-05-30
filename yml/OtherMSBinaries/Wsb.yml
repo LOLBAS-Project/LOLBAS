@@ -2,10 +2,10 @@
 Name: wsb.exe
 Description: Windows Sandbox command-line interface. Creates, lists, controls, and executes commands inside Windows Sandbox sessions from the host CLI. Available on Windows 11 24H2 and later after the Windows Sandbox app auto-upgrades itself via Microsoft Store update infrastructure - triggered on first launch once the Windows Sandbox optional feature is enabled. There is no separate Store catalog entry to search for; the upgrade is delivered in place.
 Author: Konrad 'unrooted' Klawikowski
-Created: 2026-05-30
+Created: 2026-05-28
 Commands:
   - Command: wsb start --config "<Configuration><LogonCommand><Command>cmd.exe /c {payload}</Command></LogonCommand></Configuration>"
-    Description: 'Launches a Windows Sandbox from an inline XML configuration with an embedded <LogonCommand>, leaving no .wsb file on disk - the entire configuration is passed as a single command-line argument. Note: <LogonCommand> only fires once WDAGUtilityAccount actually logs in, which only happens after an RDP session is established via `wsb connect`, so this pattern opens a visible Sandbox window. For headless execution use `wsb exec -r System` instead. Inside the sandbox Windows Defender is disabled by default; from the host the sandbox is a Hyper-V VM, so the in-sandbox payload runs in a separate kernel and is invisible to host ETW / Sysmon entirely.'
+    Description: 'Launches a Windows Sandbox from an inline XML configuration with an embedded `<LogonCommand>`, leaving no .wsb file on disk - the entire configuration is passed as a single command-line argument. Note: `<LogonCommand>` only fires once WDAGUtilityAccount actually logs in, which only happens after an RDP session is established via `wsb connect`, so this pattern opens a visible Sandbox window. For headless execution use `wsb exec -r System` instead. Inside the sandbox Windows Defender is disabled by default; from the host the sandbox is a Hyper-V VM, so the in-sandbox payload runs in a separate kernel and is invisible to host ETW / Sysmon entirely.'
     Usecase: Fileless execution of arbitrary commands in a Defender-free environment whose host-side process tree is masked by the Sandbox client binaries
     Category: Execute
     Privileges: User
@@ -41,8 +41,7 @@ Commands:
     OperatingSystem: Windows 11 24H2 and later
 
 Full_Path:
-  - Path: C:\Users\{user}\AppData\Local\Microsoft\WindowsApps\wsb.exe
-  - Path: C:\Program Files\WindowsApps\Microsoft.WindowsSandbox_*\wsb.exe
+  - Path: C:\Users\<user>\AppData\Local\Microsoft\WindowsApps\wsb.exe
 
 Code_Sample:
   - Code: https://gist.github.com/unrooted/c02f398c88205a437ad2fb592b61efff
@@ -54,7 +53,7 @@ Detection:
   - IOC: Correlated pair - wsb.exe start followed by wsb.exe exec/share/connect against the same sandbox ID within a short window
   - IOC: WindowsSandboxServer.exe spawns whenever a Sandbox session starts, regardless of whether anyone connects. Lives under %ProgramFiles%\WindowsApps\MicrosoftWindows.WindowsSandbox_*\.
   - IOC: WindowsSandboxRemoteSession.exe spawns ONLY when an RDP connection to the Sandbox is established - opening a .wsb file directly auto-connects (so both processes appear), but `wsb start` alone does NOT spawn it. Its absence while WindowsSandboxServer.exe is alive means no user has connected.
-  - IOC (highest-signal for headless abuse) - WindowsSandboxServer.exe present WITHOUT WindowsSandboxRemoteSession.exe indicates a Sandbox VM is running with no interactive session. Legitimate usage almost always involves an RDP connection (because users want to use the Sandbox); a server-without-remote-session state is consistent with the `wsb exec -r System` headless attack primitive.
+  - IOC: (highest-signal for headless abuse) WindowsSandboxServer.exe present WITHOUT WindowsSandboxRemoteSession.exe indicates a Sandbox VM is running with no interactive session. Legitimate usage almost always involves an RDP connection (because users want to use the Sandbox); a server-without-remote-session state is consistent with the `wsb exec -r System` headless attack primitive.
   - IOC: vmwp.exe and vmmemWindowsSandbox spawned alongside wsb.exe activity indicate the Sandbox VM is up (vmwp is the Hyper-V worker hosting the Sandbox VM)
   - IOC: Host-side file-creation events on paths corresponding to a mapped folder, attributed to vmwp.exe (Hyper-V worker), with timestamps inside the lifetime of an active Sandbox session - empirically verified on Windows 11 24H2 via Process Monitor; this is how a sandbox-to-host cross-boundary write surfaces from host telemetry
   - IOC: Microsoft-Windows-Sandbox-Client-Diagnostics/Admin event log entries for Sandbox lifecycle events correlated with wsb.exe invocations
