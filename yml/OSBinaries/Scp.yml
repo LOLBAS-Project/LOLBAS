@@ -1,0 +1,22 @@
+---
+Name: scp.exe
+Description: Used for uploading or downloading files over ssh server.
+Author: BinFault
+Created: 2026-06-03
+Commands:
+  - Command: scp.exe -o ProxyCommand="{CMD}" {RANDOM_LOCAL_FILE_PATH} localhost:~/
+    Description: Executes specified command from scp.exe
+    Usecase: Performs execution of specified file, can be used as a defensive evasion.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\OpenSSH\scp.exe
+Detection:
+  - IOC: Command line arguments specifying execution.
+Resources:
+  - Link: https://gtfobins.org/gtfobins/scp/
+Acknowledgement:
+  - Person: BinFault
+    Handle: @binfault
