@@ -114,7 +114,7 @@ if __name__ == "__main__":
                     has_errors = True
             except Exception as e:
                 print(f"⚠️ Error processing {file_path}: {e}\n")
-                print(f"::error file={file_path},line=1,title=Processing error::Error processing file: {escaper(e)}")
+                print(f"::error file={file_path},line=1,title=Processing error::Error processing file: {escaper(str(e))}")
                 has_errors = True
 
-    sys.exit(-1 if has_errors else 0)
+    sys.exit(1 if has_errors else 0)
