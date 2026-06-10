@@ -55,10 +55,10 @@ Resources:
   - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/curl
   - Link: https://github.com/curl/curl/blob/master/lib/vauth/ntlm_sspi.c
   - Link: https://attack.mitre.org/techniques/T1187/
-Acknowledgement: 
+Acknowledgement:
   - Person: Arnim Rupp
     Handle: '@ruppde'
   - Person: Florian Roth
     Handle: '@cyb3rops'
   - Person: Jonathan Peters
-    Handle: '@cod3nym'  
+    Handle: '@cod3nym'
