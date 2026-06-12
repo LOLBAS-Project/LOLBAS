@@ -5,7 +5,7 @@ Author: Konrad 'unrooted' Klawikowski
 Created: 2026-05-28
 Commands:
   - Command: wsb start --config "<Configuration><LogonCommand><Command>{CMD}</Command></LogonCommand></Configuration>"
-    Description: 'Executes the given command in a Windows Sandbox from an inline XML configuration with an embedded `<LogonCommand>`, leaving no `.wsb` file on disk. Note: `<LogonCommand>` only fires once `WDAGUtilityAccount` actually logs in, which only happens after an RDP session is established via `wsb connect`, so this pattern opens a visible Sandbox window.
+    Description: 'Executes the given command in a Windows Sandbox from an inline XML configuration with an embedded `<LogonCommand>`, leaving no `.wsb` file on disk. Note: `<LogonCommand>` only fires once `WDAGUtilityAccount` actually logs in, which only happens after an RDP session is established via `wsb connect`, so this pattern opens a visible Sandbox window.'
     Usecase: Fileless execution of arbitrary commands in an EDR-free environment whose host-side process tree is masked by the Sandbox client binaries.
     Category: Execute
     Privileges: User
