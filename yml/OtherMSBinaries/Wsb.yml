@@ -38,6 +38,8 @@ Commands:
     Privileges: User
     MitreID: T1564.006
     OperatingSystem: Windows 11 24H2 and later
+    Tags:
+      - Execute: CMD    
 
 Full_Path:
   - Path: C:\Users\<user>\AppData\Local\Microsoft\WindowsApps\wsb.exe
