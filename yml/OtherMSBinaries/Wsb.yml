@@ -57,6 +57,8 @@ Detection:
   - IOC: Microsoft-Windows-Sandbox-Client-Diagnostics/Admin event log entries for Sandbox lifecycle events correlated with wsb.exe invocations
 
 Resources:
+  - Link: https://web.archive.org/web/20250116184008/http://blog.syscall.party/2020/12/02/weaponizing-windows-sandbox.html
+  - Link: https://github.com/LloydLabs/wsb-detect
   - Link: https://learn.microsoft.com/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-cli
   - Link: https://learn.microsoft.com/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-versions
   - Link: https://github.com/secdev02/SandBoxShenanigans
