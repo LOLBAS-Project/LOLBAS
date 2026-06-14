@@ -19,7 +19,7 @@ Commands:
   - Command: |
         wsb start --config "<Configuration><MappedFolders><MappedFolder><HostFolder>{PATH_ABSOLUTE:folder}</HostFolder><ReadOnly>false</ReadOnly></MappedFolder></MappedFolders></Configuration>"
         wsb exec -r System --id YOUR_ID -c "cmd.exe /c copy C:\users\WDAGUtilityAccount\Desktop\Temp\{PATH} {PATH}"
-    Description: "Allows the specified folder to be accessible from within the Windows Sandbox, mounted at `C:\users\WDAGUtilityAccount\Desktop` with the same folder name as the source folder. This allows, for example, for copying payloads from the host system into the sandbox, copying payloads from the sandbox back to the host system, or for accessing arbitrary host system files by the sandbox."
+    Description: 'Allows the specified folder to be accessible from within the Windows Sandbox, mounted at `C:\users\WDAGUtilityAccount\Desktop` with the same folder name as the source folder. This allows, for example, for copying payloads from the host system into the sandbox, copying payloads from the sandbox back to the host system, or for accessing arbitrary host system files by the sandbox.'
     Usecase: Fileless execution of arbitrary commands in an EDR-free environment, with access to files on the host system, while the host-side process tree is masked by the Sandbox client binaries.
     Category: Execute
     Privileges: User
