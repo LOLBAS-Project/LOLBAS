@@ -4,7 +4,9 @@ Description: Windows Sandbox command-line interface. Creates, lists, controls, a
 Author: Konrad 'unrooted' Klawikowski
 Created: 2026-05-28
 Commands:
-  - Command: wsb start --config "<Configuration><LogonCommand><Command>{CMD}</Command></LogonCommand></Configuration>"
+  - Command: |
+      wsb start --config "<Configuration><LogonCommand><Command>{CMD}</Command></LogonCommand></Configuration>"
+      wsb exec -r System --id YOUR_ID
     Description: 'Executes the given command in a Windows Sandbox from an inline XML configuration with an embedded `<LogonCommand>`, leaving no `.wsb` file on disk. Note: `<LogonCommand>` only fires once `WDAGUtilityAccount` actually logs in, which only happens after an RDP session is established via `wsb connect`, so this pattern opens a visible Sandbox window.'
     Usecase: Fileless execution of arbitrary commands in an EDR-free environment whose host-side process tree is masked by the Sandbox client binaries.
     Category: Execute
@@ -14,28 +16,27 @@ Commands:
     Tags:
       - Execute: CMD
 
-  - Command: wsb start --config "<Configuration><MappedFolders><MappedFolder><HostFolder>{HOST_PATH}</HostFolder><ReadOnly>false</ReadOnly></MappedFolder></MappedFolders><LogonCommand><Command>cmd.exe /c copy C:\users\WDAGUtilityAccount\Desktop\{folder}\{payload} {HOST_PATH}</Command></LogonCommand></Configuration>"
-    Description: 'Adds an arbitrary read-write host-folder mapping to the inline XML, then uses the LogonCommand to drop a payload from inside the sandbox back onto that host path. Same logon-trigger caveat as the previous entry: `wsb connect` (visible window) is required to fire the LogonCommand. The resulting host-side file-creation event is attributed to the Hyper-V worker (vmwp.exe) - not to wsb.exe or the calling binary - so EDR rules keyed on the writing process miss the cross-boundary write entirely.'
-    Usecase: Drop a payload to an arbitrary host filesystem location with the file-creation event's parent process chain obscured behind WindowsSandbox* binaries
+  - Command: |
+        wsb start --config "<Configuration><MappedFolders><MappedFolder><HostFolder>{PATH_ABSOLUTE:folder}</HostFolder><ReadOnly>false</ReadOnly></MappedFolder></MappedFolders></Configuration>"
+        wsb exec -r System --id YOUR_ID -c "cmd.exe /c copy C:\users\WDAGUtilityAccount\Desktop\Temp\{PATH} {PATH}" 
+    Description: "Allows the specified folder to be accessible from within the Windows Sandbox, mounted at `C:\users\WDAGUtilityAccount\Desktop` with the same folder name as the source folder. This allows, for example, for copying payloads from the host system into the sandbox, copying payloads from the sandbox back to the host system, or for accessing arbitrary host system files by the sandbox."
+    Usecase: Fileless execution of arbitrary commands in an EDR-free environment, with access to files on the host system, while the host-side process tree is masked by the Sandbox client binaries.
     Category: Execute
     Privileges: User
     MitreID: T1564.006
     OperatingSystem: Windows 11 24H2 and later
+    Tags:
+      - Execute: CMD
 
-  - Command: wsb exec --id {sandbox_id} -c {payload.exe} -r System
-    Description: 'Executes a command inside an already-running Windows Sandbox in the SYSTEM context. Unlike -r ExistingLogin, -r System does NOT require an active user session, so no `wsb connect` is needed - this is the truly headless variant of the abuse pattern. Pairing this with a prior `wsb start` (without a LogonCommand) splits the CLI-argument surface across two distinct wsb.exe invocations, so detection rules that look for `--config` with embedded `<LogonCommand>` miss the combined pattern; correlation across calls (joined on sandbox-id GUID) is required.'
-    Usecase: Execute SYSTEM-context commands inside a sandbox that is already running, separating environment setup from payload delivery
+  - Command: |
+      wsb start
+      wsb share --id YOUR_ID -f {PATH_ABSOLUTE:folder} -s c:\SOME_FOLDER --allow-write
+      wsb exec -r System --id YOUR_ID -c "cmd.exe /c copy {PATH_ABSOLUTE} c:\SOME_FOLDER"       
+    Description: 'Allows the specified folder to be accessible from within the Windows Sandbox, mounted at `c:\SOME_FOLDER`. This allows, for example, for copying payloads from the host system into the sandbox, copying payloads from the sandbox back to the host system (seen here), or for accessing arbitrary host system files by the sandbox.'
+    Usecase: Fileless execution of arbitrary commands in an EDR-free environment, with access to files on the host system, while the host-side process tree is masked by the Sandbox client binaries.
     Category: Execute
     Privileges: User
-    MitreID: T1218
-    OperatingSystem: Windows 11 24H2 and later
-
-  - Command: wsb share --id {sandbox_id} -f {HOST_PATH} -s C:\mount --allow-write
-    Description: 'Shares a host folder into a running Windows Sandbox at runtime, with --allow-write granting sandbox-to-host writes. Before the wsb.exe CLI shipped in 24H2, mapped folders could only be declared statically in the .wsb at boot time; this subcommand lets a process that has already started a sandbox dynamically grant read-write access to additional host paths post-boot, without restarting or writing a configuration file. Detection rules that scan `wsb start` configs for read-write MappedFolder blocks miss this entirely.'
-    Usecase: Dynamically extend a running sandbox's read-write host filesystem access mid-session, post-boot
-    Category: Copy
-    Privileges: User
-    MitreID: T1105
+    MitreID: T1564.006
     OperatingSystem: Windows 11 24H2 and later
 
 Full_Path:
@@ -48,7 +49,6 @@ Detection:
   - IOC: wsb.exe command line containing --config with an embedded <LogonCommand> XML element
   - IOC: wsb.exe command line invoking the share subcommand with --allow-write
   - IOC: wsb.exe command line invoking the exec subcommand with -r System
-  - IOC: Correlated pair - wsb.exe start followed by wsb.exe exec/share/connect against the same sandbox ID within a short window
   - IOC: WindowsSandboxServer.exe spawns whenever a Sandbox session starts, regardless of whether anyone connects. Lives under %ProgramFiles%\WindowsApps\MicrosoftWindows.WindowsSandbox_*\.
   - IOC: WindowsSandboxRemoteSession.exe spawns ONLY when an RDP connection to the Sandbox is established - opening a .wsb file directly auto-connects (so both processes appear), but `wsb start` alone does NOT spawn it. Its absence while WindowsSandboxServer.exe is alive means no user has connected.
   - IOC: (highest-signal for headless abuse) WindowsSandboxServer.exe present WITHOUT WindowsSandboxRemoteSession.exe indicates a Sandbox VM is running with no interactive session. Legitimate usage almost always involves an RDP connection (because users want to use the Sandbox); a server-without-remote-session state is consistent with the `wsb exec -r System` headless attack primitive.
@@ -63,3 +63,5 @@ Resources:
 
 Acknowledgement:
   - Person: Konrad 'unrooted' Klawikowski
+  - Person: Lloyd Davies
+    Twitter: '@LloydLabs'
