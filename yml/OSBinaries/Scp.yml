@@ -1,20 +1,22 @@
 ---
 Name: scp.exe
-Description: Used for uploading or downloading files over ssh server.
+Description: Used for uploading or downloading files over SSH.
 Author: BinFault
 Created: 2026-06-03
 Commands:
-  - Command: scp.exe -o ProxyCommand="{CMD}" {RANDOM_LOCAL_FILE_PATH} localhost:~/
-    Description: Executes specified command from scp.exe
-    Usecase: Performs execution of specified file, can be used as a defensive evasion.
+  - Command: scp.exe -o ProxyCommand="{CMD}" . localhost:.
+    Description: Spawns specified command from `svchost.exe` -> `sihost.exe`, even if no SSH server is running from localhost (or any other address specified).
+    Usecase: Proxy execution of specified command, can be used as a defensive evasion.
     Category: Execute
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\OpenSSH\scp.exe
 Detection:
-  - IOC: Command line arguments specifying execution.
+  - IOC: `scp.exe` executions referencing `ProxyCommand`.c
 Resources:
   - Link: https://gtfobins.org/gtfobins/scp/
 Acknowledgement:
