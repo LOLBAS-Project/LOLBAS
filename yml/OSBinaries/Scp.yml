@@ -5,7 +5,7 @@ Author: BinFault
 Created: 2026-06-03
 Commands:
   - Command: scp.exe -o ProxyCommand="{CMD}" . localhost:.
-    Description: Spawns specified command from `svchost.exe` -> `sihost.exe`, even if no SSH server is running from localhost (or any other address specified).
+    Description: Spawns specified command from `scp.exe` -> `ssh.exe`, even if no SSH server is running on localhost (or any other address specified).
     Usecase: Proxy execution of specified command, can be used as a defensive evasion.
     Category: Execute
     Privileges: User
