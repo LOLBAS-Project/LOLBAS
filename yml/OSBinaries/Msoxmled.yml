@@ -17,7 +17,7 @@ Full_Path:
   - Path: C:\Program Files\Microsoft Office\root\vfs\ProgramFilesCommonX64\Microsoft Shared\Office16\msoxmled.exe
   - Path: C:\Program Files (x86)\Common Files\Microsoft Shared\OFFICE14\msoxmled.exe
 Detection:
-  - IOC: `msoxmled.exe` making network connections to external URLs
+  - IOC: "`msoxmled.exe` making network connections to external URLs"
   - IOC: Unexpected file downloads initiated by `msoxmled.exe`
   - IOC: "Event ID 1 with Image: `msoxmled.exe` and CommandLine: `/verb open`"
 Resources:
