@@ -16,7 +16,7 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\OpenSSH\scp.exe
 Detection:
-  - IOC: `scp.exe` executions referencing `ProxyCommand`.c
+  - IOC: "`scp.exe` executions referencing `ProxyCommand`."
 Resources:
   - Link: https://gtfobins.org/gtfobins/scp/
 Acknowledgement:
