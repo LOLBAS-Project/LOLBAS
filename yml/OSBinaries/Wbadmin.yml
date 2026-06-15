@@ -21,6 +21,9 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\wbadmin.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c7998c92b3c5f23ea67045bee8ee364d2ed1a775/rules/windows/process_creation/proc_creation_win_wbadmin_dump_sensitive_files.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c7998c92b3c5f23ea67045bee8ee364d2ed1a775/rules/windows/process_creation/proc_creation_win_wbadmin_restore_file.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c7998c92b3c5f23ea67045bee8ee364d2ed1a775/rules/windows/process_creation/proc_creation_win_wbadmin_restore_sensitive_files.yml
   - IOC: wbadmin.exe command lines containing "NTDS" or "NTDS.dit"
 Resources:
   - Link: https://medium.com/r3d-buck3t/windows-privesc-with-sebackupprivilege-65d2cd1eb960

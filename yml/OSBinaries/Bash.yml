@@ -40,6 +40,15 @@ Commands:
     OperatingSystem: Windows 10
     Tags:
       - Execute: CMD
+  - Command: bash.exe
+    Description: When executed, `bash.exe` queries the registry value of `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss\MSI\InstallLocation`, which contains a folder path (`c:\program files\wsl` by default). If the value points to another folder containing a file named `wsl.exe`, it will be executed instead of the legitimate `wsl.exe` in the program files folder.
+    Usecase: Execute a payload as a child process of `bash.exe` while masquerading as WSL.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows Server 2019, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\bash.exe
   - Path: C:\Windows\SysWOW64\bash.exe
@@ -49,8 +58,10 @@ Detection:
   - IOC: Child process from bash.exe
 Resources:
   - Link: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - Link: https://cardinalops.com/blog/bash-and-switch-hijacking-via-windows-subsystem-for-linux/
 Acknowledgement:
   - Person: Alex Ionescu
     Handle: '@aionescu'
   - Person: Asif Matadar
     Handle: '@d1r4c'
+  - Person: Liran Ravich, CardinalOps

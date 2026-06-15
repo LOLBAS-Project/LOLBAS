@@ -16,6 +16,7 @@ Commands:
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\bin\<version>\x64\vshadow.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c7998c92b3c5f23ea67045bee8ee364d2ed1a775/rules/windows/process_creation/proc_creation_win_vshadow_exec.yml
   - IOC: vshadow.exe usage with -exec parameter
 Resources:
   - Link: https://learn.microsoft.com/en-us/windows/win32/vss/vshadow-tool-and-sample

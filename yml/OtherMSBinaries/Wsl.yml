@@ -38,6 +38,15 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows Server 2019, Windows 11
+  - Command: wsl.exe
+    Description: When executed, `wsl.exe` queries the registry value of `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss\MSI\InstallLocation`, which contains a folder path (`c:\program files\wsl` by default). If the value points to another folder containing a file named `wsl.exe`, it will be executed instead of the legitimate `wsl.exe` in the program files folder.
+    Usecase: Execute a payload as a child process of `bash.exe` while masquerading as WSL.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows Server 2019, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\wsl.exe
 Detection:
@@ -47,6 +56,7 @@ Detection:
 Resources:
   - Link: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
   - Link: https://twitter.com/nas_bench/status/1535431474429808642
+  - Link: https://cardinalops.com/blog/bash-and-switch-hijacking-via-windows-subsystem-for-linux/
 Acknowledgement:
   - Person: Alex Ionescu
     Handle: '@aionescu'
@@ -57,3 +67,4 @@ Acknowledgement:
   - Person: Nasreddine Bencherchali
     Handle: '@nas_bench'
   - Person: Konrad 'unrooted' Klawikowski
+  - Person: Liran Ravich, CardinalOps

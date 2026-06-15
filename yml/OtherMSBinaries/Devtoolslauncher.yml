@@ -6,11 +6,11 @@ Created: 2019-10-04
 Commands:
   - Command: devtoolslauncher.exe LaunchForDeploy {PATH_ABSOLUTE:.exe} "{CMD:args}" test
     Description: The above binary will execute other binary.
-    Usecase: Execute any binary with given arguments and it will call developertoolssvc.exe. developertoolssvc is actually executing the binary.
+    Usecase: Execute any binary with given arguments and it will call `developertoolssvc.exe`. `developertoolssvc` is actually executing the binary.
     Category: Execute
     Privileges: User
     MitreID: T1127
-    OperatingSystem: Windows 7 and up with VS/VScode installed
+    OperatingSystem: Windows
     Tags:
       - Execute: CMD
   - Command: devtoolslauncher.exe LaunchForDebug {PATH_ABSOLUTE:.exe} "{CMD:args}" test
@@ -19,7 +19,7 @@ Commands:
     Category: Execute
     Privileges: User
     MitreID: T1127
-    OperatingSystem: Windows 7 and up with VS/VScode installed
+    OperatingSystem: Windows
     Tags:
       - Execute: CMD
 Full_Path:
@@ -29,6 +29,7 @@ Detection:
   - IOC: DeveloperToolsSvc.exe spawned an unknown process
 Resources:
   - Link: https://twitter.com/_felamos/status/1179811992841797632
+  - Link: https://www.virustotal.com/gui/file/84877a507af8b70c145777a87eaf28a8327c50a1563fe650f34572bef8a42ff6/details
 Acknowledgement:
   - Person: felamos
     Handle: '@_felamos'

