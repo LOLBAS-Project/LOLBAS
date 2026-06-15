@@ -6,13 +6,7 @@ Created: 2026-04-20
 Commands:
   - Command: setupugc.exe specialize
     Description: |
-      By first setting a command to a specific registry under `Setup-Unattend-Settings`, e.g. via:
-
-      ```
-      reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\1" /v Path /d "{CMD}" /f
-      ```
-
-      Executing the following will cause it to execute the command.
+      By first setting a command to a specific registry under `Setup-Unattend-Settings`, e.g. via: ```reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\1" /v Path /d "{CMD}" /f```, executing the following will cause it to execute the command.
     Usecase: Execute binary through legitimate proxy
     Category: Execute
     Privileges: Administrator
