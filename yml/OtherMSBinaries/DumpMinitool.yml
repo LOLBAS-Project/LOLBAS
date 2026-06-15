@@ -4,7 +4,7 @@ Description: Dump tool part Visual Studio 2022
 Author: mr.d0x
 Created: 2022-01-20
 Commands:
-  - Command: DumpMinitool.exe --file c:\users\mr.d0x\dump.txt --processId 1132 --dumpType Full
+  - Command: DumpMinitool.exe --file {PATH_ABSOLUTE} --processId 1132 --dumpType Full
     Description: Creates a memory dump of the lsass process
     Usecase: Create memory dump and parse it offline
     Category: Dump

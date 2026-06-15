@@ -1,7 +1,7 @@
 ---
 Name: Bitsadmin.exe
 Description: Used for managing background intelligent transfer
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: bitsadmin /create 1 bitsadmin /addfile 1 c:\windows\system32\cmd.exe c:\data\playfolder\cmd.exe bitsadmin /SetNotifyCmdLine 1 c:\data\playfolder\1.txt:cmd.exe NULL bitsadmin /RESUME 1 bitsadmin /complete 1
@@ -35,8 +35,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\bitsadmin.exe
   - Path: C:\Windows\SysWOW64\bitsadmin.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_bitsadmin_download.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/web/proxy_generic/proxy_ua_bitsadmin_susp_tld.yml
@@ -49,6 +47,7 @@ Resources:
   - Link: https://www.slideshare.net/chrisgates/windows-attacks-at-is-the-new-black-26672679
   - Link: https://www.youtube.com/watch?v=_8xJaaQlpBo
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
+  - Link: https://www.soc-labs.top/en/detections/100
 Acknowledgement:
   - Person: Rob Fuller
     Handle: '@mubix'

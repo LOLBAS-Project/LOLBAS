@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: Node.JS
   - Command: teams.exe
     Description: Generate JavaScript payload and package.json, archive in ASAR file and save to "%LOCALAPPDATA%\\Microsoft\\Teams\\current\\app.asar" before executing.
     Usecase: Execute JavaScript code
@@ -18,13 +20,17 @@ Commands:
     Privileges: User
     MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
-  - Command: teams.exe --disable-gpu-sandbox --gpu-launcher="C:\Windows\system32\cmd.exe /c ping google.com &&"
+    Tags:
+      - Execute: Node.JS
+  - Command: teams.exe --disable-gpu-sandbox --gpu-launcher="{CMD} &&"
     Description: Teams spawns cmd.exe as a child process of teams.exe and executes the ping command
     Usecase: Executes a process under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
     MitreID: T1218.015
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: 'C:\Users\<username>\AppData\Local\Microsoft\Teams\current\Teams.exe'
 Code_Sample:

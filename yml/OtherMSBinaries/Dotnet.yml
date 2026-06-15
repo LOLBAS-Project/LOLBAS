@@ -1,23 +1,27 @@
 ---
 Name: Dotnet.exe
 Description: dotnet.exe comes with .NET Framework
-Author: 'felamos'
+Author: felamos
 Created: 2019-11-12
 Commands:
-  - Command: dotnet.exe [PATH_TO_DLL]
-    Description: dotnet.exe will execute any dll even if applocker is enabled.
+  - Command: dotnet.exe {PATH:.dll}
+    Description: dotnet.exe will execute any DLL even if applocker is enabled.
     Usecase: Execute code bypassing AWL
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with .NET installed
-  - Command: dotnet.exe [PATH_TO_DLL]
+    Tags:
+      - Execute: DLL (.NET)
+  - Command: dotnet.exe {PATH:.dll}
     Description: dotnet.exe will execute any DLL.
     Usecase: Execute DLL
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with .NET installed
+    Tags:
+      - Execute: DLL (.NET)
   - Command: dotnet.exe fsi
     Description: dotnet.exe will open a console which allows for the execution of arbitrary F# commands
     Usecase: Execute arbitrary F# code
@@ -25,13 +29,17 @@ Commands:
     Privileges: User
     MitreID: T1059
     OperatingSystem: Windows 10 and up with .NET SDK installed
-  - Command: dotnet.exe msbuild [Path_TO_XML_CSPROJ]
+    Tags:
+      - Execute: FSharp
+  - Command: dotnet.exe msbuild {PATH:.csproj}
     Description: dotnet.exe with msbuild (SDK Version) will execute unsigned code
     Usecase: Execute code bypassing AWL
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10 and up with .NET Core installed
+    Tags:
+      - Execute: CSharp
 Full_Path:
   - Path: 'C:\Program Files\dotnet\dotnet.exe'
 Detection:

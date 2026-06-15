@@ -1,28 +1,31 @@
 ---
 Name: Scriptrunner.exe
 Description: Execute binary through proxy binary to evade defensive counter measures
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: Scriptrunner.exe -appvscript calc.exe
-    Description: Executes calc.exe
+  - Command: Scriptrunner.exe -appvscript {PATH:.exe}
+    Description: Executes executable
     Usecase: Execute binary through proxy binary to evade defensive counter measures
     Category: Execute
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: ScriptRunner.exe -appvscript "\\fileserver\calc.cmd"
-    Description: Executes calc.cmd from remote server
+    Tags:
+      - Execute: EXE
+  - Command: ScriptRunner.exe -appvscript {PATH_SMB:.cmd}
+    Description: Executes cmd file from remote server
     Usecase: Execute binary through proxy binary from external server to evade defensive counter measures
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: Remote
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\scriptrunner.exe
   - Path: C:\Windows\SysWOW64\scriptrunner.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_servu_susp_child_process.yml
   - IOC: Scriptrunner.exe should not be in use unless App-v is deployed

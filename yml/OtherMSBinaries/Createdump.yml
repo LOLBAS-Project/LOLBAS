@@ -4,7 +4,7 @@ Description: Microsoft .NET Runtime Crash Dump Generator (included in .NET Core)
 Author: mr.d0x, Daniel Santos
 Created: 2022-01-20
 Commands:
-  - Command: createdump.exe -n -f dump.dmp [PID]
+  - Command: createdump.exe -n -f {PATH:.dmp} {PID}
     Description: Dump process by PID and create a minidump file. If "-f dump.dmp" is not specified, the file is created as '%TEMP%\dump.%p.dmp' where %p is the PID of the target process.
     Usecase: Dump process memory contents using PID.
     Category: Dump

@@ -4,13 +4,15 @@ Description: 64-bit FSharp (F#) Interpreter included with Visual Studio and DotN
 Author: Jimmy (@bohops)
 Created: 2021-09-26
 Commands:
-  - Command: fsi.exe c:\path\to\test.fsscript
+  - Command: fsi.exe {PATH:.fsscript}
     Description: Execute F# code via script file
     Usecase: Execute payload with Microsoft signed binary to bypass WDAC policies
     Category: AWL Bypass
     Privileges: User
     MitreID: T1059
     OperatingSystem: Windows 10 2004 (likely previous and newer versions as well)
+    Tags:
+      - Execute: FSharp
   - Command: fsi.exe
     Description: Execute F# code via interactive command line
     Usecase: Execute payload with Microsoft signed binary to bypass WDAC policies
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1059
     OperatingSystem: Windows 10 2004 (likely previous and newer versions as well)
+    Tags:
+      - Execute: FSharp
 Full_Path:
   - Path: C:\Program Files\dotnet\sdk\<version>\FSharp\fsi.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\CommonExtensions\Microsoft\FSharp\fsi.exe

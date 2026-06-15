@@ -1,0 +1,39 @@
+---
+Name: iscsicpl.exe
+Description: Microsoft iSCSI Initiator Control Panel tool
+Author: Ekitji
+Created: 2025-08-17
+Commands:
+  - Command: c:\windows\syswow64\iscsicpl.exe  # SysWOW64 binary
+    Description: c:\windows\syswow64\iscsicpl.exe has a DLL injection through `C:\Users\<username>\AppData\Local\Microsoft\WindowsApps\ISCSIEXE.dll`, resulting in UAC bypass.
+    Usecase: Execute a custom DLL via a trusted high-integrity process without a UAC prompt.
+    Category: UAC Bypass
+    Privileges: User
+    MitreID: T1548.002
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+  - Command: iscsicpl.exe  # SysWOW64/System32 binary
+    Description: Both `c:\windows\system32\iscsicpl.exe` and `c:\windows\system64\iscsicpl.exe` have UAC bypass through launching iscicpl.exe, then navigating into the Configuration tab, clicking Report, then launching your custom command.
+    Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
+    Category: UAC Bypass
+    Privileges: User
+    MitreID: T1548.002
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Application: GUI
+Full_Path:
+  - Path: c:\windows\system32\iscsicpl.exe  # UAC Bypass by breaking out from application
+  - Path: c:\windows\syswow64\iscsicpl.exe  # UAC Bypass by DLL injection and breakout from application
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/image_load/image_load_uac_bypass_iscsicpl.yml
+  - IOC: C:\Users\<username>\AppData\Local\Microsoft\WindowsApps\ISCSIEXE.dll
+  - IOC: Suspicious child process to iscsicpl.exe like cmd, powershell etc.
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows-server/storage/iscsi/iscsi-initiator-portal
+  - Link: https://github.com/hackerhouse-opensource/iscsicpl_bypassUAC
+Acknowledgement:
+  - Person: hacker.house
+  - Person: Ekitji
+    Handle: '@eki_erk'

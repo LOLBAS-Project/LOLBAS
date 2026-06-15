@@ -1,20 +1,20 @@
 ---
 Name: dnx.exe
-Description: .Net Execution environment file included with .Net.
-Author: 'Oddvar Moe'
+Description: .NET Execution environment file included with .NET.
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: dnx.exe consoleapp
-    Description: Execute C# code located in the consoleapp folder via 'Program.cs' and 'Project.json' (Note - Requires dependencies)
+  - Command: dnx.exe {PATH_ABSOLUTE:folder}
+    Description: Execute C# code located in the specified folder via 'Program.cs' and 'Project.json' (Note - Requires dependencies)
     Usecase: Local execution of C# project stored in consoleapp folder.
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: CSharp
 Full_Path:
   - Path: no default
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_dnx.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml

