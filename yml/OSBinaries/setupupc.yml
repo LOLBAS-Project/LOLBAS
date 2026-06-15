@@ -1,12 +1,12 @@
 ---
 Name: setupugc.exe
-Description: Setup Unattend Generic Command Processor used during Windows deployment
+Description: Setup Unattend Generic Command Processor used during Windows deployment.
 Author: Ang Kar Min
 Created: 2026-04-20
 Commands:
   - Command: setupugc.exe specialize
-    Description: | 
-      By first setting a command to a specific `Setup-Unattend-Settings` registry key, e.g.:
+    Description: |
+      By first setting a command to a specific registry under `Setup-Unattend-Settings`, e.g. via:
 
       ```
       reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\1" /v Path /d "{CMD}" /f
