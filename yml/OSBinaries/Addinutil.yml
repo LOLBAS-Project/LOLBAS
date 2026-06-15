@@ -1,0 +1,34 @@
+---
+Name: AddinUtil.exe
+Description: .NET Tool used for updating cache files for Microsoft Office Add-Ins.
+Author: 'Michael McKinley @MckinleyMike'
+Created: 2023-10-05
+Commands:
+  - Command: C:\Windows\Microsoft.NET\Framework\v4.0.30319\AddinUtil.exe -AddinRoot:.
+    Description: AddinUtil is executed from the directory where the 'Addins.Store' payload exists, AddinUtil will execute the 'Addins.Store' payload.
+    Usecase: Proxy execution of malicious serialized payload
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: .NetObjects
+Full_Path:
+  - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\AddinUtil.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\AddinUtil.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v3.5\AddInUtil.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v3.5\AddInUtil.exe
+Code_Sample:
+  - Code: https://gist.github.com/SILJAEUROPA/a850d476179d73df230a876944e9f3b1#file-addins-store
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_addinutil_suspicious_cmdline.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_addinutil_uncommon_child_process.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_addinutil_uncommon_cmdline.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_addinutil_uncommon_dir_exec.yml
+Resources:
+  - Link: https://www.blue-prints.blog/content/blog/posts/lolbin/addinutil-lolbas.html
+Acknowledgement:
+  - Person: Michael McKinley
+    Handle: '@MckinleyMike'
+  - Person: Tony Latteri
+    Handle: '@TheLatteri'

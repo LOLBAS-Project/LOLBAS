@@ -1,7 +1,7 @@
 ---
 Name: Pktmon.exe
 Description: Capture Network Packets on the windows 10 with October 2018 Update or later.
-Author: 'Derek Johnson'
+Author: Derek Johnson
 Created: 2020-08-12
 Commands:
   - Command: pktmon.exe start --etw
@@ -21,13 +21,10 @@ Commands:
 Full_Path:
   - Path: c:\windows\system32\pktmon.exe
   - Path: c:\windows\syswow64\pktmon.exe
-Code_Sample:
-  - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/35a7244c62820fbc5a832e50b1e224ac3a1935da/rules/windows/process_creation/proc_creation_win_lolbin_pktmon.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_pktmon.yml
   - IOC: .etl files found on system
 Resources:
   - Link: https://binar-x79.com/windows-10-secret-sniffer/
 Acknowledgement:
   - Person: Derek Johnson
-    Handle: ''

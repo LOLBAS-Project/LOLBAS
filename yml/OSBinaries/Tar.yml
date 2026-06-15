@@ -1,0 +1,48 @@
+---
+Name: Tar.exe
+Description: Used by Windows to extract and create archives.
+Author: Brian Lucero
+Created: 2023-01-30
+Commands:
+  - Command: tar -cf {PATH}:ads {PATH_ABSOLUTE:folder}
+    Description: Compress one or more files to an alternate data stream (ADS).
+    Usecase: Can be used to evade defensive countermeasures, or to hide as part of a persistence mechanism
+    Category: ADS
+    Privileges: User
+    MitreID: T1564.004
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Type: Compression
+  - Command: tar -xf {PATH}:ads
+    Description: Decompress a compressed file from an alternate data stream (ADS).
+    Usecase: Can be used to evade defensive countermeasures, or to hide as part of a persistence mechanism
+    Category: ADS
+    Privileges: User
+    MitreID: T1564.004
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Type: Compression
+  - Command: tar -xf {PATH_SMB:.tar}
+    Description: Extracts archive.tar from the remote (internal) host to the current host.
+    Usecase: Copy files
+    Category: Copy
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Type: Compression
+Full_Path:
+  - Path: C:\Windows\System32\tar.exe
+  - Path: C:\Windows\SysWOW64\tar.exe
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/e1a713d264ac072bb76b5c4e5f41315a015d3f41/rules/windows/process_creation/proc_creation_win_tar_compression.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/e1a713d264ac072bb76b5c4e5f41315a015d3f41/rules/windows/process_creation/proc_creation_win_tar_extraction.yml
+  - IOC: tar.exe extracting files from a remote host within the environment
+  - IOC: Abnormal processes spawning tar.exe
+  - IOC: tar.exe interacting with alternate data streams (ADS)
+Resources:
+  - Link: https://twitter.com/Cyber_Sorcery/status/1619819249886969856
+Acknowledgement:
+  - Person: Brian Lucero
+    Handle: '@Cyber_Sorcery'
+  - Person: Avester Fahimipour

@@ -1,0 +1,27 @@
+---
+Name: write.exe
+Description: 'Windows Write'
+Author: Michal Belzak
+Created: 2025-06-17
+Commands:
+  - Command: write.exe
+    Description: 'Executes a binary provided in default value of `HKCU\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe`.'
+    Usecase: Execute binary through legitimate proxy. This might be utilized to confuse detection solutions that rely on parent-child relationships.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11 (before 24H2)
+    Tags:
+      - Execute: EXE
+      - Requires: Registry Change
+Full_Path:
+  - Path: 'C:\Windows\write.exe'
+  - Path: 'C:\Windows\System32\write.exe'
+  - Path: 'C:\Windows\SysWOW64\write.exe'
+Detection:
+  - IOC: 'Changes to HKCU:\Software\Microsoft\Windows\CurrentVersion\App Paths\wordpad.exe'
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/registry/registry_set/registry_set_persistence_app_paths.yml
+Resources:
+  - Link: https://gist.github.com/mblzk/b8c5ff7c2bd0fb2b385cc2fdd119874b
+Acknowledgement:
+  - Person: Michal Belzak

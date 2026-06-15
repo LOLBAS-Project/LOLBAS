@@ -18,7 +18,7 @@ Code_Sample:
   - Code: https://github.com/ThunderGunExpress/BringYourOwnBuilder
 Detection:
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/960a03eaf480926ed8db464477335a713e9e6630/rules/windows/process_creation/win_pc_lobas_aspnet_compiler.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_lolbin_aspnet_compiler.yml
 Resources:
   - Link: https://ijustwannared.team/2020/08/01/the-curious-case-of-aspnet_compiler-exe/
   - Link: https://docs.microsoft.com/en-us/dotnet/api/system.web.compilation.buildprovider.generatecode?view=netframework-4.8
