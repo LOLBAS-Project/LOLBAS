@@ -6,16 +6,16 @@ Created: 2018-12-04
 Commands:
   - Command: verclsid.exe /S /C {CLSID}
     Description: Used to verify a COM object before it is instantiated by Windows Explorer
-    Usecase: Run a com object created in registry to evade defensive counter measures
+    Usecase: Run a COM object created in registry to evade defensive counter measures
     Category: Execute
     Privileges: User
     MitreID: T1218.012
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: COM
 Full_Path:
   - Path: C:\Windows\System32\verclsid.exe
   - Path: C:\Windows\SysWOW64\verclsid.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_verclsid_runs_com.yml
   - Splunk: https://github.com/splunk/security_content/blob/a1afa0fa605639cbef7d528dec46ce7c8112194a/detections/endpoint/verclsid_clsid_execution.yml

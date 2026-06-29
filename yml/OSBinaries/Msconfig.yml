@@ -1,7 +1,7 @@
 ---
 Name: Msconfig.exe
 Description: MSConfig is a troubleshooting tool which is used to temporarily disable or re-enable software, device drivers or Windows services that run during startup process to help the user determine the cause of a problem with Windows
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
   - Command: Msconfig.exe -5
@@ -11,6 +11,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\msconfig.exe
 Code_Sample:

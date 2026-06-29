@@ -1,10 +1,10 @@
 ---
 Name: Colorcpl.exe
 Description: Binary that handles color management
-Author: 'Arjan Onwezen'
+Author: Arjan Onwezen
 Created: 2023-06-26
 Commands:
-  - Command: colorcpl file.txt
+  - Command: colorcpl {PATH}
     Description: Copies the referenced file to C:\Windows\System32\spool\drivers\color\.
     Usecase: Copies file(s) to a subfolder of a generally trusted folder (c:\Windows\System32), which can be used to hide files or make them blend into the environment.
     Category: Copy

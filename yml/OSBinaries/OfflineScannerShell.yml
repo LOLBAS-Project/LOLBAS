@@ -11,6 +11,8 @@ Commands:
     Privileges: Administrator
     MitreID: T1218
     OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Program Files\Windows Defender\Offline\OfflineScannerShell.exe
 Detection:

