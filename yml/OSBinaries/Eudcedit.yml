@@ -1,0 +1,26 @@
+---
+Name: Eudcedit.exe
+Description: Private Character Editor Windows Utility
+Author: Matan Bahar
+Created: 2025-08-07
+Commands:
+  - Command: eudcedit
+    Description: Once executed, the Private Charecter Editor will be opened - click OK, then click File -> Font Links. In the next window choose the option "Link with Selected Fonts" and click on Save As, then in the opened enter the command you want to execute.
+    Usecase: Execute a binary or script as a high-integrity process without a UAC prompt.
+    Category: UAC Bypass
+    Privileges: Administrator
+    MitreID: T1548.002
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
+      - Application: GUI
+Full_Path:
+  - Path: c:\windows\system32\eudcedit.exe
+  - Path: c:\windows\syswow64\eudcedit.exe
+Detection:
+  - IOC: Processes spawned by eudcedit.exe.
+Resources:
+  - Link: https://medium.com/@matanb707/windows-fonts-exploitation-in-2025-bypassing-uac-with-eudcedit-915599705639
+Acknowledgement:
+  - Person: Matan Bahar
+    Handle: '@Bl4ckShad3'

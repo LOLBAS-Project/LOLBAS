@@ -1,30 +1,39 @@
 ---
 Name: Control.exe
 Description: Binary used to launch controlpanel items in Windows
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: control.exe c:\windows\tasks\file.txt:evil.dll
+  - Command: control.exe {PATH_ABSOLUTE}:evil.dll
     Description: Execute evil.dll which is stored in an Alternate Data Stream (ADS).
     Usecase: Can be used to evade defensive countermeasures or to hide as a persistence mechanism
     Category: ADS
     Privileges: User
     MitreID: T1218.002
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+  - Command: control.exe {PATH_ABSOLUTE:.cpl}
+    Description: Execute .cpl file. A CPL is a DLL file with CPlApplet export function)
+    Usecase: Use to execute code and bypass application whitelisting
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.002
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Windows\System32\control.exe
   - Path: C:\Windows\SysWOW64\control.exe
-Code_Sample:
-- Code:
 Detection:
- - Sigma: https://github.com/SigmaHQ/sigma/blob/e8b633f54fce88e82b1c3d5e7c7bfa7d3d0beee7/rules/windows/process_creation/win_susp_control_cve_2021_40444.yml
- - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_control_dll_load.yml
- - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
- - Elastic: https://github.com/elastic/detection-rules/blob/0875c1e4c4370ab9fbf453c8160bb5abc8ad95e7/rules/windows/defense_evasion_execution_control_panel_suspicious_args.toml
- - Elastic: https://github.com/elastic/detection-rules/blob/61afb1c1c0c3f50637b1bb194f3e6fb09f476e50/rules/windows/defense_evasion_unusual_dir_ads.toml
- - IOC: Control.exe executing files from alternate data streams
- - IOC: Control.exe executing library file without cpl extension 
- - IOC: Suspicious network connections from control.exe
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules-emerging-threats/2021/Exploits/CVE-2021-40444/proc_creation_win_exploit_cve_2021_40444.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_rundll32_susp_control_dll_load.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
+  - Elastic: https://github.com/elastic/detection-rules/blob/0875c1e4c4370ab9fbf453c8160bb5abc8ad95e7/rules/windows/defense_evasion_execution_control_panel_suspicious_args.toml
+  - Elastic: https://github.com/elastic/detection-rules/blob/61afb1c1c0c3f50637b1bb194f3e6fb09f476e50/rules/windows/defense_evasion_unusual_dir_ads.toml
+  - IOC: Control.exe executing files from alternate data streams
+  - IOC: Control.exe executing library file without cpl extension
+  - IOC: Suspicious network connections from control.exe
 Resources:
   - Link: https://pentestlab.blog/2017/05/24/applocker-bypass-control-panel/
   - Link: https://www.contextis.com/resources/blog/applocker-bypass-registry-key-manipulation/
@@ -34,4 +43,3 @@ Resources:
 Acknowledgement:
   - Person: Jimmy
     Handle: '@bohops'
----

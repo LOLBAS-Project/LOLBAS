@@ -1,0 +1,34 @@
+---
+Name: Launch-VsDevShell.ps1
+Description: Locates and imports a Developer PowerShell module and calls the Enter-VsDevShell cmdlet
+Author: 'Nasreddine Bencherchali'
+Created: 2022-06-13
+Commands:
+  - Command: 'powershell -ep RemoteSigned -f .\Launch-VsDevShell.ps1 -VsWherePath {PATH_ABSOLUTE:.exe}'
+    Description: Execute binaries from the context of the signed script using the "VsWherePath" flag.
+    Usecase: Proxy execution
+    Category: Execute
+    Privileges: User
+    MitreID: T1216
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+  - Command: 'powershell -ep RemoteSigned -f .\Launch-VsDevShell.ps1 -VsInstallationPath "/../../../../../; {PATH:.exe} ;"'
+    Description: Execute binaries and commands from the context of the signed script using the "VsInstallationPath" flag.
+    Usecase: Proxy execution
+    Category: Execute
+    Privileges: User
+    MitreID: T1216
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\Launch-VsDevShell.ps1
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6199a703221a98ae6ad343c79c558da375203e4e/rules/windows/process_creation/proc_creation_win_lolbin_launch_vsdevshell.yml
+Resources:
+  - Link: https://twitter.com/nas_bench/status/1535981653239255040
+Acknowledgement:
+  - Person: Nasreddine Bencherchali
+    Handle: '@nas_bench'

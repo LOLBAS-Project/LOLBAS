@@ -4,12 +4,16 @@ yaml-files:
   - '*.yml'
 rules:
   new-line-at-end-of-file:
-    level: warning
+    level: error
   trailing-spaces:
-    level: warning
+    level: error
   line-length:
+    max: 1000
     level: warning
   new-lines:
-    level: warning
+    level: error
   indentation:
-    level: warning
+    level: error
+  document-start:
+    present: true
+    level: error

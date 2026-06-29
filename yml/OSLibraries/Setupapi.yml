@@ -1,23 +1,27 @@
 ---
 Name: Setupapi.dll
 Description: Windows Setup Application Programming Interface
-Author:
-Created: '2018-05-25'
+Author: LOLBAS Team
+Created: 2018-05-25
 Commands:
-  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\Tools\shady.inf
+  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 {PATH_ABSOLUTE:.inf}
     Description: Execute the specified (local or remote) .wsh/.sct script with scrobj.dll in the .inf file by calling an information file directive (section name specified).
-    UseCase: Run local or remote script(let) code through INF file specification.
+    Usecase: Run local or remote script(let) code through INF file specification.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1218.011
-    OperatingSystem: Windows
-  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 C:\\Tools\\calc_exe.inf
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: INF
+  - Command: rundll32.exe setupapi.dll,InstallHinfSection DefaultInstall 128 {PATH_ABSOLUTE:.inf}
     Description: Launch an executable file via the InstallHinfSection function and .inf file section directive.
-    UseCase: Load an executable payload.
+    Usecase: Load an executable payload.
     Category: Execute
     Privileges: User
     MitreID: T1218.011
     OperatingSystem: Windows
+    Tags:
+      - Execute: INF
 Full_Path:
   - Path: c:\windows\system32\setupapi.dll
   - Path: c:\windows\syswow64\setupapi.dll
@@ -27,8 +31,8 @@ Code_Sample:
   - Code: https://gist.githubusercontent.com/enigma0x3/469d82d1b7ecaf84f4fb9e6c392d25ba/raw/6cb52b88bcc929f5555cd302d9ed848b7e407052/Backdoor-Minimalist.sct
   - Code: https://gist.githubusercontent.com/bohops/0cc6586f205f3691e04a1ebf1806aabd/raw/baf7b29891bb91e76198e30889fbf7d6642e8974/calc_exe.inf
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_setupapi_installhinfsection.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_rundll32_activity.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_rundll32_setupapi_installhinfsection.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml
   - Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/detect_rundll32_application_control_bypass___setupapi.yml
 Resources:
   - Link: https://github.com/huntresslabs/evading-autoruns
@@ -43,4 +47,3 @@ Acknowledgement:
     Handle: '@subTee'
   - Person: Nick Carr (Threat Intel)
     Handle: '@ItsReallyNick'
----

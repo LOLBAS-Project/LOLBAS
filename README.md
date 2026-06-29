@@ -1,3 +1,12 @@
+<p align="center">
+    <a href="https://github.com/LOLBAS-Project/LOLBAS/actions/workflows/yaml-linting.yml/badge.svg?branch=master">
+        <img src="https://img.shields.io/github/actions/workflow/status/LOLBAS-Project/LOLBAS/yaml-linting.yml?branch=master" /></a>
+    <a href="https://github.com/LOLBAS-Project/LOLBAS">
+        <img src="https://lolbas-project.github.io/assets/lolbas-count.svg" /></a>
+    <a href="https://github.com/LOLBAS-Project/LOLBAS/stargazers">
+        <img src="https://img.shields.io/github/stars/LOLBAS-Project/LOLBAS?style=social" /></a>
+</p>
+
 # Living Off The Land Binaries and Scripts (and now also Libraries)
 
 <img src="https://github.com/api0cradle/LOLBAS/raw/master/Logo/LOLBAS.png" height="250">
@@ -38,6 +47,8 @@ Interesting functionality can include:
 * Log evasion/modification
 * DLL side-loading/hijacking without being relocated elsewhere in the filesystem.
 
+We do not approve binaries that allows for netntlm coercing, since most Windows binaries allows for that. Only exception is binaries that allows that on other than default ports (such as rpcping) or can allow direct credential theft. 
+
 ## Contributing
 
 If you have found a new LOLBin or LOLScript that you would like to contribute, please review the contributing guidelines located here: https://github.com/LOLBAS-Project/LOLBAS/blob/master/CONTRIBUTING.md
@@ -72,6 +83,7 @@ The following folks help maintain the LOLBAS Project on their personal time:
 * Chris 'Lopi' Spehn ([@ConsciousHacker](https://twitter.com/ConsciousHacker))
 * Liam ([@liamsomerville](https://twitter.com/liamsomerville))
 * Wietze ([@Wietze](https://twitter.com/@Wietze))
+* Jose Hernandez ([@_josehelps](https://twitter.com/_josehelps))
 
 ## Thanks
 

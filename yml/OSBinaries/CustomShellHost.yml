@@ -1,0 +1,26 @@
+---
+Name: CustomShellHost.exe
+Description: A host process that is used by custom shells when using Windows in Kiosk mode.
+Author: Wietze Beukema
+Created: 2021-11-14
+Commands:
+  - Command: CustomShellHost.exe
+    Description: Executes explorer.exe (with command-line argument /NoShellRegistrationCheck) if present in the current working folder.
+    Usecase: Can be used to evade defensive counter-measures
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: C:\Windows\System32\CustomShellHost.exe
+Detection:
+  - IOC: CustomShellHost.exe is unlikely to run on normal workstations
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff5102832031425f6eed011dd3a2e62653008c94/rules/windows/process_creation/proc_creation_win_lolbin_customshellhost.yml
+Resources:
+  - Link: https://twitter.com/YoSignals/status/1381353520088113154
+  - Link: https://docs.microsoft.com/en-us/windows/configuration/kiosk-shelllauncher
+Acknowledgement:
+  - Person: John Carroll
+    Handle: '@YoSignals'

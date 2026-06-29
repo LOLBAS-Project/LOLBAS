@@ -1,30 +1,32 @@
 ---
 Name: Jsc.exe
-Description: Binary file used by .NET to compile javascript code to .exe or .dll format
-Author: 'Oddvar Moe'
+Description: Binary file used by .NET to compile JavaScript code to .exe or .dll format
+Author: Oddvar Moe
 Created: 2019-05-31
 Commands:
-  - Command: jsc.exe scriptfile.js
-    Description: Use jsc.exe to compile javascript code stored in scriptfile.js and output scriptfile.exe.
+  - Command: jsc.exe {PATH:.js}
+    Description: Use jsc.exe to compile JavaScript code stored in the provided .JS file and generate a .EXE file with the same name.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
     Category: Compile
     Privileges: User
     MitreID: T1127
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: jsc.exe /t:library Library.js
-    Description: Use jsc.exe to compile javascript code stored in Library.js and output Library.dll.
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: JScript
+  - Command: jsc.exe /t:library {PATH:.js}
+    Description: Use jsc.exe to compile JavaScript code stored in the .JS file and generate a DLL file with the same name.
     Usecase: Compile attacker code on system. Bypass defensive counter measures.
     Category: Compile
     Privileges: User
     MitreID: T1127
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: JScript
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\Jsc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Jsc.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Jsc.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\Jsc.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/35a7244c62820fbc5a832e50b1e224ac3a1935da/rules/windows/process_creation/proc_creation_win_lolbin_jsc.yml
   - IOC: Jsc.exe should normally not run a system unless it is used for development.
@@ -34,4 +36,3 @@ Resources:
 Acknowledgement:
   - Person: Malwrologist
     Handle: '@DissectMalware'
----

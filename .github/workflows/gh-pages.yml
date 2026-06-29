@@ -1,25 +1,25 @@
 ---
 name: Update LOLBAS-Project.github.io
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - "yml/**.yml"
+  workflow_run:
+    workflows: ["PUSH & PULL REQUEST - YAML Lint and Schema Validation Checks"]
+    types: [completed]
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.fork == false
+    if: ${{ github.event.repository.fork == false && github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v2
 
       - name: Change .yml to .md
         run: |
-          for x in $(find yml/ -name '*.yml'); do mv "$x" "${x/%\.yml/.md}"; done
+          for x in $(find yml/ -name '*.yml'); do echo "---" >> "$x"; mv "$x" "${x/%\.yml/.md}"; done
           mv yml/OSBinaries yml/Binaries
           mv yml/OSLibraries yml/Libraries
           mv yml/OSScripts yml/Scripts
+          rm -r yml/HonorableMentions
 
       - name: Deploy to LOLBAS-Project.github.io repo
         uses: peaceiris/actions-gh-pages@v3

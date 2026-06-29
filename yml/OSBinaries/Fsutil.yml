@@ -1,0 +1,48 @@
+---
+Name: Fsutil.exe
+Description: File System Utility
+Author: Elliot Killick
+Created: 2021-08-16
+Commands:
+  - Command: fsutil.exe file setZeroData offset=0 length=9999999999 {PATH_ABSOLUTE}
+    Description: Zero out a file
+    Usecase: Can be used to forensically erase a file
+    Category: Tamper
+    Privileges: User
+    MitreID: T1485
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: 'fsutil.exe usn deletejournal /d c:'
+    Description: Delete the USN journal volume to hide file creation activity
+    Usecase: Can be used to hide file creation activity
+    Category: Tamper
+    Privileges: User
+    MitreID: T1485
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+  - Command: fsutil.exe trace decode
+    Description: Executes a pre-planted binary named netsh.exe from the current directory.
+    Usecase: Spawn a pre-planted executable from fsutil.exe.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 11
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: C:\Windows\System32\fsutil.exe
+  - Path: C:\Windows\SysWOW64\fsutil.exe
+Detection:
+  - IOC: fsutil.exe should not be run on a normal workstation
+  - IOC: file setZeroData (not case-sensitive) in the process arguments
+  - IOC: Sysmon Event ID 1
+  - IOC: Execution of process fsutil.exe with trace decode could be suspicious
+  - IOC: Non-Windows netsh.exe execution
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/ff5102832031425f6eed011dd3a2e62653008c94/rules/windows/process_creation/proc_creation_win_susp_fsutil_usage.yml
+Resources:
+  - Link: https://twitter.com/0gtweet/status/1720724516324704404
+Acknowledgement:
+  - Person: Elliot Killick
+    Handle: '@elliotkillick'
+  - Person: Jimmy
+    Handle: '@bohops'
+  - Person: Grzegorz Tworek
+    Handle: '@0gtweet'

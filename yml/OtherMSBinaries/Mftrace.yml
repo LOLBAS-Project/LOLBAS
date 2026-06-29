@@ -1,34 +1,27 @@
 ---
 Name: Mftrace.exe
 Description: Trace log generation tool for Media Foundation Tools.
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: Mftrace.exe cmd.exe
-    Description: Launch cmd.exe as a subprocess of Mftrace.exe.
+  - Command: Mftrace.exe {PATH:.exe}
+    Description: Launch specified executable as a subprocess of Mftrace.exe.
     Usecase: Local execution of cmd.exe as a subprocess of Mftrace.exe.
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
-  - Command: Mftrace.exe powershell.exe
-    Description: Launch cmd.exe as a subprocess of Mftrace.exe.
-    Usecase: Local execution of powershell.exe as a subprocess of Mftrace.exe.
-    Category: Execute
-    Privileges: User
-    MitreID: T1127
-    OperatingSystem: Windows
+    Tags:
+      - Execute: EXE
 Full_Path:
-  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x86
-  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x64
-  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x86
-  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x64
-Code_Sample:
-  - Code:
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x86\mftrace.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.16299.0\x64\mftrace.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x86\mftrace.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\bin\x64\mftrace.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/19396788dbedc57249a46efed2bb1927abc376d4/rules/windows/process_creation/proc_creation_win_lolbin_mftrace.yml
 Resources:
   - Link: https://twitter.com/0rbz_/status/988911181422186496
 Acknowledgement:
   - Person: fabrizio
     Handle: '@0rbz_'
----
