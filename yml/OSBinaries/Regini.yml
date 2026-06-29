@@ -1,10 +1,10 @@
 ---
 Name: Regini.exe
 Description: Used to manipulate the registry
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2020-07-03
 Commands:
-  - Command: regini.exe newfile.txt:hidden.ini
+  - Command: regini.exe {PATH}:hidden.ini
     Description: Write registry keys from data inside the Alternate data stream.
     Usecase: Write to registry
     Category: ADS
@@ -14,8 +14,6 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\regini.exe
   - Path: C:\Windows\SysWOW64\regini.exe
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_regini_ads.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_regini_execution.yml

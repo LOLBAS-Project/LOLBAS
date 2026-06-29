@@ -11,6 +11,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: EXE
   - Command: stordiag.exe
     Description: Once executed, Stordiag.exe will execute schtasks.exe and powershell.exe - if stordiag.exe is copied to a folder and an arbitrary executable is renamed to one of these names, stordiag.exe will execute it.
     Usecase: Possible defence evasion purposes.
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: c:\windows\system32\stordiag.exe
   - Path: c:\windows\syswow64\stordiag.exe

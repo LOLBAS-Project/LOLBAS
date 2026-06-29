@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Check file extensions
         run: |
           files=$(find "$GITHUB_WORKSPACE/yml" -type f -not -name "*.yml");
@@ -17,6 +18,7 @@ jobs:
             exit 1;
           fi
           unset files
+
       - name: Check duplicate file names
         run: |
           files=$(find "$GITHUB_WORKSPACE/yml/OSBinaries" "$GITHUB_WORKSPACE/yml/OtherMSBinaries" -type f -printf '%h %f\n' -iname "*.yml" | sort -t ' ' -k 2,2 -f | uniq -i -f 1 --all-repeated=separate | tr ' ' '/')
@@ -26,34 +28,12 @@ jobs:
             exit 1;
           fi
           unset files
-      - name: yaml-lint
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          no_warnings: true
-          file_or_dir: yml/**/*.yml
-          config_file: .github/.yamllint
-      - name: Validate Template Schema
-        uses: cketti/action-pykwalify@v0.3-temp-fix
-        with:
-          files: YML-Template.yml
-          schema: YML-Schema.yml
-      - name: Validate OSBinaries YAML Schema
-        uses: cketti/action-pykwalify@v0.3-temp-fix
-        with:
-          files: yml/OSBinaries/*.yml
-          schema: YML-Schema.yml
-      - name: Validate OSLibraries YAML Schema
-        uses: cketti/action-pykwalify@v0.3-temp-fix
-        with:
-          files: yml/OSLibraries/*.yml
-          schema: YML-Schema.yml
-      - name: Validate OSScripts YAML Schema
-        uses: cketti/action-pykwalify@v0.3-temp-fix
-        with:
-          files: yml/OSScripts/*.yml
-          schema: YML-Schema.yml
-      - name: Validate OtherMSBinaries YAML Schema
-        uses: cketti/action-pykwalify@v0.3-temp-fix
-        with:
-          files: yml/OtherMSBinaries/*.yml
-          schema: YML-Schema.yml
+
+      - name: Install python dependencies
+        run: pip install yamllint==1.37.1 pydantic==2.11.9
+
+      - name: Lint YAML files
+        run: yamllint -c .github/.yamllint yml/**/
+
+      - name: Validate YAML schemas
+        run: python3 .github/workflows/validation.py

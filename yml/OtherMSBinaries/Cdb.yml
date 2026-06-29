@@ -4,29 +4,35 @@ Description: Debugging tool included with Windows Debugging Tools.
 Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: cdb.exe -cf x64_calc.wds -o notepad.exe
-    Description: Launch 64-bit shellcode from the x64_calc.wds file using cdb.exe.
+  - Command: cdb.exe -cf {PATH:.wds} -o notepad.exe
+    Description: Launch 64-bit shellcode from the specified .wds file using cdb.exe.
     Usecase: Local execution of assembly shellcode.
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: Shellcode
   - Command: |
-      cdb.exe -pd -pn <process_name>
-      .shell <cmd>
+      cdb.exe -pd -pn {process_name}
+      .shell {CMD}
     Description: Attaching to any process and executing shell commands.
     Usecase: Run a shell command under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
-  - Command: cdb.exe -c C:\debug-script.txt calc
+    Tags:
+      - Execute: CMD
+  - Command: cdb.exe -c {PATH:.txt} "{CMD}"
     Description: Execute arbitrary commands and binaries using a debugging script (see Resources section for a sample file).
     Usecase: Run commands under a trusted Microsoft signed binary
     Category: Execute
     Privileges: User
     MitreID: T1127
     OperatingSystem: Windows
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\cdb.exe
   - Path: C:\Program Files (x86)\Windows Kits\10\Debuggers\x86\cdb.exe

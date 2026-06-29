@@ -1,24 +1,24 @@
 ---
 Name: CL_Mutexverifiers.ps1
 Description: Proxy execution with CL_Mutexverifiers.ps1
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: . C:\Windows\diagnostics\system\AERO\CL_Mutexverifiers.ps1   \nrunAfterCancelProcess calc.ps1
+  - Command: . C:\Windows\diagnostics\system\AERO\CL_Mutexverifiers.ps1   \nrunAfterCancelProcess {PATH:.ps1}
     Description: Import the PowerShell Diagnostic CL_Mutexverifiers script and call runAfterCancelProcess to launch an executable.
     Usecase: Proxy execution
     Category: Execute
     Privileges: User
     MitreID: T1216
     OperatingSystem: Windows 10
+    Tags:
+      - Execute: PowerShell
 Full_Path:
   - Path: C:\Windows\diagnostics\system\WindowsUpdate\CL_Mutexverifiers.ps1
   - Path: C:\Windows\diagnostics\system\Audio\CL_Mutexverifiers.ps1
   - Path: C:\Windows\diagnostics\system\WindowsUpdate\CL_Mutexverifiers.ps1
   - Path: C:\Windows\diagnostics\system\Video\CL_Mutexverifiers.ps1
   - Path: C:\Windows\diagnostics\system\Speech\CL_Mutexverifiers.ps1
-Code_Sample:
-  - Code:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_cl_mutexverifiers.yml
 Resources:

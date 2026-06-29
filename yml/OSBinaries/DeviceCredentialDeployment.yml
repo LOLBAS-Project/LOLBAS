@@ -1,8 +1,8 @@
 ---
 Name: DeviceCredentialDeployment.exe
 Description: Device Credential Deployment
-Author: 'Elliot Killick'
-Created: '2021-08-16'
+Author: Elliot Killick
+Created: 2021-08-16
 Commands:
   - Command: DeviceCredentialDeployment
     Description: Grab the console window handle and set it to hidden

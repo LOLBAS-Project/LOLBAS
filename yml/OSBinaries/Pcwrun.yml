@@ -1,16 +1,18 @@
 ---
 Name: Pcwrun.exe
 Description: Program Compatibility Wizard
-Author: 'Oddvar Moe'
+Author: Oddvar Moe
 Created: 2018-05-25
 Commands:
-  - Command: Pcwrun.exe c:\temp\beacon.exe
+  - Command: Pcwrun.exe {PATH_ABSOLUTE:.exe}
     Description: Open the target .EXE file with the Program Compatibility Wizard.
     Usecase: Proxy execution of binary
     Category: Execute
     Privileges: User
     MitreID: T1218
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
   - Command: Pcwrun.exe /../../$(calc).exe
     Description: Leverage the MSDT follina vulnerability through Pcwrun to execute arbitrary commands and binaries. Note that this specific technique will not work on a patched system with the June 2022 Windows Security update.
     Usecase: Proxy execution of binary
@@ -18,6 +20,8 @@ Commands:
     Privileges: User
     MitreID: T1202
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
 Full_Path:
   - Path: C:\Windows\System32\pcwrun.exe
 Detection:

