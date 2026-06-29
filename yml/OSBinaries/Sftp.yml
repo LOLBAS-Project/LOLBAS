@@ -13,6 +13,15 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: CMD
+  - Command: sftp -D "{CMD}"
+    Description: "Spawns ssh.exe which in turn spawns the specified command line. See also this project's entry for ssh.exe."
+    Usecase: Proxy execution of specified command, can be used as a defensive evasion.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: C:\Windows\System32\OpenSSH\sftp.exe
 Detection:
@@ -24,3 +33,5 @@ Resources:
 Acknowledgement:
   - Person: Swachchhanda Shrawan Poudel
     Handle: '@_swachchhanda_'
+  - Person: 'Nir Chako (Pentera)'
+    Handle: '@C_h4ck_0'

@@ -1,0 +1,38 @@
+---
+Name: setupugc.exe
+Description: Setup Unattend Generic Command Processor used during Windows deployment.
+Author: Ang Kar Min
+Created: 2026-04-20
+Commands:
+  - Command: setupugc.exe specialize
+    Description: |
+      By first setting a command to a specific registry under `Setup-Unattend-Settings`, e.g. via: `reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\1" /v Path /d "{CMD}" /f`, executing the following will cause it to execute the command.
+    Usecase: Execute binary through legitimate proxy
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2025
+    Tags:
+      - Execute: CMD
+      - Requires: Registry Change
+  - Command: setupugc.exe auditUser
+    Description: Same technique as above, but using the `auditUser` command-line option.
+    Usecase: Execute binary through legitimate proxy
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2025
+    Tags:
+      - Execute: CMD
+      - Requires: Registry Change
+Full_Path:
+  - Path: C:\Windows\System32\setupugc.exe
+  - Path: C:\Windows\SysWOW64\setupugc.exe
+Detection:
+  - IOC: "`setupugc.exe` spawning child processes outside of Windows Setup context. Legitimate parents are `setuphost.exe` or `setup.exe`."
+  - IOC: Registry writes to `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Setup-Unattend-Settings\RunSynchronous\` on a deployed system.
+Resources:
+  - Link: https://strontic.github.io/xcyclopedia/library/setupugc.exe-3CFE082E8656AD66B5B9FFEB28CF4EC3.html
+Acknowledgement:
+  - Person: Ang Kar Min
+    Handle: '@karminang'
