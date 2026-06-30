@@ -20,6 +20,9 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_at_interactive_execution.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/network/zeek/zeek_smb_converted_win_atsvc_task.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/builtin/security/win_security_atsvc_task.yml
+  - Splunk: https://research.splunk.com/endpoint/7bc20606-5f40-11ec-a586-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/4be54858-432f-11ec-8209-3e22fbd008af/
+  - Splunk: https://research.splunk.com/endpoint/bf0a378e-5f3c-11ec-a6de-acde48001122/
   - IOC: C:\Windows\System32\Tasks\At1 (substitute 1 with subsequent number of at job)
   - IOC: C:\Windows\Tasks\At1.job
   - IOC: Registry Key - Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\At1.

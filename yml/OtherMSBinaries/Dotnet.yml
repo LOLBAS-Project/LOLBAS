@@ -45,6 +45,7 @@ Full_Path:
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_dotnet.yml
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - Splunk: https://research.splunk.com/endpoint/fddf3b56-7933-11ec-98a6-acde48001122/
   - IOC: dotnet.exe spawned an unknown process
 Resources:
   - Link: https://twitter.com/_felamos/status/1204705548668555264

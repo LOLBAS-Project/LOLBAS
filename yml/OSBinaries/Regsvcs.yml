@@ -31,6 +31,9 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_lolbin_regasm.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/execution_register_server_program_connecting_to_the_internet.toml
   - Splunk: https://github.com/splunk/security_content/blob/bee2a4cefa533f286c546cbe6798a0b5dec3e5ef/detections/endpoint/detect_regsvcs_with_network_connection.yml
+  - Splunk: https://research.splunk.com/endpoint/e3e7a1c0-f2b9-445c-8493-f30a63522d1a/
+  - Splunk: https://research.splunk.com/endpoint/6b74d578-a02e-4e94-a0d1-39440d0bf254/
+  - Splunk: https://research.splunk.com/endpoint/bc477b57-5c21-4ab6-9c33-668772e7f114/
 Resources:
   - Link: https://pentestlab.blog/2017/05/19/applocker-bypass-regasm-and-regsvcs/
   - Link: https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/

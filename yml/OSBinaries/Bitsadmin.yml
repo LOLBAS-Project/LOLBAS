@@ -40,6 +40,7 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/web/proxy_generic/proxy_ua_bitsadmin_susp_tld.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_bitsadmin_potential_persistence.yml
   - Splunk: https://github.com/splunk/security_content/blob/3f77e24974239fcb7a339080a1a483e6bad84a82/detections/endpoint/bitsadmin_download_file.yml
+  - Splunk: https://research.splunk.com/endpoint/80630ff4-8e4c-11eb-aab5-acde48001122/
   - IOC: Child process from bitsadmin.exe
   - IOC: bitsadmin creates new files
   - IOC: bitsadmin adds data to alternate data stream
