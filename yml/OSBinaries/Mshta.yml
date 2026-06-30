@@ -71,6 +71,13 @@ Detection:
   - Splunk: https://github.com/splunk/security_content/blob/18f63553a9dc1a34122fa123deae2b2f9b9ea391/detections/endpoint/suspicious_mshta_child_process.yml
   - Splunk: https://github.com/splunk/security_content/blob/bee2a4cefa533f286c546cbe6798a0b5dec3e5ef/detections/endpoint/detect_mshta_url_in_command_line.yml
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - Splunk: https://research.splunk.com/endpoint/a0873b32-5b68-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/8f45fcf0-5b68-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/9b3af1e6-5b68-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/60023bb6-5500-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/4d33a488-5b5f-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/4aa5d062-e893-11eb-9eb2-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/e13ceade-b673-4d34-adc4-4d9c01729753/
   - IOC: mshta.exe executing raw or obfuscated script within the command-line
   - IOC: General usage of HTA file
   - IOC: msthta.exe network connection to Internet/WWW resource
