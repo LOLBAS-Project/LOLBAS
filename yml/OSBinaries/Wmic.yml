@@ -59,6 +59,16 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: WMIC.exe /Namespace:\\\\root\\SecurityCenter2 Path AntiVirusProduct Get displayName,productState
+    Description: Executes WMIC to gather the existing Antivirus or EDR solution installed on the machine.
+    Usecase: Recon
+    Category: Execute
+    Privileges: User
+    MitreID: T1518.001
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: Discovery
+      - Execute: Antivirus Enumeration
 Full_Path:
   - Path: C:\Windows\System32\wbem\wmic.exe
   - Path: C:\Windows\SysWOW64\wbem\wmic.exe
@@ -83,6 +93,7 @@ Resources:
   - Link: https://stackoverflow.com/questions/24658745/wmic-how-to-use-process-call-create-with-a-specific-working-directory
   - Link: https://subt0x11.blogspot.no/2018/04/wmicexe-whitelisting-bypass-hacking.html
   - Link: https://twitter.com/subTee/status/986234811944648707
+  - Link: https://research.kudelskisecurity.com/2025/04/30/unmasking-blackbasta-inside-the-ransomware-syndicates-leaked-operations/
 Acknowledgement:
   - Person: Casey Smith
     Handle: '@subtee'
