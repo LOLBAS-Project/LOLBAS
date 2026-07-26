@@ -31,7 +31,7 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: DLL
-      - Execute: Remote      
+      - Execute: Remote
 Full_Path:
   - Path: c:\windows\system32\OpenSSH\ssh.exe
 Detection:
