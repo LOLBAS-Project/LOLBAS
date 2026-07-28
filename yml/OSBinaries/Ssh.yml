@@ -34,6 +34,8 @@ Commands:
       - Execute: Remote
 Full_Path:
   - Path: c:\windows\system32\OpenSSH\ssh.exe
+Code_Sample:
+  - Code: https://gist.github.com/screetsec/97d90750bfb058eb0b49c5374cdc0ac9
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_ssh.yml
   - IOC: Event ID 4624 with process name C:\Windows\System32\OpenSSH\sshd.exe.
