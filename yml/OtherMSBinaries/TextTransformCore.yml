@@ -19,7 +19,7 @@ Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\TextTransformCore.exe
   - Path: C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\TextTransformCore.exe
   - Path: C:\Program Files\Microsoft Visual Studio\18\Professional\Common7\IDE\TextTransformCore.exe
-  - Path: C:\Program Files\Microsoft Visual Studio\18\Enterprise\Common7\IDE\TextTransformCore.exe  
+  - Path: C:\Program Files\Microsoft Visual Studio\18\Enterprise\Common7\IDE\TextTransformCore.exe
 Code_Sample:
   - Code: |-
       <#@ template language="C#" #>
