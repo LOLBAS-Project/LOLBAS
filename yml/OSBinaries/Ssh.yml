@@ -22,8 +22,8 @@ Commands:
     OperatingSystem: Windows 10
     Tags:
       - Execute: CMD
-  - Command: ssh -o PKCS11Provider="\\\\127.0.0.1\\Temp\\Dll1.dll" win@github.com
-    Description: Executes a DLL from an SMB share by abusing the PKCS11Provider option. The payload executes upon DLL load (DllMain) and requires exporting C_GetFunctionList to prevent premature termination by ssh.exe.
+  - Command: ssh -o PKCS11Provider="\\\\127.0.0.1\\Temp\\example.dll" win@github.com
+    Description: Executes a DLL from an SMB share by abusing the PKCS11Provider option. The payload executes upon DLL load (DllMain) and requires exporting C_GetFunctionList to prevent premature termination by `ssh.exe`. Note that all backslashes should be escaped (i.e. every `\` should be turned into `\\`).
     Usecase: Performs indirect execution of a specified DLL from a remote share, can be used for defense evasion.
     Category: Execute
     Privileges: User
