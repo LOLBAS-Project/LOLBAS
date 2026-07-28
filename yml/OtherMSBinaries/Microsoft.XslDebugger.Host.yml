@@ -4,24 +4,15 @@ Description: XSLT Execution Utility included with Visual Studio for debugging XS
 Author: Noam Pomerantz
 Created: 2026-04-05
 Commands:
-  - Command: Microsoft.XslDebugger.Host.exe input.xml payload.xsl /enable:all
-    Description: Executes arbitrary C# code embedded in msxsl:script blocks within an XSLT stylesheet. The /enable:all flag enables inline script compilation and execution via the .NET XSLT engine. Can call Process.Start, WebClient, and any .NET Framework class.
-    Usecase: Execute arbitrary C# code and spawn processes through a Microsoft-signed XSLT debugger binary.
+  - Command: Microsoft.XslDebugger.Host.exe {PATH_ABSOLUTE:.xml} {PATH_ABSOLUTE:.xsl} /enable:all
+    Description: Execute C#/JScript/VBScript code through XML/XSL Transformation.
+    Usecase: Execute arbitrary code and spawn processes through a Microsoft-signed XSLT debugger binary.
     Category: Execute
     Privileges: User
     MitreID: T1220
-    OperatingSystem: Windows 10, Windows 11
+    OperatingSystem: Windows
     Tags:
-      - Execute: XSLT
-  - Command: Microsoft.XslDebugger.Host.exe input.xml download.xsl /enable:all
-    Description: Downloads files from arbitrary URLs using System.Net.WebClient embedded in an XSLT msxsl:script block. The XSLT file contains C# code that calls WebClient.DownloadFile() to save remote content to disk.
-    Usecase: Download files from a remote server using a Microsoft-signed XSLT debugger binary.
-    Category: Download
-    Privileges: User
-    MitreID: T1105
-    OperatingSystem: Windows 10, Windows 11
-    Tags:
-      - Download: HTTP
+      - Execute: XSL
 Full_Path:
   - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Xml\Microsoft.XslDebugger.Host.exe
   - Path: C:\Program Files (x86)\Microsoft Visual Studio\2022\Community\Common7\IDE\Xml\Microsoft.XslDebugger.Host.exe
