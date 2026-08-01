@@ -1,0 +1,38 @@
+---
+Name: TextTransform.exe
+Description: T4 Text Template transformation tool included with Visual Studio. Processes T4 template files (.tt) that can contain arbitrary C# or VB.NET code which executes during template processing. Part of the "Text Template Transformation" component (`Microsoft.VisualStudio.Component.TextTemplating`) in Visual Studio.
+Author: Noam Pomerantz
+Created: 2026-04-03
+Commands:
+  - Command: TextTransform.exe {PATH:.tt}
+    Description: Executes code contained in a T4 template file (.tt) as VB.net or C# (with full .NET Framework access).
+    Usecase: Execute arbitrary code by embedding it in a T4 template file.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows
+    Tags:
+      - Execute: TT
+Full_Path:
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\TextTransform.exe
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\TextTransform.exe
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\TextTransform.exe
+  - Path: c:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\TextTransform.exe
+  - Path: c:\Program Files\Microsoft Visual Studio\18\Professional\Common7\IDE\TextTransform.exe
+  - Path: c:\Program Files\Microsoft Visual Studio\18\Enterprise\Common7\IDE\TextTransform.exe
+Code_Sample:
+  - Code: |-
+      <#@ template language="C#" #>
+      <#@ import namespace="System.Diagnostics" #>
+      <#
+          Process.Start("cmd.exe");
+      #>
+Detection:
+  - IOC: TextTransform.exe process execution outside of a typical Visual Studio development context.
+  - IOC: TextTransform.exe processing .tt files from unusual directories such as %TEMP% or user profile folders.
+  - IOC: Unexpected child processes (e.g., cmd.exe, powershell.exe) spawning directly from TextTransform.exe.
+Resources:
+  - Link: https://learn.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates
+Acknowledgement:
+  - Person: Noam Pomerantz
+    Handle: '@pumi96'
