@@ -31,14 +31,14 @@ Commands:
     OperatingSystem: Windows 10, Windows 11
     Tags:
       - Execute: DLL
-      - Execute: Remote    
+      - Execute: Remote
 Full_Path:
   - Path: C:\Windows\System32\OpenSSH\scp.exe
 Detection:
   - IOC: "`scp.exe` executions referencing `ProxyCommand`."
 Resources:
   - Link: https://gtfobins.org/gtfobins/scp/
-  - Link: https://gist.github.com/screetsec/97d90750bfb058eb0b49c5374cdc0ac9  
+  - Link: https://gist.github.com/screetsec/97d90750bfb058eb0b49c5374cdc0ac9
 Acknowledgement:
   - Person: BinFault
     Handle: '@binfault'
