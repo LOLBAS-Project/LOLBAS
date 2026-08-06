@@ -1,0 +1,51 @@
+---
+Name: SystemSettingsAdminFlows.exe
+Description: Windows Settings administrative flows utility, used by the Settings app to apply system configuration changes that require elevation
+Author: Ashish Pulivarthy
+Created: 2026-08-06
+Commands:
+  - Command: SystemSettingsAdminFlows.exe Defender RTP 1
+    Description: Disables Microsoft Defender Real-Time Protection
+    Usecase: Disable endpoint protection prior to deploying additional tooling or ransomware
+    Category: Tamper
+    Privileges: Admin
+    MitreID: T1562.001
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2016, Windows Server 2019, Windows Server 2022
+  - Command: SystemSettingsAdminFlows.exe Defender SpynetReporting 0
+    Description: Disables Microsoft Defender cloud-delivered protection (MAPS/SpyNet reporting)
+    Usecase: Reduce detection efficacy by severing cloud-based protection
+    Category: Tamper
+    Privileges: Admin
+    MitreID: T1562.001
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2016, Windows Server 2019, Windows Server 2022
+  - Command: SystemSettingsAdminFlows.exe Defender SubmitSamplesConsent 0
+    Description: Disables automatic sample submission to Microsoft
+    Usecase: Prevent suspicious files from being submitted for analysis
+    Category: Tamper
+    Privileges: Admin
+    MitreID: T1562.001
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2016, Windows Server 2019, Windows Server 2022
+  - Command: SystemSettingsAdminFlows.exe Defender DisableEnhancedNotifications 1
+    Description: Disables Microsoft Defender enhanced notifications
+    Usecase: Suppress alerts that would otherwise surface malicious activity to the user
+    Category: Tamper
+    Privileges: Admin
+    MitreID: T1562.001
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2016, Windows Server 2019, Windows Server 2022
+Full_Path:
+  - Path: C:\Windows\System32\SystemSettingsAdminFlows.exe
+Code_Sample:
+  - Code:
+Detection:
+  - IOC: SystemSettingsAdminFlows.exe executed with a "Defender" argument
+  - IOC: SystemSettingsAdminFlows.exe with a parent process other than SystemSettings.exe or the Settings app
+  - IOC: Microsoft-Windows-Windows Defender/Operational Event ID 5007 recording a configuration change
+  - IOC: Sysmon Event ID 1 / Security Event ID 4688 process creation for SystemSettingsAdminFlows.exe
+  - Analysis: https://www.huntress.com/blog/lolbin-to-inc-ransomware
+  - Sigma: https://detection.fyi/sigmahq/sigma/windows/process_creation/proc_creation_win_systemsettingsadminflows_defender_disable/
+Resources:
+  - Link: https://www.huntress.com/blog/lolbin-to-inc-ransomware
+  - Link: https://thedfirreport.com/2026/02/23/apache-activemq-exploit-leads-to-lockbit-ransomware/
+Acknowledgement:
+  - Person: Harlan Carvey
+    Handle: '@keydet89'
