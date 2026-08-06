@@ -35,12 +35,12 @@ Commands:
 Full_Path:
   - Path: C:\Windows\System32\SystemSettingsAdminFlows.exe
 Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/8eaafff1f2845a696050e05e72ba1140ee190698/rules/windows/process_creation/proc_creation_win_systemsettingsadminflows_defender_disable.yml
+  - Analysis: https://www.huntress.com/blog/lolbin-to-inc-ransomware
   - IOC: SystemSettingsAdminFlows.exe executed with a "Defender" argument
   - IOC: SystemSettingsAdminFlows.exe with a parent process other than SystemSettings.exe or the Settings app
   - IOC: Microsoft-Windows-Windows Defender/Operational Event ID 5007 recording a configuration change
   - IOC: Sysmon Event ID 1 / Security Event ID 4688 process creation for SystemSettingsAdminFlows.exe
-  - Analysis: https://www.huntress.com/blog/lolbin-to-inc-ransomware
-  - Sigma: https://detection.fyi/sigmahq/sigma/windows/process_creation/proc_creation_win_systemsettingsadminflows_defender_disable/
 Resources:
   - Link: https://www.huntress.com/blog/lolbin-to-inc-ransomware
   - Link: https://thedfirreport.com/2026/02/23/apache-activemq-exploit-leads-to-lockbit-ransomware/
