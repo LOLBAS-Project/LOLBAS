@@ -75,6 +75,11 @@ Detection:
   - Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/detect_regsvr32_application_control_bypass.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/82ec6ac1eeb62a1383792719a1943b551264ed16/rules/windows/defense_evasion_suspicious_managedcode_host_process.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/execution_register_server_program_connecting_to_the_internet.toml
+  - Splunk: https://research.splunk.com/endpoint/c9ef7dc4-eeaf-11eb-b2b6-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/62732736-6250-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/070e9b80-6252-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/f421c250-24e7-11ec-bc43-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/7349a9e9-3cf6-4171-bb0c-75607a8dcd1a/
   - IOC: regsvr32.exe retrieving files from Internet
   - IOC: regsvr32.exe executing scriptlet (sct) files
   - IOC: DotNet CLR libraries loaded into regsvr32.exe

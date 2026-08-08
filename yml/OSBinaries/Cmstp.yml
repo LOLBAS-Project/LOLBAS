@@ -42,6 +42,7 @@ Detection:
   - Splunk: https://github.com/splunk/security_content/blob/bee2a4cefa533f286c546cbe6798a0b5dec3e5ef/detections/endpoint/cmlua_or_cmstplua_uac_bypass.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/82ec6ac1eeb62a1383792719a1943b551264ed16/rules/windows/defense_evasion_suspicious_managedcode_host_process.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml
+  - Splunk: https://research.splunk.com/endpoint/f87b5062-b405-11eb-a889-acde48001122/
   - IOC: Execution of cmstp.exe without a VPN use case is suspicious
   - IOC: DotNet CLR libraries loaded into cmstp.exe
   - IOC: DotNet CLR Usage Log - cmstp.exe.log

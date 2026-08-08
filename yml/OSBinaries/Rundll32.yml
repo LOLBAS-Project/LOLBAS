@@ -57,6 +57,21 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/network_connection/net_connection_win_rundll32_net_connections.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/12577f7380f324fcee06dab3218582f4a11833e7/rules/windows/defense_evasion_unusual_network_connection_via_rundll32.toml
+  - Splunk: https://research.splunk.com/endpoint/e451bd16-e4c5-4109-8eb1-c4c6ecf048b4/
+  - Splunk: https://research.splunk.com/endpoint/61e7b44a-6088-4f26-b788-9a96ba13b37a/
+  - Splunk: https://research.splunk.com/endpoint/35307032-a12d-11eb-835f-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/fa90f372-f91d-11eb-816c-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/9319dda5-73f2-4d43-a85a-67ce961bddb7/
+  - Splunk: https://research.splunk.com/endpoint/1adffe86-10c3-11ec-8ce6-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/92d51712-ee29-11eb-b1ae-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/71b9bf37-cde1-45fb-b899-1b0aa6fa1183/
+  - Splunk: https://research.splunk.com/endpoint/c8e7ced0-10c5-11ec-8b03-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/bed761f8-ee29-11eb-8bf3-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/4aefadfe-9abd-4bf8-b3fd-867e9ef95bf8/
+  - Splunk: https://research.splunk.com/endpoint/6338266a-ee2a-11eb-bf68-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/f1483f5e-ee29-11eb-9d23-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/8c00a385-9b86-4ac0-8932-c9ec3713b159/
+  - Splunk: https://research.splunk.com/deprecated/7360137f-abad-473e-8189-acbdaa34d114/
   - IOC: Outbount Internet/network connections made from rundll32
   - IOC: Suspicious use of cmdline flags such as -sta
 Resources:
