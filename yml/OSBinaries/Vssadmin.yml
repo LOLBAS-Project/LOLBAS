@@ -1,0 +1,20 @@
+---
+Name: Vssadmin.exe
+Description: Volume Shadow Copy Service administrative command-line tool
+Author: mmadersbacher
+Created: 2026-08-16
+Commands:
+  - Command: vssadmin delete shadows /all /quiet
+    Description: Delete all volume shadow copies on the host without prompting
+    Usecase: Destroy shadow copies to prevent file and system recovery, a technique commonly used by ransomware
+    Category: Tamper
+    Privileges: Administrator
+    MitreID: T1490
+    OperatingSystem: Windows 11, Windows 10, Windows Server
+Full_Path:
+  - Path: C:\Windows\System32\vssadmin.exe
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_susp_shadow_copies_deletion.yml
+Resources:
+  - Link: https://attack.mitre.org/techniques/T1490/
+  - Link: https://github.com/Neo23x0/Raccine
