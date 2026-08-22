@@ -1,0 +1,29 @@
+---
+Name: setx.exe
+Description: Creates or modifies environment variables in the user or system environment.
+Author: Clayton Moore
+Created: 2026-08-22
+Commands:
+  - Command: setx COR_ENABLE_PROFILING 1 && setx COR_PROFILER "{11111111-1111-1111-1111-111111111111}" && setx COR_PROFILER_PATH "C:\Windows\Temp\example.dll"
+    Description: Sets user-level environment variables in the registry (HKCU\Environment) to enable .NET CLR profiling. The CLR loads the specified DLL into every .NET process that starts in the user's session, including PowerShell, MMC, and management tools.
+    Usecase: Establish persistence and achieve code execution by hijacking the .NET CLR profiler loading mechanism.
+    Category: Tamper
+    Privileges: User
+    MitreID: T1574.012
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2016, Windows Server 2019, Windows Server 2022, Windows Server 2025
+Full_Path:
+  - Path: C:\Windows\System32\setx.exe
+  - Path: C:\Windows\SysWOW64\setx.exe
+  
+Detection:
+  - IOC: Event ID 4688 (Process Creation) or Sysmon Event ID 1 - setx.exe with command lines containing COR_ENABLE_PROFILING, COR_PROFILER, or COR_PROFILER_PATH
+  - IOC: Sysmon Event ID 13 (RegistryEvent) - Creation or modification of HKCU\Environment values for COR_ENABLE_PROFILING, COR_PROFILER, or COR_PROFILER_PATH
+  - IOC: Sysmon Event ID 7 (ImageLoad) - Unsigned DLL loaded from user-writable paths (C:\Users\*, C:\Windows\Temp, %TEMP%) into .NET processes (powershell.exe, mmc.exe, w3wp.exe)
+  - IOC: Event ID 4663 (Object Access) - Anomalous write access to HKCU\Environment by non-standard processes
+  - Analysis: https://redcanary.com/blog/cor_profiler-for-persistence/
+  
+Resources:
+  - Link: https://attack.mitre.org/techniques/T1574/012/
+Acknowledgement:
+  - Person: Clayton Moore
+    Handle: '@offensiveclay_'
