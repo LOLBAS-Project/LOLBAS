@@ -1,0 +1,27 @@
+---
+Name: dotnet-trace.exe
+Description: .NET diagnostic tool for collecting runtime traces from .NET applications. Installed via 'dotnet tool install --global dotnet-trace' (.NET SDK required).
+Author: Iván Cabrera
+Created: 2026-08-27
+Commands:
+  - Command: dotnet-trace.exe collect --duration 00:00:01 -- {PATH:.exe}
+    Description: Launches the specified executable as a child process while collecting runtime trace data for 1 second during execution.
+    Usecase: Execute a child process under the guise of a legitimate .NET diagnostic tool.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: C:\Users\<user>\.dotnet\tools\dotnet-trace.exe
+Code_Sample:
+  - Code: https://github.com/dotnet/diagnostics/tree/main/src/Tools/dotnet-trace
+Detection:
+  - IOC: Process creation with command line containing "dotnet-trace collect" and "--"
+Resources:
+  - Link: https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-trace
+  - Link: https://github.com/dotnet/diagnostics
+Acknowledgement:
+  - Person: Iván Cabrera
+    Handle: '@ivancabrera02'
