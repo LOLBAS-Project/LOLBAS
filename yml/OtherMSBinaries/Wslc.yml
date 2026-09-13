@@ -1,6 +1,6 @@
 ---
 Name: wslc.exe
-Description: Windows Subsystem for Linux container CLI. Builds, pulls, runs, and executes commands inside Linux (OCI) containers. Ships built-in with WSL and is also shipped as `container.exe`, a byte-for-byte copy (identical file hash) in the same directory.
+Description: Windows Subsystem for Linux container CLI. Builds, pulls, runs, and executes commands inside Linux (OCI) containers. Ships built-in with WSL and is also shipped as `container.exe`, a byte-for-byte copy (identical file hash) in the same directory. At the time of writing, available in pre-release of WSL (version 2.9.3 or higher), and requires 'wsl --update --pre-release' to install. More information available under https://learn.microsoft.com/en-us/windows/wsl/wsl-container
 Author: Konrad 'unrooted' Klawikowski
 Created: 2026-07-17
 Commands:
