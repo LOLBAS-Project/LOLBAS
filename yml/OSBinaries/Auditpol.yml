@@ -1,0 +1,36 @@
+---
+Name: Auditpol.exe
+Description: a command-line tool that allows users to query and set audit policies on Windows systems
+Author: 'Mahmoud Khalifa'
+Created: 2024-02-24
+Commands:
+  - Command: auditpol /set /subcategory:"System Integrity" /success:disable /failure:disable
+    Description: Disables auditing for system integrity, which is crucial for monitoring and ensuring the integrity of security features and the operating system
+    Usecase: Modify the audit configuration silently and disable or alter important parameters, preventing the creation or recording of Event Logs
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1562.002
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 10, Windows 11
+  - Command: auditpol /set /subcategory:"Logon" /success:enable /failure:enable
+    Description: Enables auditing for both successful and failed logon attempts
+    Usecase: Use this command to monitor logon activities, which can help detect unauthorized access attempts
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1562.002
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\auditpol.exe
+  - Path: C:\Windows\SysWOW64\auditpol.exe
+Code_Sample:
+  - Code: null
+Detection:
+  - IOC: Unexpected changes in audit policies
+  - IOC: auditpol.exe spawned under suspicious circumstances
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/master/rules/windows/process_creation/proc_creation_win_auditpol_susp_execution.yml
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/audit-policy
+  - Link: https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/advanced-security-audit-policy-settings
+  - Link: https://strontic.github.io/xcyclopedia/library/auditpol.exe-214E0EA1F7F7C27C82D23F183F9D23F1.html
+  - Link: https://help.fortinet.com/fsiem/Public_Resource_Access/7_1_1/rules/PH_RULE_Suspicious_Auditpol_Usage.htm
+Acknowledgement:
+  - Person: Mahmoud Khalifa
