@@ -20,6 +20,7 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/powershell/powershell_script/posh_ps_syncappvpublishingserver_exe.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/powershell/powershell_module/posh_pm_syncappvpublishingserver_exe.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_lolbin_syncappvpublishingserver_execute_psh.yml
+  - Splunk: https://research.splunk.com/endpoint/8dd73f89-682d-444c-8b41-8e679966ad3c/
   - IOC: SyncAppvPublishingServer.exe should never be in use unless App-V is deployed
 Resources:
   - Link: https://twitter.com/monoxgas/status/895045566090010624
