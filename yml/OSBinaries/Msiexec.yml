@@ -62,6 +62,12 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_msiexec_masquerading.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
   - Splunk: https://github.com/splunk/security_content/blob/18f63553a9dc1a34122fa123deae2b2f9b9ea391/detections/endpoint/uninstall_app_using_msiexec.yml
+  - Splunk: https://research.splunk.com/endpoint/e9d05aa2-32f0-411b-930c-5b8ca5c4fcee/
+  - Splunk: https://research.splunk.com/endpoint/1fca2b28-f922-11eb-b2dd-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/827409a1-5393-4d8d-8da4-bbb297c262a7/
+  - Splunk: https://research.splunk.com/endpoint/fdb59aef-d88f-4909-8369-ec2afbd2c398/
+  - Splunk: https://research.splunk.com/endpoint/6aa49ff2-3c92-4586-83e0-d83eb693dfda/
+  - Splunk: https://research.splunk.com/endpoint/a27db3c5-1a9a-46df-a577-765d3f1a3c24/
   - IOC: msiexec.exe retrieving files from Internet
 Resources:
   - Link: https://pentestlab.blog/2017/06/16/applocker-bypass-msiexec/

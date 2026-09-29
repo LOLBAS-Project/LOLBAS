@@ -67,6 +67,9 @@ Detection:
   - Splunk: https://github.com/splunk/security_content/blob/3f77e24974239fcb7a339080a1a483e6bad84a82/detections/endpoint/certutil_download_with_urlcache_and_split_arguments.yml
   - Splunk: https://github.com/splunk/security_content/blob/3f77e24974239fcb7a339080a1a483e6bad84a82/detections/endpoint/certutil_download_with_verifyctl_and_split_arguments.yml
   - Splunk: https://github.com/splunk/security_content/blob/3f77e24974239fcb7a339080a1a483e6bad84a82/detections/endpoint/certutil_with_decode_argument.yml
+  - Splunk: https://research.splunk.com/endpoint/801ad9e4-8bfb-11eb-8b31-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/415b4306-8bfb-11eb-85c4-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/bfe94226-8c10-11eb-a4b3-acde48001122/
   - IOC: Certutil.exe creating new files on disk
   - IOC: Useragent Microsoft-CryptoAPI/10.0
   - IOC: Useragent CertUtil URL Agent
