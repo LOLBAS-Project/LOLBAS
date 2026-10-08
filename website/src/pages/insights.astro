@@ -1,0 +1,128 @@
+---
+import { sitePath } from '../lib/site';
+import Base from '../layouts/Base.astro';
+import Growth from '../components/Growth.astro';
+import { catalog, categories, typeLabels, techniques } from '../lib/catalog';
+const distribution = categories
+  .map((category) => ({
+    category,
+    count: catalog.filter((e) =>
+      e.Commands.some((c) => c.Category === category),
+    ).length,
+  }))
+  .sort((a, b) => b.count - a.count);
+const coverage = catalog.filter((e) =>
+  e.Detection?.some((d) => Object.keys(d).some((k) => k !== 'IOC')),
+).length;
+---
+
+<Base title="Catalog insights · LOLBAS">
+  <section class="page-head">
+    <p class="eyebrow">FOLLOW THE RESEARCH</p>
+    <h1>
+      The bigger picture<span class="brand-dot">.</span>
+    </h1>
+    <p>
+      How the catalog grows. What the tools can do. Where detection resources
+      exist.
+      <br />A view of the community’s research, grounded in the source data.
+    </p>
+  </section>
+  <div class="insights-grid">
+    <Growth />
+    <section class="panel distribution">
+      <p class="eyebrow">WHAT’S IN THE CATALOG</p>
+      <h2>By file type.</h2>
+      {Object.entries(typeLabels).map(([type, label]) => {
+        const count = catalog.filter((e) => e.type === type).length;
+        return (
+          <a class="bar-row" href={sitePath(`/?type=${type}#catalog`)}>
+            <span>{label}</span>
+            <span class="bar-track">
+              <i style={`width:${(count / catalog.length) * 100}%`}></i>
+            </span>
+            <b>{count}</b>
+          </a>
+        );
+      })}
+      <p class="insight-note">
+        {catalog.length} entries from the four published YAML collections.
+        Honorable mentions remain outside the published catalog.
+      </p>
+    </section>
+    <section class="panel distribution">
+      <p class="eyebrow">UNEXPECTED CAPABILITIES</p>
+      <h2>Functions across the catalog.</h2>
+      {distribution.map(({ category, count }) => (
+        <a
+          class="bar-row"
+          href={sitePath(`/?category=${encodeURIComponent(category)}#catalog`)}
+        >
+          <span>{category}</span>
+          <span class="bar-track">
+            <i style={`width:${(count / distribution[0].count) * 100}%`}></i>
+          </span>
+          <b>{count}</b>
+        </a>
+      ))}
+      <p class="insight-note">
+        Count of entries with at least one command in each category. An entry
+        can have multiple functions, so these counts overlap.
+      </p>
+    </section>
+    <section class="panel distribution">
+      <p class="eyebrow">TURN RESEARCH INTO DEFENSE</p>
+      <h2>Detection resources.</h2>
+      <div class="coverage-number">
+        {coverage}
+        <span> / {catalog.length}</span>
+      </div>
+      <p class="insight-note">
+        Entries with at least one published detection link, such as Sigma,
+        Elastic, Splunk, analysis, or block rules. IOC-only entries are
+        excluded. Links are research leads; coverage does not guarantee that a
+        technique will be detected.
+      </p>
+      <a class="button primary" href={sitePath('/?detection=yes#catalog')}>
+        Explore detection resources ↗
+      </a>
+      <hr />
+      <h2>{techniques.length} ATT&amp;CK technique IDs.</h2>
+      <p class="insight-note">
+        Distinct technique and sub-technique IDs mapped to command examples.
+      </p>
+      <a
+        class="button"
+        href={sitePath('/mitre_attack_navigator_layer.json')}
+        download
+      >
+        Download Navigator layer ↓
+      </a>
+    </section>
+  </div>
+</Base>
+<style>
+  .coverage-number {
+    font-size: 64px;
+    color: var(--accent);
+    font-weight: 750;
+    margin: 25px 0;
+    letter-spacing: -3px;
+  }
+  .coverage-number span {
+    font-size: 24px;
+    color: var(--muted);
+    letter-spacing: -1px;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 35px 0;
+  }
+  .distribution .button {
+    margin-top: 15px;
+  }
+  .bar-row:hover {
+    color: var(--accent);
+  }
+</style>

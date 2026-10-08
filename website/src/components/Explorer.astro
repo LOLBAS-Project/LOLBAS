@@ -1,0 +1,344 @@
+---
+import { sitePath } from '../lib/site';
+import '../styles/filters.css';
+import { catalog, typeLabels, categories, techniques } from '../lib/catalog';
+const sorted = [...catalog].sort((a, b) => a.Name.localeCompare(b.Name));
+---
+
+<section id="catalog" class="catalog-section" aria-labelledby="catalog-title">
+  <div class="section-heading">
+    <div>
+      <h2 id="catalog-title">Catalog</h2>
+      <p>Trusted Windows tools. Unexpected possibilities.</p>
+    </div>
+    <a class="text-link" href={sitePath('/api/')}>
+      Use the API <span>↗</span>
+    </a>
+  </div>
+  <div class="explorer panel">
+    <form id="catalog-form" role="search">
+      <div class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="search"
+          name="q"
+          type="search"
+          placeholder="Search binaries, techniques, commands…"
+          aria-label="Search catalog"
+          autocomplete="off"
+        />
+        <kbd>/</kbd>
+      </div>
+      <div class="filters">
+        <label>
+          TYPE
+          <select name="type" id="type">
+            <option value="">All types</option>
+            {Object.entries(typeLabels).map(([value, label]) => (
+              <option value={value}>{label}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          FUNCTION
+          <select id="category" name="category">
+            <option value="">All functions</option>
+            {categories.map((c) => (
+              <option>{c}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          ATT&amp;CK TECHNIQUE
+          <select id="technique" name="technique">
+            <option value="">All techniques</option>
+            {techniques.map((t) => (
+              <option>{t}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          DETECTIONS
+          <select name="detection" id="detection">
+            <option value="">All entries</option>
+            <option value="yes">With detection links</option>
+            <option value="no">Without detection links</option>
+          </select>
+        </label>
+        <label>
+          ADDED
+          <select name="year" id="year">
+            <option value="">Any year</option>
+            {[...new Set(catalog.map((e) => e.Created.slice(0, 4)))]
+              .sort()
+              .reverse()
+              .map((y) => (
+                <option>{y}</option>
+              ))}
+          </select>
+        </label>
+        <label>
+          SORT BY
+          <select name="sort" id="sort">
+            <option value="name">Name A–Z</option>
+            <option value="newest">Recently added</option>
+            <option value="oldest">Oldest first</option>
+            <option value="reverse">Name Z–A</option>
+            <option value="commands">Most commands</option>
+            <option value="detections">Most detection resources</option>
+            <option value="detections-asc">Fewest detection resources</option>
+            <option value="functions">Functions A–Z</option>
+            <option value="functions-desc">Functions Z–A</option>
+            <option value="type">Type A–Z</option>
+            <option value="type-desc">Type Z–A</option>
+            <option value="attack">ATT&amp;CK ascending</option>
+            <option value="attack-desc">ATT&amp;CK descending</option>
+          </select>
+        </label>
+        <button class="reset" type="reset">
+          Reset ↺
+        </button>
+      </div>
+    </form>
+    <div class="results-toolbar">
+      <span id="result-count" role="status" aria-live="polite">
+        <b>{catalog.length}</b> entries to explore
+      </span>
+      <span class="hint">
+        Try{' '}
+        <button data-query="/download" type="button">
+          /download
+        </button>{' '}
+        or{' '}
+        <button data-query="#Script" type="button">
+          #Script
+        </button>
+      </span>
+      <span id="year-filter"></span>
+    </div>
+    <div class="table-scroll">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th scope="col" aria-sort="none">
+              <button
+                type="button"
+                data-sort="name"
+                aria-label="Sort by file name"
+              >
+                BINARY / SCRIPT / LIBRARY
+                <span aria-hidden="true" class="sort-indicator">
+                  ↕
+                </span>
+              </button>
+            </th>
+            <th scope="col" aria-sort="none">
+              <button
+                type="button"
+                data-sort="functions"
+                aria-label="Sort by functions alphabetically"
+              >
+                FUNCTIONS
+                <span aria-hidden="true" class="sort-indicator">
+                  ↕
+                </span>
+              </button>
+            </th>
+            <th scope="col" aria-sort="none">
+              <button
+                type="button"
+                data-sort="type"
+                aria-label="Sort by file type"
+              >
+                TYPE
+                <span aria-hidden="true" class="sort-indicator">
+                  ↕
+                </span>
+              </button>
+            </th>
+            <th scope="col" aria-sort="none">
+              <button
+                type="button"
+                data-sort="attack"
+                aria-label="Sort by ATT&CK technique IDs"
+              >
+                ATT&amp;CK
+                <span aria-hidden="true" class="sort-indicator">
+                  ↕
+                </span>
+              </button>
+            </th>
+            <th scope="col" aria-sort="none">
+              <button
+                type="button"
+                data-sort="detections"
+                aria-label="Sort by detection resource count"
+              >
+                DETECTIONS
+                <span aria-hidden="true" class="sort-indicator">
+                  ↕
+                </span>
+              </button>
+            </th>
+            <th scope="col">
+              <span class="sr-only">Open</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="catalog-rows">
+          {sorted.map((e, i) => (
+            <tr
+              data-row
+              data-index={i}
+              data-name={e.Name}
+              data-type={e.type}
+              data-type-label={typeLabels[e.type]}
+              data-functions={[...new Set(e.Commands.map((c) => c.Category))]
+                .sort()
+                .join(', ')}
+              data-attack={[...new Set(e.Commands.map((c) => c.MitreID))]
+                .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }))
+                .join(', ')}
+              data-created={e.Created}
+              data-commands={e.Commands.length}
+              data-detections={
+                e.Detection?.filter((d) =>
+                  Object.keys(d).some((k) => k !== 'IOC'),
+                ).length || 0
+              }
+              data-categories={JSON.stringify([
+                ...new Set(e.Commands.map((c) => c.Category)),
+              ])}
+              data-techniques={JSON.stringify([
+                ...new Set(e.Commands.map((c) => c.MitreID)),
+              ])}
+              data-detection={
+                e.Detection?.some((d) =>
+                  Object.keys(d).some((k) => k !== 'IOC'),
+                )
+                  ? 'yes'
+                  : 'no'
+              }
+              data-search={[
+                e.Name,
+                e.Description,
+                e.Author,
+                ...(e.Aliases ?? []).map((a) => a.Alias),
+                ...e.Commands.flatMap((c) => [
+                  c.Command,
+                  c.Description,
+                  c.Usecase,
+                  c.Category,
+                  c.Privileges,
+                  c.MitreID,
+                  c.OperatingSystem,
+                  ...(c.Tags ?? []).flatMap((t) => Object.values(t)),
+                ]),
+                ...(e.Full_Path ?? []).map((p) => p.Path),
+              ]
+                .join(' ')
+                .toLowerCase()}
+            >
+              <td>
+                <a class="entry-name" href={sitePath(e.url)}>
+                  <span class="file-icon" aria-hidden="true">
+                    {e.type === 'Libraries'
+                      ? '◇'
+                      : e.type === 'Scripts'
+                        ? '›_'
+                        : '▧'}
+                  </span>
+                  <span>
+                    <strong>{e.Name}</strong>
+                    <small>{e.Description}</small>
+                  </span>
+                </a>
+              </td>
+              <td>
+                <div class="badges">
+                  {[...new Set(e.Commands.map((c) => c.Category))].map((c) => (
+                    <a
+                      class:list={[
+                        'badge',
+                        {
+                          lime: c === 'Execute',
+                          blue: c === 'Download',
+                          purple: c.includes('Bypass'),
+                        },
+                      ]}
+                      href={sitePath(`${e.url}#${c.toLowerCase()}`)}
+                    >
+                      {c}
+                    </a>
+                  ))}
+                </div>
+              </td>
+              <td>
+                <span class="type-label">{typeLabels[e.type]}</span>
+              </td>
+              <td>
+                <div class="techniques">
+                  {[...new Set(e.Commands.map((c) => c.MitreID))].map((t) => (
+                    <a href={sitePath(`/?technique=${t}#catalog`)}>{t}</a>
+                  ))}
+                </div>
+              </td>
+              <td>
+                <span
+                  class:list={[
+                    'coverage',
+                    {
+                      available: e.Detection?.some((d) =>
+                        Object.keys(d).some((k) => k !== 'IOC'),
+                      ),
+                    },
+                  ]}
+                >
+                  <i></i>
+                  {e.Detection?.filter((d) =>
+                    Object.keys(d).some((k) => k !== 'IOC'),
+                  ).length || '—'}
+                </span>
+              </td>
+              <td>
+                <a
+                  class="row-arrow"
+                  href={sitePath(e.url)}
+                  aria-label={`Open ${e.Name}`}
+                >
+                  ↗
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div id="empty-state" class="empty" hidden>
+      <h3>No entries found.</h3>
+      <p>Try a different search or reset your filters.</p>
+      <button id="clear-empty" class="button" type="button">
+        Clear all filters
+      </button>
+    </div>
+    <div class="pagination" id="pagination" hidden>
+      <span id="page-info"></span>
+      <div>
+        <button id="previous" type="button">
+          ← Previous
+        </button>
+        <button id="next" type="button">
+          Next →
+        </button>
+      </div>
+    </div>
+    <noscript>
+      <p class="chart-note">
+        All entries are shown. Enable JavaScript for search and filters.
+      </p>
+    </noscript>
+  </div>
+</section>
+<script>
+  import '../scripts/explorer';
+</script>

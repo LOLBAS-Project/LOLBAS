@@ -1,0 +1,20 @@
+---
+import { sitePath } from '../lib/site';
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page not found · LOLBAS">
+  <section class="page-head">
+    <p class="eyebrow">404 / NO LEAD HERE</p>
+    <h1>
+      Back to the hunt<span class="brand-dot">.</span>
+    </h1>
+    <p>
+      This page doesn’t exist. Search the catalog to find a binary, script, or
+      library.
+    </p>
+    <a class="button primary" href={sitePath('/#catalog')}>
+      Explore the catalog →
+    </a>
+  </section>
+</Base>

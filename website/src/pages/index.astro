@@ -1,0 +1,139 @@
+---
+import { sitePath } from '../lib/site';
+import Base from '../layouts/Base.astro';
+import Growth from '../components/Growth.astro';
+import Explorer from '../components/Explorer.astro';
+import { catalog, techniques, categories } from '../lib/catalog';
+const commands = catalog.reduce((sum, e) => sum + e.Commands.length, 0);
+const recent = [...catalog]
+  .sort((a, b) => b.Created.localeCompare(a.Created))
+  .slice(0, 3);
+---
+
+<Base>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>
+        Living Off The Land
+        <br />
+        <span>Binaries, Scripts and Libraries</span>
+      </h1>
+      <p class="intro">
+        The tools are legitimate. The intent isn’t always.
+        <br />
+        Explore the Windows binaries, scripts, and libraries that turn
+        <br class="desktop-br" /> everyday functionality into unexpected
+        capabilities.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#catalog">
+          Explore the catalog <span>↓</span>
+        </a>
+        <a
+          class="text-link"
+          href="https://github.com/LOLBAS-Project/LOLBAS/blob/master/CONTRIBUTING.md"
+        >
+          Contribute a finding ↗
+        </a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="radar">
+        <div class="orbit one"></div>
+        <div class="orbit two"></div>
+        <div class="orbit three"></div>
+        <div class="crosshair horizontal"></div>
+        <div class="crosshair vertical"></div>
+        <div class="scan"></div>
+        <span class="radar-point p1"></span>
+        <span class="radar-point p2"></span>
+        <span class="radar-point p3"></span>
+        <div class="terminal">
+          <div class="terminal-top">
+            <i></i>
+            <i></i>
+            <i></i>
+            <span>LOLBAS / RESEARCH</span>
+          </div>
+          <p>
+            <span>PS C:\&gt;</span> find the unexpected
+            <span class="cursor">_</span>
+          </p>
+          <div class="terminal-mark">
+            <img src={sitePath('/logo.png')} width="88" height="88" alt="" />
+          </div>
+          <p class="terminal-bottom">
+            <i class="status-dot"></i> LEGITIMATE BINARY. UNEXPECTED BEHAVIOR.
+          </p>
+        </div>
+        <span class="radar-label label-top">01 / OBSERVE</span>
+        <span class="radar-label label-bottom">02 / UNDERSTAND</span>
+      </div>
+    </div>
+  </section>
+  <section class="metrics" aria-label="Catalog statistics">
+    <div>
+      <span class="metric-label">DOCUMENTED ENTRIES</span>
+      <strong>
+        {catalog.length}
+        <small> binaries, scripts &amp; libraries</small>
+      </strong>
+    </div>
+    <div>
+      <span class="metric-label">COMMAND EXAMPLES</span>
+      <strong>
+        {commands}
+        <small> unexpected capabilities</small>
+      </strong>
+    </div>
+    <div>
+      <span class="metric-label">ATT&amp;CK TECHNIQUES</span>
+      <strong>
+        {techniques.length}
+        <small> mapped to the framework</small>
+      </strong>
+    </div>
+  </section>
+  <div class="intelligence-grid">
+    <Growth />
+    <section class="panel recent">
+      <div class="panel-heading">
+        <div>
+          <span class="eyebrow">FRESH FROM THE COMMUNITY</span>
+          <h2>Latest additions.</h2>
+        </div>
+        <a
+          href={sitePath('/?sort=newest#catalog')}
+          aria-label="Explore latest additions"
+        >
+          ↗
+        </a>
+      </div>
+      {recent.map((e) => (
+        <a class="recent-entry" href={sitePath(e.url)}>
+          <span class="file-icon" aria-hidden="true">
+            ▧
+          </span>
+          <div>
+            <h3>{e.Name}</h3>
+            <p>{e.Description}</p>
+          </div>
+          <time datetime={e.Created}>{e.Created}</time>
+          <span class="row-arrow">↗</span>
+        </a>
+      ))}
+      <p class="chart-note">
+        By recorded creation date · {categories.length} documented functions
+      </p>
+    </section>
+  </div>
+  <Explorer />
+  <div class="contribute-link">
+    <a
+      class="text-link"
+      href="https://github.com/LOLBAS-Project/LOLBAS/blob/master/CONTRIBUTING.md"
+    >
+      Contribute to the project ↗
+    </a>
+  </div>
+</Base>

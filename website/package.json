@@ -1,0 +1,32 @@
+{
+  "name": "lolbas-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "prepare:data": "node scripts/prepare-data.mjs",
+    "dev": "npm run prepare:data && astro dev --host 127.0.0.1",
+    "check": "npm run prepare:data && astro check",
+    "build": "npm run prepare:data && astro build && node scripts/verify-build.mjs",
+    "preview": "astro preview --host 127.0.0.1",
+    "test:data": "node --test tests/data*.test.mjs tests/release.test.mjs",
+    "test": "playwright test",
+    "format": "prettier --write src scripts tests *.mjs *.ts *.json",
+    "format:check": "prettier --check src scripts tests *.mjs *.ts *.json"
+  },
+  "dependencies": {
+    "astro": "7.3.5",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.20.3",
+    "prettier": "3.9.7",
+    "prettier-plugin-astro": "1.0.0",
+    "typescript": "6.0.3"
+  }
+}

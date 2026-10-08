@@ -1,0 +1,129 @@
+name: Validate and publish Astro site
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# PR validation cannot cancel a production build or access the deploy key.
+concurrency:
+  group: astro-site-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # Fork branches can produce review artifacts; upstream validates master/PRs.
+    if: >-
+      github.event_name != 'push' ||
+      github.repository != 'LOLBAS-Project/LOLBAS' ||
+      github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: website
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install canonical catalog validators
+        working-directory: .
+        run: python -m pip install yamllint==1.37.1 pydantic==2.11.9 PyYAML==6.0.3
+      - name: Lint catalog YAML
+        working-directory: .
+        run: yamllint -c .github/.yamllint yml/**/
+      - name: Validate catalog schemas
+        working-directory: .
+        run: python .github/workflows/validation.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.0'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - name: Check source formatting
+        run: npm run format:check
+      - name: Check source and generated data
+        run: npm run check
+      - name: Test data compatibility
+        run: npm run test:data
+      - name: Build and verify static output
+        run: npm run build
+      - name: Record artifact source
+        run: printf '%s\n' "$GITHUB_SHA" > dist/source-revision.txt
+      - run: npx playwright install --with-deps chromium
+      - name: Test the production artifact
+        run: npm test
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            website/playwright-report/
+            website/test-results/
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Upload verified site
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-site-${{ github.sha }}-${{ github.run_attempt }}
+          path: website/dist/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Summarize review artifacts
+        run: |
+          {
+            printf '### Verified LOLBAS site\n\n'
+            printf 'Source: **%s**\n\n' "$GITHUB_SHA"
+            printf 'Download **verified-site-%s-%s** from this run to preview the tested site locally.\n\n' "$GITHUB_SHA" "$GITHUB_RUN_ATTEMPT"
+            printf 'Inside the extracted artifact, run:\n\n    python3 -m http.server 8000\n\nThen open http://localhost:8000/.\n\n'
+            printf 'Browser screenshots and test results are in **browser-evidence-%s-%s**.\n\n' "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT"
+            printf 'Fork and pull-request runs build review artifacts only. Production publication requires a separate upstream cutover.\n'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    needs: build
+    if: >-
+      vars.ASTRO_PUBLISH_ENABLED == 'true' &&
+      github.repository == 'LOLBAS-Project/LOLBAS' &&
+      github.ref == 'refs/heads/master' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: https://lolbas-project.github.io
+    concurrency:
+      group: lolbas-external-site-publish
+      cancel-in-progress: false
+    steps:
+      # No checkout or rebuild: publish only this run's tested artifact.
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-site-${{ github.sha }}-${{ github.run_attempt }}
+          path: verified-site
+      - name: Verify artifact source
+        run: test "$(cat verified-site/source-revision.txt)" = "$GITHUB_SHA"
+      - name: Publish verified Astro site to external repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: LOLBAS-Project/LOLBAS-Project.github.io
+          publish_branch: master
+          publish_dir: verified-site
+          enable_jekyll: false
+          keep_files: false
+          commit_message: 'Publish verified Astro site from ${{ github.sha }}'
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'

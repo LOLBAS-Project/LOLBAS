@@ -1,0 +1,107 @@
+---
+import { sitePath } from '../lib/site';
+import GitHubIcon from '../components/GitHubIcon.astro';
+import '../styles/global.css';
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'LOLBAS · Living Off The Land Binaries, Scripts and Libraries',
+  description = 'Explore Windows binaries, scripts and libraries used in living off the land techniques. Search commands, ATT&CK mappings and detection resources.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#1e262e" />
+    <title>{title}</title>
+    <link
+      rel="icon"
+      href={sitePath('/favicon.png')}
+      type="image/png"
+      sizes="96x96"
+    />
+    <link
+      rel="canonical"
+      href={
+        new URL(
+          '/' + Astro.url.pathname.slice(import.meta.env.BASE_URL.length),
+          'https://lolbas-project.github.io',
+        )
+      }
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body>
+    <a class="skip" href="#main">
+      Skip to content
+    </a>
+    <header class="header">
+      <a class="brand" href={sitePath('/')} aria-label="LOLBAS home">
+        <img
+          class="brand-logo"
+          src={sitePath('/logo.png')}
+          width="38"
+          height="38"
+          alt=""
+        />
+        LOLBAS<span class="brand-dot">.</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href={sitePath('/#catalog')}>Catalog</a>
+        <a href={sitePath('/insights/')}>Insights</a>
+        <a href={sitePath('/api/')}>API</a>
+        <a href={sitePath('/about/')}>About</a>
+      </nav>
+      <a class="repo-link" href="https://github.com/LOLBAS-Project/LOLBAS">
+        <GitHubIcon /> GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer>
+      <div>
+        <a class="brand" href={sitePath('/')}>
+          LOLBAS<span class="brand-dot">.</span>
+        </a>
+        <p>Living off the land. Hiding in plain sight.</p>
+      </div>
+      <div>
+        <a href={sitePath('/about/')}>Community &amp; project</a>
+        <a href="https://github.com/LOLBAS-Project/LOLBAS/blob/master/CONTRIBUTING.md">
+          Contribute ↗
+        </a>
+        <a href={sitePath('/api/')}>Open data ↗</a>
+        <small>
+          Built by the community. For the community.
+          <br />
+          ATT&amp;CK® is a registered trademark of The MITRE Corporation.
+        </small>
+      </div>
+    </footer>
+    <script>
+      document
+        .querySelectorAll<HTMLButtonElement>('[data-copy]')
+        .forEach((button) =>
+          button.addEventListener('click', async () => {
+            try {
+              await navigator.clipboard.writeText(button.dataset.copy ?? '');
+              button.textContent = 'Copied ✓';
+            } catch {
+              button.textContent = 'Copy unavailable';
+            }
+            window.setTimeout(() => {
+              button.textContent = 'Copy';
+            }, 2200);
+          }),
+        );
+    </script>
+  </body>
+</html>

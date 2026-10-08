@@ -1,0 +1,437 @@
+---
+import { sitePath } from '../../lib/site';
+import Base from '../../layouts/Base.astro';
+import { catalog, typeLabels, type CatalogEntry } from '../../lib/catalog';
+import '../../styles/detail.css';
+
+export function getStaticPaths() {
+  return catalog.map((entry) => ({
+    params: { entry: `${entry.type}/${entry.id}` },
+    props: { entry },
+  }));
+}
+interface ExtendedEntry extends CatalogEntry {
+  Aliases?: { Alias: string }[] | null;
+  Code_Sample?: { Code: string }[] | null;
+}
+const { entry } = Astro.props as { entry: ExtendedEntry };
+const groups = [...new Set(entry.Commands.map((command) => command.Category))];
+const techniques = [
+  ...new Set(entry.Commands.map((command) => command.MitreID).filter(Boolean)),
+];
+const detections = (entry.Detection ?? [])
+  .flatMap((item) => Object.entries(item))
+  .filter((item): item is [string, string] => Boolean(item[1]));
+const detectionLinks = detections.filter(
+  ([kind, value]) => kind !== 'IOC' && /^https?:\/\//i.test(value),
+);
+const indicators = detections.filter(
+  ([kind, value]) => kind === 'IOC' || !/^https?:\/\//i.test(value),
+);
+const isLink = (value: string) => /^https?:\/\//i.test(value);
+const attackURL = (id: string) =>
+  `https://attack.mitre.org/techniques/${id.replaceAll('.', '/')}/`;
+function linkLabel(value: string) {
+  try {
+    const url = new URL(value);
+    const pieces = url.pathname.split('/').filter(Boolean);
+    const last = decodeURIComponent(pieces.at(-1) ?? '');
+    if (/^(twitter\.com|x\.com)$/.test(url.hostname))
+      return `Research by @${pieces[0]}`;
+    if (url.hostname === 'gist.github.com')
+      return `Code & research by ${pieces[0]}`;
+    if (!last || /^[a-f0-9]{16,}$/i.test(last)) return url.hostname;
+    return last.replace(/\.html?$/, '').replace(/-/g, ' ');
+  } catch {
+    return value;
+  }
+}
+function host(value: string) {
+  try {
+    return new URL(value).hostname;
+  } catch {
+    return '';
+  }
+}
+const sourceURL = `https://github.com/LOLBAS-Project/LOLBAS/blob/master/${entry.source}`;
+const editURL = `https://github.com/LOLBAS-Project/LOLBAS/edit/master/${entry.source}`;
+const related = catalog
+  .filter(
+    (other) =>
+      other.id !== entry.id &&
+      other.Commands.some((command) => techniques.includes(command.MitreID)),
+  )
+  .slice(0, 3);
+---
+
+<Base title={`${entry.Name} · LOLBAS`} description={entry.Description}>
+  <header class="detail-hero">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href={sitePath('/#catalog')}>Catalog</a>
+      <span aria-hidden="true">/</span>
+      <span>{typeLabels[entry.type]}</span>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{entry.Name}</span>
+    </nav>
+    <div class="detail-hero-row">
+      <div class="detail-identity">
+        <span class="detail-file-mark" aria-hidden="true">
+          &gt;_
+        </span>
+        <div>
+          <span class="eyebrow">
+            <span class="status-dot"></span> LIVING OFF THE LAND /{' '}
+            {typeLabels[entry.type].toUpperCase()}
+          </span>
+          <h1>{entry.Name}</h1>
+        </div>
+      </div>
+      <a class="button detail-source" href={sourceURL}>
+        View source <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <p class="detail-description">{entry.Description}</p>
+    <div class="detail-capabilities">
+      {groups.map((category) => (
+        <a class="badge lime" href={`#${category.toLowerCase()}`}>
+          {category}
+        </a>
+      ))}
+      {entry.Aliases?.map((alias) => (
+        <span class="badge">Alias: {alias.Alias}</span>
+      ))}
+    </div>
+    <div class="detail-stats">
+      <div>
+        <strong>{String(entry.Commands.length).padStart(2, '0')}</strong>
+        <span>COMMAND EXAMPLES</span>
+      </div>
+      <div>
+        <strong>{String(techniques.length).padStart(2, '0')}</strong>
+        <span>ATT&amp;CK TECHNIQUES</span>
+      </div>
+      <div>
+        <strong>{String(detectionLinks.length).padStart(2, '0')}</strong>
+        <span>DETECTION RESOURCES</span>
+      </div>
+      <div>
+        <strong>{String(groups.length).padStart(2, '0')}</strong>
+        <span>CAPABILITIES</span>
+      </div>
+    </div>
+  </header>
+  <div class="entry-layout">
+    <div class="entry-content">
+      <section
+        class="entry-section"
+        id="commands"
+        aria-labelledby="commands-title"
+      >
+        <div class="entry-section-heading">
+          <div>
+            <span class="eyebrow">01 / TRADECRAFT</span>
+            <h2 id="commands-title">Command reference</h2>
+          </div>
+          <span class="entry-count">{entry.Commands.length} examples</span>
+        </div>
+        {groups.map((category) => (
+          <section
+            class="command-group"
+            id={category.toLowerCase()}
+            aria-label={`${category} commands`}
+          >
+            <h3 class="category-heading">
+              <span class="category-line" aria-hidden="true"></span>
+              {category}
+              <span>
+                {
+                  entry.Commands.filter(
+                    (command) => command.Category === category,
+                  ).length
+                }
+              </span>
+            </h3>
+            {entry.Commands.filter(
+              (command) => command.Category === category,
+            ).map((command, index) => (
+              <article class="panel entry-command">
+                <div class="command-topline">
+                  <span class="eyebrow">
+                    EXAMPLE {String(index + 1).padStart(2, '0')}
+                  </span>
+                  {command.MitreID && (
+                    <a class="attack-pill" href={attackURL(command.MitreID)}>
+                      {command.MitreID} <span aria-hidden="true">↗</span>
+                    </a>
+                  )}
+                </div>
+                <h4>{command.Description}</h4>
+                <div class="code-wrap">
+                  <div class="command-terminal-label">
+                    <span aria-hidden="true">&gt;_</span> COMMAND
+                  </div>
+                  <pre><code>{command.Command}</code></pre>
+                  <button
+                    type="button"
+                    data-copy={command.Command}
+                    aria-label={`Copy ${category} command ${index + 1}`}
+                  >
+                    Copy
+                  </button>
+                </div>
+                <dl class="entry-command-meta">
+                  <div class="command-usecase">
+                    <dt>USE CASE</dt>
+                    <dd>{command.Usecase}</dd>
+                  </div>
+                  <div>
+                    <dt>PRIVILEGES</dt>
+                    <dd>{command.Privileges || 'Not specified'}</dd>
+                  </div>
+                  <div>
+                    <dt>OPERATING SYSTEM</dt>
+                    <dd>{command.OperatingSystem || 'Not specified'}</dd>
+                  </div>
+                </dl>
+                {(command.Tags?.length ?? 0) > 0 && (
+                  <div class="command-tags">
+                    {command.Tags?.flatMap((tag) => Object.entries(tag)).map(
+                      ([key, value]) => (
+                        <span class="badge">
+                          <span>{key}</span> · {value}
+                        </span>
+                      ),
+                    )}
+                  </div>
+                )}
+              </article>
+            ))}
+          </section>
+        ))}
+      </section>
+      <section class="entry-section" id="paths">
+        <div class="entry-section-heading">
+          <div>
+            <span class="eyebrow">02 / ON DISK</span>
+            <h2>Known paths</h2>
+          </div>
+        </div>
+        <div class="panel entry-paths">
+          {entry.Full_Path?.length ? (
+            entry.Full_Path.map((path) => (
+              <div class="entry-path">
+                <span aria-hidden="true">↳</span>
+                <code>{path.Path}</code>
+              </div>
+            ))
+          ) : (
+            <p class="entry-empty">No paths documented for this entry.</p>
+          )}
+        </div>
+      </section>
+      <section class="entry-section" id="detection">
+        <div class="entry-section-heading">
+          <div>
+            <span class="eyebrow">03 / DEFENSIVE INTELLIGENCE</span>
+            <h2>Detection &amp; indicators</h2>
+          </div>
+          <span class="entry-count">{detectionLinks.length} resources</span>
+        </div>
+        {detectionLinks.length > 0 && (
+          <ul class="panel entry-resource-list">
+            {detectionLinks.map(([kind, value]) => (
+              <li>
+                <a href={value}>
+                  <span class="resource-kind">{kind}</span>
+                  <span class="resource-text">
+                    <strong>{linkLabel(value)}</strong>
+                    <small>{host(value)}</small>
+                  </span>
+                  <span class="resource-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+        {indicators.length > 0 && (
+          <div class="panel indicator-panel">
+            <h3>
+              <span class="status-dot"></span>Indicators &amp; detection notes
+            </h3>
+            <ul>
+              {indicators.map(([kind, value]) => (
+                <li>
+                  <span class="eyebrow">{kind}</span>
+                  <p>
+                    {isLink(value) ? (
+                      <a href={value}>{linkLabel(value)} ↗</a>
+                    ) : (
+                      value
+                    )}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        {detections.length === 0 && (
+          <div class="panel entry-empty">
+            <p>No detection resources documented yet.</p>
+            <a href={editURL}>
+              Contribute detection coverage <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        )}
+      </section>
+      {(entry.Code_Sample?.length ?? 0) > 0 && (
+        <section class="entry-section" id="code-samples">
+          <div class="entry-section-heading">
+            <div>
+              <span class="eyebrow">REFERENCE IMPLEMENTATIONS</span>
+              <h2>Code samples</h2>
+            </div>
+          </div>
+          <ul class="panel entry-resource-list">
+            {entry.Code_Sample?.map((sample) => (
+              <li>
+                {isLink(sample.Code) ? (
+                  <a href={sample.Code}>
+                    <span class="resource-kind">CODE</span>
+                    <span class="resource-text">
+                      <strong>{linkLabel(sample.Code)}</strong>
+                      <small>{host(sample.Code)}</small>
+                    </span>
+                    <span class="resource-arrow" aria-hidden="true">
+                      ↗
+                    </span>
+                  </a>
+                ) : (
+                  <pre><code>{sample.Code}</code></pre>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      {(entry.Resources?.length ?? 0) > 0 && (
+        <section class="entry-section" id="resources">
+          <div class="entry-section-heading">
+            <div>
+              <span class="eyebrow">FURTHER READING</span>
+              <h2>Research &amp; resources</h2>
+            </div>
+          </div>
+          <ul class="panel entry-resource-list">
+            {entry.Resources?.map((resource) => (
+              <li>
+                <a href={resource.Link}>
+                  <span class="resource-kind">READ</span>
+                  <span class="resource-text">
+                    <strong>{linkLabel(resource.Link)}</strong>
+                    <small>{host(resource.Link)}</small>
+                  </span>
+                  <span class="resource-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      {(entry.Acknowledgement?.length ?? 0) > 0 && (
+        <section class="entry-section" id="acknowledgements">
+          <div class="entry-section-heading">
+            <div>
+              <span class="eyebrow">COMMUNITY RESEARCH</span>
+              <h2>Acknowledgements</h2>
+            </div>
+          </div>
+          <div class="panel entry-credits">
+            {entry.Acknowledgement?.map((person) => (
+              <div>
+                <span class="credit-avatar" aria-hidden="true">
+                  {person.Person?.charAt(0).toUpperCase()}
+                </span>
+                <div>
+                  <strong>{person.Person}</strong>
+                  {person.Handle && <span>{person.Handle}</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+    <aside class="entry-aside" aria-label="Entry navigation and metadata">
+      <nav class="panel entry-toc" aria-label="On this page">
+        <span class="eyebrow">ON THIS PAGE</span>
+        <a class="toc-main" href="#commands">
+          Command reference <span>{entry.Commands.length}</span>
+        </a>
+        {groups.map((category) => (
+          <a class="toc-category" href={`#${category.toLowerCase()}`}>
+            {category}
+          </a>
+        ))}
+        <a href="#paths">Known paths</a>
+        <a href="#detection">Detection &amp; indicators</a>
+        {(entry.Code_Sample?.length ?? 0) > 0 && (
+          <a href="#code-samples">Code samples</a>
+        )}
+        {(entry.Resources?.length ?? 0) > 0 && (
+          <a href="#resources">Research &amp; resources</a>
+        )}
+        {(entry.Acknowledgement?.length ?? 0) > 0 && (
+          <a href="#acknowledgements">Acknowledgements</a>
+        )}
+      </nav>
+      <section class="panel entry-metadata">
+        <span class="eyebrow">ENTRY DETAILS</span>
+        <dl>
+          <div>
+            <dt>TYPE</dt>
+            <dd>{typeLabels[entry.type]}</dd>
+          </div>
+          <div>
+            <dt>AUTHOR</dt>
+            <dd>{entry.Author}</dd>
+          </div>
+          <div>
+            <dt>ADDED TO CATALOG</dt>
+            <dd>
+              <time datetime={entry.Created}>{entry.Created}</time>
+            </dd>
+          </div>
+        </dl>
+        <div class="entry-mitre">
+          <span class="eyebrow">MITRE ATT&amp;CK</span>
+          <div>
+            {techniques.map((id) => (
+              <a class="attack-pill" href={attackURL(id)}>
+                {id} ↗
+              </a>
+            ))}
+          </div>
+        </div>
+        <a class="entry-edit" href={editURL}>
+          Improve this entry <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+      {related.length > 0 && (
+        <section class="entry-related">
+          <span class="eyebrow">SHARED ATT&amp;CK TECHNIQUES</span>
+          <h2>Keep exploring</h2>
+          {related.map((other) => (
+            <a href={sitePath(other.url)}>
+              <span>{other.Name}</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          ))}
+        </section>
+      )}
+    </aside>
+  </div>
+</Base>

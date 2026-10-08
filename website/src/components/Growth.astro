@@ -1,0 +1,121 @@
+---
+import { sitePath } from '../lib/site';
+import { catalog } from '../lib/catalog';
+const years = [...new Set(catalog.map((e) => e.Created.slice(0, 4)))].sort();
+let total = 0;
+const points = years.map((year) => {
+  const added = catalog.filter((e) => e.Created.startsWith(year)).length;
+  total += added;
+  return { year, added, total };
+});
+const coords = points.map(
+  (p, i) =>
+    `${35 + (i * 550) / Math.max(points.length - 1, 1)},${112 - (p.total / catalog.length) * 90}`,
+);
+const path = 'M' + coords.join(' L');
+---
+
+<section class="panel growth" aria-labelledby="growth-title">
+  <div class="panel-heading">
+    <div>
+      <span class="eyebrow">THE KNOWLEDGE KEEPS GROWING</span>
+      <h2 id="growth-title">A growing body of research.</h2>
+    </div>
+    <a href={sitePath('/insights/')} aria-label="Explore catalog insights">
+      ↗
+    </a>
+  </div>
+  <div class="chart-summary">
+    <strong>{catalog.length}</strong>
+    <span>
+      documented entries
+      <br />
+      <b>since {years[0]}</b>
+    </span>
+    <span class="chart-key">
+      <i></i> Cumulative entries
+    </span>
+  </div>
+  <svg
+    class="growth-chart"
+    viewBox="0 0 620 142"
+    role="group"
+    aria-label={`Cumulative catalog entries by Created date, from ${years[0]} through ${years.at(-1)}`}
+  >
+    <defs>
+      <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
+        <stop stop-color="#22c8ef" stop-opacity=".18" />
+        <stop offset="1" stop-color="#22c8ef" stop-opacity="0" />
+      </linearGradient>
+    </defs>
+    {[22, 67, 112].map((y) => (
+      <line
+        x1="35"
+        y1={y}
+        x2="585"
+        y2={y}
+        stroke="#34424c"
+        stroke-dasharray="3 5"
+      />
+    ))}
+    <path d={`${path} L585,112 L35,112 Z`} fill="url(#chart-fill)" />
+    <path d={path} fill="none" stroke="#22c8ef" stroke-width="2.5" />
+    {points.map((p, i) => (
+      <a
+        href={sitePath(`/?year=${p.year}#catalog`)}
+        aria-label={`Explore ${p.added} entries created in ${p.year}`}
+      >
+        <rect
+          x={35 + (i * 550) / Math.max(points.length - 1, 1) - 25}
+          y="10"
+          width="50"
+          height="130"
+          fill="transparent"
+        />
+        <circle
+          cx={35 + (i * 550) / Math.max(points.length - 1, 1)}
+          cy={112 - (p.total / catalog.length) * 90}
+          r="4"
+          fill="#22c8ef"
+        >
+          <title>{p.year}: {p.total} total, {p.added} added</title>
+        </circle>
+        <text
+          x={35 + (i * 550) / Math.max(points.length - 1, 1)}
+          y="137"
+          text-anchor="middle"
+          fill="#94a6b5"
+          font-size="10"
+        >
+          {p.year}
+        </text>
+      </a>
+    ))}
+  </svg>
+  <p class="chart-note">
+    Based on entry creation dates. Catalog growth, not threat activity.
+  </p>
+  <details class="chart-data">
+    <summary>View chart data</summary>
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Added</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {points.map((p) => (
+          <tr>
+            <th>
+              <a href={sitePath(`/?year=${p.year}#catalog`)}>{p.year}</a>
+            </th>
+            <td>{p.added}</td>
+            <td>{p.total}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </details>
+</section>
