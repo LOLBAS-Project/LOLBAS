@@ -41,6 +41,9 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_odbcconf_response_file_susp.yml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
+  - Splunk: https://research.splunk.com/endpoint/141e7fca-a9f0-40fd-a539-9aac8be41f1b/
+  - Splunk: https://research.splunk.com/endpoint/0562ad4b-fdaa-4882-b12f-7b8e0034cd72/
+  - Splunk: https://research.splunk.com/endpoint/1acafff9-1347-4b40-abae-f35aa4ba85c1/
 Resources:
   - Link: https://gist.github.com/NickTyrer/6ef02ce3fd623483137b45f65017352b
   - Link: https://github.com/woanware/application-restriction-bypasses
