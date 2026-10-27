@@ -34,6 +34,7 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_rundll32_setupapi_installhinfsection.yml
   - Sigma: https://github.com/SigmaHQ/sigma/blob/62d4fd26b05f4d81973e7c8e80d7c1a0c6a29d0e/rules/windows/process_creation/proc_creation_win_rundll32_susp_activity.yml
   - Splunk: https://github.com/splunk/security_content/blob/86a5b644a44240f01274c8b74d19a435c7dae66e/detections/endpoint/detect_rundll32_application_control_bypass___setupapi.yml
+  - Splunk: https://research.splunk.com/endpoint/61e7b44a-6088-4f26-b788-9a96ba13b37a/
 Resources:
   - Link: https://github.com/huntresslabs/evading-autoruns
   - Link: https://twitter.com/pabraeken/status/994742106852941825

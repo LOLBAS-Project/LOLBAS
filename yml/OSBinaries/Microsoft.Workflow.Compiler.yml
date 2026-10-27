@@ -41,6 +41,8 @@ Detection:
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_unusual_process_network_connection.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/414d32027632a49fb239abb8fbbb55d3fa8dd861/rules/windows/defense_evasion_network_connection_from_windows_binary.toml
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - Splunk: https://research.splunk.com/endpoint/9bbc62e8-55d8-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/f0db4464-55d9-11eb-ae93-0242ac130002/
   - IOC: Microsoft.Workflow.Compiler.exe would not normally be run on workstations.
   - IOC: The presence of csc.exe or vbc.exe as child processes of Microsoft.Workflow.Compiler.exe
   - IOC: Presence of "<CompilerInput" in a text file.
