@@ -32,6 +32,15 @@ Commands:
     Tags:
       - Execute: DLL
       - Execute: Remote
+  - Command: ssh.exe -o "StrictHostKeyChecking=no" -o "KnownHostsCommand=C:\Windows\System32\cmd.exe /c {CMD}" user@host
+    Description: Executes a local command through the KnownHostsCommand option, which OpenSSH invokes to retrieve host keys during key exchange prior to user authentication. Does not require PermitLocalCommand and executes before authentication completes. Can be used for defense evasion.
+    Usecase: Execute a local command via legitimate Windows OpenSSH client prior to authentication.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
+    Tags:
+      - Execute: CMD
 Full_Path:
   - Path: c:\windows\system32\OpenSSH\ssh.exe
 Code_Sample:
@@ -40,6 +49,8 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_ssh.yml
   - IOC: Event ID 4624 with process name C:\Windows\System32\OpenSSH\sshd.exe.
   - IOC: command line arguments specifying execution.
+  - IOC: ssh.exe process creation containing KnownHostsCommand in command line arguments (note that options loaded from an SSH config file via -F or the default %USERPROFILE%\.ssh\config do not appear on the ssh.exe command line).
+  - IOC: ssh.exe spawning a child process such as cmd.exe or powershell.exe during SSH key exchange prior to user authentication.
 Resources:
   - Link: https://gtfobins.github.io/gtfobins/ssh/
   - Link: https://gist.github.com/screetsec/97d90750bfb058eb0b49c5374cdc0ac9
@@ -47,3 +58,5 @@ Acknowledgement:
   - Person: Akshat Pradhan
   - Person: Felix Boulet
   - Person: Edo Maland
+  - Person: Yared Henriquez
+    Handle: '@DevCop95'
