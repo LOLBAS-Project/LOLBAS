@@ -50,6 +50,16 @@ Commands:
     OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
     Tags:
       - Download: INetCache
+  - Command: mshta.exe
+    Description: Reads the default value of `HKCU\Software\Classes\CLSID\{25336920-03F9-11CF-8FD0-00AA00686F13}\InProcServer32` and passes it to LoadLibrary, loading that DLL in-process. Pointing this user-writable value at an attacker DLL side-loads it through the signed mshta.exe with an empty command line.
+    Usecase: Proxy execution of an attacker-controlled DLL through a user-writable (HKCU) registry modification, which bypasses mshta.exe command-line and script-content detection.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218.005
+    OperatingSystem: Windows 11 24H2, Windows 11 25H2
+    Tags:
+      - Execute: DLL Side-Load
+      - Sideload: InProcServer32 Registry Redirect
 Full_Path:
   - Path: C:\Windows\System32\mshta.exe
   - Path: C:\Windows\SysWOW64\mshta.exe
@@ -76,6 +86,8 @@ Detection:
   - IOC: msthta.exe network connection to Internet/WWW resource
   - IOC: DotNet CLR libraries loaded into mshta.exe
   - IOC: DotNet CLR Usage Log - mshta.exe.log
+  - IOC: mshta.exe loading a DLL from outside C:\Windows\System32 or C:\Windows\SysWOW64
+  - IOC: Write to the InProcServer32 default value under HKCU\Software\Classes\CLSID resolving outside System32
 Resources:
   - Link: https://evi1cg.me/archives/AppLocker_Bypass_Techniques.html#menu_index_4
   - Link: https://github.com/redcanaryco/atomic-red-team/blob/master/Windows/Payloads/mshta.sct
@@ -88,3 +100,5 @@ Acknowledgement:
     Handle: '@oddvarmoe'
   - Person: Nir Chako (Pentera)
     Handle: '@C_h4ck_0'
+  - Person: Gabriel Haab
+    Handle: ''
