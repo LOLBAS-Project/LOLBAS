@@ -33,7 +33,7 @@ Commands:
       - Execute: DLL
       - Execute: Remote
   - Command: ssh.exe -o "StrictHostKeyChecking=no" -o "PermitLocalCommand=yes" -o "LocalCommand=cmd.exe /q /c {CMD}" -q user@host
-    Description: Executes specified local command using the PermitLocalCommand and LocalCommand options upon initiating an SSH session. Can be used for defense evasion.
+    Description: Executes a local command via the LocalCommand option (enabled by PermitLocalCommand=yes) after the SSH session is successfully established and authenticated. Observed in the wild in the Star Blizzard RedFlick campaign. Can be used for defense evasion.
     Usecase: Execute arbitrary local command via legitimate Windows OpenSSH client.
     Category: Execute
     Privileges: User
@@ -49,8 +49,8 @@ Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_ssh.yml
   - IOC: Event ID 4624 with process name C:\Windows\System32\OpenSSH\sshd.exe.
   - IOC: command line arguments specifying execution.
-  - IOC: ssh.exe process creation containing PermitLocalCommand or LocalCommand in command line.
-  - IOC: ssh.exe spawning child processes such as cmd.exe or msiexec.exe.
+  - IOC: ssh.exe process creation containing PermitLocalCommand or LocalCommand in command line arguments (note that options loaded from an SSH config file via -F or the default %USERPROFILE%\.ssh\config do not appear on the ssh.exe command line).
+  - IOC: ssh.exe spawning a child process such as cmd.exe, powershell.exe, msiexec.exe or rundll32.exe. LocalCommand executes through cmd.exe (ssh.exe spawns cmd.exe which spawns the payload). This parent-child relationship also catches config-file (-F) variants where execution flags are absent from the command line.
 Resources:
   - Link: https://gtfobins.github.io/gtfobins/ssh/
   - Link: https://gist.github.com/screetsec/97d90750bfb058eb0b49c5374cdc0ac9
