@@ -1,0 +1,38 @@
+---
+Name: Infgate.exe
+Description: Windows Driver Kit (WDK) printer-INF conformance validation tool that ships in the Windows Kits Tools directory.
+Author: 'Cory Rondorf (@r0nd-0)'
+Created: 2026-11-17
+Commands:
+  - Command: infgate.exe {PATH:.inf} /WTT /O=C:\Users\Public\out
+    Description: With the /WTT option, infgate looks for the WTT logger assembly Microsoft.Wtt.Log.dll under %windir%\Microsoft.NET\assembly\GAC_MSIL\Microsoft.Wtt.Log; when that directory is absent (the default) it falls back to loading the bare name Microsoft.Wtt.Log.dll via Assembly.LoadFrom, which resolves from the current working directory. A caller who places an unsigned Microsoft.Wtt.Log.dll in the working directory (or redirects the child process windir to a crafted GAC tree) has it loaded and its Microsoft.DistributedAutomation.Logger.TestLogger constructor instantiated in-process, while infgate remains in its installed Windows Kits directory. The assembly identity, simple name, and signature are not checked; only a file-version gate (major version above 2, or major 2 with minor 2 or higher) applies. The .inf argument is only a syntactically valid trigger; its contents do not reference the DLL.
+    Usecase: Execute code from a caller-supplied .NET assembly through a Microsoft-signed WDK utility without relocating it.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+  - Command: infgate.exe {PATH:.inf} /WTT /O=C:\Users\Public\out
+    Description: The WTT logger assembly is loaded from the caller-controlled working directory into the signed infgate.exe process. This can bypass application-control policies that trust infgate.exe but do not enforce a DLL rule collection (AppLocker with DLL rules disabled, the default). WDAC in enforcement mode still evaluates the on-disk DLL load (CodeIntegrity 3077). A Mark-of-the-Web (ZoneId=3) stream on the DLL blocks the load.
+    Usecase: Bypass executable-only application allow-listing by loading unsigned code from the working directory into a signed utility.
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+Full_Path:
+  - Path: C:\Program Files (x86)\Windows Kits\10\Tools\10.0.26100.0\x64\infgate.exe
+  - Path: C:\Program Files (x86)\Windows Kits\10\Tools\10.0.26100.0\arm64\infgate.exe
+Code_Sample:
+  - Code: https://github.com/r0nd-0/lolbas-findings/blob/main/infgate/POC/MicrosoftWttLogCanary.cs
+Detection:
+  - IOC: infgate.exe with /WTT, especially outside a WDK validation/build process tree or launched by an interactive, Office, browser, or script-host parent.
+  - IOC: infgate.exe loading Microsoft.Wtt.Log.dll from its current working directory or any path outside Windows Kits/TAEF/GAC locations.
+  - IOC: The loaded Microsoft.Wtt.Log.dll is Authenticode NotSigned, has a non-Microsoft signer, lacks the expected strong-name token 399d95e6b32b7391, or has an internal assembly name other than Microsoft.Wtt.Log.
+  - IOC: The infgate.exe child process environment contains a windir value that differs from the real Windows directory.
+Resources:
+  - Link: https://github.com/r0nd-0/lolbas-findings/tree/main/infgate
+Acknowledgement:
+  - Person: Cory Rondorf
