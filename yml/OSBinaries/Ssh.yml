@@ -40,7 +40,7 @@ Commands:
     MitreID: T1202
     OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
     Tags:
-      - Execute: CMD    
+      - Execute: CMD
   - Command: ssh.exe -o "StrictHostKeyChecking=no" -o "KnownHostsCommand=C:\Windows\System32\cmd.exe /c {CMD}" win@github.com
     Description: Executes a local command through the `KnownHostsCommand` option, which OpenSSH invokes to retrieve host keys during key exchange prior to user authentication. Does not require `PermitLocalCommand` and executes before authentication completes.
     Usecase: Performs execution of specified file, can be used as a defensive evasion.
