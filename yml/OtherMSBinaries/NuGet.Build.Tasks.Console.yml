@@ -1,0 +1,37 @@
+---
+Name: NuGet.Build.Tasks.Console.exe
+Description: Microsoft NuGet static-graph restore console included with Visual Studio and used to evaluate project dependency graphs during restore.
+Author: 'Cory Rondorf (@r0nd-0)'
+Created: 2026-10-27
+Commands:
+  - Command: NuGet.Build.Tasks.Console.exe "RestoreRecursive=false" "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe" "{PATH_ABSOLUTE:.csproj}" "TargetFramework=net472"
+    Description: The caller-controlled project defines _CollectRestoreInputs, or attaches a target with BeforeTargets="_CollectRestoreInputs", and uses RoslynCodeTaskFactory or CodeTaskFactory to compile and execute inline C# inside NuGet.Build.Tasks.Console.exe. The inline form requires no payload DLL or separate build process, and MSBuild XML is accepted under conventional, arbitrary, or extensionless filenames.
+    Usecase: Execute arbitrary inline C# via a Microsoft-signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: C#
+  - Command: NuGet.Build.Tasks.Console.exe "RestoreRecursive=false" "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe" "{PATH_ABSOLUTE:.csproj}" "TargetFramework=net472"
+    Description: Inline task code is compiled and executed in-process, so the technique does not require a separate attacker executable or DLL for an executable-only application-control policy to evaluate. The inline code itself may still create child processes.
+    Usecase: Bypass application allow-listing that only trusts signed executables.
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: C#
+Full_Path:
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\NuGet\NuGet.Build.Tasks.Console.exe
+Code_Sample:
+  - Code: https://github.com/r0nd-0/lolbas-findings/blob/main/nuget-build-tasks-console/POC/MessageBox.csproj
+Detection:
+  - IOC: NuGet.Build.Tasks.Console.exe launched by an interactive or non-restore parent (PowerShell, cmd, script hosts, Office, browsers).
+  - IOC: Entry-project (3rd argument) or global-properties (4th argument) path under a user-writable/download directory; input extension is not limited to .proj/.csproj.
+  - IOC: Roslyn compiler assemblies or an in-memory/generated code-task assembly loaded into NuGet.Build.Tasks.Console.exe.
+  - IOC: Project content containing RoslynCodeTaskFactory, CodeTaskFactory, UsingTask, Exec, _CollectRestoreInputs, or _IsProjectRestoreSupported.
+Resources:
+  - Link: https://github.com/r0nd-0/lolbas-findings/tree/main/nuget-build-tasks-console
+Acknowledgement:
+  - Person: Cory Rondorf
