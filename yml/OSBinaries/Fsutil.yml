@@ -27,18 +27,30 @@ Commands:
     OperatingSystem: Windows 11
     Tags:
       - Execute: EXE
+  - Command: fsutil.exe file createnew {PATH_ABSOLUTE} {LENGTH_IN_BYTES}
+    Description: Instantly creates a new file of any specified size to exhaust free disk space.
+    Usecase: Exhaust available disk space to impair defensive tools (preventing Windows Defender updates and halting local logging) or cause endpoint denial of service.
+    Category: Tamper
+    Privileges: User
+    MitreID: T1562.001
+    OperatingSystem: Windows XP, Windows Vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
 Full_Path:
   - Path: C:\Windows\System32\fsutil.exe
   - Path: C:\Windows\SysWOW64\fsutil.exe
 Detection:
   - IOC: fsutil.exe should not be run on a normal workstation
   - IOC: file setZeroData (not case-sensitive) in the process arguments
+  - IOC: file createnew (not case-sensitive) in the process arguments
   - IOC: Sysmon Event ID 1
+  - IOC: Sysmon Event ID 11
   - IOC: Execution of process fsutil.exe with trace decode could be suspicious
   - IOC: Non-Windows netsh.exe execution
   - Sigma: https://github.com/SigmaHQ/sigma/blob/ff5102832031425f6eed011dd3a2e62653008c94/rules/windows/process_creation/proc_creation_win_susp_fsutil_usage.yml
 Resources:
   - Link: https://twitter.com/0gtweet/status/1720724516324704404
+  - Link: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-file
+  - Link: https://github.com/MSNightmare/BigDiskBuster
+  - Link: https://github.com/DevCop95/BDB-Guardian
 Acknowledgement:
   - Person: Elliot Killick
     Handle: '@elliotkillick'
@@ -46,3 +58,7 @@ Acknowledgement:
     Handle: '@bohops'
   - Person: Grzegorz Tworek
     Handle: '@0gtweet'
+  - Person: MSNightmare
+    Handle: '@MSNightmare'
+  - Person: DevCop95
+    Handle: '@DevCop95'
