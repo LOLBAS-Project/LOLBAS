@@ -1,0 +1,22 @@
+---
+Name: Build.bat
+Description: Used as part of the Powershell pester testing framework
+Author: 6en6ar
+Created: 2026-09-26
+Commands:
+  - Command: Build.bat ;{PATH:.exe}
+    Description: Execute code using Build.bat. Example here executes specified executable.
+    Usecase: Proxy execution
+    Category: Execute
+    Privileges: User
+    MitreID: T1216
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: C:\Program Files\WindowsPowerShell\Modules\Pester\<VERSION>\Build.bat
+Resources:
+  - Link: https://devblogs.microsoft.com/scripting/what-is-pester-and-why-should-i-care/
+Acknowledgement:
+  - Person: Arnaut N.
+    Handle: '@6en6ar'

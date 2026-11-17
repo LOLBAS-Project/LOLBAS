@@ -1,0 +1,26 @@
+---
+Name: Wabmig.exe
+Description: Microsoft (R) Contacts Import Tool
+Author: 6en6ar
+Created: 2026-10-08
+Commands:
+  - Command: wabmig.exe
+    Description: Change HKLM\Software\Microsoft\WAB\DLLPath and execute DLL of choice, rename it to wab32.dll
+    Usecase: Execute dll file. Bypass defensive counter measures
+    Category: Execute
+    Privileges: Administrator
+    MitreID: T1218
+    OperatingSystem: Windows vista, Windows 7, Windows 8, Windows 8.1, Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+Full_Path:
+  - Path: C:\Program Files\Windows Mail\wabmig.exe
+  - Path: C:\Program Files (x86)\Windows Mail\wabmig.exe
+Detection:
+  - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/registry/registry_set/registry_set_wab_dllpath_reg_change.yml
+  - IOC: wabmig.exe should normally never be used
+Resources:
+  - Link: https://localh0st.run/post/windowsaddressbook/
+Acknowledgement:
+  - Person: Arnaut N.
+    Handle: '@6en6ar'
