@@ -1,0 +1,28 @@
+---
+Name: Xperf.exe
+Description: Microsoft Windows Performance Toolkit trace controller used to start, stop, and manage Event Tracing for Windows sessions.
+Author: 'Cory Rondorf (@r0nd-0)'
+Created: 2026-10-27
+Commands:
+  - Command: xperf.exe -start MySession -heap -PidNewProcess "{PATH_ABSOLUTE:.exe}" -WaitForNewProcess
+    Description: Xperf starts the process selected by -PidNewProcess before creating the requested private ETW logger. On the tested build, a standard user's child process executed even though logger creation subsequently failed with access denied. This is a process-parenting proxy, not an application-control bypass; policy still applies to the child executable.
+    Usecase: Spawn an arbitrary process via a Microsoft-signed binary as a proxy-execution parent.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\xperf.exe
+Code_Sample:
+  - Code: https://github.com/r0nd-0/lolbas-findings/blob/main/xperf/POC/test.c
+Detection:
+  - IOC: xperf.exe command line containing -PidNewProcess.
+  - IOC: xperf.exe as the parent of an unexpected child (cmd.exe, PowerShell, or a binary from a user-writable directory).
+  - IOC: xperf.exe launched by a non-WPA/non-diagnostics parent process.
+Resources:
+  - Link: https://learn.microsoft.com/en-us/windows-hardware/test/wpt/start
+  - Link: https://github.com/r0nd-0/lolbas-findings/tree/main/xperf
+Acknowledgement:
+  - Person: Cory Rondorf
