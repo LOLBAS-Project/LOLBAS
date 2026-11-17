@@ -1,0 +1,37 @@
+---
+Name: VcxprojReader.exe
+Description: Microsoft Visual Studio C++ design-time project reader used to evaluate project data and design-time build targets.
+Author: 'Cory Rondorf (@r0nd-0)'
+Created: 2026-10-27
+Commands:
+  - Command: VcxprojReader.exe /DataBase:C:\Users\Public\x.db /WriteProjectData /WriteDynamicConfigData "/p:Configuration=Debug;Platform=x64" "{PATH_ABSOLUTE:.csproj}"
+    Description: Loads caller-controlled MSBuild XML and executes a redefined design-time target, such as GetProjectDirectories. CodeTaskFactory can compile and execute inline C# inside VcxprojReader.exe, while an Exec task can launch a child process. No payload DLL, signing, or host relocation is required; the input extension is not enforced and MOTW on the tested XML was ignored on this CLI path.
+    Usecase: Execute arbitrary inline C# or spawn a child process through a Microsoft-signed binary.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: C#
+  - Command: VcxprojReader.exe /DataBase:C:\Users\Public\x.db /WriteProjectData /WriteDynamicConfigData "/p:Configuration=Debug;Platform=x64" "{PATH_ABSOLUTE:.csproj}"
+    Description: Inline CodeTaskFactory C# is compiled and executed in-process, so no attacker executable or DLL is written for an EXE-only AppLocker policy to evaluate.
+    Usecase: Bypass application allow-listing that only trusts signed executables.
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: C#
+Full_Path:
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\VcxprojReader.exe
+Code_Sample:
+  - Code: https://github.com/r0nd-0/lolbas-findings/blob/main/vcxprojreader/POC/MessageBox.csproj
+Detection:
+  - IOC: VcxprojReader.exe with an interactive or non-Visual-Studio parent.
+  - IOC: Command line with /WriteDynamicConfigData and a database or project path under a user-writable directory.
+  - IOC: VcxprojReader.exe reading MSBuild XML outside normal solution/build trees, or spawning a child / making network connections.
+  - IOC: Input content with UsingTask, TaskFactory="CodeTaskFactory", TaskFactory="RoslynCodeTaskFactory", or executable tasks inside a design-time target name (GetProjectDirectories, GetResolvedReferences, ...).
+Resources:
+  - Link: https://github.com/r0nd-0/lolbas-findings/tree/main/vcxprojreader
+Acknowledgement:
+  - Person: Cory Rondorf
