@@ -23,18 +23,40 @@ Commands:
     Tags:
       - Execute: EXE
       - Requires: Rename
+  - Command: Dxcap.exe -measure -expdll {PATH_ABSOLUTE:.dll}
+    Description: The undocumented -expdll option, valid inside -measure mode, passes the caller-selected DLL path to LoadLibrary. DllMain executes before Dxcap attempts to resolve the optional ListExperiments export, so the DLL does not need to implement a valid experiment-provider interface.
+    Usecase: Execute code from a caller-selected DLL inside a Microsoft-signed, in-box binary without relocating Dxcap.exe.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+  - Command: Dxcap.exe -measure -expdll {PATH_ABSOLUTE:.dll}
+    Description: Loads a caller-selected DLL into the signed process without relocating Dxcap.exe. This can bypass policies that trust the signed executable but do not enforce a DLL rule collection. WDAC and other controls may still evaluate and block the module load.
+    Usecase: Bypass executable-only application allow-listing by loading code from an arbitrary DLL path into a signed, in-box binary.
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
 Full_Path:
   - Path: C:\Windows\System32\dxcap.exe
   - Path: C:\Windows\SysWOW64\dxcap.exe
 Code_Sample:
   - Code: https://gist.github.com/ghosts621/1d0e0f43f7288c826035d5d011b6ca51
+  - Code: https://github.com/r0nd-0/lolbas-findings/blob/main/dxcap-expdll/POC/test.c
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_susp_dxcap.yml
   - IOC: dxcap.exe executing from outside of System32/SysWOW64
   - IOC: dxcap.exe spawning Xperf.exe
   - IOC: Xperf.exe executing from unusual directories (if not running from ADK path)
+  - IOC: dxcap.exe command line containing -expdll
+  - IOC: dxcap.exe loading a DLL from a user-writable, temporary, download, archive, or network path
 Resources:
   - Link: https://twitter.com/harr0ey/status/992008180904419328
+  - Link: https://github.com/r0nd-0/lolbas-findings/tree/main/dxcap-expdll
 Acknowledgement:
   - Person: Matt harr0ey
     Handle: '@harr0ey'
@@ -42,3 +64,4 @@ Acknowledgement:
     Handle: '@vikas891'
   - Person: Naor Evgi
     Handle: '@ghosts621'
+  - Person: 'Cory Rondorf (@r0nd-0)'
