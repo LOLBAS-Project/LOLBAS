@@ -30,7 +30,7 @@ jobs:
           unset files
 
       - name: Install python dependencies
-        run: pip install yamllint==1.37.1 pydantic==2.11.9
+        run: pip install yamllint==1.38.0 pydantic==2.14.3
 
       - name: Lint YAML files
         run: yamllint -c .github/.yamllint yml/**/
