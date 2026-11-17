@@ -32,9 +32,18 @@ Commands:
     Tags:
       - Execute: DLL
       - Execute: Remote
-  - Command: ssh.exe -o "StrictHostKeyChecking=no" -o "PermitLocalCommand=yes" -o "LocalCommand=cmd.exe /q /c {CMD}" -q user@host
-    Description: Executes a local command via the LocalCommand option (enabled by PermitLocalCommand=yes) after the SSH session is successfully established and authenticated. Observed in the wild in the Star Blizzard RedFlick campaign. Can be used for defense evasion.
-    Usecase: Execute arbitrary local command via legitimate Windows OpenSSH client.
+  - Command: ssh.exe -o "StrictHostKeyChecking=no" -o "PermitLocalCommand=yes" -o "LocalCommand={CMD}" user@host
+    Description: Executes a local command via the `LocalCommand` option (enabled by `PermitLocalCommand=yes`) after the SSH session is successfully established and authenticated.
+    Usecase: Performs execution of specified file, can be used as a defensive evasion.
+    Category: Execute
+    Privileges: User
+    MitreID: T1202
+    OperatingSystem: Windows 10, Windows 11, Windows Server 2019, Windows Server 2022
+    Tags:
+      - Execute: CMD    
+  - Command: ssh.exe -o "StrictHostKeyChecking=no" -o "KnownHostsCommand=C:\Windows\System32\cmd.exe /c {CMD}" win@github.com
+    Description: Executes a local command through the `KnownHostsCommand` option, which OpenSSH invokes to retrieve host keys during key exchange prior to user authentication. Does not require `PermitLocalCommand` and executes before authentication completes.
+    Usecase: Performs execution of specified file, can be used as a defensive evasion.
     Category: Execute
     Privileges: User
     MitreID: T1202
@@ -51,6 +60,8 @@ Detection:
   - IOC: command line arguments specifying execution.
   - IOC: ssh.exe process creation containing PermitLocalCommand or LocalCommand in command line arguments (note that options loaded from an SSH config file via -F or the default %USERPROFILE%\.ssh\config do not appear on the ssh.exe command line).
   - IOC: ssh.exe spawning a child process such as cmd.exe, powershell.exe, msiexec.exe or rundll32.exe. LocalCommand executes through cmd.exe (ssh.exe spawns cmd.exe which spawns the payload). This parent-child relationship also catches config-file (-F) variants where execution flags are absent from the command line.
+  - IOC: ssh.exe process creation containing KnownHostsCommand in command line arguments (note that options loaded from an SSH config file via -F or the default %USERPROFILE%\.ssh\config do not appear on the ssh.exe command line).
+  - IOC: ssh.exe spawning a child process such as cmd.exe or powershell.exe during SSH key exchange prior to user authentication.
 Resources:
   - Link: https://gtfobins.github.io/gtfobins/ssh/
   - Link: https://gist.github.com/screetsec/97d90750bfb058eb0b49c5374cdc0ac9
