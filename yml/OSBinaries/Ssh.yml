@@ -33,8 +33,8 @@ Commands:
       - Execute: DLL
       - Execute: Remote
   - Command: ssh.exe -o "StrictHostKeyChecking=no" -o "KnownHostsCommand=C:\Windows\System32\cmd.exe /c {CMD}" user@host
-    Description: Executes a local command through the KnownHostsCommand option, which OpenSSH invokes to retrieve host keys during key exchange prior to user authentication. Does not require PermitLocalCommand and executes before authentication completes. Can be used for defense evasion.
-    Usecase: Execute a local command via legitimate Windows OpenSSH client prior to authentication.
+    Description: Executes a local command through the `KnownHostsCommand` option, which OpenSSH invokes to retrieve host keys during key exchange prior to user authentication. Does not require `PermitLocalCommand` and executes before authentication completes.
+    Usecase: Performs execution of specified file, can be used as a defensive evasion.
     Category: Execute
     Privileges: User
     MitreID: T1202
