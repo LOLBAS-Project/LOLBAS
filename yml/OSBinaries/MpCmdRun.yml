@@ -25,6 +25,13 @@ Commands:
     Privileges: User
     MitreID: T1564.004
     OperatingSystem: Windows 10
+  - Command: MpCmdRun.exe -DeviceControl -TestPolicyXml {PATH_TO_FILE} -Rules
+    Description: Reads any user-accessible file and dumps its full contents to %TEMP%\MpCmdRun.log (UTF-16LE). The file is passed to an internal XML parser which fails for non-XML input, but the raw file content is written to the log before the error.
+    Usecase: Read sensitive files such as SSH private keys, browser DPAPI encrypted keys (Chrome/Edge Local State), SSH configs, Wi-Fi profile XMLs, PowerShell history, and other credential material through a Microsoft-signed binary. File access is attributed to MpCmdRun.exe in EDR and Sysmon telemetry.
+    Category: Credentials
+    Privileges: User
+    MitreID: T1552.001
+    OperatingSystem: Windows 10, Windows 11
 Full_Path:
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.4-0\MpCmdRun.exe
   - Path: C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2008.7-0\MpCmdRun.exe
@@ -40,6 +47,8 @@ Detection:
   - IOC: Monitor process creation for non-SYSTEM and non-LOCAL SERVICE accounts launching mpcmdrun.exe.
   - IOC: Monitor for the creation of %USERPROFILE%\AppData\Local\Temp\MpCmdRun.log
   - IOC: User Agent is "MpCommunication"
+  - IOC: MpCmdRun.exe spawned with -DeviceControl -TestPolicyXml arguments where the target file is not an XML policy file.
+  - IOC: %TEMP%\MpCmdRun.log containing non-XML content such as PEM keys, JSON, or plaintext credentials.
 Resources:
   - Link: https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/command-line-arguments-microsoft-defender-antivirus
   - Link: https://twitter.com/mohammadaskar2/status/1301263551638761477
@@ -53,3 +62,5 @@ Acknowledgement:
   - Person: RichRumble
   - Person: Cedric
     Handle: '@th3c3dr1c'
+  - Person: Adrian Diaz
+    Handle: '@s4dbrd'
