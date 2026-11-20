@@ -70,6 +70,10 @@ Detection:
   - Elastic: https://github.com/elastic/detection-rules/blob/61afb1c1c0c3f50637b1bb194f3e6fb09f476e50/rules/windows/defense_evasion_execution_msbuild_started_by_office_app.toml
   - Elastic: https://github.com/elastic/detection-rules/blob/61afb1c1c0c3f50637b1bb194f3e6fb09f476e50/rules/windows/defense_evasion_execution_msbuild_started_renamed.toml
   - BlockRule: https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules
+  - Splunk: https://research.splunk.com/endpoint/f5198224-551c-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/213b3148-24ea-11ec-93a2-acde48001122/
+  - Splunk: https://research.splunk.com/endpoint/4006adac-5937-11eb-ae93-0242ac130002/
+  - Splunk: https://research.splunk.com/endpoint/a115fba6-5514-11eb-ae93-0242ac130002/
   - IOC: Msbuild.exe should not normally be executed on workstations
 Resources:
   - Link: https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1127/T1127.md
