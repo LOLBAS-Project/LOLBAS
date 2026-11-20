@@ -26,6 +26,7 @@ Full_Path:
   - Path: c:\Program Files\WindowsPowerShell\Modules\Pester\<VERSION>\bin\Pester.bat
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_lolbin_pester_1.yml
+  - Splunk: https://research.splunk.com/endpoint/71b9bf37-cde1-45fb-b899-1b0aa6fa1183/
 Resources:
   - Link: https://twitter.com/Oddvarmoe/status/993383596244258816
   - Link: https://twitter.com/_st0pp3r_/status/1560072680887525378

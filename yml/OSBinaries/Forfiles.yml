@@ -27,6 +27,8 @@ Full_Path:
   - Path: C:\Windows\SysWOW64\forfiles.exe
 Detection:
   - Sigma: https://github.com/SigmaHQ/sigma/blob/6312dd1d44d309608552105c334948f793e89f48/rules/windows/process_creation/proc_creation_win_lolbin_forfiles.yml
+  - Splunk: https://research.splunk.com/endpoint/bfdaabe7-3db8-48c5-80c1-220f9b8f22be/
+  - Splunk: https://research.splunk.com/endpoint/1fdf31c9-ff4d-4c48-b799-0e8666e08787/
 Resources:
   - Link: https://twitter.com/vector_sec/status/896049052642533376
   - Link: https://gist.github.com/api0cradle/cdd2d0d0ec9abb686f0e89306e277b8f
