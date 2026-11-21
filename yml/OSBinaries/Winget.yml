@@ -28,6 +28,13 @@ Commands:
     Privileges: User
     MitreID: T1105
     OperatingSystem: Windows 10, Windows 11
+  - Command: winget.exe configure -f config.winget --accept-configuration-agreements --disable-interactivity
+    Description: 'Apply a WinGet Configuration (DSC) file. A PowerShell DSC Script resource in the file runs its SetScript as a child of the signed Microsoft binary ConfigurationRemotingServer.exe, not powershell.exe. The configure command also accepts the aliases configuration and dsc, a positional file argument, and any file extension. Remote files are supported with a URL in place of the path, in which case winget downloads the file itself.'
+    Usecase: Execute arbitrary PowerShell through a signed Microsoft binary without launching powershell.exe
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10 1809, Windows 11
 Full_Path:
   - Path: C:\Users\user\AppData\Local\Microsoft\WindowsApps\winget.exe
 Code_Sample:
@@ -35,14 +42,20 @@ Code_Sample:
 Detection:
   - IOC: winget.exe spawned with local manifest file
   - IOC: Sysmon Event ID 1 - Process Creation
+  - IOC: ConfigurationRemotingServer.exe spawned by winget.exe
   - Analysis: https://saulpanders.github.io/2022/01/02/New-Year-New-LOLBAS.html
   - Sigma: https://github.com/SigmaHQ/sigma/blob/683b63f8184b93c9564c4310d10c571cbe367e1e/rules/windows/process_creation/proc_creation_win_winget_local_install_via_manifest.yml
 Resources:
   - Link: https://saulpanders.github.io/2022/01/02/New-Year-New-LOLBAS.html
   - Link: https://docs.microsoft.com/en-us/windows/package-manager/winget/#production-recommended
   - Link: https://www.youtube.com/watch?v=zuL7x4Wltto
+  - Link: https://learn.microsoft.com/en-us/windows/package-manager/configuration/
+  - Link: https://blog.compass-security.com/2026/03/winget-desired-state-initial-access-established/
+  - Link: https://ipurple.team/2026/06/09/winget/
 Acknowledgement:
   - Person: Paul
     Handle: '@saulpanders'
   - Person: Konrad 'unrooted' Klawikowski
   - Person: Fredrik H. Brathen
+  - Person: Nazar Diachok
+    Handle: '@Diablo-research'
