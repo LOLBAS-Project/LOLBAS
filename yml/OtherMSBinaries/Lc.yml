@@ -1,0 +1,37 @@
+---
+Name: Lc.exe
+Description: Microsoft .NET Framework License Compiler used to process licensed component information into a .licenses resource for an application.
+Author: 'Cory Rondorf (@r0nd-0)'
+Created: 2026-10-27
+Commands:
+  - Command: lc.exe /target:fake.exe /complist:{PATH_ABSOLUTE:.licx} /outdir:C:\Users\Public /i:{PATH_ABSOLUTE:.dll}
+    Description: The .licx file names a component type in the assembly supplied through /i. Lc.exe loads that assembly from the caller-selected absolute path and instantiates the component, causing its type initializer and constructor to execute in-process while lc.exe remains in its installed SDK directory.
+    Usecase: Execute code from a caller-supplied .NET component assembly through a Microsoft-signed developer utility.
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+  - Command: lc.exe /target:fake.exe /complist:{PATH_ABSOLUTE:.licx} /outdir:C:\Users\Public /i:{PATH_ABSOLUTE:.dll}
+    Description: The /i option loads a caller-selected .NET assembly into the signed process. This can bypass policies that trust lc.exe but do not enforce a DLL rule collection; other application-control products may still evaluate the assembly load.
+    Usecase: Bypass executable-only application allow-listing by loading code from an arbitrary assembly path into a signed developer utility.
+    Category: AWL Bypass
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: DLL
+Full_Path:
+  - Path: C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\lc.exe
+  - Path: C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8.1 Tools\lc.exe
+Code_Sample:
+  - Code: https://github.com/r0nd-0/lolbas-findings/blob/main/lc/POC/MessageBoxComponent.cs
+Detection:
+  - IOC: lc.exe with /i pointing at a DLL in a user-writable/download directory, or a /complist in such a directory.
+  - IOC: lc.exe loading an unsigned assembly, or spawning a child / touching the network.
+  - IOC: lc.exe launched by a non-build/non-Visual-Studio parent.
+Resources:
+  - Link: https://github.com/r0nd-0/lolbas-findings/tree/main/lc
+Acknowledgement:
+  - Person: Cory Rondorf
