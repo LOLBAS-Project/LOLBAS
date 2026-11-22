@@ -1,0 +1,32 @@
+---
+Name: WWAHost.exe
+Description: Microsoft-signed Windows Web App Host binary that hosts web content inside AppX packages. An AppX package whose manifest grants WindowsRuntimeAccess="all" to an attacker-controlled origin can load attacker-hosted JavaScript inside WWAHost.exe with full Windows Runtime access.
+Author: Liran Ravich
+Created: 2026-10-01
+Commands:
+  - Command: Add-AppxPackage -Register .\AppxManifest.xml
+    Description: Registers an AppX package configured through ContentUriRules to load attacker-hosted JavaScript inside WWAHost.exe. Developer Mode or an enterprise sideloading policy must already be enabled; otherwise, registration fails with error 0x80073CFF.
+    Usecase: Register an AppX package that loads attacker-hosted JavaScript inside a Microsoft-signed system host with Windows Runtime access.
+    Category: Execute
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 11
+  - Command: Add-AppxPackage -Register .\AppxManifest.xml
+    Description: The remote JavaScript hosted inside WWAHost.exe calls Windows Runtime authentication APIs to capture OAuth access and refresh tokens issued by Microsoft's own login flow.
+    Usecase: Steal application access tokens through a Microsoft-signed host, surviving multi-factor authentication because the user authenticates legitimately.
+    Category: Credentials
+    Privileges: User
+    MitreID: T1528
+    OperatingSystem: Windows 11
+Full_Path:
+  - Path: C:\Windows\System32\WWAHost.exe
+  - Path: C:\Windows\SysWOW64\WWAHost.exe
+Detection:
+  - IOC: WWAHost.exe making outbound network connections to a non-Microsoft origin
+  - IOC: AppX package registration by a standard user with Developer Mode enabled
+  - Analysis: https://www.huntress.com/blog/stealing-oauth-tokens-through-microsofts-front-door
+Resources:
+  - Link: https://www.huntress.com/blog/stealing-oauth-tokens-through-microsofts-front-door
+  - Link: https://learn.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-uap-rule
+Acknowledgement:
+  - Person: Liran Ravich, Cribl
