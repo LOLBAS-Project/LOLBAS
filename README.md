@@ -55,6 +55,23 @@ If you have found a new LOLBin or LOLScript that you would like to contribute, p
 
 A template for the required format has been provided here: https://github.com/LOLBAS-Project/LOLBAS/blob/master/YML-Template.yml
 
+## Build the website locally
+
+The Astro website builds from this repository's YAML catalog. With Node.js
+22.22.0 installed, run:
+
+```sh
+cd website
+npm ci
+npm run check
+npm run test:data
+npm run build
+npm run preview -- --port 4387
+```
+
+See [the website guide](website/README.md) for browser tests, development commands,
+and the maintainer-controlled deployment cutover and rollback procedure.
+
 ## The History of the LOLBin
 
 The phrase "Living off the land" was coined by Christopher Campbell (@obscuresec) & Matt Graeber (@mattifestation) at [DerbyCon 3](https://www.youtube.com/watch?v=j-r6UonEkUw).

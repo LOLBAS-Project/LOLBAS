@@ -1,0 +1,10 @@
+.context/
+website/node_modules/
+website/dist/
+website/.astro/
+website/src/data/
+website/public/api/
+website/public/assets/lolbas-count.svg
+website/public/mitre_attack_navigator_layer.json
+website/test-results/
+website/playwright-report/

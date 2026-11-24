@@ -1,0 +1,102 @@
+/* Progressive native select styling keeps OS controls on older browsers. */
+.filters select {
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
+}
+.filters select:hover {
+  border-color: #5c7b8c;
+  background-color: #24323d;
+}
+@supports (appearance: base-select) {
+  .filters select,
+  .filters select::picker(select) {
+    appearance: base-select;
+  }
+  .filters select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    height: 36px;
+    padding: 0 11px;
+    border-radius: 6px;
+    font-size: 11px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .filters select:open {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px #22c8ef12;
+    background: #253741;
+  }
+  .filters select::picker-icon {
+    content: '⌄';
+    color: #8fa8b8;
+    font-size: 15px;
+    margin-left: auto;
+    transition: rotate 0.15s;
+  }
+  .filters select:open::picker-icon {
+    rotate: 180deg;
+    color: var(--accent);
+  }
+  .filters select::picker(select) {
+    margin: 8px 0 0;
+    padding: 6px;
+    color: var(--text);
+    background: #222e38;
+    border: 1px solid #466272;
+    border-radius: 9px;
+    box-shadow:
+      0 16px 45px #10161dcc,
+      0 0 0 1px #22c8ef09;
+    min-width: anchor-size(width);
+    max-height: min(340px, 65vh);
+    scrollbar-width: thin;
+    scrollbar-color: #4a6677 transparent;
+    font:
+      12px/1.4 -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      sans-serif;
+  }
+  .filters option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 34px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: #c2d0da;
+    cursor: pointer;
+  }
+  .filters option:first-child {
+    color: #8fa8b8;
+  }
+  .filters option:hover,
+  .filters option:focus {
+    background: #2e4350;
+    color: #effaff;
+    outline: none;
+  }
+  .filters option:checked {
+    background: #22c8ef14;
+    color: #63d9f3;
+    font-weight: 600;
+  }
+  .filters option::checkmark {
+    content: '✓';
+    color: var(--accent);
+    font-size: 11px;
+  }
+  .filters option + option {
+    margin-top: 2px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .filters select,
+  .filters select::picker-icon {
+    transition: none;
+  }
+}

@@ -1,0 +1,26 @@
+---
+import { sitePath } from '../lib/site';
+import Base from '../layouts/Base.astro';
+import { categories } from '../lib/catalog';
+---
+
+<Base title="Functions · LOLBAS">
+  <section class="page-head">
+    <h1>
+      Unexpected capabilities<span class="brand-dot">.</span>
+    </h1>
+    <p>Explore the functions documented in the catalog.</p>
+  </section>
+  <article class="article">
+    {categories.map((c) => (
+      <section id={c.toLowerCase()}>
+        <h2>{c}</h2>
+        <p>
+          <a href={sitePath(`/?category=${encodeURIComponent(c)}#catalog`)}>
+            Explore entries with {c.toLowerCase()} commands ↗
+          </a>
+        </p>
+      </section>
+    ))}
+  </article>
+</Base>

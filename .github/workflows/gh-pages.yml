@@ -6,23 +6,42 @@ on:
     types: [completed]
     branches: [master]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event.repository.fork == false && github.event.workflow_run.conclusion == 'success' }}
+    timeout-minutes: 10
+    if: >-
+      vars.ASTRO_PUBLISH_ENABLED != 'true' &&
+      github.repository == 'LOLBAS-Project/LOLBAS' &&
+      github.event.repository.fork == false &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'master' &&
+      github.event.workflow_run.event == 'push'
+    concurrency:
+      group: lolbas-external-site-publish
+      cancel-in-progress: false
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
 
       - name: Change .yml to .md
         run: |
-          for x in $(find yml/ -name '*.yml'); do echo "---" >> "$x"; mv "$x" "${x/%\.yml/.md}"; done
+          while IFS= read -r -d '' x; do
+            echo "---" >> "$x"
+            mv "$x" "${x/%.yml/.md}"
+          done < <(find yml/ -name '*.yml' -print0)
           mv yml/OSBinaries yml/Binaries
           mv yml/OSLibraries yml/Libraries
           mv yml/OSScripts yml/Scripts
           rm -r yml/HonorableMentions
 
       - name: Deploy to LOLBAS-Project.github.io repo
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: LOLBAS-Project/LOLBAS-Project.github.io

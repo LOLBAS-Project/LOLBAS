@@ -1,0 +1,106 @@
+---
+import Base from '../layouts/Base.astro';
+// Maintainer names and handles are published in the project's README.
+const maintainers = [
+  { name: 'Oddvar Moe', handle: 'oddvarmoe' },
+  { name: 'Jimmy Bayne', handle: 'bohops' },
+  { name: 'Conor Richard', handle: 'xenosCR' },
+  { name: 'Chris “Lopi” Spehn', handle: 'ConsciousHacker' },
+  { name: 'Liam', handle: 'liamsomerville' },
+  { name: 'Wietze', handle: 'Wietze' },
+  { name: 'Jose Hernandez', handle: '_josehelps' },
+];
+---
+
+<Base title="About the project · LOLBAS">
+  <section class="page-head">
+    <h1>
+      Nothing to LOL about<span class="brand-dot">.</span>
+    </h1>
+    <p>
+      Living Off The Land Binaries, Scripts and Libraries. A community effort to
+      document the unexpected capabilities of trusted Windows tools.
+    </p>
+  </section>
+  <article class="article">
+    <section class="maintainers" aria-labelledby="maintainers-title">
+      <h2 id="maintainers-title">Project maintainers</h2>
+      <p>The people who keep LOLBAS moving. Find them on X.</p>
+      <ul class="maintainer-list">
+        {maintainers.map(({ name, handle }) => (
+          <li>
+            <a href={`https://x.com/${handle}`}>
+              <span>{name}</span>
+              <small>@{handle} ↗</small>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+    <h2>The goal</h2>
+    <p>
+      Document every Microsoft-signed binary, script, and library that can be
+      used for living off the land techniques. Legitimate tools can execute
+      code, transfer files, bypass application allowlisting, access credentials,
+      and perform other actions beyond their expected use.
+    </p>
+    <h2>What belongs in LOLBAS?</h2>
+    <ul>
+      <li>
+        A Microsoft-signed file, native to Windows or available from Microsoft.
+      </li>
+      <li>
+        Unexpected functionality, with an exception for application allowlisting
+        bypasses.
+      </li>
+      <li>
+        Functionality useful in adversary simulation or to an advanced threat
+        actor.
+      </li>
+    </ul>
+    <p>
+      Read the{' '}
+      <a href="https://github.com/LOLBAS-Project/LOLBAS#criteria">
+        full criteria
+      </a>{' '}
+      before submitting a finding.
+    </p>
+    <h2>Built by the community</h2>
+    <p>
+      The phrase “living off the land” was coined by Christopher Campbell and
+      Matt Graeber at DerbyCon 3. LOLBAS grew from community research into a
+      shared catalog maintained by volunteers.
+    </p>
+    <p>The original project logos were created by Adam Nadrowski.</p>
+    <h2>Add your finding</h2>
+    <p>
+      Start with the{' '}
+      <a href="https://github.com/LOLBAS-Project/LOLBAS/blob/master/CONTRIBUTING.md">
+        contribution guide
+      </a>{' '}
+      and{' '}
+      <a href="https://github.com/LOLBAS-Project/LOLBAS/blob/master/YML-Template.yml">
+        YAML template
+      </a>
+      . The original source format remains unchanged.
+    </p>
+    <a class="button primary" href="https://github.com/LOLBAS-Project/LOLBAS">
+      Explore the repository ↗
+    </a>
+    <h2>Keep exploring</h2>
+    <p>
+      For Unix binaries, visit{' '}
+      <a href="https://gtfobins.github.io/">GTFOBins</a>. For Windows drivers,
+      visit <a href="https://www.loldrivers.io/">LOLDrivers</a>.
+    </p>
+    <p>
+      <a href="https://github.com/LOLBAS-Project/LOLBAS/blob/master/NOTICE.md">
+        License &amp; attribution
+      </a>{' '}
+      ·{' '}
+      <a href="https://github.com/LOLBAS-Project/LOLBAS/issues">
+        Report an issue
+      </a>
+    </p>
+  </article>
+</Base>

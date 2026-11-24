@@ -1,0 +1,109 @@
+---
+import { sitePath } from '../lib/site';
+import Base from '../layouts/Base.astro';
+import { catalog } from '../lib/catalog';
+---
+
+<Base title="API & open data · LOLBAS">
+  <section class="page-head">
+    <p class="eyebrow">OPEN DATA. NO KEYS REQUIRED.</p>
+    <h1>
+      Built for your workflow<span class="brand-dot">.</span>
+    </h1>
+    <p>
+      The same LOLBAS data, ready for your tools. Access all {catalog.length}{' '}
+      entries as JSON, CSV, or the original YAML.
+    </p>
+  </section>
+  <article class="article">
+    <section class="panel">
+      <span class="eyebrow">01 / JSON</span>
+      <h2>Every entry. One file.</h2>
+      <p>
+        The JSON API keeps the existing URL and field structure. Each record
+        includes its name, description, author, creation date, commands, full
+        paths, detections, resources, and canonical page URL. Optional top-level
+        fields retain <code>null</code> values when absent.
+      </p>
+      <a class="endpoint" href={sitePath('/api/lolbas.json')}>
+        /api/lolbas.json ↗
+      </a>
+      <div class="code-wrap">
+        <pre><code>curl https://lolbas-project.github.io/api/lolbas.json</code></pre>
+        <button
+          data-copy="curl https://lolbas-project.github.io/api/lolbas.json"
+          aria-label="Copy JSON API command"
+        >
+          Copy
+        </button>
+      </div>
+    </section>
+    <section class="panel">
+      <span class="eyebrow">02 / CSV</span>
+      <h2>Ready for a spreadsheet.</h2>
+      <p>
+        One row per command example, with the existing 17 columns: filename,
+        entry metadata, command metadata, ATT&amp;CK technique, operating
+        systems, paths, detections, resources, acknowledgements, URL, and tags.
+      </p>
+      <a class="endpoint" href={sitePath('/api/lolbas.csv')}>
+        /api/lolbas.csv ↗
+      </a>
+      <div class="code-wrap">
+        <pre><code>curl -o lolbas.csv https://lolbas-project.github.io/api/lolbas.csv</code></pre>
+        <button
+          data-copy="curl -o lolbas.csv https://lolbas-project.github.io/api/lolbas.csv"
+          aria-label="Copy CSV API command"
+        >
+          Copy
+        </button>
+      </div>
+    </section>
+    <section class="panel">
+      <span class="eyebrow">03 / SOURCE YAML</span>
+      <h2>Straight from the source.</h2>
+      <p>
+        YAML files in the project repository remain the source of truth. Browse
+        the four published collections, review changes, and contribute through
+        GitHub.
+      </p>
+      <a href="https://github.com/LOLBAS-Project/LOLBAS/tree/master/yml">
+        Browse source files ↗
+      </a>
+      <p>
+        <a href="https://raw.githubusercontent.com/LOLBAS-Project/LOLBAS/master/yml/OSBinaries/Certutil.yml">
+          Example: Certutil.yml ↗
+        </a>
+      </p>
+    </section>
+    <h2>ATT&amp;CK Navigator</h2>
+    <p>
+      Download the{' '}
+      <a href={sitePath('/mitre_attack_navigator_layer.json')}>
+        Navigator layer
+      </a>{' '}
+      to explore command mappings. Scores represent the number of command
+      examples mapped to each technique.
+    </p>
+    <p>
+      Data is generated at build time from the repository. No API key, cookies,
+      or account needed. See the project{' '}
+      <a href="https://github.com/LOLBAS-Project/LOLBAS/blob/master/NOTICE.md">
+        licensing notice
+      </a>{' '}
+      for attribution and reuse.
+    </p>
+  </article>
+</Base>
+<style>
+  .article .panel {
+    margin-bottom: 22px;
+    padding: 28px;
+  }
+  .article .panel h2 {
+    margin-top: 12px;
+  }
+  .code-wrap {
+    margin-top: 20px;
+  }
+</style>
