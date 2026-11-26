@@ -1,0 +1,25 @@
+---
+Name: Microsoft.CodeCoverage.Console.exe
+Description: Command-line code-coverage collection tool shipped with Visual Studio Enterprise 2022 and the Microsoft.CodeCoverage.Console dotnet tool. Its collect verb instruments and launches an arbitrary child command supplied after the -- separator.
+Author: Daniel Koifman
+Created: 2026-11-26
+Commands:
+  - Command: Microsoft.CodeCoverage.Console.exe collect --output C:\Windows\Temp\cc.coverage -- C:\Windows\System32\calc.exe
+    Description: Executes an arbitrary command as a child of the signed code-coverage host, breaking the parent-process lineage that would normally point at the real launcher.
+    Usecase: Proxy execution of an arbitrary binary or command through a Microsoft-signed developer utility
+    Category: Execute
+    Privileges: User
+    MitreID: T1127
+    OperatingSystem: Windows 10, Windows 11
+    Tags:
+      - Execute: EXE
+Full_Path:
+  - Path: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\CodeCoverage.Console\Microsoft.CodeCoverage.Console.exe
+Detection:
+  - IOC: Microsoft.CodeCoverage.Console.exe spawning a child process unrelated to a build or test run
+  - IOC: Microsoft.CodeCoverage.Console.exe running on a host with no Visual Studio test workload
+Resources:
+  - Link: https://learn.microsoft.com/en-us/visualstudio/test/microsoft-code-coverage-console-tool
+Acknowledgement:
+  - Person: Daniel Koifman
+    Handle: '@KoifSec'
