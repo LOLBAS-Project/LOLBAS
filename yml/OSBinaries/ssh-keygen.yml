@@ -1,0 +1,41 @@
+---
+Name: ssh-keygen.exe
+Description: 'Key-generation utility of OpenSSH for Windows (C:\Windows\System32\OpenSSH\ssh-keygen.exe), Microsoft-signed (Authenticode: CN=Microsoft Windows). The -D option loads a PKCS#11 shared library from an arbitrary user-supplied path into the ssh-keygen process (dlopen/LoadLibrary); its legitimate purpose is smartcard/HSM integration, but the loader accepts any DLL and runs its DllMain before any PKCS#11 export is resolved. A DLL exporting no PKCS#11 functions therefore still executes attacker code on load: ssh-keygen afterwards exits with "dlsym(C_GetFunctionList) failed: The specified procedure could not be found" (exit code 255) and the payload has already run. No relocation or search-order hijack is needed - the DLL path is passed explicitly on the command line and can point anywhere the user can write (e.g. C:\Users\Public). The DLL must only match the process architecture (x64 on x64 Windows). Because ssh-keygen.exe is Microsoft-signed and preinstalled on current Windows, this doubles as an application-whitelisting bypass: attacker code executes inside a trusted signed process at user integrity, no elevation required. Verified on Windows 11 Pro build 26300 (2026-11-27) with ssh-keygen.exe 9.5.6.4: a benign proof DLL dropped in C:\Users\Public was loaded via ssh-keygen -D and its DllMain spawned calc.exe (observed as CalculatorApp.exe on Windows 11) before the expected PKCS#11 error. OpenSSH for Windows ships as an optional capability (OpenSSH Client / OpenSSH Server) but is preinstalled by default on Windows 11; the binary lives at C:\Windows\System32\OpenSSH\ssh-keygen.exe on every installation.'
+Author: Nguyen Khanh Son, Elena Ferrari, Carminati Barbara
+Created: 2026-11-27
+Commands:
+  - Command: ssh-keygen -D C:\Users\Public\evil.dll
+    Description: Point the PKCS#11 provider argument of ssh-keygen at an attacker-controlled DLL in a user-writable location. ssh-keygen (Microsoft-signed) loads the DLL into its own process and the DLL DllMain executes immediately, before ssh-keygen looks up the C_GetFunctionList export; the process then fails with "dlsym(C_GetFunctionList) failed" and exit code 255, which does not prevent the payload from having run.
+    Usecase: Execute arbitrary code inside a Microsoft-signed, whitelisted process (application whitelisting bypass), e.g. run a payload staged as a DLL in C:\Users\Public or %TEMP% without dropping an unsigned executable or hijacking any search order.
+    Category: Code execution
+    Privileges: User
+    MitreID: T1218
+    OperatingSystem: Windows 10 1809+, Windows 11, Windows Server 2019+ (OpenSSH Client/Server capability present - preinstalled by default on Windows 11; verified on Windows 11 Pro build 26300)
+Full_Path:
+  - Path: C:\Windows\System32\OpenSSH\ssh-keygen.exe
+Code_Sample:
+  - Code: |
+      // Benign proof-of-concept evil.dll (x64). Build with MSVC:
+      //   cl /LD evil.c
+      // or without MSVC toolchain:
+      //   python -m ziglang cc -target x86_64-windows-gnu -shared -O2 -o evil.dll evil.c
+      // Confirms code execution: DllMain runs when ssh-keygen loads the DLL via -D.
+      #include <windows.h>
+
+      BOOL WINAPI DllMain(HINSTANCE h, DWORD reason, LPVOID r)
+      {
+          if (reason == DLL_PROCESS_ATTACH) {
+              WinExec("calc.exe", SW_SHOW);
+          }
+          return TRUE;
+      }
+Detection:
+  - IOC: ssh-keygen.exe command line containing -D with a DLL path outside standard PKCS#11 module locations (C:\Windows\System32, %ProgramFiles%\OpenSSH, vendor smartcard paths)
+  - IOC: Unsigned or non-PKCS#11 DLL image loaded into ssh-keygen.exe from a user-writable path (Sysmon Event ID 7 / Image Load)
+  - IOC: Unexpected child process spawned by ssh-keygen.exe (calc.exe/CalculatorApp.exe, cmd.exe, powershell.exe) - ssh-keygen spawns no children during normal -D use
+  - IOC: 'ssh-keygen.exe exiting with code 255 and stderr "dlsym(C_GetFunctionList) failed: The specified procedure could not be found." immediately after loading a non-standard DLL'
+  - Analysis: Verified 2026-11-27 on Windows 11 Pro build 26300 - each run of ssh-keygen -D C:\Users\Public\evil.dll loaded the benign proof DLL and spawned CalculatorApp.exe before the expected PKCS#11 resolution failure
+Resources:
+  - Link: https://man.openbsd.org/ssh-keygen.1
+  - Link: https://github.com/PowerShell/Win32-OpenSSH
+  - Link: https://commandcode.ai/
