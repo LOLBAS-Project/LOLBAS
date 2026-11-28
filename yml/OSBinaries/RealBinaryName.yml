@@ -1,0 +1,46 @@
+---
+Name: Binary.exe
+Description: Something general about the binary
+Aliases:  # Optional field if any common aliases exist of the binary with nearly the same functionality,
+  - Alias: Binary64.exe  # but for example, is built for different architecture.
+Author: The name of the person that created this file
+Created: 1970-01-01 # YYYY-MM-DD (date the person created this file)
+Commands:
+  - Command: The command
+    Description: Description of the command
+    Usecase: A description of the usecase
+    Category: Execute
+    Privileges: Required privs
+    MitreID: T1055
+    OperatingSystem: Windows 10 1803, Windows 10 1703
+    Tags:
+      - Key1: Value1  # Optional field for one or more tags
+  - Command: The second command
+    Description: Description of the second command
+    Usecase: A description of the usecase
+    Category: AWL Bypass
+    Privileges: Required privs
+    MitreID: T1033
+    OperatingSystem: Windows 10 All
+Full_Path:
+  - Path: c:\windows\system32\bin.exe
+  - Path: c:\windows\syswow64\bin.exe
+Code_Sample:
+  - Code: http://example.com/git.txt
+Detection:
+  - IOC: Event ID 10
+  - IOC: binary.exe spawned
+  - Analysis: https://example.com/to/blog/gist/writeup/if/applicable
+  - Sigma: https://example.com/to/sigma/rule/if/applicable
+  - Elastic: https://example.com/to/elastic/rule/if/applicable
+  - Splunk: https://example.com/to/splunk/rule/if/applicable
+  - BlockRule: https://example.com/to/microsoft/block/rules/if/applicable
+Resources:
+  - Link: http://blogpost.com
+  - Link: http://twitter.com/something
+  - Link: http://example.com/Threatintelreport
+Acknowledgement:
+  - Person: John Doe
+    Handle: '@johndoe'
+  - Person: Ola Norman
+    Handle: '@olaNor'
